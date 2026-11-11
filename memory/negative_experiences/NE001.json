@@ -1,0 +1,26 @@
+{
+  "id": "NE001",
+  "content": "Holding the abort gripper did not resolve insertion failure in the repeated plan.",
+  "applicability": "yellow plug insertion; same plan and provisional scene",
+  "source_episodes": [
+    "20261111T083648Z_3dca9303",
+    "20261111T083648Z_9b14fb59",
+    "20261111T083648Z_d01a2e64",
+    "20261111T083648Z_bd3e4512"
+  ],
+  "validation_status": "OBSERVED_HISTORY",
+  "success_count": 0,
+  "failure_count": 2,
+  "limitations": [
+    "Not a verified unique physical root cause",
+    "Historical labels, not fresh visual adjudication"
+  ],
+  "version": 1,
+  "signatures": [
+    "plug_not_seated"
+  ],
+  "ineffective_repairs": [
+    "hold_gripper_during_retreat",
+    "repeat_same_insertion_plan"
+  ]
+}

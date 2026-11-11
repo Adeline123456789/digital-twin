@@ -1,0 +1,22 @@
+{
+  "id": "ER001",
+  "content": "Locate the earliest observed anomaly and test a cause upstream of it.",
+  "applicability": "yellow plug insertion; same plan and provisional scene",
+  "source_episodes": [
+    "20261111T083648Z_3dca9303",
+    "20261111T083648Z_9b14fb59",
+    "20261111T083648Z_d01a2e64",
+    "20261111T083648Z_bd3e4512"
+  ],
+  "validation_status": "PROPOSED",
+  "success_count": 0,
+  "failure_count": 0,
+  "limitations": [
+    "Not a verified unique physical root cause",
+    "Historical labels, not fresh visual adjudication"
+  ],
+  "version": 1,
+  "signatures": [
+    "plug_not_seated"
+  ]
+}

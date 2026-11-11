@@ -1,0 +1,1 @@
+{"version":"v1","status":"baseline","scope":"deterministic repair selection","behavior":"ALLOW_SIMULATION for any proposed repair; matches absence of structured negative-memory gate","not_claimed":"Not an archived executable of the original external LLM Agent","rollback":"Select v1 in decide; hardware remains unavailable"}
