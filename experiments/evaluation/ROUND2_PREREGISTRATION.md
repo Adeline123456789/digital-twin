@@ -1,0 +1,7 @@
+# Round 2 preregistration
+
+Run A/B/C/D with the same held-out holder X shift +0.5 mm, same existing physics and runtime, same task and seed failure evidence, at most two model calls and two physical attempts each. Only insertion target X offset may change within [-4,4] mm. A has no new protocol/memory; B protocol; C protocol plus verified generic result-checking skill; D additionally receives actual execution feedback and cannot repeat the same failed candidate. A/B/C freeze their first proposed action for both attempts. Stop on physical success or infrastructure failure. Actual consumption may differ and must be reported.
+
+No unseen task-family claim: this is an unseen initial-state condition on the existing insertion task. No specific successful parameter is supplied in skills. The shared previous failure includes its commanded offset, which is legitimate observed history. An obvious repair may make all arms succeed; no advantage is assumed. Metrics: physical success, repeats, tokens, model calls, trial wall/simulation time, interventions, and new verified skills (zero until independent validation).
+
+Existing November 11 source artifacts were deleted in an earlier cleanup, as recorded by dataset cleanup_20261111.json. Current retained script/config is used and hashed; this benchmark is not reproduction of the newer archived production-success controller. No simulator files or raw records are uploaded.
