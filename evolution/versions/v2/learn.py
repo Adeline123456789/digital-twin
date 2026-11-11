@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import time
 import uuid
 from datetime import datetime, timezone
@@ -133,7 +134,16 @@ def simulate(kind, offset, shift, label, signature=None, repair=None):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--kind',default='improvement',choices=['baseline','improvement','evaluation'])
     p.add_argument('--offset-mm',type=float,default=0);p.add_argument('--holder-shift-mm',type=float,default=0)
-    p.add_argument('--label',default='yellow plug insertion')
+    p.add_argument('--local-only',action='store_true',help='Keep local reports without Git commit/push');p.add_argument('--label',default='yellow plug insertion')
     p.add_argument('--signature');p.add_argument('--retrieve');p.add_argument('--repair',default='');a=p.parse_args()
     if a.retrieve: print(json.dumps(dict(memories=retrieve(a.retrieve),decision=decide(a.retrieve,a.repair)),ensure_ascii=False,indent=2))
-    else: simulate(a.kind,a.offset_mm,a.holder_shift_mm,a.label,a.signature,a.repair)
+    else:
+        out,result=simulate(a.kind,a.offset_mm,a.holder_shift_mm,a.label,a.signature,a.repair)
+        if result['task_success'] is not None:
+            archived=subprocess.run([sys.executable,str(ROOT/'scripts/archive_trial.py'),result['experiment_id']])
+            if archived.returncode:
+                save(out/'archive_error.json',{'returncode':archived.returncode,
+                     'status':'RAW_DATA_PRESERVED_IN_STAGING; archive requires attention'})
+        if not a.local_only:
+            subprocess.run([sys.executable,str(ROOT/'scripts/publish.py'),'--message',
+                            'Record experiment '+result['experiment_id'],str(out.relative_to(ROOT))],check=True)
