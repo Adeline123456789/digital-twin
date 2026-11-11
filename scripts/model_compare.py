@@ -1,5 +1,6 @@
 """Small real LLM decision ablation, not a robot capability benchmark."""
 import json
+import os
 from pathlib import Path
 import subprocess
 import time
@@ -12,7 +13,7 @@ EXPECTED=['UNKNOWN','REJECT_REPEAT','UNKNOWN_TASK_MODE']
 def ask(prompt,local):
     start=time.monotonic()
     p=subprocess.run(['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check',
-       '--sandbox','read-only','--model','gpt-6-luna','--json','-'],input=prompt,text=True,cwd=local,
+       '--sandbox','read-only','--model',os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna'),'--json','-'],input=prompt,text=True,cwd=local,
        stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=120)
     events=[]
     for line in p.stdout.splitlines():

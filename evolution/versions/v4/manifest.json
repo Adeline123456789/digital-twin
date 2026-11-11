@@ -1,0 +1,11 @@
+{
+  "version": "v4",
+  "status": "accepted_opt_in",
+  "previous": "v2",
+  "entry": "scripts/learn.py",
+  "sha256": "19dd7b9054bae7b274fa55857380b1bc19c7b03baeff626768d4640a1f7f1fc2",
+  "evaluation": "20261111T092113Z_42c8e6ae",
+  "activation": "PIPER_SIM_PROFILE=retained_final and explicit retained PIPER_SIM_ROOT",
+  "rollback": "Use unchanged original profile with original PIPER_SIM_ROOT; no simulator source was changed",
+  "active_default_changed": false
+}

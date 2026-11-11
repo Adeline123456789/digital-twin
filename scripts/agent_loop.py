@@ -1,5 +1,6 @@
 """Model-neutral bounded planning -> existing MuJoCo -> evidence loop. Never calls hardware."""
 import argparse
+import os
 import json
 import math
 import subprocess
@@ -23,7 +24,7 @@ def validate_plan(plan):
 
 def run(arm, shift, publish=True):
     out,r=record('evaluation',f'Luna {arm} executable repair loop; holder shift {shift} mm','llm_driven_simulation')
-    r['model']='gpt-6-luna';r['runner_sha256']=digest(__file__)
+    r['model']=os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna');r['runner_sha256']=digest(__file__)
     local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
     started=time.monotonic();calls=[];trials=[]
     # Freeze shared initial failure evidence, not a successful solution. All four arms receive identical facts.

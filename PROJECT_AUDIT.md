@@ -14,3 +14,7 @@
 ## User data/provenance rules (updated 2026-11-11)
 
 The simulator is a separate maintained project and is not to be uploaded. Only this new experiment/learning layer and reviewed results belong in the public repository. The prescribed success-video folder already contains three original MP4s: preserve them and place new videos in unique experiment-ID subfolders. See AGENTS.md for all four exact outcome routes. Existing successful episode metadata must not be rewritten when adding new runs. Expert connector_plugin data uses a different installation of the same robot model and is not interchangeable calibration or this robot's success evidence. This robot has no six-axis force/torque sensor.
+
+## Retained final source discovered during continuation
+
+The dataset's calibration/offline_workspace_20261110 is a separate retained source tree with no Git metadata, its own existing offline_env, real_connector_final.yaml and plug_camera_candidate.json. ARCHIVE_AND_COLLECTION.md documents grasp roll, grasp opening and multiple alignment corrections absent from the originally inspected piper_simulation entry. Thus intermediate sysid trial paths were deleted, but final scene source and a runnable collection entry remain. Earlier reports that describe missing *candidate trial artifacts* remain valid; they must not be read as claiming that all final source is missing. New experiments record this source separately and do not pool its success rate with the original source. No source is copied to GitHub.

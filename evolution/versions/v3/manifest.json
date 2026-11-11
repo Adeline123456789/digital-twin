@@ -1,0 +1,13 @@
+{
+  "version": "v3",
+  "status": "skill_verified",
+  "entry": "scripts/agent_challenge.py",
+  "sha256": "f0aa2635403d0026659df405df8bd90a2f3ee23455f53f5e8fdaf5c49e3e2f20",
+  "evaluation": "20261111T091154Z_ddb3b5dc",
+  "accepted_as_default": false,
+  "reason": "Physical and calibration scope still narrow; preserve active v2",
+  "evaluated_runner_sha256": [
+    "5892593182922c75d201eddaae4bed46ff05a3761a054a5adc911f9ad2624317"
+  ],
+  "limitations": "Default model/source behavior was evaluated at the listed runner hashes; current reusable entry additionally supports model selection and retrieval of the learned signature."
+}

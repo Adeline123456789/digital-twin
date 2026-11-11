@@ -1,0 +1,21 @@
+{
+  "id": "VS002",
+  "content": "For insertion failing under a constant target-frame error, measure signed precontact object-to-hole XY residual in the socket frame; propose a bounded opposite target correction and revalidate full release/seating.",
+  "applicability": "Existing pure MuJoCo insertion adapter; accurate precontact object pose; tested target X errors \u00b12 mm",
+  "source_episodes": [
+    "20261111T090015Z_78887557",
+    "20261111T090415Z_f1d663d1"
+  ],
+  "validation_status": "SIMULATION_VERIFIED",
+  "success_count": 2,
+  "failure_count": 2,
+  "limitations": [
+    "Simulator privileged pose, not validated real vision",
+    "Not validated for changing contact/friction or unseen tasks"
+  ],
+  "version": 1,
+  "signatures": [
+    "target_frame_mismatch"
+  ],
+  "source_profile": "original"
+}

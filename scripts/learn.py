@@ -27,7 +27,7 @@ def save(path, value):
 def version():
     files = [p for folder in ('scripts','src','configs') for p in (SIM/folder).rglob('*')
              if p.is_file() and p.suffix in ('.py','.yaml','.json')]
-    return dict(git_head=subprocess.check_output(['git','rev-parse','HEAD'], cwd=SIM,text=True).strip(),
+    return dict(git_head=(subprocess.run(['git','rev-parse','HEAD'],cwd=SIM,text=True,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL).stdout.strip() or None),
                 source_sha256={str(p.relative_to(SIM)):digest(p) for p in sorted(files)},
                 adapter_sha256=digest(__file__), dirty=True)
 
@@ -89,16 +89,21 @@ def simulate(kind, offset, shift, label, signature=None, repair=None):
         # YAML is already installed in the existing MuJoCo environment.
         import yaml
         raw.parent.mkdir(parents=True, exist_ok=True)
-        cfg=yaml.safe_load((SIM/'configs/tasks/real_connector_calibrated.yaml').read_text())
+        retained=os.environ.get('PIPER_SIM_PROFILE')=='retained_final'
+        speed=25 if retained else 12
+        config_name='real_connector_final.yaml' if retained else 'real_connector_calibrated.yaml'
+        cfg=yaml.safe_load((SIM/'configs/tasks'/config_name).read_text())
         cfg['holder_xy_m'][0]+=shift/1000
         local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
         task=local/'task.yaml';task.write_text(yaml.safe_dump(cfg))
-        cmd=[str(SIM/'.venv-mujoco-hardware/bin/python'),str(SIM/'scripts/try_plug_pick_sim.py'),
-             '--output',str(raw),'--task',str(task),'--smooth-timing','--speed','12',
-             '--grasp-height','.020','--insertion-offset-mm',str(offset),'0']
+        runtime=SIM/('.venv-mujoco/bin/python' if retained else '.venv-mujoco-hardware/bin/python')
+        cmd=[str(runtime),str(SIM/'scripts/try_plug_pick_sim.py'),
+             '--output',str(raw),'--task',str(task),'--smooth-timing','--speed',str(speed),
+             '--grasp-height',('.012' if retained else '.020'),'--insertion-offset-mm',str(offset),'0']
+        if retained:cmd+=['--grasp-roll-deg','30','--align-corrections','4','--grasp-opening','0','--start-right-deg','0','0','0','0','0','0']
         r['initial_state']={'holder_x_shift_mm':shift,'task_config_sha256':digest(task)}
-        r['actions']=[{'script':'try_plug_pick_sim.py','grasp_height_m':.020,'offset_mm':[offset,0],
-                       'speed_deg_s':12,'smooth_timing':True}]
+        r['actions']=[{'script':'try_plug_pick_sim.py','profile':('retained_final' if retained else 'original'),'grasp_height_m':(.012 if retained else .020),'offset_mm':[offset,0],
+                       'speed_deg_s':speed,'smooth_timing':True}]
         r['experiments']=[{'changed_variable':'insertion_offset_mm','value':offset,'heldout_initial_shift_mm':shift}]
         env=dict(os.environ,MUJOCO_GL='egl')
         with (local/'stdout.log').open('w') as log:

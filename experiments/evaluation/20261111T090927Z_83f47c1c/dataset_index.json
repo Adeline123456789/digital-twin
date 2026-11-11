@@ -1,0 +1,33 @@
+{
+  "experiment_id": "20261111T090927Z_83f47c1c",
+  "success": false,
+  "source_trial": "complete_sim/failed/20261111T090927Z_83f47c1c/source_trial",
+  "videos_status": "NOT_RECORDED_BY_HEADLESS_TRIAL",
+  "force_sensor_present": false,
+  "files": {
+    "insert_detail.png": "b2d9357ac36b2c9be2df90b9de64adf2557a41f007c416959add6be87b12b742",
+    "final_state.npz": "56303f75fcb077d6bce209b9ed35f4026589cd8903e0599782c0c0390104415b",
+    "grasp.png": "f48524fad0fa678a2ba19629ee7e983304f711cc605d12d06055955dd5190255",
+    "transport_detail.png": "75a49ad1b5560274e37612ecc68dfe50a8b689f203f21fe463fdb5996a392e25",
+    "descend.png": "79e4ede764e3da503bd4f8b5a2ff47035333b125d3e64900410eb26ed54483a9",
+    "report.json": "f02f172a7504d5bc3bab04ed9495aa49168599935b6acac4cb4206fce03d10a6",
+    "transport.png": "411d371dd404b644904e6fc581010bafed927d744f35ae76d5070d2a861fb583",
+    "retreat_detail.png": "a71f80b5e8a73fe13341f55df885c159afe34391c9e7e34f88b946a2764be87f",
+    "failure.png": "013f2f2cde4f5e50f1c719215dfe3a94a6f8320825148f2e0392680024cc0d09",
+    "cameras.json": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+    "lift.png": "c3e3ca182a94d3030cc705ea12e6e711dfc9980e13ea06d7bf1da8557bb13f10",
+    "trajectory.jsonl": "db8bf3414107150e2ea47a5f6ae16e387bce4d2caf2cb7aa3b880aac84b57ec0",
+    "align.png": "3f64dae0bdd62b3889932b06a64cc245bec789d56054bd14fed052dcd1922f79",
+    "task.yaml": "d54ce098ab6194b35ab68d1f1d4448945b7cff6a8e3bb0dfbd71f95e91ca2f8e",
+    "descend_detail.png": "0cc015b70c974991ab85ba2ff7a389216578d5080be618d8f480dffe690e952d",
+    "release.png": "317c5ed5d1a514ac2dcd34c97cb4f4d258c7400c5dd4831e5dec024a6956e46d",
+    "align_detail.png": "0af72d021606716b7d71cee7fd064daf7f25110ee0e646c43c556cc42cfcb004",
+    "insert.png": "b26554e34313655f062376f2e70ca37413158e24799c42e18f24812bcab27662",
+    "initial_state.npz": "c0ecec167b89f17a94d7e754feb4f138c739279618f6d3730e8d255fd7ae0904",
+    "collision.json": "5656f49c284f8669fa487b2adb34bcfac8b66879d6f6f3fe562864cfab920411",
+    "release_detail.png": "4499535cada6afcbe2a59a5aff0436d17a416ca461dbb8df22a8d0c1bb63f6d2",
+    "grasp_detail.png": "49b1d00309e2f984a85bb1d09059260ccefe692fd8421373c9272ba2a95e1ddb",
+    "lift_detail.png": "b751df7abac9df987b82019619fa38ef7c9b9c0dede7d36dc837f1fcce4eb9db",
+    "retreat.png": "2ba101697b83903392c0c67d9b33ffb502c1da8e33b14ab37e7eea4415c2c41a"
+  }
+}

@@ -1,5 +1,6 @@
 """Model-neutral bounded planning -> existing MuJoCo -> evidence loop. Never calls hardware."""
 import argparse
+import os
 import json
 import math
 import subprocess
@@ -39,7 +40,7 @@ def precontact_observation(ident):
 
 def run(arm, shift, publish=True, hidden_bias=2.0):
     out,r=record('evaluation',f'Luna {arm} hidden target-frame error challenge; holder shift {shift} mm','llm_driven_simulation')
-    r['model']='gpt-6-luna';r['runner_sha256']=digest(__file__)
+    r['model']=os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna');r['runner_sha256']=digest(__file__)
     local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
     started=time.monotonic();calls=[];trials=[]
     # Freeze shared initial failure evidence, not a successful solution. All four arms receive identical facts.
@@ -50,7 +51,7 @@ def run(arm, shift, publish=True, hidden_bias=2.0):
            'root_cause':'UNKNOWN; this is simulation evidence, not a verified real cause'}
     prompt='The target pose estimate may have an unknown constant frame error. You cannot inspect the true error. On feedback-enabled runs, pre-contact observed object-to-hole error will be reported. Do not use tools or read files. Choose ONE next experiment using the existing simulation adapter. Return only JSON with offset_mm (finite number [-4,4]), hypotheses (0 to 3 short hypotheses), predicted_effect, reason. No shell or hardware commands. Offset is XY target X correction in socket coordinates; only this variable can change. Budget: two simulated executions. Task facts:'+json.dumps(facts)
     if arm in 'BCD':prompt+='\n'+(ROOT/'protocol/robot_problem_solving.md').read_text()
-    if arm in 'CD':prompt+='\nApplicable verified result-checking skills:'+json.dumps([m for m in retrieve('plug_not_seated') if m['validation_status']=='SIMULATION_VERIFIED'])
+    if arm in 'CD':prompt+='\nApplicable verified result-checking skills:'+json.dumps([m for m in retrieve('target_frame_mismatch') if m['validation_status']=='SIMULATION_VERIFIED'])
     r['initial_state']={'arm':arm,'holder_shift_mm':shift,'execution_budget':2,'llm_call_budget':2,'hidden_bias_mm_not_shown_to_model':hidden_bias,'challenge':'synthetic target-frame error, not a measured real calibration error'}
     seen=set()
     try:

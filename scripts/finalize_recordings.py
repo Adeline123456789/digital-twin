@@ -1,5 +1,6 @@
 """Validate newly generated three-view recordings and place them under prescribed roots."""
 import json
+import argparse
 from pathlib import Path
 import shutil
 import time
@@ -8,11 +9,12 @@ SUCCESS=DATA/'complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001'
 IDS=['20261111T083904Z_3457e2ad','20261111T083720Z_f64309a8']
 def main():
     import av
-    for ident in IDS:
+    parser=argparse.ArgumentParser();parser.add_argument('ids',nargs='*');parser.add_argument('--stage',default='self_evolution/recording_stage');args=parser.parse_args()
+    for ident in (args.ids or IDS):
         out,r=record('evaluation','Three-view physics replay '+ident,'simulation_recording')
         start=time.monotonic()
         try:
-            stage=DATA/'self_evolution/recording_stage'
+            stage=DATA/args.stage
             matches=list(stage.glob('complete_sim/*/learning_'+ident+'_000001'))
             if len(matches)!=1:raise RuntimeError('No completed recording archive for '+ident)
             source=matches[0];outcome=json.loads((source/'outcome.json').read_text())
