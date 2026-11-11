@@ -68,7 +68,10 @@ def retrieve(signature, limit=5):
 def failure_memory(observed_effects):
     reports=[x for x in observed_effects if isinstance(x,dict)]
     signature='transport_ik_failure' if any(x.get('last_phase')=='transport' and 'Unreachable' in str(x.get('error')) for x in reports) else 'plug_not_seated'
-    return retrieve(signature)
+    memories=retrieve(signature)
+    if signature=='transport_ik_failure' and any(x.get('speed_deg_s') not in (None,12,12.0) for x in reports):
+        memories=[m for m in memories if m['id']!='NE004']
+    return memories
 
 def decide(signature, repair, version_name=None):
     if version_name is None:
@@ -98,6 +101,9 @@ def simulate(kind, offset, shift, label, signature=None, repair=None):
         speed=25 if retained else 12
         config_name='real_connector_final.yaml' if retained else 'real_connector_calibrated.yaml'
         cfg=yaml.safe_load((SIM/'configs/tasks'/config_name).read_text())
+        target_index=int(os.environ.get('PIPER_TARGET_INDEX',cfg['target_index']))
+        if target_index not in (1,2,3):raise ValueError('Target must be an existing AC outlet 1, 2 or 3')
+        cfg['target_index']=target_index
         cfg['holder_xy_m'][0]+=shift/1000
         local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
         task=local/'task.yaml';task.write_text(yaml.safe_dump(cfg))
@@ -106,7 +112,7 @@ def simulate(kind, offset, shift, label, signature=None, repair=None):
              '--output',str(raw),'--task',str(task),'--smooth-timing','--speed',str(speed),
              '--grasp-height',('.012' if retained else '.020'),'--insertion-offset-mm',str(offset),'0']
         if retained:cmd+=['--grasp-roll-deg','30','--align-corrections','4','--grasp-opening','0','--start-right-deg','0','0','0','0','0','0']
-        r['initial_state']={'holder_x_shift_mm':shift,'task_config_sha256':digest(task)}
+        r['initial_state']={'target_index':target_index,'holder_x_shift_mm':shift,'task_config_sha256':digest(task)}
         r['actions']=[{'script':'try_plug_pick_sim.py','profile':('retained_final' if retained else 'original'),'grasp_height_m':(.012 if retained else .020),'offset_mm':[offset,0],
                        'speed_deg_s':speed,'smooth_timing':True}]
         r['experiments']=[{'changed_variable':'insertion_offset_mm','value':offset,'heldout_initial_shift_mm':shift}]

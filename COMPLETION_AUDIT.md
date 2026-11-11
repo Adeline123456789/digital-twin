@@ -19,3 +19,5 @@ Scope is the user's requested minimal failure-driven experiment, followed by act
 | No simulator upload, secrets or private raw media | Explicit type/size/secret checks plus tracked-file/source-hash inspection | Completed for uploaded artifacts; not a guarantee for arbitrary future inputs |
 
 Ten workflow stages ran, including failed and blocked outcomes. Hardware validation and genuine physical calibration remain future work requiring evidence/permission. These are explicitly deferred outcomes of the requested workflow, not outstanding unreported execution steps. No background process, unbounded tuning job or unattended hardware service is left running after finalization.
+
+Additional explicit UNKNOWN_TASK_MODE execution targeted outlet 1 and failed transport IK twice. It was recorded as failure without skill promotion. Review found and corrected incompatible prior-history inclusion; outcome remains unverified after the applicability fix. This satisfies the requested failure-recording branch and identifies the next exploration limitation, rather than claiming unknown-task success. Final bookkeeping is 60 report pairs; no live execution remains.

@@ -22,21 +22,29 @@ def validate_plan(plan):
     return float(value)
 
 
+def compatible_seed_history(profile, target):
+    return profile=='original' and str(target)=='3'
+
 def run(arm, shift, publish=True):
-    out,r=record('evaluation',f'Luna {arm} executable repair loop; holder shift {shift} mm','llm_driven_simulation')
+    out,r=record('evaluation',f'Luna {arm} executable repair loop; target {os.environ.get("PIPER_TARGET_INDEX","3")}; holder shift {shift} mm','llm_driven_simulation')
     r['model']=os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna');r['runner_sha256']=digest(__file__)
     local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
     started=time.monotonic();calls=[];trials=[]
-    # Freeze shared initial failure evidence, not a successful solution. All four arms receive identical facts.
+    # Use historical evidence only when task and source profile match.
     seed=json.loads((ROOT/'experiments/baseline/20261111T083720Z_f64309a8/result.json').read_text())
-    facts={'task':'Lift yellow plug, insert into socket, release and remain seated',
+    seed_compatible=compatible_seed_history(os.environ.get('PIPER_SIM_PROFILE','original'),os.environ.get('PIPER_TARGET_INDEX','3'))
+    facts={'execution_profile':os.environ.get('PIPER_SIM_PROFILE','original'),
+           'prior_evidence_scope':'Only same-profile outlet-3 evidence is included; other source/target histories are excluded',
+           'task':'Lift yellow plug, insert into socket, release and remain seated',
+           'target_index':int(os.environ.get('PIPER_TARGET_INDEX','3')),
+           'mode':('UNKNOWN_TASK_MODE: no target-specific verified motion skill; decompose goal and test the available existing insertion primitive' if os.environ.get('PIPER_TARGET_INDEX','3')!='3' else 'KNOWN_TASK'),
            'initial_state':'Same existing scene with a held-out holder initial X position; no physical parameters changed',
-           'previous_action':seed['actions'],'previous_observation':seed['observed_effects'],
+           'previous_action':seed['actions'] if seed_compatible else [],'previous_observation':seed['observed_effects'] if seed_compatible else [],
            'root_cause':'UNKNOWN; this is simulation evidence, not a verified real cause'}
     prompt='Do not use tools or read files. Choose ONE next experiment using the existing simulation adapter. Return only JSON with offset_mm (finite number [-4,4]), hypotheses (0 to 3 short hypotheses), predicted_effect, reason. No shell or hardware commands. Offset is XY target X correction in socket coordinates; only this variable can change. Budget: two simulated executions. Task facts:'+json.dumps(facts)
     if arm in 'BCD':prompt+='\n'+(ROOT/'protocol/robot_problem_solving.md').read_text()
     if arm in 'CD':prompt+='\nApplicable verified result-checking skills:'+json.dumps([m for m in retrieve('plug_not_seated') if m['validation_status']=='SIMULATION_VERIFIED'])
-    r['initial_state']={'arm':arm,'holder_shift_mm':shift,'execution_budget':2,'llm_call_budget':2,'seed_failure':seed['experiment_id']}
+    r['initial_state']={'target_index':int(os.environ.get('PIPER_TARGET_INDEX','3')),'mode':facts['mode'],'arm':arm,'holder_shift_mm':shift,'execution_budget':2,'llm_call_budget':2,'seed_failure':seed['experiment_id'] if seed_compatible else None,'incompatible_history_excluded':not seed_compatible}
     seen=set()
     try:
         call=ask(prompt,local);calls.append(call)

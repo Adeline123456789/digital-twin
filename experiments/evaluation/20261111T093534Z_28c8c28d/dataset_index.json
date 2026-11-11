@@ -1,0 +1,24 @@
+{
+  "experiment_id": "20261111T093534Z_28c8c28d",
+  "success": false,
+  "source_trial": "complete_sim/failed/20261111T093534Z_28c8c28d/source_trial",
+  "videos_status": "NOT_RECORDED_BY_HEADLESS_TRIAL",
+  "force_sensor_present": false,
+  "files": {
+    "final_state.npz": "a29160b7c0e8a1a6df389d2ae9dc9ad3b1be52e2d31f1be4de16134ec04f88f1",
+    "approach_213.png": "63757fed52d191a108a86e21b7b23783c39488e7af4d8b3e23485d08d21e8898",
+    "report.json": "d1406be9e7015a15985b466f89faf47aca2c4da572f1856becb51be4151a37d8",
+    "grasp_351_detail.png": "35dcb399000bf4f870a78ed893597efa4d03f92fa828f08c4487cc3d4e9060a4",
+    "descend_279_detail.png": "3b8101958f9ad9503f694976f75804ff00371b0baa54a4a119601786b2dec6e4",
+    "approach_213_detail.png": "457aa95556595cde49cd396505881203ba26130a0126d12b8922160555275c3f",
+    "failure.png": "a416b4dc1f871c1c376cd3868d63a7013389cae0f3a0354db1569c3e246726b7",
+    "lift_383_detail.png": "42afc934e54c78fe85428ed79966165ac82e97326e14ed415845f2a4409733d8",
+    "cameras.json": "5af2031a0a64825ca242d7799ae7489dd0f716d9e9df117798568d6393f41667",
+    "trajectory.jsonl": "8ffc23455d174e7f6e9154af71ec6d9281c667c5fd0c590b97072aec7d6b41f4",
+    "task.yaml": "0bfb8a3cea84d3f10349ac961d33221ce3ac427c303c9696a0141ec6a4093b51",
+    "descend_279.png": "335d58a05559e933f99f945c9efcea6ee52d2512ee7269260a1963a236473603",
+    "initial_state.npz": "db66cb8ebcb2c2fc6e2d8755c3e246a2f298aeb7c7de0eb59e1185d4c201b2f6",
+    "lift_383.png": "04fd88aa98a8e133adb63a618e18684cd2b8ea53ec1a63d185acf5fa4ab8ef89",
+    "grasp_351.png": "9cdf8712ff9e5ea325915513c37bdc820c82416a56a0bf310440dbb93e7e5d36"
+  }
+}

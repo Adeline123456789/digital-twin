@@ -1,0 +1,390 @@
+{
+  "experiment_id": "20261111T093534Z_28c8c28d",
+  "timestamp": "2026-11-11T09:35:34.902341+00:00",
+  "model": "deterministic adapter; no LLM inference",
+  "task": "Agent D 20261111T093456Z_e777f905 action 1",
+  "environment": "simulation",
+  "program_version": {
+    "git_head": null,
+    "source_sha256": {
+      "configs/alignment_landmarks.json": "35da429ba0fe15594dd07045d08cef1a0a0a832079cef45f70aa9e63fb66e93e",
+      "configs/appearance.json": "2514098f051a9430aab300ff8a68ec95835206bc129aa7ed3e0ba687eaf981ef",
+      "configs/calibration/plug_camera_candidate.json": "5af2031a0a64825ca242d7799ae7489dd0f716d9e9df117798568d6393f41667",
+      "configs/calibration/plug_rgbd_20261108.json": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "configs/clean_table_workcell.yaml": "b432f48cc4b03630f896880fa9a56e366bd450ac7cfc22b01a5711642a277aee",
+      "configs/connector_alignment.yaml": "1e89de216388de899d4b22dc2a359dea8c21d113ac34f4d5e26ba96192766365",
+      "configs/realsense_rgb.json": "8f26fa0804b58faa3890345419c40c372810cd744710326e7cd036c920f4bbaf",
+      "configs/tasks/clean_table.yaml": "31861cb679196e09d2b565fc1a6887b812ee332ddc44dddfe19f92309cecb666",
+      "configs/tasks/connector.yaml": "a30a7d95585daf4a6801640425ab73be4c611252e2375f9e16ce442895a922ed",
+      "configs/tasks/real_connector.yaml": "4b1a7ff3d8773662453ef8ab8d2255ae422a27f0e8d40e90d55415441a09f84a",
+      "configs/tasks/real_connector_calibrated.yaml": "826e6d3d40281398da330b24653d5591f2d462a2d05c9c1ec943142e6b2189de",
+      "configs/tasks/real_connector_final.yaml": "5374947790ecdc318238db6d7221d042a8ef82f963bd25a66fcd0e8f59393512",
+      "configs/tasks/real_connector_sim_randomized.yaml": "423f5fc3bfac151a4d90f3ad364327b076d29efeb568277985674e348adea5fe",
+      "configs/tasks/real_straw.yaml": "bdbc3a40123271bec6656e3b0c73acf8ae55bad0ba80512ee75597038d02e7ca",
+      "configs/workcell.yaml": "301833f276482962851d043e689ad5359bc9e3837ab7794728e064523d73a9f9",
+      "scripts/build_plug_alignment.py": "50af156347a6a9ca8db3747d95b301ec4ebf0282916cd40704dd4d19356eda99",
+      "scripts/capture_cad_reference.py": "3318f099a42b5ccf04abe9569fac9859a1452636886b098bfcd494fd7b2b749f",
+      "scripts/capture_plug_calibration.py": "55166b4837daaad72d5fba423affe2544e0347cfd87d16e9682a06fe6a82ffd3",
+      "scripts/check_episode.py": "cae17b401b0684b3a4267858ebe761a3350eb98f397da9af5fcf320a6aa7cfd2",
+      "scripts/check_plug_camera_motion.py": "469e1734a6cf2490dc7219ebc4697f5e2583782f08cec286976397dfe280200e",
+      "scripts/check_plug_probe_sweep.py": "33e9310020a799f5f2157be513855016c1e710c2f2f41df9cde3c6e77eea4166",
+      "scripts/collect_plug_contact_probes.py": "368871f8ed9ecd7349e9f55764f11a8e8bf6292135db38da31e9e54d9da05eb2",
+      "scripts/collect_plug_sim_episode.py": "a04be7d6fc2b5cfa71326f997c9c2adb2ab192071250dc6ed1b5326dbf30ba7c",
+      "scripts/compare_live_piper.py": "f2b1ed022503e5a9494fc436920dfd4f01321c8fbd0bd1d75d58e177b9751594",
+      "scripts/compare_recorded_scene.py": "76f4ea6775d940617885a2950e4505889a1c3858f39063a7f0f64c1b3fad44aa",
+      "scripts/connect_piper.py": "d3363d542b878fa63a8e295e92341df912406b0d9cc030f99111684753a485a1",
+      "scripts/continue_plug_task.py": "44fe13d29b3936a469f6be92157fb32d8e89ac7b0cc651144df01ae23dc1c004",
+      "scripts/convert_workcell_cad.py": "cd9b182aeff48022c00312d3967d7620c1cbfba8b5b8d56beeef8c38c0dd90ad",
+      "scripts/doctor.py": "78f8825e3da733466f21c6ac5f90f4a0044f16f21f5a42ae8ef70cf21fb6ef96",
+      "scripts/download_runtime_wheels.py": "ca7e3d89d221dc8e72314d013603693cdc519f8dff15838ea3675497011920da",
+      "scripts/export_lerobot.py": "980153efbb51b46c005a0203465aded289175496a40f3ac760bf490678fc6787",
+      "scripts/export_plug_calibration.py": "19581f4ca503eed3489c980a8932ef68c002354e0a10f2ad486e3f84459f8ae3",
+      "scripts/export_realsense_rgb_calibration.py": "816364dced3537d9a9bc96827f34837c5626a3a5439899e8742d26ee65669999",
+      "scripts/extract_lerobot_alignment.py": "10fe27e4bcc2e0e946460e0e679d6b65066b7068a078e1aefe79fc63378cb781",
+      "scripts/fit_plug_table_depth.py": "e223dafb6f8524d1427b9bc133bb4cf0fc6734b76569e603801e91607d9bc3af",
+      "scripts/fit_plug_wrist_axis.py": "72b9bbcadf0bb9f25dc640a73557653edfcd685389166c409bb4a0de75650719",
+      "scripts/fit_plug_wrist_multiaxis.py": "b22eb6131e96ba58a6c4033d7d2cd9c0e41162c7b0978db98390f5cd45adc31b",
+      "scripts/inspect_step.py": "cb74b55b6f350bb7318060a4eaa457326a010d3d7245e7fab12ec3a13956f164",
+      "scripts/locate_plug_socket.py": "c1f237a1331d7f84c05a91399857a0e509d9548a439fd379f0325bee55711743",
+      "scripts/measure_real_alignment.py": "37259df864e2939d58dfbb58ae816d4e56146d303f239553a16d9befff461ac4",
+      "scripts/mujoco_piper_probe.py": "e5fb3edadd3ccfc671e8cbcce7d2a0a5735a8502dd43378ce539e6cebac98914",
+      "scripts/observe_piper_camera.py": "bc3a8dcbaf2764a626b13913e91c485368552d7faa9c81e4cc58af0bdc6b5d10",
+      "scripts/prepare_assets.py": "6b054b4a72cd91bf5964ba63f80c2ee5ce3a7af5d7110e5d85c1591bf5d7bbdd",
+      "scripts/prepare_cad_gripper.py": "e313b1e0b84f38220a127ce25efe2363c5e0d43e880ae92381443bbb848ba003",
+      "scripts/prepare_clean_table_textures.py": "ebbec120a5f055ee81455630395dae8f82394f881f9d84bffab25b348fab22fc",
+      "scripts/prepare_connector.py": "4e102eb23d33d5dac6cc3835a4dfb3ae9a1dbbc6bf6a7c3470d4c0843dca4da5",
+      "scripts/prepare_mujoco.py": "2a49aad303a588c79eb7ad8de8c541195cb71f1a5689a9b46beda1d8c44b4eb7",
+      "scripts/preview_layout.py": "0cf67059f52965579544986168bad3a37b77389e1000b389de4b97d6d6845760",
+      "scripts/preview_plug_realism.py": "d5f85ce14e79469f9a101012223c58c07d475ad692685f4c1e28a49cbd23b432",
+      "scripts/probe_plug_right_wrist.py": "91c922889994b42e6d7722e32dcc327535a65795b1a5378f79c9f61fc7c7164c",
+      "scripts/register_plug_fixture_views.py": "a51dea7163206d261a143e85b5caf5513bd2de46a45df6d6b458d18aa43084ca",
+      "scripts/render_lerobot_alignment.py": "0fc1a9a62c0c2a4f9adcc26de67ee0a634f3f3b4cb70bb77d02e2c518ef5ff65",
+      "scripts/replay_plug_real_in_sim.py": "738870231f5289c1f046ef1708ca8b446c5d4a21faf157dd3bfbf5ca413ffe16",
+      "scripts/replay_recorded_scene.py": "92dee6585109901bab5050e8eb8fdc6371d0abc409304b81e478a88f166cbb3e",
+      "scripts/run_scene.py": "3a6cc5b90c944c32fac4e69b82bb02eff5dc724e5efb216cad1cbdf3c02fc203",
+      "scripts/sync_mujoco_home.py": "baad2d8a1d0199519614992e74a5d796b546dcd32a515cd5a8559ff15140346f",
+      "scripts/sync_mujoco_joint.py": "6a50bfee03c1a640074a6a6c679c0c21efb9e934949a622445c48d79ce0b7568",
+      "scripts/try_plug_pick_sim.py": "572dd25bb9ec964ffcf6a092874c0eb8eea3c085c7b285511882cb21615e0583",
+      "scripts/verify_cad_alignment.py": "c0a6199f72741f39fa09ae550eb2aaa0cb449d8eff126a547b24a921c34c075e",
+      "scripts/verify_clean_table.py": "d230e341ae90e37ec4cf38e813704c089eb6f6795224e2bc00f2b09d4d4fba1d",
+      "scripts/verify_connector.py": "6596345a4c7276238a21f235fdd372a97cf1ab8609dabd909aa8b26d3d77c71a",
+      "scripts/verify_gripper.py": "1db5f828502c8d438d834f59045db248affdf800987762b2fd2f129abdfa124e",
+      "scripts/verify_mixed_plug_dataset.py": "3171182069187927dea867f4c812c90d21eda39967daadbe77c70b105c9befb4",
+      "scripts/verify_mujoco_projection.py": "715a1e88b66f191436a11d19e7676c2f22795a81773fae6e2b9da4431ed8cc14",
+      "scripts/verify_rgb_projection.py": "46062831a69ed08c30b78ff456642de00401b3cbf040ddfde833cbe3380c566a",
+      "scripts/verify_simulation.py": "605c6f3b236b389b3d7c7d8684662bc2c2077d9df7c88534973c0168721e0e97",
+      "src/piper_sim/__init__.py": "fdbb0835a52a75d5992e87623305b450c8c26cff3afcb34ff4954967606e07f9",
+      "src/piper_sim/agilex.py": "d2c791e2b6c727d3055401def2164f90da1456144278a8c8060b58e04de3e87e",
+      "src/piper_sim/appearance.py": "2ac8d107e61dac7dc99158c5def8180273ed120c8756fdf735945c6553fe05fb",
+      "src/piper_sim/backends/__init__.py": "ad3a37c45b0d13e475839c66ba4cb06da35e5ef4317236b771c9b2b48b309123",
+      "src/piper_sim/backends/isaac.py": "69d4e924716b81ff445fd16fd1b3a389cfdf6a72dc19fca98d1a1df71f975162",
+      "src/piper_sim/backends/mock.py": "2bf84516dc36d6afb7b8baa17ca2f75eb2e243d02caf84669c568945f3beb000",
+      "src/piper_sim/backends/mujoco.py": "32e8326d506f972ed870421ff3a4493d5fae51ccfa109ca2f0cda4d7ed0cead9",
+      "src/piper_sim/backends/piper.py": "a62c5e98562c065b4249bb8dd1f49580b044ac27843eaf134eb3bd53bd62e7b8",
+      "src/piper_sim/backends/sdk_tracking.py": "2f43804a3f6c8e42e94f97426433c7d8f979b4ff91d3669808d61d5c9be60dca",
+      "src/piper_sim/camera_models.py": "30b933302c198f136f62b886582de5a38b9be59cc6703c01a24e99420bfa62cf",
+      "src/piper_sim/client.py": "751f9b0f3c5d135e1708d51a99ed34765f647aa94f4e535b95a4e7cd9c15c020",
+      "src/piper_sim/config.py": "0ea6861c61a0b79b72006598cac3f080a2b2e5e6a289ebfad433d1e729699a19",
+      "src/piper_sim/contracts.py": "a4be720987064cfdeb9dd46361602e831086b100ff5eae5aa2e1068f64d4340d",
+      "src/piper_sim/control.py": "10dd95891225419193608a4312b6ecfe6218a12f5c43dea354fdab217e8e860a",
+      "src/piper_sim/dataset.py": "5d9afbf916829f1be9ce0e003ac65cdd4b16dcceabc7a97b739e55f7c71ca391",
+      "src/piper_sim/home_zero_transport.py": "9d9e6dbe83e3ba5540d368d04e9db66a2bb8de2c52e9085aa8599b10bc894afe",
+      "src/piper_sim/joint_sync.py": "0b1c22324009da09ab5b3c6dc332560a5c86a3f8157c00d4bf9cf36e16de3d2c",
+      "src/piper_sim/kinematics.py": "903073b8aef1986e0e61e5effa789861d4daa95ce55592b539918409fe227870",
+      "src/piper_sim/lerobot_alignment.py": "ef98c7a2748d544d74f5365506c6e6a186b3ef3d0726d0260675ee59eb46c0eb",
+      "src/piper_sim/lerobot_export.py": "2f778a13e9f45ff372b74cbdad9d73e8043c61b3c340a38aaa38e2fe298385ae",
+      "src/piper_sim/mixed_recording.py": "d120ad042a1d536d349f549a715740be992ccd80c603be408cec3388a8899ad5",
+      "src/piper_sim/mujoco_asset.py": "b3b2dbf13d457941485aaa10f55c9244f9f6e1c8e267be4b59fd4fd884224bee",
+      "src/piper_sim/piper_connection.py": "cd93411301e994a483b02d746546cd0bae9e3cb488c32ca8fbb95054c9d3934f",
+      "src/piper_sim/recorded_env.py": "ff1949b59861192a75d1e9faa5dc344f9444956f2bc4599e0b4dfc95e77128a4",
+      "src/piper_sim/recording.py": "5212cdb33c0323d24fd96d14a919fd0465ad4dd6102969d754ec7b5a04c87c62",
+      "src/piper_sim/robot_asset.py": "d6b2c6c5ac623f3aabd917e5c7bf75f716a69887bf6852ead106097082f13045",
+      "src/piper_sim/safety.py": "18765b363fa0c4a96fa600155c27d6873e745b692a139fcdda3b69022e5f5100",
+      "src/piper_sim/scene.py": "dd9a09b9b3c63d19f75f37a7e8af31d4ae63e0e1122acc93a9d0cfb61e372b84",
+      "src/piper_sim/sensors.py": "49c560222a75f8390a1af34622018b670af6efc3afedb976922706205981133d",
+      "src/piper_sim/simulation.py": "b470f5fb228d0d0b46b3c7ab950afe1a690c3dd519f4fc72f564df25d874f154",
+      "src/piper_sim/sync_view.py": "4285efd7619a6058dd43d62aacac7d0d69a1bdc5f1f7b574550fd385afc6de10",
+      "src/piper_sim/task_archive.py": "c1ce7aa6fa6a01893a20787c8b95e79d90ec5690b029bc222fea01e7b8eed0c9",
+      "src/piper_sim/tasks/__init__.py": "8d4b56c26d49867f6d7b7a8ba2ee5dc7bc3727fc4acb7b51b7fb883180aa202b",
+      "src/piper_sim/tasks/clean_table.py": "ada6da330f6fce87ff277749e2aea9596cf6fee4476e758d09eb85446ed0461c",
+      "src/piper_sim/tasks/clean_table_isaac.py": "09459235f80313ce9740dcd0a167da3ed0d168dce44eea80106e0823be5e7b2d",
+      "src/piper_sim/tasks/clean_table_meshes.py": "28b6c09f44c607edb1c7ac11c72b7e16f9c6c2d5edc84c0b81d4ba7a15a6e4a6",
+      "src/piper_sim/tasks/clean_table_mujoco.py": "9a02bfc6836ab225213aa665666e3f03aa43a85c02dcf450526149cf483bbdba",
+      "src/piper_sim/tasks/connector.py": "323a0b6976ddf00c881c09bc6d2a33d3087d98a846714f3ffe4a41607e8ec281",
+      "src/piper_sim/tasks/connector_appearance.py": "efdc1d2e507f8c5677a0565089c05b9578076f0ef6f0b8d664f807b3638b9788",
+      "src/piper_sim/tasks/connector_details.py": "3263b1d404b48d776aa7333b7b421f14b51c28c88fe23ffcb5e8ade1c2143e50",
+      "src/piper_sim/tasks/connector_workstation.py": "805cdc4253c3c923105f4ea94f4f417fbdce6a6e007a8c6c88c62e70cca6c6c6",
+      "src/piper_sim/tasks/isaac.py": "0a3907617f02aec97a56017395b408b8b0a95b896974222aab927ba432328256",
+      "src/piper_sim/tasks/mujoco.py": "1c085f7679dfe98b26f72f349f1ad6542882f50c11d4c7b8d5871cb9cbdbc636",
+      "src/piper_sim/tasks/recorded_mujoco.py": "a15dd5abe005b25291547472571e341d348d3118ab87d0e1939124f01c9373b2",
+      "src/piper_sim/tasks/recorded_scenes.py": "f4273558f379f7c83510cfec94397515474ffd3a09318a93b252c7757b51b8f7",
+      "src/piper_sim/transforms.py": "80249208c036ac641cc956dee4273fdd6feccfa93d87f37eac955ba93f342523"
+    },
+    "adapter_sha256": "79ad083d207c52bc34e4c4043713ab15213dcdbf0c220a353523844230f2af04",
+    "dirty": true
+  },
+  "protocol_version": "ef3622d4328d6231e8b5770cac4a3bd6813bf50f3902a6fe3029c455b7db9f9f",
+  "memory_version": {
+    "memory/digital_twin_knowledge/DT001.json": "965971e6e2bf92fc42e8375e92cd4977db517d57e0760b89e63a5ccbaaf18a7f",
+    "memory/exploration_rules/ER001.json": "0052d997b5c6e5bdf323d34c2c0afcc7f125f3b110cad6ca80355afdcbfa0ca8",
+    "memory/exploration_rules/ER002.json": "9fd06c8e863e00fc8e4e5c6759f802f286823f8473fada0c3c8a77a796d730e0",
+    "memory/failure_patterns/FP001.json": "171f47cf91d5e4248516bfce18f82db198ff0e6b0542a151822dce3a22f8a1b0",
+    "memory/failure_patterns/FP002.json": "1c1dda9d243a3770e5c90567c171836dd7b4ae8f9a531abf269a9e92cbcaeba3",
+    "memory/negative_experiences/NE001.json": "9eec3cdb774eeb217a5ccea4bf34c52a20838c5f5c5096d304a9cc9e22e1ee21",
+    "memory/negative_experiences/NE002.json": "a273ddf1045a001ef950fd0c8e7705a73ba1994b390cff60517ac119bcb7d0a9",
+    "memory/negative_experiences/NE003.json": "651d83dc0d2d0713820041ee557bf88ceddd7db3331c6ec8261321edec99af7a",
+    "memory/negative_experiences/NE004.json": "47ba21c5d2d0c8d5d2d863817621f3368c209f045babb8b218726d2324edd6e4",
+    "memory/verified_skills/VS001.json": "6d6ffe0d4033b40f654ff6e25e201b9dff591edf81f225873ef7a1da56395ff9",
+    "memory/verified_skills/VS002.json": "6779cba1d620bdf49dadb4655e9aecb704a458bff46cb42b3316205ab533dfc5"
+  },
+  "initial_state": {
+    "target_index": 1,
+    "holder_x_shift_mm": 0.0,
+    "task_config_sha256": "0e4b745f609f93575bc540e601465a1f5d6ed09f93ca4e62df65a09e1b238c32"
+  },
+  "actions": [
+    {
+      "script": "try_plug_pick_sim.py",
+      "profile": "retained_final",
+      "grasp_height_m": 0.012,
+      "offset_mm": [
+        0.0,
+        0
+      ],
+      "speed_deg_s": 25,
+      "smooth_timing": true
+    }
+  ],
+  "expected_effects": [
+    "plug lifted, inserted, released and stably seated"
+  ],
+  "observed_effects": [
+    {
+      "profile": {
+        "timestep_s": 0.00026041666666666666,
+        "task_solref": [
+          0.0006,
+          1
+        ],
+        "task_condim": 6,
+        "right_arm_kp": [
+          4000.0,
+          4000.0,
+          4000.0,
+          4000.0,
+          4000.0,
+          4000.0
+        ],
+        "right_arm_kv": [
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0
+        ],
+        "right_gripper_velocity_kv": 25.0,
+        "yellow_pin_sliding_friction": 0.2,
+        "yellow_sliding_friction": 1.0,
+        "right_gripper_pad_sliding_friction": null,
+        "yellow_contact_override": {
+          "condim": 4,
+          "torsional_friction_m": 0.00013
+        },
+        "task_solimp_first3": [
+          0.99,
+          0.999,
+          0.0001
+        ],
+        "parameter_status": "numerical rigid-contact profile, not experimentally identified",
+        "robot_gravity_compensation": true
+      },
+      "grasp_lift_success": true,
+      "complete_pick_insert": false,
+      "error": "Unreachable pose [0.30084633 0.05132121 0.11628009]: residual [-9.64508004e-03 -8.77039027e-03 -1.46124264e-02 -8.44461837e-08\n -7.26240034e-02 -1.72030622e-02]",
+      "last_phase": "transport",
+      "max_penetration_m": 5.387763750587463e-05,
+      "frames": 383,
+      "hardware_commands": 0,
+      "initial_robot_pose": "explicit right-joint entry; physical approach included",
+      "initial_right_joint_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "speed_deg_s": 25.0,
+      "contact_joint_speed_deg_s": 12.0,
+      "gripper_target_speed_m_s": 0.0475,
+      "timing_profile": "quintic shorter-dwell simulation",
+      "deliberate_insertion_offset_mm": [
+        0.0,
+        0.0
+      ],
+      "grasp_tilt_deg": 0.0,
+      "grasp_height_m": 0.012,
+      "grasp_opening_m": 0.0,
+      "grasp_roll_deg": 30.0,
+      "align_corrections": 4,
+      "alignment_observations": "simulator privileged pose",
+      "preinsert_gap_m": 0.045,
+      "preinsert_tilt_deg": 5.0
+    }
+  ],
+  "failure_signature": "Unreachable pose [0.30084633 0.05132121 0.11628009]: residual [-9.64508004e-03 -8.77039027e-03 -1.46124264e-02 -8.44461837e-08\n -7.26240034e-02 -1.72030622e-02]",
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "hypotheses": [],
+  "experiments": [
+    {
+      "changed_variable": "insertion_offset_mm",
+      "value": 0.0,
+      "heldout_initial_shift_mm": 0.0
+    }
+  ],
+  "repair": {},
+  "result": "failure",
+  "task_success": false,
+  "tokens": null,
+  "llm_inference_seconds": null,
+  "execution_time": 22.766690522999852,
+  "robot_execution_seconds": 0,
+  "human_interventions": 0,
+  "lessons_learned": [
+    "Outcome applies only to this simulation configuration; real cause remains UNKNOWN."
+  ],
+  "next_improvement": "Compare matched initial states and independent holdout shifts before accepting repair",
+  "validation_status": "SIMULATION_FAILED",
+  "process_returncode": 0,
+  "simulation_seconds": 12.766666666666667,
+  "phase_observations": [
+    {
+      "phase": "approach",
+      "simulation_time": 7.099999999998678,
+      "plug_xyz_m": [
+        0.2937433709027406,
+        -0.3631124487562242,
+        0.05819999376232924
+      ],
+      "gripper_xyz_m": [
+        0.29374336573831317,
+        -0.36311244799641357,
+        0.13219997647620763
+      ],
+      "max_penetration_m": 8.387061327386203e-08
+    },
+    {
+      "phase": "descend",
+      "simulation_time": 9.299999999996677,
+      "plug_xyz_m": [
+        0.2937433717841629,
+        -0.3631124491465237,
+        0.058199993780987024
+      ],
+      "gripper_xyz_m": [
+        0.29374326388113275,
+        -0.3631124293250187,
+        0.0701999223388643
+      ],
+      "max_penetration_m": 8.387689959948873e-08
+    },
+    {
+      "phase": "grasp",
+      "simulation_time": 11.699999999994494,
+      "plug_xyz_m": [
+        0.29288459630098695,
+        -0.3618032716329967,
+        0.05853314495586222
+      ],
+      "gripper_xyz_m": [
+        0.29465994443269944,
+        -0.3634790062206609,
+        0.07076692514904986
+      ],
+      "max_penetration_m": 2.6515695955377923e-06
+    },
+    {
+      "phase": "lift",
+      "simulation_time": 12.766666666660191,
+      "plug_xyz_m": [
+        0.2910057792263867,
+        -0.3609351154328164,
+        0.11388070641351422
+      ],
+      "gripper_xyz_m": [
+        0.29373608692257247,
+        -0.36311120460410995,
+        0.1321859691267708
+      ],
+      "max_penetration_m": 1.201678918289561e-06
+    }
+  ],
+  "earliest_observed_anomaly": {
+    "phase": null,
+    "status": "UNKNOWN; final last_phase is not the first physical failure"
+  },
+  "evidence": [
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/final_state.npz",
+      "sha256": "a29160b7c0e8a1a6df389d2ae9dc9ad3b1be52e2d31f1be4de16134ec04f88f1"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/approach_213.png",
+      "sha256": "63757fed52d191a108a86e21b7b23783c39488e7af4d8b3e23485d08d21e8898"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/report.json",
+      "sha256": "d1406be9e7015a15985b466f89faf47aca2c4da572f1856becb51be4151a37d8"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/grasp_351_detail.png",
+      "sha256": "35dcb399000bf4f870a78ed893597efa4d03f92fa828f08c4487cc3d4e9060a4"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/descend_279_detail.png",
+      "sha256": "3b8101958f9ad9503f694976f75804ff00371b0baa54a4a119601786b2dec6e4"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/approach_213_detail.png",
+      "sha256": "457aa95556595cde49cd396505881203ba26130a0126d12b8922160555275c3f"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/failure.png",
+      "sha256": "a416b4dc1f871c1c376cd3868d63a7013389cae0f3a0354db1569c3e246726b7"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/lift_383_detail.png",
+      "sha256": "42afc934e54c78fe85428ed79966165ac82e97326e14ed415845f2a4409733d8"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/cameras.json",
+      "sha256": "5af2031a0a64825ca242d7799ae7489dd0f716d9e9df117798568d6393f41667"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/trajectory.jsonl",
+      "sha256": "8ffc23455d174e7f6e9154af71ec6d9281c667c5fd0c590b97072aec7d6b41f4"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/task.yaml",
+      "sha256": "0bfb8a3cea84d3f10349ac961d33221ce3ac427c303c9696a0141ec6a4093b51"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/descend_279.png",
+      "sha256": "335d58a05559e933f99f945c9efcea6ee52d2512ee7269260a1963a236473603"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/initial_state.npz",
+      "sha256": "db66cb8ebcb2c2fc6e2d8755c3e246a2f298aeb7c7de0eb59e1185d4c201b2f6"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/lift_383.png",
+      "sha256": "04fd88aa98a8e133adb63a618e18684cd2b8ea53ec1a63d185acf5fa4ab8ef89"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261111T093534Z_28c8c28d/grasp_351.png",
+      "sha256": "9cdf8712ff9e5ea325915513c37bdc820c82416a56a0bf310440dbb93e7e5d36"
+    }
+  ]
+}

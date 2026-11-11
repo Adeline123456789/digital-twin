@@ -59,3 +59,11 @@ New robot task-family success, physical force identification, real deployment an
 - The accepted retained-profile success was physically re-recorded in three views, 1012 frames per camera. Joint and object translation replay error = 0; maximum object rotation error about 1.26e-7 rad; all physics substeps passed. New videos are under the prescribed success videos root / 20261111T091439Z_8284da3f. The original three videos remain hash-identical.
 - Total structured report pairs: 57. Of 27 simulation attempts, 12 succeeded, 13 failed and 2 encountered infrastructure errors. This total combines different purposes/source versions and **is not a benchmark success rate**. Three recording validations are separate replays, not independent task samples.
 - Eleven tests pass, including actual active-version-file preservation under a regressing candidate and retrieval of prior ineffective repairs. New simulator scripts/src/config files remain unchanged from their initial audit hashes.
+
+## Unknown-target outcome and applicability correction
+
+The explicit UNKNOWN_TASK_MODE test requested the previously untested outlet 1. Two model-selected offsets (0, then +2 mm) both failed transport IK; the task did not reach insertion. This is a failed new-goal experiment, not a new verified skill, and does not prove outlet 1 is globally unreachable. Offset-only action space is insufficient evidence to resolve this case; future exploration should examine existing approach/orientation primitives under the same physics/safety checks.
+
+Prompt review also exposed an applicability problem: the first unknown-goal run included old outlet-3/original-profile failure history, and the model tried to transfer its insertion-stage interpretation to outlet 1. The entry now excludes seed history when source profile or requested target differs. It also excludes the specific 12°/s mismatch experience when observed execution is already 25°/s. The applicability regression test passes; no claim is made that this software fix alone makes outlet 1 physically successful. This error and its attempted repairs are preserved as NE005.
+
+After this additional new-goal test there are 60 structured report pairs and 29 simulation attempts: 12 successful, 15 failed, 2 infrastructure failures. These mixed-source counts are bookkeeping, not an aggregate benchmark rate.

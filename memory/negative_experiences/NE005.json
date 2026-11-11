@@ -1,0 +1,19 @@
+{
+  "id": "NE005",
+  "content": "On the retained final scene, target outlet 1 remained unreachable during transport after both tested target-X offsets; offset-only exploration exhausted its budget and cannot be promoted as a new skill.",
+  "applicability": "Retained final profile, target_index=1, nominal holder; exact tested offsets in source episode",
+  "source_episodes": [
+    "20261111T093456Z_e777f905"
+  ],
+  "validation_status": "SIMULATION_FAILURE_OBSERVED",
+  "success_count": 0,
+  "failure_count": 2,
+  "limitations": [
+    "Does not prove outlet 1 is globally unreachable",
+    "Approach orientation/height or new primitives were not explored in this bounded test"
+  ],
+  "version": 1,
+  "signatures": [
+    "unknown_target_transport_ik"
+  ]
+}

@@ -21,7 +21,7 @@ class RetainedProfileTests(unittest.TestCase):
         import learn
         with tempfile.TemporaryDirectory() as td:
             root=Path(td);sim=root/'sim';(sim/'configs/tasks').mkdir(parents=True)
-            (sim/'configs/tasks/real_connector_final.yaml').write_text('holder_xy_m: [0.3, -0.3]\n')
+            (sim/'configs/tasks/real_connector_final.yaml').write_text('holder_xy_m: [0.3, -0.3]\ntarget_index: 3\n')
             (root/'protocol').mkdir();(root/'protocol/robot_problem_solving.md').write_text('test')
             calls=[]
             def fake_run(cmd,**kw):
@@ -40,3 +40,16 @@ class FeedbackMemoryTests(unittest.TestCase):
         memories=failure_memory([{'last_phase':'transport','error':'Unreachable pose'}])
         self.assertTrue(any(m['id']=='NE004' for m in memories))
         self.assertLessEqual(len(memories),5)
+
+class ApplicabilityTests(unittest.TestCase):
+    def test_wrong_timing_experience_excluded_when_actual_speed_matches_documentation(self):
+        from learn import failure_memory
+        memories=failure_memory([{'last_phase':'transport','error':'Unreachable pose','speed_deg_s':25}])
+        self.assertFalse(any(m['id']=='NE004' for m in memories))
+
+class SeedScopeTests(unittest.TestCase):
+    def test_seed_matches_both_profile_and_target(self):
+        from agent_loop import compatible_seed_history
+        self.assertTrue(compatible_seed_history('original',3))
+        self.assertFalse(compatible_seed_history('retained_final',3))
+        self.assertFalse(compatible_seed_history('original',1))

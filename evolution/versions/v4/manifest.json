@@ -9,6 +9,7 @@
   "rollback": "Use unchanged original profile with original PIPER_SIM_ROOT; no simulator source was changed",
   "active_default_changed": false,
   "evaluated_timing_adapter_sha256": "19dd7b9054bae7b274fa55857380b1bc19c7b03baeff626768d4640a1f7f1fc2",
-  "current_adapter_sha256": "b97246bcb4f9ec0ef501bb614f34fe01b5a0801647b3c0bce7f92daa2a0d8db8",
-  "post_validation_change": "Bounded negative-memory feedback lookup added; unit-tested, not credited with new physical success"
+  "current_adapter_sha256": "0a2ef31970a36a920375910f7968a113f2f095c4433c0b062956e866664e9303",
+  "post_validation_change": "Scoped prior history by profile/target and excluded contradicted timing experiences; 13 tests pass, unknown-goal physical outcome remains failure",
+  "current_agent_entry_sha256": "32ac85623b8c5d5a3c7a3d955b6aa794fd24bd05ab7791f82317c862a77382bd"
 }
