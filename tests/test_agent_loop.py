@@ -33,3 +33,10 @@ class RetainedProfileTests(unittest.TestCase):
             self.assertEqual(command[command.index('--speed')+1],'25')
             self.assertEqual(command[command.index('--grasp-height')+1],'.012')
             self.assertEqual(command[command.index('--align-corrections')+1],'4')
+
+class FeedbackMemoryTests(unittest.TestCase):
+    def test_transport_failure_retrieves_previous_ineffective_repair(self):
+        from learn import failure_memory
+        memories=failure_memory([{'last_phase':'transport','error':'Unreachable pose'}])
+        self.assertTrue(any(m['id']=='NE004' for m in memories))
+        self.assertLessEqual(len(memories),5)

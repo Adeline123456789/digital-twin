@@ -1,0 +1,19 @@
+{
+  "id": "FP002",
+  "content": "Historical real joint feedback may violate the simulator initialization limits, preventing faithful replay before physics starts.",
+  "applicability": "Smooth real episode first feedback: J2=-0.467 deg, J3=+0.352 deg; original retained simulator model",
+  "source_episodes": [
+    "20261111T092440Z_a6947d13"
+  ],
+  "validation_status": "VERIFIED_INFRASTRUCTURE_MISMATCH",
+  "success_count": 0,
+  "failure_count": 1,
+  "limitations": [
+    "Cause of reference mismatch UNKNOWN",
+    "Not proof of the physical insertion cause"
+  ],
+  "version": 1,
+  "signatures": [
+    "real_feedback_outside_model_limits"
+  ]
+}

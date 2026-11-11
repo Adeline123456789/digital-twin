@@ -51,3 +51,11 @@ The adapter now supports the retained profile and model selection through enviro
 No real movement was authorized or attempted. No new physical calibration was accepted: independent real pose validation is missing and the existing failure status explicitly reports unmodelled flip/timestep sensitivity. The permitted workflow branch is recorded rejection/deferment, not invented success. There is no permanent unattended hardware/self-modification service. Explicit task batches can use the new model-to-existing-simulator entry.
 
 New robot task-family success, physical force identification, real deployment and total cost reduction remain unproven. Current verified progress is a bounded failure/feedback/repair loop, a reusable simulation skill, better observation evidence, and an independently checked adapter correction.
+
+## Closing evidence
+
+- Three selected real command timelines were attempted in physics. Residual and grip-hold episodes replayed to failure. Smooth initialization was rejected because measured J2 −0.467° and J3 +0.352° exceed this model's initial-state bounds; no clipping/limit relaxation was performed.
+- Matched right-joint RMSE spans about 0.101–0.429°; gripper RMSE was 1.857 mm (residual) and 6.036 mm (grip-hold). These values compare actual recorded feedback with interpolated simulator trajectories, not measured contact forces. Object/independent EE ground-truth errors remain unavailable.
+- The accepted retained-profile success was physically re-recorded in three views, 1012 frames per camera. Joint and object translation replay error = 0; maximum object rotation error about 1.26e-7 rad; all physics substeps passed. New videos are under the prescribed success videos root / 20261111T091439Z_8284da3f. The original three videos remain hash-identical.
+- Total structured report pairs: 57. Of 27 simulation attempts, 12 succeeded, 13 failed and 2 encountered infrastructure errors. This total combines different purposes/source versions and **is not a benchmark success rate**. Three recording validations are separate replays, not independent task samples.
+- Eleven tests pass, including actual active-version-file preservation under a regressing candidate and retrieval of prior ineffective repairs. New simulator scripts/src/config files remain unchanged from their initial audit hashes.

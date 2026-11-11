@@ -7,5 +7,8 @@
   "evaluation": "20261111T092113Z_42c8e6ae",
   "activation": "PIPER_SIM_PROFILE=retained_final and explicit retained PIPER_SIM_ROOT",
   "rollback": "Use unchanged original profile with original PIPER_SIM_ROOT; no simulator source was changed",
-  "active_default_changed": false
+  "active_default_changed": false,
+  "evaluated_timing_adapter_sha256": "19dd7b9054bae7b274fa55857380b1bc19c7b03baeff626768d4640a1f7f1fc2",
+  "current_adapter_sha256": "b97246bcb4f9ec0ef501bb614f34fe01b5a0801647b3c0bce7f92daa2a0d8db8",
+  "post_validation_change": "Bounded negative-memory feedback lookup added; unit-tested, not credited with new physical success"
 }

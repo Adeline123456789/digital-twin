@@ -35,3 +35,19 @@ class FailureAndRollbackTests(unittest.TestCase):
         from evolve import accepts
         self.assertFalse(accepts({'v1':1,'v2':.5},[{'v2':'RETRY','expected':'UNKNOWN'}]))
         self.assertFalse(accepts({'v1':.5,'v2':.8},[{'v2':'RETRY','expected':'UNKNOWN'}]))
+
+class ActualRollbackGateTests(unittest.TestCase):
+    def test_regression_preserves_active_version_file(self):
+        import evolve
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'protocol').mkdir();(root/'protocol/robot_problem_solving.md').write_text('test')
+            (root/'evolution').mkdir();prior={'version':'v2','previous':'v1','evidence':'existing'}
+            (root/'evolution/active.json').write_text(json.dumps(prior))
+            expected={(s,r):w for s,r,w in evolve.CASES}
+            def fake_decide(s,r,v):return expected[s,r] if v=='v1' else 'RETRY'
+            (root/'scripts').mkdir();(root/'scripts/learn.py').write_text('test snapshot')
+            with patch.object(learn,'ROOT',root),patch.object(evolve,'ROOT',root),patch.object(evolve,'decide',side_effect=fake_decide):evolve.main()
+            self.assertEqual(json.loads((root/'evolution/active.json').read_text()),prior)
+            report=json.loads(next((root/'experiments/evaluation').glob('*/result.json')).read_text())
+            self.assertEqual(report['validation_status'],'ROLLED_BACK')

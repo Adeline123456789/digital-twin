@@ -7,7 +7,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from learn import DATA,ROOT, record, finish, simulate, retrieve, digest, save
+from learn import DATA,ROOT, record, finish, simulate, retrieve, digest, save, failure_memory
 from model_compare import ask
 
 
@@ -74,7 +74,7 @@ def run(arm, shift, publish=True, hidden_bias=2.0):
             if trial['task_success'] or trial['result']=='infrastructure_error':break
             seen.add(fingerprint)
             if step==0 and arm=='D':
-                feedback={'actual_execution':{k:v for k,v in trials[-1].items() if k not in ('effective_offset_mm','observed_effects')},'precontact_observation':precontact_observation(trial['experiment_id']),'failed_offsets':sorted(x[1] for x in seen),'instruction':'Use actual evidence to update hypotheses. Do not repeat the same failed offset without new evidence.'}
+                feedback={'actual_execution':{k:v for k,v in trials[-1].items() if k not in ('effective_offset_mm','observed_effects')},'precontact_observation':precontact_observation(trial['experiment_id']),'relevant_prior_failures':failure_memory(trial['observed_effects']),'failed_offsets':sorted(x[1] for x in seen),'instruction':'Use actual evidence to update hypotheses. Do not repeat the same failed offset without new evidence.'}
                 call=ask(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback),local);calls.append(call)
             # A/B/C remain fixed-policy after planning; retries consume the same execution ceiling.
         r.update(result='success' if any(t['task_success'] for t in trials) else 'failure',

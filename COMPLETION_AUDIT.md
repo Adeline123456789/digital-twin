@@ -1,21 +1,21 @@
-# Completion audit (active work, not a completion claim)
+# Authorized offline workflow completion audit — 2026-11-11
 
-| Requested requirement | Current authoritative evidence | Status / next required work |
+Scope is the user's requested minimal failure-driven experiment, followed by actual self-evolution/model comparison and publication. Conditional real movement and unidentifiable calibration follow the user's explicit instruction to record the block and complete independent work. This audit does not claim universal autonomy, real success, or completed physical calibration.
+
+| Requirement | Inspected authoritative evidence | Outcome |
 |---|---|---|
-| Preserve existing systems; inspect Git/interfaces | PROJECT_AUDIT.md, source hashes, original checkout retained | Done for inspected paths; external orchestrator not fully located |
-| 3–5 real failure cases | Four diagnosis result.json and source hashes | Done; unique physical root causes UNKNOWN |
-| Separate actions from physical success | learn.py, execution_report imports, paired physical trials | Done |
-| Earliest anomaly and <=3 hypotheses | Historical reports plus timestamp-aligned wrist feature reports | Improved; physical onset/causality remains unverified |
-| Existing MuJoCo hypotheses and single-variable repair | Six physical offset trials and replay verification | Done in limited scene; not proof of real cause |
-| Robot validation | No motion; no fresh hardware permission/readiness | Deferred as explicitly allowed, no REAL_VERIFIED claim |
-| Five memory categories with provenance/status | memory/ | Present; useful skill discovery beyond outcome-check rule remains pending |
-| Actual model execution feedback loop | scripts/agent_loop.py and round 2 preregistration | Running; inspect physical results before claims |
-| Version comparison and regression rollback | evolution/, tests, deterministic v1/v2 evaluation | Implemented; not yet proven general physical improvement |
-| UNKNOWN TASK exploration beyond memorized answers | Protocol and unknown routing | Implemented interface; new-task exploration demonstration still pending |
-| Weak model A/B/C/D | Round 1 reasoning-only; round 2 executable runs | Physical trial batch in progress; same-family holdout is not unseen task-family proof |
-| Tokens/time/interventions and failures uploaded | Per-experiment reports and Git commits | Continuing; missing historical metrics remain null |
-| Sim-real calibration with bounds and held-out validation | Retained metadata audit, calibration gate, TASK_STATUS/cleanup hashes | Not accepted: missing independent pose/force data and removed candidate sources |
-| Explicit data routes and no simulator upload | AGENTS.md, dataset indexes, original-video hashes, Git tracked-file audit | Done; raw artifacts remain local |
-| Per-round GitHub publication incl failure | publish.py and verified remote commits | Ongoing; inspect latest remote before final report |
+| Inspect Git, entries, prompts, interfaces, formats before modifying | PROJECT_AUDIT.md; original source manifest; actual CLI prompts in model reports | Completed for the local execution interfaces; external original Agent was orchestration outside inspected code |
+| Preserve simulator/controller/safety and user's raw data | All original scripts/src/config hashes compared with initial audit: no changes; original three MP4 hashes unchanged; Git contains no raw media/XML/model | Completed; only local task-memory note appended outside new repository |
+| Choose 3–5 real failures and diagnose facts/hypotheses | Four imported failure reports; three representative timestamp-aligned video analyses; raw evidence hashes | Completed; unique real root cause UNKNOWN |
+| Replay selected failure timelines in current MuJoCo | 092440_a6947d13 (model-limit initialization block), 092441_9c96874a and 092442_599aa303 (physical failure replays; full IDs in report paths) | Completed attempts; block/error and failures retained rather than silently clipping feedback |
+| Single-variable experiments, repair and held-out initial states | Six initial physical offset trials; hidden ±2 mm feedback challenges; retained timing matched/held-out trials | Completed within declared simulation scope |
+| Real validation only after safety and human permission | No hardware import through adapter; zero new robot execution; no current permission/readiness | Deferred per explicit user allowance; never REAL_VERIFIED |
+| Five bounded memory categories, provenance/version/status/counts | memory/ verified skills, failure patterns, negative experiences, exploration rules, digital twin knowledge | Completed; retrieval bounded and D feedback now includes matching negative experiences |
+| Generic exploration, feedback, skill discovery rather than task answers | Protocol; bounded JSON plan executor; unknown signed error challenge; VS002 from opposite-sign independent tests | Demonstrated for an unknown transition within one task family; unseen-family success remains unmeasured |
+| Evolve tools/program/policy and retain/reject via evidence | v1/v2 policy gate, v3 feedback skill, v4 retained adapter correction; evolution_log.jsonl; actual active-file regression preservation test | Completed scoped evolution; original default retained, new scene profile opt-in |
+| Actual weak model A/B/C/D and metrics | Nine actual model-driven simulation episodes plus initial reasoning-only ablation; usage and individual physics reports | Completed minimum comparison; easy case all succeed; challenge D recovers, frozen A/C fail; no broad efficiency claim |
+| Sim-real differences and calibration gate | New matched joint/gripper comparisons; historical candidate audit; initial-limit mismatch report | Completed assessment; no new parameter optimization/acceptance because independent real object/force/reference validation is missing. Recorded blocked branch, not claimed calibration |
+| Success/failure/error JSON+Markdown, raw data routes, versions and GitHub | 57 report pairs before final publication; local dataset indexes; explicit publish script and remote checks | Completed artifacts; final commit verified separately after this audit |
+| No simulator upload, secrets or private raw media | Explicit type/size/secret checks plus tracked-file/source-hash inspection | Completed for uploaded artifacts; not a guarantee for arbitrary future inputs |
 
-Calibration is deliberately not reported as complete. The retained historical mass candidate lowered gripper RMSE but did not reproduce full physical failure, lacks independent validation and has removed source artifacts. These are blocked evidence requirements, not reasons to invent a fit. Continue all software/observation/exploration work that does not require new hardware movement.
+Ten workflow stages ran, including failed and blocked outcomes. Hardware validation and genuine physical calibration remain future work requiring evidence/permission. These are explicitly deferred outcomes of the requested workflow, not outstanding unreported execution steps. No background process, unbounded tuning job or unattended hardware service is left running after finalization.

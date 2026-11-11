@@ -38,3 +38,12 @@ PIPER_SIM_PROFILE=retained_final \
 ```
 
 This profile preserves the documented grasp roll/opening/alignment settings and 25°/s free-space speed; the existing script still caps contact phases at 12°/s. Set `ROBOT_LLM_MODEL` to another available Codex model to use the same planning schema, protocol and memory. No model receives shell/CAN/XML control through this adapter. Physics profiles are not auto-calibrated or silently promoted.
+
+For this workstation, initialize the paths used above explicitly:
+
+```sh
+export PIPER_DATA_ROOT=/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug
+export PIPER_SIM_ROOT=/media/midea/F496AC8096AC4548/piper_simulation
+```
+
+See ROUND2_REPORT.md for executed model-feedback results and COMPLETION_AUDIT.md for what was completed versus explicitly deferred. Raw-force and real-success claims are not inferred from simulator or motor telemetry.

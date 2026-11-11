@@ -65,6 +65,11 @@ def retrieve(signature, limit=5):
         if signature in item.get('signatures',[]): matches.append(item)
     return matches[:limit]
 
+def failure_memory(observed_effects):
+    reports=[x for x in observed_effects if isinstance(x,dict)]
+    signature='transport_ik_failure' if any(x.get('last_phase')=='transport' and 'Unreachable' in str(x.get('error')) for x in reports) else 'plug_not_seated'
+    return retrieve(signature)
+
 def decide(signature, repair, version_name=None):
     if version_name is None:
         active=ROOT/'evolution/active.json'
