@@ -30,13 +30,17 @@ def version():
                 source_sha256={str(p.relative_to(SIM)):digest(p) for p in sorted(files)},
                 adapter_sha256=digest(__file__), dirty=True)
 
+def safe_version():
+    try: return version()
+    except Exception as exc: return {'status':'UNKNOWN','error_type':type(exc).__name__}
+
 def record(kind, task, environment):
     ident=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'_'+uuid.uuid4().hex[:8]
     out=ROOT/'experiments'/kind/ident
     out.mkdir(parents=True, exist_ok=False)
     return out,dict(experiment_id=ident,timestamp=datetime.now(timezone.utc).isoformat(),
         model='deterministic adapter; no LLM inference',task=task,environment=environment,
-        program_version=version(),protocol_version=digest(ROOT/'protocol/robot_problem_solving.md'),
+        program_version=safe_version(),protocol_version=digest(ROOT/'protocol/robot_problem_solving.md'),
         memory_version={str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'memory').rglob('*.json')},
         initial_state={},actions=[],expected_effects=['plug lifted, inserted, released and stably seated'],
         observed_effects=[],failure_signature=None,root_cause='UNKNOWN',root_cause_status='unknown',
@@ -60,19 +64,30 @@ def retrieve(signature, limit=5):
         if signature in item.get('signatures',[]): matches.append(item)
     return matches[:limit]
 
-def decide(signature, repair, version_name='v2'):
+def decide(signature, repair, version_name=None):
+    if version_name is None:
+        active=ROOT/'evolution/active.json'
+        version_name=json.loads(active.read_text())['version'] if active.exists() else 'v1'
     if version_name=='v1': return 'ALLOW_SIMULATION'
     for item in retrieve(signature):
         if repair in item.get('ineffective_repairs',[]): return 'REJECT_REPEAT_REQUIRE_NEW_EVIDENCE'
     return 'UNKNOWN_TASK_MODE' if not retrieve(signature) else 'ALLOW_SIMULATION'
 
-def simulate(kind, offset, shift, label):
+def simulate(kind, offset, shift, label, signature=None, repair=None):
     out,r=record(kind,label,'simulation')
-    raw=DATA/'self_evolution'/r['experiment_id'];raw.parent.mkdir(parents=True, exist_ok=True)
+    raw=DATA/'self_evolution'/r['experiment_id']
     start=time.monotonic()
     try:
+        if signature:
+            decision=decide(signature, repair or '')
+            r['repair']={'signature':signature,'proposal':repair,'decision':decision}
+            if decision!='ALLOW_SIMULATION':
+                r.update(result='failure',task_success=None,failure_signature=signature,
+                    validation_status='REPAIR_REJECTED',next_improvement=decision)
+                return out,r
         # YAML is already installed in the existing MuJoCo environment.
         import yaml
+        raw.parent.mkdir(parents=True, exist_ok=True)
         cfg=yaml.safe_load((SIM/'configs/tasks/real_connector_calibrated.yaml').read_text())
         cfg['holder_xy_m'][0]+=shift/1000
         local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
@@ -86,7 +101,7 @@ def simulate(kind, offset, shift, label):
         r['experiments']=[{'changed_variable':'insertion_offset_mm','value':offset,'heldout_initial_shift_mm':shift}]
         env=dict(os.environ,MUJOCO_GL='egl')
         with (local/'stdout.log').open('w') as log:
-            p=subprocess.run(cmd,cwd=SIM,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=240)
+            p=subprocess.run(cmd,cwd=SIM,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=900)
         r['process_returncode']=p.returncode
         if not (raw/'report.json').exists(): raise RuntimeError('Simulation produced no report; inspect local stdout')
         report=json.loads((raw/'report.json').read_text())
@@ -99,6 +114,12 @@ def simulate(kind, offset, shift, label):
         r['lessons_learned']=['Outcome applies only to this simulation configuration; real cause remains UNKNOWN.']
         r['next_improvement']='Compare matched initial states and independent holdout shifts before accepting repair'
         # Publish only sanitized numerical reports; raw images and trajectories stay outside Git.
+        trajectory=[json.loads(line) for line in (raw/'trajectory.jsonl').read_text().splitlines()]
+        phase_ends={row['phase']:row for row in trajectory}
+        r['phase_observations']=[{'phase':phase,'simulation_time':row['time'],'plug_xyz_m':row['plug'],
+                                'gripper_xyz_m':row['grip'],'max_penetration_m':row['penetration']}
+                               for phase,row in phase_ends.items()]
+        r['earliest_observed_anomaly']={'phase':None,'status':'UNKNOWN; final last_phase is not the first physical failure'}
         r['evidence']=[{'dataset_relative_path':str(f.relative_to(DATA)), 'sha256':digest(f)}
                        for f in raw.iterdir() if f.is_file()]
     except Exception as e:
@@ -113,6 +134,6 @@ if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--kind',default='improvement',choices=['baseline','improvement','evaluation'])
     p.add_argument('--offset-mm',type=float,default=0);p.add_argument('--holder-shift-mm',type=float,default=0)
     p.add_argument('--label',default='yellow plug insertion')
-    p.add_argument('--retrieve');p.add_argument('--repair',default='');a=p.parse_args()
+    p.add_argument('--signature');p.add_argument('--retrieve');p.add_argument('--repair',default='');a=p.parse_args()
     if a.retrieve: print(json.dumps(dict(memories=retrieve(a.retrieve),decision=decide(a.retrieve,a.repair)),ensure_ascii=False,indent=2))
-    else: simulate(a.kind,a.offset_mm,a.holder_shift_mm,a.label)
+    else: simulate(a.kind,a.offset_mm,a.holder_shift_mm,a.label,a.signature,a.repair)

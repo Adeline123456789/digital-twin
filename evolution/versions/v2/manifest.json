@@ -1,0 +1,9 @@
+{
+  "version": "v2",
+  "status": "v2",
+  "source_sha256": "8d892a8b385e89cbc7229c8f9ce21f3b060c235a5412be952756ae4a1759bbd1",
+  "evaluation": "20261111T083957Z_05aa3d3d",
+  "rollback": "Restore evolution/active.json to previous version; existing hardware code untouched",
+  "validation": "five unit tests passed including failure persistence and regression rejection",
+  "limitations": "Version snapshot is reference source; executable entry is scripts/learn.py in repository root"
+}

@@ -19,3 +19,19 @@ class LearningTests(unittest.TestCase):
             with self.assertRaises(Exception): learn.version()
         finally: learn.SIM=original
 if __name__=='__main__':unittest.main()
+
+class FailureAndRollbackTests(unittest.TestCase):
+    def test_error_report_survives_missing_runtime(self):
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'protocol').mkdir();(root/'protocol/robot_problem_solving.md').write_text('test')
+            with patch.object(learn,'ROOT',root),patch.object(learn,'SIM',root/'missing'),patch.object(learn,'DATA',root/'data'):
+                out,r=learn.simulate('evaluation',0,0,'missing simulator')
+                self.assertEqual(r['result'],'infrastructure_error')
+                self.assertTrue((out/'result.json').exists())
+                self.assertTrue((out/'REPORT.md').exists())
+                self.assertIsNone(r['task_success'])
+    def test_regression_not_accepted(self):
+        from evolve import accepts
+        self.assertFalse(accepts({'v1':1,'v2':.5},[{'v2':'RETRY','expected':'UNKNOWN'}]))
+        self.assertFalse(accepts({'v1':.5,'v2':.8},[{'v2':'RETRY','expected':'UNKNOWN'}]))
