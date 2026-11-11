@@ -1,0 +1,23 @@
+{
+  "id": "NE003",
+  "content": "Do not promote a contact/mass candidate solely because real05 gripper feedback RMSE improves.",
+  "applicability": "Historical real05 contact/mass candidate; other measured data may change conclusion",
+  "source_episodes": [
+    "20261111_sim_real05_failure_replay_000001",
+    "20261111_sim_real05_mass_fit_failure_000001"
+  ],
+  "validation_status": "HISTORICAL_CANDIDATE_REJECTED",
+  "success_count": 0,
+  "failure_count": 2,
+  "limitations": [
+    "Source artifacts removed; metrics taken from preserved metadata",
+    "No measured six-axis force or independent object-trajectory verification"
+  ],
+  "version": 1,
+  "signatures": [
+    "sim_real_contact_mismatch"
+  ],
+  "ineffective_repairs": [
+    "accept_single_episode_feedback_fit"
+  ]
+}
