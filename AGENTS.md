@@ -9,3 +9,7 @@
 - Expert successful real data: `/media/midea/F496AC8096AC4548/act_td3/connector_plugin/`. It comes from other arms of the same model, with different camera angles and arm spacing. Do not directly replay those joint poses or treat its extrinsics as this robot's calibration. Keep provenance separate.
 - This robot has NO six-axis force/torque sensor. Never invent force/torque observations. Gripper motor feedback and simulated contact quantities are not measured six-axis force.
 - Real movement requires fresh explicit permission, validated simulation and existing safety checks. Do not change or bypass hardware safety rules.
+
+## Dataset format requirement (user correction)
+
+Formal episodes in `complete_sim/failed/` must match `20261111_sim_real05_failure_replay_000001/`: `videos/` with the three camera MP4s; `proprio_stats/` with `proprio_stats.h5`, `metadata.json`, `privileged.jsonl`, `model.xml`, `initial_state.npz`, and `recorded_commands.csv`; plus `outcome.json` and verification results. Validate frame counts, schema/units and replay consistency before publishing an episode. A folder containing only `source_trial/` is intermediate evidence, never a dataset episode. Keep unconverted intermediate artifacts outside formal dataset roots. Do not invent videos, force data, or successful results to fill fields.

@@ -1,34 +1,37 @@
 {
   "experiment_id": "20261111T083720Z_f64309a8",
-  "success": false,
-  "source_trial": "complete_sim/failed/20261111T083720Z_f64309a8/source_trial",
-  "videos_status": "NOT_RECORDED_BY_HEADLESS_TRIAL",
-  "force_sensor_present": false,
-  "files": {
-    "insert_detail.png": "ef58688af8af2e21ff0d1a8d7b43ff0a268447e8422472dbe6441432e49221af",
-    "final_state.npz": "aa1149ab7860975939a54f166e087bb262abe26e9d4710833f133aa786d2e729",
-    "grasp.png": "71b72d53e585e9e84775c6d574c82c96afd1ab94253ebcf2fc4b2f9da51980db",
-    "transport_detail.png": "9a3cec43563ee32c90a762c48377f456d58d25d6995bfac0a686be8841052311",
-    "fold_detail.png": "dae9d2bccb842c564b8fff9df3fe41e5d604dd41fb7487f7c6c905e3e23e847b",
-    "descend.png": "6ddeff62ee0f0c6cfbb2b20d0a0b06d6f7116c8b638feff2b9ae10640c242f1c",
-    "report.json": "1748a46199240bca718ec790adfeae2d28c4e1ac9743627a58966ffc2bd2191b",
-    "transport.png": "aa873b627e76fd7eabb3e54e0567ea8fda009d3cf4fc628e433b10f471a58c14",
-    "retreat_detail.png": "3de796dbbaae9096dfe88e3601f8b25c32940a82a01b153e413edddecdc66e42",
-    "failure.png": "67e7eacb2aa7b367635c6259084d4fa2fdc75df7fcc62e3844bb53056d508992",
-    "cameras.json": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
-    "lift.png": "228a70993881833ec818eb7003c30664d23b505a9f0af0252f0784e5e2b2cec6",
-    "trajectory.jsonl": "cb17e4ccbc7ce7714b1243523a1d6775712749373a0ef3ffc8b4eef4411d331a",
-    "align.png": "d763d911d36b2988a38ca5824e43bb8842c9dc285f2c88fb7a383223e45f450c",
-    "task.yaml": "ef53d304ee90570c908cbb0256f3a9105ff0345f4c5246f30081f03c86a1357e",
-    "descend_detail.png": "f52988e47d01a7b1eb25347a11482c5625e182a4a66cc8e2122d72335fbdd086",
-    "release.png": "d44b1022fcfc40240fff3346aaaa8de686bc27037a4c5e888bee526360593b03",
-    "align_detail.png": "7ea79b00db65fb874ca537e3aff4db851f0c4fd898de3dc83f59c56e8c0aa7fe",
-    "insert.png": "5a8077edc2345200e903a2bc2537dceb20eb3cbd151bb8303fe80d7808891784",
-    "initial_state.npz": "9dc36383b0e9c20d390e4db66a5aa558bdfa5ed1fed892af8f4761e90a7f7f2c",
-    "fold.png": "3c35c829db9424d4db64902bc2543ca15c2769c7f164ad3c85500b768f34e933",
-    "release_detail.png": "b96e8cd344aca8c37ec8c7d3bd23a8884e5ffb224daf89fbff877ab568227fbc",
-    "grasp_detail.png": "87230ccdf735a256e0d5428bccc4ed347314bd61091ccb244ca5f19317aa0c5b",
-    "lift_detail.png": "5d4f00dff121c6388ca253b975ca4c8299b53929a942fbce9f5236e40d4875b9",
-    "retreat.png": "6452ba5a67b08703600aeaca06112489ba2fc1d3e7e2c76b63fc19c52854ae7c"
+  "archive_status": "converted",
+  "dataset_relative_path": "complete_sim/failed/20261111T083720Z_f64309a8",
+  "verification": {
+    "video_frames": {
+      "cam_external_rgb.mp4": 1130,
+      "cam_left_wrist_rgb.mp4": 1130,
+      "cam_right_wrist_rgb.mp4": 1130
+    },
+    "quality": {
+      "complete_pick_insert": false,
+      "all_substeps_valid": true,
+      "max_penetration_m": 0.0001922329609428605,
+      "deterministic_replay_max_state_error": 0.0,
+      "phase_names": [
+        "settle",
+        "descend",
+        "grasp",
+        "lift",
+        "transport",
+        "insert",
+        "release",
+        "approach",
+        "retreat",
+        "align",
+        "fold",
+        "prepare_gripper",
+        "abort_retreat",
+        "final_hold"
+      ]
+    },
+    "duration_s": 37.666666666666664,
+    "object_replay_max_error_m": 0.0,
+    "status": "Format verified; failed physics samples remain failures, never successful training data"
   }
 }

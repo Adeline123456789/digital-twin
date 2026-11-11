@@ -1,14 +1,7 @@
 {
   "experiment_id": "20261111T092441Z_9c96874a",
-  "success": false,
-  "source_trial": "complete_sim/failed/20261111T092441Z_9c96874a/source_trial",
-  "videos_status": "NOT_RECORDED_BY_HEADLESS_TRIAL",
-  "force_sensor_present": false,
-  "files": {
-    "report.json": "a9fce4992f66b5776def83e60af30d8c89350a0d5bb9c3fbd857c5308d499afe",
-    "final.png": "678e0ef07ec92f5ec8bf8abcfe89ff885c1a07df2540e39250e5c131fafa20a1",
-    "trajectory.jsonl": "34b8bcae761a3a7da0d9b8c0b8991fd2764145eeb691206825b1799dfaef3556",
-    "task.yaml": "d0e0693eb799b1a930ad76fc274b55312afc995195b35eac81d1927dfb64f9c1",
-    "initial_state.npz": "87d51258fd2ef2edf043066f29156fbfed3ccb7658c42c8fad8f2db81cc261b2"
-  }
+  "archive_status": "deleted_by_user_request",
+  "dataset_relative_path": null,
+  "deletion_report": "experiments/format_migration/20261111T175233",
+  "raw_trial_evidence_retained_separately": true
 }

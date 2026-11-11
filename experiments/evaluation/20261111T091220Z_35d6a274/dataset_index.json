@@ -1,24 +1,7 @@
 {
   "experiment_id": "20261111T091220Z_35d6a274",
-  "success": false,
-  "source_trial": "complete_sim/failed/20261111T091220Z_35d6a274/source_trial",
-  "videos_status": "NOT_RECORDED_BY_HEADLESS_TRIAL",
-  "force_sensor_present": false,
-  "files": {
-    "descend_509_detail.png": "022f52ee7a158f40b67405e1c6249a1b4071828b277e25bb1b65cfa4c3b5bd5d",
-    "final_state.npz": "84c65fc3eeb7f0a3a508598b0aeaed2ebc6f499f5274a110d8c15746c432e19a",
-    "descend_509.png": "db659a224c0524923df3081ddac1b4b79dcb1a1984c394c6769c3f6ed2ef5d3c",
-    "report.json": "098560723d2c931fdb55f50fc4597f7be88ae0752fb3db5fa707562700b6670d",
-    "approach_443_detail.png": "08fcdd206853eb2ef434a1c50c3c05d8247f1c8e518f78eb3c6e24e4db3f8c09",
-    "grasp_581.png": "957ebcd3725f1b303ef0198a7b9e5024aca8667ddc8d98af308729756b8d0ab2",
-    "failure.png": "a443fa6b67addd9d28469c6f4d325f7d57d64132afaa3e0ad182c775cfeafb75",
-    "lift_647.png": "bd809a2fba65670f17740d2c8857165cdd04312c549529f0e77708ef1ec855cb",
-    "cameras.json": "5af2031a0a64825ca242d7799ae7489dd0f716d9e9df117798568d6393f41667",
-    "approach_443.png": "6e0990ac7eeecf242be63f2ff5b4d440e42b6bc52f05e7fe678dda15f2d20151",
-    "trajectory.jsonl": "4d46fe803b1dc1b84f3d7c02b36475cdbb1a0b40e52b995dd859e92b0c76db7a",
-    "task.yaml": "66adf799282ca4b65d896eb4ec9f484d279abd46a945d6cb3ae9e6f3dce8791b",
-    "grasp_581_detail.png": "0f5691d3a23a0846708cbaabdf40f3e76af486e9e39d453daaad2748c493275e",
-    "initial_state.npz": "ee520b89c4371b68b7b0fc07b2a56c9999301d6f62769d86adac87cdb066b0c3",
-    "lift_647_detail.png": "7fa8a2cd1fba5650d7eb09b9b90a01da0858da58335a93a6791acc7511201fa6"
-  }
+  "archive_status": "deleted_by_user_request",
+  "dataset_relative_path": null,
+  "deletion_report": "experiments/format_migration/20261111T175233",
+  "raw_trial_evidence_retained_separately": true
 }

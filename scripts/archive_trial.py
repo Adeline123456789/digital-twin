@@ -3,6 +3,7 @@ import argparse
 import json
 from pathlib import Path
 import shutil
+import uuid
 from learn import DATA,ROOT,save,digest
 SUCCESS=DATA/'complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001'
 def main():
@@ -14,7 +15,18 @@ def main():
     source=DATA/'self_evolution'/a.experiment_id
     if report['task_success']:
         dest=SUCCESS/'proprio_stats'/a.experiment_id/'source_trial'
-    else:dest=DATA/'complete_sim/failed'/a.experiment_id/'source_trial'
+    else:
+        from episode_format import source_for, convert_group
+        dest=DATA/'complete_sim/failed'/a.experiment_id
+        if dest.exists():raise FileExistsError('Episode already exists; do not overwrite')
+        work=DATA/'self_evolution'/('format_'+a.experiment_id+'_'+uuid.uuid4().hex[:8]);work.mkdir()
+        result=convert_group([dict(id=a.experiment_id,source=str(source_for(report)),trial=str(source),
+                                  trajectory_sha256=digest(source/'trajectory.jsonl'))],work)[0]
+        save(matches[0].parent/'dataset_index.json',dict(experiment_id=a.experiment_id,
+            archive_status='converted',dataset_relative_path=str(dest.relative_to(DATA)),verification=result['verification']))
+        work.rmdir()
+        print(dest)
+        return
     dest.parent.mkdir(parents=True,exist_ok=True)
     shutil.copytree(source,dest) # fails if already present; no overwrite
     index=dict(experiment_id=a.experiment_id,success=report['task_success'],

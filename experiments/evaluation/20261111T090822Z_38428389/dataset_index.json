@@ -1,33 +1,7 @@
 {
   "experiment_id": "20261111T090822Z_38428389",
-  "success": false,
-  "source_trial": "complete_sim/failed/20261111T090822Z_38428389/source_trial",
-  "videos_status": "NOT_RECORDED_BY_HEADLESS_TRIAL",
-  "force_sensor_present": false,
-  "files": {
-    "insert_detail.png": "2b0ab7c9241b44a11818242edd356bfd3017e7cb05c6605453d17609bd1d183d",
-    "final_state.npz": "56303f75fcb077d6bce209b9ed35f4026589cd8903e0599782c0c0390104415b",
-    "grasp.png": "7cdce71f26156868eb4594316154eec6af11bd7facd5eeddfc7ad921a9b82ff7",
-    "transport_detail.png": "38b08e6044a82c74c8c12662ccdcacf4d12655ff19936a3afa75ec3079424195",
-    "descend.png": "ab4e777c2755a434c51e755f48b67b8ddbe95b5123c4b18b206f826101ff1237",
-    "report.json": "f02f172a7504d5bc3bab04ed9495aa49168599935b6acac4cb4206fce03d10a6",
-    "transport.png": "90327cf53593defafb41d4b9f9b28558234801fb3beeebca949e858426b916c8",
-    "retreat_detail.png": "5361b34778eb92505a9da805f5591b4fd58cc7bd33cae361fbc6e253e2971c01",
-    "failure.png": "c4e28c49815e35eea7020b925095ac9b116a39e412c316d5c611bdd99e4e8a7e",
-    "cameras.json": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
-    "lift.png": "d7dbf353a418c476fa429e369bbf6e0fa1e9413e1864d5a05d1e1f3c35a972cb",
-    "trajectory.jsonl": "db8bf3414107150e2ea47a5f6ae16e387bce4d2caf2cb7aa3b880aac84b57ec0",
-    "align.png": "fc6be57bb1a78064763b7899789d10b13efabc285e532418ccd468bfaa7d8e88",
-    "task.yaml": "32c6899546c87fb8d42cf46084b8aeedad5d360bb16d1651db69bb812b800026",
-    "descend_detail.png": "39b314bac0248f4473fb46f38bc0ebc71cbc793b5211583a6426c8ab90e17242",
-    "release.png": "96bad43bf8a0f07ac9696b2a0be955b3ee409f9accd8f5266f992f9e7b9e2519",
-    "align_detail.png": "160205166bdd677760a771e507d3a4ec96ecece678e615163524fb579f8a738d",
-    "insert.png": "3f90206e8c4b11d632d0f8b43ead0d1a6773507e7acefb4c0cbee1ee7366123f",
-    "initial_state.npz": "c0ecec167b89f17a94d7e754feb4f138c739279618f6d3730e8d255fd7ae0904",
-    "collision.json": "5656f49c284f8669fa487b2adb34bcfac8b66879d6f6f3fe562864cfab920411",
-    "release_detail.png": "3b37223d800f1052fc6415fac17dc9e24519892d06c5a5bed166c0f0fbac3572",
-    "grasp_detail.png": "2364bb6eb5376ef462bfcb3f210fa538abffdd33e0069770851cbde02a29de70",
-    "lift_detail.png": "4ffbff301d046f1e02e64717038bfa95af57342d570949132ec02288c0573236",
-    "retreat.png": "3cd42cf6a873e864b7363a9ee83aea984ea89ff7f25eab0b71e0a75b43c8a794"
-  }
+  "archive_status": "deleted_by_user_request",
+  "dataset_relative_path": null,
+  "deletion_report": "experiments/format_migration/20261111T175233",
+  "raw_trial_evidence_retained_separately": true
 }

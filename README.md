@@ -47,3 +47,5 @@ export PIPER_SIM_ROOT=/media/midea/F496AC8096AC4548/piper_simulation
 ```
 
 See ROUND2_REPORT.md for executed model-feedback results and COMPLETION_AUDIT.md for what was completed versus explicitly deferred. Raw-force and real-success claims are not inferred from simulator or motor telemetry.
+
+Dataset-format correction: failed episodes are now recorded through the existing three-camera collector and checked against the user's reference schema before being placed in `complete_sim/failed/`. This can take several minutes. Headless `source_trial` directories alone are not published as dataset episodes. If recording or validation fails, the formal episode is not created; diagnostic evidence remains outside that directory. The user-requested deletion of the 14 earlier incomplete folders is documented under `experiments/format_migration/`.
