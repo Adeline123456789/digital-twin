@@ -1,0 +1,22 @@
+{
+  "id": "VS001",
+  "content": "Verify physical insertion only after release, retreat and sustained seating; API acceptance is insufficient.",
+  "applicability": "Existing MuJoCo plug task; simulator geometric and hold-time observables available",
+  "source_episodes": [
+    "20261111T083904Z_3457e2ad",
+    "20261111T083905Z_dd4014dc",
+    "20261111T083906Z_3622b3c6"
+  ],
+  "validation_status": "SIMULATION_VERIFIED",
+  "success_count": 3,
+  "failure_count": 0,
+  "limitations": [
+    "Not real hardware verified",
+    "No electrical contact sensing",
+    "Not a solution to unknown task geometry"
+  ],
+  "version": 1,
+  "signatures": [
+    "plug_not_seated"
+  ]
+}
