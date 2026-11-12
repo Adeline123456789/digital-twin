@@ -1,0 +1,3000 @@
+{
+  "timestamp": "2026-11-12T09:58:26.804162+00:00",
+  "operation": "Storage-only relocation; existing content unchanged",
+  "recorded_successes_moved": [
+    "20261111T083904Z_3457e2ad",
+    "20261111T091439Z_8284da3f",
+    "20261112T071105Z_6a45b3cd",
+    "20261112T073436Z_43d3e2c2",
+    "20261112T073851Z_908954b8",
+    "20261112T075628Z_ee017e71",
+    "20261112T080244Z_7a0dd62e",
+    "20261112T081404Z_1d085fff",
+    "20261112T081719Z_51d78043",
+    "20261112T084117Z_37dd0986",
+    "20261112T084434Z_5cf241f9",
+    "20261112T092311Z_901189c4",
+    "20261112T092555Z_cc2a60d2",
+    "20261112T092838Z_bf17d184",
+    "20261112T093157Z_13f12a06"
+  ],
+  "source_only_trials_relocated": [
+    "20261111T083905Z_dd4014dc",
+    "20261111T083906Z_3622b3c6",
+    "20261111T085518Z_ef8870ca",
+    "20261111T085753Z_c8f0f1ec",
+    "20261111T090027Z_03adadd8",
+    "20261111T090230Z_f5608546",
+    "20261111T090256Z_63e11bb7",
+    "20261111T090615Z_65732684",
+    "20261111T090843Z_170fb3ce",
+    "20261111T091440Z_5498192b"
+  ],
+  "original_episode_preserved": "20261111_sim_calibrated_pick_insert_000001",
+  "files": [
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/outcome.json",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/outcome.json",
+      "sha256": "c6ca972ace46db5abd0fb8c67ac15e43ca6e477c2687a82e74ef2a903c082217",
+      "bytes": 166
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/outcome.json",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_evidence_outcome.json",
+      "sha256": "d31392a311d6e83504bfe7ddb8fa462aa95995e89a6902a19ba196e46d35f03a",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/replay/metadata.json",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/proprio_stats/metadata.json",
+      "sha256": "ee8a9dad8372e86ae026f583a747bc340aa09d6f9fc7cd32274f3e86088c7810",
+      "bytes": 20728
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/replay/model.xml",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/proprio_stats/model.xml",
+      "sha256": "dbbc52a01d402d1a75b4fd9cd298a32d2ed7aa02fc985d05d321d576287d8856",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/proprio_stats/privileged.jsonl",
+      "sha256": "512541b3756e7e71823e15b27f6fc35ef8fa3e575a090829cb02bafa6b56d73b",
+      "bytes": 12449897
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/proprio_stats/proprio_stats.h5",
+      "sha256": "f668741907ec0a6f136c696c9cbcb3243f3dab5dc15f5b1e507945c8d0531ca7",
+      "bytes": 485567
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/align.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/align.png",
+      "sha256": "d0cff29e4bbd73d6d5fc036088781139f940bc933feb12817e0a413554e6a529",
+      "bytes": 479479
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/align_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/align_detail.png",
+      "sha256": "ef661e67bcf4be34e8bf304feba4f8becef2524667b1e87680bd718d0fb99b55",
+      "bytes": 211037
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/cameras.json",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/descend.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/descend.png",
+      "sha256": "b28d4dc7161a708f961ce24029af2efe6722ba2353088e7c69b1c2cfd253f5b9",
+      "bytes": 475602
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/descend_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/descend_detail.png",
+      "sha256": "4dff66214d7829e1c280ce15659e8c31f04a03e2f0e3bd2e49813dab68f43ae1",
+      "bytes": 208494
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/final_state.npz",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/final_state.npz",
+      "sha256": "bed0c0315786372dec6de5f6085cdeea78198af5f3cf101e00be80610fecab80",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/fold.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/fold.png",
+      "sha256": "e7d85890458cf3088c0860982eae34c3c42b7982a6ca21f91de565dd1790d66f",
+      "bytes": 472996
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/fold_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/fold_detail.png",
+      "sha256": "d7c12317e3d130f7fce48e00dc92813b52b0ba770c2852c746d2e30bd8917dc2",
+      "bytes": 202945
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/grasp.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/grasp.png",
+      "sha256": "83f8cf07484c5175f8eda4d0765c88a4b98ef72de911795645228208dde15694",
+      "bytes": 475919
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/grasp_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/grasp_detail.png",
+      "sha256": "d291f3c61409217adbc7e014c99f5cec7d6ec6b263ac1f47767e842839f7fb9a",
+      "bytes": 208647
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/initial_state.npz",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/initial_state.npz",
+      "sha256": "9dc36383b0e9c20d390e4db66a5aa558bdfa5ed1fed892af8f4761e90a7f7f2c",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/insert.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/insert.png",
+      "sha256": "a9515f5e6bb98f86eb24d083c1706487ee91ddca3522dc22706b7b8f2b652ff9",
+      "bytes": 479939
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/insert_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/insert_detail.png",
+      "sha256": "571fe9138563d41527dfa267b73d716f22e96608636527065f9e511dbf38ec87",
+      "bytes": 211101
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/lift.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/lift.png",
+      "sha256": "6e6c1948f3771b2acf232c4aabda87a24a9ab485134c7248a60ced3451caddf3",
+      "bytes": 481071
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/lift_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/lift_detail.png",
+      "sha256": "c2afcdb8c01c00575e9b38caf9a671811c692c22993f005cab601a800914f4ee",
+      "bytes": 216625
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/release.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/release.png",
+      "sha256": "6adbaa44a9e70a61b0ce459499c4facda484d2c1f2a044601b271849f27ff441",
+      "bytes": 479986
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/release_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/release_detail.png",
+      "sha256": "f33fa8590c30b6207e9f56f7720f771b5584bbf151f06687caca78fa56d0d65d",
+      "bytes": 211235
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/report.json",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/report.json",
+      "sha256": "c0d5f78bbce205cd1cea772746160dc43591b4fccda5d90d370fb4ea91d2af38",
+      "bytes": 952
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/retreat.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/retreat.png",
+      "sha256": "152188b746838f2c18cf25231a9e3e9eb4c229042affaa4fea97a1009c93d7e3",
+      "bytes": 481093
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/retreat_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/retreat_detail.png",
+      "sha256": "08ec02af93fa5a6da50893251a2731076939ee75c1b829ba1b6f860c10b19d50",
+      "bytes": 211478
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/task.yaml",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/task.yaml",
+      "sha256": "971d7822b27a56c22c92c69ffd76f5b19fcca3ebde896dd395f70fdbd5c13e72",
+      "bytes": 1463
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/trajectory.jsonl",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/trajectory.jsonl",
+      "sha256": "6158090f3cd54770fb9b1dda6e8ea1f85cf3f4486feef4e81b528c301d8c5cb1",
+      "bytes": 940185
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/transport.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/transport.png",
+      "sha256": "6983923560ad4e09eb389b2e4fc9e3a387a992911016093221af2a15f2d6e4df",
+      "bytes": 480643
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083904Z_3457e2ad/source_trial/transport_detail.png",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/source_trial/transport_detail.png",
+      "sha256": "abcf14baf8ba506271827a2d7ed1856344a1c5c5f24a8c60c4e091b0ca1e5848",
+      "bytes": 210860
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/outcome.json",
+      "sha256": "7ad08e19bfd6e96d478f024803376d7cebdcd131f549edce6c925e7e2faa2bec",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/align.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/align.png",
+      "sha256": "267b3bc67cb6a8cc2626227bf3efc4a700af3934915130522c1e9e0f9c5a9616",
+      "bytes": 479563
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/align_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/align_detail.png",
+      "sha256": "7ed05f964584c7cc5c13cef722bf319f9aa566e11bf75e8d5bad07da068a5d4d",
+      "bytes": 210960
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/descend.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/descend.png",
+      "sha256": "f01f3250baf19a5d2a1b45ee8ea4311c6be56cf6963cdbe07e3f2f73cfbbab99",
+      "bytes": 475495
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/descend_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/descend_detail.png",
+      "sha256": "20775b4f910f826afd941a37be50675ab7f71c18bea5a076ac277ab94a378281",
+      "bytes": 208500
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/final_state.npz",
+      "sha256": "2f609e494a1a10545679b41d88d0f90d53a2343a33e4e7de52c8ad0614832313",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/fold.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/fold.png",
+      "sha256": "35633e52bd8710341507895b047ef437fab763b23c9b9f2ae93f34f356897644",
+      "bytes": 473262
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/fold_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/fold_detail.png",
+      "sha256": "3675082ed914411bfd74d19da5ddf0e50bd927d3424e15ccc97d546a445973a9",
+      "bytes": 202938
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/grasp.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/grasp.png",
+      "sha256": "b083da4e4082417166259e5e8f49657b93bcc259eec3a04f3cf080df809a94e2",
+      "bytes": 475370
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/grasp_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/grasp_detail.png",
+      "sha256": "f97182889ad433265176c7fcb2b18e489e057a0e40a39a49118a0450ab4de9dc",
+      "bytes": 208926
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/initial_state.npz",
+      "sha256": "37b0bd9cd35d5c8ae0414e216bda5e2f97fc6a71d2620d8cf3c0f62718787cbe",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/insert.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/insert.png",
+      "sha256": "3c04a029448bf46e776131a5853a738a93d38f07bc8a9ddafa01594adfb3ae82",
+      "bytes": 479855
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/insert_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/insert_detail.png",
+      "sha256": "e3034a2c6016fee86399661586df3bfdfe0fe1f8055dbefab4ddb319dec2e5b0",
+      "bytes": 211140
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/lift.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/lift.png",
+      "sha256": "c7d4406cc9951599525e0670a8713a6d62253a09522bf663b1a02dfdb773b8aa",
+      "bytes": 480684
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/lift_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/lift_detail.png",
+      "sha256": "c8a0af37eaa2d6e2ae64e4a88203e01f2b71a574f0096b8799b3d091cceda3ca",
+      "bytes": 216142
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/release.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/release.png",
+      "sha256": "a2b167f532b306efe310b17f50565b4addc5257c4ac7384e43e16bef7e33cd7f",
+      "bytes": 479953
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/release_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/release_detail.png",
+      "sha256": "07ee1e12c7c0cf1b3468d05692aff8800682278a5ba9224989a3e546d6a380d7",
+      "bytes": 211195
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/report.json",
+      "sha256": "996154923f68c3e0d6d0862841dbc23ce1815bf2f6068c95b023468833aeafcc",
+      "bytes": 954
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/retreat.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/retreat.png",
+      "sha256": "16e10229004c731cb4578200d9d08c90e87b5a1a8b1c5e9a0f848ca74c710289",
+      "bytes": 480714
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/retreat_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/retreat_detail.png",
+      "sha256": "da921ec5901db11ae63e8fdfe1d6f6237fdc8d76a3717123cf89f1bfd999e61b",
+      "bytes": 211466
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/task.yaml",
+      "sha256": "45cc488ce897e52c5bf1c6ba10a910d85683d9873d87dd93a4e01515321479d1",
+      "bytes": 1463
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/trajectory.jsonl",
+      "sha256": "5bb1601ef2ee82161d430cd0dd67150f02ac3446f96cad4fbab504b998211c54",
+      "bytes": 940237
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/transport.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/transport.png",
+      "sha256": "626bff640e3fdbb5dc962e1f9830015d6d57f67bd60ecdd20ecb2f838d23cdc4",
+      "bytes": 480545
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083905Z_dd4014dc/source_trial/transport_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083905Z_dd4014dc/source_trial/transport_detail.png",
+      "sha256": "8a2ce9b99ec9474e998a78d053845fa6433dbdb46f812c77cf2db6a0a9dba2ec",
+      "bytes": 210819
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/outcome.json",
+      "sha256": "1a1a28a281cea3deaf853424710cfabb42bc3856c73a67e77d3b3cbf5384ce96",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/align.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/align.png",
+      "sha256": "7d27ed8ad9cde649139a5a38be241e07e7bfc46135cfebda8f2ef1cd5a450e13",
+      "bytes": 479520
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/align_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/align_detail.png",
+      "sha256": "91ac739f4af10ea17e56e39bc71f4ac3b3f3ac2af81738ba99dfdc55a8aa73b9",
+      "bytes": 210887
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/descend.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/descend.png",
+      "sha256": "80dba8ce8baaa6857e5e1cdcf1ce1e99c67b3784b275db810ba7b9a56e2fbdc6",
+      "bytes": 475536
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/descend_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/descend_detail.png",
+      "sha256": "ca7bbb5ecd6f0c42fc46bd6423f90f21c7571224420569d4f254e40745736393",
+      "bytes": 208771
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/final_state.npz",
+      "sha256": "d14e529f8c9f0d04bfb68694cf5faf268560bbb2ae6165dd386d284924a0113c",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/fold.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/fold.png",
+      "sha256": "d2b375226437c9d018b3a0b3d6f8c745a8224fc322ba4072dfee107a3381aeea",
+      "bytes": 472767
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/fold_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/fold_detail.png",
+      "sha256": "76f94d15ace58830b586508754c89c561defc84d0dc6600a9ab14afd374b6a0c",
+      "bytes": 202993
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/grasp.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/grasp.png",
+      "sha256": "abc95b111de8605e09a32a2a30bd624d5c437ddc3d7d578db729e68d5424895b",
+      "bytes": 475856
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/grasp_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/grasp_detail.png",
+      "sha256": "56c2185649090f01bfde919a754b0c356d3a950342ebf4d0eaae0e43212a0a66",
+      "bytes": 209162
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/initial_state.npz",
+      "sha256": "dfe6dcdf3699e5fb69360fdfdd2f594ceb8ea3d98b721dd46cd6d81fd71fd6c2",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/insert.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/insert.png",
+      "sha256": "68ea6cd1fe3820a4cfc9016ae28f8fd5bca3331885ca18c18a77b7f5e63da5aa",
+      "bytes": 479883
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/insert_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/insert_detail.png",
+      "sha256": "92cd535e414eed19612be51896aea1107ec505660497d5fd00cdaa2183ce0389",
+      "bytes": 211116
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/lift.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/lift.png",
+      "sha256": "e271ecff314d19809b25f0764d56bf602eeaa5e207fd3b39a8d31d5815837e7f",
+      "bytes": 480564
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/lift_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/lift_detail.png",
+      "sha256": "38f821c84789d6c1d92e4ef7d248d024a04082a9d6cfcc68b689a81080fd9a94",
+      "bytes": 216761
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/release.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/release.png",
+      "sha256": "e47bb666af7ef9c963723997956efcfbfb69a4240caf44d8159b97fc61bcf224",
+      "bytes": 479933
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/release_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/release_detail.png",
+      "sha256": "192c1f95c6aa646e8b81acaa03ddcff42ce9c770f581751c5e233ea477a70263",
+      "bytes": 211107
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/report.json",
+      "sha256": "8df416a32b40e440aba7c4bfd21b3567a967995a5f447f6aae576d4183b730e0",
+      "bytes": 954
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/retreat.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/retreat.png",
+      "sha256": "d327caa30a72616909b66ce527f5032b1d53a5ef56f0959d8a330c0fbf3509b6",
+      "bytes": 480720
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/retreat_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/retreat_detail.png",
+      "sha256": "b0c789cbb775a5c5929791d7fdcb39b465cb5644fb8842f916f9db9ef7bb1a57",
+      "bytes": 211392
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/task.yaml",
+      "sha256": "6c81f3b1717bef4c085d03bb6cacb7456457af2d60abd2c8208cfa43bf8b14c1",
+      "bytes": 1463
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/trajectory.jsonl",
+      "sha256": "f2f9011e260137e7e9d31fb4fc8220b01c4540f56a0dd3b7772bb8131c998d1f",
+      "bytes": 940284
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/transport.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/transport.png",
+      "sha256": "fbdbb7408b345f1c4d1d26bd9f24e8481a9b507526c18bf123bcc9ccc7e880ae",
+      "bytes": 480491
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T083906Z_3622b3c6/source_trial/transport_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T083906Z_3622b3c6/source_trial/transport_detail.png",
+      "sha256": "758a91f5f3dcc25589cbfd708f1c2ff85c106211c77b8be9beda1db97ddfdfa0",
+      "bytes": 210501
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/outcome.json",
+      "sha256": "bb55e6e173478d2bea8e466593e5e651bec99daccdffdd5d5c7b63b8567e2c80",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/align.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/align.png",
+      "sha256": "b7e72285f5d6cfe7061c37095cdf2bf3def88b1927d5061f475eab0112ff162f",
+      "bytes": 479483
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/align_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/align_detail.png",
+      "sha256": "62005ecb71ed7070be9111382241f94ce7bcdfc535c2b2ba8b05733fd8ed9311",
+      "bytes": 210909
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/descend.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/descend.png",
+      "sha256": "d7b0b4050cf7c2881004958a6e05eae56ffb961be16dcd754ab2e64ef2a26027",
+      "bytes": 475775
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/descend_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/descend_detail.png",
+      "sha256": "53a2ebe92692013c58e55978844fffae6f66840e30822fcc9bd2f8d205ee57a5",
+      "bytes": 208759
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/final_state.npz",
+      "sha256": "52ee75f842e3f8d3d9304a3a690e462841c3de9883be65a157de7a656b773554",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/fold.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/fold.png",
+      "sha256": "03271b463f3f8aba83068cb738777bb6c97c4ac6429936445043a2d1e02a2828",
+      "bytes": 473011
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/fold_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/fold_detail.png",
+      "sha256": "299c744b018618f35346ba50e7a2c768d5e0f54103d8c4ec027614a9e7eb27ca",
+      "bytes": 203001
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/grasp.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/grasp.png",
+      "sha256": "c7ce87a0a46dc16d2e82d10aee62b109563121c40f29100d16068b9af903f8b9",
+      "bytes": 475641
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/grasp_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/grasp_detail.png",
+      "sha256": "46a25484a15ac8f2146a65b7f2c05947f9c4baf72ef3b1473a8eb8438a65bafd",
+      "bytes": 208867
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/initial_state.npz",
+      "sha256": "15115f4fca05716a43c35f9e0d6b4b484f42b45df9a68d36223ba844fb4cb939",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/insert.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/insert.png",
+      "sha256": "edfabb72dd1904db8ee61e0525da925f74680d7a0660e425f77ec0ae2478d6b2",
+      "bytes": 479992
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/insert_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/insert_detail.png",
+      "sha256": "a89fb90c1b3c936c2155ca30181a85bc31af00c7a7de994b8258d210f2d3e6f8",
+      "bytes": 211081
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/lift.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/lift.png",
+      "sha256": "6c33d79c073d29f4fda06161a1a4b17b2b73f4c642ac4ba77ead1380e00073eb",
+      "bytes": 480608
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/lift_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/lift_detail.png",
+      "sha256": "cbff5c08b72d3aed60be2eac9882eedd8babb5e7ade35082ba7cc1a82b2365aa",
+      "bytes": 216443
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/release.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/release.png",
+      "sha256": "3b3795503b698941163187ec0ad75532865339f0d3c5c2c10804d4b931edca4b",
+      "bytes": 479970
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/release_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/release_detail.png",
+      "sha256": "f7d06cf27e65a1ad60d1dc7f67689fe4f2c1110e11b4400f22a76c0a1f39aaed",
+      "bytes": 211217
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/report.json",
+      "sha256": "9ec53060b3ec776861056668bf6224ed77aee7fcdc79fe25a8208bab11a27055",
+      "bytes": 953
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/retreat.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/retreat.png",
+      "sha256": "968b7088562c335ee863fa44b210c4a397bc14e937ab5881df43055f4d31657e",
+      "bytes": 481164
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/retreat_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/retreat_detail.png",
+      "sha256": "cd35e2b07a1b8708159514bc15400b8de1163d8464501178bf0a6334aecd5372",
+      "bytes": 211366
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/task.yaml",
+      "sha256": "2092f535435a86129d0e0041969191ab805c5dac57daefead40b4fba69652cc6",
+      "bytes": 1463
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/trajectory.jsonl",
+      "sha256": "a832eb880cf3b8be6f55ff7f2a55bdf91466008457cef1751f2a7ad4121b703e",
+      "bytes": 940181
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/transport.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/transport.png",
+      "sha256": "517d4987044da82a428bf86ed7f312da344d0a2c9b2cec736778c057f3c8b095",
+      "bytes": 480715
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085518Z_ef8870ca/source_trial/transport_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085518Z_ef8870ca/source_trial/transport_detail.png",
+      "sha256": "6fa231bcc3e85fd0efc1247dcc2961473e8449abb0c630df380928408bd2bb24",
+      "bytes": 210535
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/outcome.json",
+      "sha256": "fe2baf73d937fe80c5d12017423e40d032d2545e97e056a5d0119b651bedc6c1",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/align.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/align.png",
+      "sha256": "725b2af53d3e5965da3423ae4d79703c5811bafdf608e472887663bad0f3a7f5",
+      "bytes": 479495
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/align_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/align_detail.png",
+      "sha256": "f815e17160c6c353c6ebb4be3482773409593844dbbbda3f1b8a1782d80bbc71",
+      "bytes": 210926
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/descend.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/descend.png",
+      "sha256": "c5a39fda6267fe7453a07539f8b3c5f66bb26905b31beafb1a81bed80d694382",
+      "bytes": 475783
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/descend_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/descend_detail.png",
+      "sha256": "53a2ebe92692013c58e55978844fffae6f66840e30822fcc9bd2f8d205ee57a5",
+      "bytes": 208759
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/final_state.npz",
+      "sha256": "52ee75f842e3f8d3d9304a3a690e462841c3de9883be65a157de7a656b773554",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/fold.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/fold.png",
+      "sha256": "3b5aa7c417fb2d14d433b77410ae743a505b39688a19edeb8433e92d23f6fe24",
+      "bytes": 473017
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/fold_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/fold_detail.png",
+      "sha256": "d806ad4e83021be73b7bd35f7f5c3d5490c4f458f3d2f3aa82d11d4d402228c5",
+      "bytes": 203005
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/grasp.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/grasp.png",
+      "sha256": "053ca63c6c70fd3ce06575e5a40d01dc081878ceee91f3279a2fd57790095e56",
+      "bytes": 475641
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/grasp_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/grasp_detail.png",
+      "sha256": "17a0244c4d3e9f222d7be7a022aab796835b123b987116c722804f452a08656f",
+      "bytes": 208872
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/initial_state.npz",
+      "sha256": "15115f4fca05716a43c35f9e0d6b4b484f42b45df9a68d36223ba844fb4cb939",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/insert.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/insert.png",
+      "sha256": "33b638c6635d5e3b2a8051e279fae8745d277f2416c6dbb43076910d6d88f8a8",
+      "bytes": 479996
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/insert_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/insert_detail.png",
+      "sha256": "65cb407a5564afc52a2d2f1f5871192bb198edd1b11ddb8eaba7b8c42811e4ae",
+      "bytes": 211092
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/lift.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/lift.png",
+      "sha256": "b2f67b231fcbb5581348a8837144d4a9f1c3a3d0009e2bf816b953edecd3e6f1",
+      "bytes": 480613
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/lift_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/lift_detail.png",
+      "sha256": "2eb7c0d443e3e7eec5d45d2d577f29746766a5ef255778317dfbf18b15388f97",
+      "bytes": 216462
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/release.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/release.png",
+      "sha256": "3e0fc5c6fe4589617b2d75fb33d86ae3bdb45b6af56ab3cc3bcb52ba9660243f",
+      "bytes": 479975
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/release_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/release_detail.png",
+      "sha256": "afb30df631027414cf6aee3cfb36531dcd60236876317abc4275cc9ff0d558ce",
+      "bytes": 211199
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/report.json",
+      "sha256": "9ec53060b3ec776861056668bf6224ed77aee7fcdc79fe25a8208bab11a27055",
+      "bytes": 953
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/retreat.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/retreat.png",
+      "sha256": "9669fa9c03cc3647b8eee039abf36d4886b6c075dd95bf262b9f829a8c0cae95",
+      "bytes": 481089
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/retreat_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/retreat_detail.png",
+      "sha256": "7ed38d1f74ca4ab29ebac645418fc3025cfb778113c66143e1277a86468b6778",
+      "bytes": 211365
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/task.yaml",
+      "sha256": "30e1d4201f05126ea2445191126625b0752fa6f546c48b4973e1f892d27a7fa7",
+      "bytes": 1463
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/trajectory.jsonl",
+      "sha256": "a832eb880cf3b8be6f55ff7f2a55bdf91466008457cef1751f2a7ad4121b703e",
+      "bytes": 940181
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/transport.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/transport.png",
+      "sha256": "7fe354a1be6595f96c314e9b18b03dc6b6ada03dabb7bb64470ea8c181e3a08b",
+      "bytes": 480715
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T085753Z_c8f0f1ec/source_trial/transport_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T085753Z_c8f0f1ec/source_trial/transport_detail.png",
+      "sha256": "caadba24a0682709ae6f0bb64d0ea18801dcc6f4bf30493515e99ef37e8a4b76",
+      "bytes": 210535
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/outcome.json",
+      "sha256": "bd278097ee37ee71f9873930666602fb93a06f9bed15f2debc3ed4c80913c253",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/align.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/align.png",
+      "sha256": "76633ed7c4a43f12fcd5f84aab9dc1b60352002e500bbf42b931a164c3c82c6a",
+      "bytes": 479458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/align_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/align_detail.png",
+      "sha256": "a177997738f28e231b4e2a9d73096ddbd04943ac4aaa11f035189dc1d604c805",
+      "bytes": 210926
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/descend.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/descend.png",
+      "sha256": "e7ce43e043d66e49834a92b01b1850ecf5f73373c8ffab9ddff0e292ea64cbb1",
+      "bytes": 475769
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/descend_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/descend_detail.png",
+      "sha256": "53a2ebe92692013c58e55978844fffae6f66840e30822fcc9bd2f8d205ee57a5",
+      "bytes": 208759
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/final_state.npz",
+      "sha256": "52ee75f842e3f8d3d9304a3a690e462841c3de9883be65a157de7a656b773554",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/fold.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/fold.png",
+      "sha256": "f1c73d37c260d910dfed8186c58c66fd9e9df22bafb4e70ebb8d95f4fd0ae1f6",
+      "bytes": 473034
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/fold_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/fold_detail.png",
+      "sha256": "97ff1d2b339550cb0b473930338d2b28edfb207a553112deb0ede6047800c516",
+      "bytes": 203004
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/grasp.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/grasp.png",
+      "sha256": "6397bfb8d40bf649104b93c520fb670a6a10a172e7acdfba28d301cc1756450c",
+      "bytes": 475623
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/grasp_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/grasp_detail.png",
+      "sha256": "84f21ddb615b27d281aaf1901044bef5a8dad2576aa6f8b510519f185a96f505",
+      "bytes": 208875
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/initial_state.npz",
+      "sha256": "15115f4fca05716a43c35f9e0d6b4b484f42b45df9a68d36223ba844fb4cb939",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/insert.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/insert.png",
+      "sha256": "0a61f80a972e637057be51075538b02f60b2df41a5f527d4c48b90d6e2d35158",
+      "bytes": 479944
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/insert_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/insert_detail.png",
+      "sha256": "c0097e2e5c5ebd062f324d18cf335e0f2ef12998030ccc085ef27eeff338db38",
+      "bytes": 211092
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/lift.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/lift.png",
+      "sha256": "3be85d9dc7e647ac5aa98fac25967c26b9589a6670b3825fe8a48a3e26a94fe0",
+      "bytes": 480602
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/lift_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/lift_detail.png",
+      "sha256": "3e5f800f1d709daa84695e878bd0d68b6c46981abd9a87ababbf8af34c55e041",
+      "bytes": 216461
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/release.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/release.png",
+      "sha256": "e437648199c3e7dd4460f2cfc926a28a8d6cc5a106600e94e14dd8d92c073be1",
+      "bytes": 479949
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/release_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/release_detail.png",
+      "sha256": "8ad6c2dabbbd6b6263905b764477e2d0f927e0095e584b76aec0072e2e936834",
+      "bytes": 211195
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/report.json",
+      "sha256": "9ec53060b3ec776861056668bf6224ed77aee7fcdc79fe25a8208bab11a27055",
+      "bytes": 953
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/retreat.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/retreat.png",
+      "sha256": "00eedae94d4c7d06fb1253b2411985cdc35f56beedadfa30039b01a74bfd166d",
+      "bytes": 481194
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/retreat_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/retreat_detail.png",
+      "sha256": "de919f20f341f5867604f8dc77a87a22ab358286509ae15014adb902f976fa8d",
+      "bytes": 211372
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/task.yaml",
+      "sha256": "3c3b9234b959d9cb5f2fac0f7f28a26024b44d40d7bfb01db578cd66faac3832",
+      "bytes": 1463
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/trajectory.jsonl",
+      "sha256": "a832eb880cf3b8be6f55ff7f2a55bdf91466008457cef1751f2a7ad4121b703e",
+      "bytes": 940181
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/transport.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/transport.png",
+      "sha256": "c6213342bbe2ef6b8166e6dcb5cbf1042cbf54a4528f2a39a92131938cc3f8fb",
+      "bytes": 480741
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090027Z_03adadd8/source_trial/transport_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090027Z_03adadd8/source_trial/transport_detail.png",
+      "sha256": "b9588b995a8f2faf8400842e48da3399e8a9f9573a45566c2dca7a9cd94ad103",
+      "bytes": 210539
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/outcome.json",
+      "sha256": "675b97e227d7b376c3be24774f167c850f366d85cbc1f0f088649b935884c165",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/align.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/align.png",
+      "sha256": "debcb61ee25aa90d6de5f8752f6d38e79c0392766c7118d4ce349d2bf31c1fd7",
+      "bytes": 479660
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/align_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/align_detail.png",
+      "sha256": "6d6a94df2a4346c7e6a9ff4efcba4ab0686d1b40b2806c21f5b8806c2ad48e9f",
+      "bytes": 210714
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/descend.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/descend.png",
+      "sha256": "30d4429b10b9395403477cea70b059ac6bad772429ca963cb0b8806f6e9d0d61",
+      "bytes": 475799
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/descend_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/descend_detail.png",
+      "sha256": "0a76fb832623045f97859100fe1bc06ced3a6df1c1dd340f5917f84d25d63607",
+      "bytes": 208717
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/final_state.npz",
+      "sha256": "39f5f6f8b30ce662ac03a109311f12836e66d0e0d4340f95dfd6dcabe846c1f6",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/fold.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/fold.png",
+      "sha256": "896058c971c48bd8c7eb6624cc59730be6f308692199cc1a6324bf788b2c9767",
+      "bytes": 472970
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/fold_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/fold_detail.png",
+      "sha256": "2d4aeffb7f9b5f52b2149ef2fd11bb50fa37d6a7098cf3237215374653b4e6fb",
+      "bytes": 203013
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/grasp.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/grasp.png",
+      "sha256": "2ed083bab648cfb619fc55c5c3924959c735be5384e7968f286e8d2f1e117863",
+      "bytes": 476111
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/grasp_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/grasp_detail.png",
+      "sha256": "7be4e97e7eee7c7bbbd9f8e85c6281295ad7ba92fd5bb72d97d1d2daf6e2792b",
+      "bytes": 208971
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/initial_state.npz",
+      "sha256": "c0ecec167b89f17a94d7e754feb4f138c739279618f6d3730e8d255fd7ae0904",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/insert.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/insert.png",
+      "sha256": "d1e761ad9221faef1bc7b0947a371fcf505d7a3a36ff17d696403e4d25e3ee39",
+      "bytes": 479601
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/insert_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/insert_detail.png",
+      "sha256": "f9280dea6e12a963e496b03960b6bfebb14ec83b71b19cd931ff162506108e5a",
+      "bytes": 211136
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/lift.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/lift.png",
+      "sha256": "7700f5b1b3b2a8af0040db8ad21b3f5ed87f50a7871efbe0943edcc0cf5bae56",
+      "bytes": 480663
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/lift_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/lift_detail.png",
+      "sha256": "5d78cdc2da60ade84bd2d5e2b00b1183116f6d9ab14a53f6a73a2949d0ae9954",
+      "bytes": 216365
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/release.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/release.png",
+      "sha256": "344db14375a01f55f6033fd0a34a7f288d16ffb486bc67da52dc0dd7c6eb3842",
+      "bytes": 479784
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/release_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/release_detail.png",
+      "sha256": "9eb790588ebb23f21b250ee5b8ab66acf0e085816bc7f0d5dfd70b40c5f350c9",
+      "bytes": 211105
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/report.json",
+      "sha256": "1aeacc6acee6bf48771adb35154bd47ead6183fb4fed82c8116305960f1d4a3c",
+      "bytes": 970
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/retreat.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/retreat.png",
+      "sha256": "0b8ebb9c8243dbcb1c186705861aa35bb6631fff1bf2aede706faac231b5d803",
+      "bytes": 481301
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/retreat_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/retreat_detail.png",
+      "sha256": "5758f1d4a3eb9a9d23328b401a2c12fc41ebd7dabe8df3d6bcd8faa5e1983ffe",
+      "bytes": 211282
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/task.yaml",
+      "sha256": "45463cf59a74e208876e9c6af6672def062af0c64b5eba473ad3b23bc94ad69d",
+      "bytes": 1464
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/trajectory.jsonl",
+      "sha256": "b8d5c3cbfe2d569a5d246099a7daf2e41f6be66ec5c59a15f967d71c218ddc97",
+      "bytes": 940187
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/transport.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/transport.png",
+      "sha256": "a1e3fff307947f60e1706e6e5f650d6bac42bd3d165e29aa69fbef4bac5b6ced",
+      "bytes": 480398
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090230Z_f5608546/source_trial/transport_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090230Z_f5608546/source_trial/transport_detail.png",
+      "sha256": "b948280211be0a00f2d3b7ae18ed3cc26984e607d29624e9c863b5d4ebc2447c",
+      "bytes": 210247
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/outcome.json",
+      "sha256": "40db5a47c2a8fde0bbf4973b297b2558a65ee3287e8689a44779f8eb8ea80aab",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/align.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/align.png",
+      "sha256": "34a2d4c3d800000fdd89e0873bf59818898ba7c071e13f1d5f9d15e3fb5577ac",
+      "bytes": 479489
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/align_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/align_detail.png",
+      "sha256": "6f8cb855d2720008ec321fa612b37bbd79418add4a4f4e0ad2da84b767df126b",
+      "bytes": 210915
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/descend.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/descend.png",
+      "sha256": "74f9b832a67bff1bef1791c3f39048b76165fdbb1c272e50698a9f42391ad29f",
+      "bytes": 475781
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/descend_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/descend_detail.png",
+      "sha256": "53a2ebe92692013c58e55978844fffae6f66840e30822fcc9bd2f8d205ee57a5",
+      "bytes": 208759
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/final_state.npz",
+      "sha256": "52ee75f842e3f8d3d9304a3a690e462841c3de9883be65a157de7a656b773554",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/fold.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/fold.png",
+      "sha256": "fd9d007c2d4ebc9fbbab64af9518fb2f2875afeaa4b0ff749b6215afedf5309a",
+      "bytes": 473014
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/fold_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/fold_detail.png",
+      "sha256": "92bf44a7f32ff75b4f08729857e63ae8074716c833f9aaeaae81b1805c07b348",
+      "bytes": 202992
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/grasp.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/grasp.png",
+      "sha256": "2fd0cbbb511ccf1da00ea744d9c71e9d1223e52c2a9dd57949327600637a8ce3",
+      "bytes": 475642
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/grasp_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/grasp_detail.png",
+      "sha256": "94f0d96724dfca2b1fd0601b5f1096135fc3172212a17a163f57987f0b0475f6",
+      "bytes": 208881
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/initial_state.npz",
+      "sha256": "15115f4fca05716a43c35f9e0d6b4b484f42b45df9a68d36223ba844fb4cb939",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/insert.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/insert.png",
+      "sha256": "bb0f05cbb5283e2414016b75874b2cb936f47653596f4ff6ad91c756320aaaf9",
+      "bytes": 479998
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/insert_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/insert_detail.png",
+      "sha256": "2044bfc9f368a5efee2e6c41f9df7e1ca7d53813d6f3a5def01abe8ce117b36c",
+      "bytes": 211087
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/lift.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/lift.png",
+      "sha256": "8fde61a70f940bed58e1384b888da898b027d6595a7dabfbe9d0300291814024",
+      "bytes": 480588
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/lift_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/lift_detail.png",
+      "sha256": "ab5e5e5c238e008e49ef95f62afb2f801a53568c9beeca9ad72a012d76b41200",
+      "bytes": 216464
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/release.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/release.png",
+      "sha256": "c25ef156a7be1db9928d01ff298f880c69c96d93b001070817d5fb270cd6c412",
+      "bytes": 480019
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/release_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/release_detail.png",
+      "sha256": "66d6c700c8b3803d729670a277039c7285589f7e8f079d028f9caa094b0d12f2",
+      "bytes": 211194
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/report.json",
+      "sha256": "9ec53060b3ec776861056668bf6224ed77aee7fcdc79fe25a8208bab11a27055",
+      "bytes": 953
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/retreat.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/retreat.png",
+      "sha256": "a8919b3c6871fd216e26ae60391e492043e3487f63b3c845f6bc4b6600bf3f97",
+      "bytes": 481184
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/retreat_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/retreat_detail.png",
+      "sha256": "1b53a71d18a69b6382aa4782f1c1e3b0b79232a61b520176a1b3081555390153",
+      "bytes": 211360
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/task.yaml",
+      "sha256": "0cdee5f801c5f8a7c0efc1cddcf6232295526173957ed01b5a99a43d52d0b492",
+      "bytes": 1463
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/trajectory.jsonl",
+      "sha256": "a832eb880cf3b8be6f55ff7f2a55bdf91466008457cef1751f2a7ad4121b703e",
+      "bytes": 940181
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/transport.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/transport.png",
+      "sha256": "20c5418faa987d28b8fae24a03cfd181adf4b4843a320acc0b4721eb460a4519",
+      "bytes": 480730
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090256Z_63e11bb7/source_trial/transport_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090256Z_63e11bb7/source_trial/transport_detail.png",
+      "sha256": "5832c32f065cdf94abc2dede620b1cf7d1e608caccc34df2c85940aaf95787a0",
+      "bytes": 210553
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/outcome.json",
+      "sha256": "f26a8b833feb7d06d32fc59184998481e81309c64dd1c9b01b45f273f4a61ec9",
+      "bytes": 2458
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/align.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/align.png",
+      "sha256": "a579ab8463f2ce25699e015a28e893cf371e43197ec6c930464bfddea35119bc",
+      "bytes": 479625
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/align_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/align_detail.png",
+      "sha256": "21af7008c6590d60f54e19f137fbacf206409a6164a5c60313e86cf815c2dd7e",
+      "bytes": 210691
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/cameras.json",
+      "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "bytes": 14112
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/descend.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/descend.png",
+      "sha256": "1f192f8dfcb6556585ffd5cbd6187f857c3407e04e7d46ff7b7f9a7be775772d",
+      "bytes": 475886
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/descend_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/descend_detail.png",
+      "sha256": "98ebcd4d05e46feaa03f5d6a926c6705081b96e41e182a8b7709233225e6c48e",
+      "bytes": 208639
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/final_state.npz",
+      "sha256": "b7497d7030bd0c9b0b6c52e08586ebc2f29600cf41300357ff8fb897372f5d5f",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/fold.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/fold.png",
+      "sha256": "7c89ac153182a6d7c61ea19461884c29f7c82c6f0006909693121e4e862e70a1",
+      "bytes": 472814
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/fold_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/fold_detail.png",
+      "sha256": "cdbb79882397dde2f36f8c94fb09c712a0c9b12d4af4dcb8f73251b5a72ff9e4",
+      "bytes": 203030
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/grasp.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/grasp.png",
+      "sha256": "83e5edb231c6773a603bb7ef6000d1665555124b5b9c280894d0bfed59273d40",
+      "bytes": 475690
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/grasp_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/grasp_detail.png",
+      "sha256": "8c55c898ea2b77c1cf8103746d5da1a690ec8b8f80931314ed4c05e8f0248905",
+      "bytes": 208957
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/initial_state.npz",
+      "sha256": "d0e58b26ce1237fed4d1bda865673e5343e25157822a4fa54f2c58f6cb1132f0",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/insert.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/insert.png",
+      "sha256": "fae30585de4f8981a85091497503967a4cdeed8fc98cc104336a1659ff7b4de0",
+      "bytes": 479815
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/insert_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/insert_detail.png",
+      "sha256": "70e28c1110389e7f944fa9e1bd9c783aed014d764e0fc446b23951370a18e3c0",
+      "bytes": 211063
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/lift.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/lift.png",
+      "sha256": "a9e60fb959853837e766e66b4e7216f30de24e89c7634984de00c51a44a47ff9",
+      "bytes": 480903
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/lift_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/lift_detail.png",
+      "sha256": "20b8e532dc7d191d60d2105d151e2c119921903f23c05a70924c9d65c2c511d8",
+      "bytes": 216853
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/release.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/release.png",
+      "sha256": "36460c01c1caa55be249bc5a838f35f382f23a54a77ea0cf20310fddcba87538",
+      "bytes": 480047
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/release_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/release_detail.png",
+      "sha256": "c5e97039c93ff249f795aef8a9ba2981c24bc76d384ca14e756bea9a06fe9e78",
+      "bytes": 211035
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/report.json",
+      "sha256": "c643fd75e31662acd069998bcc9a93ff6df1e58bf4b86508757a3a4c87e2f38e",
+      "bytes": 971
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/retreat.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/retreat.png",
+      "sha256": "edc72b50cabcb6509991977193c15e1da3e4e699fe09da101905d5078dd63085",
+      "bytes": 481122
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/retreat_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/retreat_detail.png",
+      "sha256": "eb485dc179b477848754335c3a17238b3411a6a5fb416f78933890d2e555c34f",
+      "bytes": 211341
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/task.yaml",
+      "sha256": "0a184a30ebc1287d74c593ef92174ae1dec563f58f011dee73f85228b127b7bf",
+      "bytes": 1463
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/trajectory.jsonl",
+      "sha256": "eeabfa1f2b697c3f80edf0a1a8e8000678a409222d75bc5e2bded21b346a0d6f",
+      "bytes": 940554
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/transport.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/transport.png",
+      "sha256": "ab223cdcfbbbf948672b810e66d2de6f09425dba68c1396e0f30cee379b86642",
+      "bytes": 480593
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090615Z_65732684/source_trial/transport_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090615Z_65732684/source_trial/transport_detail.png",
+      "sha256": "ab0a48a0b5c9e835c6b4cbc9b2871c57eb8117fce73f77cbb82fa0896065ed99",
+      "bytes": 210443
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/outcome.json",
+      "sha256": "5207dac417c0b7ece2391e7f5bf0c9c0f134b79eb57715e25c10405f32a4750a",
+      "bytes": 3276
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/align_515.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/align_515.png",
+      "sha256": "fbd070b30ec79b213bd217ad0b405f0b2c8f86e338b4cb8248e2452e9f2fab6f",
+      "bytes": 479214
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/align_515_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/align_515_detail.png",
+      "sha256": "a9061a0a06a4170751e821b9f61caa7d405341a9e4aece074e91872a6e800c2a",
+      "bytes": 217757
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/align_533.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/align_533.png",
+      "sha256": "7304927fbcefc8a43932f935372c084ff3055873b2363af8b123ca3fd7af37e9",
+      "bytes": 478325
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/align_533_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/align_533_detail.png",
+      "sha256": "f37ff84fce2d65f7330ef6ee9523d8b65a056f00b80b0a0210ea9d54673a550e",
+      "bytes": 217358
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/align_552.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/align_552.png",
+      "sha256": "017919e09644ac42c8697c2d73625118b0470365272c1186d4d28434f2971bc9",
+      "bytes": 478530
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/align_552_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/align_552_detail.png",
+      "sha256": "31b713c6fc481699fea77d48405e2d1d9c90aefe8c960d7a7e6277375a8f1d66",
+      "bytes": 216931
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/align_567.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/align_567.png",
+      "sha256": "af10d1b197d28ee7d3d35f465a7a490ae783c971b7bf115497946e93bbe4cc5e",
+      "bytes": 477991
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/align_567_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/align_567_detail.png",
+      "sha256": "655d4713e06407485909d77d51fa0bdda27e35bcfec08a21f83c067c6c8f161c",
+      "bytes": 217263
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/approach_213.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/approach_213.png",
+      "sha256": "0dfaf030838de6b69a74d12a8d3a11f794687c01b9faa026a1b987e9bb222d5f",
+      "bytes": 482819
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/approach_213_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/approach_213_detail.png",
+      "sha256": "457aa95556595cde49cd396505881203ba26130a0126d12b8922160555275c3f",
+      "bytes": 211781
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/cameras.json",
+      "sha256": "5af2031a0a64825ca242d7799ae7489dd0f716d9e9df117798568d6393f41667",
+      "bytes": 14091
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/descend_279.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/descend_279.png",
+      "sha256": "d42a37b2b8e6d18dcf3590ebf8fb88389c1d62e24a9579d0561f541285ea07bc",
+      "bytes": 476921
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/descend_279_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/descend_279_detail.png",
+      "sha256": "6b216bc342915b095e476b3560d0ccbef4f1a02a996e46839028d7b54d8fe454",
+      "bytes": 211260
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/final_state.npz",
+      "sha256": "ab4884edc9b27015653ce40fbb488aaaaa1049b09635aedbdd958c3466a368b2",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/fold_997.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/fold_997.png",
+      "sha256": "442ef3d2cb1c9bad48ac88bbc66f29395e53a3a6811f3ca69ed81eb75fdff5ec",
+      "bytes": 474182
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/fold_997_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/fold_997_detail.png",
+      "sha256": "f55b353fc941d36055b5c9d9a6d886f5a1f793f636aacb5923596b42ff5759d0",
+      "bytes": 200840
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/grasp_351.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/grasp_351.png",
+      "sha256": "7f25239526ddba454dcd29b3be7aac11afa33fbe995615654c88445b624b3b32",
+      "bytes": 476813
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/grasp_351_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/grasp_351_detail.png",
+      "sha256": "13a6e6f9ae89ed97d91320a971e4add07e0e9fcc5cbe435ca3e2b6f5e79f7c8f",
+      "bytes": 211037
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/initial_state.npz",
+      "sha256": "db66cb8ebcb2c2fc6e2d8755c3e246a2f298aeb7c7de0eb59e1185d4c201b2f6",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/insert_621.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/insert_621.png",
+      "sha256": "4e275835803fe5e9a3a0a27204d96bc816f760d3569d042f38ff488083ec7492",
+      "bytes": 478954
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/insert_621_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/insert_621_detail.png",
+      "sha256": "3b084e1be58adf662af8f813f10553ea9ebf8406c08608f958f475bd9ee2f4ce",
+      "bytes": 216735
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/lift_383.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/lift_383.png",
+      "sha256": "89b1797797afc0e1dea40a9bee6970bc81151d6d417fd371b939cb01777a7f94",
+      "bytes": 482653
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/lift_383_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/lift_383_detail.png",
+      "sha256": "1cd0cf718a148a70da44ce2d35c5d73d8e1b2ee060cd91d22d0ae11d877495a6",
+      "bytes": 222574
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/release_693.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/release_693.png",
+      "sha256": "c16e6652ef4e7b198531fb17aeb7764d740dc2ae988d3f46a981c9a2c232235b",
+      "bytes": 479523
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/release_693_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/release_693_detail.png",
+      "sha256": "1eab9eee68961818841fbd36d95d5b19f2c318e61de37f6614e4e08d4b999525",
+      "bytes": 217121
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/report.json",
+      "sha256": "6b88c9721fdadc99763d95e540ffcd0baa483cb76d14e341df6cc2b66404c358",
+      "bytes": 1632
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/retreat_738.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/retreat_738.png",
+      "sha256": "1b76d0ca7be9ecbf1200f64fdeaeaf74296b2130f7764e87358007a8a15d7c7f",
+      "bytes": 480605
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/retreat_738_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/retreat_738_detail.png",
+      "sha256": "6bcea75f64265491f1f4d57dd6b46c14eb78d96565d08f5f1ca2ffafd67d3d17",
+      "bytes": 210984
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/task.yaml",
+      "sha256": "1caaf4a7bcf4e9296204a56ef57471a6b934d2ba0ed3df2f6ab952fcb0e8a06e",
+      "bytes": 1906
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/trajectory.jsonl",
+      "sha256": "18358da981b83b185207ecc8c5b6f683792abbc096af7cba5a6b1dec9f914618",
+      "bytes": 829894
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/transport_494.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/transport_494.png",
+      "sha256": "fd5a37df19a0f39371081fc89349b2a12d1d65b72f10cb15968fc4d2aae5fef2",
+      "bytes": 479712
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T090843Z_170fb3ce/source_trial/transport_494_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T090843Z_170fb3ce/source_trial/transport_494_detail.png",
+      "sha256": "fdca700036da37fe24e440412857ed348f1827e3dbf78e50fa00e71e1a2e6acf",
+      "bytes": 214322
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/outcome.json",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_evidence_outcome.json",
+      "sha256": "2e2781042f78bb3f04ab491e5541d0a3b5afa306335e5d08b0eb1169c6b7fed9",
+      "bytes": 3278
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/proprio_stats/initial_state.npz",
+      "sha256": "ee520b89c4371b68b7b0fc07b2a56c9999301d6f62769d86adac87cdb066b0c3",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/replay/metadata.json",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/proprio_stats/metadata.json",
+      "sha256": "e66f68db3667ff21c37038c8c5e88f2705c8f83d0654a5921f2404da2ed2851f",
+      "bytes": 22790
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/replay/model.xml",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/proprio_stats/model.xml",
+      "sha256": "dc44170d89c00568f9420f87c2fefdb7ce34846cfd52d0058cfa7c090bb3e5ad",
+      "bytes": 786149
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/proprio_stats/privileged.jsonl",
+      "sha256": "0af6c3355bf87fcff400b94422efded7c321a14894df820083d79e5003bf04ff",
+      "bytes": 9263128
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/proprio_stats/proprio_stats.h5",
+      "sha256": "97d7534577aa199efe4029ab01b886a9a8cc644fb83026773fb6f5d4444b1ccc",
+      "bytes": 431724
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/align_514.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/align_514.png",
+      "sha256": "ada09c600dfde273fbbec6414df69f54c81d2854d50a03a440a2c540a5129d32",
+      "bytes": 478890
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/align_514_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/align_514_detail.png",
+      "sha256": "2864820ae1ba411c6dd5b18e0993bb7dc9031160b3b21657ff7063f4a8490a63",
+      "bytes": 217536
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/align_549.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/align_549.png",
+      "sha256": "f7e6b2c19509321635c5b7480305bd29f24c31404ae64115e0a904750d6067b1",
+      "bytes": 478596
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/align_549_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/align_549_detail.png",
+      "sha256": "64576d8873f199d9809fa111e865142488cf9c0d1aeb6ad15e691d1778892600",
+      "bytes": 217274
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/align_564.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/align_564.png",
+      "sha256": "88f4c4898c213f6b8ca5c1feaae292e862ebac1ce4ddce7b7a50cf17a93355a6",
+      "bytes": 479553
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/align_564_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/align_564_detail.png",
+      "sha256": "888a544ec16e8d432e1381b08c6333b8de7f582974ad68c16a4507e49bcbe590",
+      "bytes": 217037
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/align_579.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/align_579.png",
+      "sha256": "7551051102ffd72b3eddf0911c923952ae690a4e00baa1dc3c54c72dc78ad46a",
+      "bytes": 479219
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/align_579_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/align_579_detail.png",
+      "sha256": "c3ad461256d6a5e0ad037119dd0d614d96bf8eb6a060416b16b6a7f004745024",
+      "bytes": 217712
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/approach_213.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/approach_213.png",
+      "sha256": "73e5e67f3b30215ed0d09a46066428b12275e96dd164960a3f57877bf8855ab0",
+      "bytes": 482626
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/approach_213_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/approach_213_detail.png",
+      "sha256": "d66fd7c843f47de9cba554411473024be5900dcd50acc146287fdaf07ddabe8f",
+      "bytes": 211861
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/cameras.json",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/cameras.json",
+      "sha256": "5af2031a0a64825ca242d7799ae7489dd0f716d9e9df117798568d6393f41667",
+      "bytes": 14091
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/descend_279.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/descend_279.png",
+      "sha256": "27c2b9ca47fb5129f470970ca41986336b9ff0c216a11ce35ac9fb482376ea03",
+      "bytes": 477323
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/descend_279_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/descend_279_detail.png",
+      "sha256": "7d2d97f80c44d13af4747da3d7edc25f05213a3ce9ade130b9e89ca35bae721c",
+      "bytes": 211598
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/final_state.npz",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/final_state.npz",
+      "sha256": "68f1cee24a98c4a17e4781dd4ba54f9ede18b7607d5d1c19e32eb3e0ec976f50",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/fold_1009.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/fold_1009.png",
+      "sha256": "6bfce809d0cb068317e890b2b9c6d98457cc88e458f5e2925f24b3e80f284454",
+      "bytes": 474296
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/fold_1009_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/fold_1009_detail.png",
+      "sha256": "e0ed80c3b953f25922aa8e434f279b6260c59771045504f6de3e26b7b83e6235",
+      "bytes": 200925
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/grasp_351.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/grasp_351.png",
+      "sha256": "9ead3b94ef7acf388ff238382cb351f5d82263caaad053135440eb0085d91d30",
+      "bytes": 476464
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/grasp_351_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/grasp_351_detail.png",
+      "sha256": "a8b3656dfcdd1448d0ad8f4cf35d77a6a20a82b5dd153ea6257df7ce05b300fd",
+      "bytes": 210295
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/initial_state.npz",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/initial_state.npz",
+      "sha256": "ee520b89c4371b68b7b0fc07b2a56c9999301d6f62769d86adac87cdb066b0c3",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/insert_633.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/insert_633.png",
+      "sha256": "6b34cbb04e31139e96a72b7285058f99ae7ad75bf5dc48c92e46795266b3b811",
+      "bytes": 478351
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/insert_633_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/insert_633_detail.png",
+      "sha256": "16398271e83157f6e2e7693dbe84589a67ee712a529662c55c6ddb4793a14827",
+      "bytes": 216974
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/lift_383.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/lift_383.png",
+      "sha256": "ff39929923ce0d80260101f84ed45f30dcf54447bd33c7783c494f216dc8e130",
+      "bytes": 482785
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/lift_383_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/lift_383_detail.png",
+      "sha256": "82269611398ba4a7490c481faa8549e6169fe7dc6623b7438ad3861887fe6a63",
+      "bytes": 222410
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/release_705.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/release_705.png",
+      "sha256": "1cc8f3f13e801229e1f9636c8c5db82be075f974f0a067387880e2fdf4b69fa5",
+      "bytes": 479327
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/release_705_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/release_705_detail.png",
+      "sha256": "672486b599857a6d366be16e4ccf308a91dc2a2939002ab938912af5fc746de3",
+      "bytes": 217086
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/report.json",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/report.json",
+      "sha256": "04007f122ada7c01b88cbcc02bdc3a0d8474e74105e50f4577673d4bb473343a",
+      "bytes": 1632
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/retreat_750.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/retreat_750.png",
+      "sha256": "f9077738fa95c9764e128a8de402ccd08f47c937cbacd9a1c6218387cfc47658",
+      "bytes": 481392
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/retreat_750_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/retreat_750_detail.png",
+      "sha256": "7d9cb5442284062a5279d928ef416bef475d50e58c848f84e2b2fe02e9d6e493",
+      "bytes": 211337
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/task.yaml",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/task.yaml",
+      "sha256": "a1b44625ea2e00330d625989493954ffbef7694303b703b63a8df24475cc2917",
+      "bytes": 1906
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/trajectory.jsonl",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/trajectory.jsonl",
+      "sha256": "e451a39c761cec5eca36dca799a9dbf2ea136a76eb4aaac83fa8e7c97099d227",
+      "bytes": 839556
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/transport_494.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/transport_494.png",
+      "sha256": "07118f781691bbed4d0b5682677e5186f9ef44727b91d89adf70142f7f051b08",
+      "bytes": 480468
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091439Z_8284da3f/source_trial/transport_494_detail.png",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/source_trial/transport_494_detail.png",
+      "sha256": "2a0935db3632361abade37be01cc28ccebe11cc536ab55242b08a54190fe2efc",
+      "bytes": 214610
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/outcome.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/outcome.json",
+      "sha256": "44d6754fcaa0197e3d561fe48a229e76153e3cdfdff687676f1accdb8908a031",
+      "bytes": 3276
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/align_514.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/align_514.png",
+      "sha256": "3d4441e99493f66e1c5bd5460af7008958aea1de836112d192ec0e871cc2a9ce",
+      "bytes": 478882
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/align_514_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/align_514_detail.png",
+      "sha256": "4777a861f843c578f9b11540e34421a66655c08755ffadfd2f0e2372a2a9f8eb",
+      "bytes": 217460
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/align_532.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/align_532.png",
+      "sha256": "7143d2f499a9b73e2eb223af70f16984f8494618b11fdd24ebff348b3bc51846",
+      "bytes": 478487
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/align_532_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/align_532_detail.png",
+      "sha256": "7db40eaff9601118090993660dfc3436750355fc74f682f00a42e033c2885807",
+      "bytes": 217543
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/align_551.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/align_551.png",
+      "sha256": "29339e34c0cc3297d096607d197db744a00dce6a12c46d0338b47fd74d53a8ef",
+      "bytes": 478320
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/align_551_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/align_551_detail.png",
+      "sha256": "6152baa4c8a501a49267e84af1381457a5c01bdd963db0b8cb2c5c3f60107302",
+      "bytes": 217128
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/align_566.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/align_566.png",
+      "sha256": "a412c8c1ea554e616fc3d13d22d3a6b526b226115c09f5b4af4a520280228b91",
+      "bytes": 478484
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/align_566_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/align_566_detail.png",
+      "sha256": "4038ef938f993d02e4f2b405d7b5736300fc1d00098169f064bd9d3be217a281",
+      "bytes": 217276
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/approach_212.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/approach_212.png",
+      "sha256": "cc9125de103a9976c94ce21f32631469f8d64748e6dfd21dffc4cbed61c6bdb3",
+      "bytes": 482809
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/approach_212_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/approach_212_detail.png",
+      "sha256": "3b3bec497dc26afa79a7468215e367f84053f63ebfa82fd856e690dc9a78b915",
+      "bytes": 211224
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/cameras.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/cameras.json",
+      "sha256": "5af2031a0a64825ca242d7799ae7489dd0f716d9e9df117798568d6393f41667",
+      "bytes": 14091
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/descend_278.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/descend_278.png",
+      "sha256": "8012bca6e4d1acb5f32d4d173e5d6746172eb17b7b14c0313b4c1035baa0fea1",
+      "bytes": 477291
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/descend_278_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/descend_278_detail.png",
+      "sha256": "0caf0279c38bf6c3149f38d5f5ca1528244bcf8356fa278d5eed9af083b1376f",
+      "bytes": 211571
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/final_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/final_state.npz",
+      "sha256": "bfc3c31141006d7bec5b3a144c3f8b8eea49c205b74639f76e3a69d10c085385",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/fold_996.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/fold_996.png",
+      "sha256": "7e7f2ca2b18d89511c5aa4f351059922bcda6bbcfaee70f43308da44b3610dcc",
+      "bytes": 473967
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/fold_996_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/fold_996_detail.png",
+      "sha256": "15d984eba26d6722445f3e4a433dc25dd714e0f59eaa6f8d48d8f383140525c3",
+      "bytes": 200848
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/grasp_350.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/grasp_350.png",
+      "sha256": "5450aeadc58398d73a08632e107dc42596f0cf7bea2cd99316eecb1b6bcfa9b0",
+      "bytes": 476775
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/grasp_350_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/grasp_350_detail.png",
+      "sha256": "0eb8dc286397ebda39b6feda23b1611c404c142df95f4fcf71ba854d3f6054ad",
+      "bytes": 210666
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/initial_state.npz",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/initial_state.npz",
+      "sha256": "d6bd9acc53d080934d8c9d75fa5a9f65d05a8abe52e6ca28c704e435a2c13525",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/insert_620.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/insert_620.png",
+      "sha256": "0efed962f073358862ad6697e923644b69880e0740724645a286e8bf05f41831",
+      "bytes": 478891
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/insert_620_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/insert_620_detail.png",
+      "sha256": "9fa999a28107e8b39d3f602bf964bcd7caf34894cfafdba336bf77ef5cedf5f7",
+      "bytes": 217060
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/lift_382.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/lift_382.png",
+      "sha256": "b854f53125d8a90cb69224b2b82ed89594d867d435df75c395ae8bfb06870662",
+      "bytes": 482599
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/lift_382_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/lift_382_detail.png",
+      "sha256": "bb2b64c5b25fc52e13bc933c90249b9aad905d040e03670b2998961dc980ffa0",
+      "bytes": 222802
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/release_692.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/release_692.png",
+      "sha256": "a9cb768ede3c530f901c8bae007dd03bb6a9df1875053430c14260332b5d8e83",
+      "bytes": 479373
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/release_692_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/release_692_detail.png",
+      "sha256": "4e9a432e87accedeb96d8bb84b42a66c061af21955d831d6f9e1409c56d1a2af",
+      "bytes": 216792
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/report.json",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/report.json",
+      "sha256": "2ab6398f71e8c7f7d34f70a99bbef62529425afb1190f1c651713324376ff680",
+      "bytes": 1631
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/retreat_737.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/retreat_737.png",
+      "sha256": "cc87427774e0146d0b49262b537ad941ea5c4c32e0531fd749995abc5c9959e7",
+      "bytes": 480776
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/retreat_737_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/retreat_737_detail.png",
+      "sha256": "610fe18eeea08ae56d01c710c2e6c7f20c0b5290be2e725c368d68decfd87565",
+      "bytes": 211093
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/task.yaml",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/task.yaml",
+      "sha256": "f1e402eae6251b90a8154496e30368a7d70d5fdf6c186dd77529a4807d854fbe",
+      "bytes": 1907
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/trajectory.jsonl",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/trajectory.jsonl",
+      "sha256": "d5f03293d279471e6196f3d75e722e3a96268344af87e4734385356d270730dc",
+      "bytes": 829011
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/transport_493.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/transport_493.png",
+      "sha256": "e511c45746e7b96f59a5e023c2630d5d4ba953df215f7f6a1b5295606f53d94c",
+      "bytes": 479745
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261111T091440Z_5498192b/source_trial/transport_493_detail.png",
+      "new": "self_evolution/legacy_success_evidence/20261111T091440Z_5498192b/source_trial/transport_493_detail.png",
+      "sha256": "ce9b95ff1bafe4ce42d08a4978b1aea6c7f28e6bad0c2450664341775cf2c085",
+      "bytes": 214673
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T071105Z_6a45b3cd/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/proprio_stats/initial_state.npz",
+      "sha256": "9dc36383b0e9c20d390e4db66a5aa558bdfa5ed1fed892af8f4761e90a7f7f2c",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T071105Z_6a45b3cd/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/proprio_stats/metadata.json",
+      "sha256": "9bf1946a89e9884f6e18ed72a9723283af1eda61336589bebb9a4f9b0a5252c3",
+      "bytes": 20773
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T071105Z_6a45b3cd/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/proprio_stats/model.xml",
+      "sha256": "dbbc52a01d402d1a75b4fd9cd298a32d2ed7aa02fc985d05d321d576287d8856",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T071105Z_6a45b3cd/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/outcome.json",
+      "sha256": "4977af451d58fb1539edbd7a8cffd3b9511622da573414d89a72fed0d78f1414",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T071105Z_6a45b3cd/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/proprio_stats/privileged.jsonl",
+      "sha256": "512541b3756e7e71823e15b27f6fc35ef8fa3e575a090829cb02bafa6b56d73b",
+      "bytes": 12449897
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T071105Z_6a45b3cd/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/proprio_stats/proprio_stats.h5",
+      "sha256": "ce6ee3ab47d1757443c0510f32e18a451f15bd131d219bdf084711866c10c529",
+      "bytes": 491711
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T071105Z_6a45b3cd/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/proprio_stats/recorded_commands.csv",
+      "sha256": "5bc59a8393929dfce04e98f4418434c2a2570576c5ca9b782ad1a022ead4b5bb",
+      "bytes": 329679
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073436Z_43d3e2c2/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/proprio_stats/initial_state.npz",
+      "sha256": "9dc36383b0e9c20d390e4db66a5aa558bdfa5ed1fed892af8f4761e90a7f7f2c",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073436Z_43d3e2c2/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/proprio_stats/metadata.json",
+      "sha256": "9e5eadda81c6441ccd3adad578da25a0c1d783ccd93eeb4eb33d3e7d6d86e38f",
+      "bytes": 20773
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073436Z_43d3e2c2/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/proprio_stats/model.xml",
+      "sha256": "dbbc52a01d402d1a75b4fd9cd298a32d2ed7aa02fc985d05d321d576287d8856",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073436Z_43d3e2c2/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/outcome.json",
+      "sha256": "0ceaa512b1690bf015ca0c4e6f362bbe663ff7c9162963b29db2fa07371eeda1",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073436Z_43d3e2c2/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/proprio_stats/privileged.jsonl",
+      "sha256": "512541b3756e7e71823e15b27f6fc35ef8fa3e575a090829cb02bafa6b56d73b",
+      "bytes": 12449897
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073436Z_43d3e2c2/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/proprio_stats/proprio_stats.h5",
+      "sha256": "181cdadc57588799a8efecea3a2e0c51350ac8eb6fa2b980a4d9f76705b5b8dc",
+      "bytes": 491711
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073436Z_43d3e2c2/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/proprio_stats/recorded_commands.csv",
+      "sha256": "694b38f82cf2a4c5f0693277a15d5aaea41aa9ca796de48ac3a23c5302dc11c4",
+      "bytes": 329666
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073851Z_908954b8/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/proprio_stats/initial_state.npz",
+      "sha256": "9dc36383b0e9c20d390e4db66a5aa558bdfa5ed1fed892af8f4761e90a7f7f2c",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073851Z_908954b8/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/proprio_stats/metadata.json",
+      "sha256": "0441e22b8afc69a59e0a786e75f2f55c932e84eb38254a2873ee76a458d04868",
+      "bytes": 20666
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073851Z_908954b8/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/proprio_stats/model.xml",
+      "sha256": "dbbc52a01d402d1a75b4fd9cd298a32d2ed7aa02fc985d05d321d576287d8856",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073851Z_908954b8/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/outcome.json",
+      "sha256": "f2596492fc40fc0f57273b89b7d1bd4bd2e52be3c5e00dbd4eb1a70f3005a930",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073851Z_908954b8/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/proprio_stats/privileged.jsonl",
+      "sha256": "dbc3ece28fa24f04c8e0755cacff5a16e6e27854d3f3f4fbdfdab8e61ada1cab",
+      "bytes": 12449897
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073851Z_908954b8/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/proprio_stats/proprio_stats.h5",
+      "sha256": "d644114b8e59a3d97437900c9df4bd3def282c054e1a14505e9b6400f3c544e7",
+      "bytes": 486007
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T073851Z_908954b8/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/proprio_stats/recorded_commands.csv",
+      "sha256": "7d6bacfe87862673e8c5851b5ac2f61a615bca7525ffcc152571d4ddddd301b2",
+      "bytes": 329648
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T075628Z_ee017e71/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/proprio_stats/initial_state.npz",
+      "sha256": "37b0bd9cd35d5c8ae0414e216bda5e2f97fc6a71d2620d8cf3c0f62718787cbe",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T075628Z_ee017e71/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/proprio_stats/metadata.json",
+      "sha256": "7916bdfa7eddd56d9987971ae208304b5a2ed907419c07b0a6df3c0c4b029b6e",
+      "bytes": 20777
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T075628Z_ee017e71/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/proprio_stats/model.xml",
+      "sha256": "f841729f64fd5ffa053e5ba7bb26e70720ed559651d3d884f8713c011b31deda",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T075628Z_ee017e71/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/outcome.json",
+      "sha256": "e9d38af824be563a82d14bf86435c2da8e2e95d22d6b79a05bfea812b7786a0e",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T075628Z_ee017e71/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/proprio_stats/privileged.jsonl",
+      "sha256": "8003f3bbc20d3c5f778800ef6a752a420fd580115e64345f060a653b7aa9e650",
+      "bytes": 12449084
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T075628Z_ee017e71/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/proprio_stats/proprio_stats.h5",
+      "sha256": "b34f816d36f8210267345f4fd407440558a36696a35788a110a54be7ae908acb",
+      "bytes": 491711
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T075628Z_ee017e71/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/proprio_stats/recorded_commands.csv",
+      "sha256": "9897e997758df5bd54c1b0529cfa4ef46a637b3f83d07956018feb2c1c6ebd0f",
+      "bytes": 329659
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T080244Z_7a0dd62e/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/proprio_stats/initial_state.npz",
+      "sha256": "37b0bd9cd35d5c8ae0414e216bda5e2f97fc6a71d2620d8cf3c0f62718787cbe",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T080244Z_7a0dd62e/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/proprio_stats/metadata.json",
+      "sha256": "f892b1f74800afc570b733c3d4f1e05f11f9d171e7b6a5ecac9ba6d063ea9030",
+      "bytes": 20670
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T080244Z_7a0dd62e/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/proprio_stats/model.xml",
+      "sha256": "f841729f64fd5ffa053e5ba7bb26e70720ed559651d3d884f8713c011b31deda",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T080244Z_7a0dd62e/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/outcome.json",
+      "sha256": "6f11647928482ad4fcc218a5014959a53222eb4b0f410ec980387ed276c502bd",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T080244Z_7a0dd62e/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/proprio_stats/privileged.jsonl",
+      "sha256": "e4572c624630dc0fbbacf49fce01745455394df3225b3cf43e9c2756b43e7fd6",
+      "bytes": 12449084
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T080244Z_7a0dd62e/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/proprio_stats/proprio_stats.h5",
+      "sha256": "35a78caf805661880a86d303b0635066511ffa163c53a2973b8ca45708c42014",
+      "bytes": 486007
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T080244Z_7a0dd62e/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/proprio_stats/recorded_commands.csv",
+      "sha256": "028277bbfe2bfdb5598195f5fa1ba18a5974dbb0969340e35c12ce6b544a5321",
+      "bytes": 329665
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081404Z_1d085fff/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/proprio_stats/initial_state.npz",
+      "sha256": "15115f4fca05716a43c35f9e0d6b4b484f42b45df9a68d36223ba844fb4cb939",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081404Z_1d085fff/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/proprio_stats/metadata.json",
+      "sha256": "e846ef5c671167c7cd46523b1c5b97c1c32c96b65e0a207e50836a27415f020f",
+      "bytes": 20669
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081404Z_1d085fff/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/proprio_stats/model.xml",
+      "sha256": "14bcf7009d59251882c412e29b335123af17c4e14c0f2f04989f7a30a53864f2",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081404Z_1d085fff/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/outcome.json",
+      "sha256": "d090ae6c05d6a034ff32ed30526c6691ced20adeb21b20c78736ae640d8614ae",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081404Z_1d085fff/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/proprio_stats/privileged.jsonl",
+      "sha256": "ad81d4737a4b219d7d75c4ba9cf516f732acf5baa2c73e3a4f3712be50020c82",
+      "bytes": 12301551
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081404Z_1d085fff/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/proprio_stats/proprio_stats.h5",
+      "sha256": "f308efbf37412083aa3e370f27b6f379a37c22adb07d4e3c6f56ca61e2b264e2",
+      "bytes": 486007
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081404Z_1d085fff/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/proprio_stats/recorded_commands.csv",
+      "sha256": "5f7c8ba44901086787583d5655edda4850ef15221f13c293922298d3ebebe35c",
+      "bytes": 329551
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081719Z_51d78043/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/proprio_stats/initial_state.npz",
+      "sha256": "15115f4fca05716a43c35f9e0d6b4b484f42b45df9a68d36223ba844fb4cb939",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081719Z_51d78043/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/proprio_stats/metadata.json",
+      "sha256": "f3d57e9f9400b6bf5608baf7114de870d0a4c8e8ac2142d60b686ce3695d11ab",
+      "bytes": 20670
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081719Z_51d78043/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/proprio_stats/model.xml",
+      "sha256": "14bcf7009d59251882c412e29b335123af17c4e14c0f2f04989f7a30a53864f2",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081719Z_51d78043/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/outcome.json",
+      "sha256": "85ad506bf32d7ca0345b386755db5662a8bf31ad03004f9e3ab2f6a942f9b197",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081719Z_51d78043/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/proprio_stats/privileged.jsonl",
+      "sha256": "a2e513546dd5de6b3322c330ca1a19167b9143f003d917a6c4f26460e8969a22",
+      "bytes": 12301211
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081719Z_51d78043/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/proprio_stats/proprio_stats.h5",
+      "sha256": "ac00eca14bc35f9306e30041fd0c5616f519075ff1d9ecdcd526ea4c9e89c5b4",
+      "bytes": 486007
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T081719Z_51d78043/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/proprio_stats/recorded_commands.csv",
+      "sha256": "4d317cb326c007c5e6ebee3be0946b9d623e955fd193f701d64769c781f35765",
+      "bytes": 329636
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084117Z_37dd0986/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/proprio_stats/initial_state.npz",
+      "sha256": "b6cd7ce8d2786b7797073425a07a5106e18c8479ec7fe0b326247f91bad1b5c8",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084117Z_37dd0986/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/proprio_stats/metadata.json",
+      "sha256": "9d888bb557ad7fe228e79372b1692a99270917ac3fc136a865a5e87a94a29e30",
+      "bytes": 20686
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084117Z_37dd0986/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/proprio_stats/model.xml",
+      "sha256": "b56cb6adb10f5cd1ab8c21d663980c30294e582ff4eaff0d85536c48e7b691d1",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084117Z_37dd0986/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/outcome.json",
+      "sha256": "12046b111004729786ea2bd75860a4a98d5d6625b46079bd7dd4dd54bafaa74e",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084117Z_37dd0986/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/proprio_stats/privileged.jsonl",
+      "sha256": "f70ebff9e5f571e5bbadf912028ad343caffd44ac1ffd5cd043df7de182313c6",
+      "bytes": 12288599
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084117Z_37dd0986/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/proprio_stats/proprio_stats.h5",
+      "sha256": "869ca706c2633daf2a92bbe7bc9ad15d81658f9f37a8adc25979182dbabde6de",
+      "bytes": 485217
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084117Z_37dd0986/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/proprio_stats/recorded_commands.csv",
+      "sha256": "bce86562508a21fe37891a08732b69265b2078d8c3c6dc4d5682bd4a6b27417c",
+      "bytes": 328950
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084434Z_5cf241f9/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/proprio_stats/initial_state.npz",
+      "sha256": "3ec8d9ddcfaa9881ae43f7df32d5680485f477cd03dcdc3967831c3d6d9360bd",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084434Z_5cf241f9/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/proprio_stats/metadata.json",
+      "sha256": "2a1739142d87bab3f603ed3027d71e8f0013157018e2415a4514d59fbfc3138c",
+      "bytes": 20684
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084434Z_5cf241f9/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/proprio_stats/model.xml",
+      "sha256": "72bed30c142ed4415b5f3b894f002b597705ace2dfec2fe85568d19141eef78e",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084434Z_5cf241f9/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/outcome.json",
+      "sha256": "d4501a47300c8b059a9e3ca4453b2413b38f40718456e35f5ad6c3ca2412891e",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084434Z_5cf241f9/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/proprio_stats/privileged.jsonl",
+      "sha256": "39ece7a2c44e3699bdc7d1208b1828760a9b27d3dd5baf4282cf0062ee162e4f",
+      "bytes": 12305041
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084434Z_5cf241f9/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/proprio_stats/proprio_stats.h5",
+      "sha256": "84ae418d94df340ac63ceeb24c3b68d32ee15dc39f961ebbf0cdadd6ec30c42f",
+      "bytes": 486402
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T084434Z_5cf241f9/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/proprio_stats/recorded_commands.csv",
+      "sha256": "9de75870865d0fc1fc3326bccbf41def7776e3d6fee08a0471775572f9179af6",
+      "bytes": 329782
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092311Z_901189c4/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/proprio_stats/initial_state.npz",
+      "sha256": "c0ecec167b89f17a94d7e754feb4f138c739279618f6d3730e8d255fd7ae0904",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092311Z_901189c4/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/proprio_stats/metadata.json",
+      "sha256": "1bd39c651686d9a41b5bd191fbf2e8785be26b82c53baf50bbcf25b1f1042e17",
+      "bytes": 20671
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092311Z_901189c4/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/proprio_stats/model.xml",
+      "sha256": "4dbfe9b2a44efd339bc3ce08af34249432cc49aac2eacca8b491c079224a44f6",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092311Z_901189c4/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/outcome.json",
+      "sha256": "e16e65e576c9ad85f5ed343e4fe2cf6e9a9611f00d62ea56d34d98fd97c93f4e",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092311Z_901189c4/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/proprio_stats/privileged.jsonl",
+      "sha256": "e98b71b9b7e66d13b700cd704fb8a6867b0ab396d48e4341ddfd7bfe73062895",
+      "bytes": 12302157
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092311Z_901189c4/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/proprio_stats/proprio_stats.h5",
+      "sha256": "d545c06db2d61be5c9a00de22d493b0a7d6054cca0ccac9b1181af3e031988c1",
+      "bytes": 486007
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092311Z_901189c4/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/proprio_stats/recorded_commands.csv",
+      "sha256": "6efc1fe2d5fa0c47a3ae648d32389ebaf5ca1c970d2b3183d38b26942cb1b4fe",
+      "bytes": 329624
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092555Z_cc2a60d2/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/proprio_stats/initial_state.npz",
+      "sha256": "c0ecec167b89f17a94d7e754feb4f138c739279618f6d3730e8d255fd7ae0904",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092555Z_cc2a60d2/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/proprio_stats/metadata.json",
+      "sha256": "57e46c1ac58714a67cbc3ecb27e6c8d773e08e857e8a0aeeb58add1528e409ed",
+      "bytes": 20686
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092555Z_cc2a60d2/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/proprio_stats/model.xml",
+      "sha256": "4dbfe9b2a44efd339bc3ce08af34249432cc49aac2eacca8b491c079224a44f6",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092555Z_cc2a60d2/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/outcome.json",
+      "sha256": "7bc08a03756d0395300114639992ed385d942467c27b159237a90db8b15a212a",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092555Z_cc2a60d2/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/proprio_stats/privileged.jsonl",
+      "sha256": "6918869b1863a4ac6bb767ea7be70b261bcc19c4b5ded844523b41738ee53296",
+      "bytes": 12301807
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092555Z_cc2a60d2/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/proprio_stats/proprio_stats.h5",
+      "sha256": "60369c657a5f766d731991e7627f0fd452c17a6a7bac0fe6de0d7f57c35dc5bd",
+      "bytes": 486007
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092555Z_cc2a60d2/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/proprio_stats/recorded_commands.csv",
+      "sha256": "2acbbed453e47884f82f886dc8aba16d5a26f360cf19a34da2ea71e82920cda0",
+      "bytes": 329547
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092838Z_bf17d184/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/proprio_stats/initial_state.npz",
+      "sha256": "d0e58b26ce1237fed4d1bda865673e5343e25157822a4fa54f2c58f6cb1132f0",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092838Z_bf17d184/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/proprio_stats/metadata.json",
+      "sha256": "b41ff1b8abf5f5c3a20f6afff265310cf387851993c4e7db69c1b8e3ac178a92",
+      "bytes": 20687
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092838Z_bf17d184/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/proprio_stats/model.xml",
+      "sha256": "69c3f879822a83b7a0ec6d2eec46d3a9a168f08a80c291c2bc0d30f369448146",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092838Z_bf17d184/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/outcome.json",
+      "sha256": "796a87ea3ad029e71b02c119816280ef9047f3a7029b27ed734df1df135340b4",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092838Z_bf17d184/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/proprio_stats/privileged.jsonl",
+      "sha256": "cd19369b76caf36fe81358a7f131c2162d543f80442eae169e115b24f131132f",
+      "bytes": 12302036
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092838Z_bf17d184/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/proprio_stats/proprio_stats.h5",
+      "sha256": "785baa13aa96522d956e65e7da2b605020f7f7617d30c4241b287bcc1cea24ef",
+      "bytes": 486007
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T092838Z_bf17d184/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/proprio_stats/recorded_commands.csv",
+      "sha256": "07e1854bf37fefc5e9d2b45dabd960815738c9143154514b0d9e4b23515f4d19",
+      "bytes": 329683
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T093157Z_13f12a06/replay/initial_state.npz",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/proprio_stats/initial_state.npz",
+      "sha256": "d0e58b26ce1237fed4d1bda865673e5343e25157822a4fa54f2c58f6cb1132f0",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T093157Z_13f12a06/replay/metadata.json",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/proprio_stats/metadata.json",
+      "sha256": "ffff3d5696e4b22d05d4b90baae955310aac43b3e92f0608dc6412da793043ed",
+      "bytes": 20672
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T093157Z_13f12a06/replay/model.xml",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/proprio_stats/model.xml",
+      "sha256": "69c3f879822a83b7a0ec6d2eec46d3a9a168f08a80c291c2bc0d30f369448146",
+      "bytes": 904354
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T093157Z_13f12a06/replay/outcome.json",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/outcome.json",
+      "sha256": "8e2955f08dbdeb9023939afc49dfb68255298d4c55aa09736674169c1bc1e2bb",
+      "bytes": 165
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T093157Z_13f12a06/replay/privileged.jsonl",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/proprio_stats/privileged.jsonl",
+      "sha256": "59d8129209a503020cca1f5a89a89601da0cc596ff8b1c61afb69f324965d587",
+      "bytes": 12302561
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T093157Z_13f12a06/replay/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/proprio_stats/proprio_stats.h5",
+      "sha256": "b69858b63ffb880c45c5aeec939916186535e09e797b0acd01a09d06b7acaa1b",
+      "bytes": 486007
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/20261112T093157Z_13f12a06/replay/recorded_commands.csv",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/proprio_stats/recorded_commands.csv",
+      "sha256": "a8f6a1243ba24ddafb895892a385e695c1e6efb63572561fdede00e06f486994",
+      "bytes": 329690
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/initial_state.npz",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/initial_state.npz",
+      "sha256": "db66cb8ebcb2c2fc6e2d8755c3e246a2f298aeb7c7de0eb59e1185d4c201b2f6",
+      "bytes": 1318
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/metadata.json",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/metadata.json",
+      "sha256": "1fefef3416734238000831c8636249e2baeceb24422424ace85db0f27c09a89a",
+      "bytes": 22516
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/model.xml",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/model.xml",
+      "sha256": "7125fc3bddad2faa73aabe6484305a05d09c9219bd716eb9a632b4835775b330",
+      "bytes": 966183
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/privileged.jsonl",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/privileged.jsonl",
+      "sha256": "d740288088b006b0e92544239f87941dea85bc572559021d04c8d202499b7893",
+      "bytes": 9314961
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/proprio_stats.h5",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats/proprio_stats.h5",
+      "sha256": "9c371fae72d61525b296552a426720e9ba45ee161b3beb1004a94ff31ce6133d",
+      "bytes": 434355
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261111T083904Z_3457e2ad.json",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/recording_20261111T083904Z_3457e2ad.json",
+      "sha256": "116896a0952282561f33041a6a9ee918c9d5c95dc9d5c22c35ab34d39792b796",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261111T091439Z_8284da3f.json",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/recording_20261111T091439Z_8284da3f.json",
+      "sha256": "55167956a1c7f4b73becd5a41cb1dfd77123a82cd7fc314b2810149fda6477d3",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T071105Z_6a45b3cd.json",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/recording_20261112T071105Z_6a45b3cd.json",
+      "sha256": "d2a39044ae7e0b35859b29281f04fd9397056cd8966363fa0e4f687e1a2415bc",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T073436Z_43d3e2c2.json",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/recording_20261112T073436Z_43d3e2c2.json",
+      "sha256": "ca6ce94be820561cdf186fff8632fa97c09289859997330a8cacf436c921d2b6",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T073851Z_908954b8.json",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/recording_20261112T073851Z_908954b8.json",
+      "sha256": "bc387ca2ab72cfe8693d027bdeabd419c53f7cad2ec174beb48a7a2225571694",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T075628Z_ee017e71.json",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/recording_20261112T075628Z_ee017e71.json",
+      "sha256": "9adf6a5d88cb346302b0a81579d098afcbabfa77b1079cefa224609d443f31a2",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T080244Z_7a0dd62e.json",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/recording_20261112T080244Z_7a0dd62e.json",
+      "sha256": "d178bbfa1aa5386b92882922594165caa82bbc0a73e43fdccee642ce2ebf671e",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T081404Z_1d085fff.json",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/recording_20261112T081404Z_1d085fff.json",
+      "sha256": "0545ebccd426e731f4cfe277f6c33fe01982ea20af21f47c1ca6e1b7d8f30e12",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T081719Z_51d78043.json",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/recording_20261112T081719Z_51d78043.json",
+      "sha256": "bb77fc9a43a8233a0dc8284cd816ec1c66dcb7e09b59cadc0ffde048ce232dc4",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T084117Z_37dd0986.json",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/recording_20261112T084117Z_37dd0986.json",
+      "sha256": "31eef7cdcbf45067ed54e3777a34e1109abfccfa722c0ad39ee69a6c53255f83",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T084434Z_5cf241f9.json",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/recording_20261112T084434Z_5cf241f9.json",
+      "sha256": "0ad7b8bd96f1e93c9f9979a4989750f100f2d71bd5d142dce7eee53fd1f5161e",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T092311Z_901189c4.json",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/recording_20261112T092311Z_901189c4.json",
+      "sha256": "01d8061791119caf5caf46c86b2e2b252b55a572eb5ba376442272a513b3f88b",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T092555Z_cc2a60d2.json",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/recording_20261112T092555Z_cc2a60d2.json",
+      "sha256": "9225dd1d0b09ce634bb32037f0a7e450fa656b9b386ed971f48d5c42591fd436",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T092838Z_bf17d184.json",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/recording_20261112T092838Z_bf17d184.json",
+      "sha256": "fd484a33c30e360c9541860b97e874ae1149c376a3fba409656ec0df446f4fc6",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/recording_20261112T093157Z_13f12a06.json",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/recording_20261112T093157Z_13f12a06.json",
+      "sha256": "8255721a0e6b2de03e98be2378ff408abd4b333db8865f38de090bf73915bd69",
+      "bytes": 242
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261111T083904Z_3457e2ad/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/videos/cam_external_rgb.mp4",
+      "sha256": "915b37eec2549ce7c1cf0f36c03d32e6588c842c7f5d36972d7718b15825f836",
+      "bytes": 1396430
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261111T083904Z_3457e2ad/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261111T083904Z_3457e2ad/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261111T083904Z_3457e2ad/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "3c673e8c40cd25ef2edc5948a251001859b7702cf7b0dfff7163bf06466a4e19",
+      "bytes": 3357026
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261111T091439Z_8284da3f/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/videos/cam_external_rgb.mp4",
+      "sha256": "18dca82d85bc712955998d6c640637fdf1b3d75ffcbdf2b0a248f5bdf1699988",
+      "bytes": 1189013
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261111T091439Z_8284da3f/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9d759d2d4ed6c6f1b779879372cf73b8019fa9ed1619c4fc762c0e7ef4cb6872",
+      "bytes": 241598
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261111T091439Z_8284da3f/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261111T091439Z_8284da3f/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "bad67f17694635a99a89580c202b444a9a3886e7c5885760da51dd909b14afd3",
+      "bytes": 3270331
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T071105Z_6a45b3cd/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/videos/cam_external_rgb.mp4",
+      "sha256": "1879fd2dc89d3a7011dc79074b42dcdfff3b530bb893c96f1bc578d0d5836641",
+      "bytes": 1396028
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T071105Z_6a45b3cd/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T071105Z_6a45b3cd/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T071105Z_6a45b3cd/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "52afc73f5dd7336d1a91a0c4f302e2d767d45713549342f854b35edd88759b8e",
+      "bytes": 3356617
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T073436Z_43d3e2c2/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/videos/cam_external_rgb.mp4",
+      "sha256": "5d552c9ca30cbff979521122fff261278855b97eed38aa9ea73aff8c8970124d",
+      "bytes": 1395257
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T073436Z_43d3e2c2/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T073436Z_43d3e2c2/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T073436Z_43d3e2c2/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "73b3bc2ecd3198db1b522fa69609d3b085af970909d3ccff53a71cdfee166057",
+      "bytes": 3355478
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T073851Z_908954b8/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/videos/cam_external_rgb.mp4",
+      "sha256": "ccb8ce38efef4425174e84d91c2a6e85b823a38da9bcf2a0a01e8818658acad1",
+      "bytes": 1395852
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T073851Z_908954b8/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T073851Z_908954b8/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T073851Z_908954b8/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "9250aaeeddbbd97f94a9db994ff8a7ad394d46bcd0778eed0e212f3ea6555e77",
+      "bytes": 3357928
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T075628Z_ee017e71/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/videos/cam_external_rgb.mp4",
+      "sha256": "5f1e1387dc98334a66b652ef63ea5849c63c63cff4a03c5534eb612c96d9b258",
+      "bytes": 1396527
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T075628Z_ee017e71/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T075628Z_ee017e71/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T075628Z_ee017e71/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "096c9d1c978b7acb20ab2e716f074edf7ff2726892b426978c6d0fc805f91751",
+      "bytes": 3358966
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T080244Z_7a0dd62e/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/videos/cam_external_rgb.mp4",
+      "sha256": "3931b9becda6af5b32c24d6d28f6f2c713cd6b830d9461a692a53fff5586d3e4",
+      "bytes": 1394805
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T080244Z_7a0dd62e/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T080244Z_7a0dd62e/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T080244Z_7a0dd62e/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "d7c32319eba6f9ab76ab9483f977e33aa87eba32022e7acca7a82a61e38468c9",
+      "bytes": 3359274
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T081404Z_1d085fff/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/videos/cam_external_rgb.mp4",
+      "sha256": "b31dac7e19b3ae7cf128202dc1573d93c1dc5e39ef7fb520bea0a4902127942b",
+      "bytes": 1396122
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T081404Z_1d085fff/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T081404Z_1d085fff/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T081404Z_1d085fff/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "7752311e062ae2e942c3ecf4cf9b9f4716cb10d852ae8cb7ad5308920b37dda0",
+      "bytes": 3358385
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T081719Z_51d78043/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/videos/cam_external_rgb.mp4",
+      "sha256": "c1718046f53b6eacda8ee98fb753024b26973aeebc5a6f54b07b7309fb7ad1bc",
+      "bytes": 1396658
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T081719Z_51d78043/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T081719Z_51d78043/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T081719Z_51d78043/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "a1ecb081e962b4e845cd16e4c81659db3c9792c301c9d681bfe931f82a69fa7d",
+      "bytes": 3360856
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T084117Z_37dd0986/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/videos/cam_external_rgb.mp4",
+      "sha256": "410be2cc3bc1b958945bd2edd058ba8de9428fe5373ab0112a8d3f5e0ef48648",
+      "bytes": 1398734
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T084117Z_37dd0986/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "034dfe805e5d6e36526b0ed78f9a257e13bf1dd7f29a944a2a5247cb62772d7d",
+      "bytes": 261754
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T084117Z_37dd0986/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T084117Z_37dd0986/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "f720831e7899b41bdf47236ee089e35a172cdc68e3e380798629a30244207b25",
+      "bytes": 3361012
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T084434Z_5cf241f9/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/videos/cam_external_rgb.mp4",
+      "sha256": "ad1cec1794662f6de967a0cf79eaa7bda3a8b08707c8f69c7288932984c10a3b",
+      "bytes": 1398191
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T084434Z_5cf241f9/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "655053ed0291774f4b83f570eaf99d2b11fc7cbffaae0dd81c2b3822b50091e5",
+      "bytes": 262140
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T084434Z_5cf241f9/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T084434Z_5cf241f9/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "a06a49fc0b0adffb35e53655324c39060b60a159705cb2235bb848e574e1d318",
+      "bytes": 3362052
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092311Z_901189c4/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/videos/cam_external_rgb.mp4",
+      "sha256": "725daa4ec45a53d21b26f622695d7ea0c300d7d685c9c03083d452856a6ee8c8",
+      "bytes": 1399981
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092311Z_901189c4/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092311Z_901189c4/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092311Z_901189c4/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "7122c9db13b1e2e7a0dcf5de7541ff66161be6fed1c4ccbe5a371f53d5307704",
+      "bytes": 3363286
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092555Z_cc2a60d2/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/videos/cam_external_rgb.mp4",
+      "sha256": "fcf98f347fd7832886cf530b2c2c328315fe93ca47dd9540f5c838469d1ba3a4",
+      "bytes": 1397357
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092555Z_cc2a60d2/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092555Z_cc2a60d2/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092555Z_cc2a60d2/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "8c7b2e7efd24481625417b2244ab3278f9e0dcae75d9604eb14fb65d9db20006",
+      "bytes": 3357584
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092838Z_bf17d184/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/videos/cam_external_rgb.mp4",
+      "sha256": "91a387f7bd4cb8b195811ea60b951481cf4db0a34c316b60dd3ad94fa285793d",
+      "bytes": 1395141
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092838Z_bf17d184/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T092838Z_bf17d184/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T092838Z_bf17d184/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "21994f967c82dd16ba14e57197de1861acac1759c322fe7e1b3ea81f107fe253",
+      "bytes": 3361764
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T093157Z_13f12a06/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/videos/cam_external_rgb.mp4",
+      "sha256": "c855acb89246f9813f6d1fe0e4d95b4f0e0d06d45255c12fd3e5bf8865daa75a",
+      "bytes": 1396512
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T093157Z_13f12a06/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f",
+      "bytes": 261997
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/20261112T093157Z_13f12a06/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261112T093157Z_13f12a06/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "a3970545fe1137b9aacc98ee161642d368969260b9c0c2680cbe6f4e8ef0f13d",
+      "bytes": 3362174
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/cam_external_rgb.mp4",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/cam_external_rgb.mp4",
+      "sha256": "19aa16ce575235581caf9b03f1dfa3c02220723940fc75789fc4ba22e39dd480",
+      "bytes": 1191995
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/cam_left_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "92f3141c1b049da4dd50740230089b0c68cb08fa1fb445a20188bd2d2d5e0311",
+      "bytes": 244796
+    },
+    {
+      "old": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/cam_right_wrist_rgb.mp4",
+      "new": "complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "fb85756f3734de14010634dab199a586cbdb6b7d8da6ee63b2b15b7e983592a1",
+      "bytes": 3282646
+    }
+  ],
+  "applied": true,
+  "all_existing_file_hashes_preserved": true,
+  "generated_outcome_summaries": [
+    "complete_sim/succeed/20261111T083904Z_3457e2ad/outcome.json",
+    "complete_sim/succeed/20261111T091439Z_8284da3f/outcome.json"
+  ]
+}

@@ -6,7 +6,7 @@ import shutil
 import time
 from learn import DATA,ROOT,record,finish,save,digest
 from episode_format import supplement, validate
-SUCCESS=DATA/'complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001'
+SUCCESS=DATA/'complete_sim/succeed'
 IDS=['20261111T083904Z_3457e2ad','20261111T083720Z_f64309a8']
 def main():
     import av
@@ -28,12 +28,13 @@ def main():
             trial=DATA/'self_evolution'/ident
             supplement(source,trial)
             verification=validate(source,trial,expected_success=success)
-            base=SUCCESS if success else DATA/'complete_sim/failed'/ident
-            vd=base/'videos'/ident if success else base/'videos'
-            md=base/'proprio_stats'/ident/'replay' if success else base/'proprio_stats'
+            base=(SUCCESS if success else DATA/'complete_sim/failed')/ident
+            if base.exists():raise FileExistsError('Episode already exists; do not overwrite: '+ident)
+            vd=base/'videos'
+            md=base/'proprio_stats'
             vd.parent.mkdir(parents=True,exist_ok=True);md.parent.mkdir(parents=True,exist_ok=True)
             shutil.copytree(source/'videos',vd);shutil.copytree(source/'proprio_stats',md)
-            save(md/'outcome.json' if success else base/'outcome.json',outcome)
+            save(base/'outcome.json',outcome)
             r.update(result='success',task_success=success,validation_status='SIMULATION_VERIFIED' if success else 'SIMULATION_FAILURE_RECORDED',
                 initial_state={'source_experiment':ident},observed_effects=[{'outcome':outcome,'video_frames':counts,'quality':meta.get('quality')}],
                 lessons_learned=['Videos, state/action and object trace verified using simulator privileged information; simulation-only evidence.'],

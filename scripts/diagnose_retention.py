@@ -42,7 +42,7 @@ def analyze_retention(rows, privileged):
 def diagnose_episode(result):
     ident=result['experiment_id']
     raw=DATA/'self_evolution'/ident
-    stats=(DATA/'complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/proprio_stats'/ident/'replay'
+    stats=(DATA/'complete_sim/succeed'/ident/'proprio_stats'
            if result['task_success'] else DATA/'complete_sim/failed'/ident/'proprio_stats')
     rows=[json.loads(x) for x in (raw/'trajectory.jsonl').read_text().splitlines()]
     privileged=[json.loads(x) for x in (stats/'privileged.jsonl').read_text().splitlines()]

@@ -2,7 +2,7 @@
 
 - This repository is an additive robot learning/experiment layer. The existing piper_simulation project is separate: do not copy or upload its source, models, XML, assets or raw recordings here. Use its existing local interfaces to collect data. Public Git contains only new learning code, protocols, reviewed reports and dataset references/hashes.
 - Dataset root: `/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/`.
-- Successful simulation video root: `complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001/videos/`. It already contains three videos; never overwrite them. New runs use unique experiment-ID subdirectories within that video root, and matching metadata subdirectories in the same episode's proprio_stats/.
+- Successful simulation data: `complete_sim/succeed/<episode_id>/`, one complete Episode per folder, with `videos/`, `proprio_stats/`, `outcome.json` and verification references together, matching the failure layout. Never nest multiple Episodes under another Episode. The original `20261111_sim_calibrated_pick_insert_000001/` remains its own Episode; preserve its three videos. Headless source-only trials belong outside formal dataset roots, under `self_evolution/`. This supersedes the earlier shared video-root rule per the user correction.
 - Failed simulation data: `complete_sim/failed/`, each attempt in a unique directory.
 - Successful real data: `complete_real/successed/` (preserve spelling).
 - Failed real data: `complete_real/failed/`; use this as the historical real-failure source.

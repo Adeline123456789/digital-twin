@@ -5,7 +5,6 @@ from pathlib import Path
 import shutil
 import uuid
 from learn import DATA,ROOT,save,digest
-SUCCESS=DATA/'complete_sim/succeed/20261111_sim_calibrated_pick_insert_000001'
 def main():
     p=argparse.ArgumentParser();p.add_argument('experiment_id');a=p.parse_args()
     matches=list((ROOT/'experiments').glob('*/'+a.experiment_id+'/result.json'))
@@ -14,7 +13,7 @@ def main():
     if report['environment']!='simulation' or report['task_success'] is None:raise ValueError('Only observed simulation results')
     source=DATA/'self_evolution'/a.experiment_id
     if report['task_success']:
-        dest=SUCCESS/'proprio_stats'/a.experiment_id/'source_trial'
+        dest=DATA/'self_evolution/archived_trials'/a.experiment_id/'source_trial'
     else:
         from episode_format import source_for, convert_group
         dest=DATA/'complete_sim/failed'/a.experiment_id

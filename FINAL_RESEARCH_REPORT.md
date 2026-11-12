@@ -1,5 +1,7 @@
 # 最终研究报告 — 2026-11-12
 
+> 存储路径更新：成功数据已按用户更正统一为`complete_sim/succeed/<episode_id>/{videos,proprio_stats,outcome.json}`，一条数据一个目录。历史报告中的旧路径通过[迁移清单](experiments/maintenance/success_episode_layout/migration.json)解析；原始内容和实验结论不变。
+
 **结论：完整 Self-Evolving Real-Sim 系统目前 NO-GO；已验证的仿真采集与已知修复复用可 CONDITIONAL GO。** 本次按授权轮数完成研究：Stage1用1轮；Stage2按用户确认的6轮封顶；Stage3、Stage4各4轮。不追加轮次，不将校准未通过或未知任务未解决改写为成功。
 
 ## 当前可证明的结果
