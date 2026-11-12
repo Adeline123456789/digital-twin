@@ -1,0 +1,168 @@
+{
+  "experiment_id": "20261112T061643Z_rgb_correspondences",
+  "timestamp": "2026-11-12T06:46:43.785421+00:00",
+  "model": "Existing OpenCV SIFT / pyramidal LK / ECC; pretrained LoFTR indoor via Kornia 0.7.3; no planner LLM",
+  "task": "Qualify RGB correspondence inputs for existing hand-eye adapter; isolate image-registration failure",
+  "environment": "archived_real_rgb_and_synthetic_image_warps_no_physics_rollout",
+  "program_version": {
+    "scripts/rgb_correspondences.py": "afe953f45d4d73332daf88831d5f623a8bd6de05398b8b300aad186350626954",
+    "scripts/loftr_correspondences.py": "171e33aa27bc007d4140b75721176b525b1266dbf02526ef6a6021af62105126",
+    "tests/test_rgb_correspondences.py": "34e182f8402899627f191378bd71752fcce924aa56373cf963c7c356aaca8153",
+    "experiments/diagnosis/20261112T061643Z_rgb_correspondences/check_registration.py": "4c7b1414ba2fa802272060dc8c8df04daad5a4ae28c85ba6d0601cdb9299f5b6",
+    "experiments/diagnosis/20261112T061643Z_rgb_correspondences/check_existing_tracker.py": "8d44cacc013466295e23b8c68f1adef0ec35beb83f42360422632c6280ef6db7"
+  },
+  "baseline_commit": "5af6f31f8ccf39a306ca688e0f34978a08a04f4b",
+  "protocol_version": "ef3622d4328d6231e8b5770cac4a3bd6813bf50f3902a6fe3029c455b7db9f9f",
+  "memory_version": "ER008 v1 / NE007 v1; observation-method evidence only",
+  "initial_state": {
+    "capture": "calibration/wrist_multiaxis_20261109_01",
+    "reference_frame": 27,
+    "target_frames": [
+      179,
+      438,
+      652,
+      759
+    ],
+    "roi_mask_pixels": 12464,
+    "depth_used": false,
+    "robot_motion": false
+  },
+  "actions": [
+    "Default SIFT mutual matching on four archived RGB pairs",
+    "LoFTR known-warp check, planned RANSAC, then ECC candidate with fixed parameters",
+    "Reuse existing track_step on same software cases and four archived pairs",
+    "Report observed support separately from full-image extrapolation; preserve original failure criteria"
+  ],
+  "expected_effects": [
+    "Obtain image correspondences without treating learned confidence or ECC score as geometric truth"
+  ],
+  "observed_effects": {
+    "sift_real_pairs_with_sufficient_matches": 0,
+    "sift_real_pairs_total": 4,
+    "loftr_plus_homography_known_warp_passes": 1,
+    "loftr_ecc_known_warp_passes": 1,
+    "existing_lk_known_warp_passes": 3,
+    "known_warp_cases": 4,
+    "real_lk_surviving_points": [
+      28,
+      28,
+      30,
+      30
+    ],
+    "real_correspondence_metric_accuracy": "UNKNOWN",
+    "real_calibration_accepted": false
+  },
+  "failure_signature": "rgb_registration_confidence_not_accuracy",
+  "root_cause": "UNKNOWN for physical robot failure. Software evidence: SIFT finds zero features in the selected ROI; high ECC scores coexist with wrong known mappings. Existing LK points occupy only 32.96% of the ROI interpolation support; full-ROI extrapolation error exceeds local point error.",
+  "root_cause_status": "unknown",
+  "software_diagnosis_status": "supported_by_known_warp_and_spatial_support_audit",
+  "hypotheses": [
+    {
+      "hypothesis": "Pretrained detector-free matching plus ECC supplies sufficiently accurate mapping on this ROI",
+      "result": "rejected_for_this_configuration"
+    },
+    {
+      "hypothesis": "Existing LK can extract local static-fixture observations despite failure of the earlier finger/grasp protocol",
+      "result": "supported_for_local_software_checks; real_metric_accuracy_unknown"
+    }
+  ],
+  "experiments": [
+    "sift_summary.json",
+    "loftr_development.json",
+    "loftr_homography_development.json",
+    "ecc_development.json",
+    "loftr_ecc_checks.json",
+    "existing_tracker_checks.json",
+    "existing_tracker_support_checks.json",
+    "support_audit.json"
+  ],
+  "repair": {
+    "retained": "Existing LK local observations and explicit interpolation-support metadata",
+    "not_adopted": "LoFTR/ECC as calibration input default",
+    "physical_parameters_changed": false,
+    "calibration_promoted": false,
+    "active_policy_changed": false
+  },
+  "result": "failure",
+  "result_semantics": "Complete ROI registration qualification not passed; useful partial local observations retained",
+  "task_success": null,
+  "validation_status": "ARCHIVE_OBSERVATIONS_AND_SOFTWARE_CHECKS_ONLY",
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "llm_inference_seconds": null,
+  "execution_time": {
+    "sift_four_real_pairs_s": 0.1532823629968334,
+    "loftr_ecc_four_software_cases_including_model_load_s": 14.465708639996592,
+    "existing_lk_four_software_and_four_real_cases_s": 0.022240709979087114,
+    "comparison_limit": "Different OpenCV versions and threading; single runs, not a controlled cost benchmark; excludes setup and research"
+  },
+  "simulation_seconds": 0,
+  "robot_execution_seconds": 0,
+  "human_interventions": null,
+  "manual_agent_roi_annotations": 1,
+  "lessons_learned": [
+    "Do not infer unavailable RGB information from one failed extractor",
+    "Use actual tracked points and their spatial support; extrapolated pixels are not measurements",
+    "Confidence and closure residuals do not certify geometric accuracy",
+    "Known dimensions exist in historical task memory but metrology/tolerance provenance is unknown"
+  ],
+  "next_improvement": "Use the retained real local RGB correspondences and known robot motion to examine calibration observability without assigning unobserved target corners or depth. No new physical fit performed here.",
+  "new_physical_fit": false,
+  "new_research_round": false,
+  "stage2_rounds_used": 6,
+  "source_evidence": {
+    "historical_fixture_dimension_note": {
+      "relative_to_sim": "docs/task_memory/plug_insertion.md",
+      "sha256": "df06d772404ac0ea65e590a03e83b5acaa3b98f00130c5430bfddb39d2ff5651",
+      "grey_dimensions_mm": [
+        170,
+        60,
+        33
+      ],
+      "white_dimensions_mm": [
+        212,
+        76,
+        30
+      ],
+      "status": "HISTORICAL_PHYSICAL_SIZE_ASSERTION_MEASUREMENT_UNCERTAINTY_UNKNOWN"
+    },
+    "old_registration_code": {
+      "relative_to_sim": "scripts/register_plug_fixture_views.py",
+      "sha256": "a51dea7163206d261a143e85b5caf5513bd2de46a45df6d6b458d18aa43084ca",
+      "limitation": "Uses depth plane, extrapolated occluded corner and CAD anchors; not independent RGB metrology"
+    }
+  },
+  "software_checks": {
+    "tests_passed": 38,
+    "test_duration_s": 2.482,
+    "test_log_sha256": "4b284174a2ea0124a9781744ff24d55381ba189cdef0db708db047a04c1b5823",
+    "original_simulation_scripts_src_configs_unchanged": true,
+    "original_sift_source_reconstructed_from_current_by_removing_unused_helpers": true,
+    "reporting_rerun_kept_all_observations_identical": true,
+    "logs": [
+      {
+        "local_path": "/tmp/digital-twin-correspondences-tests.log",
+        "sha256": "4b284174a2ea0124a9781744ff24d55381ba189cdef0db708db047a04c1b5823"
+      },
+      {
+        "local_path": "/tmp/digital-twin-loftr-warp.log",
+        "sha256": "e80b8bb0fd94cd87d28f09806ddf36a11c8ec22f566a2b4f5831eb5196f02afc"
+      },
+      {
+        "local_path": "/tmp/digital-twin-rgb-registration-heldout.log",
+        "sha256": "781307ae5459cdde9501b64f30712624ff84d32cc3b6c8a5764757812d1fbdcd"
+      },
+      {
+        "local_path": "/tmp/digital-twin-existing-tracker.log",
+        "sha256": "7bb4e3c02da84c92be3603e697b04630a7d2ed1e4a447a81ff8acd94bf207f4c"
+      }
+    ],
+    "new_memory_retrievable_ids": [
+      "ER007",
+      "ER008",
+      "NE007"
+    ]
+  }
+}

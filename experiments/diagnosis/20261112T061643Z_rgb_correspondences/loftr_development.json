@@ -1,0 +1,39 @@
+{
+  "result": "failure",
+  "new_real_calibration": false,
+  "input_type": "single archived RGB with known synthetic image warp",
+  "opencv": "4.13.0",
+  "torch": "2.10.0+cu128",
+  "kornia": "0.7.3",
+  "checkpoint_sha256": "d73c54720370ba0690cd477e38404a626e881292cc0be09a6801da0cc6f53198",
+  "model_load_s": 0.1140796140243765,
+  "inference_s": 3.0706280209997203,
+  "matches": 166,
+  "median_error_px": 1.7969346046447754,
+  "p90_error_px": 3.789717674255371,
+  "known_H": [
+    [
+      1.01,
+      0.025,
+      9.0
+    ],
+    [
+      -0.015,
+      0.98,
+      12.0
+    ],
+    [
+      5e-05,
+      -3e-05,
+      1.0
+    ]
+  ],
+  "criteria": {
+    "min_matches": 20,
+    "median_error_px_lt": 1.0,
+    "p90_error_px_lt": 2.0
+  },
+  "reference_sha256": "f417b01cd461e4a66259cfd95fc3132139cbd5bd50b4383303e8414fd75ee23f",
+  "mask_sha256": "0bb54a30e93bd8d109ec1e7f8eb0aeaa7e8ca61c5b534a71ec6722c0b93a77cc",
+  "validation_status": "KNOWN_WARP_SOFTWARE_CHECK_ONLY"
+}

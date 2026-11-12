@@ -1,0 +1,58 @@
+{
+  "reference_frame": 27,
+  "target_frames": [
+    179,
+    438,
+    652,
+    759
+  ],
+  "capture": "calibration/wrist_multiaxis_20261109_01",
+  "mask_polygon": [
+    [
+      231,
+      318
+    ],
+    [
+      598,
+      233
+    ],
+    [
+      620,
+      327
+    ],
+    [
+      241,
+      420
+    ]
+  ],
+  "exclude_rectangles": [
+    [
+      345,
+      199,
+      470,
+      346
+    ],
+    [
+      452,
+      130,
+      585,
+      290
+    ],
+    [
+      273,
+      318,
+      308,
+      365
+    ]
+  ],
+  "mask_erode_px": 8,
+  "method": "Existing OpenCV SIFT + mutual 0.75 nearest-neighbor ratio + RANSAC homography (2 px), input correspondence extraction only",
+  "limits": [
+    "ROI manually chosen on reference RGB only before matching",
+    "ROI and homography are not measured metric geometry",
+    "All correspondences remain image observations; no pose or physical parameter calibration",
+    "No threshold adjustment or retries for failed pairs"
+  ],
+  "new_research_round": false,
+  "new_physical_fit": false
+}

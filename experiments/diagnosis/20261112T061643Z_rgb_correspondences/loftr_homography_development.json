@@ -1,0 +1,26 @@
+{
+  "method": "Existing planned RANSAC image homography, 2 px; evaluate against known synthetic H",
+  "inliers": 110,
+  "total": 166,
+  "median_grid_error_px": 1.9218677282333374,
+  "p90_grid_error_px": 3.463713049888611,
+  "max_grid_error_px": 4.019257545471191,
+  "image_homography": [
+    [
+      1.1457551238516845,
+      0.09106899234307825,
+      -34.72400127200239
+    ],
+    [
+      0.01972580120314257,
+      1.0494133602036848,
+      -2.48924896228496
+    ],
+    [
+      0.00017653575205030893,
+      3.629358088210892e-05,
+      1.0
+    ]
+  ],
+  "metric_pose_estimated": false
+}

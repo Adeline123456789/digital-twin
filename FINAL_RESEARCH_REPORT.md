@@ -1,3 +1,5 @@
+> 最新推进（2026-11-12）：针对 RGB 观测缺口复用了 SIFT、LoFTR、ECC 和仓库已有 LK。固定软件变换检查中 LoFTR/ECC 为 1/4、既有 LK 为 3/4；四组历史真机图像保留 28–30 个局部点，并发现局部点只支撑部分图像区域，不能直接外推为全物体测量。38 项测试通过。详见 [RGB 对应与误差定位报告](experiments/diagnosis/20261112T061643Z_rgb_correspondences/REPORT.md)。保留局部观测，未接受新物理校准或声称采集效率提升。
+
 > 最新实现（2026-11-12）：原项目 FK 输入与现成 OpenCV 手眼求解器已接通，33 项软件测试通过。真实多轴素材已准备机器人侧位姿；真实 RGB 目标位姿仍未提供，未执行新标定。详见 [接口验证报告](experiments/evaluation/20261112T060334Z_handeye_adapter/REPORT.md)。这是软件验证，不是 Stage 2 通过或采集效率提升。
 
 > 后续修正（2026-11-12）：用户要求继续寻找直接相关的前人解决方案并推进实现。已修复右腕 RGB 的时间轴选取，补齐遗漏的多轴标定素材审计，并核对同型号 Piper 的 Bi-JCR 论文/源码。详见 [修正报告](experiments/diagnosis/20261112T054835Z_rgb_method_correction/REPORT.md)。没有新增物理参数实验，六轮上限保持；未完成结论保留，不代表 RGB-only 方案不可行或所有工作必须停止。

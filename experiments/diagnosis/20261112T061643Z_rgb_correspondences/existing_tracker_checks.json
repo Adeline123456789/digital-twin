@@ -1,0 +1,106 @@
+{
+  "cases": [
+    {
+      "id": "translation",
+      "result": "success",
+      "initial_features": 30,
+      "type": "known_image_warp",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.0005287413951009512,
+      "median_grid_error_px": 0.0009475204278714955,
+      "p90_grid_error_px": 0.0021847260650247335,
+      "execution_time_s": 0.007357290975051001
+    },
+    {
+      "id": "rotation_scale",
+      "result": "success",
+      "initial_features": 30,
+      "type": "known_image_warp",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.010745789855718613,
+      "median_grid_error_px": 0.15669243037700653,
+      "p90_grid_error_px": 0.6314625144004822,
+      "execution_time_s": 0.0025856700085569173
+    },
+    {
+      "id": "projective",
+      "result": "failure",
+      "initial_features": 30,
+      "type": "known_image_warp",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.017064549028873444,
+      "median_grid_error_px": 0.1944672167301178,
+      "p90_grid_error_px": 2.583437919616699,
+      "execution_time_s": 0.00222458501229994
+    },
+    {
+      "id": "photometric",
+      "result": "success",
+      "initial_features": 30,
+      "type": "known_image_warp",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.01986623927950859,
+      "median_grid_error_px": 0.14328186213970184,
+      "p90_grid_error_px": 0.29981207847595215,
+      "execution_time_s": 0.0022100950009189546
+    },
+    {
+      "id": "real_179",
+      "result": "unverified",
+      "initial_features": 30,
+      "type": "archived_real_pair",
+      "source_sha256": "9cd6ebcc4a5a6112dbe1f240ba8aa4cfc9a583c2023d185dd8d70c16389477bd",
+      "survivors": 28,
+      "inliers": 28,
+      "forward_backward_median_px": 0.07218446582555771,
+      "execution_time_s": 0.0020181989821139723
+    },
+    {
+      "id": "real_438",
+      "result": "unverified",
+      "initial_features": 30,
+      "type": "archived_real_pair",
+      "source_sha256": "5502136f4cd8c9c1d8fdedb2d9bab23f9d9863cce5149379cd3b9fafde41cafa",
+      "survivors": 28,
+      "inliers": 28,
+      "forward_backward_median_px": 0.03713000565767288,
+      "execution_time_s": 0.0021084790059830993
+    },
+    {
+      "id": "real_652",
+      "result": "unverified",
+      "initial_features": 30,
+      "type": "archived_real_pair",
+      "source_sha256": "0e42d983cc0422c75579062b48ab552199280ad3ef96847e1dddc001e3e277cd",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.03416946530342102,
+      "execution_time_s": 0.0018838729884009808
+    },
+    {
+      "id": "real_759",
+      "result": "unverified",
+      "initial_features": 30,
+      "type": "archived_real_pair",
+      "source_sha256": "2d0ada3999d7ec5c17d4a93af8d3a1befeb56afd41d82772150fb76be5c5fbf0",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.009274901822209358,
+      "execution_time_s": 0.0018414959777146578
+    }
+  ],
+  "opencv": "5.0.0",
+  "execution_time_s": 0.022240709979087114,
+  "tracker_source_sha256": "510378a87fce7a54557f9a85ee5e50f65fc100abf053b48e2d4584978197c122",
+  "calibration_promoted": false,
+  "physical_parameter_fit": false,
+  "limitations": [
+    "No measured ground truth for real pairs; forward/backward consistency is not accuracy",
+    "Same source image and transforms already used to assess other methods; retrospective comparison",
+    "Existing 25x25 tracking support can cross the reference ROI and object boundaries"
+  ]
+}

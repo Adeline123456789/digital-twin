@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-11-12T06:36:53.505565+00:00",
+  "method": "LoFTR indoor + RANSAC 2 px + OpenCV ECC homography; 100 iterations, eps 1e-6, Gaussian 5",
+  "roi": "unchanged from design.json",
+  "limits": "Only image registration software qualification; no metric pose, new physical fit or calibration promotion",
+  "development_case": "existing single RGB known warp used for LoFTR check",
+  "heldout_software_cases": [
+    {
+      "id": "translation",
+      "H": [
+        [
+          1,
+          0,
+          -11
+        ],
+        [
+          0,
+          1,
+          8
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "gain": 1.0,
+      "offset": 0
+    },
+    {
+      "id": "rotation_scale",
+      "H": [
+        [
+          0.99,
+          -0.035,
+          14
+        ],
+        [
+          0.035,
+          0.99,
+          -9
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "gain": 1.0,
+      "offset": 0
+    },
+    {
+      "id": "projective",
+      "H": [
+        [
+          1.02,
+          -0.018,
+          -6
+        ],
+        [
+          0.013,
+          0.985,
+          7
+        ],
+        [
+          -4e-05,
+          6e-05,
+          1
+        ]
+      ],
+      "gain": 1.0,
+      "offset": 0
+    },
+    {
+      "id": "photometric",
+      "H": [
+        [
+          0.99,
+          0.018,
+          7
+        ],
+        [
+          -0.018,
+          1.01,
+          -3
+        ],
+        [
+          3e-05,
+          -4e-05,
+          1
+        ]
+      ],
+      "gain": 0.9,
+      "offset": 10
+    }
+  ],
+  "criteria": {
+    "median_grid_error_px_lt": 1.0,
+    "p90_grid_error_px_lt": 2.0
+  },
+  "selection_note": "Transforms and criteria written before ECC on reference image and before heldout inference; not independent physical measurements"
+}

@@ -1,0 +1,49 @@
+{
+  "opencv_version": "4.5.4",
+  "design_sha256": "6b67e4b230a9affcb3179b242cbbcc5dd06b793acdfc674002db4c46ca9e0fbf",
+  "script_sha256": "1509dccbc087dee1f95c30abec2647563f948e4ebfb75a46a5573ea2c70060e0",
+  "reference_sha256": "f417b01cd461e4a66259cfd95fc3132139cbd5bd50b4383303e8414fd75ee23f",
+  "pairs": [
+    {
+      "frame": 179,
+      "target_sha256": "9cd6ebcc4a5a6112dbe1f240ba8aa4cfc9a583c2023d185dd8d70c16389477bd",
+      "reference_features": 0,
+      "target_features": 121,
+      "status": "INSUFFICIENT_MATCHES",
+      "points_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "frame": 438,
+      "target_sha256": "5502136f4cd8c9c1d8fdedb2d9bab23f9d9863cce5149379cd3b9fafde41cafa",
+      "reference_features": 0,
+      "target_features": 163,
+      "status": "INSUFFICIENT_MATCHES",
+      "points_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "frame": 652,
+      "target_sha256": "0e42d983cc0422c75579062b48ab552199280ad3ef96847e1dddc001e3e277cd",
+      "reference_features": 0,
+      "target_features": 97,
+      "status": "INSUFFICIENT_MATCHES",
+      "points_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "frame": 759,
+      "target_sha256": "2d0ada3999d7ec5c17d4a93af8d3a1befeb56afd41d82772150fb76be5c5fbf0",
+      "reference_features": 0,
+      "target_features": 83,
+      "status": "INSUFFICIENT_MATCHES",
+      "points_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    }
+  ],
+  "execution_time_s": 0.1532823629968334,
+  "root_cause_status": "unknown",
+  "calibration_promoted": false,
+  "metric_scale_identified": false,
+  "limitations": [
+    "Image homography residuals are not independently measured correspondence accuracy",
+    "Mask is manually defined on reference RGB; descriptor support can cross its boundary",
+    "Planarity, semantic identities, metric dimensions and camera poses are not validated"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "cases": [
+    {
+      "id": "translation",
+      "supported_mask_pixels": 4108,
+      "total_mask_pixels": 12464,
+      "support_fraction": 0.32958921694480103,
+      "point_bbox_px": [
+        [
+          244.0,
+          308.0
+        ],
+        [
+          374.0,
+          403.0
+        ]
+      ],
+      "point_error_median_px": 0.0006477342685684562,
+      "point_error_p90_px": 0.0014940433553420009,
+      "supported_grid_error_median_px": 0.00034119689371436834,
+      "supported_grid_error_p90_px": 0.0006497091380879283,
+      "raw_arrays_sha256": "8c59431b85988c43d34bad046aa53f0478f244644517f0086cfff3aad5ff3c36"
+    },
+    {
+      "id": "rotation_scale",
+      "supported_mask_pixels": 4108,
+      "total_mask_pixels": 12464,
+      "support_fraction": 0.32958921694480103,
+      "point_bbox_px": [
+        [
+          244.0,
+          308.0
+        ],
+        [
+          374.0,
+          403.0
+        ]
+      ],
+      "point_error_median_px": 0.09660644084215164,
+      "point_error_p90_px": 0.16334909200668338,
+      "supported_grid_error_median_px": 0.04549364745616913,
+      "supported_grid_error_p90_px": 0.08560079112648963,
+      "raw_arrays_sha256": "7a107819320b87d2bfd8fc1edbaffbc7df398c7a2a985e6c830c11530ddd34c8"
+    },
+    {
+      "id": "projective",
+      "supported_mask_pixels": 4108,
+      "total_mask_pixels": 12464,
+      "support_fraction": 0.32958921694480103,
+      "point_bbox_px": [
+        [
+          244.0,
+          308.0
+        ],
+        [
+          374.0,
+          403.0
+        ]
+      ],
+      "point_error_median_px": 0.088374063372612,
+      "point_error_p90_px": 0.2530658543109894,
+      "supported_grid_error_median_px": 0.048102784901857376,
+      "supported_grid_error_p90_px": 0.09687689021229745,
+      "raw_arrays_sha256": "502271cf5c3750e095fc36d134ba9e92276ef508425037609c7a5db630b4a2e5"
+    },
+    {
+      "id": "photometric",
+      "supported_mask_pixels": 4108,
+      "total_mask_pixels": 12464,
+      "support_fraction": 0.32958921694480103,
+      "point_bbox_px": [
+        [
+          244.0,
+          308.0
+        ],
+        [
+          374.0,
+          403.0
+        ]
+      ],
+      "point_error_median_px": 0.15713250637054443,
+      "point_error_p90_px": 0.3132470756769181,
+      "supported_grid_error_median_px": 0.07685133814811707,
+      "supported_grid_error_p90_px": 0.1318008184432984,
+      "raw_arrays_sha256": "f84f10da3a0e08f648e118c5303432766986c0187ae3296a22ab0642511a57c8"
+    }
+  ],
+  "status": "POST_HOC_ERROR_LOCALIZATION_NOT_A_REPLACEMENT_PASS_CRITERION",
+  "physical_calibration": false,
+  "note": "Same known warp ground truth, with separate point and interpolation-support errors. Original full-mask results preserved. Convex hull is not an accuracy certificate."
+}

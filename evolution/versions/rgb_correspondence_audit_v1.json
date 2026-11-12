@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-12T06:46:43.785421+00:00",
+  "version": "rgb_correspondence_audit_v1",
+  "type": "Observation Tools / input qualification",
+  "evidence": "experiments/diagnosis/20261112T061643Z_rgb_correspondences/result.json",
+  "new_research_round": false,
+  "stage2_rounds_used": 6,
+  "accepted": "LOCAL_OBSERVATIONS_RETAINED; LEARNED_REGISTRATION_CANDIDATE_NOT_PROMOTED",
+  "active_default_changed": false,
+  "physical_model_changed": false,
+  "tests_passed": 38,
+  "rollback": "Standalone tools only; stop invoking them to restore baseline 5af6f31. Existing tracker and deployment unchanged; retain failed evidence."
+}

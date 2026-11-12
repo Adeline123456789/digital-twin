@@ -1,0 +1,24 @@
+{
+  "id": "ER008",
+  "version": 1,
+  "content": "For fixed-fixture RGB observations, check the existing local tracker before adding learned matching. Preserve individual feature identities and forward/backward checks. Report convex-hull interpolation support separately from extrapolation; neither support nor consistency proves physical accuracy. Preserve failed full-region criteria instead of relabeling local success as calibration success.",
+  "applicability": "Static fixture and moderately separated views; known-warp checks before metric pose use. Not established for occluding fingers during grasp/lift.",
+  "embodiment": "Current Piper, wrist RGB; no real depth or six-axis force",
+  "source_episodes": [
+    "20261112T061643Z_rgb_correspondences"
+  ],
+  "validation_status": "LOCAL_OBSERVATION_SOFTWARE_EVIDENCE_ONLY",
+  "success_count": 3,
+  "failure_count": 1,
+  "count_semantics": "Original four full-ROI known-warp checks with existing LK; later support analysis did not change these results",
+  "limitations": [
+    "Only 32.96% of frozen ROI lies within observed point support",
+    "Real pair accuracy remains UNKNOWN",
+    "No physical calibration or collection-efficiency gain proven"
+  ],
+  "signatures": [
+    "rgb_registration_confidence_not_accuracy",
+    "rgb_handeye_input_preparation"
+  ],
+  "ineffective_repairs": []
+}

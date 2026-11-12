@@ -1,0 +1,31 @@
+{
+  "tests_passed": 38,
+  "test_duration_s": 2.482,
+  "test_log_sha256": "4b284174a2ea0124a9781744ff24d55381ba189cdef0db708db047a04c1b5823",
+  "original_simulation_scripts_src_configs_unchanged": true,
+  "original_sift_source_reconstructed_from_current_by_removing_unused_helpers": true,
+  "reporting_rerun_kept_all_observations_identical": true,
+  "logs": [
+    {
+      "local_path": "/tmp/digital-twin-correspondences-tests.log",
+      "sha256": "4b284174a2ea0124a9781744ff24d55381ba189cdef0db708db047a04c1b5823"
+    },
+    {
+      "local_path": "/tmp/digital-twin-loftr-warp.log",
+      "sha256": "e80b8bb0fd94cd87d28f09806ddf36a11c8ec22f566a2b4f5831eb5196f02afc"
+    },
+    {
+      "local_path": "/tmp/digital-twin-rgb-registration-heldout.log",
+      "sha256": "781307ae5459cdde9501b64f30712624ff84d32cc3b6c8a5764757812d1fbdcd"
+    },
+    {
+      "local_path": "/tmp/digital-twin-existing-tracker.log",
+      "sha256": "7bb4e3c02da84c92be3603e697b04630a7d2ed1e4a447a81ff8acd94bf207f4c"
+    }
+  ],
+  "new_memory_retrievable_ids": [
+    "ER007",
+    "ER008",
+    "NE007"
+  ]
+}

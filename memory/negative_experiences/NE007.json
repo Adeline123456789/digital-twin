@@ -1,0 +1,26 @@
+{
+  "id": "NE007",
+  "version": 1,
+  "content": "On the frozen low-texture wrist fixture ROI, LoFTR indoor + RANSAC + ECC passed only 1/4 known-image-warp tests, no improvement in pass count over LoFTR + RANSAC; ECC score up to 0.9993 coexisted with mapping error. Do not promote this configuration from match count or correlation alone.",
+  "applicability": "This archived wrist RGB ROI and fixed software-design transforms; not a universal LoFTR or RGB limitation",
+  "embodiment": "Current Piper RGB-only installation",
+  "source_episodes": [
+    "20261112T061643Z_rgb_correspondences"
+  ],
+  "validation_status": "SOFTWARE_CANDIDATE_NOT_PROMOTED",
+  "success_count": 1,
+  "failure_count": 3,
+  "count_semantics": "Four image-warp software checks, not robot tasks",
+  "limitations": [
+    "One source image, small transform set",
+    "Different runtime builds across extractors; cost not a fair speed benchmark",
+    "No real camera or physical parameter fit"
+  ],
+  "signatures": [
+    "rgb_registration_confidence_not_accuracy",
+    "rgb_handeye_input_preparation"
+  ],
+  "ineffective_repairs": [
+    "promote_loftr_ecc_from_confidence_without_known_geometry_check"
+  ]
+}

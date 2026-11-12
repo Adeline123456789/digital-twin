@@ -42,3 +42,9 @@ prepare 输出明确标为 `ROBOT_POSES_ONLY_RGB_TARGET_POSES_MISSING`，**它�
 测试以解析投影生成 RGB 点，再调用 PnP 和实际手眼 API，核对已知变换、留出集污染隔离、退化、错误单位、超边界与失败记录。另以现有 MuJoCo 模型的 FK 交叉检查原 URDF FK、度/弧度及基座坐标。这些是软件验证，不能记成新真机成功或独立校准。
 
 方法依据：[Bi-JCR §III-C 的 AX=XB 约束](https://arxiv.org/html/2505.24819v1)；实际复用 [OpenCV 4.5.4 Park–Martin 实现](https://github.com/opencv/opencv/blob/4.5.4/modules/calib3d/src/calibration_handeye.cpp)。未复制 Bi-JCR 框架或原仿真源码。
+
+## RGB 输入提取的最新证据
+
+[对应点检查](../../experiments/diagnosis/20261112T061643Z_rgb_correspondences/REPORT.md) 已在既有多轴 RGB 的四个帧对提取 28–30 个局部 LK 对应点。其前后向自一致性不等于真实几何精度；同张图像的已知变换检查揭示了局部点拟合向未观测区域外推的误差。新摘要报告凸包内支持范围，避免把整张单应映射当成观测。LoFTR/ECC 候选未晋升。
+
+这些点仍不是 `T_camera_target`，不能直接填入本手眼接口。原项目任务记忆有夹具实物尺寸的历史记录，但测量误差来源未知；旧深度/CAD 拟合和遮挡角点不能补作独立真值。下一步的输入判断应基于局部对应、运动约束和不确定性，而不是因 SIFT 没有特征就断言 RGB 无信息。
