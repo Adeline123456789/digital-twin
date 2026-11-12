@@ -96,35 +96,50 @@ def compare_pair(a, b):
                 errors['h5/' + key] = float(np.max(abs(value[:].astype(float) - y[key][:].astype(float))))
         x.visititems(check)
     pixels = {}
+    mean_pixels = {}
+    video_properties = {}
     for video in (episodes[0] / 'videos').glob('*.mp4'):
         with av.open(str(video)) as x, av.open(str(episodes[1] / 'videos' / video.name)) as y:
-            pixels[video.name] = max(int(np.max(abs(f.to_ndarray(format='rgb24').astype(np.int16) -
-                                                   g.to_ndarray(format='rgb24').astype(np.int16))))
-                                    for f, g in zip(x.decode(video=0), y.decode(video=0), strict=True))
+            sx, sy = x.streams.video[0], y.streams.video[0]
+            video_properties[video.name] = ((sx.width, sx.height, sx.average_rate, sx.codec_context.name) ==
+                                          (sy.width, sy.height, sy.average_rate, sy.codec_context.name))
+            maximum = 0
+            means = []
+            for f, g in zip(x.decode(video=0), y.decode(video=0), strict=True):
+                difference = abs(f.to_ndarray(format='rgb24').astype(np.int16) - g.to_ndarray(format='rgb24').astype(np.int16))
+                maximum = max(maximum, int(difference.max()))
+                means.append(float(difference.mean()))
+            pixels[video.name] = maximum
+            mean_pixels[video.name] = {'mean': float(np.mean(means)), 'max_frame_mean': max(means)}
+    privileged = [[json.loads(line) for line in (episode / 'proprio_stats/privileged.jsonl').read_text().splitlines()] for episode in episodes]
+    physical_equal = all(v <= 1e-10 for v in errors.values()) and a['task_success'] == b['task_success']
     return dict(max_numeric_errors=errors, max_decoded_pixel_errors=pixels,
-                equivalent=all(v <= 1e-10 for v in errors.values()) and not any(pixels.values()) and
-                           a['task_success'] == b['task_success'],
+                decoded_pixel_mae=mean_pixels, video_properties_equal=video_properties,
+                privileged_trace_equal=privileged[0] == privileged[1], pixel_exact=not any(pixels.values()),
+                physical_equivalent=physical_equal,
+                equivalent=physical_equal and privileged[0] == privileged[1] and all(video_properties.values()),
                 baseline_s=a['collection_component_seconds'], candidate_s=b['collection_component_seconds'],
                 reduction_fraction=1-b['collection_component_seconds']/a['collection_component_seconds'])
 
 
 def main():
     design = json.loads((ROUND / 'design.json').read_text())
+    # First pair is frozen as a failed pixel-exact gate; do not rerun or relabel it.
     results = []
-    for case in design['cases']:
+    for case in design['cases'][1:]:
         pair = {}
         for method in case['order']:
             result = run_case(case, method == 'inline')
             pair[method] = result
-            save(ROUND / 'progress.json', {'completed_pairs': results, 'current_ids': {k: v['experiment_id'] for k, v in pair.items()}})
+            save(ROUND / 'amended_progress.json', {'completed_pairs': results, 'current_ids': {k: v['experiment_id'] for k, v in pair.items()}})
             if not result['recording_verified']:
                 raise RuntimeError('Recording rejected; preserve report and stop this comparison')
         comparison = compare_pair(pair['baseline'], pair['inline'])
         results.append(dict(case=case, trial_ids={k: v['experiment_id'] for k, v in pair.items()}, **comparison))
-        save(ROUND / 'comparison.json', results)
+        save(ROUND / 'amended_comparison.json', results)
         print('PAIR', case['name'], json.dumps(comparison), flush=True)
         if not comparison['equivalent']:
-            raise RuntimeError('Candidate changed trajectory or video; no promotion')
+            raise RuntimeError('Candidate changed physical trace, camera provenance or video properties; no promotion')
 
 
 if __name__ == '__main__':

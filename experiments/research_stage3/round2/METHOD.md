@@ -13,3 +13,7 @@ The current task script has no observer argument. Two imported symbols are rebou
 A recording compared with its own run proves alignment, not independent deterministic replay. Promotion additionally requires paired native replay versus inline runs with identical full trajectories, final states, numeric HDF5 fields (except host clocks), outcomes and decoded RGB frames. All source/model/assets remain in the separate simulator and local dataset.
 
 No new physics calibration, planner capability, generalization, production-throughput or total research-cost claim is supported by this experiment. Simulation privileged information is used as listed in design.json.
+
+## Measurement correction before remaining cases
+
+The exact-pixel gate also fails for native baseline repeats; 32-frame raw-RGB probes locate a difference before H264. The [dm_control rendering issue](https://github.com/google-deepmind/dm_control/issues/100) discusses hardware/driver-dependent repeatability; it does not establish the specific cause here. AMENDMENT.json freezes the remaining comparison: physical/privileged trace and video properties must match, while decoded pixel differences are reported without claiming pixel equality. No simulator, control, camera or codec setting was changed. The first failed gate remains archived. The remaining four task trials stay within the original six-trial budget.

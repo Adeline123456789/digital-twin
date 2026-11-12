@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-11-12T07:48:46.335696+00:00",
+  "reason": "Pixel-identical rendering fails even for the unmodified baseline, confirmed by independent native short raw-RGB probes before encoding. Use task-relevant invariants; retain pixel error as an explicit diagnostic.",
+  "prior_gate_status": "FAILED; first_comparison.json is not relabeled",
+  "remaining_budget": {
+    "task_trials": 4,
+    "native_physics_replays": 2,
+    "planner_calls": 0,
+    "no_extra_round": true
+  },
+  "freeze_before_unseen_results": true,
+  "changed_acceptance": [
+    "Numerical trajectories, phase sequence, initial/final state and numeric HDF5 fields must agree within1e-10",
+    "Entire privileged trace must equal, including camera intrinsics/extrinsics, object poses, contact and success metrics",
+    "Three video streams must preserve frame count, size, frame rate and codec; native format validation must pass",
+    "Pixel-exact gate remains reported separately; full decoded max and mean absolute errors are reported, with no claim of pixel equality",
+    "At least10% component-time reduction; failure outcome retained and heldout initial condition must pass"
+  ],
+  "interpretation": "Allows only a motion/format-preserving collection efficiency conclusion. RGB appearance equivalence remains measured, not proved pixel-exact. No task success detector, collision rule, camera, codec, speed or physics change.",
+  "prior_work": [
+    {
+      "url": "https://github.com/google-deepmind/dm_control/issues/100",
+      "finding": "Maintainer explains output need not be perfectly deterministic across hardware/drivers; temporal anti-aliasing is a possible cause, not established here"
+    },
+    {
+      "url": "https://github.com/Farama-Foundation/Gymnasium/issues/690",
+      "finding": "Includes render-repeatability examples and discussion; reports disagree by environment/backend. Not evidence for a particular cause on this machine"
+    }
+  ],
+  "source_code_inspected": [
+    "installed mujoco.Renderer.render",
+    "native MujocoBackend._render/read",
+    "native task metrics(dt=0) read behavior"
+  ],
+  "not_adopted": [
+    "No driver modification",
+    "No slower renderer",
+    "No lossier encoding",
+    "No image filtering or smoothing"
+  ]
+}
