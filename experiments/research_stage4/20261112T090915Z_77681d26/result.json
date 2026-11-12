@@ -1,0 +1,273 @@
+{
+  "experiment_id": "20261112T090915Z_77681d26",
+  "timestamp": "2026-11-12T09:09:15.787336+00:00",
+  "model": "deterministic adapter; no LLM inference",
+  "task": "Earliest grasp-retention diagnosis on frozen eight Episodes",
+  "environment": "offline_trace_analysis",
+  "program_version": {
+    "analyzer_sha256": "b0b8fc6b138b931845bf4181e8d78adaccd4dc4c49190c76be740f1e652b92e6",
+    "runner_sha256": "4711a94496173562d0b639e2e9ffd16c7ec670ce8bac9b7c8be952fcb125fbb4"
+  },
+  "protocol_version": "b59fda323ddb4a38a89c4f8c9f9498ab13095ea63b5bb76e401b26fcf8c4564e",
+  "memory_version": {
+    "memory/digital_twin_knowledge/DT001.json": "965971e6e2bf92fc42e8375e92cd4977db517d57e0760b89e63a5ccbaaf18a7f",
+    "memory/digital_twin_knowledge/DT002.json": "bce5f4c37737b1a784163116de379103929c1bcc273d4663aa30d05673942983",
+    "memory/exploration_rules/ER001.json": "0052d997b5c6e5bdf323d34c2c0afcc7f125f3b110cad6ca80355afdcbfa0ca8",
+    "memory/exploration_rules/ER002.json": "9fd06c8e863e00fc8e4e5c6759f802f286823f8473fada0c3c8a77a796d730e0",
+    "memory/exploration_rules/ER004.json": "f43767ea671559e29b3705b5fe694a3547f1876bb31809390534793ed134a8ea",
+    "memory/exploration_rules/ER005.json": "168f251e3825c2ff9fb109da5bd84cb2bc4c9a7607de17d34e930a418e71ae80",
+    "memory/exploration_rules/ER006.json": "a680e51ce297c26f8981fa33967fbd139cdc8e405d6901ad2e8781e83e96a0a8",
+    "memory/exploration_rules/ER007.json": "1cdbfeffe24fdc554402b16451e4a7fb3bb3b9edf178a9d2cb966009b73382c2",
+    "memory/exploration_rules/ER008.json": "9e4a26ce94157b43f60dbc62046edcc7e3d4de3cb0055466aec1a67799309096",
+    "memory/exploration_rules/ER009.json": "29c7b166757fe4579a2310c6750333468092662d4ddeb4f9c185556f61f95e43",
+    "memory/exploration_rules/ER010.json": "29fcc43f80011fb1593cb79ca38ff6d51d4467a01aa202d3be09fce7fc9c814e",
+    "memory/failure_patterns/FP001.json": "171f47cf91d5e4248516bfce18f82db198ff0e6b0542a151822dce3a22f8a1b0",
+    "memory/failure_patterns/FP002.json": "1c1dda9d243a3770e5c90567c171836dd7b4ae8f9a531abf269a9e92cbcaeba3",
+    "memory/negative_experiences/NE001.json": "9eec3cdb774eeb217a5ccea4bf34c52a20838c5f5c5096d304a9cc9e22e1ee21",
+    "memory/negative_experiences/NE002.json": "a273ddf1045a001ef950fd0c8e7705a73ba1994b390cff60517ac119bcb7d0a9",
+    "memory/negative_experiences/NE003.json": "651d83dc0d2d0713820041ee557bf88ceddd7db3331c6ec8261321edec99af7a",
+    "memory/negative_experiences/NE004.json": "47ba21c5d2d0c8d5d2d863817621f3368c209f045babb8b218726d2324edd6e4",
+    "memory/negative_experiences/NE005.json": "69cdbdc048a3017c434d3df3b020b10591d6c737108c2254301bcfe38995d0b6",
+    "memory/negative_experiences/NE006.json": "d13bc52a1928393b36dc7c7837f6ff7327d808e2e465c9c2bdd91974ca75003d",
+    "memory/negative_experiences/NE007.json": "3f96dcec1fe8b846e29f908d278c24ec75b5c7115355241f2d55c1424dbba5ad",
+    "memory/negative_experiences/NE008.json": "6199922e7778fdb422757ca1ac43a5b0ec7885d75175de4698b0a196f7cf8cd7",
+    "memory/negative_experiences/NE009.json": "b63ecb4a60139eb06c40bc5a8c371b35a55d5a6259818ce311ab07df822aa3c9",
+    "memory/negative_experiences/NE010.json": "3cf1be861b78065395fa748f9bfc18b5ae3a5fa4b6cf403cefda6986ceed44d7",
+    "memory/negative_experiences/NE011.json": "f82c24f8aeaa56f84b65a682eecc31c49aa5ef270f595e1891e91d7408e3116b",
+    "memory/verified_skills/VS001.json": "6d6ffe0d4033b40f654ff6e25e201b9dff591edf81f225873ef7a1da56395ff9",
+    "memory/verified_skills/VS002.json": "6779cba1d620bdf49dadb4655e9aecb704a458bff46cb42b3316205ab533dfc5",
+    "memory/verified_skills/VS003.json": "6313fbfa96c4238ab482c8b2b41a903dbc955e27b79c605808e19e4b5a2dafbf",
+    "memory/verified_skills/VS004.json": "a0287a74c2d6e9c9e3b9019b7158b6ee7054e4076934505a6e7f2495943a2a2e"
+  },
+  "initial_state": {},
+  "actions": [],
+  "expected_effects": [
+    "Localize observed carry loss before downstream error; preserve all native outcomes"
+  ],
+  "observed_effects": [],
+  "failure_signature": null,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "hypotheses": [],
+  "experiments": [
+    {
+      "episode": "20261112T090023Z_1341a28d",
+      "split": "development_episodes",
+      "diagnosis": {
+        "status": "GRASP_RETENTION_LOSS_OBSERVED",
+        "earliest_observed_phase": "transport",
+        "earliest_observed_frame": 515,
+        "earliest_observed_time_s": 17.199999999989494,
+        "confirmation_frame": 517,
+        "confirmation_time_s": 17.2666666666561,
+        "lift_reference_distance_mm": 13.237888769665782,
+        "first_event_distance_mm": 32.611979401662765,
+        "required_extra_separation_mm": 10,
+        "sustained_samples": 3,
+        "observation": "No plug-to-finger contact and increased separation while still commanded to carry",
+        "causal_limit": "Grasp loss precedes later errors; why the grasp became unstable remains UNKNOWN",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "align",
+        "native_error": "Unreachable pose [ 0.36969519  0.06102159 -0.01324589]: residual [-1.91944004e-01 -3.47572363e-02 -6.80884685e-02  8.45433993e-06\n -7.29520729e-01 -5.29021413e-01]",
+        "task_success_unchanged": false,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "original_task_success": false,
+      "source_report": "experiments/research_stage4/20261112T090023Z_1341a28d/result.json",
+      "source_report_sha256": "606e2b3ebd52fd0060545d66aa983549c193b72c51cddd5cad2e29f9ef0fcf4f",
+      "trace_sha256": "681d536c2b7f622039d0a6e716412af478c1ff96ee510cf4844a072817bbfc2a"
+    },
+    {
+      "episode": "20261112T085922Z_30977f00",
+      "split": "development_episodes",
+      "diagnosis": {
+        "status": "UNKNOWN",
+        "observed_carry_samples": 0,
+        "lift_reference_distance_mm": 18.6352511976258,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "transport",
+        "native_error": "Unreachable pose [0.30084633 0.05132121 0.11628009]: residual [-9.64508004e-03 -8.77039027e-03 -1.46124264e-02 -8.44461837e-08\n -7.26240034e-02 -1.72030622e-02]",
+        "task_success_unchanged": false,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "original_task_success": false,
+      "source_report": "experiments/research_stage4/20261112T085922Z_30977f00/result.json",
+      "source_report_sha256": "0938a9002c2ce0a6394a2ed8e279f659f1aacbd839065890170c4106764b4e04",
+      "trace_sha256": "8ffc23455d174e7f6e9154af71ec6d9281c667c5fd0c590b97072aec7d6b41f4"
+    },
+    {
+      "episode": "20261112T073436Z_43d3e2c2",
+      "split": "heldout_success_episodes",
+      "diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.730620812854372,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "original_task_success": true,
+      "source_report": "experiments/research_stage3/20261112T073436Z_43d3e2c2/result.json",
+      "source_report_sha256": "9f462d7be3b8a8ec6b6082d15699756be5de034bb6589485d5716050b3aa78c0",
+      "trace_sha256": "6158090f3cd54770fb9b1dda6e8ea1f85cf3f4486feef4e81b528c301d8c5cb1"
+    },
+    {
+      "episode": "20261112T073851Z_908954b8",
+      "split": "heldout_success_episodes",
+      "diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.730620812854372,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "original_task_success": true,
+      "source_report": "experiments/research_stage3/20261112T073851Z_908954b8/result.json",
+      "source_report_sha256": "c0cbdd6dbeef577e59cf8bdfbd6b277914227417114e392ed73312afb9390a80",
+      "trace_sha256": "6158090f3cd54770fb9b1dda6e8ea1f85cf3f4486feef4e81b528c301d8c5cb1"
+    },
+    {
+      "episode": "20261112T075628Z_ee017e71",
+      "split": "heldout_success_episodes",
+      "diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.729468055712456,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "original_task_success": true,
+      "source_report": "experiments/research_stage3/20261112T075628Z_ee017e71/result.json",
+      "source_report_sha256": "f628fdda3a6ee42b4257f7addce622c8377374fd9f382f98643ee759faa462ce",
+      "trace_sha256": "5bb1601ef2ee82161d430cd0dd67150f02ac3446f96cad4fbab504b998211c54"
+    },
+    {
+      "episode": "20261112T080244Z_7a0dd62e",
+      "split": "heldout_success_episodes",
+      "diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.729468055712456,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "original_task_success": true,
+      "source_report": "experiments/research_stage3/20261112T080244Z_7a0dd62e/result.json",
+      "source_report_sha256": "f12668eb0812ccae7d0f14a29cf153399a65f3c0a0ef18134d9a24c3058650b9",
+      "trace_sha256": "5bb1601ef2ee82161d430cd0dd67150f02ac3446f96cad4fbab504b998211c54"
+    },
+    {
+      "episode": "20261112T084117Z_37dd0986",
+      "split": "heldout_success_episodes",
+      "diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.718182619170776,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "original_task_success": true,
+      "source_report": "experiments/research_stage3/20261112T084117Z_37dd0986/result.json",
+      "source_report_sha256": "db61ff891a6e95cabfc724ac3113dabd07a35cb8b0f8a0f31b163d59f0678444",
+      "trace_sha256": "b3683cdbb88959861f81ac9432d6c0f3c7eedb35dae327cdaf36ebc706af476b"
+    },
+    {
+      "episode": "20261112T084434Z_5cf241f9",
+      "split": "heldout_success_episodes",
+      "diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 307,
+        "lift_reference_distance_mm": 20.69999322688461,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "original_task_success": true,
+      "source_report": "experiments/research_stage3/20261112T084434Z_5cf241f9/result.json",
+      "source_report_sha256": "8a320e6267809faa5183bc119f62104f0d50fa7aa8fa68bbf3936ab3f29b6631",
+      "trace_sha256": "b701501e119126f515c5df367f4380da184f4036aae88f320798ff58b24fda27"
+    }
+  ],
+  "repair": {},
+  "result": "success",
+  "task_success": null,
+  "tokens": 0,
+  "llm_inference_seconds": null,
+  "execution_time": 0.6964990679989569,
+  "robot_execution_seconds": 0,
+  "human_interventions": null,
+  "lessons_learned": [
+    "A later IK error can be a consequence of a lost grasp; primitive order matters"
+  ],
+  "next_improvement": "Use observed failure phase and applicable skills in the executable Agent entry, then compare complete collection cost",
+  "validation_status": "SIMULATION_TRACE_DIAGNOSTIC_VALIDATED_LIMITED",
+  "heldout_false_alarms": 0,
+  "heldout_unknowns": 0,
+  "heldout_cases": 6,
+  "independent_positive_validation_cases": 0,
+  "accepted": true,
+  "planner_calls": 0,
+  "physics_steps": 0,
+  "new_episodes": 0,
+  "research_orchestrator_tokens": null,
+  "privileged_information_used": true,
+  "privileged_fields_used": [
+    "object/gripper distance",
+    "simulator finger-object contact"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "FP003",
+  "version": 1,
+  "content": "A downstream alignment IK error can follow loss of the plug during transport. Inspect preceding finger-object contacts and separation before repairing the pose solver. Lift success alone does not establish retained grasp.",
+  "applicability": "Simulation traces with synchronized object/gripper pose and finger-object contact; carrying phases before release",
+  "source_profile": "retained_final",
+  "target_index": 1,
+  "source_episodes": [
+    "20261112T090023Z_1341a28d"
+  ],
+  "validation_status": "SIMULATION_OBSERVED; NEGATIVE_CONTROLS_PASSED",
+  "success_count": 0,
+  "failure_count": 1,
+  "diagnostic_heldout_negative_controls": 6,
+  "known_limits": [
+    "No independent positive recall estimate",
+    "Physical reason for grasp instability UNKNOWN",
+    "Not measured real force"
+  ],
+  "signatures": [
+    "grasp_retention_loss_before_ik_error"
+  ],
+  "evidence": "experiments/research_stage4/20261112T090915Z_77681d26/result.json"
+}

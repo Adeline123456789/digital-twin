@@ -1,0 +1,10 @@
+{
+  "version": "retention_diagnosis_v1",
+  "accepted": true,
+  "entry": "scripts/diagnose_retention.py:diagnose_episode",
+  "actual_caller": "scripts/benchmark_collection.py:run_case after successful format validation",
+  "source_sha256": "b0b8fc6b138b931845bf4181e8d78adaccd4dc4c49190c76be740f1e652b92e6",
+  "scope": "Offline simulation contact/pose analysis only; no independent positive validation",
+  "evidence": "experiments/research_stage4/20261112T090915Z_77681d26/result.json",
+  "rollback": "Remove diagnostic call; native control and success detector never changed"
+}
