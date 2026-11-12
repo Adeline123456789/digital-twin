@@ -1,0 +1,26 @@
+{
+  "id": "ER004",
+  "content": "Before fitting contact physics, localize the mismatch by phase and verify that real and simulated openings use the same physical coordinate. Separate pre-failure mismatch from abort behavior. A contact-width plateau cannot be explained by a transient alone.",
+  "applicability": "Recorded Piper command/feedback and matched simulated replay; native opening units required",
+  "embodiment": "this Piper installation only for numerical findings; procedural rule transferable",
+  "source_episodes": [
+    "20261112T034222Z_1b9a1e22",
+    "20261112T034222Z_28dbfd04",
+    "20261112T034222Z_2efc945e",
+    "20261112T034222Z_8dd88394",
+    "20261112T034222Z_b939c01a"
+  ],
+  "validation_status": "OBSERVATION_ANALYZED_NOT_CAUSE_VERIFIED",
+  "success_count": 2,
+  "failure_count": 0,
+  "count_semantics": "diagnostic analyses, not task successes",
+  "limitations": [
+    "No real 3D object/contact-force truth",
+    "Old affine mapping remains unvalidated"
+  ],
+  "version": 1,
+  "signatures": [
+    "gripper_sim_real_mismatch",
+    "plug_not_seated"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "experiment_id": "stage1_round1_20261112",
+  "timestamp": "2026-11-12T03:44:59.458549+00:00",
+  "stage": 1,
+  "round": 1,
+  "model": "deterministic NumPy; orchestration model not metered",
+  "task": "Locate phase-specific measured real/sim divergence",
+  "environment": "offline_historical",
+  "program_version": "25919991b8de8879268877683eb7e73e589b85fbf2501f1702b6c3c0294ee7e0",
+  "baseline_commit": "cc17a89a5fc611747ee6d7aa6232aaa2a1fc3851",
+  "protocol_version": "existing protocol unchanged",
+  "memory_version": "ER004",
+  "result": "success",
+  "task_success": null,
+  "stage_gate": "PASS_MEASURED_DISCREPANCY_ONLY",
+  "root_cause": "UNKNOWN: opening coordinates vs grasp geometry/contact; transient dynamics separate",
+  "root_cause_status": "unknown",
+  "hypotheses": [
+    "Gripper response/observation timing mismatch",
+    "Physical aperture-coordinate mapping mismatch",
+    "Grasp-contact geometry differs from reality"
+  ],
+  "experiments": [
+    "20261112T034222Z_1b9a1e22",
+    "20261112T034222Z_28dbfd04",
+    "20261112T034222Z_2efc945e",
+    "20261112T034222Z_8dd88394",
+    "20261112T034222Z_b939c01a"
+  ],
+  "repair": {
+    "type": "Observation Tools",
+    "files": [
+      "scripts/compare_replays.py"
+    ],
+    "accepted": true,
+    "physical_model_changed": false
+  },
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "execution_time": 0.4697945599909872,
+  "simulation_seconds": 0,
+  "human_interventions": 0,
+  "lessons_learned": [
+    "Global error conceals early grasp divergence and later abort effects",
+    "Unvalidated opening mappings confound physical-parameter comparisons"
+  ],
+  "next_improvement": "Stage 2: bounded timing identification with episode-held-out validation before contact tuning"
+}

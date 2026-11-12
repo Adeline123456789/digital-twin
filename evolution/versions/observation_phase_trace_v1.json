@@ -1,0 +1,10 @@
+{
+  "version": "observation_phase_trace_v1",
+  "timestamp": "2026-11-12T03:44:59.458549+00:00",
+  "experiment_id": "stage1_round1_20261112",
+  "accepted": true,
+  "active_default_changed": false,
+  "type": "Observation Tools",
+  "baseline_commit": "cc17a89a5fc611747ee6d7aa6232aaa2a1fc3851",
+  "rollback": "Use compare_replays.py at baseline commit; historical evidence remains immutable"
+}
