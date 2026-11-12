@@ -8,7 +8,7 @@
   "stage2": {
     "rounds_used": 6,
     "round_limit": 6,
-    "status": "NOT_PASSED_RGB_MEASUREMENT_GATE",
+    "status": "CLOSED_NOT_INDEPENDENTLY_VALIDATED",
     "evidence": [
       "experiments/research_stage2/round1/result.json",
       "experiments/research_stage2/round2/result.json",
@@ -22,22 +22,30 @@
       "timestamp": "2026-11-12T05:35:45.660479+00:00",
       "instruction": "保持六轮上限，保留未完成结论",
       "additional_rounds_authorized": false
-    }
+    },
+    "latest_user_instruction": "不要无限制增加上限最多六论改进，之后继续完成接下来的目标不要钻牛角尖"
   },
   "stage3": {
-    "rounds_used": 0,
-    "status": "NOT_RUN_PREREQUISITE_UNMET"
+    "rounds_used": 2,
+    "round_limit": 4,
+    "status": "ROUND2_RUNNING",
+    "completed_rounds": 1,
+    "evidence": [
+      "experiments/research_stage3/round1/result.json",
+      "experiments/research_stage3/round2/design.json"
+    ]
   },
   "stage4": {
     "rounds_used": 0,
-    "status": "NOT_RUN_PREREQUISITE_UNMET"
+    "round_limit": 4,
+    "status": "PENDING_STAGE3_RESULTS"
   },
   "overall_objective_achieved": false,
   "decision": "NO-GO",
   "real_motion_allowed": false,
   "physics_candidate_promoted": false,
   "actual_runner_policy": "A/B/C/D runner argument; active.json v2 only consulted by learn.simulate when signature supplied",
-  "next_prerequisite": "Existing multiaxis robot-side poses prepared; mature OpenCV hand-eye API and holdout isolation verified. Qualified RGB target poses, metric-scale provenance and planar ambiguity handling remain before any real fit. Six-round limit unchanged; no Stage 2 pass or calibration promotion.",
+  "next_prerequisite": "Finish matched inline versus replay comparison, then address planner/exploration cost. Stage2 calibration remains unvalidated and closed at six rounds per user.",
   "real_visual_modalities": {
     "historical": [
       "RGB"
@@ -48,9 +56,14 @@
     "source": "explicit user confirmation 2026-11-12"
   },
   "current_work": {
-    "status": "HAND_EYE_ADAPTER_SOFTWARE_VERIFIED_REAL_FIT_NOT_RUN",
-    "evidence": "experiments/evaluation/20261112T060334Z_handeye_adapter/result.json",
+    "status": "MATCHED_SIMULATION_COLLECTION_COMPARISON_RUNNING",
+    "evidence": "experiments/research_stage3/round2/design.json",
     "goal_complete": false,
-    "new_research_round": false
+    "new_research_round": true
+  },
+  "simulation_privileged_information": {
+    "allowed_all_simulation_stages": true,
+    "public_disclosure_required": true,
+    "source": "explicit user instruction"
   }
 }

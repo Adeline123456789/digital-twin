@@ -1,0 +1,61 @@
+[
+  {
+    "case": {
+      "name": "nominal_success",
+      "offset_mm": 0,
+      "shift_mm": 0,
+      "order": [
+        "baseline",
+        "inline"
+      ]
+    },
+    "trial_ids": {
+      "baseline": "20261112T073436Z_43d3e2c2",
+      "inline": "20261112T073851Z_908954b8"
+    },
+    "max_numeric_errors": {
+      "time": 0.0,
+      "q": 0.0,
+      "action": 0.0,
+      "plug": 0.0,
+      "plug_quaternion_wxyz": 0.0,
+      "grip": 0.0,
+      "penetration": 0.0,
+      "initial_state.npz/qpos": 0.0,
+      "initial_state.npz/qvel": 0.0,
+      "initial_state.npz/ctrl": 0.0,
+      "final_state.npz/qpos": 0.0,
+      "final_state.npz/qvel": 0.0,
+      "final_state.npz/ctrl": 0.0,
+      "h5/action/left_arm/gripper_open": 0.0,
+      "h5/action/left_arm/joint_positions": 0.0,
+      "h5/action/right_arm/gripper_open": 0.0,
+      "h5/action/right_arm/joint_positions": 0.0,
+      "h5/contact/max_penetration_m": 0.0,
+      "h5/phase_index": 0.0,
+      "h5/sim_time": 0.0,
+      "h5/state/left_arm/end_effector_pos": 0.0,
+      "h5/state/left_arm/end_effector_quat": 0.0,
+      "h5/state/left_arm/gripper_open": 0.0,
+      "h5/state/left_arm/gripper_width_m": 0.0,
+      "h5/state/left_arm/joint_positions": 0.0,
+      "h5/state/right_arm/end_effector_pos": 0.0,
+      "h5/state/right_arm/end_effector_quat": 0.0,
+      "h5/state/right_arm/gripper_open": 0.0,
+      "h5/state/right_arm/gripper_width_m": 0.0,
+      "h5/state/right_arm/joint_positions": 0.0,
+      "h5/valid/action": 0.0,
+      "h5/valid/collision": 0.0,
+      "h5/valid/state": 0.0
+    },
+    "max_decoded_pixel_errors": {
+      "cam_left_wrist_rgb.mp4": 0,
+      "cam_external_rgb.mp4": 82,
+      "cam_right_wrist_rgb.mp4": 64
+    },
+    "equivalent": false,
+    "baseline_s": 249.2142568230047,
+    "candidate_s": 150.52363464099471,
+    "reduction_fraction": 0.3960071283245299
+  }
+]

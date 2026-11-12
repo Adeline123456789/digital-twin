@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-11-12T07:47:03.500193+00:00",
+  "result": "NOT_PROMOTED_ORIGINAL_PIXEL_GATE_FAILED",
+  "first_pair": "first_comparison.json",
+  "root_cause": "UNKNOWN at renderer implementation level; repeat variability confirmed before encoding",
+  "root_cause_status": "supported",
+  "facts": [
+    "Native baseline round1 versus native baseline round2 has identical task trajectory but decoded pixel differences (external max87, mean0.2143; right wrist max79, mean0.0852; left0)",
+    "Two independent native 32-frame probes have raw external RGB differences up to2 before encoding; right/left exact on this short prefix",
+    "Candidate versus baseline complete numeric trace and privileged JSON are exactly equal; decoded external max82,mean0.1876; right max64,mean0.0800; left0",
+    "Measured single-pair component time249.2143s versus150.5236s; not a promoted result"
+  ],
+  "probe": {
+    "overhead": {
+      "max_rgb_error": 2,
+      "different_frames": 29,
+      "sha_a": "05b3d1725b4e6fcef827227bd3396977586a147c68e3f80c3c5b34a9f69c9c90",
+      "sha_b": "ba54792dff44ccb17f41df20a342932a88314774226bfd77e2b26aca6a39a3e6"
+    },
+    "left_wrist": {
+      "max_rgb_error": 0,
+      "different_frames": 0,
+      "sha_a": "30cb16934a230d75ae1631a6584c13f34b24664822e10659aee89498f5701a72",
+      "sha_b": "30cb16934a230d75ae1631a6584c13f34b24664822e10659aee89498f5701a72"
+    },
+    "right_wrist": {
+      "max_rgb_error": 0,
+      "different_frames": 0,
+      "sha_a": "dba726ed5fe2617d6075baef5a60049f6550d6a90c8ea17b45872cbabacfb6fe",
+      "sha_b": "dba726ed5fe2617d6075baef5a60049f6550d6a90c8ea17b45872cbabacfb6fe"
+    }
+  },
+  "privileged_information_used": true,
+  "new_real_motion": false,
+  "interpretation": "A zero decoded-pixel gate is not repeatable for the unmodified baseline. Do not report that original gate passed. Establish rendering repeatability separately before reconsidering image equivalence."
+}
