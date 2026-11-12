@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-12T08:58:57.024872+00:00",
+  "source_experiments": [
+    "20261112T085805Z_f7f9ad62",
+    "20261112T085815Z_d65cbd83"
+  ],
+  "common_feasible_tilts_deg": [
+    -10
+  ],
+  "selected_grasp_tilt_deg": -10,
+  "status": "KINEMATIC_COUNTERFACTUAL_ONLY; full physical validation pending",
+  "selection_frozen_before_full_execution": true,
+  "new_trial_offset_mm": 0,
+  "privileged_information_used": true,
+  "source_profile": "retained_final"
+}
