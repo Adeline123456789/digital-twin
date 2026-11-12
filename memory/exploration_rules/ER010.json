@@ -1,0 +1,25 @@
+{
+  "id": "ER010",
+  "version": 1,
+  "content": "Before interpreting pixel differences as a control regression, measure unmodified renderer repeatability; compare synchronized physical state, camera calibration and success separately. Preserve failed gates and declare any measurement amendment before new holdout tests.",
+  "applicability": "Repeated MuJoCo RGB collection and rendering comparisons",
+  "embodiment": "Simulation observations only; no RGB-D or measured six-axis force required",
+  "source_episodes": [
+    "20261112T071105Z_6a45b3cd",
+    "20261112T073436Z_43d3e2c2",
+    "20261112T073851Z_908954b8"
+  ],
+  "validation_status": "SIMULATION_OBSERVATION_REPEATABILITY_MEASURED",
+  "success_count": 2,
+  "failure_count": 0,
+  "count_unit": "native repeatability checks (full encoded episodes and 32-frame raw prefixes)",
+  "known_limits": [
+    "Precise driver/render mechanism UNKNOWN",
+    "Raw probe covers only first32frames",
+    "Do not use this rule to ignore camera, state or success mismatches"
+  ],
+  "signatures": [
+    "nonrepeatable_pixel_gate"
+  ],
+  "evidence": "experiments/research_stage3/round2/render_repeatability.json"
+}

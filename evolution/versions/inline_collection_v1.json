@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-11-12T08:05:47.220662+00:00",
+  "version": "inline_collection_v1",
+  "entry": "scripts/collect_inline.py",
+  "sha256": "2cb968b44e1a14fb42b8ef9f18f03a42074665cdee11df9fbf8a8cdb60df46c4",
+  "evidence": "experiments/research_stage3/round2/result.json",
+  "accepted_as_opt_in": true,
+  "accepted_as_default": false,
+  "validation_scope": "Simulation motion/format preservation; decoded pixels not identical",
+  "original_pixel_gate_passed": false,
+  "amendment": "experiments/research_stage3/round2/AMENDMENT.json",
+  "independent_conditions_after_amendment": [
+    "deliberate_failure",
+    "heldout_initial_position"
+  ],
+  "source_episodes": [
+    "20261112T073436Z_43d3e2c2",
+    "20261112T073851Z_908954b8",
+    "20261112T075231Z_2a125acc",
+    "20261112T074857Z_7471a279",
+    "20261112T075628Z_ee017e71",
+    "20261112T080244Z_7a0dd62e"
+  ],
+  "physical_model_changed": false,
+  "control_speed_changed": false,
+  "success_detector_changed": false,
+  "active_task_policy_changed": false,
+  "privileged_information_used": true,
+  "rollback": "Use existing simulate(..., record_inline=False) and native physics replay; no simulator files or source model parameters need restoration"
+}

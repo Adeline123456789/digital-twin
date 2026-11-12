@@ -1,0 +1,421 @@
+{
+  "stage": 3,
+  "round": 2,
+  "timestamp": "2026-11-12T08:05:47.173294+00:00",
+  "result": "CONDITIONALLY_ACCEPTED_MOTION_AND_FORMAT",
+  "original_pixel_gate_passed": false,
+  "measurement_amendment": "AMENDMENT.json",
+  "cases": [
+    {
+      "case": "nominal_success",
+      "trial_ids": {
+        "baseline": "20261112T073436Z_43d3e2c2",
+        "inline": "20261112T073851Z_908954b8"
+      },
+      "comparison": {
+        "max_numeric_errors": {
+          "time": 0.0,
+          "q": 0.0,
+          "action": 0.0,
+          "plug": 0.0,
+          "plug_quaternion_wxyz": 0.0,
+          "grip": 0.0,
+          "penetration": 0.0,
+          "initial_state.npz/qpos": 0.0,
+          "initial_state.npz/qvel": 0.0,
+          "initial_state.npz/ctrl": 0.0,
+          "final_state.npz/qpos": 0.0,
+          "final_state.npz/qvel": 0.0,
+          "final_state.npz/ctrl": 0.0,
+          "h5/action/left_arm/gripper_open": 0.0,
+          "h5/action/left_arm/joint_positions": 0.0,
+          "h5/action/right_arm/gripper_open": 0.0,
+          "h5/action/right_arm/joint_positions": 0.0,
+          "h5/contact/max_penetration_m": 0.0,
+          "h5/phase_index": 0.0,
+          "h5/sim_time": 0.0,
+          "h5/state/left_arm/end_effector_pos": 0.0,
+          "h5/state/left_arm/end_effector_quat": 0.0,
+          "h5/state/left_arm/gripper_open": 0.0,
+          "h5/state/left_arm/gripper_width_m": 0.0,
+          "h5/state/left_arm/joint_positions": 0.0,
+          "h5/state/right_arm/end_effector_pos": 0.0,
+          "h5/state/right_arm/end_effector_quat": 0.0,
+          "h5/state/right_arm/gripper_open": 0.0,
+          "h5/state/right_arm/gripper_width_m": 0.0,
+          "h5/state/right_arm/joint_positions": 0.0,
+          "h5/valid/action": 0.0,
+          "h5/valid/collision": 0.0,
+          "h5/valid/state": 0.0
+        },
+        "max_decoded_pixel_errors": {
+          "cam_left_wrist_rgb.mp4": 0,
+          "cam_external_rgb.mp4": 82,
+          "cam_right_wrist_rgb.mp4": 64
+        },
+        "equivalent": true,
+        "baseline_s": 249.2142568230047,
+        "candidate_s": 150.52363464099471,
+        "reduction_fraction": 0.3960071283245299,
+        "decoded_pixel_mae": {
+          "cam_left_wrist_rgb.mp4": {
+            "mean": 0.0,
+            "max_frame_mean": 0.0
+          },
+          "cam_external_rgb.mp4": {
+            "mean": 0.18758649909287048,
+            "max_frame_mean": 0.3333658854166667
+          },
+          "cam_right_wrist_rgb.mp4": {
+            "mean": 0.08002544789521428,
+            "max_frame_mean": 0.6291124131944444
+          }
+        },
+        "video_properties_equal": {
+          "cam_left_wrist_rgb.mp4": true,
+          "cam_external_rgb.mp4": true,
+          "cam_right_wrist_rgb.mp4": true
+        },
+        "privileged_trace_equal": true,
+        "pixel_exact": false,
+        "physical_equivalent": true
+      },
+      "baseline": {
+        "trial_id": "20261112T073436Z_43d3e2c2",
+        "task_success": true,
+        "valid_recording": true,
+        "collection_seconds": 249.2142568230047,
+        "trial_seconds": 105.14161114400486,
+        "replay_seconds": 142.69975329501904,
+        "verify_install_seconds": 1.3728923839807976,
+        "recording_report": "experiments/evaluation/20261112T073844Z_63865ff1",
+        "frames_per_camera": {
+          "cam_external_rgb.mp4": 1133,
+          "cam_left_wrist_rgb.mp4": 1133,
+          "cam_right_wrist_rgb.mp4": 1133
+        },
+        "duration_s": 37.766666666666666,
+        "sampled_peak_joint_speed_deg_s": 11.979390285924248,
+        "sampled_peak_joint_acceleration_deg_s2": 41.95339892830063,
+        "joint_path_sum_deg": 621.0128219535018,
+        "max_penetration_m": 3.14633920053186e-05
+      },
+      "inline": {
+        "trial_id": "20261112T073851Z_908954b8",
+        "task_success": true,
+        "valid_recording": true,
+        "collection_seconds": 150.52363464099471,
+        "trial_seconds": 149.19573093898362,
+        "replay_seconds": 0.0,
+        "verify_install_seconds": 1.327903702011099,
+        "recording_report": "experiments/evaluation/20261112T074121Z_2e30e5b6",
+        "frames_per_camera": {
+          "cam_external_rgb.mp4": 1133,
+          "cam_left_wrist_rgb.mp4": 1133,
+          "cam_right_wrist_rgb.mp4": 1133
+        },
+        "duration_s": 37.766666666666666,
+        "sampled_peak_joint_speed_deg_s": 11.979390285924248,
+        "sampled_peak_joint_acceleration_deg_s2": 41.95339892830063,
+        "joint_path_sum_deg": 621.0128219535018,
+        "max_penetration_m": 3.14633920053186e-05
+      }
+    },
+    {
+      "case": "deliberate_failure",
+      "trial_ids": {
+        "inline": "20261112T074857Z_7471a279",
+        "baseline": "20261112T075231Z_2a125acc"
+      },
+      "comparison": {
+        "max_numeric_errors": {
+          "time": 0.0,
+          "q": 0.0,
+          "action": 0.0,
+          "plug": 0.0,
+          "plug_quaternion_wxyz": 0.0,
+          "grip": 0.0,
+          "penetration": 0.0,
+          "initial_state.npz/qpos": 0.0,
+          "initial_state.npz/qvel": 0.0,
+          "initial_state.npz/ctrl": 0.0,
+          "final_state.npz/qpos": 0.0,
+          "final_state.npz/qvel": 0.0,
+          "final_state.npz/ctrl": 0.0,
+          "h5/action/left_arm/gripper_open": 0.0,
+          "h5/action/left_arm/joint_positions": 0.0,
+          "h5/action/right_arm/gripper_open": 0.0,
+          "h5/action/right_arm/joint_positions": 0.0,
+          "h5/contact/max_penetration_m": 0.0,
+          "h5/phase_index": 0.0,
+          "h5/sim_time": 0.0,
+          "h5/state/left_arm/end_effector_pos": 0.0,
+          "h5/state/left_arm/end_effector_quat": 0.0,
+          "h5/state/left_arm/gripper_open": 0.0,
+          "h5/state/left_arm/gripper_width_m": 0.0,
+          "h5/state/left_arm/joint_positions": 0.0,
+          "h5/state/right_arm/end_effector_pos": 0.0,
+          "h5/state/right_arm/end_effector_quat": 0.0,
+          "h5/state/right_arm/gripper_open": 0.0,
+          "h5/state/right_arm/gripper_width_m": 0.0,
+          "h5/state/right_arm/joint_positions": 0.0,
+          "h5/valid/action": 0.0,
+          "h5/valid/collision": 0.0,
+          "h5/valid/state": 0.0
+        },
+        "max_decoded_pixel_errors": {
+          "cam_left_wrist_rgb.mp4": 0,
+          "cam_external_rgb.mp4": 86,
+          "cam_right_wrist_rgb.mp4": 66
+        },
+        "decoded_pixel_mae": {
+          "cam_left_wrist_rgb.mp4": {
+            "mean": 0.0,
+            "max_frame_mean": 0.0
+          },
+          "cam_external_rgb.mp4": {
+            "mean": 0.1905221815081121,
+            "max_frame_mean": 0.29765516493055555
+          },
+          "cam_right_wrist_rgb.mp4": {
+            "mean": 0.03672013082288594,
+            "max_frame_mean": 0.5391688368055556
+          }
+        },
+        "video_properties_equal": {
+          "cam_left_wrist_rgb.mp4": true,
+          "cam_external_rgb.mp4": true,
+          "cam_right_wrist_rgb.mp4": true
+        },
+        "privileged_trace_equal": true,
+        "pixel_exact": false,
+        "physical_equivalent": true,
+        "equivalent": true,
+        "baseline_s": 219.72656980599277,
+        "candidate_s": 136.82353883501492,
+        "reduction_fraction": 0.377300892851406
+      },
+      "inline": {
+        "trial_id": "20261112T074857Z_7471a279",
+        "task_success": false,
+        "valid_recording": true,
+        "collection_seconds": 136.82353883501492,
+        "trial_seconds": 135.60039194001,
+        "replay_seconds": 0.0,
+        "verify_install_seconds": 1.223146895004902,
+        "recording_report": "experiments/evaluation/20261112T075113Z_d05a16b4",
+        "frames_per_camera": {
+          "cam_external_rgb.mp4": 1130,
+          "cam_left_wrist_rgb.mp4": 1130,
+          "cam_right_wrist_rgb.mp4": 1130
+        },
+        "duration_s": 37.666666666666664,
+        "sampled_peak_joint_speed_deg_s": 11.992042683789244,
+        "sampled_peak_joint_acceleration_deg_s2": 85.8656778235242,
+        "joint_path_sum_deg": 621.5153413714241,
+        "max_penetration_m": 0.0001922329609428605
+      },
+      "baseline": {
+        "trial_id": "20261112T075231Z_2a125acc",
+        "task_success": false,
+        "valid_recording": true,
+        "collection_seconds": 219.72656980599277,
+        "trial_seconds": 89.10921124499873,
+        "replay_seconds": 129.338334887987,
+        "verify_install_seconds": 1.279023673007032,
+        "recording_report": "experiments/evaluation/20261112T075609Z_51f6d994",
+        "frames_per_camera": {
+          "cam_external_rgb.mp4": 1130,
+          "cam_left_wrist_rgb.mp4": 1130,
+          "cam_right_wrist_rgb.mp4": 1130
+        },
+        "duration_s": 37.666666666666664,
+        "sampled_peak_joint_speed_deg_s": 11.992042683789244,
+        "sampled_peak_joint_acceleration_deg_s2": 85.8656778235242,
+        "joint_path_sum_deg": 621.5153413714241,
+        "max_penetration_m": 0.0001922329609428605
+      }
+    },
+    {
+      "case": "heldout_initial_position",
+      "trial_ids": {
+        "baseline": "20261112T075628Z_ee017e71",
+        "inline": "20261112T080244Z_7a0dd62e"
+      },
+      "comparison": {
+        "max_numeric_errors": {
+          "time": 0.0,
+          "q": 0.0,
+          "action": 0.0,
+          "plug": 0.0,
+          "plug_quaternion_wxyz": 0.0,
+          "grip": 0.0,
+          "penetration": 0.0,
+          "initial_state.npz/qpos": 0.0,
+          "initial_state.npz/qvel": 0.0,
+          "initial_state.npz/ctrl": 0.0,
+          "final_state.npz/qpos": 0.0,
+          "final_state.npz/qvel": 0.0,
+          "final_state.npz/ctrl": 0.0,
+          "h5/action/left_arm/gripper_open": 0.0,
+          "h5/action/left_arm/joint_positions": 0.0,
+          "h5/action/right_arm/gripper_open": 0.0,
+          "h5/action/right_arm/joint_positions": 0.0,
+          "h5/contact/max_penetration_m": 0.0,
+          "h5/phase_index": 0.0,
+          "h5/sim_time": 0.0,
+          "h5/state/left_arm/end_effector_pos": 0.0,
+          "h5/state/left_arm/end_effector_quat": 0.0,
+          "h5/state/left_arm/gripper_open": 0.0,
+          "h5/state/left_arm/gripper_width_m": 0.0,
+          "h5/state/left_arm/joint_positions": 0.0,
+          "h5/state/right_arm/end_effector_pos": 0.0,
+          "h5/state/right_arm/end_effector_quat": 0.0,
+          "h5/state/right_arm/gripper_open": 0.0,
+          "h5/state/right_arm/gripper_width_m": 0.0,
+          "h5/state/right_arm/joint_positions": 0.0,
+          "h5/valid/action": 0.0,
+          "h5/valid/collision": 0.0,
+          "h5/valid/state": 0.0
+        },
+        "max_decoded_pixel_errors": {
+          "cam_left_wrist_rgb.mp4": 0,
+          "cam_external_rgb.mp4": 70,
+          "cam_right_wrist_rgb.mp4": 64
+        },
+        "decoded_pixel_mae": {
+          "cam_left_wrist_rgb.mp4": {
+            "mean": 0.0,
+            "max_frame_mean": 0.0
+          },
+          "cam_external_rgb.mp4": {
+            "mean": 0.1859188345070854,
+            "max_frame_mean": 0.29852322048611113
+          },
+          "cam_right_wrist_rgb.mp4": {
+            "mean": 0.033167258331188096,
+            "max_frame_mean": 0.5856694878472222
+          }
+        },
+        "video_properties_equal": {
+          "cam_left_wrist_rgb.mp4": true,
+          "cam_external_rgb.mp4": true,
+          "cam_right_wrist_rgb.mp4": true
+        },
+        "privileged_trace_equal": true,
+        "pixel_exact": false,
+        "physical_equivalent": true,
+        "equivalent": true,
+        "baseline_s": 253.07140839699423,
+        "candidate_s": 156.02540487900842,
+        "reduction_fraction": 0.3834728076660059
+      },
+      "baseline": {
+        "trial_id": "20261112T075628Z_ee017e71",
+        "task_success": true,
+        "valid_recording": true,
+        "collection_seconds": 253.07140839699423,
+        "trial_seconds": 104.92957313699299,
+        "replay_seconds": 146.80175219400553,
+        "verify_install_seconds": 1.3400830659957137,
+        "recording_report": "experiments/evaluation/20261112T080040Z_18c1a5cf",
+        "frames_per_camera": {
+          "cam_external_rgb.mp4": 1133,
+          "cam_left_wrist_rgb.mp4": 1133,
+          "cam_right_wrist_rgb.mp4": 1133
+        },
+        "duration_s": 37.766666666666666,
+        "sampled_peak_joint_speed_deg_s": 11.977664142598053,
+        "sampled_peak_joint_acceleration_deg_s2": 41.943127999860074,
+        "joint_path_sum_deg": 620.4070848985426,
+        "max_penetration_m": 3.1283597509450485e-05
+      },
+      "inline": {
+        "trial_id": "20261112T080244Z_7a0dd62e",
+        "task_success": true,
+        "valid_recording": true,
+        "collection_seconds": 156.02540487900842,
+        "trial_seconds": 154.72897193199606,
+        "replay_seconds": 0.0,
+        "verify_install_seconds": 1.296432947012363,
+        "recording_report": "experiments/evaluation/20261112T080519Z_f2561601",
+        "frames_per_camera": {
+          "cam_external_rgb.mp4": 1133,
+          "cam_left_wrist_rgb.mp4": 1133,
+          "cam_right_wrist_rgb.mp4": 1133
+        },
+        "duration_s": 37.766666666666666,
+        "sampled_peak_joint_speed_deg_s": 11.977664142598053,
+        "sampled_peak_joint_acceleration_deg_s2": 41.943127999860074,
+        "joint_path_sum_deg": 620.4070848985426,
+        "max_penetration_m": 3.1283597509450485e-05
+      }
+    }
+  ],
+  "component_seconds": {
+    "baseline": 722.0122350259917,
+    "inline": 443.37257835501805
+  },
+  "successful_episode_count": {
+    "baseline": 2,
+    "inline": 2
+  },
+  "case_count_per_method": 3,
+  "component_seconds_per_valid_success": {
+    "baseline": 361.00611751299584,
+    "inline": 221.68628917750902
+  },
+  "designed_batch_component_valid_successes_per_hour": {
+    "baseline": 9.97213018106377,
+    "inline": 16.239163970656758
+  },
+  "component_cost_reduction_fraction": 0.38592096249025876,
+  "planner_calls": 0,
+  "planner_tokens": 0,
+  "llm_inference_seconds": 0,
+  "research_orchestrator_tokens": null,
+  "total_monetary_cost": null,
+  "human_interventions": null,
+  "real_robot_execution_seconds": 0,
+  "privileged_information_used": true,
+  "privileged_fields_used": [
+    "joint/action state",
+    "object/goal pose",
+    "contacts and penetration",
+    "native task success",
+    "camera intrinsics/extrinsics",
+    "qvel"
+  ],
+  "digital_twin_real_calibration": "NOT_INDEPENDENTLY_VALIDATED",
+  "active_default_collection_changed": false,
+  "next_improvement": "Reduce planner context overhead, then use this opt-in recorder in matched model/exploration comparisons",
+  "limitations": [
+    "Simulation-only, one pair per condition; timing variability not estimated",
+    "Two successful conditions and one deliberate failure; this is not natural task success rate or production throughput",
+    "Initial-position holdout is not a new task family",
+    "Full decoded images are not pixel-identical; native repeats also vary; numeric motion and privileged trace are identical",
+    "Component times exclude research, setup, Git, image comparison and idle; total research cost and dollar cost unknown",
+    "No weak/strong model benefit or token reduction established",
+    "Stage4 not yet executed"
+  ],
+  "bottleneck_diagnosis": {
+    "root_cause": "Duplicate physics integration in headless trial followed by video replay",
+    "status": "SUPPORTED_BY_SOURCE_AND_PAIRED_TIMING",
+    "scope": "Collection component cost, not root cause of real physical failure"
+  },
+  "new_episodes": {
+    "success": 4,
+    "failure": 2,
+    "distinct_successful_conditions": 2,
+    "note": "Paired repetitions for evaluation; training novelty not evaluated"
+  },
+  "tests": {
+    "existing_targeted_tests_passed": 13,
+    "test_files": [
+      "tests/test_agent_loop.py",
+      "tests/test_learning.py"
+    ],
+    "complete_recording_integration_checks": 6,
+    "paired_numeric_and_privileged_trace_checks": 3
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETED",
+  "task_trials_completed": 6,
+  "native_replays_completed": 3,
+  "render_probe_intervals": 64,
+  "remaining_task_budget": 0,
+  "trial_ids": [
+    "20261112T073436Z_43d3e2c2",
+    "20261112T073851Z_908954b8",
+    "20261112T075231Z_2a125acc",
+    "20261112T074857Z_7471a279",
+    "20261112T075628Z_ee017e71",
+    "20261112T080244Z_7a0dd62e"
+  ]
+}

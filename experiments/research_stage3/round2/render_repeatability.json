@@ -32,5 +32,36 @@
   },
   "privileged_information_used": true,
   "new_real_motion": false,
-  "interpretation": "A zero decoded-pixel gate is not repeatable for the unmodified baseline. Do not report that original gate passed. Establish rendering repeatability separately before reconsidering image equivalence."
+  "interpretation": "A zero decoded-pixel gate is not repeatable for the unmodified baseline. Do not report that original gate passed. Establish rendering repeatability separately before reconsidering image equivalence.",
+  "reproduction_script": "experiments/research_stage3/round2/render_probe.py",
+  "reproduction_script_sha256": "9b45359e625c41b7fcdbe8aa5cef2d9a7575d630433732797d7e906fbe61982b",
+  "native_trial_id": "20261112T073436Z_43d3e2c2",
+  "probe_frame_count": 32,
+  "original_source_script_sha256": "0cd8166dacd774587ff4e8fa360429037848a7e80b6be159a39032779a2a8723",
+  "probe_evidence": [
+    {
+      "local_artifact": "stage3_round2_diagnosis/probe_a/left_wrist.npy",
+      "sha256": "72d3fbb389baddc39aab4b7949b07457074649f0bd2f6858e3b879c8bf5428aa"
+    },
+    {
+      "local_artifact": "stage3_round2_diagnosis/probe_a/overhead.npy",
+      "sha256": "b98c548c5c585a5c77b2800ee9dee5a0c677fee5da5499d42814f58bc75aec36"
+    },
+    {
+      "local_artifact": "stage3_round2_diagnosis/probe_a/right_wrist.npy",
+      "sha256": "02fade1cfac5a3dcff36dea85db3a99c1426e00ab1aed0a2c66e10f761cf00ab"
+    },
+    {
+      "local_artifact": "stage3_round2_diagnosis/probe_b/left_wrist.npy",
+      "sha256": "72d3fbb389baddc39aab4b7949b07457074649f0bd2f6858e3b879c8bf5428aa"
+    },
+    {
+      "local_artifact": "stage3_round2_diagnosis/probe_b/overhead.npy",
+      "sha256": "82bc8b4fdad24bc5d2b0d39d33b46c5fdfd0d02b6e3e26e7a8e2d1d17d247709"
+    },
+    {
+      "local_artifact": "stage3_round2_diagnosis/probe_b/right_wrist.npy",
+      "sha256": "02fade1cfac5a3dcff36dea85db3a99c1426e00ab1aed0a2c66e10f761cf00ab"
+    }
+  ]
 }

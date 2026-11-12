@@ -1,0 +1,33 @@
+{
+  "id": "VS003",
+  "version": 1,
+  "content": "Record each native checked physics interval through the existing three-camera writer during execution, avoiding a second integration pass; verify full episode format and keep original physical outcome.",
+  "applicability": "Original-profile offline Piper pick-insert script and current checked_physics_step/state_row/writer contracts; opt-in collect_inline.py only",
+  "embodiment": "Current dual Piper MuJoCo workcell; simulator RGB cameras and ground truth; not other real arms",
+  "source_episodes": [
+    "20261112T073436Z_43d3e2c2",
+    "20261112T073851Z_908954b8",
+    "20261112T075231Z_2a125acc",
+    "20261112T074857Z_7471a279",
+    "20261112T075628Z_ee017e71",
+    "20261112T080244Z_7a0dd62e"
+  ],
+  "validation_status": "SIMULATION_MOTION_AND_FORMAT_VERIFIED_PIXEL_VARIATION_DISCLOSED",
+  "success_count": 3,
+  "failure_count": 0,
+  "count_unit": "paired motion/format equivalence checks, not physical task success",
+  "physical_task_outcomes_per_method": {
+    "success": 2,
+    "failure": 1
+  },
+  "known_limits": [
+    "Original exact-pixel gate failed and was transparently amended after native repeatability check",
+    "Not tested on retained_final source or real hardware",
+    "Default Agent execution still uses old path until explicitly integrated",
+    "Timing measured on three deterministic conditions only"
+  ],
+  "signatures": [
+    "duplicate_physics_recording_cost"
+  ],
+  "evidence": "experiments/research_stage3/round2/result.json"
+}

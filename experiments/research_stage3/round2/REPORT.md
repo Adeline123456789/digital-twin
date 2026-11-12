@@ -1,7 +1,27 @@
-# Stage3 round2 — candidate not yet promoted
+# Stage 3 第二轮：单次物理执行同时录制
 
-The first paired native/inline run has identical physical trajectories, numeric HDF5 data, privileged JSON and task outcome. Collection component time is 249.2143 s versus 150.5236 s (39.60% lower in one pair). The preregistered exact decoded-pixel criterion failed, so the benchmark stopped before failure/heldout cases. This is not an accepted efficiency improvement.
+**CONDITIONALLY_ACCEPTED_MOTION_AND_FORMAT — Simulation-only。** 三组的关节/动作/物体位姿、接触、相机参数、初末状态与成功标签一致。原“逐像素相等”门槛未通过；依据原生重复实验确认其不可重复后，公开冻结了 AMENDMENT.json，再执行失败与留出场景。没有修改任务成功检测器。
 
-The unmodified baseline also fails pixel-exact repeatability. Two short native probes show raw RGB differences before encoding, so the difference cannot be attributed solely to H264 or the inline adapter. Implementation-level rendering cause remains UNKNOWN. See first_comparison.json and render_repeatability.json.
+| 条件 | 原路径结果 | 单次录制结果 | 原路径秒 | 单次录制秒 | 节省 |
+|---|---|---|---:|---:|---:|
+| nominal_success | True | True | 249.214 | 150.524 | 39.6% |
+| deliberate_failure | False | False | 219.727 | 136.824 | 37.7% |
+| heldout_initial_position | True | True | 253.071 | 156.025 | 38.3% |
 
-Simulation-only. Simulator object/goal poses, joint/action state, contacts, task success, camera poses and qvel were used. No native controller, speed, physics, independent success rule or safety rule changed. Stage2 real calibration remains unvalidated.
+每组预设三次采集，成功数分别为 2/3 和 2/3。包含失败成本的每条有效成功数据组件耗时由 361.006 秒降至 221.686 秒，减少 38.6%。这是固定小批次组件测量，不是生产吞吐量或自然成功率。没有估计时延置信区间。
+
+## 实现与证据
+
+`collect_inline.py` 在原 checked_physics_step 后调用现有 state_row、三相机渲染和 MixedEpisodeWriter；原控制器、速度、平滑、物理参数、碰撞上限和最终稳定入座判断不变。原仿真源文件未修改或上传。通过 learn.simulate(..., record_inline=True) 显式使用，随后按原路径 finalizer 验证并安装；默认旧路径保持。参见 METHOD.md 的 robosuite 论文和源码依据。
+
+三个对照的完整数值字段差异均为零，privileged JSON 逐帧相等；视频帧数、尺寸、帧率、编码器一致。像素不相等：全程 MAE/max 见各比较文件。原生基线重复同样有差异，32 帧原生探针在编码前已有最多 2 灰度级差异；不能归咎于单次录制，也不能声称视频逐像素等价。具体驱动/渲染根因 UNKNOWN。没有滤波、降速、换后端或降低编码质量。
+
+## 数据与限制
+
+新增六条完整 Episode，含成功与失败；视频和元数据按既定目录存储，旧文件不覆盖。每条结果及录制核验报告独立上传；原始媒体、轨迹、模型/XML 仅保留在本地。首个像素门槛失败、测量修正、短探针和远端 TLS 上传/校验异常均保留记录。TLS 重查成功后从下一项继续，没有重跑已完成任务。
+
+使用的特权信息：仿真关节/动作、物体与目标位姿、接触和穿透、原生成功真值、相机参数、qvel。没有六维真实力观测、没有新真机运动；没有经过独立真机验证的新物理校准。
+
+13 项既有学习/计划/回滚测试通过；六条完整录制使用原格式读取与逐帧比较验证。采样速度、加速度和路径长度见 result.json，全部来自 30 Hz 轨迹，不能作为连续时间峰值。
+
+planner 调用/Token 为 0；编排 Token、总体费用和人工干预未完整计量。没有证明强弱模型提升，也没有证明总研究成本下降。下一轮处理已有约 20k 输入 Token 的模型调用开销，再接入共享经验与执行反馈对照。
