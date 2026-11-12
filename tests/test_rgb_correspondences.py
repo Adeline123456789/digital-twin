@@ -4,10 +4,21 @@ import unittest
 import cv2
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from rgb_correspondences import match_plane, refine_plane, observed_support
+from rgb_correspondences import match_plane, refine_plane, observed_support, distributed_features
 
 
 class RGBCorrespondenceTests(unittest.TestCase):
+    def test_distributed_selection_preserves_detector_candidates_and_budget(self):
+        rng=np.random.default_rng(4)
+        image=rng.integers(0,256,(100,180),np.uint8)
+        mask=np.full_like(image,255)
+        selected=distributed_features(image,mask)
+        all_points=cv2.goodFeaturesToTrack(image,0,.01,4,mask=mask).reshape(-1,2)
+        self.assertEqual(len(selected),30)
+        self.assertTrue(all(any(np.array_equal(p,q) for q in all_points) for p in selected))
+        cells=(selected/[60,50]).astype(int)
+        self.assertEqual(len(set(map(tuple,cells))),6)
+
     def test_local_tracks_do_not_mark_distant_pixels_as_observed(self):
         roi=np.full((100,200),255,np.uint8);roi[30:40,30:40]=0
         tracks=np.float32([[20,20],[60,20],[60,80],[20,80]])

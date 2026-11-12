@@ -1,0 +1,24 @@
+{
+  "id": "NE008",
+  "version": 1,
+  "content": "A 3x2 spatial selection of identical GFTT candidates improved eight known-warp checks from 4/8 to 6/8 but worsened extreme mapping error and two archived motion-consistency comparisons. Do not promote from average pass rate alone.",
+  "applicability": "Current wrist fixture ROI, 30 tracks, unchanged detector/LK/RANSAC",
+  "source_episodes": [
+    "20261112_spatial_selection",
+    "20261112T070219Z_544d90a8"
+  ],
+  "validation_status": "CANDIDATE_NOT_PROMOTED",
+  "success_count": 6,
+  "failure_count": 2,
+  "count_semantics": "Eight software image-warp checks, not robot tasks",
+  "limitations": [
+    "Same source image; actual metric accuracy unknown"
+  ],
+  "signatures": [
+    "spatial_sampling_regression",
+    "rgb_handeye_input_preparation"
+  ],
+  "ineffective_repairs": [
+    "spatial_quota_as_sufficient_geometry_validation"
+  ]
+}

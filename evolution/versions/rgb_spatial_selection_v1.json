@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-12T07:03:38.171086+00:00",
+  "version": "rgb_spatial_selection_v1",
+  "accepted": false,
+  "evidence": "experiments/diagnosis/20261112_spatial_selection/result.json",
+  "default_changed": false,
+  "physical_model_changed": false,
+  "stage2_rounds_used": 6,
+  "rollback": "Default remains global; distributed candidate is explicit opt-in only"
+}

@@ -1,0 +1,197 @@
+{
+  "cases": [
+    {
+      "id": "translation",
+      "result": "success",
+      "initial_features": 30,
+      "type": "known_image_warp",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.0007798400474712253,
+      "interpolation_support_fraction": 0.38871951219512196,
+      "inlier_bbox_px": [
+        [
+          257.0,
+          266.0
+        ],
+        [
+          595.0,
+          400.0
+        ]
+      ],
+      "median_grid_error_px": 0.0005806365516036749,
+      "p90_grid_error_px": 0.001851539476774633,
+      "execution_time_s": 0.008172834990546107
+    },
+    {
+      "id": "rotation_scale",
+      "result": "success",
+      "initial_features": 30,
+      "type": "known_image_warp",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.010920785367488861,
+      "interpolation_support_fraction": 0.38871951219512196,
+      "inlier_bbox_px": [
+        [
+          257.0,
+          266.0
+        ],
+        [
+          595.0,
+          400.0
+        ]
+      ],
+      "median_grid_error_px": 0.1589372754096985,
+      "p90_grid_error_px": 0.27241915464401245,
+      "execution_time_s": 0.0030948709754738957
+    },
+    {
+      "id": "projective",
+      "result": "success",
+      "initial_features": 30,
+      "type": "known_image_warp",
+      "survivors": 30,
+      "inliers": 30,
+      "forward_backward_median_px": 0.017191950231790543,
+      "interpolation_support_fraction": 0.38871951219512196,
+      "inlier_bbox_px": [
+        [
+          257.0,
+          266.0
+        ],
+        [
+          595.0,
+          400.0
+        ]
+      ],
+      "median_grid_error_px": 0.09264577925205231,
+      "p90_grid_error_px": 0.13543161749839783,
+      "execution_time_s": 0.002779552014544606
+    },
+    {
+      "id": "photometric",
+      "result": "success",
+      "initial_features": 30,
+      "type": "known_image_warp",
+      "survivors": 29,
+      "inliers": 28,
+      "forward_backward_median_px": 0.023445386439561844,
+      "interpolation_support_fraction": 0.38871951219512196,
+      "inlier_bbox_px": [
+        [
+          257.0,
+          266.0
+        ],
+        [
+          595.0,
+          400.0
+        ]
+      ],
+      "median_grid_error_px": 0.35784921050071716,
+      "p90_grid_error_px": 0.8266164660453796,
+      "execution_time_s": 0.00295585798448883
+    },
+    {
+      "id": "real_179",
+      "result": "unverified",
+      "initial_features": 30,
+      "type": "archived_real_pair",
+      "source_sha256": "9cd6ebcc4a5a6112dbe1f240ba8aa4cfc9a583c2023d185dd8d70c16389477bd",
+      "survivors": 26,
+      "inliers": 24,
+      "forward_backward_median_px": 0.08630584180355072,
+      "interpolation_support_fraction": 0.19086970474967907,
+      "inlier_bbox_px": [
+        [
+          257.0,
+          266.0
+        ],
+        [
+          595.0,
+          362.0
+        ]
+      ],
+      "execution_time_s": 0.0025999299832619727
+    },
+    {
+      "id": "real_438",
+      "result": "unverified",
+      "initial_features": 30,
+      "type": "archived_real_pair",
+      "source_sha256": "5502136f4cd8c9c1d8fdedb2d9bab23f9d9863cce5149379cd3b9fafde41cafa",
+      "survivors": 29,
+      "inliers": 28,
+      "forward_backward_median_px": 0.04337126761674881,
+      "interpolation_support_fraction": 0.222400513478819,
+      "inlier_bbox_px": [
+        [
+          257.0,
+          266.0
+        ],
+        [
+          595.0,
+          362.0
+        ]
+      ],
+      "execution_time_s": 0.002569205011241138
+    },
+    {
+      "id": "real_652",
+      "result": "unverified",
+      "initial_features": 30,
+      "type": "archived_real_pair",
+      "source_sha256": "0e42d983cc0422c75579062b48ab552199280ad3ef96847e1dddc001e3e277cd",
+      "survivors": 28,
+      "inliers": 27,
+      "forward_backward_median_px": 0.038188785314559937,
+      "interpolation_support_fraction": 0.33480423620025673,
+      "inlier_bbox_px": [
+        [
+          257.0,
+          298.0
+        ],
+        [
+          518.0,
+          400.0
+        ]
+      ],
+      "execution_time_s": 0.0022766620095353574
+    },
+    {
+      "id": "real_759",
+      "result": "unverified",
+      "initial_features": 30,
+      "type": "archived_real_pair",
+      "source_sha256": "2d0ada3999d7ec5c17d4a93af8d3a1befeb56afd41d82772150fb76be5c5fbf0",
+      "survivors": 29,
+      "inliers": 29,
+      "forward_backward_median_px": 0.015529490076005459,
+      "interpolation_support_fraction": 0.35381899871630296,
+      "inlier_bbox_px": [
+        [
+          257.0,
+          266.0
+        ],
+        [
+          595.0,
+          400.0
+        ]
+      ],
+      "execution_time_s": 0.0026353319990448654
+    }
+  ],
+  "opencv": "5.0.0",
+  "execution_time_s": 0.027097801998024806,
+  "selection": "distributed",
+  "selection_time_s": 0.006325812981231138,
+  "tracker_source_sha256": "510378a87fce7a54557f9a85ee5e50f65fc100abf053b48e2d4584978197c122",
+  "run_script_sha256": "bef95a2903ea5e0fdb992c39e9dc5be0f1b44cecdcd2996425d58ca71498efbd",
+  "calibration_promoted": false,
+  "physical_parameter_fit": false,
+  "limitations": [
+    "No measured ground truth for real pairs; forward/backward consistency is not accuracy",
+    "Same source image and transforms already used to assess other methods; retrospective comparison",
+    "Existing 25x25 tracking support can cross the reference ROI and object boundaries"
+  ]
+}

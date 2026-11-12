@@ -9,24 +9,32 @@ import cv2
 import numpy as np
 from learn import DATA, save, digest
 from validate_rgb_motion import track_step
-from rgb_correspondences import observed_support
+from rgb_correspondences import observed_support, distributed_features
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--selection',choices=['global','distributed'],default='global')
+    parser.add_argument('--software-design',type=Path)
+    parser.add_argument('--software-only',action='store_true')
     args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=False)
     folder=Path(__file__).resolve().parent
     roi=json.loads((folder/'design.json').read_text())
-    software=json.loads((folder/'software_design.json').read_text())
+    software_path=args.software_design or folder/'software_design.json'
+    software=json.loads(software_path.read_text())
     capture=DATA/roi['capture']/'right_wrist'
     reference=cv2.imread(str(capture/f"{roi['reference_frame']:04d}.jpg"),0)
     mask=np.zeros_like(reference);cv2.fillPoly(mask,[np.array(roi['mask_polygon'],np.int32)],255)
     for x0,y0,x1,y1 in roi['exclude_rectangles']:mask[y0:y1,x0:x1]=0
     n=2*roi['mask_erode_px']+1;mask=cv2.erode(mask,np.ones((n,n),np.uint8))
     yy,xx=np.where(mask>0);grid=np.float32(np.column_stack([xx,yy]))[:,None,:]
-    points=cv2.goodFeaturesToTrack(reference,30,.01,4,mask=mask).reshape(-1,2)
-    cases=list(software['heldout_software_cases'])+[dict(id=f'real_{f}',frame=f) for f in roi['target_frames']]
+    selection_started=time.monotonic()
+    points=(distributed_features(reference,mask) if args.selection=='distributed' else
+            cv2.goodFeaturesToTrack(reference,30,.01,4,mask=mask).reshape(-1,2))
+    selection_time=time.monotonic()-selection_started
+    cases=list(software['heldout_software_cases'])
+    if not args.software_only:cases += [dict(id=f'real_{f}',frame=f) for f in roi['target_frames']]
     rows=[];started=time.monotonic()
     for case in cases:
         row=dict(id=case['id'],result='infrastructure_error',initial_features=len(points));t=time.monotonic()
@@ -59,6 +67,8 @@ def main():
         except Exception as exc:row['error']=f'{type(exc).__name__}: {exc}'
         row['execution_time_s']=time.monotonic()-t;rows.append(row)
     report=dict(cases=rows,opencv=cv2.__version__,execution_time_s=time.monotonic()-started,
+                selection=args.selection,selection_time_s=selection_time,
+                software_design_sha256=digest(software_path),
                 tracker_source_sha256=digest(Path(__file__).resolve().parents[3]/'scripts/validate_rgb_motion.py'),
                 run_script_sha256=digest(__file__),
                 calibration_promoted=False,physical_parameter_fit=False,

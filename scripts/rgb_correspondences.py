@@ -8,6 +8,21 @@ import numpy as np
 from learn import DATA, digest, save
 
 
+def distributed_features(image, mask):
+    """Spatial selection of the same GFTT candidates, at most 30 points."""
+    points=cv2.goodFeaturesToTrack(image,0,.01,4,mask=mask)
+    if points is None:return np.empty((0,2),np.float32)
+    points=points.reshape(-1,2)
+    y,x=np.where(mask>0)
+    cells=np.minimum(((points-[x.min(),y.min()])/[x.max()-x.min()+1,y.max()-y.min()+1]*[3,2]).astype(int),[2,1])
+    buckets=[list(np.flatnonzero((cells[:,0]==col)&(cells[:,1]==row))) for row in range(2) for col in range(3)]
+    selected=[]
+    while len(selected)<30 and any(buckets):
+        for bucket in buckets:
+            if bucket and len(selected)<30:selected.append(bucket.pop(0))
+    return points[selected]
+
+
 def observed_support(mask, points):
     """Mark interpolation support; membership does not certify point accuracy."""
     support=np.zeros_like(mask)

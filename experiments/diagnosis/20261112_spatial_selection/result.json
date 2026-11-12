@@ -1,0 +1,75 @@
+{
+  "experiment_id": "20261112_spatial_selection",
+  "timestamp": "2026-11-12T07:03:38.171086+00:00",
+  "model": "OpenCV GFTT/LK; no planner LLM",
+  "task": "Compare spatial selection under the same 30-track budget",
+  "environment": "archived_RGB_and_known_image_warps",
+  "program_version": {
+    "scripts/rgb_correspondences.py": "213a1d7c4cb637257e3c0e6e32f337f5760941fa62e006283a9444518fe4f1ec",
+    "experiments/diagnosis/20261112T061643Z_rgb_correspondences/check_existing_tracker.py": "2f70b9f007e10130855f96b753167cdec7483cc30c996cda2e983627c787981e"
+  },
+  "protocol_version": "ef3622d4328d6231e8b5770cac4a3bd6813bf50f3902a6fe3029c455b7db9f9f",
+  "memory_version": "NE008 v1",
+  "initial_state": {
+    "reference_frame": 27,
+    "max_points": 30,
+    "heldout_software_cases": 8
+  },
+  "actions": [
+    "Change point selection only; keep detector threshold, LK and RANSAC",
+    "Evaluate frozen new transforms and existing real RGB pairs"
+  ],
+  "expected_effects": [
+    "Reduce extrapolation error without degrading real observation consistency"
+  ],
+  "observed_effects": {
+    "baseline_passes": 4,
+    "candidate_passes": 6,
+    "cases": 8,
+    "worst_p90_px": [
+      170.53309631347656,
+      1008.2939453125
+    ],
+    "real_geometry_evidence": "experiments/diagnosis/20261112T070219Z_544d90a8/result.json"
+  },
+  "failure_signature": "spatial_sampling_regression",
+  "root_cause": "UNKNOWN for physical failure; four surviving candidate points support a severely wrong extrapolated homography in software case 2",
+  "root_cause_status": "unknown",
+  "hypotheses": [],
+  "experiments": [
+    "baseline.json",
+    "candidate.json",
+    "development.json"
+  ],
+  "repair": {
+    "candidate_promoted": false,
+    "default_selection": "global",
+    "physical_parameters_changed": false
+  },
+  "result": "failure",
+  "task_success": null,
+  "validation_status": "CANDIDATE_REJECTED_FOR_DEFAULT_USE",
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "execution_time": {
+    "baseline": 0.03332938699168153,
+    "candidate": 0.03094759600935504
+  },
+  "human_interventions": null,
+  "robot_execution_seconds": 0,
+  "simulation_seconds": 0,
+  "lessons_learned": [
+    "Higher average software pass rate can coexist with severe regression",
+    "Spatial quotas do not guarantee trackability or correct geometry"
+  ],
+  "next_improvement": "Use evidence of actual support and independent geometric consistency rather than promote from match count",
+  "new_research_round": false,
+  "new_physical_fit": false,
+  "stage2_rounds_used": 6,
+  "tests": {
+    "passed": 41,
+    "log_sha256": "6c502cd180b85b007b78ef04044ecc15e37dfaa6240a1b87f9e19fceb8dedebd"
+  }
+}
