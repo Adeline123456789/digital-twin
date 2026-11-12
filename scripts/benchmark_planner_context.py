@@ -7,7 +7,7 @@ import sys
 import time
 
 from agent_loop import validate_plan
-from agent_challenge import precontact_observation
+from agent_challenge import precontact_observation, frame_contract
 from benchmark_collection import run_case
 from learn import ROOT, record, finish, save, digest, retrieve
 from model_compare import ask
@@ -15,7 +15,7 @@ from model_compare import ask
 ROUND = ROOT / 'experiments/research_stage3/round3'
 
 
-def prompt_for(case):
+def prompt_for(case, framed=False):
     seed = json.loads((ROOT / 'experiments/research_stage3' / case['seed_episode'] / 'result.json').read_text())
     facts = dict(task='Lift yellow plug, insert in the target socket, release and remain stably seated',
                  source='Existing original-profile MuJoCo; simulator privileged observations',
@@ -24,6 +24,9 @@ def prompt_for(case):
                  precontact=precontact_observation(case['seed_episode']),
                  next_initial_holder_x_shift_mm=case['shift_mm'],
                  root_cause_status='UNKNOWN; investigate using the supplied physical evidence')
+    if framed:
+        facts['observation_contract'] = frame_contract(case['seed_episode'], case['shift_mm'],
+                                                       seed['initial_state']['holder_x_shift_mm'])
     return ('Do not use tools or read files. Choose one bounded experiment for this existing simulation. '
             'Return only JSON with offset_mm (finite number [-4,4]), hypotheses (at most3 short hypotheses), '
             'predicted_effect and reason. offset_mm is the absolute X offset parameter in socket coordinates, '
@@ -33,18 +36,20 @@ def prompt_for(case):
             '\nApplicable shared experience:\n' + json.dumps(retrieve('target_frame_mismatch')))
 
 
-def main():
-    design = json.loads((ROUND / 'design.json').read_text())
+def main(round_dir=ROUND):
+    design = json.loads((round_dir / 'design.json').read_text())
     results = []
     token_sum = 0
     for case in design['cases']:
-        prompt = prompt_for(case)
-        for include_catalog in case['catalog_order']:
+        variants = case.get('variants', [dict(include_catalog=c, framed=False) for c in case.get('catalog_order', [])])
+        for variant in variants:
+            include_catalog = variant['include_catalog']
+            prompt = prompt_for(case, variant['framed'])
             assert token_sum < design['budget']['reported_total_tokens_stop_before_next_call']
-            out, result = record('research_stage3', f'Planner catalog ablation {case["model"]} catalog={include_catalog}', 'llm_driven_simulation')
+            out, result = record('research_stage3', f'Planner interface test {case["model"]} {variant}', 'llm_driven_simulation')
             local = ROOT / '.local' / result['experiment_id']; local.mkdir()
             start = time.monotonic()
-            result.update(model=case['model'], include_catalog=include_catalog,
+            result.update(model=case['model'], include_catalog=include_catalog, observation_variant=variant,
                 planner_adapter_sha256=digest(ROOT / 'scripts/model_compare.py'),
                 prompt_sha256=__import__('hashlib').sha256(prompt.encode()).hexdigest(),
                 initial_state=dict(case=case, execution_budget=1, call_budget=1),
@@ -67,7 +72,7 @@ def main():
                 result['actions'] = [call['answer']]
                 result['hypotheses'] = call['answer']['hypotheses']
                 trial = run_case(dict(name=result['experiment_id'], offset_mm=offset, shift_mm=case['shift_mm']),
-                                 inline=True, label='Stage3 round3 model-selected action')
+                                 inline=True, label=f'Stage3 round{design["round"]} model-selected action')
                 result['experiments'] = [dict(experiment_id=trial['experiment_id'],
                     task_success=trial['task_success'], recording_verified=trial['recording_verified'],
                     collection_seconds=trial['collection_component_seconds'], recording_report=trial.get('recording_report'))]
@@ -82,10 +87,10 @@ def main():
                 result['error_type'] = type(exc).__name__
             finally:
                 result['execution_time'] = time.monotonic() - start
-                result['next_improvement'] = 'Compare token usage and valid physical outcomes before retaining catalog removal'
+                result['next_improvement'] = 'Compare valid physical outcomes, motion quality and costs before retaining interface changes'
                 finish(out, result)
                 results.append(result['experiment_id'])
-                save(ROUND / 'progress.json', dict(experiments=results, reported_total_tokens=token_sum))
+                save(round_dir / 'progress.json', dict(experiments=results, reported_total_tokens=token_sum))
                 subprocess.run([sys.executable, str(ROOT / 'scripts/publish.py'), '--message',
                     'Record planner context experiment ' + result['experiment_id'], str(out.relative_to(ROOT))], check=True)
                 remote = subprocess.check_output(['git', 'ls-remote', 'origin', 'HEAD'], cwd=ROOT, text=True).split()[0]
@@ -93,4 +98,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import argparse
+    parser=argparse.ArgumentParser(); parser.add_argument('--round-dir',type=Path,default=ROUND)
+    main(parser.parse_args().round_dir)

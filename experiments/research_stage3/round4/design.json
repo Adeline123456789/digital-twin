@@ -1,0 +1,66 @@
+{
+  "stage": 3,
+  "round": 4,
+  "timestamp": "2026-11-12T08:36:59.301851+00:00",
+  "hypothesis": "Explicit coordinate-frame and existing motion primitive semantics prevent unjustified holder-to-socket compensation",
+  "changed_factor": "Observation contract; simulator and action space unchanged",
+  "cases": [
+    {
+      "model": "gpt-6-astra",
+      "shift_mm": 1.5,
+      "seed_episode": "20261112T075231Z_2a125acc",
+      "role": "development repeat of round3 failure",
+      "variants": [
+        {
+          "include_catalog": true,
+          "framed": false
+        },
+        {
+          "include_catalog": true,
+          "framed": true
+        }
+      ]
+    },
+    {
+      "model": "gpt-6-astra",
+      "shift_mm": -1.5,
+      "seed_episode": "20261112T075231Z_2a125acc",
+      "role": "held-out initial condition after code freeze, not new task family",
+      "variants": [
+        {
+          "include_catalog": true,
+          "framed": true
+        },
+        {
+          "include_catalog": true,
+          "framed": false
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "model_calls": 4,
+    "max_call_seconds": 120,
+    "physics_trials": 4,
+    "max_trial_seconds": 900,
+    "reported_total_tokens_stop_before_next_call": 110000
+  },
+  "held_constant": [
+    "Same model, catalog, protocol, retrieved experiences, old failed Episode and measured residual",
+    "Same original physics, speed12deg/s, timing, collision and physical success detector",
+    "Same verified inline collector and formal Dataset Format",
+    "One model call/one execution per arm; no retries"
+  ],
+  "acceptance": [
+    "Candidate must succeed with complete valid recording in both initial conditions",
+    "Candidate valid successes must exceed baseline overall, with no paired regression",
+    "Sampled joint peak speed <=12deg/s; simulated elapsed time no more than5% worse, candidate acceleration/path length no more than10% worse than paired baseline",
+    "No tool events or arbitrary commands; source unchanged"
+  ],
+  "information_access": "Candidate explicitly gets simulator frame transform and native primitive semantics. This is an observation-interface treatment, not an equal-information reasoning improvement. Both already receive privileged object residual. No proposed successful offset supplied.",
+  "limitations": [
+    "Small sample; offsets only, not cross-task generalization",
+    "No real motion or calibrated physics benefit claim",
+    "Research orchestration Token and monetary cost remain unknown"
+  ]
+}

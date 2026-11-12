@@ -7,7 +7,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from learn import DATA,ROOT, record, finish, simulate, retrieve, digest, save, failure_memory
+from learn import DATA,ROOT,SIM, record, finish, simulate, retrieve, digest, save, failure_memory
 from model_compare import ask
 
 
@@ -37,6 +37,32 @@ def precontact_observation(ident):
     return {'observed_precontact_xy_error_mm':(delta*1000).tolist(),
             'frame':'socket','source':'simulator privileged object position at align phase end',
             'limitation':'Not a real visual pose estimate; no true perturbation parameter exposed'}
+
+def frame_contract(ident, next_shift_mm, prior_shift_mm):
+    """Describe the original simulator API; a coordinate change is not a response model."""
+    import numpy as np
+    import yaml
+    cfg = yaml.safe_load((DATA/'self_evolution'/ident/'task.yaml').read_text())
+    yaw = math.radians(cfg['strip_yaw_deg'])
+    world_to_socket = np.array([[math.cos(yaw), math.sin(yaw)],
+                                [-math.sin(yaw), math.cos(yaw)]])
+    delta = np.array([next_shift_mm-prior_shift_mm, 0.])
+    return {'schema':'piper_original_observation.v2', 'privileged':True,
+        'initial_holder_change':{'vector':delta.tolist(), 'unit':'mm', 'frame':'world',
+            'relative_to_episode':ident},
+        'world_to_socket_xy_rotation':world_to_socket.tolist(),
+        'same_displacement_in_socket':{'vector':(world_to_socket@delta).tolist(),
+            'unit':'mm', 'frame':'socket',
+            'meaning':'Coordinate representation only; NOT a measured final alignment response'},
+        'action':{'name':'offset_mm', 'unit':'mm', 'frame':'socket', 'axis':'X',
+            'meaning':'Absolute target parameter, not a relative move'},
+        'native_primitive':{'recomputes_grasp_from_current_object_pose':True,
+            'recomputes_transport_from_current_gripper_to_plug_transform':True,
+            'target_is_socket_pose_plus_action_offset':True,
+            'source':'try_plug_pick_sim.py: main/place_over_socket',
+            'source_sha256':digest(SIM/'scripts/try_plug_pick_sim.py')},
+        'unknown':'Residual change caused by changed grasp geometry must be measured; no one-to-one response is assumed',
+        'scope':'Original simulation profile only; no real extrinsic calibration'}
 
 def run(arm, shift, publish=True, hidden_bias=2.0):
     out,r=record('evaluation',f'Luna {arm} hidden target-frame error challenge; holder shift {shift} mm','llm_driven_simulation')
