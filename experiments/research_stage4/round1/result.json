@@ -1,0 +1,39 @@
+{
+  "stage": 4,
+  "round": 1,
+  "timestamp": "2026-11-12T08:53:29.532137+00:00",
+  "result": "NO_FEASIBLE_HEIGHT_CANDIDATE; DIAGNOSTIC_SUPPORTED",
+  "source_experiments": [
+    "20261112T085111Z_74435293",
+    "20261112T085200Z_7b3726e3"
+  ],
+  "kinematic_solves": 8,
+  "feasible_candidates": 0,
+  "total_seconds": 2.6807408810127527,
+  "baseline_goal_reproduction_errors_m": [
+    4.552104360122655e-09,
+    3.796876035799812e-09
+  ],
+  "joint5_upper_bound_rad": 1.22,
+  "observed_joint5_deg": [
+    69.90085100596042,
+    69.90085100596042
+  ],
+  "root_cause_status": "SUPPORTED_LOCAL_SOLVER_JOINT_BOUND_CONSTRAINT",
+  "root_cause": "Both saved transport targets reproduced; native local solver saturates right J5 upper bound for every tested height. Height-only changes do not meet existing pose tolerances. This is not a global infeasibility proof.",
+  "privileged_information_used": true,
+  "privileged_fields_used": [
+    "saved qpos/qvel/ctrl",
+    "object/gripper/socket transforms",
+    "native IK solution and residual"
+  ],
+  "task_success": null,
+  "new_episodes": 0,
+  "planner_calls": 0,
+  "tokens": 0,
+  "research_orchestrator_tokens": null,
+  "human_interventions": null,
+  "physics_steps": 0,
+  "candidate_promoted": false,
+  "next_improvement": "Test bounded changes of the native grasp orientation interface, using cheap kinematic screening followed by full original-speed execution and holdout verification. Do not change joint limits."
+}

@@ -43,10 +43,12 @@
   "stage4": {
     "rounds_used": 1,
     "round_limit": 4,
-    "status": "ROUND1_NATIVE_IK_PROBES",
+    "status": "ROUND1_COMPLETED_HEIGHT_SEARCH_REJECTED",
     "evidence": [
-      "experiments/research_stage4/round1/design.json"
-    ]
+      "experiments/research_stage4/round1/design.json",
+      "experiments/research_stage4/round1/result.json"
+    ],
+    "completed_rounds": 1
   },
   "overall_objective_achieved": false,
   "decision": "NO-GO",

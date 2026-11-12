@@ -1,0 +1,30 @@
+{
+  "id": "NE010",
+  "version": 1,
+  "content": "For the two saved retained-profile outlet1 transport failures, reducing approach gap from45mm to40/35/31mm while keeping carry tilt5deg did not resolve native IK failure; the local solutions reached the right J5 upper bound.",
+  "applicability": "Exact source hashes and saved end-of-lift states in Stage4 round1; retained_final profile, outlet1, original joint bounds",
+  "embodiment": "Dual Piper retained simulation; not pooled with original-profile Stage3",
+  "source_episodes": [
+    "20261111T093534Z_28c8c28d",
+    "20261111T093701Z_743dbfb0"
+  ],
+  "source_experiments": [
+    "20261112T085111Z_74435293",
+    "20261112T085200Z_7b3726e3"
+  ],
+  "validation_status": "KINEMATIC_NEGATIVE_EXPERIENCE",
+  "success_count": 0,
+  "failure_count": 8,
+  "count_unit": "native IK queries, not physical tasks",
+  "signatures": [
+    "transport_ik_failure"
+  ],
+  "ineffective_repairs": [
+    "lower_preinsert_gap_31_to_45mm_at_same_grasp_orientation"
+  ],
+  "known_limits": [
+    "No collision path or physical outcome tested",
+    "Local solver not global infeasibility proof"
+  ],
+  "evidence": "experiments/research_stage4/round1/result.json"
+}

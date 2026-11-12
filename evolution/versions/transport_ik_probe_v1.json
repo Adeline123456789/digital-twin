@@ -1,0 +1,9 @@
+{
+  "version": "transport_ik_probe_v1",
+  "entry": "scripts/probe_transport_ik.py",
+  "status": "DIAGNOSTIC_TOOL_VALIDATED_ON_TWO_SAVED_TARGETS",
+  "task_repair_promoted": false,
+  "evidence": "experiments/research_stage4/round1/result.json",
+  "rollback": "Read-only numerical probe, no runtime task or safety changes",
+  "source_sha256": "cb8dad0850bba5ec8af72e4683feead3e90433cdfb85ffb6b091699561ea94fe"
+}
