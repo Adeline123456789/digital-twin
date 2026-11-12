@@ -11,6 +11,20 @@ class LearningTests(unittest.TestCase):
         self.assertEqual(learn.decide('new_task','random_guess'),'UNKNOWN_TASK_MODE')
         self.assertEqual(learn.decide('plug_not_seated','measure_relative_pose'),'ALLOW_SIMULATION')
     def test_limit(self): self.assertLessEqual(len(learn.retrieve('plug_not_seated')),5)
+    def test_excluded_depth_memory_cannot_authorize_a_repair(self):
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'memory').mkdir()
+            def memory(name,status,repairs):
+                (root/'memory'/name).write_text(json.dumps(dict(id=name,signatures=['test'],
+                    validation_status=status,ineffective_repairs=repairs)))
+            memory('a.json','EXCLUDED_AS_REAL_DEPTH_USER_CONFIRMED_RGB_ONLY',[])
+            with patch.object(learn,'ROOT',root):
+                self.assertEqual(learn.retrieve('test'),[])
+                self.assertEqual(learn.decide('test','guess','v2'),'UNKNOWN_TASK_MODE')
+                memory('b.json','HYPOTHESES_TESTED_REJECTED_FOR_GLOBAL_CALIBRATION',['bad_fix'])
+                self.assertEqual([x['id'] for x in learn.retrieve('test',limit=1)],['b.json'])
+                self.assertEqual(learn.decide('test','bad_fix','v2'),'REJECT_REPEAT_REQUIRE_NEW_EVIDENCE')
     def test_exception_persisted(self):
         original=learn.SIM
         try:

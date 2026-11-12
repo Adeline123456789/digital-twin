@@ -1,0 +1,30 @@
+{
+  "correction_id": "rgb_only_memory_retrieval_v1",
+  "timestamp": "2026-11-12T05:21:22.105409+00:00",
+  "type": "implementation_correction_not_new_research_round",
+  "baseline_commit": "d87d31e9caf68dc36d43947028af5c98f251a839",
+  "model": "deterministic Python verification; orchestrator tokens not independently metered",
+  "finding": "Excluded DT002 and ER005 still returned by shared retrieve(); status-only correction was insufficient",
+  "repair": "Skip confirmed excluded depth records before signature matching and result limit",
+  "after_retrieved_ids": [
+    "ER004",
+    "NE006"
+  ],
+  "excluded_only_decision": "UNKNOWN_TASK_MODE",
+  "negative_experience_decision": "REJECT_REPEAT_REQUIRE_NEW_EVIDENCE",
+  "tests": {
+    "passed": 26,
+    "log_sha256": "83308c81c11b2501d15aa26ac819a7c97bbbcdc85d0a65f0ae3745d3272a052e"
+  },
+  "source_sha256": "36f8860965a259483ff503aa0a5401a058ccd9c63fc112c2a8acef9935c62574",
+  "calibration_promoted": false,
+  "new_robot_episodes": 0,
+  "real_motion_count": 0,
+  "research_stage_gate_changed": false,
+  "task_success": null,
+  "limitations": [
+    "Verifies memory exclusion, not physical task performance",
+    "No new calibration, throughput, token-cost or motion-quality evaluation"
+  ],
+  "rollback": "Restore scripts/learn.py and tests/test_learning.py from baseline_commit; excluded records remain preserved"
+}

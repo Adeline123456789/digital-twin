@@ -15,3 +15,7 @@
 研究方法复用了本地现有 measured-joint FK 与 RealSense SDK 投影/反投影调用。算法正确性不能弥补数据来源缺失；本轮未接受任何方法的真实校准效果。
 
 Stage 2 已使用获准的五轮，独立验证门槛仍未通过；Stage 3/4 不启动。无新任务采集 Episode。planner 调用为 0，研究编排 Token 未独立计量。
+
+## RGB-only 纠正的检索集成验证
+
+发现 retrieve() 仍返回已排除的 DT002/ER005；已在共享检索入口按现有撤销状态过滤，原记录保留。修复后 gripper_sim_real_mismatch 只返回 ER004、NE006；只有撤销记忆的签名进入 UNKNOWN_TASK_MODE，有效负经验仍拒绝重复无效修复。26 项测试通过。这是第五轮证据纠正的实现修复，不是新增研究轮，也没有通过任何新的物理校准门槛。详见 retrieval_correction.json。

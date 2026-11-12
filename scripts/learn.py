@@ -62,6 +62,7 @@ def retrieve(signature, limit=5):
     matches=[]
     for p in sorted((ROOT/'memory').rglob('*.json')):
         item=json.loads(p.read_text())
+        if item.get('validation_status')=='EXCLUDED_AS_REAL_DEPTH_USER_CONFIRMED_RGB_ONLY': continue
         if signature in item.get('signatures',[]): matches.append(item)
     return matches[:limit]
 
