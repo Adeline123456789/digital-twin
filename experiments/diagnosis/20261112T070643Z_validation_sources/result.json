@@ -1,0 +1,188 @@
+{
+  "experiment_id": "20261112T070643Z_validation_sources",
+  "timestamp": "2026-11-12T07:06:43.381042+00:00",
+  "model": "Deterministic metadata and existing FK; no planner LLM",
+  "task": "Verify separate historical recording inputs for eventual independent validation",
+  "environment": "archive_inventory",
+  "program_version": {
+    "prepare_rgb_handeye.py": "f409fae1066c37d538d7afe272d6c632048cdb7f0aeff63f27125566e58cff2d"
+  },
+  "protocol_version": "ef3622d4328d6231e8b5770cac4a3bd6813bf50f3902a6fe3029c455b7db9f9f",
+  "memory_version": "unchanged; no skill promoted",
+  "initial_state": {
+    "sources": "three existing calibration recordings"
+  },
+  "actions": [
+    "Limit frames to RGB exposure/feedback overlap",
+    "Choose midpoint of each available hold phase",
+    "Reuse original measured-joint FK"
+  ],
+  "expected_effects": [
+    "Find real recorded inputs instead of synthetic image-warp validation"
+  ],
+  "observed_effects": [
+    {
+      "capture": "wrist_probe_01",
+      "rgb_frames": 1800,
+      "frames_with_feedback_overlap": 52,
+      "selected_frames": [
+        1763
+      ],
+      "selected_phases": [
+        "entry_hold"
+      ],
+      "rgb_exposure_span_s": [
+        1067252.0821133414,
+        1067312.0970138295
+      ],
+      "feedback_span_s": [
+        1067310.38830285,
+        1067321.484367692
+      ],
+      "same_camera_identifier_as_multiaxis": true,
+      "same_archived_K_as_multiaxis": true,
+      "source_hashes": {
+        "right_wrist/camera.json": "1ffb7a56854ab9b02ae3f3c3e3b6ce7f6543a4297a1af0653e57f033fc95f350",
+        "commanded_probe.csv": "fa23aa85d880b235fb62642c6f74752b8f5e502f1c971cbef93f8fa34957f338"
+      },
+      "status": "INPUT_PREPARATION_ONLY",
+      "robot_motion_diagnostics": null,
+      "selected_rgb_hashes": {
+        "1763": "0416320b0e4437cb357fb10734284089546b66af5bf23f4bfcb36342664a89a3"
+      },
+      "prepared_input_sha256": "bd38eb903fbbfcb76edf9fb73bd8691736b14d7070c078a4e448d9d456991fb1"
+    },
+    {
+      "capture": "wrist_probe_02",
+      "rgb_frames": 349,
+      "frames_with_feedback_overlap": 336,
+      "selected_frames": [
+        28,
+        181,
+        333
+      ],
+      "selected_phases": [
+        "entry_hold",
+        "outbound_hold",
+        "return_hold"
+      ],
+      "rgb_exposure_span_s": [
+        1072363.867927487,
+        1072375.4750558566
+      ],
+      "feedback_span_s": [
+        1072364.294748822,
+        1072375.486281596
+      ],
+      "same_camera_identifier_as_multiaxis": true,
+      "same_archived_K_as_multiaxis": true,
+      "source_hashes": {
+        "right_wrist/camera.json": "5978744c96e15fb99e950f081b474cbbb8ce85bbd7a9a978f4f43151095de6ca",
+        "commanded_probe.csv": "b4268340bc9c1e8ee5b03d2909fb7f9a7f1936259a8d548f2065fe5aa9aa0b38"
+      },
+      "status": "INPUT_PREPARATION_ONLY",
+      "robot_motion_diagnostics": {
+        "pose_count": 3,
+        "pair_count": 3,
+        "translation_system_rank": 2,
+        "singular_values": [
+          0.196995660211788,
+          0.196995660211788,
+          1.9889443402129972e-16
+        ],
+        "condition_number": null,
+        "rhs_error_amplification_bound": null,
+        "max_pair_rotation_deg": 8.01,
+        "max_origin_separation_m": 3.029564307160424e-17,
+        "interpretation": "Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality."
+      },
+      "selected_rgb_hashes": {
+        "28": "a790f8bc284d355d220bc06fa4df594ef99abfb4595aea079a604c7ab29ccff4",
+        "181": "57a7d759186242425309e9dea24c0c14d09153b2f951ef340aa261dd7f66eeed",
+        "333": "193095f277d41bfa952f55638d9581b2a68e88b7bc15db72cf87c62d1755e567"
+      },
+      "prepared_input_sha256": "ddc26bd601007dbb97fe538568db2d612a31e620580b8bc6860cc110382906a4"
+    },
+    {
+      "capture": "task_approach_20261109_01",
+      "rgb_frames": 934,
+      "frames_with_feedback_overlap": 915,
+      "selected_frames": [
+        30,
+        915
+      ],
+      "selected_phases": [
+        "entry_hold",
+        "approach_hold"
+      ],
+      "rgb_exposure_span_s": [
+        1123938.0153512612,
+        1123969.1378214918
+      ],
+      "feedback_span_s": [
+        1123938.49604903,
+        1123969.019107417
+      ],
+      "same_camera_identifier_as_multiaxis": true,
+      "same_archived_K_as_multiaxis": true,
+      "source_hashes": {
+        "right_wrist/camera.json": "0f14bc173ae243f596e43ba08c36c7819243b113eb6015b8545dd61dc79f024f",
+        "commanded_probe.csv": "720a539d8da9e609473fb332d17e469391a1e2898fe0332e372b200b708bd1ad"
+      },
+      "status": "INPUT_PREPARATION_ONLY",
+      "robot_motion_diagnostics": {
+        "pose_count": 2,
+        "pair_count": 1,
+        "translation_system_rank": 2,
+        "singular_values": [
+          1.4673590737226234,
+          1.4673590737226232,
+          0.0
+        ],
+        "condition_number": null,
+        "rhs_error_amplification_bound": null,
+        "max_pair_rotation_deg": 94.39151230247735,
+        "max_origin_separation_m": 0.16954448366028188,
+        "interpretation": "Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality."
+      },
+      "selected_rgb_hashes": {
+        "30": "5152b5061264176e142c9c2d8c480b7bf529bf58c00e6a563d6b3b7bf6bf2a05",
+        "915": "27c30ce3df640b8b5d135163eb2636749f7c7886268b3d2ed5b328cdd9dc7513"
+      },
+      "prepared_input_sha256": "7fe5f2d339dd5d4e7e6826719e2b11815c4b55937a80537336d1e6375cec08aa"
+    }
+  ],
+  "failure_signature": null,
+  "root_cause": "UNKNOWN; no failure-cause experiment performed",
+  "root_cause_status": "unknown",
+  "hypotheses": [],
+  "experiments": [],
+  "repair": {
+    "physical_parameters_changed": false,
+    "calibration_promoted": false
+  },
+  "result": "success",
+  "task_success": null,
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "execution_time": null,
+  "human_interventions": null,
+  "robot_execution_seconds": 0,
+  "simulation_seconds": 0,
+  "lessons_learned": [
+    "Different captures exist; synchronized overlap and geometric assumptions still need explicit checks"
+  ],
+  "next_improvement": "Stage 2 closed at six rounds by user; proceed to Stage 3 on existing unvalidated-for-real simulation",
+  "stage2_rounds_used": 6,
+  "new_research_round": false,
+  "new_physical_fit": false,
+  "limitations": [
+    "Same camera identifier and K are archive metadata, not independent physical calibration",
+    "Separate recording does not establish fixture immobility or visual accuracy",
+    "No new robot task or cost improvement"
+  ],
+  "previous_goal_turn_classification": "progress: spatial-selection candidate evaluated and rejected for default use",
+  "user_scope_update": "最多六轮改进，之后继续完成接下来的目标"
+}

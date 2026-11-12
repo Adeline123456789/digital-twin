@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-11-12T07:11:05.046306+00:00",
+  "stage": 3,
+  "round": 1,
+  "purpose": "Measure valid recorded episode baseline and bottlenecks using existing current simulator",
+  "source": "/media/midea/F496AC8096AC4548/piper_simulation",
+  "digital_twin_real_calibration_status": "NOT_INDEPENDENTLY_VALIDATED",
+  "budget": {
+    "physics_trials": 2,
+    "planner_calls": 0,
+    "max_seconds_per_trial": 900,
+    "max_seconds_per_recording": 1200
+  },
+  "initial_cases": [
+    {
+      "offset_mm": 0,
+      "role": "historical success baseline"
+    },
+    {
+      "offset_mm": 2,
+      "role": "historical failure baseline"
+    }
+  ],
+  "motion": {
+    "speed_deg_s": 12,
+    "smooth_timing": true,
+    "justification": "Existing original-profile learning trials used these settings; no additional smoothing or speed reduction"
+  },
+  "privileged_information_allowed": true,
+  "privileged_information": [
+    "simulated object/goal pose",
+    "contact penetration",
+    "joint state",
+    "task success ground truth"
+  ],
+  "success_metric": "New non-overwritten compatible three-camera episode, physical task success and verified replay; headless success alone excluded",
+  "limits": [
+    "No newly validated real twin is available; no real-efficiency claims",
+    "No model capability conclusion from deterministic baseline",
+    "No new hardware motion"
+  ]
+}
