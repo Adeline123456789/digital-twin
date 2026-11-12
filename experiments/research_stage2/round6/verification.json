@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-11-12T05:32:55.505870+00:00",
+  "test_first_attempt_log_sha256": "20cc246d7f23efefbe6e1a3fbff0c11a7120c462d86dbf2c820692e578d1d086",
+  "test_final_log_sha256": "c3a3a450d29396c01c6c449a9d7e461dbd17359a2745fd0c4c840bb76a05a274",
+  "tests_passed": 27,
+  "original_simulator_source_hash_changes": [],
+  "formal_failure_directories_unchanged": true,
+  "paper_rendering_issue": "Bundled pdftoppm required unavailable GLIBC_2.38; used existing /usr/bin/pdftoppm. No dependency installed."
+}

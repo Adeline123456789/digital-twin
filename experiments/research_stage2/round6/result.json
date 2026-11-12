@@ -1,0 +1,50 @@
+{
+  "experiment_id": "20261112T052851Z_68d83a86",
+  "timestamp": "2026-11-12T05:32:55.505870+00:00",
+  "stage": 2,
+  "round": 6,
+  "model": "deterministic OpenCV; research orchestration tokens not separately available",
+  "task": "RGB-only visible gripper-motion observability before physical calibration",
+  "environment": "historical_real_rgb_and_motor_feedback",
+  "program_version": "8bbadc6bb40b741f07a0a87e3ee901f5f50d7466c3edcc27d69b1c9adca0a07b",
+  "result": "failure",
+  "failure_signature": "rgb_finger_tracking_unreliable",
+  "task_success": null,
+  "root_cause": "UNKNOWN: visible landmark motion does not distinguish camera motion, fixture motion, correspondence and synchronization effects",
+  "root_cause_status": "unknown",
+  "stage_gate": "NOT_PASSED",
+  "measurement_gate_passes": 0,
+  "episodes": 3,
+  "execution_time": 0.7808432629972231,
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "human_interventions": null,
+  "visual_inspection": "Agent inspected first/end grasp and lift frames plus feature overlays; not independent human metrology",
+  "repair": {
+    "optimizer_started": false,
+    "physics_changed": false,
+    "calibration_promoted": false,
+    "reason": "Predeclared feature-survival and stationary-fixture checks failed"
+  },
+  "new_real_motion": 0,
+  "new_task_episodes": 0,
+  "simulation_seconds": 0,
+  "software_checks": {
+    "tests_passed": 27,
+    "first_test_attempt": "26 passed, 1 failed; 120x160 synthetic image produced a failed backward track with the configured pyramid; actual-size 640x480 fixture passes without changing algorithm parameters",
+    "test_fixture_change_only": true
+  },
+  "evidence": [
+    "experiments/research_stage2/20261112T052851Z_68d83a86/result.json",
+    "experiments/research_stage2/20261112T052851Z_68d83a86/frame_features.json",
+    "experiments/research_stage2/round6/fixture_crosscheck.json"
+  ],
+  "lessons_learned": [
+    "Neither surviving-point count alone nor motor feedback establishes metric finger geometry",
+    "Observed image background shifts invalidate this frozen-view interpretation; do not label them physical slip",
+    "Failure of this tracker is not proof that RGB-only calibration is impossible"
+  ],
+  "next_improvement": "Before another calibration attempt, establish stable visible landmarks and RGB-to-feedback timing, or assess motion-response identifiability from existing motor traces. No automatic seventh round."
+}

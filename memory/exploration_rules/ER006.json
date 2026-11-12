@@ -1,0 +1,26 @@
+{
+  "id": "ER006",
+  "content": "For this RGB-only Piper archive, frozen-ROI LK tracks did not retain enough left-finger features through grasp/lift. A fixture landmark shifted 19–24 px during grasp, independently corroborated by RGB contour centroids. Reject the fixed-view pixel-to-motor fitting attempt; do not convert these pixels into aperture or contact physics.",
+  "applicability": "This installation, right wrist 640x480 RGB, three 20261109 failed episodes, frozen ROIs in Stage 2 round 6",
+  "embodiment": "This Piper installation; no six-axis force sensor, no real depth",
+  "source_episodes": [
+    "20261112T052851Z_68d83a86"
+  ],
+  "validation_status": "RGB_OBSERVATION_ANALYZED_NOT_CAUSE_VERIFIED",
+  "success_count": 0,
+  "failure_count": 3,
+  "count_semantics": "measurement eligibility per episode, not task success or statistically independent generalization trials",
+  "limitations": [
+    "Full-window feature-survival criterion; no semantic tracker",
+    "Background movement does not identify its physical cause",
+    "No calibrated metric aperture, real depth or contact force",
+    "No policy or physical calibration promotion"
+  ],
+  "version": 1,
+  "signatures": [
+    "rgb_finger_tracking_unreliable"
+  ],
+  "ineffective_repairs": [
+    "fit_contact_physics_from_unqualified_rgb_finger_tracks"
+  ]
+}

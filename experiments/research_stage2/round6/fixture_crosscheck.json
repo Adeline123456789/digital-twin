@@ -1,0 +1,118 @@
+{
+  "type": "posthoc_measurement_crosscheck_not_fit",
+  "method": "Largest connected component of grayscale<55 in fixed ROI [320,120,480,240] on first/middle/last grasp RGB frames; no depth",
+  "predeclared_acceptance_changed": false,
+  "results": [
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "frames": [
+        678,
+        723,
+        767
+      ],
+      "fixture_dark_rectangle_centroids_px": [
+        [
+          419.9482496194825,
+          178.64992389649925
+        ],
+        [
+          396.6758136566688,
+          180.26834716017868
+        ],
+        [
+          397.1743964421855,
+          180.6715374841169
+        ]
+      ],
+      "displacements_from_first_px": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -23.272435962813688,
+          1.618423263679432
+        ],
+        [
+          -22.773853177296985,
+          2.021613587617651
+        ]
+      ],
+      "interpretation": "Image-space background landmark moves during grasp; cause not identified. This is not metric camera calibration."
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "frames": [
+        677,
+        722,
+        766
+      ],
+      "fixture_dark_rectangle_centroids_px": [
+        [
+          419.7918552036199,
+          178.43318250377075
+        ],
+        [
+          400.43428036216045,
+          177.9784576959101
+        ],
+        [
+          401.009108040201,
+          178.33165829145727
+        ]
+      ],
+      "displacements_from_first_px": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -19.35757484145944,
+          -0.45472480786065717
+        ],
+        [
+          -18.78274716341889,
+          -0.1015242123134783
+        ]
+      ],
+      "interpretation": "Image-space background landmark moves during grasp; cause not identified. This is not metric camera calibration."
+    },
+    {
+      "source_episode": "20261109_real_smooth_attempt_000001",
+      "frames": [
+        677,
+        717,
+        757
+      ],
+      "fixture_dark_rectangle_centroids_px": [
+        [
+          420.52415679124886,
+          177.9191735034944
+        ],
+        [
+          396.39408396946567,
+          179.04930025445293
+        ],
+        [
+          396.99872894820464,
+          179.36733396885924
+        ]
+      ],
+      "displacements_from_first_px": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -24.130072821783187,
+          1.1301267509585387
+        ],
+        [
+          -23.525427843044213,
+          1.4481604653648503
+        ]
+      ],
+      "interpretation": "Image-space background landmark moves during grasp; cause not identified. This is not metric camera calibration."
+    }
+  ]
+}

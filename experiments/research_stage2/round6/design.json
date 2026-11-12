@@ -1,0 +1,68 @@
+{
+  "stage": 2,
+  "round": 6,
+  "timestamp": "2026-11-12T05:28:51.113408+00:00",
+  "authorization": "追加一轮 RGB 离线研究",
+  "train_episode": "20261109_real_residual_attempt_000001",
+  "heldout_episodes": [
+    "20261109_real_grip_hold_attempt_000001",
+    "20261109_real_smooth_attempt_000001"
+  ],
+  "inputs": [
+    "videos/cam_right_wrist_rgb.mp4",
+    "proprio_stats/proprio_stats.h5",
+    "raw/task/commanded_probe.csv"
+  ],
+  "excluded_inputs": [
+    "depth.npz",
+    "camera.json",
+    "other-arm demonstrations"
+  ],
+  "rois": {
+    "left": [
+      140,
+      360,
+      230,
+      460
+    ],
+    "right": [
+      475,
+      360,
+      570,
+      460
+    ],
+    "fixture": [
+      350,
+      140,
+      465,
+      220
+    ]
+  },
+  "method": "OpenCV pyramidal Lucas-Kanade, forward/backward check; fixed surviving features; relative horizontal finger displacement. One zero-intercept image-motion slope per feedback/command baseline, trained only on residual grasp.",
+  "criteria": {
+    "min_features_each_finger": 5,
+    "min_survivor_fraction": 0.6,
+    "max_forward_backward_px": 0.7,
+    "max_grasp_fixture_displacement_px": 1.0,
+    "heldout_rmse_px_max": 2.0,
+    "heldout_feedback_improvement_fraction_min": 0.2
+  },
+  "limits": [
+    "These are finger surface features, not inner aperture landmarks",
+    "No metric scale or absolute aperture identified",
+    "Temporal interpolation uses existing archived HDF5 clock; exposure timing not independently calibrated",
+    "No physics promotion solely from a pixel/motor regression",
+    "ROIs chosen after visual inspection of three representative frames per episode; heldout motion traces and residuals not used for fitting or threshold tuning"
+  ],
+  "budget": {
+    "planner_calls": 0,
+    "new_real_motion": 0,
+    "physics_rollouts": 0,
+    "episodes": 3,
+    "phase_window": [
+      "grasp",
+      "lift"
+    ],
+    "orchestrator_tokens": null
+  }
+}
