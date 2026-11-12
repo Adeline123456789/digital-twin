@@ -13,3 +13,7 @@
 ## Dataset format requirement (user correction)
 
 Formal episodes in `complete_sim/failed/` must match `20261111_sim_real05_failure_replay_000001/`: `videos/` with the three camera MP4s; `proprio_stats/` with `proprio_stats.h5`, `metadata.json`, `privileged.jsonl`, `model.xml`, `initial_state.npz`, and `recorded_commands.csv`; plus `outcome.json` and verification results. Validate frame counts, schema/units and replay consistency before publishing an episode. A folder containing only `source_trial/` is intermediate evidence, never a dataset episode. Keep unconverted intermediate artifacts outside formal dataset roots. Do not invent videos, force data, or successful results to fill fields.
+
+## Confirmed real observation modalities
+
+- Historical and current real-robot visual observations are RGB only, explicitly confirmed by the user on 2026-11-12. Existing depth.npz files are NOT real sensor measurements for this robot and must be excluded from real-data calibration/validation. Their actual origin remains unknown; preserve them without claiming they are simulated or deleting them. Simulated depth remains privileged simulation information.

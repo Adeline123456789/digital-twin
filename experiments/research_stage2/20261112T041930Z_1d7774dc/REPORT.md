@@ -1,3 +1,5 @@
+> **用户最终确认（2026-11-12）：历史和当前真机视觉均只有 RGB。** 深度文件明确排除出本机器人真机测量证据；第三、四、五轮依赖深度的真实几何解释不成立，不再标为等待用户确认。文件实际来源仍未知，保留审计记录，不猜测其生成方式。仅保留文件上的数值分析，不支持真实物理校准；不影响独立于深度的关节/夹爪分析。后续方法必须适配 RGB 和已确认的运动反馈。
+
 > Superseded evidence status: SUSPENDED_UNVERIFIED_DEPTH_PROVENANCE. User reports no real RGB-D. The original labels below are not proof of sensor provenance; see ../round5/REPORT.md. No real calibration claim is accepted.
 
 # 20261112T041930Z_1d7774dc

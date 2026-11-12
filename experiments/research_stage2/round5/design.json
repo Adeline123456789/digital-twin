@@ -30,5 +30,5 @@
     "per_round_orchestrator_tokens": "not independently available"
   },
   "depth_provenance_verified": false,
-  "suspended_reason": "User states real setup has no RGB-D; file presence and metadata declarations are insufficient provenance."
+  "suspended_reason": "Historical and current real-robot visual observations are RGB only, explicitly confirmed by the user on 2026-11-12. Existing depth.npz files are NOT real sensor measurements for this robot and must be excluded from real-data calibration/validation. Their actual origin remains unknown; preserve them without claiming they are simulated or deleting them. Simulated depth remains privileged simulation information."
 }

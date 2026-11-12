@@ -700,9 +700,9 @@
   "analysis_version": "e828158ea8547b93ba07f55d772e6ce7eb561dff8ba790ceaa10bebc3cbf6b7d",
   "simulation_seconds": 0,
   "post_run_review": {
-    "status": "SUSPENDED_UNVERIFIED_DEPTH_PROVENANCE",
+    "status": "EXCLUDED_AS_REAL_DEPTH_USER_CONFIRMED_RGB_ONLY",
     "real_measurement_claim_valid": false,
     "superseding_report": "experiments/research_stage2/round5/result.json",
-    "reason": "User states real setup has no RGB-D; original environment/validation labels are provisional and not verified provenance."
+    "reason": "Historical and current real-robot visual observations are RGB only, explicitly confirmed by the user on 2026-11-12. Existing depth.npz files are NOT real sensor measurements for this robot and must be excluded from real-data calibration/validation. Their actual origin remains unknown; preserve them without claiming they are simulated or deleting them. Simulated depth remains privileged simulation information."
   }
 }

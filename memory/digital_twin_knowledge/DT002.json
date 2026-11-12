@@ -5,7 +5,7 @@
   "source_episodes": [
     "20261112T040059Z_e90f39df"
   ],
-  "validation_status": "SUSPENDED_UNVERIFIED_DEPTH_PROVENANCE",
+  "validation_status": "EXCLUDED_AS_REAL_DEPTH_USER_CONFIRMED_RGB_ONLY",
   "success_count": 0,
   "failure_count": 1,
   "count_semantics": "calibration acceptance, not task success",
@@ -15,9 +15,10 @@
     "Table world z=25 mm and CAD world XY/yaw remain fixed assumptions",
     "No calibrated aperture, contact force, friction, mass or COM",
     "No real motion or new task rollout; camera load check does not measure task success",
-    "User reports real setup has no RGB-D. File-derived depth statistics cannot be treated as verified real observations; see Stage 2 round 5 provenance correction."
+    "User reports real setup has no RGB-D. File-derived depth statistics cannot be treated as verified real observations; see Stage 2 round 5 provenance correction.",
+    "Historical and current real-robot visual observations are RGB only, explicitly confirmed by the user on 2026-11-12. Existing depth.npz files are NOT real sensor measurements for this robot and must be excluded from real-data calibration/validation. Their actual origin remains unknown; preserve them without claiming they are simulated or deleting them. Simulated depth remains privileged simulation information."
   ],
-  "version": 2,
+  "version": 3,
   "signatures": [
     "table_registration",
     "gripper_sim_real_mismatch"

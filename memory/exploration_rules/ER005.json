@@ -7,16 +7,17 @@
     "20261112T035542Z_5743eacf",
     "20261112T035706Z_ed39796e"
   ],
-  "validation_status": "SUSPENDED_UNVERIFIED_DEPTH_PROVENANCE",
+  "validation_status": "EXCLUDED_AS_REAL_DEPTH_USER_CONFIRMED_RGB_ONLY",
   "success_count": 1,
   "failure_count": 2,
   "count_semantics": "analysis outcomes, not robot episodes",
   "limitations": [
     "No general semantic detector",
     "No full real object pose or aperture calibration",
-    "User reports real setup has no RGB-D. File-derived depth statistics cannot be treated as verified real observations; see Stage 2 round 5 provenance correction."
+    "User reports real setup has no RGB-D. File-derived depth statistics cannot be treated as verified real observations; see Stage 2 round 5 provenance correction.",
+    "Historical and current real-robot visual observations are RGB only, explicitly confirmed by the user on 2026-11-12. Existing depth.npz files are NOT real sensor measurements for this robot and must be excluded from real-data calibration/validation. Their actual origin remains unknown; preserve them without claiming they are simulated or deleting them. Simulated depth remains privileged simulation information."
   ],
-  "version": 2,
+  "version": 3,
   "signatures": [
     "unverified_visual_correspondence",
     "gripper_sim_real_mismatch"
