@@ -1,0 +1,24 @@
+{
+  "id": "ER009",
+  "version": 1,
+  "content": "Planar RGB homography may retain multiple visible motion candidates. For a rigid eye-in-hand camera, compare candidate rotation angles with measured-joint relative rotation, a scale-free necessary invariant. Never select the first or sole visible candidate as calibrated pose; decomposition translation is divided by plane distance, not meters.",
+  "applicability": "Static planar target, fixed camera mount, qualified RGB intrinsics, local correspondences; report failures of these assumptions as UNKNOWN",
+  "embodiment": "Current Piper RGB-only wrist camera",
+  "source_episodes": [
+    "20261112T065730Z_2f038789"
+  ],
+  "validation_status": "CONDITIONAL_GEOMETRY_AUDIT_ONLY",
+  "success_count": 1,
+  "failure_count": 0,
+  "count_semantics": "One completed input audit, no calibration or robot task successes",
+  "limitations": [
+    "Archived K precision unknown",
+    "No noise-qualified angular gate",
+    "No unique physical root cause or parameter fit"
+  ],
+  "signatures": [
+    "rgb_handeye_input_preparation",
+    "rgb_planar_motion_ambiguous"
+  ],
+  "ineffective_repairs": []
+}
