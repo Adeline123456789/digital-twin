@@ -1,0 +1,65 @@
+{
+  "stage": 4,
+  "round": 2,
+  "timestamp": "2026-11-12T08:57:44.095240+00:00",
+  "hypothesis": "Changing the existing grasp tilt parameter can avoid the saturated wrist joint at outlet1 without changing limits, speed, or physics",
+  "candidate_factor": "Native --grasp-tilt-deg; grasp roll30deg, height12mm, gap45mm, speed25deg/s remain fixed",
+  "screen": {
+    "source_episodes": [
+      "20261111T093534Z_28c8c28d",
+      "20261111T093701Z_743dbfb0"
+    ],
+    "tilt_deltas_deg": [
+      0,
+      -5,
+      5,
+      -10,
+      10
+    ],
+    "assumption": "Rotate saved gripper orientation around world Y at fixed gripper/object positions. This is a hypothetical grasp relation, not measured effects of a new grasp.",
+    "select": "Common native-IK-feasible nonzero delta with smallest absolute value; equal magnitude chooses smaller absolute J5 angle averaged over both states"
+  },
+  "full_execution": {
+    "only_if": "Common feasible screen candidate exists",
+    "source_profile": "retained_final, socket1, fixed insertion offset0mm",
+    "cases": [
+      {
+        "shift_mm": 0,
+        "order": [
+          "baseline",
+          "candidate"
+        ],
+        "role": "development"
+      },
+      {
+        "shift_mm": 0.5,
+        "order": [
+          "candidate",
+          "baseline"
+        ],
+        "role": "held-out initial state after code and selection frozen"
+      }
+    ],
+    "recording": "Existing native headless trial + existing replay collector + strict existing-format verifier, identical in both arms",
+    "stop": "If development candidate fails physical task or recording, preserve reports and do not expend heldout executions on the same failed repair"
+  },
+  "budget": {
+    "planner_model_calls": 0,
+    "native_ik_solves": 10,
+    "max_screen_wall_seconds": 120,
+    "max_physics_trials": 4,
+    "max_trial_seconds": 900,
+    "max_native_recording_seconds": 1200
+  },
+  "acceptance": [
+    "Native zero-tilt goals reproduce saved errors before counterfactual search",
+    "Candidate physical completion and complete valid Episode in both development and heldout",
+    "No candidate collision threshold violation or native speed/timing/source changes",
+    "Keep all initial failures and counterfactual-only results, never call IK success physical success"
+  ],
+  "limits": [
+    "Two historical screen states share initial geometry, not independent trajectory validation",
+    "Full-episode time cannot be compared to early-terminated failures as equal completed work",
+    "No real calibration, unseen task-family capability or model cost savings claim"
+  ]
+}

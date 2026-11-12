@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import subprocess
@@ -83,7 +84,7 @@ def decide(signature, repair, version_name=None):
         if repair in item.get('ineffective_repairs',[]): return 'REJECT_REPEAT_REQUIRE_NEW_EVIDENCE'
     return 'UNKNOWN_TASK_MODE' if not retrieve(signature) else 'ALLOW_SIMULATION'
 
-def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False):
+def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False, grasp_tilt_deg=None):
     out,r=record(kind,label,'simulation')
     raw=DATA/'self_evolution'/r['experiment_id']
     start=time.monotonic()
@@ -113,6 +114,10 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
              '--output',str(raw),'--task',str(task),'--smooth-timing','--speed',str(speed),
              '--grasp-height',('.012' if retained else '.020'),'--insertion-offset-mm',str(offset),'0']
         if retained:cmd+=['--grasp-roll-deg','30','--align-corrections','4','--grasp-opening','0','--start-right-deg','0','0','0','0','0','0']
+        if grasp_tilt_deg is not None:
+            if isinstance(grasp_tilt_deg,bool) or not math.isfinite(grasp_tilt_deg) or not -10<=grasp_tilt_deg<=10:
+                raise ValueError('Simulation grasp tilt must be finite and within +/-10deg')
+            cmd+=['--grasp-tilt-deg',str(grasp_tilt_deg)]
         if record_inline:
             if retained: raise ValueError('Inline recording is verified only against the original simulator profile')
             stage=DATA/'self_evolution'/('stage3_recording_'+r['experiment_id'])
@@ -122,7 +127,9 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
         r['initial_state']={'target_index':target_index,'holder_x_shift_mm':shift,'task_config_sha256':digest(task)}
         r['actions']=[{'script':'try_plug_pick_sim.py','profile':('retained_final' if retained else 'original'),'grasp_height_m':(.012 if retained else .020),'offset_mm':[offset,0],
                        'speed_deg_s':speed,'smooth_timing':True}]
+        if grasp_tilt_deg is not None:r['actions'][0]['grasp_tilt_deg']=grasp_tilt_deg
         r['experiments']=[{'changed_variable':'insertion_offset_mm','value':offset,'heldout_initial_shift_mm':shift}]
+        if grasp_tilt_deg is not None:r['experiments']=[{'changed_variable':'grasp_tilt_deg','value':grasp_tilt_deg,'heldout_initial_shift_mm':shift,'fixed_offset_mm':offset}]
         env=dict(os.environ,MUJOCO_GL='egl',OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1')
         with (local/'stdout.log').open('w') as log:
             p=subprocess.run(cmd,cwd=SIM,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=900)

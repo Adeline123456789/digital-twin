@@ -41,12 +41,13 @@
     ]
   },
   "stage4": {
-    "rounds_used": 1,
+    "rounds_used": 2,
     "round_limit": 4,
-    "status": "ROUND1_COMPLETED_HEIGHT_SEARCH_REJECTED",
+    "status": "ROUND2_ORIENTATION_SCREEN_AND_FULL_VALIDATION",
     "evidence": [
       "experiments/research_stage4/round1/design.json",
-      "experiments/research_stage4/round1/result.json"
+      "experiments/research_stage4/round1/result.json",
+      "experiments/research_stage4/round2/design.json"
     ],
     "completed_rounds": 1
   },

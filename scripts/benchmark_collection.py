@@ -16,13 +16,14 @@ from episode_format import source_for
 ROUND = ROOT / 'experiments/research_stage3/round2'
 
 
-def run_case(case, inline, label='Stage3 round2'):
-    out, result = simulate('research_stage3', case['offset_mm'], case['shift_mm'],
-                           label + ' ' + case['name'], record_inline=inline)
+def run_case(case, inline, label='Stage3 round2', kind='research_stage3'):
+    out, result = simulate(kind, case['offset_mm'], case['shift_mm'],
+                           label + ' ' + case['name'], record_inline=inline,
+                           grasp_tilt_deg=case.get('grasp_tilt_deg'))
     ident = result['experiment_id']
     local = ROOT / '.local' / ident
     stage = DATA / 'self_evolution' / ('stage3_recording_' + ident)
-    runtime = SIM / '.venv-mujoco-hardware/bin/python'
+    runtime = SIM / ('.venv-mujoco/bin/python' if os.environ.get('PIPER_SIM_PROFILE')=='retained_final' else '.venv-mujoco-hardware/bin/python')
     env = dict(os.environ, MUJOCO_GL='egl', OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1')
     replay_seconds = 0.
     verification_seconds = None

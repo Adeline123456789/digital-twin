@@ -25,7 +25,7 @@ def body_transform(sim, name):
     return transform
 
 
-def probe(ident, gaps):
+def probe(ident, gaps, tilts=None):
     out,result=record('research_stage4','Native IK approach-height probes for '+ident,'offline_kinematic_simulation')
     started=time.monotonic()
     sim=None
@@ -43,14 +43,19 @@ def probe(ident, gaps):
         with np.load(raw/'final_state.npz') as state:
             for key in ('qpos','qvel','ctrl'):getattr(sim.data,key)[:]=state[key]
         mujoco.mj_forward(sim.model,sim.data)
-        relative=np.linalg.inv(body_transform(sim,'right/gripper_center'))@body_transform(sim,'task/yellow_plug')
+        gripper=body_transform(sim,'right/gripper_center')
+        plug=body_transform(sim,'task/yellow_plug')
         socket=body_transform(sim,'task/strip')
         ik=PoseIK(sim)
         native_seed=np.array(trace[-1]['action'][7:13])
         attempts=[]
         assert gaps[0]==native_report['preinsert_gap_m'], 'First probe must reproduce the saved baseline'
         native_goal=np.fromstring(native_report['error'].split('pose [')[1].split(']')[0],sep=' ')
-        for gap in gaps:
+        candidates=[(gap,0.) for gap in gaps] if tilts is None else [(gaps[0],tilt) for tilt in tilts]
+        for gap,tilt in candidates:
+            virtual_gripper=gripper.copy()
+            virtual_gripper[:3,:3]=Rotation.from_euler('y',tilt,degrees=True).as_matrix()@gripper[:3,:3]
+            relative=np.linalg.inv(virtual_gripper)@plug
             desired=np.eye(4)
             desired[:2,3]=sim.task.outlets[cfg['target_index']]
             desired[:2,3]+=np.array(native_report['deliberate_insertion_offset_mm'])/1000
@@ -69,6 +74,7 @@ def probe(ident, gaps):
             position_error=float(np.linalg.norm(ik.data.xpos[ik.bid]-target[:3,3]))
             angle_error=float(np.linalg.norm(Rotation.from_matrix(target[:3,:3].T@ik.data.xmat[ik.bid].reshape(3,3)).as_rotvec()))
             attempts.append(dict(preinsert_gap_m=gap,carry_tilt_deg=5 if gap>.03 else 0,
+                hypothetical_grasp_tilt_delta_deg=tilt,
                 ik_success=ok,error=error,target_world_xyz_m=target[:3,3].tolist(),
                 position_error_m=position_error,orientation_error_deg=float(np.rad2deg(angle_error)),
                 solver_seconds=time.monotonic()-t,joints_deg=np.rad2deg(ik.data.qpos[ik.ids]).tolist()))
@@ -76,7 +82,8 @@ def probe(ident, gaps):
         result.update(result='success',task_success=None,validation_status='KINEMATIC_PROBE_ONLY',
             initial_state={'source_episode':ident,'target_index':cfg['target_index'],'phase':'end of lift'},
             baseline_goal_reproduction_max_error_m=reproduction_error,
-            actions=[{'native_ik_gap_candidates_m':gaps}],experiments=attempts,
+            actions=[{'native_ik_gap_candidates_m':gaps,'hypothetical_grasp_tilts_deg':tilts}],experiments=attempts,
+            counterfactual_limit=('Virtual change of saved gripper orientation, fixed position/object. Actual regrasp and slip may differ; screening hypothesis only.' if tilts is not None else None),
             observed_effects=[{'saved_goal_error':native_report['error']}],
             expected_effects=['Diagnose whether existing approach-height parameter changes native IK feasibility'],
             tokens=0,llm_inference_seconds=0,simulation_steps=0,
@@ -94,6 +101,8 @@ def probe(ident, gaps):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('episode');p.add_argument('--gaps',type=float,nargs='+',default=[.045,.04,.035,.031]);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('episode');p.add_argument('--gaps',type=float,nargs='+',default=[.045,.04,.035,.031]);p.add_argument('--tilts',type=float,nargs='+');a=p.parse_args()
     if any(not .031<=gap<=.045 for gap in a.gaps):raise ValueError('This probe changes height only; keep existing five-degree carry tilt')
-    probe(a.episode,a.gaps)
+    if a.tilts is not None and (len(a.gaps)!=1 or a.tilts[0]!=0 or any(not -10<=v<=10 for v in a.tilts)):
+        raise ValueError('Orientation screen requires one gap, baseline zero tilt first, and +/-10deg bounds')
+    probe(a.episode,a.gaps,a.tilts)
