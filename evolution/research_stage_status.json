@@ -6,15 +6,17 @@
     "evidence": "experiments/research_stage1/round1/result.json"
   },
   "stage2": {
-    "rounds_used": 4,
-    "round_limit": 4,
-    "status": "GATE_NOT_PASSED_BUDGET_EXHAUSTED",
+    "rounds_used": 5,
+    "round_limit": 5,
+    "status": "NOT_PASSED_DEPTH_PROVENANCE_DISPUTED",
     "evidence": [
       "experiments/research_stage2/round1/result.json",
       "experiments/research_stage2/round2/result.json",
       "experiments/research_stage2/round3/result.json",
-      "experiments/research_stage2/round4/result.json"
-    ]
+      "experiments/research_stage2/round4/result.json",
+      "experiments/research_stage2/round5/result.json"
+    ],
+    "extension_authorization": "User authorized one extra offline round; subsequently corrected that actual real setup has no RGB-D"
   },
   "stage3": {
     "rounds_used": 0,
@@ -29,5 +31,5 @@
   "real_motion_allowed": false,
   "physics_candidate_promoted": false,
   "actual_runner_policy": "A/B/C/D runner argument; active.json v2 only consulted by learn.simulate when signature supplied",
-  "next_prerequisite": "independently validated object/fingertip geometry and camera correspondences; new Stage 2 budget"
+  "next_prerequisite": "Resolve historical depth provenance; use only confirmed real RGB and motor feedback. No calibration accepted."
 }

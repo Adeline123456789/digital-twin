@@ -1,0 +1,34 @@
+{
+  "stage": 2,
+  "round": 5,
+  "timestamp": "2026-11-12T04:19:29.123375+00:00",
+  "authorization": "User explicitly extended Stage 2 from four to five rounds",
+  "task": "Validate existing object/finger geometry; stop on unreliable measurements",
+  "scope": "Same two historical episodes and four grasp/lift keyframes, original camera profile; no fit or physics changes",
+  "method": "Existing RealSense deprojection + existing MuJoCo measured-joint FK; project external target depth into synchronized wrist RGB. Check actual finger-surface patches instead of broad rectangles.",
+  "criteria": {
+    "external_target_positive_depth_fraction_min": 0.5,
+    "external_target_positive_points_min": 50,
+    "camera_pair_time_difference_s_max": 0.034,
+    "projected_in_image_fraction_min": 0.8,
+    "median_distance_to_wrist_target_mask_px_max": 5,
+    "p95_distance_px_max": 10,
+    "finger_patch_positive_fraction_min": 0.8,
+    "finger_patch_std_m_max": 0.003
+  },
+  "limits": [
+    "Projection-to-mask distance is not an independent point correspondence; occlusion can cause failure",
+    "Finger top-surface points are not calibrated inner contact faces",
+    "Passing this audit alone cannot promote physics or pass Stage 2"
+  ],
+  "budget": {
+    "planner_calls": 0,
+    "optimizer_calls": 0,
+    "new_hardware_commands": 0,
+    "new_physics_rollouts": 0,
+    "keyframe_pairs": 8,
+    "per_round_orchestrator_tokens": "not independently available"
+  },
+  "depth_provenance_verified": false,
+  "suspended_reason": "User states real setup has no RGB-D; file presence and metadata declarations are insufficient provenance."
+}

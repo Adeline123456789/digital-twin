@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-11-12T04:22:54.244226+00:00",
+  "experiment_id": "20261112T041930Z_1d7774dc",
+  "stage": 2,
+  "round": 5,
+  "status": "SUSPENDED_UNVERIFIED_DEPTH_PROVENANCE",
+  "user_correction": "Actual real setup has no RGB-D image information",
+  "original_analysis_status": "GEOMETRY_AUDIT_ONLY",
+  "numerical_analysis_completed": true,
+  "analysis_seconds": 8.387874546984676,
+  "frame_pairs": 8,
+  "object_consistency_passes": 0,
+  "real_measurement_claim_valid": false,
+  "calibration_promoted": false,
+  "physics_changed": false,
+  "real_motion_count": 0,
+  "affected_prior_rounds": [
+    3,
+    4
+  ],
+  "task_success": null,
+  "root_cause_status": "UNKNOWN",
+  "note": "Numerical outputs preserved as computations on files of disputed provenance, not verified physical measurements. Metadata cannot settle provenance. No further depth analysis until resolved."
+}

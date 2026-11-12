@@ -5,7 +5,7 @@
   "source_episodes": [
     "20261112T040059Z_e90f39df"
   ],
-  "validation_status": "CANDIDATE_REJECTED",
+  "validation_status": "SUSPENDED_UNVERIFIED_DEPTH_PROVENANCE",
   "success_count": 0,
   "failure_count": 1,
   "count_semantics": "calibration acceptance, not task success",
@@ -14,11 +14,13 @@
     "RGB-D systematic bias persists across episodes; no external metrology",
     "Table world z=25 mm and CAD world XY/yaw remain fixed assumptions",
     "No calibrated aperture, contact force, friction, mass or COM",
-    "No real motion or new task rollout; camera load check does not measure task success"
+    "No real motion or new task rollout; camera load check does not measure task success",
+    "User reports real setup has no RGB-D. File-derived depth statistics cannot be treated as verified real observations; see Stage 2 round 5 provenance correction."
   ],
-  "version": 1,
+  "version": 2,
   "signatures": [
     "table_registration",
     "gripper_sim_real_mismatch"
-  ]
+  ],
+  "previous_validation_status": "CANDIDATE_REJECTED"
 }
