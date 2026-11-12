@@ -41,16 +41,17 @@
     ]
   },
   "stage4": {
-    "rounds_used": 3,
+    "rounds_used": 4,
     "round_limit": 4,
-    "status": "ROUND3_LIMITED_DIAGNOSTIC_RETAINED",
+    "status": "ROUND4_EXECUTABLE_SKILL_COMPARISON",
     "evidence": [
       "experiments/research_stage4/round1/design.json",
       "experiments/research_stage4/round1/result.json",
       "experiments/research_stage4/round2/design.json",
       "experiments/research_stage4/round2/result.json",
       "experiments/research_stage4/round3/design.json",
-      "experiments/research_stage4/round3/result.json"
+      "experiments/research_stage4/round3/result.json",
+      "experiments/research_stage4/round4/design.json"
     ],
     "completed_rounds": 3
   },

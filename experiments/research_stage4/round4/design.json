@@ -1,0 +1,76 @@
+{
+  "stage": 4,
+  "round": 4,
+  "timestamp": "2026-11-12T09:22:30.166644+00:00",
+  "hypothesis": "Execute a verified numerical repair skill instead of asking a model to recompute the same correction, preserving valid collection and motion quality",
+  "changed_factor": "Planning route: Luna+shared protocol/skill text vs executable VS002 with scope checks and LLM fallback",
+  "cases": [
+    {
+      "model": "gpt-6-luna",
+      "seed_episode": "20261112T075231Z_2a125acc",
+      "shift_mm": 0.75,
+      "compiled_context": true,
+      "role": "development",
+      "variants": [
+        {
+          "include_catalog": true,
+          "framed": true,
+          "planner_policy": "llm"
+        },
+        {
+          "include_catalog": true,
+          "framed": true,
+          "planner_policy": "compiled_alignment_v1"
+        }
+      ]
+    },
+    {
+      "model": "gpt-6-luna",
+      "seed_episode": "20261112T075231Z_2a125acc",
+      "shift_mm": -0.75,
+      "compiled_context": true,
+      "role": "heldout initial condition after complete code freeze",
+      "variants": [
+        {
+          "include_catalog": true,
+          "framed": true,
+          "planner_policy": "compiled_alignment_v1"
+        },
+        {
+          "include_catalog": true,
+          "framed": true,
+          "planner_policy": "llm"
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "model_call_ceiling_per_arm": 1,
+    "expected_model_calls": 2,
+    "physics_trials": 4,
+    "max_call_seconds": 120,
+    "max_trial_seconds": 900,
+    "reported_total_tokens_stop_before_next_call": 60000
+  },
+  "held_constant": [
+    "Same input facts, privileged observations, source checks, protocol and shared numerical rule in each pair",
+    "Same original simulation, socket3, speed12deg/s, timing and success/collision detector",
+    "Same complete inline recorder and earliest-retention diagnosis",
+    "One physical execution per arm; candidate is not given a stored target-specific successful offset"
+  ],
+  "acceptance": [
+    "Candidate valid complete-success Episodes2/2 with no regression vs baseline",
+    "No extra LLM calls for the two in-scope compiled cases; >=80% fewer reported planner tokens",
+    "Sampled speed<=12deg/s, simulation time<=baseline*1.05, acceleration and joint path<=baseline*1.10",
+    "Same pair prompt hashes; all source/version/recording checks pass",
+    "Scope guard tests reject real, mismatched source/target/frames/units, contact loss and unsupported residuals"
+  ],
+  "promotion": "Only after all gates pass, set planner_policy in evolution/active.json; preserve negative-experience version v2. Actual agent_loop D calls the shared route and complete collector; A/B/C retain model planning. Rollback planner_policy=llm.",
+  "cost_accounting": "Include context preparation+planner call+full collection/verification wall time. Research orchestration, Git, idle time, human cost and billed price remain separate/unknown.",
+  "limitations": [
+    "Known one-axis repair family; not unknown-task discovery or new task-family generalization",
+    "Compiled numerical skill is external Agent capability, not a weak model weight/reasoning improvement",
+    "N=2 pairs; no sustained-production throughput guarantee",
+    "No real calibration or hardware use"
+  ]
+}

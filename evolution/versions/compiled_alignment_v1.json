@@ -1,0 +1,15 @@
+{
+  "version": "compiled_alignment_v1",
+  "status": "CANDIDATE_NOT_ACTIVE",
+  "accepted": false,
+  "skill_source": "memory/verified_skills/VS002.json",
+  "verified_native_sha256": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+  "scope": "Original Piper simulation outlet3, holder shift within[-1.5,1.5]mm, contact-free align evidence and no observed carry loss",
+  "entry": "scripts/alignment_skill.py:plan_with_memory",
+  "rollback": "Set planner_policy=llm in evolution/active.json; legacy negative-experience version remains separate",
+  "not_claimed": [
+    "Unknown task-family solution",
+    "Physical calibration",
+    "General friction/contact adaptation"
+  ]
+}

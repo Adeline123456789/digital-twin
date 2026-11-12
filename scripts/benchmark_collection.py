@@ -16,7 +16,7 @@ from episode_format import source_for
 ROUND = ROOT / 'experiments/research_stage3/round2'
 
 
-def run_case(case, inline, label='Stage3 round2', kind='research_stage3'):
+def run_case(case, inline, label='Stage3 round2', kind='research_stage3', publish=True):
     out, result = simulate(kind, case['offset_mm'], case['shift_mm'],
                            label + ' ' + case['name'], record_inline=inline,
                            grasp_tilt_deg=case.get('grasp_tilt_deg'))
@@ -76,10 +76,11 @@ def run_case(case, inline, label='Stage3 round2', kind='research_stage3'):
     paths = [str(out.relative_to(ROOT))]
     if result.get('recording_report'):
         paths.append(result['recording_report'])
-    subprocess.run([sys.executable, str(ROOT / 'scripts/publish.py'), '--message',
-                    'Record Stage3 collection comparison ' + ident, *paths], check=True)
-    remote = subprocess.check_output(['git', 'ls-remote', 'origin', 'HEAD'], cwd=ROOT, text=True).split()[0]
-    assert remote == subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    if publish:
+        subprocess.run([sys.executable, str(ROOT / 'scripts/publish.py'), '--message',
+                        'Record '+kind+' complete collection ' + ident, *paths], check=True)
+        remote = subprocess.check_output(['git', 'ls-remote', 'origin', 'HEAD'], cwd=ROOT, text=True).split()[0]
+        assert remote == subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     return result
 
 
