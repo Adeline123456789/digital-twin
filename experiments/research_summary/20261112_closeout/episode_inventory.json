@@ -1,0 +1,232 @@
+{
+  "timestamp": "2026-11-12T09:45:33.952739+00:00",
+  "count": 22,
+  "counts": {
+    "success": 13,
+    "failure": 9
+  },
+  "scope": "Stage3/4 unique formal Episodes; paired repetitions are not new task families or proven training novelty; do not pool source profiles for success rates",
+  "existence_check": "Referenced local files exist; frame/schema/state validation was performed at collection and is linked, not redundantly rerun",
+  "episodes": [
+    {
+      "episode": "20261112T071105Z_6a45b3cd",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T071105Z_6a45b3cd/result.json",
+      "verification_report": "experiments/evaluation/20261112T071528Z_0d05e556/result.json",
+      "verification_report_sha256": "7b36aa4ae73119bab583c724544b48e329e31dd77fbb00cb96ba94ad7e38adc9",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T071616Z_1c60006d",
+      "profile": "original",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T071616Z_1c60006d/result.json",
+      "verification_report": "experiments/evaluation/20261112T071958Z_4779a01a/result.json",
+      "verification_report_sha256": "1998338df9fd71621cef2e212adf12bf6254a063842a85d91edd08854156d094",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T073436Z_43d3e2c2",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T073436Z_43d3e2c2/result.json",
+      "verification_report": "experiments/evaluation/20261112T073844Z_63865ff1/result.json",
+      "verification_report_sha256": "5b02c9b717e5a04a7baa1656b5ab73398c678dc301402e6159de81e8ef06c931",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T073851Z_908954b8",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T073851Z_908954b8/result.json",
+      "verification_report": "experiments/evaluation/20261112T074121Z_2e30e5b6/result.json",
+      "verification_report_sha256": "37f962bcbef52dbf5007ae21473709a15428b142a486a1b28066cbebe655ad37",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T074857Z_7471a279",
+      "profile": "original",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T074857Z_7471a279/result.json",
+      "verification_report": "experiments/evaluation/20261112T075113Z_d05a16b4/result.json",
+      "verification_report_sha256": "8c432eaf29c41a03592395832be00dea612a06f77dd2810c9a47fe1c2b22e6c8",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T075231Z_2a125acc",
+      "profile": "original",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T075231Z_2a125acc/result.json",
+      "verification_report": "experiments/evaluation/20261112T075609Z_51f6d994/result.json",
+      "verification_report_sha256": "bbac11ea92edfd5602561cea9d6784cab168dbc87cf5922273b367fe5ff3428a",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T075628Z_ee017e71",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T075628Z_ee017e71/result.json",
+      "verification_report": "experiments/evaluation/20261112T080040Z_18c1a5cf/result.json",
+      "verification_report_sha256": "adfdf10e857e336d7f53fbb1cd1521fe8e156020b4031ae7562b5381bb288b68",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T080244Z_7a0dd62e",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T080244Z_7a0dd62e/result.json",
+      "verification_report": "experiments/evaluation/20261112T080519Z_f2561601/result.json",
+      "verification_report_sha256": "08412293326801dfc3f0abab7709c13f63b00f63ddd70eacf0b734b5108bdcef",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T081404Z_1d085fff",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T081404Z_1d085fff/result.json",
+      "verification_report": "experiments/evaluation/20261112T081638Z_fedde68f/result.json",
+      "verification_report_sha256": "fdb89eac28e963f0a70af41cb411dceb1ca4d82b4286c88cf35c6495d50e1736",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T081719Z_51d78043",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T081719Z_51d78043/result.json",
+      "verification_report": "experiments/evaluation/20261112T081953Z_aa324103/result.json",
+      "verification_report_sha256": "a3ab53c8c61b5b3044b1fdafc01b776d555b79cab5543d80f833d5afef403b1e",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T082052Z_9e3e6072",
+      "profile": "original",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T082052Z_9e3e6072/result.json",
+      "verification_report": "experiments/evaluation/20261112T082307Z_6c8a7dd1/result.json",
+      "verification_report_sha256": "dd68d6266056e73ef7c6377fc04551f29ca6e1f5e993ee44688c618309e2b0f7",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T082410Z_8c57fce8",
+      "profile": "original",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T082410Z_8c57fce8/result.json",
+      "verification_report": "experiments/evaluation/20261112T082619Z_201c559d/result.json",
+      "verification_report_sha256": "8bb731ab62c7c9d0b8912f936787e13be8c1a7e0ced17b8d495a71bbc1a0c484",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T083800Z_be5b3b24",
+      "profile": "original",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T083800Z_be5b3b24/result.json",
+      "verification_report": "experiments/evaluation/20261112T084012Z_5a987734/result.json",
+      "verification_report_sha256": "1b130ff6c5b259ac7a640560b054afe7b021e5fb676b76a3c62872e29b695200",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T084117Z_37dd0986",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T084117Z_37dd0986/result.json",
+      "verification_report": "experiments/evaluation/20261112T084350Z_faf136fa/result.json",
+      "verification_report_sha256": "30dc463ddb6789d0f69f1ffb249c2f13cb0048b334b0ee7a2206e7ccb93d14ed",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T084434Z_5cf241f9",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T084434Z_5cf241f9/result.json",
+      "verification_report": "experiments/evaluation/20261112T084702Z_a9e1aadd/result.json",
+      "verification_report_sha256": "1a3a674892c1f8d22857278b684264a35e0297cb6f46a291a544f9c73a91c5ea",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T084750Z_0ef16188",
+      "profile": "original",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage3/20261112T084750Z_0ef16188/result.json",
+      "verification_report": "experiments/evaluation/20261112T084954Z_352d5713/result.json",
+      "verification_report_sha256": "0cb90db3572a23a780342534205379f5f7dd4aef3783f0ea7c9a95b9e3c290d1",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T085922Z_30977f00",
+      "profile": "retained_final",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage4/20261112T085922Z_30977f00/result.json",
+      "verification_report": "experiments/evaluation/20261112T090017Z_73cb5fc7/result.json",
+      "verification_report_sha256": "280f041d86a5c718876e2daa78bad467be51b08519cbcf5d5c4db54924924b07",
+      "speed_deg_s": 25
+    },
+    {
+      "episode": "20261112T090023Z_1341a28d",
+      "profile": "retained_final",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "experiments/research_stage4/20261112T090023Z_1341a28d/result.json",
+      "verification_report": "experiments/evaluation/20261112T090140Z_594ad288/result.json",
+      "verification_report_sha256": "2576341dbe3880738e40de20a9901a79249994735b178ebd0d6d3e9c6d3d779b",
+      "speed_deg_s": 25
+    },
+    {
+      "episode": "20261112T092311Z_901189c4",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage4/20261112T092311Z_901189c4/result.json",
+      "verification_report": "experiments/evaluation/20261112T092537Z_47b40f51/result.json",
+      "verification_report_sha256": "2bd72b28372a63e2ce660ca3500259cd192f72ac9b16860fd174d7e4ccc461fe",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T092555Z_cc2a60d2",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage4/20261112T092555Z_cc2a60d2/result.json",
+      "verification_report": "experiments/evaluation/20261112T092822Z_cd6ebcad/result.json",
+      "verification_report_sha256": "b3172771b1147372cfdbeb2644520f1184dcf56e5822a7b069f586d6754d3bb9",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T092838Z_bf17d184",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage4/20261112T092838Z_bf17d184/result.json",
+      "verification_report": "experiments/evaluation/20261112T093104Z_6369e0ae/result.json",
+      "verification_report_sha256": "45e7b28920ae0c0fbe1594ca36b9e9798e736f1850cc06b82ab747d515b0f3d0",
+      "speed_deg_s": 12
+    },
+    {
+      "episode": "20261112T093157Z_13f12a06",
+      "profile": "original",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "experiments/research_stage4/20261112T093157Z_13f12a06/result.json",
+      "verification_report": "experiments/evaluation/20261112T093422Z_1773a3f1/result.json",
+      "verification_report_sha256": "6036a2f901df2eff93b51fe191b5d5e64faf57feba9c888c7917fd23f7fc9f87",
+      "speed_deg_s": 12
+    }
+  ]
+}

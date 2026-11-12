@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-11-12T09:45:33.952739+00:00",
+  "bounded_research_completed": true,
+  "overall_scientific_objective_achieved": false,
+  "decision": "NO-GO_FULL_SELF_EVOLVING_REAL_SIM_SYSTEM",
+  "conditional_go_scope": "Validated original-simulator collection and known alignment skill only",
+  "stages": {
+    "1": "Measured discrepancy only,1round",
+    "2": "Closed after6rounds; independent calibration failed; user explicitly authorized later stages",
+    "3": "Four rounds completed; simulation component improvements",
+    "4": "Four rounds completed; targeted diagnostics and executable skill reuse, not full open-ended self-evolution"
+  },
+  "new_formal_episodes": {
+    "success": 13,
+    "failure": 9
+  },
+  "new_real_motion": 0,
+  "digital_twin_physics_candidate_promoted": false,
+  "simulation_privileged_information_used": true,
+  "planner_skill_comparison": {
+    "baseline": {
+      "valid_successes": 2,
+      "attempts": 2,
+      "success_rate": 1.0,
+      "model_calls": 2,
+      "reported_input_plus_output_tokens": 45464,
+      "component_seconds": 355.39257841499057,
+      "tokens_per_valid_success": 22732.0,
+      "seconds_per_valid_success": 177.69628920749528,
+      "valid_successes_per_component_hour": 20.259286314056304
+    },
+    "candidate": {
+      "valid_successes": 2,
+      "attempts": 2,
+      "success_rate": 1.0,
+      "model_calls": 0,
+      "reported_input_plus_output_tokens": 0,
+      "component_seconds": 295.9647396139917,
+      "tokens_per_valid_success": 0.0,
+      "seconds_per_valid_success": 147.98236980699585,
+      "valid_successes_per_component_hour": 24.327222254213492
+    }
+  },
+  "measured_component_seconds_reduction_fraction": 0.16721744462430843,
+  "all_in_total_collection_cost_per_success": null,
+  "human_intervention_change": null,
+  "unseen_task_family_success_rate": null,
+  "repeated_failure_rate": null,
+  "research_orchestration_tokens_per_episode": null,
+  "actual_repository_policy": {
+    "version": "v2",
+    "previous": "v1",
+    "evidence": "20261111T083957Z_05aa3d3d",
+    "previous_planner_policy": "llm",
+    "planner_policy": "compiled_alignment_v1",
+    "planner_evidence": "experiments/research_stage4/round4/result.json"
+  },
+  "actual_policy_evidence": [
+    "experiments/research_stage4/round4/result.json",
+    "experiments/evaluation/20261112T093749Z_b7360b34/result.json"
+  ],
+  "external_production_agent_integration": "NOT_VERIFIED",
+  "next_high_information_direction": "Joint grasp-retention and motion-feasibility skill on a genuinely new task, with end-to-end cost accounting; no more rounds in the current bounded assignment"
+}

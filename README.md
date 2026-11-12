@@ -1,3 +1,5 @@
+> 最新结果：四阶段有界研究完成，见 [FINAL_RESEARCH_REPORT.md](FINAL_RESEARCH_REPORT.md)。完整系统仍NO-GO；当前只验证了限定仿真组件。Agent D默认优先执行适用的已验证Skill；不适用时用LLM。用 `--planner-policy llm` 回滚。所有新完整采集请使用下方 `scripts/agent_loop.py` 入口及已有MuJoCo环境；它核验三路视频、状态/动作并保存成功/失败。`learn.py` 的低层headless示例仅用于诊断，不应把其原始输出当作完整数据集。没有自动接管外部生产Agent或真机。
+
 # Failure-driven robot learning (additive prototype)
 
 This repository contains a model-neutral, offline experiment layer for the existing Piper MuJoCo project. It does not replace MuJoCo, control hardware or train an LLM. Read PROJECT_AUDIT.md and protocol/robot_problem_solving.md first.

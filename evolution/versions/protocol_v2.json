@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "previous": 1,
+  "source": "protocol/robot_problem_solving.md",
+  "sha256": "0c1e28fd8e34f0995560513c56db24a169e00e00bdd63b15b79974abc5cc8965",
+  "changes": "Document validated complete-collection entry, executable-memory scope and earlier contact-loss diagnosis; no hardware or success changes",
+  "evidence": [
+    "experiments/research_stage3/round4/result.json",
+    "experiments/research_stage4/round3/result.json",
+    "experiments/research_stage4/round4/result.json"
+  ]
+}

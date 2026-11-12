@@ -1,6 +1,6 @@
-# Robot problem solving protocol v1
+# Robot problem solving protocol v2
 
-Use scripts/learn.py as the offline experiment adapter. Keep existing robot APIs and safety limits.
+Use scripts/agent_loop.py --arm D in the existing MuJoCo Python environment for complete recorded offline collection. scripts/learn.py remains the low-level simulation adapter; headless success is not a complete Episode. Keep existing robot APIs and safety limits.
 
 1. Specify physical completion independently of API acceptance. Record task, version, initial state, action, expected and observed physical effects, earliest anomaly and final outcome. Missing observations remain UNKNOWN.
 2. Retrieve at most five memory records matching task, failure signature and applicability. Read evidence references, not whole videos or chat histories.
@@ -22,3 +22,7 @@ Report task success, unseen-task success, repeated-failure rate, new skills, tok
 ## Simulation privileged information
 
 Simulator object/goal poses, contact state, velocities and task ground truth may be used in every simulation stage. Each result must disclose the fields actually used and mark conclusions Simulation-only. Model comparisons must expose the same information to each group, or explicitly separate observation access from method effects. Privileged access does not authorize changing success detectors, physical parameters or hardware safety rules. Count a successful collection Episode only after its existing-format videos, state/action arrays and physics replay are verified; headless success alone is insufficient.
+
+## Executable memory and current scope
+
+Agent D reads evolution/active.json.planner_policy. compiled_alignment_v1 may execute VS002 only when its simulator/source, socket, units, contact and initial-state checks match; otherwise use the bounded LLM path and keep unknowns explicit. Record actual_planner_kind and model_invoked. Retention loss observed during transport takes precedence over a later IK exception when selecting what to investigate; do not infer friction or measured force. The native success and safety detectors stay independent. All full collection passes the existing Episode verifier, including failures. Current evidence does not establish unknown-task-family competence, real calibration or total-cost reduction.
