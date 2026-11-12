@@ -41,14 +41,15 @@
     ]
   },
   "stage4": {
-    "rounds_used": 2,
+    "rounds_used": 3,
     "round_limit": 4,
-    "status": "ROUND2_REJECTED_STATIC_IK_REPAIR",
+    "status": "ROUND3_EARLIEST_FAILURE_DIAGNOSIS",
     "evidence": [
       "experiments/research_stage4/round1/design.json",
       "experiments/research_stage4/round1/result.json",
       "experiments/research_stage4/round2/design.json",
-      "experiments/research_stage4/round2/result.json"
+      "experiments/research_stage4/round2/result.json",
+      "experiments/research_stage4/round3/design.json"
     ],
     "completed_rounds": 2
   },

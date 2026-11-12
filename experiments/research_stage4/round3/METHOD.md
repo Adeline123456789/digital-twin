@@ -1,0 +1,5 @@
+# Stage4 round3: improve earliest-failure observation
+
+Round2 produced a real simulator counterexample: static IK feasible, lift succeeded, object separated during transport, then align IK failed. Reuse the primitive-level trace diagnosis method from [ASPIRE §2.1](https://arxiv.org/html/2607.00272v1#S2.SS1), already read with its planning source in round1. The new local analyzer combines simulator finger/object contact pairs with separation; it does not infer measured forces or tune friction. The existing native30Hz recording supplies both fields. It excludes intentional release and does not overwrite any independent task outcome.
+
+The candidate is attached after successful existing-format verification in run_case, the actual collector used by current experiments. Diagnose UNKNOWN separately from recording validity. Eight offline cases are frozen before evaluation: two development failures and six previously successful Episode controls. Only the controls are held out; no independent positive loss case exists, so this cannot establish general recall or real-robot reliability. No model calls or physics rollouts are needed.

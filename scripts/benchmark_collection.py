@@ -62,6 +62,12 @@ def run_case(case, inline, label='Stage3 round2', kind='research_stage3'):
     except Exception as exc:
         result['recording_verified'] = False
         result['recording_error'] = str(exc).replace(str(ROOT), '$PROJECT_ROOT').replace(str(DATA), '$DATA')
+    if result['recording_verified']:
+        from diagnose_retention import diagnose_episode
+        try:
+            result['causal_diagnosis'] = diagnose_episode(result)
+        except Exception as exc:
+            result['causal_diagnosis'] = {'status':'UNKNOWN','error_type':type(exc).__name__}
     result.update(replay_seconds=replay_seconds, verify_install_process_seconds=verification_seconds)
     result['collection_component_seconds'] = result['execution_time'] + replay_seconds + (verification_seconds or 0.)
     result['lessons_learned'] = ['Simulation-only; privileged fields disclosed in result.json; complete recording required for cost denominator.']

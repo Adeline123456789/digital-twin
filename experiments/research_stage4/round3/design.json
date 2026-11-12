@@ -1,0 +1,38 @@
+{
+  "stage": 4,
+  "round": 3,
+  "timestamp": "2026-11-12T09:08:16.423278+00:00",
+  "hypothesis": "Per-phase object-contact evidence can identify lost grasp before a downstream IK exception, avoiding misdirected planning repair",
+  "changed_factor": "Observation/diagnosis tool; no task-success or control changes",
+  "algorithm": "During transport/align, detect3 consecutive samples without finger-plug contact and object-gripper distance > end-of-lift distance+10mm. Report earliest observed event; exclude release/retreat.",
+  "development_episodes": [
+    "20261112T090023Z_1341a28d",
+    "20261112T085922Z_30977f00"
+  ],
+  "heldout_success_episodes": [
+    "20261112T073436Z_43d3e2c2",
+    "20261112T073851Z_908954b8",
+    "20261112T075628Z_ee017e71",
+    "20261112T080244Z_7a0dd62e",
+    "20261112T084117Z_37dd0986",
+    "20261112T084434Z_5cf241f9"
+  ],
+  "acceptance": [
+    "Localize development loss before align exception with measured contact/separation evidence",
+    "No loss alarms on six untouched complete-success episodes; report all UNKNOWN cases rather than counting them as correct",
+    "Original reported success/failure unchanged",
+    "Include actual collection entry integration and source hashes; do not claim old agent_loop is changed"
+  ],
+  "budget": {
+    "offline_episode_reads": 8,
+    "model_calls": 0,
+    "physics_steps": 0,
+    "max_seconds": 120
+  },
+  "limitations": [
+    "Only one observed positive, used for development; no independent positive recall validation",
+    "A valid successful Episode is a negative control for catastrophic carry loss, not a proof of no microslip",
+    "Threshold and sampling do not identify exact physical onset or friction root cause",
+    "No task success, cost or deployment safety improvement inferred from diagnosis accuracy"
+  ]
+}
