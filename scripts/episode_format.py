@@ -1,4 +1,4 @@
-"""Build and verify standard three-camera connector_mixed.v1 failed episodes before publication."""
+"""Build and verify standard three-camera connector_mixed.v1 episodes before publication."""
 import csv
 import hashlib
 import json
@@ -35,11 +35,11 @@ def fingerprint(trial,source):
         for key in sorted(state.files):h.update(key.encode()+state[key].tobytes())
     return h.hexdigest()
 
-def validate(episode,trial):
+def validate(episode,trial,expected_success=False):
     meta=json.loads((episode/'proprio_stats/metadata.json').read_text())
     ref=json.loads((REFERENCE/'proprio_stats/metadata.json').read_text())
     assert meta['schema']==ref['schema'] and meta['units']==ref['units']
-    assert meta['domain']=='sim' and meta['success'] is False and meta['force_sensor_present'] is False
+    assert meta['domain']=='sim' and meta['success'] is expected_success and meta['force_sensor_present'] is False
     rows=[json.loads(x) for x in (trial/'trajectory.jsonl').read_text().splitlines()]
     n=meta['num_frames'];assert n==len(rows) and n>0, 'Incomplete replay'
     with h5py.File(REFERENCE/'proprio_stats/proprio_stats.h5') as f:
@@ -62,7 +62,8 @@ def validate(episode,trial):
     assert object_error<=1e-6, 'Object trajectory mismatch'
     for name in ('model.xml','initial_state.npz','recorded_commands.csv'):assert (episode/'proprio_stats'/name).is_file()
     return dict(video_frames=frames,quality=meta['quality'],duration_s=n/meta['fps'],
-        object_replay_max_error_m=float(object_error),status='Format verified; failed physics samples remain failures, never successful training data')
+        object_replay_max_error_m=float(object_error),success=expected_success,
+        status='Format and replay verified; outcome preserved from the independent collector')
 
 def supplement(episode,trial):
     stats=episode/'proprio_stats'

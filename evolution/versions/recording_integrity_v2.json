@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-11-12T07:22:55.801016+00:00",
+  "version": "recording_integrity_v2",
+  "evidence": "experiments/research_stage3/round1/result.json",
+  "accepted": "FORMAT_AND_REPLAY_VERIFIED_ON_ONE_SUCCESS_AND_ONE_FAILURE",
+  "physical_model_changed": false,
+  "control_speed_changed": false,
+  "active_task_policy_changed": false,
+  "privileged_information_used": true,
+  "rollback": "Restore finalization/format adapter from 215597f; retain all experimental raw data and reports"
+}

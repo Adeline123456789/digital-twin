@@ -18,3 +18,7 @@ State the goal and observable completion; split into subgoals; retrieve availabl
 ## Metrics
 
 Report task success, unseen-task success, repeated-failure rate, new skills, tokens, inference wall time, simulated time, actual robot time and interventions separately. Missing measurements are null, not zero. Deterministic software-policy tests are not weak-LLM capability evaluations. Calibration requires bounded parameters, real measured targets and held-out real data; otherwise defer it.
+
+## Simulation privileged information
+
+Simulator object/goal poses, contact state, velocities and task ground truth may be used in every simulation stage. Each result must disclose the fields actually used and mark conclusions Simulation-only. Model comparisons must expose the same information to each group, or explicitly separate observation access from method effects. Privileged access does not authorize changing success detectors, physical parameters or hardware safety rules. Count a successful collection Episode only after its existing-format videos, state/action arrays and physics replay are verified; headless success alone is insufficient.

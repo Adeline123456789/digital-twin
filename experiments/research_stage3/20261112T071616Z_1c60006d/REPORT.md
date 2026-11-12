@@ -16,3 +16,5 @@
 See result.json for provenance and evidence hashes. Raw data stays in the existing dataset.
 
 Privileged simulator object/gripper poses, collision penetration and task-success truth were used. This is the predeclared historical +2 mm insertion-offset failure control; the zero-offset baseline succeeded. All motion/physics settings retained. Failure recording pending; no real-robot or calibration claim.
+
+Recording now verified: experiments/evaluation/20261112T071958Z_4779a01a; 1130 frames per camera, failed physical outcome preserved.

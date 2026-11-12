@@ -1,0 +1,26 @@
+{
+  "experiment_id": "20261112T071105Z_6a45b3cd",
+  "valid_successful_episodes": 1,
+  "three_camera_frames": 1133,
+  "physics_trial_wall_s": 105.2407561299915,
+  "recording_wall_s": 145.1514369189972,
+  "verification_and_install_wall_s": 1.2225695390079636,
+  "measured_pipeline_component_sum_s": 251.61476258799667,
+  "one_episode_component_time_rate_per_hour": 14.307586577878077,
+  "planner_calls": 0,
+  "planner_tokens": 0,
+  "research_orchestrator_tokens": null,
+  "sampled_motion": {
+    "sampling_hz": 30,
+    "max_joint_speed_deg_s": 11.979390285924007,
+    "max_joint_acceleration_deg_s2": 41.95339892828296,
+    "sum_joint_path_deg": 621.0128219535018
+  },
+  "privileged_information_used": true,
+  "limitations": [
+    "One deterministic historical success setting; not estimated production throughput",
+    "Component sum excludes orchestration, Git, setup and inter-job idle time",
+    "Finite difference joint metrics at 30 Hz are not continuous-time peak limits",
+    "No real-robot improvement or independently verified twin calibration"
+  ]
+}

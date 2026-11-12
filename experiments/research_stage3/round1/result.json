@@ -1,0 +1,68 @@
+{
+  "stage": 3,
+  "round": 1,
+  "timestamp": "2026-11-12T07:22:55.801016+00:00",
+  "result": "BASELINE_COMPLETED",
+  "cases": [
+    {
+      "trial_id": "20261112T071105Z_6a45b3cd",
+      "recording_id": "20261112T071528Z_0d05e556",
+      "task_success": true,
+      "recording_verified": true,
+      "video_frames": {
+        "cam_external_rgb.mp4": 1133,
+        "cam_left_wrist_rgb.mp4": 1133,
+        "cam_right_wrist_rgb.mp4": 1133
+      },
+      "trial_s": 105.2407561299915,
+      "recording_s": 145.1514369189972,
+      "verify_install_s": 1.2225695390079636,
+      "sampled_peak_joint_speed_deg_s": 11.979390285924007,
+      "max_penetration_m": 3.14633920053186e-05,
+      "object_replay_error_m": 0.0
+    },
+    {
+      "trial_id": "20261112T071616Z_1c60006d",
+      "recording_id": "20261112T071958Z_4779a01a",
+      "task_success": false,
+      "recording_verified": true,
+      "video_frames": {
+        "cam_external_rgb.mp4": 1130,
+        "cam_left_wrist_rgb.mp4": 1130,
+        "cam_right_wrist_rgb.mp4": 1130
+      },
+      "trial_s": 89.81350620498415,
+      "recording_s": 131.40692811299232,
+      "verify_install_s": 1.0990111910214182,
+      "sampled_peak_joint_speed_deg_s": 11.992042683789311,
+      "max_penetration_m": 0.0001922329609428605,
+      "object_replay_error_m": 0.0
+    }
+  ],
+  "new_successful_episodes": 1,
+  "new_failed_episodes": 1,
+  "valid_successful_episodes": 1,
+  "measured_component_sum_s": 473.93420809699455,
+  "designed_batch_component_rate_per_hour": 7.595991043683494,
+  "planner_calls": 0,
+  "planner_tokens": 0,
+  "research_orchestrator_tokens": null,
+  "human_interventions": null,
+  "new_real_robot_motion": false,
+  "privileged_information_used": true,
+  "privileged_fields_used": [
+    "simulated joint/action state",
+    "object/gripper pose",
+    "contact penetration",
+    "task success truth"
+  ],
+  "active_execution": "Existing original-profile try_plug_pick_sim.py with original task program; no LLM planner or signature gate invoked",
+  "digital_twin_real_calibration_status": "NOT_INDEPENDENTLY_VALIDATED",
+  "source_scripts_src_configs_unchanged": true,
+  "limitations": [
+    "One deliberate success condition and one deliberate failure control, not natural task success rate",
+    "Measured component sum excludes orchestration/setup/Git/idle; not production throughput",
+    "No weak/strong model comparison in this round",
+    "No validated digital-twin improvement or overall cost reduction yet"
+  ]
+}
