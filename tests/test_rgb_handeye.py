@@ -50,6 +50,20 @@ def run_adapter(data):
 
 
 class RGBHandEyeTests(unittest.TestCase):
+    def test_motion_rank_and_absolute_sensitivity_are_distinct(self):
+        sys.path.insert(0,str(ROOT/'scripts'))
+        from solve_rgb_handeye import motion_diagnostics
+        def poses(scale):
+            return np.array([transform(np.array(a)*scale,[0,0,0]) for a in
+                             ([0,0,0],[5,0,0],[0,5,0],[0,0,5])])
+        full=motion_diagnostics(poses(1));tiny=motion_diagnostics(poses(.01))
+        self.assertEqual(full['translation_system_rank'],3)
+        self.assertEqual(tiny['translation_system_rank'],3)
+        self.assertGreater(tiny['rhs_error_amplification_bound'],90*full['rhs_error_amplification_bound'])
+        single=motion_diagnostics(np.array([transform([0,0,a],[0,0,0]) for a in (0,5,10)]))
+        self.assertEqual(single['translation_system_rank'],2)
+        self.assertIsNone(single['rhs_error_amplification_bound'])
+
     def test_missing_input_still_records_infrastructure_error(self):
         with tempfile.TemporaryDirectory() as tmp:
             output=Path(tmp)/'result'

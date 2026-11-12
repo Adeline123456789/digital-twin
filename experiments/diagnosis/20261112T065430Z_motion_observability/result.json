@@ -1,0 +1,129 @@
+{
+  "experiment_id": "20261112T065430Z_motion_observability",
+  "timestamp": "2026-11-12T06:54:30.196288+00:00",
+  "model": "Deterministic SVD; no planner LLM",
+  "task": "Robot motion excitation and validation coverage input audit",
+  "environment": "historical_FK_pose_audit",
+  "program_version": {
+    "scripts/prepare_rgb_handeye.py": "f409fae1066c37d538d7afe272d6c632048cdb7f0aeff63f27125566e58cff2d",
+    "scripts/solve_rgb_handeye.py": "5e81963afba878920e07e28d91ba15a016a344c3b9a848e6d55f859fd5d65733",
+    "tests/test_rgb_handeye.py": "b09d5b150c798581f71de88e197c6443349fa830962d69fc6f702d92773d63f4"
+  },
+  "protocol_version": "ef3622d4328d6231e8b5770cac4a3bd6813bf50f3902a6fe3029c455b7db9f9f",
+  "memory_version": "ER007 v2",
+  "initial_state": {
+    "capture": "calibration/wrist_multiaxis_20261109_01",
+    "frames": [
+      27,
+      179,
+      438,
+      652,
+      759
+    ]
+  },
+  "actions": [
+    "SVD of stacked relative robot rotations minus identity",
+    "Return-to-entry pose comparison"
+  ],
+  "expected_effects": [
+    "Distinguish full rank, absolute sensitivity and heldout diversity"
+  ],
+  "observed_effects": {
+    "all_five": {
+      "pose_count": 5,
+      "pair_count": 10,
+      "translation_system_rank": 3,
+      "singular_values": [
+        0.33302482761465435,
+        0.3010988816614956,
+        0.17267934899072732
+      ],
+      "condition_number": 1.9285735645930504,
+      "rhs_error_amplification_bound": 5.791080438076581,
+      "max_pair_rotation_deg": 9.399308800674618,
+      "max_origin_separation_m": 0.008554490055938167,
+      "interpretation": "Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality."
+    },
+    "first_four": {
+      "pose_count": 4,
+      "pair_count": 6,
+      "translation_system_rank": 3,
+      "singular_values": [
+        0.2797981819100728,
+        0.2583913907473453,
+        0.13676019051340826
+      ],
+      "condition_number": 2.0459037155453563,
+      "rhs_error_amplification_bound": 7.312069369353195,
+      "max_pair_rotation_deg": 9.399308800674618,
+      "max_origin_separation_m": 0.008554490055938167,
+      "interpretation": "Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality."
+    },
+    "return_to_entry": {
+      "distance_m": 0.0002262488284329373,
+      "rotation_deg": 0.16558126872756537
+    }
+  },
+  "failure_signature": "handeye_motion_unobservable",
+  "root_cause": "UNKNOWN: robot-side rank sufficient; visual scale and pose not established",
+  "root_cause_status": "unknown",
+  "hypotheses": [
+    {
+      "hypothesis": "Single-axis robot motion degeneracy",
+      "result": "not_supported; rank 3"
+    },
+    {
+      "hypothesis": "Return frame provides diverse independent validation",
+      "result": "not_supported; near entry pose and same recording"
+    }
+  ],
+  "experiments": [],
+  "repair": {
+    "input_diagnostics_added": true,
+    "calibration_promoted": false,
+    "physical_parameters_changed": false
+  },
+  "result": "success",
+  "task_success": null,
+  "validation_status": "ROBOT_MOTION_INPUT_AUDIT_ONLY",
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "execution_time": 0.0007802199979778379,
+  "robot_execution_seconds": 0,
+  "simulation_seconds": 0,
+  "human_interventions": null,
+  "lessons_learned": [
+    "Rank is not absolute sensitivity",
+    "Return consistency is not independent recording validation"
+  ],
+  "next_improvement": "Assess visual pose/scale ambiguity using retained RGB observations; do not promote robot-only rank as calibration",
+  "new_physical_fit": false,
+  "new_research_round": false,
+  "stage2_rounds_used": 6,
+  "evidence": {
+    "input_sha256": "2f6d85894a611ea8f49bc05fdb9461ea11e65a7ce725ec73c2b1acf513c77e9e",
+    "prior_poses_identical": true,
+    "source_hashes": {
+      "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/calibration/wrist_multiaxis_20261109_01/right_wrist/camera.json": "0361aafe4d8d9a90e79c36cf3539861a35430c8585256745d906e0f9c321ea5e",
+      "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/calibration/wrist_multiaxis_20261109_01/commanded_probe.csv": "9eee18ee457e0f970cc4590d5f729af86488c308045ff3ec401d9c3543a6fd42",
+      "/media/midea/F496AC8096AC4548/piper_simulation/assets/mujoco/kinematics.urdf": "18db92bc3b05e5d6eb04601337e0bd3222be387563531124e53f072ac9aea4b3"
+    }
+  },
+  "tests": {
+    "passed": 39,
+    "duration_s": 2.498,
+    "log_sha256": "561cd8fdd7a5c0c52f184084fe741ad314cf5ea68d103fd5c1badda9110300b9"
+  },
+  "infrastructure_attempts": [
+    {
+      "result": "infrastructure_error",
+      "command": "default python report generation",
+      "error": "ModuleNotFoundError: No module named cv2",
+      "repair": "Use existing /usr/bin/python3; no dependency installed",
+      "repair_result": "success"
+    }
+  ],
+  "previous_goal_turn_classification": "progress: committed RGB extraction and supported-region evidence"
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-12T06:54:30.196288+00:00",
+  "version": "handeye_motion_diagnostics_v1",
+  "evidence": "experiments/diagnosis/20261112T065430Z_motion_observability/result.json",
+  "accepted": "INPUT_DIAGNOSTICS_ONLY",
+  "active_default_changed": false,
+  "physical_model_changed": false,
+  "stage2_rounds_used": 6,
+  "new_research_round": false,
+  "tests_passed": 39,
+  "rollback": "Restore prepare_rgb_handeye.py and solve_rgb_handeye.py from d2e759d; no calibration deployed"
+}

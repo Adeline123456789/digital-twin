@@ -16,12 +16,25 @@ from scipy.spatial.transform import Rotation
 from learn import digest, save
 
 
-def solve(base_gripper, camera_target):
-    # Single-axis motion leaves a translation component unobservable.
+def motion_diagnostics(base_gripper):
+    """Robot-side necessary conditions only; no visual accuracy or scale claim."""
     relative = np.array([np.linalg.inv(base_gripper[j])@base_gripper[i]
                          for i, j in combinations(range(len(base_gripper)), 2)])
     system = (relative[:, :3, :3]-np.eye(3)).reshape(-1, 3)
-    if np.linalg.matrix_rank(system) < 3:
+    singular = np.linalg.svd(system, compute_uv=False)
+    rank = int(np.linalg.matrix_rank(system))
+    return dict(pose_count=len(base_gripper), pair_count=len(relative), translation_system_rank=rank,
+                singular_values=singular.tolist(),
+                condition_number=float(singular[0]/singular[-1]) if rank==3 else None,
+                rhs_error_amplification_bound=float(1/singular[-1]) if rank==3 else None,
+                max_pair_rotation_deg=float(np.rad2deg(Rotation.from_matrix(relative[:,:3,:3]).magnitude()).max()),
+                max_origin_separation_m=float(np.linalg.norm(relative[:,:3,3],axis=1).max()),
+                interpretation='Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality.')
+
+
+def solve(base_gripper, camera_target):
+    motion = motion_diagnostics(base_gripper)
+    if motion['translation_system_rank'] < 3:
         raise ValueError('Hand-eye translation is unobservable: static or parallel-axis motions')
     rotation, translation = cv2.calibrateHandEye(
         list(base_gripper[:, :3, :3]), list(base_gripper[:, :3, 3]),
@@ -30,7 +43,7 @@ def solve(base_gripper, camera_target):
     result = np.eye(4); result[:3, :3] = rotation; result[:3, 3] = translation.ravel()
     if not np.isfinite(result).all() or not np.allclose(rotation.T@rotation, np.eye(3), atol=1e-6) or np.linalg.det(rotation) < 0:
         raise ValueError('OpenCV returned an invalid rigid transform; calibration remains unqualified')
-    return result, np.linalg.svd(system, compute_uv=False)
+    return result, np.array(motion['singular_values'])
 
 
 def closure_errors(base_gripper, camera_target, mount, train):
@@ -67,6 +80,7 @@ def main():
             r = poses[:,:3,:3]
             if not np.isfinite(poses).all() or not np.allclose(poses[:,3,:],[0,0,0,1]) or not np.allclose(r.transpose(0,2,1)@r,np.eye(3),atol=1e-6) or np.any(np.linalg.det(r)<0):
                 raise ValueError('Input poses must be finite rigid transforms')
+        report['robot_motion_diagnostics'] = motion_diagnostics(g[train])
         candidate, singular = solve(g[train],c[train])
         change = np.linalg.inv(old)@candidate
         translation = float(np.linalg.norm(change[:3,3])); angle = float(np.rad2deg(Rotation.from_matrix(change[:3,:3]).magnitude()))

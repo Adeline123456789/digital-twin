@@ -1,16 +1,17 @@
 {
   "id": "ER007",
-  "version": 1,
-  "content": "For RGB-only eye-in-hand calibration, pair camera exposure with measured joint FK and use established AX=XB solvers. A static target and qualified RGB metric poses are required. Reject unobservable single-axis motion, preserve units and parameter bounds, and keep evaluation poses outside fitting. Small closure residuals alone do not validate physical calibration.",
+  "version": 2,
+  "content": "For RGB-only eye-in-hand calibration, pair camera exposure with measured joint FK and use established AX=XB solvers. A static target and qualified RGB metric poses are required. Reject unobservable single-axis motion, preserve units and parameter bounds, and keep evaluation poses outside fitting. Small closure residuals alone do not validate physical calibration. Report singular values and absolute linear sensitivity, not rank alone. Inspect heldout pose separation and recording provenance. The current metric-pose adapter is one route; scale-aware RGB methods require their own verified visual inputs.",
   "applicability": "Offline calibration tooling for this Piper installation; rigid wrist camera; fixed target; verified metric RGB pose inputs. System Python OpenCV 4.5.4 provides the solver, current MuJoCo OpenCV build does not.",
   "embodiment": "This Piper; base_link and link6 from existing URDF; no six-axis force sensor or real depth",
   "source_episodes": [
-    "20261112T060334Z_handeye_adapter"
+    "20261112T060334Z_handeye_adapter",
+    "20261112T065430Z_motion_observability"
   ],
   "validation_status": "SOFTWARE_VERIFIED_ONLY",
-  "success_count": 1,
+  "success_count": 2,
   "failure_count": 0,
-  "count_semantics": "One adapter software-verification batch; no robot task successes or real calibration trials",
+  "count_semantics": "Two software/input-audit batches; no accepted real calibration",
   "limitations": [
     "Synthetic test points have known scale and no image noise",
     "Real RGB target poses still missing",

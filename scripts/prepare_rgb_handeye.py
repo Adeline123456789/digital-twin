@@ -10,6 +10,7 @@ from pathlib import Path
 import sys
 import numpy as np
 from learn import SIM, digest, save
+from solve_rgb_handeye import motion_diagnostics
 
 sys.path.insert(0,str(SIM/'src'))
 from piper_sim.kinematics import forward
@@ -32,6 +33,7 @@ def robot_observations(capture, frames):
     poses = [forward(urdf,{f'joint{i+1}':q for i,q in enumerate(np.deg2rad(angles))})['link6']
              for angles in measured]
     return dict(translation_unit='m', T_base_gripper=np.array(poses).tolist(), frame_indices=frames,
+                robot_motion_diagnostics=motion_diagnostics(np.array(poses)) if len(poses)>=2 else None,
                 exposure_monotonic_s=exposure.tolist(),
                 phase=[rows[i]['phase'] for i in np.searchsorted(times,exposure,side='right')-1],
                 status='ROBOT_POSES_ONLY_RGB_TARGET_POSES_MISSING',

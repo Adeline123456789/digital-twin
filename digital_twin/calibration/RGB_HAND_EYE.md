@@ -48,3 +48,5 @@ prepare 输出明确标为 `ROBOT_POSES_ONLY_RGB_TARGET_POSES_MISSING`，**它�
 [对应点检查](../../experiments/diagnosis/20261112T061643Z_rgb_correspondences/REPORT.md) 已在既有多轴 RGB 的四个帧对提取 28–30 个局部 LK 对应点。其前后向自一致性不等于真实几何精度；同张图像的已知变换检查揭示了局部点拟合向未观测区域外推的误差。新摘要报告凸包内支持范围，避免把整张单应映射当成观测。LoFTR/ECC 候选未晋升。
 
 这些点仍不是 `T_camera_target`，不能直接填入本手眼接口。原项目任务记忆有夹具实物尺寸的历史记录，但测量误差来源未知；旧深度/CAD 拟合和遮挡角点不能补作独立真值。下一步的输入判断应基于局部对应、运动约束和不确定性，而不是因 SIFT 没有特征就断言 RGB 无信息。
+
+运动诊断现已接入 prepare 与 solve：报告机器人侧秩、奇异值、条件数和线性误差放大上界，不新增未经验证的拒绝阈值。五帧多轴运动满秩，但返回帧接近初始姿态，不能充当充分独立验证。详见 [输入审计](../../experiments/diagnosis/20261112T065430Z_motion_observability/REPORT.md)。
