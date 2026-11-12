@@ -1,0 +1,24 @@
+{
+  "id": "NE006",
+  "content": "A constant +9.612 mm correction fitted to grasp plateau reduces its error but strongly worsens independent approach/transport/insert errors. A 45.622 ms timing correction likewise does not explain the contact plateau. Do not promote either as physical calibration.",
+  "applicability": "original Piper replay, native encoder opening, residual training / grip-hold validation",
+  "source_episodes": [
+    "20261112T034638Z_193f29d6",
+    "20261112T034933Z_271a9075"
+  ],
+  "validation_status": "HYPOTHESES_TESTED_REJECTED_FOR_GLOBAL_CALIBRATION",
+  "success_count": 0,
+  "failure_count": 2,
+  "limitations": [
+    "Other nonlinear mappings and the retained final model were not tested",
+    "No independently measured real aperture or force"
+  ],
+  "version": 1,
+  "signatures": [
+    "gripper_sim_real_mismatch"
+  ],
+  "ineffective_repairs": [
+    "global_constant_opening_offset_from_grasp_plateau",
+    "timing_only_fix_for_contact_plateau"
+  ]
+}

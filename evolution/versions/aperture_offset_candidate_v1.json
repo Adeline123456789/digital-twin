@@ -1,0 +1,9 @@
+{
+  "version": "aperture_offset_candidate_v1",
+  "experiment_id": "20261112T034933Z_271a9075",
+  "stage": 2,
+  "round": 2,
+  "accepted": false,
+  "active_default_changed": false,
+  "reason": "Held-out grasp plateau improves but approach, transport and insertion regress by about 9\u201310 mm"
+}
