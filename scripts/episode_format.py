@@ -63,7 +63,8 @@ def validate(episode,trial,expected_success=False):
     for name in ('model.xml','initial_state.npz','recorded_commands.csv'):assert (episode/'proprio_stats'/name).is_file()
     return dict(video_frames=frames,quality=meta['quality'],duration_s=n/meta['fps'],
         object_replay_max_error_m=float(object_error),success=expected_success,
-        status='Format and replay verified; outcome preserved from the independent collector')
+        collection_mode=meta.get('collection_mode','physics_replay'),
+        status='Format and recorded trajectory verified; native physical task outcome preserved')
 
 def supplement(episode,trial):
     stats=episode/'proprio_stats'

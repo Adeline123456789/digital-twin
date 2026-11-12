@@ -1,0 +1,78 @@
+{
+  "stage": 3,
+  "round": 2,
+  "timestamp": "2026-11-12T07:34:25.501552+00:00",
+  "hypothesis": "Recording after each native checked physics interval removes duplicate integration without changing control or observations",
+  "changed_factor": "inline recording versus headless trial followed by native physics replay",
+  "cases": [
+    {
+      "name": "nominal_success",
+      "offset_mm": 0,
+      "shift_mm": 0,
+      "order": [
+        "baseline",
+        "inline"
+      ]
+    },
+    {
+      "name": "deliberate_failure",
+      "offset_mm": 2,
+      "shift_mm": 0,
+      "order": [
+        "inline",
+        "baseline"
+      ]
+    },
+    {
+      "name": "heldout_initial_position",
+      "offset_mm": 0,
+      "shift_mm": 1,
+      "order": [
+        "baseline",
+        "inline"
+      ]
+    }
+  ],
+  "budget": {
+    "task_trials": 6,
+    "extra_physics_replays": 3,
+    "max_trial_seconds": 900,
+    "max_replay_seconds": 1200,
+    "planner_calls": 0
+  },
+  "held_constant": {
+    "source": "original piper_simulation",
+    "joint_speed_deg_s": 12,
+    "smooth_timing": "existing unchanged quintic",
+    "grasp_height_m": 0.02,
+    "physics": "native original profile",
+    "collision_limit_m": 0.0002,
+    "fps": 30,
+    "thread_environment": "OMP_NUM_THREADS=1; OPENBLAS_NUM_THREADS=1 in both arms"
+  },
+  "acceptance": {
+    "all_recordings_valid": true,
+    "same_native_success_labels": true,
+    "max_numeric_error": 1e-10,
+    "max_decoded_RGB_error": 0,
+    "mean_component_cost_reduction_at_least": 0.1,
+    "heldout_must_pass": true
+  },
+  "privileged_information_used": true,
+  "privileged_fields": [
+    "object/goal pose",
+    "joint/action state",
+    "contact penetration and contacts",
+    "task success ground truth",
+    "camera pose",
+    "qvel"
+  ],
+  "limitations": [
+    "Simulation-only; Stage2 real calibration remains unvalidated",
+    "One paired run per condition; timing variability not estimated",
+    "Initial position holdout is not a new task",
+    "Planner calls zero; orchestration tokens unmetered",
+    "Keep candidate opt-in until all acceptance checks pass"
+  ],
+  "rollback": "Default simulate(record_inline=False) remains native two-pass collection"
+}

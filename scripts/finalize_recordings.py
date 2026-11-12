@@ -12,7 +12,7 @@ def main():
     import av
     parser=argparse.ArgumentParser();parser.add_argument('ids',nargs='*');parser.add_argument('--stage',default='self_evolution/recording_stage');args=parser.parse_args()
     for ident in (args.ids or IDS):
-        out,r=record('evaluation','Three-view physics replay '+ident,'simulation_recording')
+        out,r=record('evaluation','Three-view recording verification '+ident,'simulation_recording')
         start=time.monotonic()
         try:
             stage=DATA/args.stage
@@ -36,7 +36,7 @@ def main():
             save(md/'outcome.json' if success else base/'outcome.json',outcome)
             r.update(result='success',task_success=success,validation_status='SIMULATION_VERIFIED' if success else 'SIMULATION_FAILURE_RECORDED',
                 initial_state={'source_experiment':ident},observed_effects=[{'outcome':outcome,'video_frames':counts,'quality':meta.get('quality')}],
-                lessons_learned=['Videos, state/action and object replay verified using simulator privileged information; simulation-only evidence.'],
+                lessons_learned=['Videos, state/action and object trace verified using simulator privileged information; simulation-only evidence.'],
                 next_improvement='Compare valid episode cost and sampled motion quality across matched simulation collection methods')
             r['evidence']=[{'dataset_relative_path':str(f.relative_to(DATA)),'sha256':digest(f)}
                            for folder in (vd,md) for f in folder.rglob('*') if f.is_file()]

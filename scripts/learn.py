@@ -83,7 +83,7 @@ def decide(signature, repair, version_name=None):
         if repair in item.get('ineffective_repairs',[]): return 'REJECT_REPEAT_REQUIRE_NEW_EVIDENCE'
     return 'UNKNOWN_TASK_MODE' if not retrieve(signature) else 'ALLOW_SIMULATION'
 
-def simulate(kind, offset, shift, label, signature=None, repair=None):
+def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False):
     out,r=record(kind,label,'simulation')
     raw=DATA/'self_evolution'/r['experiment_id']
     start=time.monotonic()
@@ -113,11 +113,17 @@ def simulate(kind, offset, shift, label, signature=None, repair=None):
              '--output',str(raw),'--task',str(task),'--smooth-timing','--speed',str(speed),
              '--grasp-height',('.012' if retained else '.020'),'--insertion-offset-mm',str(offset),'0']
         if retained:cmd+=['--grasp-roll-deg','30','--align-corrections','4','--grasp-opening','0','--start-right-deg','0','0','0','0','0','0']
+        if record_inline:
+            if retained: raise ValueError('Inline recording is verified only against the original simulator profile')
+            stage=DATA/'self_evolution'/('stage3_recording_'+r['experiment_id'])
+            cmd=[str(runtime),str(ROOT/'scripts/collect_inline.py'),'--trial',str(raw),
+                 '--stage-root',str(stage),'--session','learning_'+r['experiment_id'],*cmd[4:]]
+        r['collection_mode']='inline_native_physics' if record_inline else 'headless_then_replay'
         r['initial_state']={'target_index':target_index,'holder_x_shift_mm':shift,'task_config_sha256':digest(task)}
         r['actions']=[{'script':'try_plug_pick_sim.py','profile':('retained_final' if retained else 'original'),'grasp_height_m':(.012 if retained else .020),'offset_mm':[offset,0],
                        'speed_deg_s':speed,'smooth_timing':True}]
         r['experiments']=[{'changed_variable':'insertion_offset_mm','value':offset,'heldout_initial_shift_mm':shift}]
-        env=dict(os.environ,MUJOCO_GL='egl')
+        env=dict(os.environ,MUJOCO_GL='egl',OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1')
         with (local/'stdout.log').open('w') as log:
             p=subprocess.run(cmd,cwd=SIM,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=900)
         r['process_returncode']=p.returncode
