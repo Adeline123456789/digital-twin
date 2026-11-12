@@ -1,0 +1,287 @@
+[
+  {
+    "case": "nominal_metric_RGB_PnP",
+    "returncode": 0,
+    "result": {
+      "result": "success",
+      "task_success": null,
+      "calibration_promoted": false,
+      "validation_status": "POSE_CANDIDATE_ONLY",
+      "opencv_version": "4.5.4",
+      "program_sha256": "ee29ea746a93d9d3969bd00f1b58b1c84d8d62fc13fbd7b8d83cac8debd978bd",
+      "source_sha256": "5eca7e45177df485a330a97fff4bc122df72dd525b723a98d0f84f112fc70e00",
+      "T_gripper_camera": [
+        [
+          0.974425494349992,
+          -0.21775282425222542,
+          -0.05548570528481153,
+          0.03999995813536668
+        ],
+        [
+          0.2071203827198489,
+          0.9661064495347184,
+          -0.15407619942549067,
+          0.010000002290503164
+        ],
+        [
+          0.08715562530758834,
+          0.13864355627868025,
+          0.9864998029800321,
+          0.029999885141522173
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parameter_change": {
+        "translation_m": 0.011575907251322574,
+        "rotation_deg": 2.4565670804538193
+      },
+      "requested_bounds": {
+        "max_translation_change_m": 0.05,
+        "max_rotation_change_deg": 20
+      },
+      "within_requested_bounds": true,
+      "translation_system_singular_values": [
+        1.326172263128073,
+        1.154202623780064,
+        0.9941291667955544
+      ],
+      "baseline": {
+        "train": {
+          "frames": 6,
+          "translation_rmse_m": 0.004666966387570538,
+          "rotation_rmse_deg": 0.4869505735637321
+        },
+        "heldout": {
+          "frames": 4,
+          "translation_rmse_m": 0.006596170983816109,
+          "rotation_rmse_deg": 0.6742897468758794
+        }
+      },
+      "candidate": {
+        "train": {
+          "frames": 6,
+          "translation_rmse_m": 2.5546551657894212e-08,
+          "rotation_rmse_deg": 7.521361811741574e-06
+        },
+        "heldout": {
+          "frames": 4,
+          "translation_rmse_m": 4.065933481290705e-08,
+          "rotation_rmse_deg": 8.487740604019001e-06
+        }
+      },
+      "input_provenance": "SYNTHETIC projected RGB correspondences; known metric target; not a real measurement",
+      "limitations": [
+        "Closure errors are pose consistency, not independent physical ground truth",
+        "Full numerical rank does not establish adequate conditioning or observability under measurement noise",
+        "Metric target dimensions, RGB pose ambiguity, FK and timestamps must be verified upstream",
+        "No parameter promotion, hardware connection, or XML modification"
+      ],
+      "execution_time_s": 0.0012373439967632294
+    }
+  },
+  {
+    "case": "heldout_target_shift_fit_must_not_change",
+    "returncode": 0,
+    "result": {
+      "result": "success",
+      "task_success": null,
+      "calibration_promoted": false,
+      "validation_status": "POSE_CANDIDATE_ONLY",
+      "opencv_version": "4.5.4",
+      "program_sha256": "ee29ea746a93d9d3969bd00f1b58b1c84d8d62fc13fbd7b8d83cac8debd978bd",
+      "source_sha256": "8c726ff22fb4a7855da44339560caa91dae6d8dae0ef84eca6b42c625e4bd68d",
+      "T_gripper_camera": [
+        [
+          0.974425494349992,
+          -0.21775282425222542,
+          -0.05548570528481153,
+          0.03999995813536668
+        ],
+        [
+          0.2071203827198489,
+          0.9661064495347184,
+          -0.15407619942549067,
+          0.010000002290503164
+        ],
+        [
+          0.08715562530758834,
+          0.13864355627868025,
+          0.9864998029800321,
+          0.029999885141522173
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parameter_change": {
+        "translation_m": 0.011575907251322574,
+        "rotation_deg": 2.4565670804538193
+      },
+      "requested_bounds": {
+        "max_translation_change_m": 0.05,
+        "max_rotation_change_deg": 20
+      },
+      "within_requested_bounds": true,
+      "translation_system_singular_values": [
+        1.326172263128073,
+        1.154202623780064,
+        0.9941291667955544
+      ],
+      "baseline": {
+        "train": {
+          "frames": 6,
+          "translation_rmse_m": 0.004666966387570538,
+          "rotation_rmse_deg": 0.4869505735637321
+        },
+        "heldout": {
+          "frames": 4,
+          "translation_rmse_m": 0.023568176004149902,
+          "rotation_rmse_deg": 0.6742897468758794
+        }
+      },
+      "candidate": {
+        "train": {
+          "frames": 6,
+          "translation_rmse_m": 2.5546551657894212e-08,
+          "rotation_rmse_deg": 7.521361811741574e-06
+        },
+        "heldout": {
+          "frames": 4,
+          "translation_rmse_m": 0.019999988930390213,
+          "rotation_rmse_deg": 8.487740604019001e-06
+        }
+      },
+      "input_provenance": "SYNTHETIC projected RGB correspondences; known metric target; not a real measurement",
+      "limitations": [
+        "Closure errors are pose consistency, not independent physical ground truth",
+        "Full numerical rank does not establish adequate conditioning or observability under measurement noise",
+        "Metric target dimensions, RGB pose ambiguity, FK and timestamps must be verified upstream",
+        "No parameter promotion, hardware connection, or XML modification"
+      ],
+      "execution_time_s": 0.0011652520042844117
+    }
+  },
+  {
+    "case": "single_axis",
+    "returncode": 2,
+    "result": {
+      "result": "failure",
+      "task_success": null,
+      "calibration_promoted": false,
+      "validation_status": "UNQUALIFIED_POSE_CANDIDATE",
+      "opencv_version": "4.5.4",
+      "program_sha256": "ee29ea746a93d9d3969bd00f1b58b1c84d8d62fc13fbd7b8d83cac8debd978bd",
+      "source_sha256": "d77cbb91bb398abe4ddabd944143e5b0df4b05eb6b5ddb830502b87b408b8f07",
+      "error": "Hand-eye translation is unobservable: static or parallel-axis motions",
+      "execution_time_s": 0.0006159149925224483
+    }
+  },
+  {
+    "case": "wrong_units",
+    "returncode": 2,
+    "result": {
+      "result": "failure",
+      "task_success": null,
+      "calibration_promoted": false,
+      "validation_status": "UNQUALIFIED_POSE_CANDIDATE",
+      "opencv_version": "4.5.4",
+      "program_sha256": "ee29ea746a93d9d3969bd00f1b58b1c84d8d62fc13fbd7b8d83cac8debd978bd",
+      "source_sha256": "e5d0ea6f8a348dde2fabc16bb5ca95619b90c87f67977ec0b2bde3bef2eba3c0",
+      "error": "Explicit meter-unit poses required; units are not guessed or converted",
+      "execution_time_s": 0.00017703199409879744
+    }
+  },
+  {
+    "case": "outside_bounds",
+    "returncode": 2,
+    "result": {
+      "result": "failure",
+      "task_success": null,
+      "calibration_promoted": false,
+      "validation_status": "REJECTED_OUTSIDE_REQUESTED_BOUNDS",
+      "opencv_version": "4.5.4",
+      "program_sha256": "ee29ea746a93d9d3969bd00f1b58b1c84d8d62fc13fbd7b8d83cac8debd978bd",
+      "source_sha256": "86787c188d8616e1d820d4252fbd13bcfc42fe9485bfae335dcdcb90f944aa1f",
+      "T_gripper_camera": [
+        [
+          0.974425494349992,
+          -0.21775282425222542,
+          -0.05548570528481153,
+          0.03999995813536668
+        ],
+        [
+          0.2071203827198489,
+          0.9661064495347184,
+          -0.15407619942549067,
+          0.010000002290503164
+        ],
+        [
+          0.08715562530758834,
+          0.13864355627868025,
+          0.9864998029800321,
+          0.029999885141522173
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "parameter_change": {
+        "translation_m": 0.011575907251322574,
+        "rotation_deg": 2.4565670804538193
+      },
+      "requested_bounds": {
+        "max_translation_change_m": 0.001,
+        "max_rotation_change_deg": 20
+      },
+      "within_requested_bounds": false,
+      "translation_system_singular_values": [
+        1.326172263128073,
+        1.154202623780064,
+        0.9941291667955544
+      ],
+      "baseline": {
+        "train": {
+          "frames": 6,
+          "translation_rmse_m": 0.004666966387570538,
+          "rotation_rmse_deg": 0.4869505735637321
+        },
+        "heldout": {
+          "frames": 4,
+          "translation_rmse_m": 0.006596170983816109,
+          "rotation_rmse_deg": 0.6742897468758794
+        }
+      },
+      "candidate": {
+        "train": {
+          "frames": 6,
+          "translation_rmse_m": 2.5546551657894212e-08,
+          "rotation_rmse_deg": 7.521361811741574e-06
+        },
+        "heldout": {
+          "frames": 4,
+          "translation_rmse_m": 4.065933481290705e-08,
+          "rotation_rmse_deg": 8.487740604019001e-06
+        }
+      },
+      "input_provenance": "SYNTHETIC projected RGB correspondences; known metric target; not a real measurement",
+      "limitations": [
+        "Closure errors are pose consistency, not independent physical ground truth",
+        "Full numerical rank does not establish adequate conditioning or observability under measurement noise",
+        "Metric target dimensions, RGB pose ambiguity, FK and timestamps must be verified upstream",
+        "No parameter promotion, hardware connection, or XML modification"
+      ],
+      "execution_time_s": 0.0012249969877302647
+    }
+  }
+]

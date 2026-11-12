@@ -1,0 +1,15 @@
+{
+  "command": "/media/midea/F496AC8096AC4548/piper_simulation/.venv-mujoco-hardware/bin/python -m unittest discover -s tests -v",
+  "test_count": 33,
+  "summary": "OK",
+  "log_sha256": "5b83041a1066fcbb33e8c9bd6a4482c4fe8fc62800117f08b615c863c10223fb",
+  "coverage": [
+    "RGB PnP to known hand-eye transform",
+    "Heldout observations do not change fitting",
+    "Unobservable single-axis motion rejected",
+    "Declared millimeter poses rejected",
+    "Requested bounds retained",
+    "Missing input still recorded",
+    "Exposure/feedback interpolation and URDF-to-MuJoCo FK agreement"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "experiment_id": "20261112T060334Z_handeye_adapter",
+  "timestamp": "2026-11-12T06:05:01.071730+00:00",
+  "model": "OpenCV Park-Martin solver; no planner LLM",
+  "task": "Verify mature hand-eye solver adapter and existing FK input connection",
+  "environment": "synthetic_software_verification_and_archive_input_preparation",
+  "program_version": {
+    "scripts/solve_rgb_handeye.py": "ee29ea746a93d9d3969bd00f1b58b1c84d8d62fc13fbd7b8d83cac8debd978bd",
+    "scripts/prepare_rgb_handeye.py": "320b43b6a8ca46a94b99b80c5d7fa7781bb4acd1e372164e63a3648c37c01225",
+    "tests/test_rgb_handeye.py": "ee63165fbf6c6d3f98ac917f2593c4aa2c054c279e7d2ce7f2607d145a4327a6"
+  },
+  "protocol_version": "ef3622d4328d6231e8b5770cac4a3bd6813bf50f3902a6fe3029c455b7db9f9f",
+  "memory_version": "No physical skill or calibration promoted",
+  "initial_state": {
+    "synthetic_frames": 10,
+    "train_frames": 6,
+    "heldout_frames": 4,
+    "real_capture_selected_frames": [
+      27,
+      179,
+      438,
+      652,
+      759
+    ]
+  },
+  "actions": [
+    "Run RGB projection/PnP fixture through installed system OpenCV hand-eye API",
+    "Verify holdout isolation and reject invalid/degenerate inputs",
+    "Use original Piper URDF FK on existing measured feedback"
+  ],
+  "expected_effects": [
+    "Recover synthetic known transform without using heldout poses or depth",
+    "Prepare real robot-side poses without claiming visual pose availability"
+  ],
+  "observed_effects": {
+    "nominal_baseline": {
+      "train": {
+        "frames": 6,
+        "translation_rmse_m": 0.004666966387570538,
+        "rotation_rmse_deg": 0.4869505735637321
+      },
+      "heldout": {
+        "frames": 4,
+        "translation_rmse_m": 0.006596170983816109,
+        "rotation_rmse_deg": 0.6742897468758794
+      }
+    },
+    "nominal_candidate": {
+      "train": {
+        "frames": 6,
+        "translation_rmse_m": 2.5546551657894212e-08,
+        "rotation_rmse_deg": 7.521361811741574e-06
+      },
+      "heldout": {
+        "frames": 4,
+        "translation_rmse_m": 4.065933481290705e-08,
+        "rotation_rmse_deg": 8.487740604019001e-06
+      }
+    },
+    "nominal_max_matrix_element_error": 1.554554627802851e-07,
+    "heldout_shift_error_m": 0.019999988930390213,
+    "expected_rejections": 3,
+    "real_input_status": "ROBOT_POSES_ONLY_RGB_TARGET_POSES_MISSING",
+    "real_capture_phases": [
+      "entry_hold",
+      "j6_outbound_hold",
+      "j5_outbound_hold",
+      "j4_outbound_hold",
+      "j4_return_hold"
+    ]
+  },
+  "result": "success",
+  "task_success": null,
+  "root_cause": "UNKNOWN: no new physical failure diagnosis or real calibration fit",
+  "root_cause_status": "unknown",
+  "validation_status": "SOFTWARE_VERIFIED_ONLY",
+  "repair": {
+    "calibration_promoted": false,
+    "physical_parameters_changed": false,
+    "new_dependencies": false
+  },
+  "real_input_provenance_hashes": {
+    "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/calibration/wrist_multiaxis_20261109_01/right_wrist/camera.json": "0361aafe4d8d9a90e79c36cf3539861a35430c8585256745d906e0f9c321ea5e",
+    "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/calibration/wrist_multiaxis_20261109_01/commanded_probe.csv": "9eee18ee457e0f970cc4590d5f729af86488c308045ff3ec401d9c3543a6fd42",
+    "/media/midea/F496AC8096AC4548/piper_simulation/assets/mujoco/kinematics.urdf": "18db92bc3b05e5d6eb04601337e0bd3222be387563531124e53f072ac9aea4b3"
+  },
+  "fk_source_sha256": "903073b8aef1986e0e61e5effa789861d4daa95ce55592b539918409fe227870",
+  "original_simulation_sources_unchanged_since_round6": true,
+  "new_research_round": false,
+  "stage2_rounds_used": 6,
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "execution_time": 1.0893544710124843,
+  "simulation_seconds": 0,
+  "robot_execution_seconds": 0,
+  "human_interventions": null,
+  "lessons_learned": [
+    "Installed Python environments expose different OpenCV APIs; reuse the available solver without changing the simulation environment",
+    "Synthetic hand-eye correctness and closure residuals do not establish real calibration"
+  ],
+  "next_improvement": "Obtain qualified RGB target/camera poses for existing multi-axis capture; handle planar ambiguity and metric-scale provenance before any real calibration fit",
+  "software_checks": {
+    "test_count": 33,
+    "passed": true,
+    "evidence": "experiments/evaluation/20261112T060334Z_handeye_adapter/verification.json"
+  },
+  "previous_goal_turn_classification": "progress: b659557 fixed deployed observation scripts and verified existing archive evidence"
+}

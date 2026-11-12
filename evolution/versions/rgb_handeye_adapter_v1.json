@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-12T06:08:11.650239+00:00",
+  "version": "rgb_handeye_adapter_v1",
+  "type": "Observation Tools / mature solver integration",
+  "evidence": "experiments/evaluation/20261112T060334Z_handeye_adapter/result.json",
+  "new_research_round": false,
+  "stage2_rounds_used": 6,
+  "accepted": "SOFTWARE_VERIFIED_ONLY",
+  "active_default_changed": false,
+  "physical_model_changed": false,
+  "tests_passed": 33,
+  "rollback": "Standalone offline tools only; remove invocation to revert. Baseline commit b6595576057613e151975ca6080353499861f5fe; no deployed calibration."
+}
