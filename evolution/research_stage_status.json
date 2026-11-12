@@ -37,7 +37,7 @@
   "real_motion_allowed": false,
   "physics_candidate_promoted": false,
   "actual_runner_policy": "A/B/C/D runner argument; active.json v2 only consulted by learn.simulate when signature supplied",
-  "next_prerequisite": "Research stopped at user-confirmed six-round limit. Stage 2 gate remains unmet; Stage 3/4 remain unstarted. Preserve incomplete NO-GO conclusion; do not automatically run or request another round.",
+  "next_prerequisite": "Use existing multiaxis RGB/feedback captures and established hand-eye constraints. Exposure-clock software correction and source/input audit completed; no new parameter trial, no calibration promotion, six-round limit unchanged. A failed measurement method does not establish RGB-only impossibility.",
   "real_visual_modalities": {
     "historical": [
       "RGB"
@@ -46,5 +46,12 @@
       "RGB"
     ],
     "source": "explicit user confirmation 2026-11-12"
+  },
+  "current_work": {
+    "status": "METHOD_REVIEW_AND_SOFTWARE_CORRECTION_COMPLETED",
+    "source": "User requested directly relevant predecessor solutions and continued implementation",
+    "evidence": "experiments/diagnosis/20261112T054835Z_rgb_method_correction/result.json",
+    "goal_complete": false,
+    "new_research_round": false
   }
 }

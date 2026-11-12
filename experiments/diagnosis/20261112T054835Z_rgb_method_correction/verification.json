@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/media/midea/F496AC8096AC4548/piper_simulation/.venv-mujoco-hardware/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests"
+  ],
+  "returncode": 0,
+  "test_count": 28,
+  "summary": "OK",
+  "log_sha256": "5cbb00611442f6ec340e18e7e47772817add7e1b1debf43b685195f8f546dcd6"
+}

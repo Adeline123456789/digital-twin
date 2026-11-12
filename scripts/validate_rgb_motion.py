@@ -6,6 +6,7 @@ import cv2
 import h5py
 import numpy as np
 from learn import DATA, ROOT, record, finish, digest, save
+from observe_real_failures import camera_monotonic_times
 
 
 def track_step(previous, current, points):
@@ -36,7 +37,7 @@ def episode(name, design, local):
     rows = list(csv.DictReader(command.open()))
     ct = np.array([float(x['monotonic']) for x in rows])
     with h5py.File(h5) as f:
-        timestamps = f['timestamp_monotonic'][:]
+        timestamps = camera_monotonic_times(f, 'cam_right_wrist')
     phases = np.array([rows[i]['phase'] for i in np.clip(np.searchsorted(ct, timestamps, side='right')-1, 0, len(rows)-1)])
     selection = np.flatnonzero(np.isin(phases, ['grasp', 'lift']))
     start, end = int(selection[0]), int(selection[-1])

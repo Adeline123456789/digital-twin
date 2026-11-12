@@ -1,0 +1,307 @@
+{
+  "experiment_id": "20261112T054835Z_rgb_method_correction",
+  "timestamp": "2026-11-12T05:53:52.061997+00:00",
+  "task": "Correct existing RGB observation clock and audit already collected calibration inputs",
+  "model": "deterministic Python; literature/source assessment by Codex",
+  "environment": "offline_archive",
+  "program_version": {
+    "scripts/observe_real_failures.py": "933641ba36a7182c54d054c97fff81897cd7649d3d2c58506c83606298b4d318",
+    "scripts/validate_rgb_motion.py": "510378a87fce7a54557f9a85ee5e50f65fc100abf053b48e2d4584978197c122"
+  },
+  "original_exporter_sha256": "19581f4ca503eed3489c980a8932ef68c002354e0a10f2ad486e3f84459f8ae3",
+  "original_simulation_sources_unchanged_since_round6": true,
+  "protocol_version": "ef3622d4328d6231e8b5770cac4a3bd6813bf50f3902a6fe3029c455b7db9f9f",
+  "memory_version": {
+    "ER006": 2
+  },
+  "initial_state": {
+    "input_design": "experiments/research_stage2/round6/design.json"
+  },
+  "actions": [
+    "Compare HDF5 exposure times against original RGB source-frame metadata",
+    "Inventory existing RGB and measured joint records"
+  ],
+  "expected_effects": [
+    "Use the selected camera exposure to query command phases and motor feedback"
+  ],
+  "observed_effects": [
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "frames": 1882,
+      "wrist_minus_master_ms_range": [
+        -16.675233840942383,
+        16.672372817993164
+      ],
+      "changed_command_row_count": 1752,
+      "changed_phase_count": 6,
+      "changed_phases": [
+        {
+          "frame": 573,
+          "before": "approach",
+          "after": "settle"
+        },
+        {
+          "frame": 606,
+          "before": "settle",
+          "after": "descend"
+        },
+        {
+          "frame": 677,
+          "before": "descend",
+          "after": "grasp"
+        },
+        {
+          "frame": 768,
+          "before": "lift",
+          "after": "grasp"
+        },
+        {
+          "frame": 839,
+          "before": "transport",
+          "after": "lift"
+        },
+        {
+          "frame": 1205,
+          "before": "insert",
+          "after": "align"
+        }
+      ],
+      "left_joint_range_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_frame_clock_check": "PASS",
+      "evidence": [
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/commanded_probe.csv",
+          "sha256": "c9778e55a8e9fa150e4fb5a45522d7f4343d478fd6af1eb3b0c714fd1f367673"
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/proprio_stats/proprio_stats.h5",
+          "sha256": "7ece580708a5e3ce61bff99a282b8413eda7a88ca188a26f288027e3e2ec3073"
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/right_wrist/camera.json",
+          "sha256": "abf3617237352fdfefab19e764a7fe2ea2b81d08bf73381f48561f4bc4aede1b"
+        }
+      ]
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "frames": 1868,
+      "wrist_minus_master_ms_range": [
+        -8.140802383422852,
+        9.888648986816406
+      ],
+      "changed_command_row_count": 836,
+      "changed_phase_count": 0,
+      "changed_phases": [],
+      "left_joint_range_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_frame_clock_check": "PASS",
+      "evidence": [
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/commanded_probe.csv",
+          "sha256": "b194d0c4afaacbb8f1eab15a05bca926f821ce4f4bee7e5c9572edbc9c1d6e35"
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/proprio_stats/proprio_stats.h5",
+          "sha256": "0b5d64a04465a71b87baba88b7d0cb6c6b892926ce19b49b7e946e033f4c19ad"
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/right_wrist/camera.json",
+          "sha256": "4f99220e84c5967e4ffd496b2d2d489e98d1ef35aa94d8cb7e62d73147d2d2b2"
+        }
+      ]
+    },
+    {
+      "source_episode": "20261109_real_smooth_attempt_000001",
+      "frames": 1584,
+      "wrist_minus_master_ms_range": [
+        -16.636371612548828,
+        16.62731170654297
+      ],
+      "changed_command_row_count": 471,
+      "changed_phase_count": 0,
+      "changed_phases": [],
+      "left_joint_range_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_frame_clock_check": "PASS",
+      "evidence": [
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_smooth_attempt_000001/raw/task/commanded_probe.csv",
+          "sha256": "bd6d295fb2c535c4c1cde692c31696385024fa4bd8164969894198b84005504a"
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_smooth_attempt_000001/proprio_stats/proprio_stats.h5",
+          "sha256": "d12cdb408fe9c3dd254a17878d9b6d7e98f0ff729704a6072a93ef29b61d4a14"
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261109_real_smooth_attempt_000001/raw/task/right_wrist/camera.json",
+          "sha256": "4f9894ae7f881bcb3676f4e8d16cca3aa06758688a974064eb603a139e3e21c1"
+        }
+      ]
+    }
+  ],
+  "existing_calibration_inputs": [
+    {
+      "dataset_relative_path": "calibration/wrist_multiaxis_20261109_01",
+      "command_rows": 2500,
+      "duration_s": 25.415490623097867,
+      "phases": [
+        "entry_hold",
+        "j6_outbound",
+        "j6_outbound_hold",
+        "j6_return",
+        "j6_return_hold",
+        "j5_outbound",
+        "j5_outbound_hold",
+        "j5_return",
+        "j5_return_hold",
+        "j4_outbound",
+        "j4_outbound_hold",
+        "j4_return",
+        "j4_return_hold"
+      ],
+      "right_rgb_jpegs": 778,
+      "measured_joint_range_deg": [
+        0.0,
+        0.484,
+        0.127,
+        4.9639999999999995,
+        5.198,
+        7.957999999999998
+      ],
+      "evidence": [
+        {
+          "dataset_relative_path": "calibration/wrist_multiaxis_20261109_01/commanded_probe.csv",
+          "sha256": "9eee18ee457e0f970cc4590d5f729af86488c308045ff3ec401d9c3543a6fd42"
+        },
+        {
+          "dataset_relative_path": "calibration/wrist_multiaxis_20261109_01/right_wrist/0000.jpg",
+          "sha256": "870bf8ab5cf17b7cff7c9cbac3f31c311cddcc280b1840ed609b45dabafc24ba"
+        },
+        {
+          "dataset_relative_path": "calibration/wrist_multiaxis_20261109_01/right_wrist/0777.jpg",
+          "sha256": "7943ed6ed81da2675b35ead99ec1f393415179b8de07cebc71eae07ee050dcc9"
+        }
+      ]
+    },
+    {
+      "dataset_relative_path": "calibration/wrist_probe_01",
+      "command_rows": 1100,
+      "duration_s": 11.096064841840416,
+      "phases": [
+        "entry_hold",
+        "outbound",
+        "outbound_hold",
+        "return",
+        "return_hold"
+      ],
+      "right_rgb_jpegs": 1800,
+      "measured_joint_range_deg": [
+        0.0,
+        0.523,
+        0.0,
+        0.0,
+        0.0,
+        8.042000000000002
+      ],
+      "evidence": [
+        {
+          "dataset_relative_path": "calibration/wrist_probe_01/commanded_probe.csv",
+          "sha256": "fa23aa85d880b235fb62642c6f74752b8f5e502f1c971cbef93f8fa34957f338"
+        },
+        {
+          "dataset_relative_path": "calibration/wrist_probe_01/right_wrist/0000.jpg",
+          "sha256": "a8530aebabbceb7d6009b151bc7069acdfe9244a2fb794cde20ecc5eb145b8de"
+        },
+        {
+          "dataset_relative_path": "calibration/wrist_probe_01/right_wrist/1799.jpg",
+          "sha256": "269d2d1d988f3689cd9621328217d0213f2ca38acf027f4ad6db5f001297bd5c"
+        }
+      ]
+    },
+    {
+      "dataset_relative_path": "calibration/wrist_probe_02",
+      "command_rows": 1100,
+      "duration_s": 11.191532773897052,
+      "phases": [
+        "entry_hold",
+        "outbound",
+        "outbound_hold",
+        "return",
+        "return_hold"
+      ],
+      "right_rgb_jpegs": 349,
+      "measured_joint_range_deg": [
+        0.0,
+        0.513,
+        0.067,
+        0.0,
+        0.11100000000000065,
+        8.020999999999997
+      ],
+      "evidence": [
+        {
+          "dataset_relative_path": "calibration/wrist_probe_02/commanded_probe.csv",
+          "sha256": "b4268340bc9c1e8ee5b03d2909fb7f9a7f1936259a8d548f2065fe5aa9aa0b38"
+        },
+        {
+          "dataset_relative_path": "calibration/wrist_probe_02/right_wrist/0000.jpg",
+          "sha256": "79b79787f8c395ca401f4d4ec84ba9f07963e36b3381443d37dc4dbfc27c5194"
+        },
+        {
+          "dataset_relative_path": "calibration/wrist_probe_02/right_wrist/0348.jpg",
+          "sha256": "eb103dabac9a44a3b414e7f9bb832b4fbc231be1ea6d4630d90612e61149b236"
+        }
+      ]
+    }
+  ],
+  "failure_signature": "right_wrist_frames_aligned_to_external_camera_clock",
+  "root_cause": "Observation scripts used the external-camera master timestamps for right-wrist frames",
+  "root_cause_status": "verified",
+  "root_cause_scope": "software timestamp selection only; physical failure cause remains UNKNOWN",
+  "repair": {
+    "shared_helper": "camera_monotonic_times",
+    "physics_changed": false,
+    "dataset_modified": false
+  },
+  "result": "success",
+  "task_success": null,
+  "validation_status": "SOFTWARE_AND_ARCHIVE_VERIFIED_ONLY",
+  "new_research_round": false,
+  "research_rounds_used": 6,
+  "calibration_fit_run": false,
+  "software_checks_reference": "verification.json (separately executed; this script only checks archives)",
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "execution_time": 0.14142586599336937,
+  "llm_inference_seconds": null,
+  "simulation_seconds": 0,
+  "robot_execution_seconds": 0,
+  "human_interventions": null,
+  "lessons_learned": [
+    "Audit existing calibration captures before assuming task failures are the only available data",
+    "A failed fixed-ROI measurement is not evidence that RGB hand-eye calibration is impossible"
+  ],
+  "next_improvement": "Use existing multiaxis RGB/feedback inputs to adapt an established hand-eye solver; do not promote depth-derived candidates"
+}

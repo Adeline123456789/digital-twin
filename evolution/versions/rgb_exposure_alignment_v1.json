@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-12T05:53:22.772775+00:00",
+  "version": "rgb_exposure_alignment_v1",
+  "type": "Observation Tools / evidence correction",
+  "new_research_round": false,
+  "stage2_rounds_used": 6,
+  "accepted": "SOFTWARE_AND_ARCHIVE_VERIFIED_ONLY",
+  "evidence": "experiments/diagnosis/20261112T054835Z_rgb_method_correction/result.json",
+  "active_default_changed": false,
+  "physical_model_changed": false,
+  "tests_passed": 28,
+  "rollback": "Restore observation scripts from parent commit 40c4f0e6ca235e203a049a2a7b950b3c81aced63; no physical calibration deployed"
+}

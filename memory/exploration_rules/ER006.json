@@ -1,6 +1,6 @@
 {
   "id": "ER006",
-  "content": "For this RGB-only Piper archive, frozen-ROI LK tracks did not retain enough left-finger features through grasp/lift. A fixture landmark shifted 19–24 px during grasp, independently corroborated by RGB contour centroids. Reject the fixed-view pixel-to-motor fitting attempt; do not convert these pixels into aperture or contact physics.",
+  "content": "The archived Stage 2 round 6 fixed-ROI LK procedure lost left-finger tracks across grasp/lift. Its 1 px fixture-motion gate was a method-specific assumption, not a necessary condition for RGB calibration. Common 2D translation cancels in relative finger motion; perspective, rotation and feature identity remain unresolved. The original run used the wrong camera clock; source corrected later without rerunning the measurement.",
   "applicability": "This installation, right wrist 640x480 RGB, three 20261109 failed episodes, frozen ROIs in Stage 2 round 6",
   "embodiment": "This Piper installation; no six-axis force sensor, no real depth",
   "source_episodes": [
@@ -14,13 +14,15 @@
     "Full-window feature-survival criterion; no semantic tracker",
     "Background movement does not identify its physical cause",
     "No calibrated metric aperture, real depth or contact force",
-    "No policy or physical calibration promotion"
+    "No policy or physical calibration promotion",
+    "Original six-round results remain historical; phase boundaries not re-evaluated after clock correction",
+    "No fitting was run after the gate failed: this is not an experimentally failed contact-parameter repair",
+    "Existing multiaxis RGB captures were omitted by that narrow audit; inspect calibration archives before claiming data unavailable"
   ],
-  "version": 1,
+  "version": 2,
   "signatures": [
     "rgb_finger_tracking_unreliable"
   ],
-  "ineffective_repairs": [
-    "fit_contact_physics_from_unqualified_rgb_finger_tracks"
-  ]
+  "ineffective_repairs": [],
+  "correction_evidence": "experiments/diagnosis/20261112T054835Z_rgb_method_correction/REPORT.md"
 }

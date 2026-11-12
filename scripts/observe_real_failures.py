@@ -7,6 +7,11 @@ import h5py
 import numpy as np
 from learn import DATA,ROOT,record,finish,digest,save
 
+def camera_monotonic_times(archive, camera):
+    """Map each RGB exposure to the exporter's host clock, preserving frame order."""
+    return (archive['timestamp_monotonic'][:] +
+            (archive[f'camera/{camera}/timestamp'][:] - archive['timestamp'][:]))
+
 def yellow_top(frame,saturation):
     hsv=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
     mask=cv2.inRange(hsv,np.array([15,saturation,45]),np.array([42,255,255]))
@@ -24,7 +29,7 @@ def main():
             video=ep/'videos/cam_right_wrist_rgb.mp4';h5=ep/'proprio_stats/proprio_stats.h5';csvfile=ep/'raw/task/commanded_probe.csv'
             commands=list(csv.DictReader(csvfile.open()));ct=np.array([float(x['monotonic']) for x in commands])
             with h5py.File(h5) as f:
-                ts=f['timestamp_monotonic'][:]
+                ts=camera_monotonic_times(f,'cam_right_wrist')
                 state=f['state/right_arm/joint_positions'][:];action=f['action/right_arm/joint_positions'][:]
                 valid=f['valid/right_arm_joint_action'][:].astype(bool)&f['valid/state'][:].astype(bool)
             indices=np.clip(np.searchsorted(ct,ts,side='right')-1,0,len(ct)-1)
