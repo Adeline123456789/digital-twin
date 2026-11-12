@@ -1,0 +1,121 @@
+{
+  "experiment_id": "20261112T040059Z_e90f39df",
+  "status": "REJECTED_NOT_ACTIVE",
+  "repair": {
+    "accepted": false,
+    "normal_change_deg": 0.0967848909421322,
+    "height_change_m": 0.00034912889220606314,
+    "within_bounds": true,
+    "mujoco_load_verified": true,
+    "previous_T_world_rgb": [
+      [
+        0.0,
+        -0.8997463584583374,
+        0.43641321066273964,
+        0.016575
+      ],
+      [
+        -0.9999471538054351,
+        0.00448656545792699,
+        0.009249882529047432,
+        -0.0115
+      ],
+      [
+        -0.010280544558020289,
+        -0.43639014788529834,
+        -0.8996988102872193,
+        0.7564270783767048
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "candidate_T_world_rgb": [
+      [
+        4.336808689942018e-19,
+        -0.8994455940192086,
+        0.43703274865784697,
+        0.016575
+      ],
+      [
+        -0.9999618216587745,
+        0.0038188566984688893,
+        0.007859488430048368,
+        -0.0115
+      ],
+      [
+        -0.00873814767931424,
+        -0.43701606347244193,
+        -0.8994112546784063,
+        0.7567762072689108
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "active_default_changed": false
+  },
+  "metrics": [
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "role": "train",
+      "baseline": {
+        "samples": 145322,
+        "rmse_mm": 3.478313814644409,
+        "median_abs_mm": 1.9019024228773342,
+        "p95_abs_mm": 8.242104120041008
+      },
+      "candidate": {
+        "samples": 145322,
+        "rmse_mm": 3.461730953638443,
+        "median_abs_mm": 1.6676768648455007,
+        "p95_abs_mm": 8.14076223584783
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "role": "heldout",
+      "baseline": {
+        "samples": 145014,
+        "rmse_mm": 3.557557347704604,
+        "median_abs_mm": 2.0967777698688086,
+        "p95_abs_mm": 7.981798853803856
+      },
+      "candidate": {
+        "samples": 145014,
+        "rmse_mm": 3.4415149181087408,
+        "median_abs_mm": 1.8872165073494442,
+        "p95_abs_mm": 7.791766415076381
+      }
+    },
+    {
+      "source_episode": "20261109_real_smooth_attempt_000001",
+      "role": "heldout",
+      "baseline": {
+        "samples": 145368,
+        "rmse_mm": 3.3869169120435485,
+        "median_abs_mm": 1.970209367525365,
+        "p95_abs_mm": 7.896386490052885
+      },
+      "candidate": {
+        "samples": 145368,
+        "rmse_mm": 3.3279538464466434,
+        "median_abs_mm": 1.7677295771611479,
+        "p95_abs_mm": 7.730244815649109
+      }
+    }
+  ],
+  "limitations": [
+    "Three frames per episode, same physical camera and workstation; not cross-installation validation",
+    "RGB-D systematic bias persists across episodes; no external metrology",
+    "Table world z=25 mm and CAD world XY/yaw remain fixed assumptions",
+    "No calibrated aperture, contact force, friction, mass or COM",
+    "No real motion or new task rollout; camera load check does not measure task success"
+  ]
+}

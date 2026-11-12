@@ -1,0 +1,24 @@
+{
+  "id": "DT002",
+  "content": "The tested external-camera table fit is a rejected candidate: separate-recording plane RMSE improves only 3.26% and 1.74%. Do not use it as an accepted twin calibration or evidence of contact recovery.",
+  "applicability": "original Piper scene and this station external RGB-D; fixed table ROIs; only normal/distance observable",
+  "source_episodes": [
+    "20261112T040059Z_e90f39df"
+  ],
+  "validation_status": "CANDIDATE_REJECTED",
+  "success_count": 0,
+  "failure_count": 1,
+  "count_semantics": "calibration acceptance, not task success",
+  "limitations": [
+    "Three frames per episode, same physical camera and workstation; not cross-installation validation",
+    "RGB-D systematic bias persists across episodes; no external metrology",
+    "Table world z=25 mm and CAD world XY/yaw remain fixed assumptions",
+    "No calibrated aperture, contact force, friction, mass or COM",
+    "No real motion or new task rollout; camera load check does not measure task success"
+  ],
+  "version": 1,
+  "signatures": [
+    "table_registration",
+    "gripper_sim_real_mismatch"
+  ]
+}

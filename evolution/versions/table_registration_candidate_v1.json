@@ -1,0 +1,9 @@
+{
+  "version": "table_registration_candidate_v1",
+  "experiment_id": "20261112T040059Z_e90f39df",
+  "stage": 2,
+  "round": 4,
+  "accepted": false,
+  "active_default_changed": false,
+  "reason": "Bounds and actual MuJoCo loading pass; independent improvements 3.26%/1.74% fail the predeclared 10% threshold"
+}

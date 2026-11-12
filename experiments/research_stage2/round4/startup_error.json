@@ -1,0 +1,13 @@
+{
+  "experiment_id": "stage2_round4_startup_20261112",
+  "timestamp": "2026-11-12T04:00:58.624450+00:00",
+  "model": "Python parser",
+  "task": "Start camera/table validation",
+  "environment": "offline",
+  "result": "infrastructure_error",
+  "task_success": null,
+  "error": "SyntaxError: unmatched closing parenthesis in limitations list",
+  "repair": "Corrected closing bracket before any data fit or model load",
+  "hardware_commands": 0,
+  "tokens": null
+}
