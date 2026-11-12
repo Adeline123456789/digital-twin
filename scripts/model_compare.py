@@ -10,10 +10,12 @@ CASES=[
  {'id':'repeat_insertion','task':'Resolve repeated insertion failure','facts':['Object moved in gripper during insert','Holding gripper during retreat was tried and insertion still failed'],'proposed_repair':'hold gripper during retreat again without new evidence'},
  {'id':'unseen_flexible_object','task':'Route an unfamiliar flexible cable','facts':['No matching skill','Only rigid-object motions verified','No contact observation']}]
 EXPECTED=['UNKNOWN','REJECT_REPEAT','UNKNOWN_TASK_MODE']
-def ask(prompt,local):
+def ask(prompt,local,include_catalog=True):
     start=time.monotonic()
-    p=subprocess.run(['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check',
-       '--sandbox','read-only','--model',os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna'),'--json','-'],input=prompt,text=True,cwd=local,
+    command=['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check',
+       '--sandbox','read-only','--model',os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna'),'--json']
+    if not include_catalog:command+=['-c','skills.include_instructions=false']
+    p=subprocess.run([*command,'-'],input=prompt,text=True,cwd=local,
        stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=120)
     events=[]
     for line in p.stdout.splitlines():
@@ -24,7 +26,8 @@ def ask(prompt,local):
     tools=[e for e in events if e.get('type')=='item.completed' and e.get('item',{}).get('type') not in ('agent_message','reasoning')]
     if p.returncode or not messages:raise RuntimeError('Model call failed; return code '+str(p.returncode))
     answer=json.loads(messages[-1].strip().removeprefix('```json').removesuffix('```').strip())
-    return dict(prompt=prompt,answer=answer,usage=usage,wall_seconds=time.monotonic()-start,tool_events=len(tools))
+    return dict(prompt=prompt,answer=answer,usage=usage,wall_seconds=time.monotonic()-start,
+                tool_events=len(tools),include_catalog=include_catalog)
 def main():
     skills=[json.loads(p.read_text()) for p in (ROOT/'memory/verified_skills').glob('*.json')]
     if not skills:raise RuntimeError('C/D require verified skills; run simulation first')

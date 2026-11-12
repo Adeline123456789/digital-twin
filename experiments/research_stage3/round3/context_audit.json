@@ -1,0 +1,53 @@
+{
+  "codex_version": "0.162.1",
+  "diagnostic": "debug prompt-input loads user config; it is not the exact exec --ignore-user-config payload",
+  "observations": {
+    "configured_prompt": [
+      {
+        "role": "developer",
+        "serialized_characters": 26297
+      },
+      {
+        "role": "developer",
+        "serialized_characters": 2744
+      },
+      {
+        "role": "developer",
+        "serialized_characters": 579
+      },
+      {
+        "role": "user",
+        "serialized_characters": 7479
+      },
+      {
+        "role": "user",
+        "serialized_characters": 317
+      }
+    ],
+    "no_catalog_prompt": [
+      {
+        "role": "developer",
+        "serialized_characters": 2814
+      },
+      {
+        "role": "developer",
+        "serialized_characters": 2744
+      },
+      {
+        "role": "developer",
+        "serialized_characters": 579
+      },
+      {
+        "role": "user",
+        "serialized_characters": 7480
+      },
+      {
+        "role": "user",
+        "serialized_characters": 317
+      }
+    ]
+  },
+  "interpretation": "First developer input shrinks from26297 to2814 serialized characters; real API usage must establish token savings",
+  "raw_prompt_kept_private": true,
+  "initial_failed_diagnostic": "--ignore-user-config is accepted by exec, not the root debug command; no inference was made"
+}

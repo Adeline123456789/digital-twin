@@ -16,9 +16,9 @@ from episode_format import source_for
 ROUND = ROOT / 'experiments/research_stage3/round2'
 
 
-def run_case(case, inline):
+def run_case(case, inline, label='Stage3 round2'):
     out, result = simulate('research_stage3', case['offset_mm'], case['shift_mm'],
-                           'Stage3 round2 ' + case['name'], record_inline=inline)
+                           label + ' ' + case['name'], record_inline=inline)
     ident = result['experiment_id']
     local = ROOT / '.local' / ident
     stage = DATA / 'self_evolution' / ('stage3_recording_' + ident)

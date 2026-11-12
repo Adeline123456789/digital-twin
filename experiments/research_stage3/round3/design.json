@@ -1,0 +1,58 @@
+{
+  "stage": 3,
+  "round": 3,
+  "timestamp": "2026-11-12T08:13:09.122669+00:00",
+  "hypothesis": "Automatic general skill catalog consumes avoidable planner input tokens when all relevant robot protocol/memory is supplied explicitly",
+  "changed_factor": "skills.include_instructions: default true versus false in codex exec",
+  "cases": [
+    {
+      "model": "gpt-6-luna",
+      "shift_mm": 0.5,
+      "seed_episode": "20261112T075231Z_2a125acc",
+      "catalog_order": [
+        true,
+        false
+      ],
+      "role": "development"
+    },
+    {
+      "model": "gpt-6-astra",
+      "shift_mm": 1.5,
+      "seed_episode": "20261112T075231Z_2a125acc",
+      "catalog_order": [
+        false,
+        true
+      ],
+      "role": "independent model/initial condition after code freeze"
+    }
+  ],
+  "budget": {
+    "model_calls": 4,
+    "max_call_seconds": 120,
+    "physics_trials": 4,
+    "max_trial_seconds": 900,
+    "reported_total_tokens_stop_before_next_call": 120000
+  },
+  "held_constant": [
+    "Exact supplied task prompt within each pair",
+    "Same protocol, relevant skills and failed execution feedback",
+    "Same readonly Codex sandbox and generic base instructions",
+    "Same original MuJoCo source, 12deg/s timing, success and collision checker",
+    "Opt-in inline recorder for BOTH arms",
+    "One model call and one execution per arm; no feedback retries"
+  ],
+  "acceptance": [
+    "Both requested models must return bounded valid JSON without tool events",
+    "No loss of valid successful episodes relative to same-model baseline; candidate must achieve at least one success for each model",
+    "At least20% fewer reported input tokens per same-model pair",
+    "Report output/cached tokens and latency separately; do not substitute character count for usage",
+    "Verify complete existing-format Episodes for all executed actions"
+  ],
+  "limitations": [
+    "N=1 pair per model; no latency significance",
+    "This is not A/B/C/D protocol/skill ablation or unseen-task proof",
+    "Model names are requested identities, backend identity not independently verified",
+    "Orchestration token costs and billed monetary cost remain unknown",
+    "No real robot motion or new physics calibration"
+  ]
+}
