@@ -1,0 +1,959 @@
+{
+  "experiment_id": "20261112T035409Z_12a40111",
+  "timestamp": "2026-11-12T03:54:09.837790+00:00",
+  "model": "deterministic adapter; no LLM inference",
+  "task": "RGB-D evidence availability at grasp/lift transitions",
+  "environment": "real_historical",
+  "program_version": {
+    "git_head": "2791872999bfb239805ae176f6b0eff5fe41bd19",
+    "source_sha256": {
+      "configs/alignment_landmarks.json": "35da429ba0fe15594dd07045d08cef1a0a0a832079cef45f70aa9e63fb66e93e",
+      "configs/appearance.json": "2514098f051a9430aab300ff8a68ec95835206bc129aa7ed3e0ba687eaf981ef",
+      "configs/calibration/plug_rgbd_20261108.json": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+      "configs/clean_table_workcell.yaml": "b432f48cc4b03630f896880fa9a56e366bd450ac7cfc22b01a5711642a277aee",
+      "configs/connector_alignment.yaml": "1e89de216388de899d4b22dc2a359dea8c21d113ac34f4d5e26ba96192766365",
+      "configs/realsense_rgb.json": "8f26fa0804b58faa3890345419c40c372810cd744710326e7cd036c920f4bbaf",
+      "configs/tasks/clean_table.yaml": "31861cb679196e09d2b565fc1a6887b812ee332ddc44dddfe19f92309cecb666",
+      "configs/tasks/connector.yaml": "a30a7d95585daf4a6801640425ab73be4c611252e2375f9e16ce442895a922ed",
+      "configs/tasks/real_connector.yaml": "4b1a7ff3d8773662453ef8ab8d2255ae422a27f0e8d40e90d55415441a09f84a",
+      "configs/tasks/real_connector_calibrated.yaml": "25fe40664fc83d5f43e65bf1ab5dfc4c8453b9c1455b02b2aed2d67d852478d7",
+      "configs/tasks/real_connector_sim_randomized.yaml": "5540b55e2408acf34ac8632597a011818df8311a37035111277645d64ea13bfb",
+      "configs/tasks/real_straw.yaml": "bdbc3a40123271bec6656e3b0c73acf8ae55bad0ba80512ee75597038d02e7ca",
+      "configs/workcell.yaml": "301833f276482962851d043e689ad5359bc9e3837ab7794728e064523d73a9f9",
+      "scripts/build_plug_alignment.py": "50af156347a6a9ca8db3747d95b301ec4ebf0282916cd40704dd4d19356eda99",
+      "scripts/capture_cad_reference.py": "3318f099a42b5ccf04abe9569fac9859a1452636886b098bfcd494fd7b2b749f",
+      "scripts/capture_plug_calibration.py": "55166b4837daaad72d5fba423affe2544e0347cfd87d16e9682a06fe6a82ffd3",
+      "scripts/check_episode.py": "cae17b401b0684b3a4267858ebe761a3350eb98f397da9af5fcf320a6aa7cfd2",
+      "scripts/check_plug_camera_motion.py": "469e1734a6cf2490dc7219ebc4697f5e2583782f08cec286976397dfe280200e",
+      "scripts/check_plug_probe_sweep.py": "33e9310020a799f5f2157be513855016c1e710c2f2f41df9cde3c6e77eea4166",
+      "scripts/collect_plug_contact_probes.py": "368871f8ed9ecd7349e9f55764f11a8e8bf6292135db38da31e9e54d9da05eb2",
+      "scripts/collect_plug_sim_episode.py": "4c3c3e811478b7ec314855fa5b6d395b7c73ea7e71719027c4f5c195a9af9267",
+      "scripts/compare_live_piper.py": "f2b1ed022503e5a9494fc436920dfd4f01321c8fbd0bd1d75d58e177b9751594",
+      "scripts/compare_recorded_scene.py": "76f4ea6775d940617885a2950e4505889a1c3858f39063a7f0f64c1b3fad44aa",
+      "scripts/connect_piper.py": "d3363d542b878fa63a8e295e92341df912406b0d9cc030f99111684753a485a1",
+      "scripts/continue_plug_task.py": "44fe13d29b3936a469f6be92157fb32d8e89ac7b0cc651144df01ae23dc1c004",
+      "scripts/convert_workcell_cad.py": "cd9b182aeff48022c00312d3967d7620c1cbfba8b5b8d56beeef8c38c0dd90ad",
+      "scripts/doctor.py": "78f8825e3da733466f21c6ac5f90f4a0044f16f21f5a42ae8ef70cf21fb6ef96",
+      "scripts/download_runtime_wheels.py": "ca7e3d89d221dc8e72314d013603693cdc519f8dff15838ea3675497011920da",
+      "scripts/export_lerobot.py": "980153efbb51b46c005a0203465aded289175496a40f3ac760bf490678fc6787",
+      "scripts/export_plug_calibration.py": "19581f4ca503eed3489c980a8932ef68c002354e0a10f2ad486e3f84459f8ae3",
+      "scripts/export_realsense_rgb_calibration.py": "816364dced3537d9a9bc96827f34837c5626a3a5439899e8742d26ee65669999",
+      "scripts/extract_lerobot_alignment.py": "10fe27e4bcc2e0e946460e0e679d6b65066b7068a078e1aefe79fc63378cb781",
+      "scripts/fit_plug_table_depth.py": "e223dafb6f8524d1427b9bc133bb4cf0fc6734b76569e603801e91607d9bc3af",
+      "scripts/fit_plug_wrist_axis.py": "72b9bbcadf0bb9f25dc640a73557653edfcd685389166c409bb4a0de75650719",
+      "scripts/fit_plug_wrist_multiaxis.py": "b22eb6131e96ba58a6c4033d7d2cd9c0e41162c7b0978db98390f5cd45adc31b",
+      "scripts/inspect_step.py": "cb74b55b6f350bb7318060a4eaa457326a010d3d7245e7fab12ec3a13956f164",
+      "scripts/locate_plug_socket.py": "c1f237a1331d7f84c05a91399857a0e509d9548a439fd379f0325bee55711743",
+      "scripts/measure_real_alignment.py": "37259df864e2939d58dfbb58ae816d4e56146d303f239553a16d9befff461ac4",
+      "scripts/mujoco_piper_probe.py": "e5fb3edadd3ccfc671e8cbcce7d2a0a5735a8502dd43378ce539e6cebac98914",
+      "scripts/observe_piper_camera.py": "bc3a8dcbaf2764a626b13913e91c485368552d7faa9c81e4cc58af0bdc6b5d10",
+      "scripts/prepare_assets.py": "6b054b4a72cd91bf5964ba63f80c2ee5ce3a7af5d7110e5d85c1591bf5d7bbdd",
+      "scripts/prepare_cad_gripper.py": "e313b1e0b84f38220a127ce25efe2363c5e0d43e880ae92381443bbb848ba003",
+      "scripts/prepare_clean_table_textures.py": "ebbec120a5f055ee81455630395dae8f82394f881f9d84bffab25b348fab22fc",
+      "scripts/prepare_connector.py": "4e102eb23d33d5dac6cc3835a4dfb3ae9a1dbbc6bf6a7c3470d4c0843dca4da5",
+      "scripts/prepare_mujoco.py": "2a49aad303a588c79eb7ad8de8c541195cb71f1a5689a9b46beda1d8c44b4eb7",
+      "scripts/preview_layout.py": "0cf67059f52965579544986168bad3a37b77389e1000b389de4b97d6d6845760",
+      "scripts/preview_plug_realism.py": "d5f85ce14e79469f9a101012223c58c07d475ad692685f4c1e28a49cbd23b432",
+      "scripts/probe_plug_right_wrist.py": "91c922889994b42e6d7722e32dcc327535a65795b1a5378f79c9f61fc7c7164c",
+      "scripts/register_plug_fixture_views.py": "a51dea7163206d261a143e85b5caf5513bd2de46a45df6d6b458d18aa43084ca",
+      "scripts/render_lerobot_alignment.py": "0fc1a9a62c0c2a4f9adcc26de67ee0a634f3f3b4cb70bb77d02e2c518ef5ff65",
+      "scripts/replay_plug_real_in_sim.py": "2c2c1b3b39c7a5998713c1771a1506fe84ed3ba9f2ed73e445c3716a8648d5a4",
+      "scripts/replay_recorded_scene.py": "92dee6585109901bab5050e8eb8fdc6371d0abc409304b81e478a88f166cbb3e",
+      "scripts/run_scene.py": "3a6cc5b90c944c32fac4e69b82bb02eff5dc724e5efb216cad1cbdf3c02fc203",
+      "scripts/sync_mujoco_home.py": "baad2d8a1d0199519614992e74a5d796b546dcd32a515cd5a8559ff15140346f",
+      "scripts/sync_mujoco_joint.py": "6a50bfee03c1a640074a6a6c679c0c21efb9e934949a622445c48d79ce0b7568",
+      "scripts/try_plug_pick_sim.py": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+      "scripts/verify_cad_alignment.py": "c0a6199f72741f39fa09ae550eb2aaa0cb449d8eff126a547b24a921c34c075e",
+      "scripts/verify_clean_table.py": "d230e341ae90e37ec4cf38e813704c089eb6f6795224e2bc00f2b09d4d4fba1d",
+      "scripts/verify_connector.py": "6596345a4c7276238a21f235fdd372a97cf1ab8609dabd909aa8b26d3d77c71a",
+      "scripts/verify_gripper.py": "1db5f828502c8d438d834f59045db248affdf800987762b2fd2f129abdfa124e",
+      "scripts/verify_mixed_plug_dataset.py": "3171182069187927dea867f4c812c90d21eda39967daadbe77c70b105c9befb4",
+      "scripts/verify_mujoco_projection.py": "715a1e88b66f191436a11d19e7676c2f22795a81773fae6e2b9da4431ed8cc14",
+      "scripts/verify_rgb_projection.py": "46062831a69ed08c30b78ff456642de00401b3cbf040ddfde833cbe3380c566a",
+      "scripts/verify_simulation.py": "605c6f3b236b389b3d7c7d8684662bc2c2077d9df7c88534973c0168721e0e97",
+      "src/piper_sim/__init__.py": "fdbb0835a52a75d5992e87623305b450c8c26cff3afcb34ff4954967606e07f9",
+      "src/piper_sim/agilex.py": "d2c791e2b6c727d3055401def2164f90da1456144278a8c8060b58e04de3e87e",
+      "src/piper_sim/appearance.py": "2ac8d107e61dac7dc99158c5def8180273ed120c8756fdf735945c6553fe05fb",
+      "src/piper_sim/backends/__init__.py": "ad3a37c45b0d13e475839c66ba4cb06da35e5ef4317236b771c9b2b48b309123",
+      "src/piper_sim/backends/isaac.py": "69d4e924716b81ff445fd16fd1b3a389cfdf6a72dc19fca98d1a1df71f975162",
+      "src/piper_sim/backends/mock.py": "2bf84516dc36d6afb7b8baa17ca2f75eb2e243d02caf84669c568945f3beb000",
+      "src/piper_sim/backends/mujoco.py": "32e8326d506f972ed870421ff3a4493d5fae51ccfa109ca2f0cda4d7ed0cead9",
+      "src/piper_sim/backends/piper.py": "a62c5e98562c065b4249bb8dd1f49580b044ac27843eaf134eb3bd53bd62e7b8",
+      "src/piper_sim/backends/sdk_tracking.py": "2f43804a3f6c8e42e94f97426433c7d8f979b4ff91d3669808d61d5c9be60dca",
+      "src/piper_sim/camera_models.py": "30b933302c198f136f62b886582de5a38b9be59cc6703c01a24e99420bfa62cf",
+      "src/piper_sim/client.py": "751f9b0f3c5d135e1708d51a99ed34765f647aa94f4e535b95a4e7cd9c15c020",
+      "src/piper_sim/config.py": "0ea6861c61a0b79b72006598cac3f080a2b2e5e6a289ebfad433d1e729699a19",
+      "src/piper_sim/contracts.py": "a4be720987064cfdeb9dd46361602e831086b100ff5eae5aa2e1068f64d4340d",
+      "src/piper_sim/control.py": "10dd95891225419193608a4312b6ecfe6218a12f5c43dea354fdab217e8e860a",
+      "src/piper_sim/dataset.py": "5d9afbf916829f1be9ce0e003ac65cdd4b16dcceabc7a97b739e55f7c71ca391",
+      "src/piper_sim/home_zero_transport.py": "9d9e6dbe83e3ba5540d368d04e9db66a2bb8de2c52e9085aa8599b10bc894afe",
+      "src/piper_sim/joint_sync.py": "0b1c22324009da09ab5b3c6dc332560a5c86a3f8157c00d4bf9cf36e16de3d2c",
+      "src/piper_sim/kinematics.py": "903073b8aef1986e0e61e5effa789861d4daa95ce55592b539918409fe227870",
+      "src/piper_sim/lerobot_alignment.py": "ef98c7a2748d544d74f5365506c6e6a186b3ef3d0726d0260675ee59eb46c0eb",
+      "src/piper_sim/lerobot_export.py": "2f778a13e9f45ff372b74cbdad9d73e8043c61b3c340a38aaa38e2fe298385ae",
+      "src/piper_sim/mixed_recording.py": "4daa7f8b10a6fff4211cd26fe08db1c486593a76b1240707548a2e77683f2269",
+      "src/piper_sim/mujoco_asset.py": "b3b2dbf13d457941485aaa10f55c9244f9f6e1c8e267be4b59fd4fd884224bee",
+      "src/piper_sim/piper_connection.py": "cd93411301e994a483b02d746546cd0bae9e3cb488c32ca8fbb95054c9d3934f",
+      "src/piper_sim/recorded_env.py": "ff1949b59861192a75d1e9faa5dc344f9444956f2bc4599e0b4dfc95e77128a4",
+      "src/piper_sim/recording.py": "5212cdb33c0323d24fd96d14a919fd0465ad4dd6102969d754ec7b5a04c87c62",
+      "src/piper_sim/robot_asset.py": "d6b2c6c5ac623f3aabd917e5c7bf75f716a69887bf6852ead106097082f13045",
+      "src/piper_sim/safety.py": "18765b363fa0c4a96fa600155c27d6873e745b692a139fcdda3b69022e5f5100",
+      "src/piper_sim/scene.py": "dd9a09b9b3c63d19f75f37a7e8af31d4ae63e0e1122acc93a9d0cfb61e372b84",
+      "src/piper_sim/sensors.py": "49c560222a75f8390a1af34622018b670af6efc3afedb976922706205981133d",
+      "src/piper_sim/simulation.py": "b470f5fb228d0d0b46b3c7ab950afe1a690c3dd519f4fc72f564df25d874f154",
+      "src/piper_sim/sync_view.py": "4285efd7619a6058dd43d62aacac7d0d69a1bdc5f1f7b574550fd385afc6de10",
+      "src/piper_sim/task_archive.py": "c1ce7aa6fa6a01893a20787c8b95e79d90ec5690b029bc222fea01e7b8eed0c9",
+      "src/piper_sim/tasks/__init__.py": "8d4b56c26d49867f6d7b7a8ba2ee5dc7bc3727fc4acb7b51b7fb883180aa202b",
+      "src/piper_sim/tasks/clean_table.py": "ada6da330f6fce87ff277749e2aea9596cf6fee4476e758d09eb85446ed0461c",
+      "src/piper_sim/tasks/clean_table_isaac.py": "09459235f80313ce9740dcd0a167da3ed0d168dce44eea80106e0823be5e7b2d",
+      "src/piper_sim/tasks/clean_table_meshes.py": "28b6c09f44c607edb1c7ac11c72b7e16f9c6c2d5edc84c0b81d4ba7a15a6e4a6",
+      "src/piper_sim/tasks/clean_table_mujoco.py": "9a02bfc6836ab225213aa665666e3f03aa43a85c02dcf450526149cf483bbdba",
+      "src/piper_sim/tasks/connector.py": "323a0b6976ddf00c881c09bc6d2a33d3087d98a846714f3ffe4a41607e8ec281",
+      "src/piper_sim/tasks/connector_appearance.py": "efdc1d2e507f8c5677a0565089c05b9578076f0ef6f0b8d664f807b3638b9788",
+      "src/piper_sim/tasks/connector_details.py": "cbd231704e1f12666c5fdad7b44db0e2d9169db57276ab7b26b6752aba97280c",
+      "src/piper_sim/tasks/connector_workstation.py": "805cdc4253c3c923105f4ea94f4f417fbdce6a6e007a8c6c88c62e70cca6c6c6",
+      "src/piper_sim/tasks/isaac.py": "0a3907617f02aec97a56017395b408b8b0a95b896974222aab927ba432328256",
+      "src/piper_sim/tasks/mujoco.py": "1c085f7679dfe98b26f72f349f1ad6542882f50c11d4c7b8d5871cb9cbdbc636",
+      "src/piper_sim/tasks/recorded_mujoco.py": "a15dd5abe005b25291547472571e341d348d3118ab87d0e1939124f01c9373b2",
+      "src/piper_sim/tasks/recorded_scenes.py": "f4273558f379f7c83510cfec94397515474ffd3a09318a93b252c7757b51b8f7",
+      "src/piper_sim/transforms.py": "80249208c036ac641cc956dee4273fdd6feccfa93d87f37eac955ba93f342523"
+    },
+    "adapter_sha256": "0a2ef31970a36a920375910f7968a113f2f095c4433c0b062956e866664e9303",
+    "dirty": true
+  },
+  "protocol_version": "ef3622d4328d6231e8b5770cac4a3bd6813bf50f3902a6fe3029c455b7db9f9f",
+  "memory_version": {
+    "memory/digital_twin_knowledge/DT001.json": "965971e6e2bf92fc42e8375e92cd4977db517d57e0760b89e63a5ccbaaf18a7f",
+    "memory/exploration_rules/ER001.json": "0052d997b5c6e5bdf323d34c2c0afcc7f125f3b110cad6ca80355afdcbfa0ca8",
+    "memory/exploration_rules/ER002.json": "9fd06c8e863e00fc8e4e5c6759f802f286823f8473fada0c3c8a77a796d730e0",
+    "memory/exploration_rules/ER004.json": "f43767ea671559e29b3705b5fe694a3547f1876bb31809390534793ed134a8ea",
+    "memory/failure_patterns/FP001.json": "171f47cf91d5e4248516bfce18f82db198ff0e6b0542a151822dce3a22f8a1b0",
+    "memory/failure_patterns/FP002.json": "1c1dda9d243a3770e5c90567c171836dd7b4ae8f9a531abf269a9e92cbcaeba3",
+    "memory/negative_experiences/NE001.json": "9eec3cdb774eeb217a5ccea4bf34c52a20838c5f5c5096d304a9cc9e22e1ee21",
+    "memory/negative_experiences/NE002.json": "a273ddf1045a001ef950fd0c8e7705a73ba1994b390cff60517ac119bcb7d0a9",
+    "memory/negative_experiences/NE003.json": "651d83dc0d2d0713820041ee557bf88ceddd7db3331c6ec8261321edec99af7a",
+    "memory/negative_experiences/NE004.json": "47ba21c5d2d0c8d5d2d863817621f3368c209f045babb8b218726d2324edd6e4",
+    "memory/negative_experiences/NE005.json": "69cdbdc048a3017c434d3df3b020b10591d6c737108c2254301bcfe38995d0b6",
+    "memory/negative_experiences/NE006.json": "d13bc52a1928393b36dc7c7837f6ff7327d808e2e465c9c2bdd91974ca75003d",
+    "memory/verified_skills/VS001.json": "6d6ffe0d4033b40f654ff6e25e201b9dff591edf81f225873ef7a1da56395ff9",
+    "memory/verified_skills/VS002.json": "6779cba1d620bdf49dadb4655e9aecb704a458bff46cb42b3316205ab533dfc5"
+  },
+  "initial_state": {},
+  "actions": [],
+  "expected_effects": [
+    "Check whether independently measured aperture/object geometry supports physical fitting"
+  ],
+  "observed_effects": [
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "right_wrist",
+      "phase": "grasp",
+      "phase_fraction": 0,
+      "frame": 678,
+      "exposure_minus_command_s": 0.004965518834069371,
+      "encoder_width_mm": 59.6,
+      "yellow_component_depth": {
+        "mask_pixels": 23130,
+        "positive_depth_pixels": 388,
+        "positive_fraction": 0.0167747514051016,
+        "depth_p05_median_p95_m": [
+          0.16900000802706927,
+          0.18200000864453614,
+          1.3750000653089955
+        ]
+      },
+      "finger_roi_depth": {
+        "left": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 458,
+          "positive_fraction": 0.061066666666666665,
+          "depth_p05_median_p95_m": [
+            0.5110000242711976,
+            0.5380000255536288,
+            0.9260000439826399
+          ]
+        },
+        "right": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 3072,
+          "positive_fraction": 0.4096,
+          "depth_p05_median_p95_m": [
+            0.17200000816956162,
+            0.17400000826455653,
+            0.17800000845454633
+          ]
+        }
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "right_wrist",
+      "phase": "grasp",
+      "phase_fraction": 1,
+      "frame": 768,
+      "exposure_minus_command_s": 0.010440802201628685,
+      "encoder_width_mm": 49.49999999999999,
+      "yellow_component_depth": {
+        "mask_pixels": 22529,
+        "positive_depth_pixels": 175,
+        "positive_fraction": 0.007767765990501132,
+        "depth_p05_median_p95_m": [
+          0.20500000973697752,
+          0.20600000978447497,
+          0.20800000987946987
+        ]
+      },
+      "finger_roi_depth": {
+        "left": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 768,
+          "positive_fraction": 0.1024,
+          "depth_p05_median_p95_m": [
+            1.0140000481624156,
+            1.8330000870628282,
+            2.032000096514821
+          ]
+        },
+        "right": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 5847,
+          "positive_fraction": 0.7796,
+          "depth_p05_median_p95_m": [
+            0.17500000831205398,
+            0.17800000845454633,
+            0.18200000864453614
+          ]
+        }
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "right_wrist",
+      "phase": "lift",
+      "phase_fraction": 0.5,
+      "frame": 803,
+      "exposure_minus_command_s": -0.012871847720816731,
+      "encoder_width_mm": 39.2,
+      "yellow_component_depth": {
+        "mask_pixels": 21933,
+        "positive_depth_pixels": 1072,
+        "positive_fraction": 0.04887612273742762,
+        "depth_p05_median_p95_m": [
+          0.15500000736210495,
+          0.16100000764708966,
+          0.49400002346374094
+        ]
+      },
+      "finger_roi_depth": {
+        "left": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 196,
+          "positive_fraction": 0.026133333333333335,
+          "depth_p05_median_p95_m": [
+            0.4290000203764066,
+            0.4310000204714015,
+            0.43200002051889896
+          ]
+        },
+        "right": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 7493,
+          "positive_fraction": 0.9990666666666667,
+          "depth_p05_median_p95_m": [
+            0.21200001006945968,
+            0.21700001030694693,
+            0.2220000105444342
+          ]
+        }
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "right_wrist",
+      "phase": "lift",
+      "phase_fraction": 1,
+      "frame": 839,
+      "exposure_minus_command_s": 0.0005502330604940653,
+      "encoder_width_mm": 39.1,
+      "yellow_component_depth": {
+        "mask_pixels": 21709,
+        "positive_depth_pixels": 1394,
+        "positive_fraction": 0.06421299921691465,
+        "depth_p05_median_p95_m": [
+          0.15700000745709985,
+          0.1890000089770183,
+          0.3490000165766105
+        ]
+      },
+      "finger_roi_depth": {
+        "left": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 519,
+          "positive_fraction": 0.0692,
+          "depth_p05_median_p95_m": [
+            0.4290000203764066,
+            0.5790000275010243,
+            0.6010000285459682
+          ]
+        },
+        "right": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 7500,
+          "positive_fraction": 1.0,
+          "depth_p05_median_p95_m": [
+            0.2340000111144036,
+            0.23900001135189086,
+            0.24400001158937812
+          ]
+        }
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "external",
+      "phase": "grasp",
+      "phase_fraction": 0,
+      "frame": 677,
+      "exposure_minus_command_s": -0.011170650599524379,
+      "encoder_width_mm": 59.6,
+      "yellow_component_depth": {
+        "mask_pixels": 299,
+        "positive_depth_pixels": 292,
+        "positive_fraction": 0.9765886287625418,
+        "depth_p05_median_p95_m": [
+          0.4740000225137919,
+          0.4810000228462741,
+          0.4910000233212486
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "external",
+      "phase": "grasp",
+      "phase_fraction": 1,
+      "frame": 767,
+      "exposure_minus_command_s": -0.0065500978380441666,
+      "encoder_width_mm": 49.49999999999999,
+      "yellow_component_depth": {
+        "mask_pixels": 313,
+        "positive_depth_pixels": 302,
+        "positive_fraction": 0.9648562300319489,
+        "depth_p05_median_p95_m": [
+          0.4740000225137919,
+          0.4810000228462741,
+          0.49000002327375114
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "external",
+      "phase": "lift",
+      "phase_fraction": 0.5,
+      "frame": 803,
+      "exposure_minus_command_s": 0.0031439203303307295,
+      "encoder_width_mm": 39.2,
+      "yellow_component_depth": {
+        "mask_pixels": 329,
+        "positive_depth_pixels": 321,
+        "positive_fraction": 0.9756838905775076,
+        "depth_p05_median_p95_m": [
+          0.47500002256128937,
+          0.4810000228462741,
+          0.49000002327375114
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "external",
+      "phase": "lift",
+      "phase_fraction": 1,
+      "frame": 839,
+      "exposure_minus_command_s": 0.016233407193794847,
+      "encoder_width_mm": 39.1,
+      "yellow_component_depth": {
+        "mask_pixels": 300,
+        "positive_depth_pixels": 292,
+        "positive_fraction": 0.9733333333333334,
+        "depth_p05_median_p95_m": [
+          0.4740000225137919,
+          0.48050002282252535,
+          0.49000002327375114
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "left_wrist",
+      "phase": "grasp",
+      "phase_fraction": 0,
+      "frame": 678,
+      "exposure_minus_command_s": 0.00880906474776566,
+      "encoder_width_mm": 59.6,
+      "yellow_component_depth": {
+        "mask_pixels": 8,
+        "positive_depth_pixels": 5,
+        "positive_fraction": 0.625,
+        "depth_p05_median_p95_m": [
+          0.6960000330582261,
+          0.7200000341981649,
+          0.7200000341981649
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "left_wrist",
+      "phase": "grasp",
+      "phase_fraction": 1,
+      "frame": 768,
+      "exposure_minus_command_s": 0.014221405610442162,
+      "encoder_width_mm": 49.49999999999999,
+      "yellow_component_depth": {
+        "mask_pixels": 4,
+        "positive_depth_pixels": 0,
+        "positive_fraction": 0.0,
+        "depth_p05_median_p95_m": null
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "left_wrist",
+      "phase": "lift",
+      "phase_fraction": 0.5,
+      "frame": 803,
+      "exposure_minus_command_s": -0.009127722354605794,
+      "encoder_width_mm": 39.2,
+      "yellow_component_depth": {
+        "mask_pixels": 19,
+        "positive_depth_pixels": 19,
+        "positive_fraction": 1.0,
+        "depth_p05_median_p95_m": [
+          0.6830000324407592,
+          0.6880000326782465,
+          0.6931000329204835
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_residual_attempt_000001",
+      "camera": "left_wrist",
+      "phase": "lift",
+      "phase_fraction": 1,
+      "frame": 839,
+      "exposure_minus_command_s": 0.004284583264961839,
+      "encoder_width_mm": 39.1,
+      "yellow_component_depth": {
+        "mask_pixels": 28,
+        "positive_depth_pixels": 28,
+        "positive_fraction": 1.0,
+        "depth_p05_median_p95_m": [
+          0.6837500324763823,
+          0.6915000328444876,
+          0.698000033153221
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "right_wrist",
+      "phase": "grasp",
+      "phase_fraction": 0,
+      "frame": 677,
+      "exposure_minus_command_s": 0.015142840798944235,
+      "encoder_width_mm": 59.6,
+      "yellow_component_depth": {
+        "mask_pixels": 23299,
+        "positive_depth_pixels": 199,
+        "positive_fraction": 0.008541139104682604,
+        "depth_p05_median_p95_m": [
+          0.16900000802706927,
+          0.17000000807456672,
+          4.01000019046478
+        ]
+      },
+      "finger_roi_depth": {
+        "left": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 719,
+          "positive_fraction": 0.09586666666666667,
+          "depth_p05_median_p95_m": [
+            0.17400000826455653,
+            0.5350000254111364,
+            0.9390000446001068
+          ]
+        },
+        "right": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 3132,
+          "positive_fraction": 0.4176,
+          "depth_p05_median_p95_m": [
+            0.17200000816956162,
+            0.17400000826455653,
+            0.17800000845454633
+          ]
+        }
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "right_wrist",
+      "phase": "grasp",
+      "phase_fraction": 1,
+      "frame": 766,
+      "exposure_minus_command_s": -0.004123776685446501,
+      "encoder_width_mm": 51.0,
+      "yellow_component_depth": {
+        "mask_pixels": 22813,
+        "positive_depth_pixels": 372,
+        "positive_fraction": 0.01630649191250603,
+        "depth_p05_median_p95_m": [
+          0.21300001011695713,
+          0.21400001016445458,
+          0.26400001253932714
+        ]
+      },
+      "finger_roi_depth": {
+        "left": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 926,
+          "positive_fraction": 0.12346666666666667,
+          "depth_p05_median_p95_m": [
+            1.292000061366707,
+            2.045000097132288,
+            2.287000108626671
+          ]
+        },
+        "right": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 5379,
+          "positive_fraction": 0.7172,
+          "depth_p05_median_p95_m": [
+            0.17400000826455653,
+            0.17700000840704888,
+            0.18200000864453614
+          ]
+        }
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "right_wrist",
+      "phase": "lift",
+      "phase_fraction": 0.5,
+      "frame": 802,
+      "exposure_minus_command_s": 0.009565392509102821,
+      "encoder_width_mm": 39.5,
+      "yellow_component_depth": {
+        "mask_pixels": 22404,
+        "positive_depth_pixels": 1674,
+        "positive_fraction": 0.07471880021424745,
+        "depth_p05_median_p95_m": [
+          0.15700000745709985,
+          0.16300000774208456,
+          0.17100000812206417
+        ]
+      },
+      "finger_roi_depth": {
+        "left": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 171,
+          "positive_fraction": 0.0228,
+          "depth_p05_median_p95_m": [
+            0.5840000277385116,
+            0.5870000278810039,
+            0.596000028308481
+          ]
+        },
+        "right": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 7493,
+          "positive_fraction": 0.9990666666666667,
+          "depth_p05_median_p95_m": [
+            0.21400001016445458,
+            0.21900001040194184,
+            0.2240000106394291
+          ]
+        }
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "right_wrist",
+      "phase": "lift",
+      "phase_fraction": 1,
+      "frame": 837,
+      "exposure_minus_command_s": -0.010656535159796476,
+      "encoder_width_mm": 39.5,
+      "yellow_component_depth": {
+        "mask_pixels": 22249,
+        "positive_depth_pixels": 1214,
+        "positive_fraction": 0.05456425007865522,
+        "depth_p05_median_p95_m": [
+          0.1560000074096024,
+          0.18750000890577212,
+          0.1910000090720132
+        ]
+      },
+      "finger_roi_depth": {
+        "left": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 544,
+          "positive_fraction": 0.07253333333333334,
+          "depth_p05_median_p95_m": [
+            0.5841500277456362,
+            0.6005000285222195,
+            0.6100000289734453
+          ]
+        },
+        "right": {
+          "mask_pixels": 7500,
+          "positive_depth_pixels": 7499,
+          "positive_fraction": 0.9998666666666667,
+          "depth_p05_median_p95_m": [
+            0.2340000111144036,
+            0.23900001135189086,
+            0.24500001163687557
+          ]
+        }
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "external",
+      "phase": "grasp",
+      "phase_fraction": 0,
+      "frame": 677,
+      "exposure_minus_command_s": -0.01659472519531846,
+      "encoder_width_mm": 59.6,
+      "yellow_component_depth": {
+        "mask_pixels": 302,
+        "positive_depth_pixels": 289,
+        "positive_fraction": 0.956953642384106,
+        "depth_p05_median_p95_m": [
+          0.4740000225137919,
+          0.4800000227987766,
+          0.49000002327375114
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "external",
+      "phase": "grasp",
+      "phase_fraction": 1,
+      "frame": 767,
+      "exposure_minus_command_s": -0.0033625061623752117,
+      "encoder_width_mm": 51.0,
+      "yellow_component_depth": {
+        "mask_pixels": 314,
+        "positive_depth_pixels": 302,
+        "positive_fraction": 0.9617834394904459,
+        "depth_p05_median_p95_m": [
+          0.47500002256128937,
+          0.4800000227987766,
+          0.49000002327375114
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "external",
+      "phase": "lift",
+      "phase_fraction": 0.5,
+      "frame": 803,
+      "exposure_minus_command_s": 0.009977618232369423,
+      "encoder_width_mm": 39.5,
+      "yellow_component_depth": {
+        "mask_pixels": 314,
+        "positive_depth_pixels": 305,
+        "positive_fraction": 0.9713375796178344,
+        "depth_p05_median_p95_m": [
+          0.4740000225137919,
+          0.4810000228462741,
+          0.4908000233117491
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "external",
+      "phase": "lift",
+      "phase_fraction": 1,
+      "frame": 838,
+      "exposure_minus_command_s": -0.010610997211188078,
+      "encoder_width_mm": 39.5,
+      "yellow_component_depth": {
+        "mask_pixels": 318,
+        "positive_depth_pixels": 307,
+        "positive_fraction": 0.9654088050314465,
+        "depth_p05_median_p95_m": [
+          0.47500002256128937,
+          0.4810000228462741,
+          0.49000002327375114
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "left_wrist",
+      "phase": "grasp",
+      "phase_fraction": 0,
+      "frame": 677,
+      "exposure_minus_command_s": -0.009551601950079203,
+      "encoder_width_mm": 59.6,
+      "yellow_component_depth": {
+        "mask_pixels": 9,
+        "positive_depth_pixels": 9,
+        "positive_fraction": 1.0,
+        "depth_p05_median_p95_m": [
+          0.6880000326782465,
+          0.6880000326782465,
+          0.6942000329727307
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "left_wrist",
+      "phase": "grasp",
+      "phase_fraction": 1,
+      "frame": 767,
+      "exposure_minus_command_s": 0.004505545366555452,
+      "encoder_width_mm": 51.0,
+      "yellow_component_depth": {
+        "mask_pixels": 4,
+        "positive_depth_pixels": 4,
+        "positive_fraction": 1.0,
+        "depth_p05_median_p95_m": [
+          0.6970000331057236,
+          0.6970000331057236,
+          0.7021000333479606
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "left_wrist",
+      "phase": "lift",
+      "phase_fraction": 0.5,
+      "frame": 802,
+      "exposure_minus_command_s": -0.015172680839896202,
+      "encoder_width_mm": 39.5,
+      "yellow_component_depth": {
+        "mask_pixels": 9,
+        "positive_depth_pixels": 9,
+        "positive_fraction": 1.0,
+        "depth_p05_median_p95_m": [
+          0.6880000326782465,
+          0.6940000329632312,
+          0.6998000332387164
+        ]
+      }
+    },
+    {
+      "source_episode": "20261109_real_grip_hold_attempt_000001",
+      "camera": "left_wrist",
+      "phase": "lift",
+      "phase_fraction": 1,
+      "frame": 838,
+      "exposure_minus_command_s": -0.0020396108739078045,
+      "encoder_width_mm": 39.5,
+      "yellow_component_depth": {
+        "mask_pixels": 6,
+        "positive_depth_pixels": 6,
+        "positive_fraction": 1.0,
+        "depth_p05_median_p95_m": [
+          0.687000032630749,
+          0.6880000326782465,
+          0.6910000328207389
+        ]
+      }
+    }
+  ],
+  "failure_signature": null,
+  "root_cause": "UNKNOWN; RGB/depth availability alone does not determine contact physics",
+  "root_cause_status": "unknown",
+  "hypotheses": [],
+  "experiments": [],
+  "repair": {},
+  "result": "success",
+  "task_success": null,
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "llm_inference_seconds": null,
+  "execution_time": 10.2582979699946,
+  "robot_execution_seconds": 0,
+  "human_interventions": 0,
+  "lessons_learned": [
+    "Nonzero depth is not a verified object surface; missing/occluded data cannot be replaced with simulator ground truth"
+  ],
+  "next_improvement": "Verify actual surface correspondences and camera geometry before accepting any physical fit",
+  "validation_status": "OBSERVABILITY_AUDIT_NOT_CALIBRATION",
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/commanded_probe.csv",
+      "sha256": "c9778e55a8e9fa150e4fb5a45522d7f4343d478fd6af1eb3b0c714fd1f367673"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/right_wrist/0678.jpg",
+      "sha256": "d5fe731f3a3437b7cf73442cf6669554bd7851335bfd022b230c0ce91a8ea153"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/right_wrist/0768.jpg",
+      "sha256": "c33e477eedb3182169adad107c1087a4cc9955fb566b1e04541f5b24c1d87eb0"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/right_wrist/0803.jpg",
+      "sha256": "858c297b5d6f1866dd748a99644636c912151f9720fda0d9801127791f397cd5"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/right_wrist/0839.jpg",
+      "sha256": "13e8f141d58db05637c843b662835b0e721f5c76b47bc6d7668fd26ccb322817"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/right_wrist/camera.json",
+      "sha256": "abf3617237352fdfefab19e764a7fe2ea2b81d08bf73381f48561f4bc4aede1b"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/right_wrist/depth.npz",
+      "sha256": "5295b834535a0e08ed34d7ad789976e28baf576e7d902c5b7f1c5eb1cedcebe9"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/external/0677.jpg",
+      "sha256": "ec2b33f5c566ac579e45120d7e6fae9e9b7e4f96feb76de151f595d20b218898"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/external/0767.jpg",
+      "sha256": "b464f2d82e3c060bcb279377bad9f261eb2d6cd19110095534c62133760ee8b8"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/external/0803.jpg",
+      "sha256": "c370809960f6d53f346932e114994d5da3c289e66548c58fcd7876fa03501e76"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/external/0839.jpg",
+      "sha256": "68e5c6a18c25a96dfbc1bc498d26c5d3b16d5bd6699cc3a486bd73cfb1fbc2c1"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/external/camera.json",
+      "sha256": "1b21ec876d703b642b2876e568c63f7179d15eaaf6c7da072f89b94b16ad0dc1"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/external/depth.npz",
+      "sha256": "c3ad697b6035334011764a9ab295dfdcb1913b45ccfd0fe5ced0918053039dde"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/left_wrist/0678.jpg",
+      "sha256": "497686e5956f170c80151b2556a0380df8f32d94f38932d59cf72f9b740f27e2"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/left_wrist/0768.jpg",
+      "sha256": "aaefcd642c017f64851734672f9e83ef364253cfde01191fa7bd3de0bd7a9fec"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/left_wrist/0803.jpg",
+      "sha256": "3b1c8a37ff4240b13b3badb6aa328c717a96007e5f6b8d6ff0045c9aead3249f"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/left_wrist/0839.jpg",
+      "sha256": "0e2c6734d9b38ea956f110c820e14102001e028fdf784dd70b1861bc814cb50b"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/left_wrist/camera.json",
+      "sha256": "57e9de49d3b53396626b6b1460b9b9c107de824b0eae98d43dc3808f6cdc1530"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_residual_attempt_000001/raw/task/left_wrist/depth.npz",
+      "sha256": "a959af0dbefc76b667f764242394a7425823e0563ac3dcf80dfb95e00ca1138a"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/commanded_probe.csv",
+      "sha256": "b194d0c4afaacbb8f1eab15a05bca926f821ce4f4bee7e5c9572edbc9c1d6e35"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/right_wrist/0677.jpg",
+      "sha256": "563f54f5c455ce29d71a6bdb554dc5384fa2c64478ab7a59cfe979e060258437"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/right_wrist/0766.jpg",
+      "sha256": "e33568494934d586fae614a0a00eb68da2d165bd43ad3a93b208a9f1759b1b34"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/right_wrist/0802.jpg",
+      "sha256": "d64ab99adf8f42c28d0a1308529245918d297bf6a4658fc67eb205b6cb55b4c3"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/right_wrist/0837.jpg",
+      "sha256": "ff1e22c02e0a76a93f021304358c3c7314a277ee4c13daaeccd5218d77d721ee"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/right_wrist/camera.json",
+      "sha256": "4f99220e84c5967e4ffd496b2d2d489e98d1ef35aa94d8cb7e62d73147d2d2b2"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/right_wrist/depth.npz",
+      "sha256": "3942703a7fc4b4f912eedef71f262d4c6fc1eedc5414cc4e15efabeba36ba091"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/external/0677.jpg",
+      "sha256": "a2aeb945d8914d5edbdd885011c4a7605de2ad34c0ec148f68427c26f8bf89e0"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/external/0767.jpg",
+      "sha256": "93b76146c375836e8878217d545f3117961532d944e0700122bbd7b6a04d5839"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/external/0803.jpg",
+      "sha256": "f42e66a459778c0ba93b525d97e6720045fbcfd2fdad04321abcfe843c51fbfe"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/external/0838.jpg",
+      "sha256": "29df4a6bd4470f3b1e7c41d6d95ef31979fcac673d6fba621db20d294769726a"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/external/camera.json",
+      "sha256": "950cdfcbea90713c7b06130814a0d0460b97556806ff10edce2922ace0f20d66"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/external/depth.npz",
+      "sha256": "879db85b480fa972ffd2f0fdef21b70452a86facfdbc5c0942e7d1864f62d442"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/left_wrist/0677.jpg",
+      "sha256": "8cf53bbd5b0c5969d0238edf5cac3cade7c98974e79bc0b7cffc629973ff1e6e"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/left_wrist/0767.jpg",
+      "sha256": "3e2ef9d109528e3e288e7d0bd243acd872c4fc14fa32ff50f4753508dc4d5f0a"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/left_wrist/0802.jpg",
+      "sha256": "6589a05479287cea9cdf5936446a2210dd510860cc67604efa8aa5335a20ae13"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/left_wrist/0838.jpg",
+      "sha256": "5d898fc3be80413536ddc437a9847db630c678440733dbabf0737c8a5f9aed0d"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/left_wrist/camera.json",
+      "sha256": "7c511ebdb3d511be3146d2ee03150561ee535795158dd573c567f9620d95bb8f"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261109_real_grip_hold_attempt_000001/raw/task/left_wrist/depth.npz",
+      "sha256": "776ac07629d2040ac0a78646d3e9a1beb5629417de7606dfeb316469e6943c80"
+    }
+  ],
+  "limitations": [
+    "Largest yellow component is a candidate; only right-wrist keyframes visually inspected",
+    "Fixed finger rectangles can contain background and are not aperture measurements",
+    "Only selected transition keyframes tested, not every frame or every calibration source",
+    "No metric object pose, real contact force, friction, mass or COM inferred"
+  ],
+  "analysis_version": "10ad608a463e848c7208c740a13910784119704abdde273e44cfa838668feceb",
+  "simulation_seconds": 0
+}

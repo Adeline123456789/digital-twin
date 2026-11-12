@@ -1,0 +1,14 @@
+{
+  "version": "rgbd_evidence_audit_v1",
+  "experiment_id": "stage2_round3_20261112",
+  "stage": 2,
+  "round": 3,
+  "accepted": true,
+  "type": "Observation Tools",
+  "physical_model_changed": false,
+  "active_default_changed": false,
+  "limitations": [
+    "No general semantic detector",
+    "No full real object pose or aperture calibration"
+  ]
+}

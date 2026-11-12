@@ -1,0 +1,56 @@
+{
+  "experiment_id": "stage2_round3_20261112",
+  "timestamp": "2026-11-12T03:59:05.351221+00:00",
+  "stage": 2,
+  "round": 3,
+  "task": "Check independent RGB-D support before physical fitting",
+  "environment": "real_historical",
+  "model": "OpenCV/NumPy deterministic analysis",
+  "program_version": "scripts/audit_rgbd_evidence.py; per-run SHA256 in reports",
+  "protocol_version": "unchanged",
+  "memory_version": "ER005",
+  "initial_state": {
+    "source_episodes": [
+      "20261109_real_residual_attempt_000001",
+      "20261109_real_grip_hold_attempt_000001"
+    ]
+  },
+  "actions": [
+    "Inspect transition views",
+    "Audit depth masks",
+    "Constrain known camera ROI and repeat"
+  ],
+  "expected_effects": [
+    "Find independent physical measurements or identify their absence"
+  ],
+  "observed_effects": [
+    "Wrist depth sparse",
+    "External target surface depth available",
+    "Unrelated yellow objects invalidate global largest-component rule"
+  ],
+  "failure_signature": "unverified_visual_correspondence",
+  "root_cause": "Global yellow selection can identify unrelated objects; contact root cause remains UNKNOWN",
+  "root_cause_status": "supported",
+  "experiments": [
+    "20261112T035409Z_12a40111",
+    "20261112T035542Z_5743eacf",
+    "20261112T035706Z_ed39796e"
+  ],
+  "repair": {
+    "observation_roi_corrected": true,
+    "physics_calibration_accepted": false
+  },
+  "result": "success",
+  "task_success": null,
+  "stage_gate": "NOT_PASSED",
+  "tokens": {
+    "planner": 0,
+    "research_orchestrator": null
+  },
+  "execution_time": 18.582111058029113,
+  "human_interventions": 0,
+  "lessons_learned": [
+    "Validate target identity before treating positive depth as object evidence"
+  ],
+  "next_improvement": "Round 4: existing bounded camera/table fit with separate-episode validation"
+}

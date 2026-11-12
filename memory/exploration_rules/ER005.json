@@ -1,0 +1,23 @@
+{
+  "id": "ER005",
+  "content": "Verify object correspondence before fitting physics from RGB-D. Positive depth on the largest color component can belong to an unrelated object. Missing wrist depth cannot be filled using simulated ground truth.",
+  "applicability": "Color-segmented RGB-D diagnostics; task/camera-specific ROI only for inspected grasp/lift views",
+  "source_episodes": [
+    "20261112T035409Z_12a40111",
+    "20261112T035542Z_5743eacf",
+    "20261112T035706Z_ed39796e"
+  ],
+  "validation_status": "OBSERVATION_ANALYZED",
+  "success_count": 1,
+  "failure_count": 2,
+  "count_semantics": "analysis outcomes, not robot episodes",
+  "limitations": [
+    "No general semantic detector",
+    "No full real object pose or aperture calibration"
+  ],
+  "version": 1,
+  "signatures": [
+    "unverified_visual_correspondence",
+    "gripper_sim_real_mismatch"
+  ]
+}
