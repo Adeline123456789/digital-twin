@@ -1,0 +1,12 @@
+{
+  "version": "observation_contract_v2",
+  "timestamp": "2026-11-12T08:50:26.616304+00:00",
+  "accepted": true,
+  "entry": "scripts/agent_challenge.py:frame_contract",
+  "runner": "scripts/benchmark_planner_context.py:prompt_for(framed=True)",
+  "source_sha256": "d4c3a78b566d95aeff3773715a1f094a81d4f17ec0dd48259acc9867410d4076",
+  "evidence": "experiments/research_stage3/round4/result.json",
+  "default_deployed": false,
+  "rollback": "Use framed=False; original simulator and all legacy entrypoints unchanged",
+  "scope": "Original Piper MuJoCo outlet3, initial shifts +/-1.5mm, requested gpt-6-astra"
+}

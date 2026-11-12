@@ -1,0 +1,244 @@
+{
+  "stage": 3,
+  "round": 4,
+  "timestamp": "2026-11-12T08:50:26.616304+00:00",
+  "result": "ACCEPTED_WITHIN_SIMULATION_SCOPE",
+  "runs": [
+    {
+      "experiment_id": "20261112T083717Z_bd737954",
+      "physical_trial_id": "20261112T083800Z_be5b3b24",
+      "candidate": false,
+      "shift_mm": 1.5,
+      "role": "development repeat of round3 failure",
+      "model": "gpt-6-astra",
+      "offset_mm": -1.6785546535882103,
+      "valid_successful_episode": false,
+      "tokens": {
+        "input_tokens": 22701,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 263,
+        "reasoning_output_tokens": 62
+      },
+      "call_wall_seconds": 43.043161842011614,
+      "collection_plus_planning_seconds": 176.42005364000215,
+      "simulation_seconds": 37.766666666666666,
+      "quality_30hz": {
+        "peak_joint_speed_deg_s": 11.978641162048143,
+        "peak_joint_acceleration_deg_s2": 165.46839621595495,
+        "joint_path_sum_deg": 625.0636335673132
+      },
+      "recording_verified": true,
+      "video_frames": {
+        "cam_external_rgb.mp4": 1133,
+        "cam_left_wrist_rgb.mp4": 1133,
+        "cam_right_wrist_rgb.mp4": 1133
+      },
+      "precontact": {
+        "observed_precontact_xy_error_mm": [
+          -1.4977245356835174,
+          -0.05520808030811536
+        ],
+        "frame": "socket",
+        "source": "simulator privileged object position at align phase end",
+        "limitation": "Not a real visual pose estimate; no true perturbation parameter exposed"
+      },
+      "tool_events": 0,
+      "max_penetration_m": 6.172641708447611e-05,
+      "source_unchanged": true
+    },
+    {
+      "experiment_id": "20261112T084037Z_2a727399",
+      "physical_trial_id": "20261112T084117Z_37dd0986",
+      "candidate": true,
+      "shift_mm": 1.5,
+      "role": "development repeat of round3 failure",
+      "model": "gpt-6-astra",
+      "offset_mm": -0.1785546535882103,
+      "valid_successful_episode": true,
+      "tokens": {
+        "input_tokens": 23068,
+        "cached_input_tokens": 7168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 183,
+        "reasoning_output_tokens": 0
+      },
+      "call_wall_seconds": 39.95739873801358,
+      "collection_plus_planning_seconds": 192.9402339470107,
+      "simulation_seconds": 37.7,
+      "quality_30hz": {
+        "peak_joint_speed_deg_s": 11.980444192644438,
+        "peak_joint_acceleration_deg_s2": 42.05892874443126,
+        "joint_path_sum_deg": 620.3179700474956
+      },
+      "recording_verified": true,
+      "video_frames": {
+        "cam_external_rgb.mp4": 1131,
+        "cam_left_wrist_rgb.mp4": 1131,
+        "cam_right_wrist_rgb.mp4": 1131
+      },
+      "precontact": {
+        "observed_precontact_xy_error_mm": [
+          0.0015459470546833054,
+          -0.05609778754031916
+        ],
+        "frame": "socket",
+        "source": "simulator privileged object position at align phase end",
+        "limitation": "Not a real visual pose estimate; no true perturbation parameter exposed"
+      },
+      "tool_events": 0,
+      "max_penetration_m": 3.1382349923414584e-05,
+      "source_unchanged": true
+    },
+    {
+      "experiment_id": "20261112T084404Z_e39b4ee5",
+      "physical_trial_id": "20261112T084434Z_5cf241f9",
+      "candidate": true,
+      "shift_mm": -1.5,
+      "role": "held-out initial condition after code freeze, not new task family",
+      "model": "gpt-6-astra",
+      "offset_mm": -0.1785546535882103,
+      "valid_successful_episode": true,
+      "tokens": {
+        "input_tokens": 23057,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 190,
+        "reasoning_output_tokens": 0
+      },
+      "call_wall_seconds": 29.8251705430157,
+      "collection_plus_planning_seconds": 178.83294931001728,
+      "simulation_seconds": 37.8,
+      "quality_30hz": {
+        "peak_joint_speed_deg_s": 11.979354377468733,
+        "peak_joint_acceleration_deg_s2": 41.98705252768313,
+        "joint_path_sum_deg": 622.1038354721693
+      },
+      "recording_verified": true,
+      "video_frames": {
+        "cam_external_rgb.mp4": 1134,
+        "cam_left_wrist_rgb.mp4": 1134,
+        "cam_right_wrist_rgb.mp4": 1134
+      },
+      "precontact": {
+        "observed_precontact_xy_error_mm": [
+          0.0012684406484123056,
+          -0.05623165437235178
+        ],
+        "frame": "socket",
+        "source": "simulator privileged object position at align phase end",
+        "limitation": "Not a real visual pose estimate; no true perturbation parameter exposed"
+      },
+      "tool_events": 0,
+      "max_penetration_m": 3.106943939776585e-05,
+      "source_unchanged": true
+    },
+    {
+      "experiment_id": "20261112T084716Z_fa445584",
+      "physical_trial_id": "20261112T084750Z_0ef16188",
+      "candidate": false,
+      "shift_mm": -1.5,
+      "role": "held-out initial condition after code freeze, not new task family",
+      "model": "gpt-6-astra",
+      "offset_mm": 1.3214453464,
+      "valid_successful_episode": false,
+      "tokens": {
+        "input_tokens": 22523,
+        "cached_input_tokens": 7168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 206,
+        "reasoning_output_tokens": 27
+      },
+      "call_wall_seconds": 33.911670250992756,
+      "collection_plus_planning_seconds": 158.90400577898254,
+      "simulation_seconds": 37.733333333333334,
+      "quality_30hz": {
+        "peak_joint_speed_deg_s": 11.978951506864655,
+        "peak_joint_acceleration_deg_s2": 94.43157259911158,
+        "joint_path_sum_deg": 623.2152886087185
+      },
+      "recording_verified": true,
+      "video_frames": {
+        "cam_external_rgb.mp4": 1132,
+        "cam_left_wrist_rgb.mp4": 1132,
+        "cam_right_wrist_rgb.mp4": 1132
+      },
+      "precontact": {
+        "observed_precontact_xy_error_mm": [
+          1.5005819071590154,
+          -0.05704429329116134
+        ],
+        "frame": "socket",
+        "source": "simulator privileged object position at align phase end",
+        "limitation": "Not a real visual pose estimate; no true perturbation parameter exposed"
+      },
+      "tool_events": 0,
+      "max_penetration_m": 3.106943939776585e-05,
+      "source_unchanged": true
+    }
+  ],
+  "pairs": [
+    {
+      "shift_mm": 1.5,
+      "baseline_success": false,
+      "candidate_success": true,
+      "candidate_passes_all_pair_gates": true
+    },
+    {
+      "shift_mm": -1.5,
+      "baseline_success": false,
+      "candidate_success": true,
+      "candidate_passes_all_pair_gates": true
+    }
+  ],
+  "metrics": {
+    "baseline": {
+      "valid_successes": 0,
+      "attempts": 2,
+      "task_success_rate": 0.0,
+      "input_plus_output_tokens": 45693,
+      "collection_plus_planning_seconds": 335.3240594189847,
+      "tokens_per_valid_success": null,
+      "component_seconds_per_valid_success": null,
+      "valid_successes_per_component_hour": 0.0,
+      "monetary_cost": null,
+      "human_interventions": null
+    },
+    "candidate": {
+      "valid_successes": 2,
+      "attempts": 2,
+      "task_success_rate": 1.0,
+      "input_plus_output_tokens": 46498,
+      "collection_plus_planning_seconds": 371.773183257028,
+      "tokens_per_valid_success": 23249.0,
+      "component_seconds_per_valid_success": 185.886591628514,
+      "valid_successes_per_component_hour": 19.366646988688878,
+      "monetary_cost": null,
+      "human_interventions": null
+    }
+  },
+  "new_episodes": {
+    "success": 2,
+    "failure": 2
+  },
+  "privileged_information_used": true,
+  "privileged_fields_used": [
+    "object-to-socket residual",
+    "simulator world/socket rotation",
+    "native primitive source semantics",
+    "task success ground truth",
+    "joint/action states",
+    "contact penetration"
+  ],
+  "treatment": "Observation-interface information changes; not equal-information reasoning",
+  "physics_calibration_status": "NOT_INDEPENDENTLY_VALIDATED",
+  "new_real_robot_motion": false,
+  "research_orchestrator_tokens": null,
+  "limitations": [
+    "N=2 pairs in one task family; no statistical guarantee",
+    "Initial-state holdout is not cross-task generalization",
+    "Not measured end-to-end monetary cost or human savings",
+    "Entry remains explicit framed=True; legacy agent_loop not silently updated"
+  ],
+  "next_improvement": "Stage4: improve actual executable skill/harness and exploration space based on observed failures"
+}

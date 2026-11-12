@@ -1,0 +1,24 @@
+{
+  "id": "VS004",
+  "version": 1,
+  "content": "Expose observation/action frames and units, compute coordinate transformations numerically, and describe native replanning before transferring a correction between initial conditions. A transformed initial displacement is not itself a measured downstream error.",
+  "applicability": "Original Piper MuJoCo socket3; native plug-relative transport replanning; tested holder world-X shifts +/-1.5mm; requested gpt-6-astra",
+  "embodiment": "Current dual Piper original simulation profile; privileged geometry; no real extrinsic claim",
+  "source_episodes": [
+    "20261112T084117Z_37dd0986",
+    "20261112T084434Z_5cf241f9"
+  ],
+  "validation_status": "SIMULATION_VERIFIED",
+  "success_count": 2,
+  "failure_count": 0,
+  "signatures": [
+    "initial_holder_shift_mixed_with_socket_frame_residual"
+  ],
+  "known_limits": [
+    "N=2 initial states; not a new task family",
+    "Candidate has additional frame/primitive information; not a pure reasoning comparison",
+    "Observation API requires accurate simulator state; not real RGB pose estimation"
+  ],
+  "entry": "scripts/agent_challenge.py:frame_contract",
+  "evidence": "experiments/research_stage3/round4/result.json"
+}
