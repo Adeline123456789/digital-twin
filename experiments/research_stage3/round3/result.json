@@ -1,0 +1,218 @@
+{
+  "stage": 3,
+  "round": 3,
+  "timestamp": "2026-11-12T08:28:57.704173+00:00",
+  "result": "NOT_PROMOTED_STRONG_MODEL_VALID_SUCCESS_GATE_UNMET",
+  "model_pairs": [
+    {
+      "model": "gpt-6-luna",
+      "same_user_prompt": true,
+      "baseline": {
+        "experiment_id": "20261112T081342Z_edcd997a",
+        "physical_trial_id": "20261112T081404Z_1d085fff",
+        "tokens": {
+          "input_tokens": 22034,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 128,
+          "reasoning_output_tokens": 0
+        },
+        "uncached_input_tokens": 22034,
+        "reported_input_plus_output_tokens": 22162,
+        "call_wall_seconds": 22.28432965799584,
+        "api_inference_only_seconds": null,
+        "collection_plus_planning_seconds": 177.4790508839942,
+        "task_success": true,
+        "valid_successful_episode": true,
+        "offset_mm": -0.2,
+        "precontact_observation": {
+          "observed_precontact_xy_error_mm": [
+            -0.02032040063640328,
+            -0.056406476202496
+          ],
+          "frame": "socket",
+          "source": "simulator privileged object position at align phase end",
+          "limitation": "Not a real visual pose estimate; no true perturbation parameter exposed"
+        },
+        "recording_verified": true,
+        "video_frames": {
+          "cam_external_rgb.mp4": 1133,
+          "cam_left_wrist_rgb.mp4": 1133,
+          "cam_right_wrist_rgb.mp4": 1133
+        },
+        "simulation_seconds": 37.766666666666666,
+        "max_penetration_m": 3.110016190087608e-05,
+        "motion_quality_30hz": {
+          "peak_joint_speed_deg_s": 11.981847648834316,
+          "peak_joint_acceleration_deg_s2": 41.9651953230097,
+          "joint_path_sum_deg": 620.9294427487008
+        },
+        "align_end_strip_contacts": []
+      },
+      "candidate": {
+        "experiment_id": "20261112T081656Z_ba838bd1",
+        "physical_trial_id": "20261112T081719Z_51d78043",
+        "tokens": {
+          "input_tokens": 16295,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 115,
+          "reasoning_output_tokens": 0
+        },
+        "uncached_input_tokens": 16295,
+        "reported_input_plus_output_tokens": 16410,
+        "call_wall_seconds": 22.18293401200208,
+        "api_inference_only_seconds": null,
+        "collection_plus_planning_seconds": 177.2746408310195,
+        "task_success": true,
+        "valid_successful_episode": true,
+        "offset_mm": -0.18,
+        "precontact_observation": {
+          "observed_precontact_xy_error_mm": [
+            -0.00032945024806135814,
+            -0.05641698900096456
+          ],
+          "frame": "socket",
+          "source": "simulator privileged object position at align phase end",
+          "limitation": "Not a real visual pose estimate; no true perturbation parameter exposed"
+        },
+        "recording_verified": true,
+        "video_frames": {
+          "cam_external_rgb.mp4": 1133,
+          "cam_left_wrist_rgb.mp4": 1133,
+          "cam_right_wrist_rgb.mp4": 1133
+        },
+        "simulation_seconds": 37.766666666666666,
+        "max_penetration_m": 3.110016190087608e-05,
+        "motion_quality_30hz": {
+          "peak_joint_speed_deg_s": 11.981458182375446,
+          "peak_joint_acceleration_deg_s2": 41.966076168115364,
+          "joint_path_sum_deg": 620.9066879110646
+        },
+        "align_end_strip_contacts": []
+      },
+      "input_token_reduction_fraction": 0.26046110556412816,
+      "candidate_passes_preregistered_model_gate": true
+    },
+    {
+      "model": "gpt-6-astra",
+      "same_user_prompt": true,
+      "candidate": {
+        "experiment_id": "20261112T082009Z_e7ee26e6",
+        "physical_trial_id": "20261112T082052Z_9e3e6072",
+        "tokens": {
+          "input_tokens": 16925,
+          "cached_input_tokens": 7168,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 267,
+          "reasoning_output_tokens": 50
+        },
+        "uncached_input_tokens": 9757,
+        "reported_input_plus_output_tokens": 17192,
+        "call_wall_seconds": 43.33362962602405,
+        "api_inference_only_seconds": null,
+        "collection_plus_planning_seconds": 178.9353797530348,
+        "task_success": false,
+        "valid_successful_episode": false,
+        "offset_mm": -1.6785546536,
+        "precontact_observation": {
+          "observed_precontact_xy_error_mm": [
+            -1.4977245356834548,
+            -0.055208080415921484
+          ],
+          "frame": "socket",
+          "source": "simulator privileged object position at align phase end",
+          "limitation": "Not a real visual pose estimate; no true perturbation parameter exposed"
+        },
+        "recording_verified": true,
+        "video_frames": {
+          "cam_external_rgb.mp4": 1133,
+          "cam_left_wrist_rgb.mp4": 1133,
+          "cam_right_wrist_rgb.mp4": 1133
+        },
+        "simulation_seconds": 37.766666666666666,
+        "max_penetration_m": 0.00010478775896084064,
+        "motion_quality_30hz": {
+          "peak_joint_speed_deg_s": 11.97864116204857,
+          "peak_joint_acceleration_deg_s2": 165.4683962105321,
+          "joint_path_sum_deg": 625.0636293344426
+        },
+        "align_end_strip_contacts": []
+      },
+      "baseline": {
+        "experiment_id": "20261112T082331Z_d7c48bf6",
+        "physical_trial_id": "20261112T082410Z_8c57fce8",
+        "tokens": {
+          "input_tokens": 22500,
+          "cached_input_tokens": 7168,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 254,
+          "reasoning_output_tokens": 65
+        },
+        "uncached_input_tokens": 15332,
+        "reported_input_plus_output_tokens": 22754,
+        "call_wall_seconds": 39.14385688700713,
+        "api_inference_only_seconds": null,
+        "collection_plus_planning_seconds": 169.55927429301664,
+        "task_success": false,
+        "valid_successful_episode": false,
+        "offset_mm": -1.6785546535882103,
+        "precontact_observation": {
+          "observed_precontact_xy_error_mm": [
+            -1.4977245356835174,
+            -0.05520808030811536
+          ],
+          "frame": "socket",
+          "source": "simulator privileged object position at align phase end",
+          "limitation": "Not a real visual pose estimate; no true perturbation parameter exposed"
+        },
+        "recording_verified": true,
+        "video_frames": {
+          "cam_external_rgb.mp4": 1133,
+          "cam_left_wrist_rgb.mp4": 1133,
+          "cam_right_wrist_rgb.mp4": 1133
+        },
+        "simulation_seconds": 37.766666666666666,
+        "max_penetration_m": 6.172641708447611e-05,
+        "motion_quality_30hz": {
+          "peak_joint_speed_deg_s": 11.978641162048143,
+          "peak_joint_acceleration_deg_s2": 165.46839621595495,
+          "joint_path_sum_deg": 625.0636335673132
+        },
+        "align_end_strip_contacts": []
+      },
+      "input_token_reduction_fraction": 0.24777777777777776,
+      "candidate_passes_preregistered_model_gate": false
+    }
+  ],
+  "total_model_calls": 4,
+  "total_physics_trials": 4,
+  "new_episodes": {
+    "success": 2,
+    "failure": 2
+  },
+  "reported_total_input_plus_output_tokens": 78518,
+  "reported_model_call_wall_seconds": 126.9447501830291,
+  "human_interventions": null,
+  "research_orchestrator_tokens": null,
+  "monetary_cost": null,
+  "new_real_robot_motion": false,
+  "privileged_information_used": true,
+  "privileged_fields_used": [
+    "object-to-socket align residual",
+    "native task result",
+    "joint/action and contact trace",
+    "simulator coordinate transforms"
+  ],
+  "physics_calibration_status": "NOT_INDEPENDENTLY_VALIDATED",
+  "default_include_catalog": true,
+  "hypothesis_result": "Catalog omission reduces reported input tokens for both requested models, but does not establish a generally effective successful-collection planner",
+  "next_improvement": "Fix missing coordinate-frame semantics and use measured current-state feedback; expand beyond offset-only exploration",
+  "limitations": [
+    "One pair per model, no causal attribution of reasoning differences or timing significance",
+    "Both Astra versions make the same unsupported initial-holder to socket-axis compensation and fail; this is not evidence that catalog omission caused failure",
+    "Luna initial condition and Astra initial condition differ; do not compare model capability directly",
+    "Calls include CLI/network/startup; API-only inference time unknown",
+    "Not A/B/C/D, not unseen-task-family proof, not overall billed-cost reduction"
+  ]
+}

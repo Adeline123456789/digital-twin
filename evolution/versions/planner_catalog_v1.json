@@ -1,0 +1,15 @@
+{
+  "version": "planner_catalog_v1",
+  "timestamp": "2026-11-12T08:28:57.704173+00:00",
+  "entry": "scripts/model_compare.py:ask",
+  "sha256": "aa7634461769d638e8ba19667daab88522871af32f313720aad192573804a671",
+  "accepted_as_default": false,
+  "evidence": "experiments/research_stage3/round3/result.json",
+  "input_token_reduction_by_model": {
+    "gpt-6-luna": 0.26046110556412816,
+    "gpt-6-astra": 0.24777777777777776
+  },
+  "rejection_reason": "Astra candidate has no valid successful Episode; predefined all-model gate unmet",
+  "rollback": "Default include_catalog=True remains unchanged; candidate opt-in only",
+  "simulation_privileged_information_used": true
+}

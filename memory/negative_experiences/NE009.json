@@ -1,0 +1,26 @@
+{
+  "id": "NE009",
+  "version": 1,
+  "content": "Do not subtract initial holder world-X displacement directly from a socket-X correction without a validated frame/response mapping. This attempt produced about−1.498mm precontact residual and failed seating.",
+  "applicability": "Original Piper MuJoCo workcell, holder +1.5mm, strip yaw about−89.55deg; native program replans IK",
+  "embodiment": "Current dual Piper simulation, privileged object poses; not real calibration",
+  "source_episodes": [
+    "20261112T082410Z_8c57fce8",
+    "20261112T082052Z_9e3e6072"
+  ],
+  "validation_status": "SIMULATION_INEFFECTIVE_REPAIR_OBSERVED",
+  "success_count": 0,
+  "failure_count": 2,
+  "ineffective_repairs": [
+    "subtract_holder_world_x_directly_from_socket_x"
+  ],
+  "signatures": [
+    "initial_holder_shift_mixed_with_socket_frame_residual"
+  ],
+  "known_limits": [
+    "Correct replacement not yet tested at same +1.5mm initial condition",
+    "Not evidence for changed real extrinsics",
+    "Only one physical task family"
+  ],
+  "evidence": "experiments/research_stage3/round3/failure_diagnosis.json"
+}
