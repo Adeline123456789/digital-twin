@@ -1,0 +1,9 @@
+{
+  "version": "native_grasp_tilt_candidate_v1",
+  "status": "REJECTED",
+  "grasp_tilt_deg": -10,
+  "actual_default_grasp_tilt_deg": 0,
+  "evidence": "experiments/research_stage4/round2/result.json",
+  "rollback": "Default0 unchanged; candidate never activated",
+  "scope": "retained_final outlet1 only"
+}

@@ -26,5 +26,7 @@
     "No collision path or physical outcome tested",
     "Local solver not global infeasibility proof"
   ],
-  "evidence": "experiments/research_stage4/round1/result.json"
+  "evidence": "experiments/research_stage4/round1/result.json",
+  "source_profile": "retained_final",
+  "target_index": 1
 }

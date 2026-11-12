@@ -1,0 +1,29 @@
+{
+  "id": "NE011",
+  "version": 1,
+  "content": "A -10deg grasp-tilt candidate passed counterfactual transport IK but lost the plug during physical transport before an align IK error. Do not admit a repair from IK feasibility or lift-success alone.",
+  "applicability": "Retained Piper scene outlet1, roll30deg, grasp height12mm, gap45mm, speed25deg/s",
+  "source_profile": "retained_final",
+  "target_index": 1,
+  "source_episodes": [
+    "20261112T085922Z_30977f00",
+    "20261112T090023Z_1341a28d"
+  ],
+  "validation_status": "SIMULATION_FAILED_REPAIR",
+  "success_count": 0,
+  "failure_count": 1,
+  "count_unit": "candidate full physical execution; baseline failure separate",
+  "signatures": [
+    "grasp_retention_loss_before_ik_error",
+    "transport_ik_failure"
+  ],
+  "ineffective_repairs": [
+    "grasp_tilt_minus10_as_complete_transport_repair"
+  ],
+  "known_limits": [
+    "Cause of unstable grasp not uniquely identified",
+    "No heldout full execution after failure",
+    "No real measurements"
+  ],
+  "evidence": "experiments/research_stage4/round2/result.json"
+}

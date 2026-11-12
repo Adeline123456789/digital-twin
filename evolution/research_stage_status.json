@@ -43,13 +43,14 @@
   "stage4": {
     "rounds_used": 2,
     "round_limit": 4,
-    "status": "ROUND2_ORIENTATION_SCREEN_AND_FULL_VALIDATION",
+    "status": "ROUND2_REJECTED_STATIC_IK_REPAIR",
     "evidence": [
       "experiments/research_stage4/round1/design.json",
       "experiments/research_stage4/round1/result.json",
-      "experiments/research_stage4/round2/design.json"
+      "experiments/research_stage4/round2/design.json",
+      "experiments/research_stage4/round2/result.json"
     ],
-    "completed_rounds": 1
+    "completed_rounds": 2
   },
   "overall_objective_achieved": false,
   "decision": "NO-GO",

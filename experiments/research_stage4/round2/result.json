@@ -1,0 +1,63 @@
+{
+  "stage": 4,
+  "round": 2,
+  "timestamp": "2026-11-12T09:05:52.267788+00:00",
+  "result": "REPAIR_REJECTED_PHYSICAL_GRASP_RETENTION_FAILURE",
+  "source_experiments": [
+    "20261112T085922Z_30977f00",
+    "20261112T090023Z_1341a28d"
+  ],
+  "runs": [
+    {
+      "id": "20261112T085922Z_30977f00",
+      "grasp_tilt_deg": 0,
+      "task_success": false,
+      "recording_verified": true,
+      "last_phase": "transport",
+      "error": "Unreachable pose [0.30084633 0.05132121 0.11628009]: residual [-9.64508004e-03 -8.77039027e-03 -1.46124264e-02 -8.44461837e-08\n -7.26240034e-02 -1.72030622e-02]",
+      "simulation_seconds": 12.766666666666667,
+      "collection_component_seconds": 55.71242460299982,
+      "speed_deg_s": 25,
+      "max_penetration_m": 5.387763750587463e-05
+    },
+    {
+      "id": "20261112T090023Z_1341a28d",
+      "grasp_tilt_deg": -10,
+      "task_success": false,
+      "recording_verified": true,
+      "last_phase": "align",
+      "error": "Unreachable pose [ 0.36969519  0.06102159 -0.01324589]: residual [-1.91944004e-01 -3.47572363e-02 -6.80884685e-02  8.45433993e-06\n -7.29520729e-01 -5.29021413e-01]",
+      "simulation_seconds": 18.3,
+      "collection_component_seconds": 77.6252889430034,
+      "speed_deg_s": 25,
+      "max_penetration_m": 0.00014922296984633957
+    }
+  ],
+  "new_episodes": {
+    "success": 0,
+    "failure": 2
+  },
+  "kinematic_solves": 10,
+  "planner_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestrator_tokens": null,
+  "human_interventions": null,
+  "task_success_rate": 0,
+  "independent_initial_state_validation": "NOT_RUN; preregistered stop after development failure",
+  "candidate_promoted": false,
+  "rollback": "Original grasp_tilt0 remains default; -10 is an explicit failed experiment, not an active skill",
+  "privileged_information_used": true,
+  "privileged_fields_used": [
+    "saved virtual grasp transforms",
+    "IK residuals",
+    "physical object/gripper trajectories",
+    "simulator contact pairs",
+    "native success truth"
+  ],
+  "root_cause_status": "OBSERVED_GRASP_SEPARATION_BEFORE_ALIGN_ERROR; physical cause of instability UNKNOWN",
+  "next_improvement": "Diagnose earlier grasp-retention loss instead of reacting to downstream IK error; do not continue height/tilt sweeps without discriminating evidence",
+  "observed_gripper_object_distance_mm": {
+    "lift_end": 13.237888769665782,
+    "transport_end": 117.0028880460672
+  }
+}
