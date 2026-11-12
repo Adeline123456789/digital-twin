@@ -1,5 +1,8 @@
 {
   "version": "v2",
   "previous": "v1",
-  "evidence": "20261111T083957Z_05aa3d3d"
+  "evidence": "20261111T083957Z_05aa3d3d",
+  "previous_planner_policy": "llm",
+  "planner_policy": "compiled_alignment_v1",
+  "planner_evidence": "experiments/research_stage4/round4/result.json"
 }

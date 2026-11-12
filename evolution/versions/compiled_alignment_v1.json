@@ -1,7 +1,7 @@
 {
   "version": "compiled_alignment_v1",
-  "status": "CANDIDATE_NOT_ACTIVE",
-  "accepted": false,
+  "status": "ACTIVE_AGENT_D_SIMULATION_SCOPE",
+  "accepted": true,
   "skill_source": "memory/verified_skills/VS002.json",
   "verified_native_sha256": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
   "scope": "Original Piper simulation outlet3, holder shift within[-1.5,1.5]mm, contact-free align evidence and no observed carry loss",
@@ -11,5 +11,8 @@
     "Unknown task-family solution",
     "Physical calibration",
     "General friction/contact adaptation"
-  ]
+  ],
+  "implementation_sha256": "468bb02a736993f3e0d36be8e25514d04e606f38a84fb01f722feec843314a77",
+  "evidence": "experiments/research_stage4/round4/result.json",
+  "timestamp": "2026-11-12T09:34:57.206282+00:00"
 }

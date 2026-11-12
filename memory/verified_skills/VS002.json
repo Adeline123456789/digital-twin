@@ -4,18 +4,24 @@
   "applicability": "Existing pure MuJoCo insertion adapter; accurate precontact object pose; tested target X errors \u00b12 mm",
   "source_episodes": [
     "20261111T090015Z_78887557",
-    "20261111T090415Z_f1d663d1"
+    "20261111T090415Z_f1d663d1",
+    "20261112T092555Z_cc2a60d2",
+    "20261112T092838Z_bf17d184"
   ],
   "validation_status": "SIMULATION_VERIFIED",
-  "success_count": 2,
+  "success_count": 4,
   "failure_count": 2,
   "limitations": [
     "Simulator privileged pose, not validated real vision",
     "Not validated for changing contact/friction or unseen tasks"
   ],
-  "version": 1,
+  "version": 2,
   "signatures": [
     "target_frame_mismatch"
   ],
-  "source_profile": "original"
+  "source_profile": "original",
+  "previous_version": 1,
+  "executable": "scripts/alignment_skill.py:compiled_plan",
+  "execution_scope": "Original current-source simulator socket3; socket-frame mm, contact-free align, no observed carry loss, |Y residual|<=0.1mm, holder shift within[-1.5,1.5]mm; otherwise LLM fallback",
+  "executable_validation": "experiments/research_stage4/round4/result.json"
 }

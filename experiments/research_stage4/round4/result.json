@@ -1,0 +1,271 @@
+{
+  "stage": 4,
+  "round": 4,
+  "timestamp": "2026-11-12T09:34:57.206282+00:00",
+  "result": "ACCEPTED_SIMULATION_KNOWN_SKILL_ONLY",
+  "accepted": true,
+  "runs": [
+    {
+      "experiment_id": "20261112T092242Z_bb4519e0",
+      "physical_trial_id": "20261112T092311Z_901189c4",
+      "candidate": false,
+      "actual_planner": "llm",
+      "model_invoked": true,
+      "model_requested": "gpt-6-luna",
+      "shift_mm": 0.75,
+      "prompt_sha256": "7bed75e2bca4372edc0c43dbebb3b44b9f55c2add037daff36d3718eee7cd183",
+      "task_config_sha256": "baf12368f7aab60b2596b2e86afb99cdca9f4fd85005f714f832c7ba49f183bb",
+      "skill_router_sha256": "468bb02a736993f3e0d36be8e25514d04e606f38a84fb01f722feec843314a77",
+      "offset_mm": -0.18,
+      "task_success": true,
+      "valid_successful_episode": true,
+      "recording_verified": true,
+      "causal_diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.742179189586587,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "tokens": {
+        "input_tokens": 22631,
+        "cached_input_tokens": 7168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 186,
+        "reasoning_output_tokens": 0
+      },
+      "planning_seconds": 28.771597136976197,
+      "llm_wall_seconds": 28.59776219999185,
+      "context_preparation_seconds": 0.17383493698434904,
+      "collection_plus_planning_seconds": 176.08391709098942,
+      "simulation_seconds": 37.766666666666666,
+      "quality_30hz": {
+        "peak_joint_speed_deg_s": 11.979738876107955,
+        "peak_joint_acceleration_deg_s2": 41.97018914100242,
+        "joint_path_sum_deg": 620.7667006297886
+      },
+      "source_unchanged": true,
+      "tool_events": 0
+    },
+    {
+      "experiment_id": "20261112T092555Z_8812d08c",
+      "physical_trial_id": "20261112T092555Z_cc2a60d2",
+      "candidate": true,
+      "actual_planner": "compiled_alignment_v1",
+      "model_invoked": false,
+      "model_requested": "gpt-6-luna",
+      "shift_mm": 0.75,
+      "prompt_sha256": "7bed75e2bca4372edc0c43dbebb3b44b9f55c2add037daff36d3718eee7cd183",
+      "task_config_sha256": "baf12368f7aab60b2596b2e86afb99cdca9f4fd85005f714f832c7ba49f183bb",
+      "skill_router_sha256": "468bb02a736993f3e0d36be8e25514d04e606f38a84fb01f722feec843314a77",
+      "offset_mm": -0.17855465358821032,
+      "task_success": true,
+      "valid_successful_episode": true,
+      "recording_verified": true,
+      "causal_diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.742179189586587,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0
+      },
+      "planning_seconds": 0.16704220901010558,
+      "llm_wall_seconds": 0,
+      "context_preparation_seconds": 0.16698267401079647,
+      "collection_plus_planning_seconds": 148.58503203699365,
+      "simulation_seconds": 37.766666666666666,
+      "quality_30hz": {
+        "peak_joint_speed_deg_s": 11.979710728068323,
+        "peak_joint_acceleration_deg_s2": 41.970252856281874,
+        "joint_path_sum_deg": 620.7650558919026
+      },
+      "source_unchanged": true,
+      "tool_events": 0
+    },
+    {
+      "experiment_id": "20261112T092838Z_35942a44",
+      "physical_trial_id": "20261112T092838Z_bf17d184",
+      "candidate": true,
+      "actual_planner": "compiled_alignment_v1",
+      "model_invoked": false,
+      "model_requested": "gpt-6-luna",
+      "shift_mm": -0.75,
+      "prompt_sha256": "d3610b3341dd810a2361a8e9760b26675374014641b3bc41494ed582127bcdba",
+      "task_config_sha256": "cc1a80b1ace4269b1819b8a3b9bd70404e3d6fe1d52cbd3903e855addcd31e1d",
+      "skill_router_sha256": "468bb02a736993f3e0d36be8e25514d04e606f38a84fb01f722feec843314a77",
+      "offset_mm": -0.17855465358821032,
+      "task_success": true,
+      "valid_successful_episode": true,
+      "recording_verified": true,
+      "causal_diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.73063287056565,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0
+      },
+      "planning_seconds": 0.15986868398613296,
+      "llm_wall_seconds": 0,
+      "context_preparation_seconds": 0.1598313199938275,
+      "collection_plus_planning_seconds": 147.37970757699804,
+      "simulation_seconds": 37.766666666666666,
+      "quality_30hz": {
+        "peak_joint_speed_deg_s": 11.986943238790063,
+        "peak_joint_acceleration_deg_s2": 41.94773841610084,
+        "joint_path_sum_deg": 621.6665913581121
+      },
+      "source_unchanged": true,
+      "tool_events": 0
+    },
+    {
+      "experiment_id": "20261112T093124Z_839b2a47",
+      "physical_trial_id": "20261112T093157Z_13f12a06",
+      "candidate": false,
+      "actual_planner": "llm",
+      "model_invoked": true,
+      "model_requested": "gpt-6-luna",
+      "shift_mm": -0.75,
+      "prompt_sha256": "d3610b3341dd810a2361a8e9760b26675374014641b3bc41494ed582127bcdba",
+      "task_config_sha256": "cc1a80b1ace4269b1819b8a3b9bd70404e3d6fe1d52cbd3903e855addcd31e1d",
+      "skill_router_sha256": "468bb02a736993f3e0d36be8e25514d04e606f38a84fb01f722feec843314a77",
+      "offset_mm": -0.18,
+      "task_success": true,
+      "valid_successful_episode": true,
+      "recording_verified": true,
+      "causal_diagnosis": {
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "observed_carry_samples": 306,
+        "lift_reference_distance_mm": 20.73063287056565,
+        "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp",
+        "privileged_information_used": true,
+        "privileged_fields_used": [
+          "simulator object/gripper positions",
+          "simulator finger-object contact pairs"
+        ],
+        "native_last_phase": "fold",
+        "native_error": null,
+        "task_success_unchanged": true,
+        "scope": "Simulation-only, sampled30Hz evidence, earliest observed threshold crossing is not exact physical onset"
+      },
+      "tokens": {
+        "input_tokens": 22467,
+        "cached_input_tokens": 7168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 180,
+        "reasoning_output_tokens": 0
+      },
+      "planning_seconds": 32.016212139016716,
+      "llm_wall_seconds": 31.856249654025305,
+      "context_preparation_seconds": 0.15996248499141075,
+      "collection_plus_planning_seconds": 179.30866132400115,
+      "simulation_seconds": 37.766666666666666,
+      "quality_30hz": {
+        "peak_joint_speed_deg_s": 11.986971387198468,
+        "peak_joint_acceleration_deg_s2": 41.94767473465033,
+        "joint_path_sum_deg": 621.6682354165238
+      },
+      "source_unchanged": true,
+      "tool_events": 0
+    }
+  ],
+  "pairs": [
+    {
+      "shift_mm": 0.75,
+      "same_facts_and_initial_config": true,
+      "quality_gate": true,
+      "accepted": true
+    },
+    {
+      "shift_mm": -0.75,
+      "same_facts_and_initial_config": true,
+      "quality_gate": true,
+      "accepted": true
+    }
+  ],
+  "metrics": {
+    "baseline": {
+      "valid_successes": 2,
+      "attempts": 2,
+      "success_rate": 1.0,
+      "model_calls": 2,
+      "reported_input_plus_output_tokens": 45464,
+      "component_seconds": 355.39257841499057,
+      "tokens_per_valid_success": 22732.0,
+      "seconds_per_valid_success": 177.69628920749528,
+      "valid_successes_per_component_hour": 20.259286314056304
+    },
+    "candidate": {
+      "valid_successes": 2,
+      "attempts": 2,
+      "success_rate": 1.0,
+      "model_calls": 0,
+      "reported_input_plus_output_tokens": 0,
+      "component_seconds": 295.9647396139917,
+      "tokens_per_valid_success": 0.0,
+      "seconds_per_valid_success": 147.98236980699585,
+      "valid_successes_per_component_hour": 24.327222254213492
+    }
+  },
+  "planner_token_reduction_fraction": 1.0,
+  "component_seconds_reduction_fraction": 0.16721744462430843,
+  "privileged_information_used": true,
+  "privileged_fields_used": [
+    "precontact object/socket residual",
+    "coordinate transform",
+    "finger-object contact",
+    "object/gripper state",
+    "native task success and trajectory"
+  ],
+  "task_family": "Existing plug insertion and one-axis alignment repair",
+  "new_skill_discovery_count": 0,
+  "existing_skill_compiled_count": 1,
+  "new_episodes": {
+    "success": 4,
+    "failure": 0
+  },
+  "human_interventions": null,
+  "research_orchestrator_tokens": null,
+  "monetary_cost": null,
+  "new_real_motion": false,
+  "limitations": [
+    "N=2 matched pairs, not sustained-production throughput",
+    "No unknown task-family or weak-model reasoning improvement demonstrated",
+    "Planner tokens exclude research/CLI orchestration overhead and are not billed monetary cost",
+    "Simulator remains unvalidated against independent real calibration data",
+    "No same-budget fixed-zero-offset deterministic comparator in this round; earlier nominal successes show this scene may not require model planning. This establishes savings against the existing LLM route, not optimality or newly discovered capability."
+  ]
+}

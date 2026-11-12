@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-12T09:40:41.414524+00:00",
+  "targeted_unit_tests": 25,
+  "result": "PASS",
+  "patterns": [
+    "test_frame_contract.py",
+    "test_planner_context.py",
+    "test_agent_loop.py",
+    "test_learning.py",
+    "test_transport_budget.py",
+    "test_retention_diagnosis.py",
+    "test_alignment_skill.py"
+  ],
+  "runtime": "existing piper_simulation .venv-mujoco-hardware",
+  "dispatch_audit": "experiments/evaluation/20261112T093749Z_b7360b34/result.json",
+  "dispatch_audit_type": "Actual active-file read and planner execution, physical boundary intercepted; no additional physical task",
+  "public_raw_simulator_uploaded": false
+}

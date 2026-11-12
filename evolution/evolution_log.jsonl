@@ -26,3 +26,4 @@
 {"timestamp": "2026-11-12T08:53:29.532137+00:00", "stage": 4, "round": 1, "candidate": "transport_ik_probe_v1", "accepted_as_task_skill": false, "diagnostic_validated": true, "evidence": "experiments/research_stage4/round1/result.json"}
 {"timestamp": "2026-11-12T09:05:52.267788+00:00", "stage": 4, "round": 2, "candidate": "native_grasp_tilt_candidate_v1", "accepted": false, "rolled_back_to": 0, "evidence": "experiments/research_stage4/round2/result.json"}
 {"timestamp": "2026-11-12T09:11:45.893307+00:00", "stage": 4, "round": 3, "candidate": "retention_diagnosis_v1", "accepted": true, "evidence": "experiments/research_stage4/20261112T090915Z_77681d26/result.json"}
+{"timestamp": "2026-11-12T09:34:57.206282+00:00", "stage": 4, "round": 4, "candidate": "compiled_alignment_v1", "accepted": true, "active_planner": "compiled_alignment_v1", "evidence": "experiments/research_stage4/round4/result.json"}
