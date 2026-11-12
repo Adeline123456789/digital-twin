@@ -17,13 +17,13 @@
       "experiments/research_stage2/round5/result.json",
       "experiments/research_stage2/round6/result.json"
     ],
-    "extension_authorization": "User authorized one additional RGB-only offline round: 追加一轮 RGB 离线研究",
+    "extension_authorization": "User authorized one additional RGB-only offline round: \u8ffd\u52a0\u4e00\u8f6e RGB \u79bb\u7ebf\u7814\u7a76",
     "round_limit_confirmed_by_user": {
       "timestamp": "2026-11-12T05:35:45.660479+00:00",
-      "instruction": "保持六轮上限，保留未完成结论",
+      "instruction": "\u4fdd\u6301\u516d\u8f6e\u4e0a\u9650\uff0c\u4fdd\u7559\u672a\u5b8c\u6210\u7ed3\u8bba",
       "additional_rounds_authorized": false
     },
-    "latest_user_instruction": "不要无限制增加上限最多六论改进，之后继续完成接下来的目标不要钻牛角尖"
+    "latest_user_instruction": "\u4e0d\u8981\u65e0\u9650\u5236\u589e\u52a0\u4e0a\u9650\u6700\u591a\u516d\u8bba\u6539\u8fdb\uff0c\u4e4b\u540e\u7ee7\u7eed\u5b8c\u6210\u63a5\u4e0b\u6765\u7684\u76ee\u6807\u4e0d\u8981\u94bb\u725b\u89d2\u5c16"
   },
   "stage3": {
     "rounds_used": 4,
@@ -41,9 +41,12 @@
     ]
   },
   "stage4": {
-    "rounds_used": 0,
+    "rounds_used": 1,
     "round_limit": 4,
-    "status": "READY_FROM_STAGE3_EVIDENCE"
+    "status": "ROUND1_NATIVE_IK_PROBES",
+    "evidence": [
+      "experiments/research_stage4/round1/design.json"
+    ]
   },
   "overall_objective_achieved": false,
   "decision": "NO-GO",

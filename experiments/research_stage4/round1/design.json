@@ -1,0 +1,44 @@
+{
+  "stage": 4,
+  "round": 1,
+  "timestamp": "2026-11-12T08:47:32.190439+00:00",
+  "status": "DESIGN_BEFORE_EXECUTION; begin only after Stage3 round4 closes",
+  "bottleneck": "Offset-only action proposals repeat transport IK failure without inspecting the failing approach pose",
+  "candidate_type": "Observation tool and experiment selection",
+  "method": "Restore saved end-of-lift state and query existing native PoseIK at bounded approach heights; no new physics steps",
+  "source_episodes": [
+    "20261111T093534Z_28c8c28d",
+    "20261111T093701Z_743dbfb0"
+  ],
+  "source_profile": "retained_final; distinct from original-profile Stage3",
+  "candidates_preinsert_gap_m": [
+    0.045,
+    0.04,
+    0.035,
+    0.031
+  ],
+  "budget": {
+    "planner_llm_calls": 0,
+    "native_ik_solves": 8,
+    "new_full_episodes": 0,
+    "max_wall_seconds": 120
+  },
+  "fixed": [
+    "Saved qpos/qvel/ctrl and native final-scene source hash",
+    "Grasp, insertion offset, target socket, five-degree carry tilt",
+    "Native IK bounds/tolerances/seed/evaluation ceiling",
+    "No simulator physics, success, contact or controller changes"
+  ],
+  "acceptance": [
+    "Before searching, reproduce each saved transport goal within1e-8 m",
+    "Original gap45mm must remain infeasible for the same native solver",
+    "Find a common feasible candidate for both saved states; report residuals and wall time",
+    "Kinematic candidate is never promoted as a successful physical Skill without full execution and independent validation"
+  ],
+  "limitations": [
+    "Two saved failures have the same initial state but different offset goals; not independent trajectory validation",
+    "Native local solver failure is not proof of global infeasibility",
+    "No robot task success, complete Episode or cost-per-success can be inferred from kinematic probes",
+    "No real calibration or new real movement"
+  ]
+}
