@@ -108,8 +108,6 @@ def main(round_dir=ROUND):
                 save(round_dir / 'progress.json', dict(experiments=results, reported_total_tokens=token_sum))
                 subprocess.run([sys.executable, str(ROOT / 'scripts/publish.py'), '--message',
                     'Record planner context experiment ' + result['experiment_id'], str(out.relative_to(ROOT))], check=True)
-                remote = subprocess.check_output(['git', 'ls-remote', 'origin', 'HEAD'], cwd=ROOT, text=True).split()[0]
-                assert remote == subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
 
 
 if __name__ == '__main__':

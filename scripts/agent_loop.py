@@ -23,41 +23,55 @@ def validate_plan(plan):
     return float(value)
 
 
-def compatible_seed_history(profile, target):
-    return profile=='original' and str(target)=='3'
+def compatible_seed_history(profile, target, robot_arms='dual'):
+    return robot_arms=='dual' and profile=='original' and str(target)=='3'
 
-def run(arm, shift, publish=True, planner_policy=None):
-    if os.environ.get('PIPER_ACTIVE_ARMS','dual')!='dual':
-        raise ValueError('Existing planner memories are dual-arm scoped; use collect_current_scene.py for verified right-arm collection')
+def run(arm, shift, publish=True, planner_policy=None, seed_episode=None):
+    robot_arms=os.environ.get('PIPER_ACTIVE_ARMS','dual')
+    if robot_arms not in ('dual','right'):raise ValueError('Physical simulation arms must be dual or right')
     out,r=record('evaluation',f'Luna {arm} executable repair loop; target {os.environ.get("PIPER_TARGET_INDEX","3")}; holder shift {shift} mm','llm_driven_simulation')
     r['model']=os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna');r['runner_sha256']=digest(__file__)
     local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
     started=time.monotonic();calls=[];trials=[]
     policy=planner_policy or json.loads((ROOT/'evolution/active.json').read_text()).get('planner_policy','llm')
-    if arm!='D':policy='llm'
+    if arm!='D' or robot_arms=='right':policy='llm'
     r['actual_planner_policy']=policy
     # Use historical evidence only when task and source profile match.
     seed=json.loads((ROOT/'experiments/baseline/20261111T083720Z_f64309a8/result.json').read_text())
-    seed_compatible=compatible_seed_history(os.environ.get('PIPER_SIM_PROFILE','original'),os.environ.get('PIPER_TARGET_INDEX','3'))
+    seed_compatible=compatible_seed_history(os.environ.get('PIPER_SIM_PROFILE','original'),os.environ.get('PIPER_TARGET_INDEX','3'),robot_arms)
+    if seed_episode:
+        matches=list((ROOT/'experiments').glob('*/'+seed_episode+'/result.json'))
+        if len(matches)!=1:raise ValueError('Expected one seed Episode result')
+        candidate=json.loads(matches[0].read_text())
+        if candidate.get('active_arms',['left','right'])!=(['right'] if robot_arms=='right' else ['left','right']):raise ValueError('Seed embodiment mismatch')
+        if candidate['initial_state'].get('target_index')!=int(os.environ.get('PIPER_TARGET_INDEX','3')):raise ValueError('Seed target mismatch')
+        from episode_format import source_for
+        source_for(candidate)
+        seed=candidate;seed_compatible=True
     if policy=='compiled_alignment_v1' and seed_compatible:
         seed=json.loads((ROOT/'experiments/research_stage3/20261112T075231Z_2a125acc/result.json').read_text())
-    facts={'execution_profile':os.environ.get('PIPER_SIM_PROFILE','original'),
-           'prior_evidence_scope':'Only same-profile outlet-3 evidence is included; other source/target histories are excluded',
+    facts={'active_arms':['right'] if robot_arms=='right' else ['left','right'],
+           'execution_profile':os.environ.get('PIPER_SIM_PROFILE','original'),
+           'prior_evidence_scope':'Seed evidence must match source, target and physical arms; no right-arm motion skill is yet promoted',
            'task':'Lift yellow plug, insert into socket, release and remain seated',
            'target_index':int(os.environ.get('PIPER_TARGET_INDEX','3')),
            'mode':('UNKNOWN_TASK_MODE: no target-specific verified motion skill; decompose goal and test the available existing insertion primitive' if os.environ.get('PIPER_TARGET_INDEX','3')!='3' else 'KNOWN_TASK'),
-           'initial_state':'Same existing scene with a held-out holder initial X position; no physical parameters changed',
+           'initial_state':'Existing scene with requested holder initial X position; no physical parameters changed',
            'previous_action':seed['actions'] if seed_compatible else [],'previous_observation':seed['observed_effects'] if seed_compatible else [],
            'root_cause':'UNKNOWN; this is simulation evidence, not a verified real cause'}
     prompt='Do not use tools or read files. Choose ONE next experiment using the existing simulation adapter. Return only JSON with offset_mm (finite number [-4,4]), hypotheses (0 to 3 short hypotheses), predicted_effect, reason. No shell or hardware commands. Offset is XY target X correction in socket coordinates; only this variable can change. Budget: two simulated executions. Task facts:'+json.dumps(facts)
     if arm in 'BCD':prompt+='\n'+(ROOT/'protocol/robot_problem_solving.md').read_text()
-    if arm in 'CD':prompt+='\nApplicable verified result-checking skills:'+json.dumps([m for m in retrieve('plug_not_seated') if m['validation_status']=='SIMULATION_VERIFIED'])
+    if arm in 'CD' and robot_arms=='dual':prompt+='\nApplicable verified result-checking skills:'+json.dumps([m for m in retrieve('plug_not_seated') if m['validation_status']=='SIMULATION_VERIFIED'])
+    if seed_episode:
+        from agent_challenge import precontact_observation,frame_contract
+        prompt+='\nPrecontact observation:'+json.dumps(precontact_observation(seed['experiment_id']))
+        prompt+='\nCoordinate contract:'+json.dumps(frame_contract(seed['experiment_id'],shift,seed['initial_state'].get('holder_x_shift_mm',0)))
     context=context_for(seed,shift) if policy=='compiled_alignment_v1' and seed_compatible else {}
     if context:prompt+='\nTyped applicability evidence:'+json.dumps(context)
-    r['initial_state']={'target_index':int(os.environ.get('PIPER_TARGET_INDEX','3')),'mode':facts['mode'],'arm':arm,'holder_shift_mm':shift,'execution_budget':2,'llm_call_budget':2,'seed_failure':seed['experiment_id'] if seed_compatible else None,'incompatible_history_excluded':not seed_compatible}
+    r['initial_state']={'target_index':int(os.environ.get('PIPER_TARGET_INDEX','3')),'mode':facts['mode'],'arm':arm,'robot_arms':robot_arms,'holder_shift_mm':shift,'execution_budget':2,'llm_call_budget':2,'seed_failure':seed['experiment_id'] if seed_compatible else None,'incompatible_history_excluded':not seed_compatible}
     seen=set()
     try:
-        call=plan_with_memory(prompt,local,policy,context);calls.append(call)
+        call=plan_with_memory(prompt,local,policy,context,include_catalog=robot_arms!='right');calls.append(call)
         for step in range(2):
             if call['tool_events']:raise ValueError('Unexpected tool use in planner; trial not executed')
             offset=validate_plan(call['answer'])
@@ -76,9 +90,10 @@ def run(arm, shift, publish=True, planner_policy=None):
             if trial['task_success'] or trial['result']=='infrastructure_error':break
             seen.add(fingerprint)
             if step==0 and arm=='D':
-                feedback={'actual_execution':trials[-1],'relevant_prior_failures':failure_memory(trial['observed_effects']),'failed_offsets':sorted(x[1] for x in seen),'instruction':'Use actual evidence to update hypotheses. Do not repeat the same failed offset without new evidence.'}
+                feedback={'actual_execution':trials[-1],'relevant_prior_failures':failure_memory(trial['observed_effects']) if robot_arms=='dual' else [],'failed_offsets':sorted(x[1] for x in seen),'instruction':'Use actual evidence to update hypotheses. Do not repeat the same failed offset without new evidence.'}
+                if seed_episode:feedback['precontact_observation']=precontact_observation(trial['experiment_id'])
                 context=context_for(trial,shift) if policy=='compiled_alignment_v1' and seed_compatible else {}
-                call=plan_with_memory(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback)+'\nTyped applicability evidence:'+json.dumps(context),local,policy,context);calls.append(call)
+                call=plan_with_memory(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback)+'\nTyped applicability evidence:'+json.dumps(context),local,policy,context,include_catalog=robot_arms!='right');calls.append(call)
             # A/B/C remain fixed-policy after planning; retries consume the same execution ceiling.
         r.update(result='success' if any(t['task_success'] for t in trials) else 'failure',
             task_success=any(t['task_success'] for t in trials),validation_status='SIMULATION_VERIFIED' if any(t['task_success'] for t in trials) else 'SIMULATION_FAILED',
@@ -101,5 +116,6 @@ def run(arm, shift, publish=True, planner_policy=None):
     return r
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--arm',choices=list('ABCD'),required=True);p.add_argument('--shift-mm',type=float,default=.5);p.add_argument('--local-only',action='store_true');p.add_argument('--planner-policy',choices=['llm','compiled_alignment_v1']);a=p.parse_args()
-    run(a.arm,a.shift_mm,not a.local_only,a.planner_policy)
+    p=argparse.ArgumentParser();p.add_argument('--robot-arms',choices=['dual','right'],default='dual');p.add_argument('--seed-episode');p.add_argument('--arm',choices=list('ABCD'),required=True);p.add_argument('--shift-mm',type=float,default=.5);p.add_argument('--local-only',action='store_true');p.add_argument('--planner-policy',choices=['llm','compiled_alignment_v1']);a=p.parse_args()
+    os.environ['PIPER_ACTIVE_ARMS']=a.robot_arms
+    run(a.arm,a.shift_mm,not a.local_only,a.planner_policy,a.seed_episode)

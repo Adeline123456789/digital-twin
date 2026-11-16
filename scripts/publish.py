@@ -30,6 +30,12 @@ def main():
     log=ROOT/'.local';log.mkdir(exist_ok=True)
     (log/('push-'+commit+'.txt')).write_text(result.stdout+result.stderr)
     print('commit',commit,'push_returncode',result.returncode)
-    if result.returncode: print(result.stderr,file=sys.stderr)
-    return result.returncode
+    if result.returncode:
+        print(result.stderr,file=sys.stderr)
+        return result.returncode
+    branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip()
+    remote=subprocess.check_output(['git','ls-remote','origin','refs/heads/'+branch],cwd=ROOT,text=True).split()[0]
+    if remote!=commit:raise RuntimeError('Remote branch does not match published commit')
+    print('verified_remote_branch',branch,remote)
+    return 0
 if __name__=='__main__': sys.exit(main())

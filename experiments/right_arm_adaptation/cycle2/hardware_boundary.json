@@ -1,0 +1,9 @@
+{
+  "path_label": "piper_use_right/replay_connector.py:Hardware.connect",
+  "before_sha256": "8068ca115d7c47efd2373ed1cf7a3b17f0ff35a89e56341caf8af7816c3b69f0",
+  "after_sha256": "c0d4bd9ccc23425d5e34ef6e569f021fb009f4b6cf075991b5d52378b056a45e",
+  "backup": "self_evolution/right_arm_adapter_v1/hardware_backup/replay_connector.py",
+  "scope": "Replay and home shared connection boundary; existing enable, workspace, speed, stop and confirmation checks unchanged",
+  "hardware_motion": false,
+  "restore": "Restore the local backup only after current installation permits dual hardware again"
+}

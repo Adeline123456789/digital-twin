@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-11-16T03:26:54.495432+00:00",
+  "cycle": 2,
+  "maximum_cycles": 6,
+  "task": "Close right-arm Agent, failed Episode, publication and existing hardware selection gaps",
+  "maximum_full_simulations": 3,
+  "cases": [
+    "native right offset2mm deliberately failed recording",
+    "actual Agent D right, seeded with the new failure; two native executions maximum"
+  ],
+  "maximum_planner_calls": 2,
+  "requested_model": "gpt-6-luna; test availability from actual call, no implied strength ordering",
+  "teacher_calls": 0,
+  "evaluation_scope": "Known-task integration and feedback; not unseen-task or teacher/student comparison",
+  "hardware_motion": false,
+  "prior_cycle": "experiments/right_arm_adaptation/cycle1/result.json"
+}

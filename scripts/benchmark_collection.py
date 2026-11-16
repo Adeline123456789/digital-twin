@@ -79,8 +79,6 @@ def run_case(case, inline, label='Stage3 round2', kind='research_stage3', publis
     if publish:
         subprocess.run([sys.executable, str(ROOT / 'scripts/publish.py'), '--message',
                         'Record '+kind+' complete collection ' + ident, *paths], check=True)
-        remote = subprocess.check_output(['git', 'ls-remote', 'origin', 'HEAD'], cwd=ROOT, text=True).split()[0]
-        assert remote == subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     return result
 
 
