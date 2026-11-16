@@ -20,7 +20,7 @@ def run_case(case, inline, label='Stage3 round2', kind='research_stage3', publis
     out, result = simulate(kind, case['offset_mm'], case['shift_mm'],
                            label + ' ' + case['name'], record_inline=inline,
                            grasp_tilt_deg=case.get('grasp_tilt_deg'),start_right_deg=case.get('start_right_deg'),
-                           grasp_height_m=case.get('grasp_height_m'))
+                           grasp_height_m=case.get('grasp_height_m'), align_gap_m=case.get('align_gap_m'))
     ident = result['experiment_id']
     local = ROOT / '.local' / ident
     stage = DATA / 'self_evolution' / ('stage3_recording_' + ident)

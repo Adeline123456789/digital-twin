@@ -8,7 +8,7 @@
   "attempt4_label": "FAILURE, corrected by operator; original false-positive retained",
   "current_hardware_state": "Native controller disabled after attempt5 with operator support; not a live feedback assertion",
   "latest_user_reset_confirmed": true,
-  "status": "GRASP22_SIMULATION_RUNNING",
+  "status": "GRASP20_ALIGN23_REFERENCE_VALIDATION_RUNNING",
   "versions": [
     {
       "grasp_height_mm": 18,
@@ -45,9 +45,12 @@
     "No independent calibrated force/contact model"
   ],
   "next_candidate": {
-    "grasp_height_mm": 22,
+    "grasp_height_mm": 20,
+    "align_gap_mm": 23,
     "gripper_effort_nm": 1,
-    "reason": "Current-scene successful RGB contact/retention comparison",
-    "status": "SIMULATION_PENDING"
+    "source_episode": "20261116T125834Z_58df2069",
+    "simulation_complete": true,
+    "reference_validation": "running",
+    "real_execution": false
   }
 }

@@ -84,7 +84,7 @@ def decide(signature, repair, version_name=None):
         if repair in item.get('ineffective_repairs',[]): return 'REJECT_REPEAT_REQUIRE_NEW_EVIDENCE'
     return 'UNKNOWN_TASK_MODE' if not retrieve(signature) else 'ALLOW_SIMULATION'
 
-def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False, grasp_tilt_deg=None, start_right_deg=None, grasp_height_m=None):
+def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False, grasp_tilt_deg=None, start_right_deg=None, grasp_height_m=None, align_gap_m=None):
     out,r=record(kind,label,'simulation')
     raw=DATA/'self_evolution'/r['experiment_id']
     start=time.monotonic()
@@ -127,6 +127,10 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
         cmd=[str(runtime),str(SIM/'scripts/try_plug_pick_sim.py'),
              '--output',str(raw),'--task',str(task),'--smooth-timing','--speed',str(speed),
              '--grasp-height',str(grasp_height),'--insertion-offset-mm',str(offset),'0']
+        if align_gap_m is not None:
+            if not .020 <= align_gap_m <= .025:
+                raise ValueError('Straightening clearance must be between20 and25mm')
+            cmd+=['--align-gap',str(align_gap_m)]
         if retained:cmd+=['--grasp-roll-deg','30','--align-corrections','4','--grasp-opening','0','--start-right-deg','0','0','0','0','0','0']
         if grasp_tilt_deg is not None:
             if isinstance(grasp_tilt_deg,bool) or not math.isfinite(grasp_tilt_deg) or not -10<=grasp_tilt_deg<=10:

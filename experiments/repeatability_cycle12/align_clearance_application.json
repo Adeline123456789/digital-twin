@@ -1,0 +1,9 @@
+{
+  "native_script": "try_plug_pick_sim.py",
+  "change": "Expose existing25mm straightening clearance as --align-gap; default unchanged, candidate23mm",
+  "original_sha256": "fe9064eef02aecafb12881288340574a9759b3203779dcb111889b74ce2dc3c4",
+  "applied_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+  "joint_limits_changed": false,
+  "success_or_collision_limits_changed": false,
+  "reference_safety_validation_required": true
+}
