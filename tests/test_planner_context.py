@@ -30,3 +30,16 @@ class PlannerContextTests(unittest.TestCase):
             dict(type='item.completed', item=dict(type='agent_message', text='{}'))])))
         with patch('model_compare.subprocess.run', return_value=response):
             self.assertEqual(ask('return JSON', Path('/tmp'), include_catalog=False)['tool_events'], 1)
+
+    def test_bounded_profile_changes_only_instruction_source(self):
+        response=SimpleNamespace(returncode=0,stderr='',stdout=json.dumps(dict(type='item.completed',item=dict(type='agent_message',text='{}'))))
+        with patch('model_compare.subprocess.run',return_value=response) as run:
+            ask('same facts',Path('/tmp'),include_catalog=False,profile='codex_default')
+            base=run.call_args
+            answer=ask('same facts',Path('/tmp'),include_catalog=False,profile='bounded_json_v1')
+            candidate=run.call_args
+        self.assertEqual(base.kwargs,candidate.kwargs)
+        self.assertEqual(base.args[0][:-1],candidate.args[0][:-3])
+        self.assertTrue(candidate.args[0][-2].startswith('model_instructions_file='))
+        self.assertEqual(answer['planner_profile'],'bounded_json_v1')
+        self.assertIn('read-only',candidate.args[0])

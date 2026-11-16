@@ -1,0 +1,56 @@
+{
+  "cycle": 4,
+  "total_cycle_limit": 6,
+  "timestamp": "2026-11-16T05:02:26.453778+00:00",
+  "scope": "One-factor bounded JSON planner instruction-source test; real cycle3 remains pending operator support condition",
+  "models": [
+    "gpt-6-luna",
+    "gpt-6-astra"
+  ],
+  "order": [
+    [
+      "gpt-6-luna",
+      "codex_default"
+    ],
+    [
+      "gpt-6-luna",
+      "bounded_json_v1"
+    ],
+    [
+      "gpt-6-astra",
+      "bounded_json_v1"
+    ],
+    [
+      "gpt-6-astra",
+      "codex_default"
+    ]
+  ],
+  "budget": {
+    "max_model_calls": 4,
+    "max_complete_simulations": 4,
+    "stop_before_next_call_total_tokens": 90000,
+    "seconds_per_call": 120
+  },
+  "controlled": [
+    "identical user prompt and case per model",
+    "right-only model and task",
+    "same initial folded entry",
+    "same action bounds and full recorder",
+    "existing independent success and safety checks",
+    "same read-only CLI and tool permissions",
+    "skills catalog omitted in both"
+  ],
+  "single_changed_factor": "Invocation-local model_instructions_file; compact decision-role description replaces generic coding role only",
+  "promotion_rule": "No invalid JSON/tool-use or failed complete recording; candidate achieves physical success in both model pairs with fewer measured input tokens. Otherwise leave default unchanged. Small known-task scope, not general ability evidence.",
+  "not_measured": [
+    "new real task success",
+    "independent exploration capability",
+    "teacher-student learning",
+    "total economic cost"
+  ],
+  "prior_failure": "20261116T033037Z_8d4d29c4",
+  "native_task_changed": false,
+  "speed_changed": false,
+  "physics_changed": false,
+  "privileged_information_used": true
+}
