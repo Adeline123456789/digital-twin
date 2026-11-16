@@ -1,77 +1,87 @@
-# Cycle 3 checkpoint — shared reference validated; real task pending
+# Cycle 3 — shared reference reached hardware; grasp retention failed
 
-The current right-only native simulation includes the physical folded-to-approach
-motion and completes the task. It produced a complete successful Episode at
-`complete_sim/succeed/20261116T044726Z_6d665f3f/`: two actual configured simulation
-RGB channels, 1,632 frames, 54.4 s simulated motion. Collection plus verification
-took 171.975 s. The Episode is not nested in another Episode.
+**Real task failed, complete recording retained, robot safely disabled.** This
+cycle establishes a concrete reference/command/feedback pair; it does not establish
+successful transfer or calibrated contact physics. The earlier pending checkpoint
+is retained in Git history and `reference_validation.json`.
 
-The frozen 100 Hz controller reference has 5,438 points and duration 54.3667 s.
-Its independent MuJoCo replay passed the original task success detector and
-every integrator-step penetration check: maximum 0.03104 mm against the unchanged
-0.2 mm numerical bound. Validation took 116.002 s wall time. No friction,
-geometry, contact parameter, motion speed or smoothing change was used.
-The source native rollout's maximum penetration was 0.03146 mm.
+| Trial | Observed result |
+|---|---|
+| Native simulation including folded entry | Successful,1,632frames,54.4s; complete Episode |
+| Frozen100Hz reference in MuJoCo | Successful,5,438points; all original substep checks passed |
+| Real right-arm task |0/1success;3,137identical reference-prefix commands, then existing abort/retreat/fold |
 
-This is **Simulation-only**, using privileged object/contact state. The reference
-contains simulation commands, not simulated measured joint trajectories. Its
-immutable hash and prediction trace hash are in `reference_validation.json`.
-Passing both simulations does not establish real alignment, physical calibration,
-or a reduction in collection cost.
+Reference ID: `dd8950e77027d0106eb260240db235b91aea8e59b808ad6b23e54d706f244b11`.
+The real controller used this reference directly. No online LLM generated new
+hardware actions. Its unchanged wrist RGB protection stopped before insertion
+because the plug was absent. Recovery is preserved and not counted as completion
+of the reference. The actual prefix lasted31.981s versus31.36s nominal; the0.621s
+accumulated logging/scheduling lag remains visible, with no time warping.
 
-## Real readiness and recording
+## Earliest supported discrepancy
 
-The existing hardware controller's read-only preview passed with only the right
-arm connected. Measured joints were `[0, -2.380, 1.155, 0.476, 22.254, 2.232]`
-degrees. The unchanged bounded folded-entry rule maps J2/J3 to zero; this entry
-matches the simulated first command to less than 0.000009 degree. No enable or
-motion command was sent. Fresh external and wrist RGB images show the task
-objects and no person in the visible work area; this observation expires and
-must be refreshed for actual execution.
+The important discrepancy is during **grasp/lift**, before the final align-stage
+alarm. At grasp end, commanded aperture was27mm and motor-reported aperture38.2mm.
+By20.948s after the first reference command, during lift, feedback was within1mm
+of the empty commanded aperture for five consecutive samples; lift end was27.1mm.
+RGB frames650,670,710 show the plug remaining at the holder while fingers withdraw.
+The simulated aperture instead remained about39.96mm at grasp end,39.46mm after
+lift and38.44mm after transport. Six-joint command tracking RMS was below0.36deg
+per joint in the examined phases; this is not an independent TCP calibration.
 
-The native RGB/CAN recorder was exercised without motion. Its right-only export
-contains 14 common frames in both videos and a matching six-joint HDF5 stream,
-with no fabricated left-arm channels or depth measurement. The hardware Python
-environment lacked `av`; export succeeded using the existing simulator Python
-environment. The initial diagnostic export retained an obsolete RGB-D purpose
-label, which was corrected and re-exported. Both diagnostic outputs remain
-outside the formal Episode roots. See `recorder_check.json` for evidence.
+This supports **loss/non-establishment of a retained grasp during lift**. It does
+not uniquely identify friction, grasp height, lateral registration, geometry or
+available gripping effort. The first tracking-threshold crossing during grasp is
+compatible with intended object contact and is not itself a failure detector.
+The controller label `insertion slip` identifies where its guard fired, not the
+physical root cause. Root cause remains UNKNOWN. Motor aperture/effort is not a
+six-axis force measurement; RGB does not provide a verified3D object trajectory.
 
-The local runbook explicitly requires supporting the arm before disabling it,
-and documents J5 falling after disable. Current operator availability for that
-physical condition has been requested. This is not a renewed request for normal
-task authorization. Until it is confirmed, the robot stays disabled; no controller
-or recorder service has been left running. The cycle remains open, not failed or
-complete. A fresh readiness check is required after a response.
+## Recording and safety outcome
 
-## Implementation and checks
+Complete real Episode:
+`complete_real/failed/20261116_real_shared_reference_000001/`.
+Both actual camera videos contain1,590decoded frames (53s), with matching right
+HDF5 channels, true failed outcome, verification and pair manifest. Raw RGB/CAN,
+sent commands and execution report are together under `raw/task/`. The former
+staging capture path is only a compatibility symlink to that same directory.
+There is no left-arm stream, real depth, force sensor, or fabricated successful
+label. Maximum camera pairing skew was14.58ms; recorded movement and commands
+are fully covered. Failure remains excluded from successful-policy training.
 
-Public additions: named reference adapter, physics replay validator, three small
-contract tests and reviewed evidence. Native task/capture/export interfaces were
-adapted locally for the right-only RGB workflow; source remains private, with
-backups and hashes in `local_integration.json`. The actual execution entry loads
-the frozen reference and checks its matching successful physical validation.
-The old hardware safety lifecycle is unchanged.
+The native verifier still assumed two arms; its minimal local adaptation reads
+actual arms and cameras from existing v2metadata. It passed this1,590-frame real
+Episode and the existing1,133-frame dual simulation regression. Original source
+stays local; backups and hashes are in `local_integration.json`. The generic raw
+capture summary still calls its tool purpose calibration; authoritative export
+metadata explicitly records `yellow_pick_insert_attempt` and preserves that source
+label without reclassifying the task as a calibration experiment.
 
-Contract tests: 3 passed. Existing agent integration tests: 6 passed. The strict
-reference adapter and native legacy resampler were also compared on the prior
-right-only success and produced exactly equal commands, times and phases; the
-strict adapter additionally rejects trajectories requiring time stretching.
+User confirmed operator availability and subsequently actual support. After the
+native fold completed, the existing `DISABLE` lifecycle exited normally. Independent
+read-only feedback confirmed all six motors and gripper disabled, err_code0 and
+software-stop arm_status1. J5 then relaxed to23.026deg; this is recorded separately
+from the enabled folded zero. No background hardware controller remains.
 
-No real transfer denominator exists yet: 0 real task attempts, 0 demonstrated
-real successes, no calibration and no claim of weak-model independent discovery.
-Planner calls in this cycle: 0. Research/orchestration model cost is separate and
-not yet fully accounted. There has been one operator-availability question and
-no physical intervention during this cycle. The six-cycle budget remains intact:
-cycles 1–2 completed, cycle 3 pending real execution; cycles 4–6 not spent here.
+## Costs, versions and next decision
 
-## Paired-analysis preparation
+No planner model was invoked for this real task. Research orchestration cost is
+separate and not yet attributable by cycle. Physical task interventions0;
+operator support for shutdown1, with two condition-confirmation exchanges. Real
+success denominator is zero, so cost per valid real success is undefined.
+Simulation collection/verification took171.975s, adapted-reference validation
+116.002s, and the recorded real attempt53s including preparation and recovery.
+These are components, not total elapsed or financial cost.
 
-`compare_shared_reference.py` verifies the executed command prefix against the
-frozen reference before comparing feedback. It preserves the saved prediction and
-uses elapsed host timestamps without time warping; preparation, recovery and final
-hold are excluded from claims about direct reference execution. It reports timing
-drift and joint/gripper residuals, leaving physical cause UNKNOWN. One synthetic
-contract test checks timing drift, persistent-deviation localization and rejection
-of modified commands. This analyzer has not yet processed a new real task; its
-synthetic test is not real-robot evidence.
+Named adapter tests3, agent tests6 and paired-comparison test1 passed; actual
+comparison additionally verified all3,137sent prefix values. The interface and
+recording are validated on this failed attempt; no successful real skill or
+physical parameter calibration is promoted. Version and raw evidence references
+are in `real_result.json`; source rollback restores the backed-up native scripts
+without removing the current right-only hardware restriction.
+
+Cycle5 should discriminate the grasp/contact relationship using these real
+observations, update only supported twin state/model or operation, validate the
+candidate in MuJoCo, then return to the authorized task. It must not respond to
+this failure by merely correcting insertion offset. Cycle4's separate cost study
+is already complete; the batch remains within the six-cycle total cap.

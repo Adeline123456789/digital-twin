@@ -1,0 +1,376 @@
+{
+  "experiment_id": "real_sim_cycle3_shared_reference_real_attempt_1",
+  "timestamp": "2026-11-16T05:28:14.029604+00:00",
+  "cycle": 3,
+  "cycle_complete": true,
+  "total_cycle_limit": 6,
+  "result": "REAL_TASK_FAILURE_WITH_VALID_RECORDING",
+  "model": "deterministic frozen task; no online action-generating LLM",
+  "task": "Right-arm pick and insert from frozen simulation reference",
+  "environment": "real",
+  "program_version": {
+    "reference_adapter": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+    "local_integration": "local_integration.json"
+  },
+  "trajectory_id": "dd8950e77027d0106eb260240db235b91aea8e59b808ad6b23e54d706f244b11",
+  "initial_state": {
+    "motion_commands": 0,
+    "enable_attempted": false,
+    "passed": true,
+    "measured": [
+      [
+        0.0,
+        -2.38,
+        1.155,
+        0.476,
+        22.254,
+        2.232,
+        1.0
+      ]
+    ],
+    "entry": [
+      0.0,
+      0.0,
+      0.0,
+      0.476,
+      22.254,
+      2.232,
+      1.0
+    ],
+    "entry_error_deg": 8.538963755633233e-06
+  },
+  "expected_effects": [
+    "retain plug through lift and transport; insert and remain seated"
+  ],
+  "observed_effects": {
+    "supported_observation": "Transient jaw obstruction/contact during grasp followed by near-empty commanded aperture during lift; RGB still shows plug in original fixture",
+    "failure_interval": {
+      "last_grasp_time_s": 20.279287835932337,
+      "first_near_command_during_lift_s": 20.948437624960206,
+      "right_wrist_frame": 670,
+      "threshold_mm": 1,
+      "consecutive_samples": 5
+    },
+    "physical_cause": "UNKNOWN",
+    "candidate_causes": [
+      "Wrong grasp geometry/height or lateral contact relationship",
+      "Contact/friction or available gripper effort differs from simulation",
+      "Fixture/plug geometry or registration differs from model"
+    ],
+    "not_concluded": [
+      "No force measurement",
+      "No identified friction value",
+      "The first command-tracking threshold during grasp is contact-compatible and not proof of failure",
+      "Controller insertion-slip label is late and does not identify causal onset"
+    ]
+  },
+  "task_success": false,
+  "sim_task_success": true,
+  "attempts": {
+    "sim_native": 1,
+    "sim_adapted_reference": 1,
+    "real": 1,
+    "real_success": 0
+  },
+  "root_cause": "UNKNOWN: grasp geometry/registration and contact/effort mismatch remain competing explanations",
+  "root_cause_status": "unknown",
+  "earliest_supported_failure_stage": "lift; before later align-stage missing-object abort",
+  "comparison": {
+    "reference_id": "dd8950e77027d0106eb260240db235b91aea8e59b808ad6b23e54d706f244b11",
+    "identical_reference_prefix": true,
+    "command_samples": 3137,
+    "reference_samples": 5438,
+    "entire_reference_sent": false,
+    "real_logged_span_s": 31.980816846014932,
+    "reference_prefix_span_s": 31.36,
+    "final_logged_time_lag_s": 0.6208168460149324,
+    "phase_trace": [
+      {
+        "phase": "approach",
+        "samples": 1664,
+        "command_tracking_rmse_deg_mm": [
+          0.07328170661919678,
+          0.2873850444533186,
+          0.2059466233055977,
+          0.10611376024039211,
+          0.1534260720323373,
+          0.3589000936467646,
+          0.31783900738484916
+        ],
+        "sim_real_rmse_deg_mm": [
+          0.09647067762294263,
+          0.605098077531828,
+          0.42526869029280623,
+          0.1049725816721303,
+          0.2983540653746871,
+          0.718168520070514,
+          0.30444478742617676
+        ],
+        "sim_real_paired_samples": 1660
+      },
+      {
+        "phase": "descend",
+        "samples": 193,
+        "command_tracking_rmse_deg_mm": [
+          0.06184746299405537,
+          0.1308707073313424,
+          0.2068113970736947,
+          0.00022868500941593132,
+          0.3431303433235867,
+          0.06755150001295293,
+          0.3000387821721304
+        ],
+        "sim_real_rmse_deg_mm": [
+          0.06184335280458926,
+          0.7351166314752356,
+          1.2165040614089404,
+          0.0002322443420584058,
+          1.9637521330004202,
+          0.06755099707793259,
+          0.8320991633030941
+        ],
+        "sim_real_paired_samples": 193
+      },
+      {
+        "phase": "grasp",
+        "samples": 133,
+        "command_tracking_rmse_deg_mm": [
+          0.061830766733339156,
+          0.08384730309113024,
+          0.08097971071002746,
+          0.00024173570360409285,
+          0.20496994304096242,
+          0.06756163635655933,
+          6.1368140040911126
+        ],
+        "sim_real_rmse_deg_mm": [
+          0.061879624882193875,
+          0.07384017716431872,
+          0.08000078629589596,
+          0.00016975653877027773,
+          0.2594754458135609,
+          0.06756268762360311,
+          8.37753126212967
+        ],
+        "sim_real_paired_samples": 133
+      },
+      {
+        "phase": "lift",
+        "samples": 194,
+        "command_tracking_rmse_deg_mm": [
+          0.06184842261445834,
+          0.14563168045391978,
+          0.2330224517747093,
+          0.00022775046139236237,
+          0.2734439489063872,
+          0.03977748135554169,
+          5.9089395842494
+        ],
+        "sim_real_rmse_deg_mm": [
+          0.06040997318071739,
+          0.9602037306459541,
+          1.6050687179654475,
+          0.00047370262652932554,
+          2.4290370062765367,
+          0.04117180570775742,
+          10.374316355349535
+        ],
+        "sim_real_paired_samples": 194
+      },
+      {
+        "phase": "transport",
+        "samples": 953,
+        "command_tracking_rmse_deg_mm": [
+          0.2920376398174539,
+          0.11796431206951948,
+          0.14303323108900273,
+          0.08507862969061851,
+          0.04880852650076004,
+          0.35980115859871925,
+          0.0999999999999987
+        ],
+        "sim_real_rmse_deg_mm": [
+          3.0999682446181342,
+          1.2353833238740568,
+          1.4028002310351921,
+          0.5368476978066417,
+          0.2646295082682878,
+          3.559771646004274,
+          11.670943341943012
+        ],
+        "sim_real_paired_samples": 953
+      }
+    ],
+    "first_persistent_tracking_deviation": {
+      "sample": 1907,
+      "time_s": 19.437363598961383,
+      "phase": "grasp"
+    },
+    "diagnostic_threshold": ">2 degrees in any joint OR >3mm gripper, five samples; not a safety or task-success detector",
+    "physical_task_success": false,
+    "root_cause": "UNKNOWN",
+    "observed_joint_and_gripper_units": [
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "mm"
+    ],
+    "alignment": "Subtract first logged command/feedback receipt only. Interpolate saved prediction at real elapsed time inside its support; no time warping.",
+    "limitations": [
+      "Host logging time is not an independent actuator execution timestamp",
+      "Tracking deviation alone cannot identify collision, slip, object pose or friction",
+      "Simulation predictions use privileged state; real motor feedback is not force measurement"
+    ],
+    "evidence_hashes": {
+      "commanded_probe.csv": "959ac1c6215ed9b427e25253411ed1054f9ba601407b774919961099b6b41f2b",
+      "execution_report.json": "d9878832de09b645efc5ac4dc61d13b130701f3d2b9a7f29c334ce81cf9cc2ab",
+      "prediction.jsonl": "8274aa68dd9fb7d8083cf2cb383b0508adc9c9c539d4667e42aa32c3ef630381"
+    }
+  },
+  "pair_manifest": {
+    "pair_id": "20261116_cycle3_shared_reference",
+    "trajectory_id": "dd8950e77027d0106eb260240db235b91aea8e59b808ad6b23e54d706f244b11",
+    "simulation_episode": "complete_sim/succeed/20261116T044726Z_6d665f3f",
+    "real_episode": "complete_real/failed/20261116_real_shared_reference_000001",
+    "simulation_prediction": "self_evolution/real_sim_cycle3/reference_20261116T044726Z_6d665f3f/prediction.jsonl",
+    "execution_mode": "frozen_reference_prefix_then_existing_abort_retreat_and_fold",
+    "full_reference_completed": false,
+    "task_success": false,
+    "command_samples_before_abort": 3137,
+    "planned_reference_samples": 5438,
+    "reference_provenance": "simulation commanded targets; actual simulator and robot states remain separate",
+    "real_modalities": [
+      "external RGB",
+      "right wrist RGB",
+      "right joint and gripper motor feedback"
+    ],
+    "real_depth": false,
+    "six_axis_force": false,
+    "raw_evidence": "raw/task",
+    "simulation_privileged_information": true,
+    "hashes": {
+      "raw/task/commanded_probe.csv": "959ac1c6215ed9b427e25253411ed1054f9ba601407b774919961099b6b41f2b",
+      "raw/task/execution_report.json": "d9878832de09b645efc5ac4dc61d13b130701f3d2b9a7f29c334ce81cf9cc2ab",
+      "raw/task/raw_can.jsonl": "685aa87ebe3804e00997909fe8f57573222ac5df5d2af9aa6dbe164872c4547a",
+      "proprio_stats/proprio_stats.h5": "2c2ae2c3f6a7fa5a338ffa5c01fd90fc98f9149d2268af95446558e1542f1700"
+    }
+  },
+  "recording": {
+    "episodes": [
+      {
+        "session": "20261116_real_shared_reference",
+        "episode": "000001",
+        "domain": "real",
+        "num_frames": 1590,
+        "purpose": "yellow_pick_insert_attempt",
+        "success": false,
+        "policy_training_eligible": false,
+        "video_frames": {
+          "cam_external": 1590,
+          "cam_right_wrist": 1590
+        },
+        "known_right_joint_action_frames": 1590,
+        "known_right_gripper_action_frames": 1590
+      }
+    ],
+    "verified_frames": 1590,
+    "full_sim_demonstrations": 0,
+    "full_real_demonstrations": 0,
+    "real_task_attempts": 1,
+    "force_sensor_directory_present": false
+  },
+  "shutdown": {
+    "controller_exit_code": 0,
+    "motors_enabled": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "gripper_enabled": false,
+    "arm_status": 1,
+    "err_code": 0,
+    "feedback_joint_degrees": [
+      0.0,
+      -2.371,
+      0.928,
+      0.487,
+      23.026,
+      0.581
+    ],
+    "note": "arm_status1 is software stop after disable; J5 passive return is distinct from folded zero while enabled"
+  },
+  "human_interventions": {
+    "task_action_or_trajectory_corrections": 0,
+    "shutdown_support": 1,
+    "operator_availability_confirmation": 1,
+    "supported_disable_confirmation": 1
+  },
+  "tokens": {
+    "planner_calls": 0,
+    "planner_tokens": 0,
+    "research_orchestrator_tokens": null
+  },
+  "real_recorded_duration_s": 53.0,
+  "real_reference_prefix_logged_seconds": 31.980816846014932,
+  "simulation_reference_prefix_seconds": 31.36,
+  "physical_calibration_accepted": false,
+  "skill_promoted": false,
+  "privileged_information_used_in_simulation": true,
+  "next_improvement": "Cycle5: use observed lift retention loss to discriminate grasp relationship versus contact/control mismatch, update only supported twin state/model or operation, reverify then return to authorized real task",
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/pair_manifest.json",
+      "sha256": "31431fbaf0f37671a84b71701f30151d9cd60066fc68c43870b142af92c0f004"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/verification.json",
+      "sha256": "eec0e9113009a834139ed39bfa007bdb40dac6884ce4a6019a61b3049668de2f"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/comparison.json",
+      "sha256": "46792cd1e632f7e025d7b32ec125a060ab236fa0e8dd85a489399ce535fcff71"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/grasp_diagnosis.json",
+      "sha256": "46c204c00fde41684f4034ce2293e3e1091aae7e1aac27cd4b9b0284bd9bca11"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/commanded_probe.csv",
+      "sha256": "959ac1c6215ed9b427e25253411ed1054f9ba601407b774919961099b6b41f2b"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/execution_report.json",
+      "sha256": "d9878832de09b645efc5ac4dc61d13b130701f3d2b9a7f29c334ce81cf9cc2ab"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/right_wrist/0650.jpg",
+      "sha256": "a872a3decd796c3ba84ab1e74212ab5bc9306991b0123fb141e22b3bffbac039"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/right_wrist/0670.jpg",
+      "sha256": "aadb4cfbc62d4c951272e5b4ba573574b226a251dc7fce6f1cb0c4fca9379a7c"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/right_wrist/0710.jpg",
+      "sha256": "5148d597c6400824a37eb4b9f3b9e0bd535874613584c0a18d8e6c31d9786e8c"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/external/0710.jpg",
+      "sha256": "506555274a3a14669cf0ea36384dd776fc8e39b1a044563928cfe3f28af2a6d6"
+    }
+  ],
+  "infrastructure_events": [
+    {
+      "action": "post-run read-only status check",
+      "first_result": "Wrong explicit script path; process exited2 before connecting",
+      "repair": "Reused the runbook relative script through the existing environment wrapper",
+      "final_result": "Read-only check passed; six joints and gripper disabled"
+    }
+  ]
+}

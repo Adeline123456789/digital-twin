@@ -1,0 +1,19 @@
+{
+  "id": "FP004",
+  "version": 1,
+  "content": "A late missing-object guard can conceal earlier grasp retention failure. In this real task the jaw was obstructed at grasp end then closed toward the empty target during lift while RGB showed the plug at the holder; simulation retained the object. Use the earlier event before proposing insertion-offset repairs.",
+  "applicability": "Current right Piper, RGB-only, yellow rigid plug, frozen reference used in cycle3; reported gripper aperture is motor feedback, not force",
+  "source_episodes": [
+    "20261116_real_shared_reference_000001",
+    "20261116T044726Z_6d665f3f"
+  ],
+  "validation_status": "REAL_FAILURE_OBSERVED_PHYSICAL_CAUSE_UNKNOWN",
+  "success_count": 0,
+  "failure_count": 1,
+  "limitations": [
+    "No independently measured force/friction or3D object pose",
+    "Cannot distinguish geometry, registration and contact/effort from this one trial",
+    "First closure tracking error can be intended contact rather than failure"
+  ],
+  "evidence": "experiments/real_sim_cycle3/real_result.json"
+}

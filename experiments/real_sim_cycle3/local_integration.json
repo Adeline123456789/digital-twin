@@ -16,8 +16,12 @@
     "scripts/trajectory_contract.py": {
       "before": null,
       "after": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540"
+    },
+    "scripts/verify_mixed_plug_dataset.py": {
+      "before": "3171182069187927dea867f4c812c90d21eda39967daadbe77c70b105c9befb4",
+      "after": "0c62aba7a139badbe0efc754406ce633108acb5581f1498e1b43178768a23714"
     }
   },
-  "physical_motion": false,
+  "physical_motion": true,
   "scope": "Existing executor and RGB/CAN recorder/exporter; controller safety unchanged"
 }

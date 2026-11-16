@@ -1,0 +1,15 @@
+{
+  "version": "shared_reference_v1_real_attempt_1",
+  "previous": "shared_reference_v1",
+  "timestamp": "2026-11-16T05:30:42.496628+00:00",
+  "cycle": 3,
+  "status": "REAL_REFERENCE_PREFIX_VERIFIED_TASK_FAILED",
+  "evidence": "experiments/real_sim_cycle3/real_result.json",
+  "real_task_success": false,
+  "root_cause_status": "UNKNOWN",
+  "successful_skill_promoted": false,
+  "physical_calibration_promoted": false,
+  "hardware_shutdown_verified": true,
+  "local_integration": "experiments/real_sim_cycle3/local_integration.json",
+  "rollback": "Restore native scripts listed in local_integration.json from its backup after checking before-hashes, only while no controller is active. Preserve right-only hardware restrictions."
+}
