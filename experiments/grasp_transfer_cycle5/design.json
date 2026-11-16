@@ -1,0 +1,26 @@
+{
+  "cycle": 5,
+  "total_cycle_limit": 6,
+  "timestamp": "2026-11-16T05:46:00.661723+00:00",
+  "source_commit": "0ea5a403ecbbe4877b2d2fcb270d920209dbdbc2",
+  "question": "Does unmeasured finite-pad torsion/rolling support explain the observed grasp-retention mismatch, and can a geometry-guided operation improve transfer?",
+  "evidence": "experiments/real_sim_cycle3/real_result.json",
+  "budgets": {
+    "matched_frozen_grasp_prefix_replays": 2,
+    "geometry_guided_local_operation_candidates": 4,
+    "complete_simulation_episodes": 2,
+    "adapted_reference_replays": 2,
+    "real_task_retries": 1,
+    "planner_calls": 0
+  },
+  "stop_rule": "Stop a branch after four candidates without verified benefit or discriminating evidence. Do not increase this cycle or batch budget.",
+  "fixed": [
+    "same native speed, timing and collision gates",
+    "no new real sensor assumptions",
+    "existing independent success detector"
+  ],
+  "initial_comparison": "identical frozen reference and initial state; yellow-plug condim 6 vs 3 only, friction and actuator unchanged",
+  "claim_boundary": "A sensitivity or task-conservative model, not identified physical friction; only independent real improvement supports task adaptation",
+  "raw_root": "self_evolution/grasp_transfer_cycle5",
+  "first_real_failure": "complete_real/failed/20261116_real_shared_reference_000001"
+}
