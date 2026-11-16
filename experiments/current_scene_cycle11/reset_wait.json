@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-11-16T11:10:38.402230+00:00",
+  "cycle": 11,
+  "cycle_complete": false,
+  "goal_complete": false,
+  "status": "WAITING_FOR_PHYSICAL_OBJECT_RESET",
+  "condition": "Fresh external RGB still shows yellow plug on table in front of holder; validated next reference assumes plug restored to original holder slot.",
+  "consecutive_goal_turns_with_same_condition": 3,
+  "previous_goal_turn_classification": "verified_wait: original controller confirmed live and fresh RGB checked; no new movement or task execution",
+  "movement_permission": "Already granted; not requesting repeated start permission",
+  "hardware_observation": {
+    "joint_degrees": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "err_code": 0,
+    "enabled_motors": 6,
+    "max_driver_temperature_c": 48,
+    "controller": "Existing folded hold confirmed live; no disable or handoff sent"
+  },
+  "pending_reference_sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+  "next_action": "After actual object reset and hands clear, verify current scene, start fresh capture, use existing validated controller handoff, execute second real attempt, retain full outcome.",
+  "not_a_calibration_result": true,
+  "evidence": [
+    {
+      "dataset_relative_path": "self_evolution/current_scene_cycle11/after_drop_current_rgb_004/external/last.png",
+      "sha256": "1022778d785a7889fd7196bb543b6a4ab2b044ae80bacf32efdb63244a604756"
+    },
+    {
+      "dataset_relative_path": "self_evolution/current_scene_cycle11/connection_held_pending_reset.json",
+      "sha256": "ccb4de98bb9f292b679780b1af6f232d958ebf6fda10fad046c3df6b36b481b6"
+    }
+  ]
+}
