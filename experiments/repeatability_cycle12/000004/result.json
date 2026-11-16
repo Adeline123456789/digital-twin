@@ -1,0 +1,104 @@
+{
+  "experiment_id": "20261116_real_repeatability_000004",
+  "timestamp": "2026-11-16T12:39:48.869282+00:00",
+  "batch_index": 4,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "40596ce887f8a4def382023b0b4e4ceb0232afa20094f49234db31e59aba16e2",
+    "archive_program_sha256": "a9f74e197964aa4a629ee18ea2125badf0e9db9d45c72c9993ecdd4ede6a6b45"
+  },
+  "initial_state_stratum": "cold_start",
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 1770,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Operator correction plus Agent review of insertion-stage RGB",
+    "observed_at": "2026-11-16T12:44:28.445337+00:00",
+    "observed_facts": [
+      "Operator explicitly reports attempt4 did not insert and was offset.",
+      "Insertion wrist frame9742 shows plug rotated relative to align frame9653.",
+      "Final external RGB alone cannot distinguish seated insertion from a plug resting on the outlet."
+    ],
+    "phase_end_motor_aperture_mm": {
+      "prepare_gripper": 57.0,
+      "approach": 59.5,
+      "descend": 59.5,
+      "grasp": 45.8,
+      "lift": 44.5,
+      "transport": 44.1,
+      "align": 44.1,
+      "insert": 44.1,
+      "release": 59.3,
+      "retreat": 59.4,
+      "fold": 59.5,
+      "final_hold": 59.5
+    },
+    "scope": "Failed physical insertion; operator correction supersedes earlier false-positive RGB interpretation; exact alignment/contact root cause UNKNOWN",
+    "evidence": [
+      {
+        "relative_capture_path": "external/last.png",
+        "sha256": "835a992d753c8b889b230c37255ae11390efa664ae5826e2e6bb4b1c7e091e83"
+      },
+      {
+        "relative_capture_path": "execution_report.json",
+        "sha256": "8d01ecf1af7e35a90aa02a56fb48a3fd87f0cafed9ddbadfe43fc8f8b98ac4ec"
+      },
+      {
+        "relative_capture_path": "right_wrist/9653.jpg",
+        "sha256": "dac8c40fa2e97f3d60f632c565099a207ce9bb34ca83fdd47ea2b11e1ea7063c"
+      },
+      {
+        "relative_capture_path": "right_wrist/9742.jpg",
+        "sha256": "a6a13eb68ca67771c88910d8489410a6c0964dda8967e894c10488e70345a670"
+      }
+    ]
+  },
+  "reference_commands": 5522,
+  "entire_reference_sent": true,
+  "reference_execution_seconds": 57.86594357597642,
+  "nominal_reference_seconds": 55.200000000271864,
+  "execution_time": 59.898880678927526,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One manual plug reset before this attempt; final supported shutdown counted separately",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/videos/cam_external_rgb.mp4",
+      "sha256": "68ad0d453b88dd90db8f1954f5d94cbdbbd4f5109be4c14660f4695e35ecd466"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "5fef5a0e2a4761e46490a7e72747ea149acb2ea3b2ecab5ef090ee968376b000"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/proprio_stats/proprio_stats.h5",
+      "sha256": "17808efa1f2a96c82ae09190b45a0f1a8d3d0b9ba2803b6ec5790a01b7961088"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/outcome.json",
+      "sha256": "49ef0b57a70ad23a3b1b857baa874eeb2e53df02493b16d1d3ed578238918b06"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/verification.json",
+      "sha256": "a61d2e96eed9a69f66189ff8d34b34dcd99ffcb08b9988c92c91551f5da45c0b"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/raw/task/commanded_probe.csv",
+      "sha256": "8dfe9dc2bf6f6cdcf8964233c32b75f4f94ae2df8b1d5fb7f91555951c99f2a0"
+    }
+  ],
+  "failure_signature": "plug_rotated_during_insertion; operator_rejected_success",
+  "task_gripper_effort_nm": 1.0,
+  "success_label_corrected": true
+}

@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-11-16T12:28:15.036724+00:00",
+  "authorization": "User explicitly instructed gripper torque1N/M, interpreted as1N\u00b7m (SDK1000 units).",
+  "status": "APPLIED_FOR_NEXT_TASK_PROCESS",
+  "gripper_effort_nm": 1.0,
+  "sdk_effort_units": 1000,
+  "previous_effort_nm": 0.3,
+  "source_records": [
+    {
+      "file": "replay_controller.py",
+      "original_sha256": "c06a6a1ca024868ab93e042006d3609d00cbea9e0ee3255b215e9efcbdde1f14",
+      "applied_sha256": "72d3a06e392bf8562ce0e0850f333c96e2fe520080474d1588aec9c55599600f"
+    },
+    {
+      "file": "replay_connector.py",
+      "original_sha256": "c0d4bd9ccc23425d5e34ef6e569f021fb009f4b6cf075991b5d52378b056a45e",
+      "applied_sha256": "4d9cb5afd4f149e7f52869cc654eebabaeaefeaccfd177f2c8f2cc2ef79604f0"
+    },
+    {
+      "file": "continue_plug_task.py",
+      "original_sha256": "c06557afc1b9a6e8079b0946ec980516f3b5789cfbefbabc3b8a256e515caae8",
+      "applied_sha256": "807c7526e4a70e8fecc81559b43422e998bfe2f231cb602f023cc9b0eacdcc85"
+    }
+  ],
+  "unchanged": [
+    "frozen16mm reference",
+    "joint speed12deg/s",
+    "SDK arm speed15%",
+    "fault and enable gates",
+    "slip guard",
+    "workspace and joint limits"
+  ],
+  "simulation_limit": "Reference motion remains validated; simulator10N linear gripper force has no identified conversion to motor torque. Not a1Nm physical calibration."
+}

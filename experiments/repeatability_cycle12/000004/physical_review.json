@@ -1,0 +1,44 @@
+{
+  "physical_task_success": false,
+  "plug_retained_in_target_after_release_and_fold": false,
+  "reviewer": "Operator correction plus Agent review of insertion-stage RGB",
+  "observed_at": "2026-11-16T12:44:28.445337+00:00",
+  "observed_facts": [
+    "Operator explicitly reports attempt4 did not insert and was offset.",
+    "Insertion wrist frame9742 shows plug rotated relative to align frame9653.",
+    "Final external RGB alone cannot distinguish seated insertion from a plug resting on the outlet."
+  ],
+  "phase_end_motor_aperture_mm": {
+    "prepare_gripper": 57.0,
+    "approach": 59.5,
+    "descend": 59.5,
+    "grasp": 45.8,
+    "lift": 44.5,
+    "transport": 44.1,
+    "align": 44.1,
+    "insert": 44.1,
+    "release": 59.3,
+    "retreat": 59.4,
+    "fold": 59.5,
+    "final_hold": 59.5
+  },
+  "scope": "Failed physical insertion; operator correction supersedes earlier false-positive RGB interpretation; exact alignment/contact root cause UNKNOWN",
+  "evidence": [
+    {
+      "relative_capture_path": "external/last.png",
+      "sha256": "835a992d753c8b889b230c37255ae11390efa664ae5826e2e6bb4b1c7e091e83"
+    },
+    {
+      "relative_capture_path": "execution_report.json",
+      "sha256": "8d01ecf1af7e35a90aa02a56fb48a3fd87f0cafed9ddbadfe43fc8f8b98ac4ec"
+    },
+    {
+      "relative_capture_path": "right_wrist/9653.jpg",
+      "sha256": "dac8c40fa2e97f3d60f632c565099a207ce9bb34ca83fdd47ea2b11e1ea7063c"
+    },
+    {
+      "relative_capture_path": "right_wrist/9742.jpg",
+      "sha256": "a6a13eb68ca67771c88910d8489410a6c0964dda8967e894c10488e70345a670"
+    }
+  ]
+}

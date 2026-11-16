@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-11-16T12:44:28.445454+00:00",
+  "previous_agent_label": true,
+  "corrected_label": false,
+  "reason": "Operator explicitly rejected insertion success; wrist insertion image supports plug rotation.",
+  "operator_statement": "第四条就没有插进去你插偏了",
+  "old_review": {
+    "physical_task_success": true,
+    "plug_retained_in_target_after_release_and_fold": true,
+    "reviewer": "Agent visual review of recorded final external RGB and execution trace",
+    "observed_at": "2026-11-16T12:39:29.093975+00:00",
+    "observed_facts": [
+      "Yellow plug initially in holder; task executed grasp, lift, transport, insertion and release.",
+      "Final external RGB shows yellow plug retained in target outlet after empty gripper retreated and folded.",
+      "Native report confirms complete reference and folded zero; its physical label remains null."
+    ],
+    "phase_end_motor_aperture_mm": {
+      "prepare_gripper": 57.0,
+      "approach": 59.5,
+      "descend": 59.5,
+      "grasp": 45.8,
+      "lift": 44.5,
+      "transport": 44.1,
+      "align": 44.1,
+      "insert": 44.1,
+      "release": 59.3,
+      "retreat": 59.4,
+      "fold": 59.5,
+      "final_hold": 59.5
+    },
+    "scope": "RGB-visible insertion/retention only; electrical continuity and insertion force not measured; one trial at user-authorized 1 N m.",
+    "evidence": [
+      {
+        "relative_capture_path": "external/last.png",
+        "sha256": "835a992d753c8b889b230c37255ae11390efa664ae5826e2e6bb4b1c7e091e83"
+      },
+      {
+        "relative_capture_path": "execution_report.json",
+        "sha256": "8d01ecf1af7e35a90aa02a56fb48a3fd87f0cafed9ddbadfe43fc8f8b98ac4ec"
+      },
+      {
+        "relative_capture_path": "right_wrist/9653.jpg",
+        "sha256": "dac8c40fa2e97f3d60f632c565099a207ce9bb34ca83fdd47ea2b11e1ea7063c"
+      },
+      {
+        "relative_capture_path": "right_wrist/9742.jpg",
+        "sha256": "a6a13eb68ca67771c88910d8489410a6c0964dda8967e894c10488e70345a670"
+      }
+    ]
+  },
+  "original_controller_report_unchanged": true,
+  "raw_video_and_trajectory_unchanged": true
+}
