@@ -1,0 +1,256 @@
+{
+  "experiment_id": "fit_005",
+  "model": "deterministic scipy Powell",
+  "environment": "archived_real_RGB_and_static_simulation_rendering",
+  "result": "failure",
+  "root_cause_status": "unknown",
+  "task_success": null,
+  "accepted": false,
+  "real_motion_commands": 0,
+  "physics_steps": 0,
+  "execution_llm_calls": 0,
+  "execution_llm_tokens": 0,
+  "orchestration_tokens": null,
+  "privileged_information_used": true,
+  "program_sha256": "521417f28bdbb77673e097ae2623226c2c1c56b32ac5c9e2a037ac3f8b8e055d",
+  "task_sha256": "9a3d49e162a97902d967ef7eea0578d91b772c15e5e0e665dcb869dfa4be3aa0",
+  "threshold": 110,
+  "max_evaluations": 600,
+  "active_calibration_changed": false,
+  "optimizer_success": false,
+  "optimizer_message": "Maximum number of function evaluations has been exceeded.",
+  "evaluations": 600,
+  "rotation_change_deg": 1.1367845308396367,
+  "translation_change_mm": 8.87229918978398,
+  "at_bound": false,
+  "observations": [
+    {
+      "name": "holder_center_hold",
+      "split": "train",
+      "frame": 561,
+      "baseline": {
+        "iou": 0.7455489614243324,
+        "disagreement": 0.03638292230177672
+      },
+      "candidate": {
+        "iou": 0.7771923221678585,
+        "disagreement": 0.03139750729249536
+      }
+    },
+    {
+      "name": "holder_j4_hold",
+      "split": "train",
+      "frame": 618,
+      "baseline": {
+        "iou": 0.7968810916179337,
+        "disagreement": 0.027631927870591357
+      },
+      "candidate": {
+        "iou": 0.8528121260470682,
+        "disagreement": 0.019570405727923627
+      }
+    },
+    {
+      "name": "holder_j5_hold",
+      "split": "train",
+      "frame": 730,
+      "baseline": {
+        "iou": 0.7823485415108452,
+        "disagreement": 0.03086714399363564
+      },
+      "candidate": {
+        "iou": 0.8484381025838796,
+        "disagreement": 0.020843277645186953
+      }
+    },
+    {
+      "name": "holder_j6_hold",
+      "split": "train",
+      "frame": 845,
+      "baseline": {
+        "iou": 0.7292048369366069,
+        "disagreement": 0.039193847785733225
+      },
+      "candidate": {
+        "iou": 0.7911631419939577,
+        "disagreement": 0.029329090426942456
+      }
+    },
+    {
+      "name": "holder_translation_hold",
+      "split": "heldout",
+      "frame": 963,
+      "baseline": {
+        "iou": 0.7749221183800623,
+        "disagreement": 0.030654998674091754
+      },
+      "candidate": {
+        "iou": 0.8425259792166268,
+        "disagreement": 0.020896313975072925
+      }
+    },
+    {
+      "name": "holder_heldout_hold",
+      "split": "heldout",
+      "frame": 1070,
+      "baseline": {
+        "iou": 0.7808641975308642,
+        "disagreement": 0.030124635375232033
+      },
+      "candidate": {
+        "iou": 0.8341232227488151,
+        "disagreement": 0.022275258552108195
+      }
+    },
+    {
+      "name": "socket_center_hold",
+      "split": "train",
+      "frame": 1496,
+      "baseline": {
+        "iou": 0.8920396310215237,
+        "disagreement": 0.033518960487934235
+      },
+      "candidate": {
+        "iou": 0.9072790294627383,
+        "disagreement": 0.028374436488994962
+      }
+    },
+    {
+      "name": "socket_j4_hold",
+      "split": "train",
+      "frame": 1554,
+      "baseline": {
+        "iou": 0.8952141057934508,
+        "disagreement": 0.03309466984884646
+      },
+      "candidate": {
+        "iou": 0.9138461538461539,
+        "disagreement": 0.02673031026252983
+      }
+    },
+    {
+      "name": "socket_j5_hold",
+      "split": "train",
+      "frame": 1677,
+      "baseline": {
+        "iou": 0.886565166471474,
+        "disagreement": 0.03595863166268894
+      },
+      "candidate": {
+        "iou": 0.9070005109862034,
+        "disagreement": 0.02895783611774065
+      }
+    },
+    {
+      "name": "socket_j6_hold",
+      "split": "train",
+      "frame": 1800,
+      "baseline": {
+        "iou": 0.8932536293766012,
+        "disagreement": 0.03314770617873243
+      },
+      "candidate": {
+        "iou": 0.912695652173913,
+        "disagreement": 0.02662423760275789
+      }
+    },
+    {
+      "name": "socket_translation_hold",
+      "split": "heldout",
+      "frame": 1915,
+      "baseline": {
+        "iou": 0.8852431431936733,
+        "disagreement": 0.03617077698223283
+      },
+      "candidate": {
+        "iou": 0.9096551724137931,
+        "disagreement": 0.02779103686024927
+      }
+    },
+    {
+      "name": "socket_heldout_hold",
+      "split": "heldout",
+      "frame": 2021,
+      "baseline": {
+        "iou": 0.8851559821734659,
+        "disagreement": 0.03553434102360117
+      },
+      "candidate": {
+        "iou": 0.9095521343596921,
+        "disagreement": 0.027419782551047468
+      }
+    },
+    {
+      "name": "independent_approach",
+      "split": "independent",
+      "frame": 82,
+      "baseline": {
+        "iou": 0.6768853464132434,
+        "disagreement": 0.027950145849907185
+      },
+      "candidate": {
+        "iou": 0.7133041848844472,
+        "disagreement": 0.0243436754176611
+      }
+    },
+    {
+      "name": "independent_descend",
+      "split": "independent",
+      "frame": 550,
+      "baseline": {
+        "iou": 0.7960799095363739,
+        "disagreement": 0.028692654468310794
+      },
+      "candidate": {
+        "iou": 0.8454919566030678,
+        "disagreement": 0.02190400424290639
+      }
+    },
+    {
+      "name": "independent_grasp",
+      "split": "independent",
+      "frame": 632,
+      "baseline": {
+        "iou": 0.777511141583819,
+        "disagreement": 0.03442057809599576
+      },
+      "candidate": {
+        "iou": 0.8409732016925247,
+        "disagreement": 0.023919384778573322
+      }
+    },
+    {
+      "name": "independent_lift",
+      "split": "independent",
+      "frame": 715,
+      "baseline": {
+        "iou": 0.8073878627968337,
+        "disagreement": 0.027101564571731636
+      },
+      "candidate": {
+        "iou": 0.8511194029850746,
+        "disagreement": 0.021161495624502785
+      }
+    }
+  ],
+  "private_calibration_sha256": "0da2893c33420a5f789a920df8f3068d2dbe81ce698030d7c60884b389c0b66a",
+  "view_manifest_sha256": "dcce1d4739ba0505580053b513fc75650f4ec993276a3ccbdde0f5937bbc1afc",
+  "scope": "Pixel fit only. Cable/CAD and dark-mask differences can bias pose; no metric or task-success validation.",
+  "splits": {
+    "heldout": {
+      "baseline_mean_iou": 0.8315463603195165,
+      "candidate_mean_iou": 0.8739641271847318
+    },
+    "independent": {
+      "baseline_mean_iou": 0.7644660650825675,
+      "candidate_mean_iou": 0.8127221865412786
+    },
+    "train": {
+      "baseline_mean_iou": 0.827631995519096,
+      "candidate_mean_iou": 0.8638033799077216
+    }
+  },
+  "completed_objective_evaluations": 600,
+  "wall_seconds": 12.891829652013257,
+  "local_evidence_path": "self_evolution/registration_cycle7/fit_005"
+}

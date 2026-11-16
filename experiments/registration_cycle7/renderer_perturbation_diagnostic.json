@@ -1,0 +1,119 @@
+[
+  {
+    "mode": "native",
+    "renders": 28,
+    "errors": [
+      {
+        "rotation_normalized": 0.528,
+        "view": "holder_center_hold",
+        "error": "index 1346 is out of bounds for axis 0 with size 1294"
+      },
+      {
+        "rotation_normalized": 0.528,
+        "view": "holder_j4_hold",
+        "error": "index 1346 is out of bounds for axis 0 with size 1294"
+      },
+      {
+        "rotation_normalized": 0.528,
+        "view": "holder_j5_hold",
+        "error": "index 1346 is out of bounds for axis 0 with size 1294"
+      },
+      {
+        "rotation_normalized": 0.528,
+        "view": "holder_j6_hold",
+        "error": "index 1346 is out of bounds for axis 0 with size 1294"
+      }
+    ]
+  },
+  {
+    "mode": "no_multisample",
+    "renders": 28,
+    "errors": []
+  },
+  {
+    "mode": "opaque",
+    "renders": 28,
+    "errors": [
+      {
+        "rotation_normalized": 0,
+        "view": "holder_center_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0,
+        "view": "holder_j4_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0,
+        "view": "holder_j5_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0,
+        "view": "holder_j6_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0.236,
+        "view": "holder_center_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0.236,
+        "view": "holder_j4_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0.236,
+        "view": "holder_j5_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0.236,
+        "view": "holder_j6_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0.528,
+        "view": "holder_center_hold",
+        "error": "index 1347 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0.528,
+        "view": "holder_j4_hold",
+        "error": "index 1347 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0.528,
+        "view": "holder_j5_hold",
+        "error": "index 1347 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 0.528,
+        "view": "holder_j6_hold",
+        "error": "index 1347 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 1,
+        "view": "holder_center_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 1,
+        "view": "holder_j4_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 1,
+        "view": "holder_j5_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      },
+      {
+        "rotation_normalized": 1,
+        "view": "holder_j6_hold",
+        "error": "index 1344 is out of bounds for axis 0 with size 1295"
+      }
+    ]
+  }
+]

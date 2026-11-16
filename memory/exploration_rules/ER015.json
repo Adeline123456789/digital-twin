@@ -1,0 +1,14 @@
+{
+  "id": "ER015",
+  "version": 1,
+  "content": "For RGB-only real/sim alignment, keep known robot CAD and measured joints fixed, optimize only a bounded camera pose numerically, and reserve other configurations and recordings. Test segmentation sensitivity. Pixel improvement does not establish metric calibration; use a known-size target when CAD/mask ambiguity dominates.",
+  "embodiment": "Piper single right arm, current external RGB camera and native CAD",
+  "applicability": "Existing RGB/feedback exposure correspondence and visible robot; diagnostic dark-mask extractor only applies to the current bright-table scene",
+  "source_episodes": ["20261116_real_spatial_probe_000001", "20261116_real_grasp_height12_000001"],
+  "validation_status": "ARCHIVED_RGB_PIXEL_IMPROVEMENT; NO_ACCEPTED_METRIC_CALIBRATION",
+  "success_count": 0,
+  "failure_count": 2,
+  "count_scope": "Candidate metric calibrations accepted/not accepted, not task episodes",
+  "limitations": ["Independent recording camera placement stability not externally measured", "Nominal robot FK is not independent metrology", "One fit reached evaluation limit", "No proof of lower total collection cost"],
+  "evidence": "experiments/registration_cycle7/REPORT.md"
+}

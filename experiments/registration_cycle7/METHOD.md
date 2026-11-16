@@ -1,0 +1,33 @@
+# Cycle 7: existing methods for reducing real-to-sim setup cost
+
+The user authorized six additional cycles (7–12). This round addresses the measured spatial mismatch using existing RGB and measured joint feedback. No new robot motion; no original simulator source/assets uploaded. This document records source-code review, not claims of running upstream frameworks.
+
+| Method / primary evidence | Actual interface and compatibility | Decision for this robot |
+|---|---|---|
+| [EasyHeC, RA-L 2023](https://arxiv.org/pdf/2305.01191), §III-C/D, Eq. 1–5; [RBSolver source](https://github.com/ootts/EasyHeC/blob/bc9771cbc1137e450cd0f33d5bac0fcaf0f1015b/easyhec/modeling/models/rb_solve/rb_solver.py) | Known robot CAD + RGB masks + measured link poses + camera intrinsics; `RBSolver.forward(dps)` expects `mask`, `link_poses`, `K`. Fits camera pose from multiple configurations; `SpaceExplorer.forward` selects poses by disagreement between candidate renderings. | Adopt fixed-CAD multi-pose objective for an offline feasibility test. Keep native MuJoCo renderer, use installed SciPy. This is a mechanism adaptation, **not an EasyHeC reproduction**: no differentiable renderer, trained mask network or active robot exploration is run. |
+| [EasyHeC renderer](https://github.com/ootts/EasyHeC/blob/bc9771cbc1137e450cd0f33d5bac0fcaf0f1015b/easyhec/structures/nvdiffrast_renderer.py) and [trainer](https://github.com/ootts/EasyHeC/blob/bc9771cbc1137e450cd0f33d5bac0fcaf0f1015b/easyhec/trainer/rbsolve_iter.py) | MIT. Renderer uses CUDA/nvdiffrast; trainer includes xArm/Franka drivers and SAM/manual-mask route. Current robot Python has neither Torch nor nvdiffrast. EasyHeC++ website's code link resolves to this repository; no distinct ++ implementation established. | Do not install new robot drivers or train a segmenter just to test geometry. Existing camera initialization is only provisional. The frozen dark-robot ROI is scene-specific; segmentation sensitivity is a required test. |
+| [Agentic Real2Sim](https://arxiv.org/html/2607.19190v1), §3.1–3.2; [robot_base_align.py](https://github.com/agentic-real2sim/agentic_real2sim/blob/880389bda289d2e78154c73ae1b6d23b7a650557/ar2s/agents_sysid/skills/robot_base_align.py) | Episode artifacts separate deterministic tools and bounded VLM decisions. DROID adapter expects camera calibration and depth/stereo geometry. Source defaults base alignment to identity because optional silhouette fitting can introduce drift. `align_robot_base(..., optimize=True)` uses three seeded Nelder–Mead searches, tied to `RobotOnlySim`/DROID artifacts. | Reuse the separation of decisions from numeric search; preserve initialization and validate heldout observations. Do not import its Franka/DROID scene or interpret grasp-friendly object shifts as measured geometry. Current RGB-only Piper data does not satisfy its full input contract. |
+| [Agentic Real2Sim grasp sweep](https://github.com/agentic-real2sim/agentic_real2sim/blob/880389bda289d2e78154c73ae1b6d23b7a650557/ar2s/agents_sysid/grasp_sweep.py), `grasp_sweep` | Deterministic mesh-surface sampling and simulation probes avoid an LLM query per candidate. Single pickup target, prebuilt calibrated scene/episode required. No source copied; repository licence not established during this bounded review. | Useful later for task search; cannot establish the real holder's location merely by making a replay grasp succeed. |
+| [MuJoCo official sysid](https://github.com/google-deepmind/mujoco/tree/main/python/mujoco/sysid), actual `trajectory.py`, `parameter.py`, `optimize.py` | Apache-2.0. `SystemTrajectory` holds timed control/sensor streams; `Parameter` has bounds and a model modifier; `optimize` performs nonlinear least squares. Current installed MuJoCo 3.3.7 has **no `mujoco.sysid`**. | Appropriate after control/sensor correspondence and spatial geometry are trustworthy. Do not upgrade the production simulation in this round. Position command/feedback alone does not independently identify friction, payload and an undocumented internal controller. |
+
+## Why this experiment changes the inference problem
+
+Cycle 6 jointly estimated wrist-camera pose and unknown static scene points from a short motion orbit. Reprojection improvement did not establish metric accuracy. Here the robot mesh and measured joint poses provide a fixed geometric reference for the **external camera**; scene objects are not optimization variables. This still assumes adequate nominal robot kinematics and CAD. It cannot by itself locate the socket in metres or calibrate the wrist camera.
+
+The experiment compares baseline and candidate on identical masks. Eight training configurations are separated from four reserved configurations and stationary frames in the cycle-5 real failure recording. Two frozen segmentation thresholds assess sensitivity. All optimizer work is local; execution-model calls are zero, while research/orchestration tokens remain a separate, nonzero cost.
+
+## Practical incremental workflow
+
+1. Keep source meshes, recorded trajectories, intrinsics and actual policy versions fixed and hashed. Select sparse stationary RGB keyframes by exposure time; retain raw recordings locally.
+2. First solve robot/camera registration against known robot geometry. Evaluate reserved poses and segmentation sensitivity; reject camera/geometry compensation that only improves training pixels.
+3. With a trustworthy camera chain, estimate task-object pose using known dimensions/CAD and independent views. Keep object geometry, scene placement and camera errors distinct.
+4. Replay the same measured commands. Identify the earliest action-effect divergence before choosing a bounded dynamics parameter. Use numerical optimization and a separate trajectory, not free-form XML edits.
+5. Cache validated results and expose compact metrics/uncertainty to interchangeable LLMs. Invoke the model for selecting the next informative experiment, not evaluating every numeric candidate.
+
+This workflow is a proposed integration sequence. Steps 2–5 are not declared solved by the existence of these tools. Six additional cycles are a ceiling, not a requirement to repeat uninformative experiments.
+
+## Reproducibility
+
+Inspected EasyHeC main `bc9771cbc1137e450cd0f33d5bac0fcaf0f1015b`; `rb_solver.py` blob `0ef60a11f1e1999aa9559d9f42ad1f1c5cda0f9b`, `space_explorer.py` blob `8664ae0b7f8f6df8e65e8283da42d5c2958009a1`.
+Agentic Real2Sim main `880389bda289d2e78154c73ae1b6d23b7a650557`; read `calibrate.py`, `episode.py`, `robot_base_align.py`, `grasp_sweep.py`.
+MuJoCo sysid blobs: trajectory `dade545ff390f7cf7ddb59704b96b38a08ea2fc0`; parameter `ab3877d780805300f13ed30bc042b4b281cc4be1`; optimize `7a0209af5c84066c89cec9f0199ce5ef18272212`.

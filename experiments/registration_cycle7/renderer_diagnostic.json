@@ -1,0 +1,162 @@
+[
+  {
+    "view": "holder_center_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "holder_center_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "holder_j4_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "holder_j4_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "holder_j5_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "holder_j5_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "holder_j6_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "holder_j6_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "holder_translation_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "holder_translation_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "holder_heldout_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "holder_heldout_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "socket_center_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "socket_center_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "socket_j4_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "socket_j4_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "socket_j5_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "socket_j5_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "socket_j6_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "socket_j6_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "socket_translation_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "socket_translation_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "socket_heldout_hold",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "socket_heldout_hold",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "independent_approach",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "independent_approach",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "independent_descend",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "independent_descend",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "independent_grasp",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "independent_grasp",
+    "mode": "cloned",
+    "ok": true
+  },
+  {
+    "view": "independent_lift",
+    "mode": "native",
+    "ok": true
+  },
+  {
+    "view": "independent_lift",
+    "mode": "cloned",
+    "ok": true
+  }
+]

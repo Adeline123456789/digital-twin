@@ -1,0 +1,136 @@
+{
+  "experiment_id": "20261116_registration_cycle7",
+  "timestamp": "2026-11-16T07:34:59.428479+00:00",
+  "cycle": 7,
+  "total_cycle_limit": 12,
+  "model": "Deterministic SciPy Powell; Codex research orchestration model identifier unavailable",
+  "task": "External-camera RGB registration against fixed robot CAD and measured joint configurations",
+  "environment": "archived_real_RGB_and_static_MuJoCo_rendering",
+  "program_version": {
+    "baseline_commit": "c552c4513e3c8b94d692a23cb49ac79a82b6b682",
+    "script_sha256": "521417f28bdbb77673e097ae2623226c2c1c56b32ac5c9e2a037ac3f8b8e055d"
+  },
+  "protocol_version": "50a06a030985736a4719f97e3a79698c37296f3d6cecd59e495dfe2f871ac771",
+  "memory_version": "ER014 baseline; ER015 added by this cycle",
+  "initial_state": {
+    "source_episodes": [
+      "20261116_real_spatial_probe_000001",
+      "20261116_real_grasp_height12_000001"
+    ],
+    "modalities": [
+      "RGB",
+      "measured_joints",
+      "measured_gripper_aperture"
+    ],
+    "real_depth_used": false,
+    "measured_force_used": false
+  },
+  "actions": [
+    "Read primary papers and core source",
+    "Reuse existing native scene for static rendering",
+    "Compare two frozen segmentation thresholds with bounded 6DOF pose searches"
+  ],
+  "expected_effects": [
+    "Reduce pixel alignment error on reserved observations without scene/CAD changes"
+  ],
+  "observed_effects": [
+    "Both numerical candidates improve heldout and separate-recording mask overlap",
+    "One candidate converges; second reaches600evaluation limit",
+    "Candidates disagree by3.90mm/0.668deg; no independent metric ground truth"
+  ],
+  "failure_signature": "segmentation_sensitive_registration",
+  "root_cause": "UNKNOWN: mask/CAD/kinematic/camera contributions not uniquely separated",
+  "root_cause_status": "unknown",
+  "hypotheses": [
+    "Camera extrinsic error",
+    "Robot CAD or nominal FK error",
+    "Real-mask contamination and cable/appearance mismatch"
+  ],
+  "experiments": [
+    {
+      "attempt": "fit_001",
+      "result": "infrastructure_error",
+      "wall_seconds": 1.7307011609664187,
+      "evidence_sha256": "a6cc99fde4f699f9356282f08001fea8e2edc25510d0e7507fbbb28028c4f42c",
+      "local_reference": "self_evolution/registration_cycle7/fit_001/result.json",
+      "error": "module 'mujoco' has no attribute 'mj_copyData'",
+      "evaluations": null
+    },
+    {
+      "attempt": "fit_002",
+      "result": "infrastructure_error",
+      "wall_seconds": 2.3970847619930282,
+      "evidence_sha256": "97f669d109629d2f1efb20ac5a1c9f161a67d7ca8526f429e465e881ec78bda9",
+      "local_reference": "self_evolution/registration_cycle7/fit_002/result.json",
+      "error": "index 1346 is out of bounds for axis 0 with size 1294",
+      "evaluations": null
+    },
+    {
+      "attempt": "fit_003",
+      "result": "infrastructure_error",
+      "wall_seconds": 1.845849673030898,
+      "evidence_sha256": "c25523059066d9b2fc6525895a8d455ef753fa29c63b713dd7fc3407e9b3ab49",
+      "local_reference": "self_evolution/registration_cycle7/fit_003/result.json",
+      "error": "No visible right-edge robot component in frozen ROI",
+      "evaluations": null
+    },
+    {
+      "attempt": "fit_004",
+      "result": "success",
+      "wall_seconds": 8.766560680000111,
+      "evidence_sha256": "42274629f387e3c115e97a0167b580401b3a78872e5300c0d7bc8a141f32a1bf",
+      "local_reference": "self_evolution/registration_cycle7/fit_004/result.json",
+      "error": null,
+      "evaluations": 385
+    },
+    {
+      "attempt": "fit_005",
+      "result": "failure",
+      "wall_seconds": 12.891829652013257,
+      "evidence_sha256": "8db3848bc7201fdc69046e2a64a3ca32ef26797b1d5f4bc5eb921061c39f9dab",
+      "local_reference": "self_evolution/registration_cycle7/fit_005/result.json",
+      "error": null,
+      "evaluations": 600
+    }
+  ],
+  "repair": {
+    "software": "Reuse existing state fields instead of unavailable mj_copyData; disable multisampling only in temporary segmentation renderer",
+    "physical_model_changed": false,
+    "active_policy_changed": false
+  },
+  "result": "partial",
+  "task_success": null,
+  "validation_status": "ARCHIVED_RGB_PIXEL_ALIGNMENT_IMPROVED; METRIC_CALIBRATION_NOT_ACCEPTED",
+  "tokens": {
+    "execution_model": 0,
+    "research_orchestration": null,
+    "note": "Zero execution-model calls is not zero total research cost; root orchestration counter reported separately"
+  },
+  "execution_time": {
+    "five_adapter_attempts_wall_seconds": 27.632025928003713,
+    "two_completed_numeric_conditions_wall_seconds": 21.65839033201337,
+    "robot_seconds": 0,
+    "total_research_time": null
+  },
+  "human_interventions": {
+    "new_motion": 0,
+    "board_availability_answer": 1,
+    "historical_acquisition_interventions": "not re-counted as zero"
+  },
+  "privileged_information_used": [
+    "simulation robot geometry identity masks",
+    "nominal model/FK"
+  ],
+  "sensitivity": {
+    "translation_difference_mm": 3.899415243126512,
+    "rotation_difference_deg": 0.668483404883339
+  },
+  "lessons_learned": [
+    "Numerical search can run without LLM-in-the-loop",
+    "Upstream robot_base_align source reports the same silhouette-induced drift problem",
+    "Heldout pixel improvement does not prove metric camera or contact calibration"
+  ],
+  "next_improvement": "Cycle8: existing known-size board, OpenCV PnP and existing hand-eye solver; user confirmed board available, dimensions pending",
+  "retained": "Optional observation tool only; no deployed camera, physics or task repair",
+  "rollback": "Stop invoking scripts/fit_robot_silhouette.py; native simulator configuration was never written"
+}

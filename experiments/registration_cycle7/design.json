@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-11-16T07:18:33.218108+00:00",
+  "cycle": 7,
+  "batch_cycle_limit": 12,
+  "previous_cycles_completed": 6,
+  "additional_cycles_authorized": 6,
+  "authorization": "用户：继续增加六轮，寻找降低真实到仿真差距和Token成本的流程、开源项目、论文",
+  "baseline_commit": "c552c4513e3c8b94d692a23cb49ac79a82b6b682",
+  "scope": "Known robot geometry anchored RGB registration; reuse existing MuJoCo, no scene reconstruction or new real motion in this offline cycle",
+  "budget": {
+    "offline_candidate_fits": 2,
+    "max_optimizer_evaluations_per_fit": 600,
+    "max_wall_seconds_per_fit": 300,
+    "execution_llm_calls": 0,
+    "real_robot_motion_batches": 0
+  },
+  "heldout_policy": "Select distinct measured configurations before fitting; reserve an independent prior real recording if camera provenance matches",
+  "promotion": "No active camera or model change on train-fit improvement alone; independent geometry and observation checks required",
+  "status": "RESEARCH_AND_INPUT_INSPECTION",
+  "mask_thresholds": [
+    90,
+    110
+  ],
+  "objective": "fixed-CAD multi-pose binary mask squared error (symmetric difference)",
+  "solver": "scipy.optimize.minimize Powell; native MuJoCo segmentation renderer, 320x240",
+  "parameter_bounds": "6 DOF external camera only: +/-5 degrees rotvec component; +/-30mm translation component",
+  "frozen": "Robot geometry, measured feedback, intrinsics, scene, physics, success detector, speeds",
+  "validation": "8 training poses;4 reserved translation/combined poses; stationary phases from separate cycle5 failure recording. Additional threshold sensitivity uses same split; no absolute metric claim from silhouette alone.",
+  "infrastructure_repair": "fit_001 stopped before optimization: installed MuJoCo3.3.7 does not expose mj_copyData. Replaced with qpos/qvel/ctrl copy plus mj_forward; no parameter evaluations consumed. Preserve failed report."
+}

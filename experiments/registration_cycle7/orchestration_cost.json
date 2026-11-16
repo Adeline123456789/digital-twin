@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-16T07:36:05.242555+00:00",
+  "metric": "Codex goal cumulative counter snapshots, not API billing",
+  "first_observed_tokens": 818829,
+  "last_observed_tokens": 929124,
+  "delta_tokens": 110295,
+  "first_observed_goal_seconds": 9215,
+  "last_observed_goal_seconds": 10337,
+  "delta_seconds": 1122,
+  "scope": "Partial cycle7 research interval after context restoration; earlier literature discovery and later publication excluded. No per-model/input/output billing breakdown available.",
+  "execution_planner_calls": 0,
+  "claim": "This round has substantial research orchestration cost. Zero model calls inside numeric fitting is not a reduction in demonstrated total collection cost."
+}

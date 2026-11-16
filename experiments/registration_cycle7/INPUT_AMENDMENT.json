@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-11-16T07:28:37.537795+00:00",
+  "before_completed_candidate_fit": true,
+  "reason": "RGB input inspection found static holder touching dark robot component; native renderer segmentation IndexError reproduced at rotated camera",
+  "frozen_exclusions_xyxy": [
+    [
+      450,
+      245,
+      570,
+      290
+    ],
+    [
+      610,
+      155,
+      640,
+      185
+    ]
+  ],
+  "scope": "Same ignored pixels for observed and rendered masks. Does not change robot geometry or physics. Segmentation offsamples=0 affects only temporary diagnostic renderer.",
+  "fit_001": "API error before optimizer",
+  "fit_002": "Early numerical-search renderer error; completed-objective count not saved. Known triggering rotation reproduced. Reserve10evaluations from threshold90 restart budget; total wall time reported.",
+  "candidate_fits_remaining": [
+    "threshold90 restart max590",
+    "threshold110 max600"
+  ],
+  "source_evidence": [
+    "renderer_diagnostic.json",
+    "renderer_perturbation_diagnostic.json"
+  ],
+  "mask_input_preflight_fix": "fit_003 had zero objective evaluations: excluding fixtures split the robot mask from image edge. Select largest component in the same frozen ROI; remove edge-touch assumption.",
+  "count_scope": "Two numeric conditions (threshold90 and110); every setup/partial attempt retained separately, not a task-success denominator"
+}
