@@ -17,13 +17,12 @@ from compare_shared_reference import compare
 from learn import DATA, SIM, digest, save
 
 
-def archive(index, review_path):
+def archive(index, review_path, reference, startup):
     batch = DATA / 'self_evolution/repeatability_cycle12'
     session, number = '20261116_real_repeatability', f'{index:06d}'
     identity = f'{session}_{number}'
     capture = batch / 'episodes' / identity / 'raw/task'
-    reference = (batch / 'cold_start_reference' if index == 1 else
-                 DATA / 'self_evolution/current_scene_cycle11/reference_003')
+    reference = Path(reference)
     output = ROOT / 'experiments/repeatability_cycle12' / number
     output.mkdir(exist_ok=False)
     review = json.loads(review_path.read_text())
@@ -75,7 +74,7 @@ def archive(index, review_path):
         model='Deterministic frozen-reference execution; explicit Agent RGB outcome review',
         program_version=dict(reference_sha256=commands['reference_id'],
                              archive_program_sha256=digest(__file__)),
-        initial_state_stratum='cold_start' if index == 1 else 'enabled_folded_zero',
+        initial_state_stratum=startup,
         result='success' if review['physical_task_success'] else 'failure',
         task_success=review['physical_task_success'], recording_verified=True,
         frames=verification['verified_frames'], root_cause='UNKNOWN', root_cause_status='unknown',
@@ -107,9 +106,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('index', type=int)
     parser.add_argument('--review', type=Path, required=True)
+    parser.add_argument('--reference', type=Path, required=True)
+    parser.add_argument('--startup', choices=['cold_start','enabled_folded_zero'], required=True)
     args = parser.parse_args()
     try:
-        result = archive(args.index, args.review)
+        result = archive(args.index, args.review, args.reference, args.startup)
         print(json.dumps({k:result[k] for k in ['experiment_id','result','frames','execution_time']}))
     except Exception as exc:
         output = Path(__file__).parent / f'{args.index:06d}'

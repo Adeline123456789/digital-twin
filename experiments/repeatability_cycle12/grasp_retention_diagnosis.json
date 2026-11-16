@@ -99,5 +99,20 @@
   "finding": "Both attempts already plateaued at approximately47mm at the lowest pose while receiving27mm targets. Motor feedback is near the existing0.3Nm command limit. The command and measured joint endpoints are nearly identical. A missing close command or pure closure delay is not supported. Object retention differs during lift; geometric contact/initial seating/friction are not uniquely isolated.",
   "root_cause_status": "unknown",
   "next_hypothesis": "Evaluate a2mm lower grasp contact position,18->16mm, with unchanged torque, speed, fixture and camera parameters. Retain the old successful version.",
-  "user_steering": "User requested clamping firmly at the lowest point after observing the failed grasp; fixed-version repetition suspended for this repair."
+  "user_steering": "User requested clamping firmly at the lowest point after observing the failed grasp; fixed-version repetition suspended for this repair.",
+  "additional_sim_real_observation": {
+    "source_simulation_episodes": [
+      "20261116T105302Z_d700416b",
+      "20261116T112315Z_0c9a0761"
+    ],
+    "simulated_last_grasp_width_mm": [
+      41.55935274891297,
+      41.559366165428884
+    ],
+    "real_last_grasp_width_mm": {
+      "successful_discovery": 46.8,
+      "failed_repeat": 47.1
+    },
+    "interpretation": "Current motor-reported aperture exceeds simulated aperture by5.24-5.54mm at matching grasp phase. This is an observed discrepancy, not a unique physical cause or an aperture calibration. Contact geometry, pose and motor-width calibration remain alternatives."
+  }
 }

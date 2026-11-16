@@ -1,0 +1,50 @@
+{
+  "trajectory_id": "40596ce887f8a4def382023b0b4e4ceb0232afa20094f49234db31e59aba16e2",
+  "source_episode": "20261116T114211Z_dc56f5b3",
+  "source_trajectory_sha256": "dfa57e8b5b542f6609d60d1f5448ee0a3698ee66dcd2e4e8537a65030e78345e",
+  "source_initial_state_sha256": "f8f6cd84e9b00b87c863d362ad1966315936f11ff8fe1769f4023b6bac842b5f",
+  "adapter_sha256": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+  "feature_names": [
+    "right.joint1",
+    "right.joint2",
+    "right.joint3",
+    "right.joint4",
+    "right.joint5",
+    "right.joint6",
+    "right.gripper_width"
+  ],
+  "units": [
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "width_mm / 95"
+  ],
+  "command_provenance": "simulation reference action, NOT simulated measured q",
+  "adaptation": "linear interpolation on original relative timeline at100Hz; no smoothing or time stretching",
+  "source_time_origin_s": 0.03333333333333329,
+  "duration_s": 55.200000000271864,
+  "steps": 5522,
+  "first_target": [
+    -8.302508105916094e-07,
+    7.38022112206748e-06,
+    -5.191020885624012e-06,
+    0.6109999524334353,
+    23.697003363451213,
+    0.536991631492809,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.631578947368421
+  ],
+  "simulation_validation": "PENDING adapted-reference physics replay",
+  "real_execution": "NOT_EXECUTED"
+}

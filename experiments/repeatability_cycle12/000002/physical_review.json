@@ -1,0 +1,34 @@
+{
+  "physical_task_success": true,
+  "plug_retained_in_target_after_release_and_fold": true,
+  "reviewer": "Agent current final RGB review; unchanged original controller sequence record",
+  "observed_at": "2026-11-16T11:51:47.402816+00:00",
+  "observed_facts": [
+    "Complete sequence through release and fold without native slip abort",
+    "Final external RGB shows yellow plug remaining in target3 after gripper return",
+    "Folded gripper is open and empty"
+  ],
+  "phase_end_motor_aperture_mm": {
+    "grasp": 47.9,
+    "lift": 39.7,
+    "transport": 39.0,
+    "insert": 39.1,
+    "release": 59.3,
+    "fold": 59.4
+  },
+  "scope": "One current-scene16mm-grasp task success; no electrical continuity or force verification",
+  "evidence": [
+    {
+      "relative_capture_path": "external/last.png",
+      "sha256": "68fb49d7ab857ecb43d51f675f5c4f51cb711c877072d14f706c083946ce9a74"
+    },
+    {
+      "relative_capture_path": "right_wrist/last.png",
+      "sha256": "ca3638039fc1246059085d3ade78d59f40a2719d40e45bcc270c9e1c34e79e7b"
+    },
+    {
+      "relative_capture_path": "execution_report.json",
+      "sha256": "0a88899f3cdfacf697df75fbff91d051b38b3cf4812edefeff98916021d9601d"
+    }
+  ]
+}
