@@ -84,7 +84,7 @@ def decide(signature, repair, version_name=None):
         if repair in item.get('ineffective_repairs',[]): return 'REJECT_REPEAT_REQUIRE_NEW_EVIDENCE'
     return 'UNKNOWN_TASK_MODE' if not retrieve(signature) else 'ALLOW_SIMULATION'
 
-def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False, grasp_tilt_deg=None):
+def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False, grasp_tilt_deg=None, start_right_deg=None):
     out,r=record(kind,label,'simulation')
     raw=DATA/'self_evolution'/r['experiment_id']
     start=time.monotonic()
@@ -124,6 +124,11 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
             if isinstance(grasp_tilt_deg,bool) or not math.isfinite(grasp_tilt_deg) or not -10<=grasp_tilt_deg<=10:
                 raise ValueError('Simulation grasp tilt must be finite and within +/-10deg')
             cmd+=['--grasp-tilt-deg',str(grasp_tilt_deg)]
+        if start_right_deg is not None:
+            if len(start_right_deg)!=6 or any(isinstance(x,bool) or not math.isfinite(x) for x in start_right_deg):
+                raise ValueError('Starting right joints must be six finite degrees')
+            if retained:raise ValueError('Measured start currently uses the original right-arm scene')
+            cmd+=['--start-right-deg',*[str(x) for x in start_right_deg]]
         if record_inline:
             if retained: raise ValueError('Inline recording is verified only against the original simulator profile')
             stage=DATA/'self_evolution'/('stage3_recording_'+r['experiment_id'])
@@ -132,6 +137,7 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
         r['active_arms']=['right'] if active_arms=='right' else ['left','right']
         r['collection_mode']='inline_native_physics' if record_inline else 'headless_then_replay'
         r['initial_state']={'target_index':target_index,'holder_x_shift_mm':shift,'task_config_sha256':digest(task)}
+        if start_right_deg is not None:r['initial_state']['start_right_joint_degrees']=list(start_right_deg)
         r['actions']=[{'script':'try_plug_pick_sim.py','profile':('retained_final' if retained else 'original'),'grasp_height_m':(.012 if retained else .020),'offset_mm':[offset,0],
                        'speed_deg_s':speed,'smooth_timing':True}]
         if grasp_tilt_deg is not None:r['actions'][0]['grasp_tilt_deg']=grasp_tilt_deg

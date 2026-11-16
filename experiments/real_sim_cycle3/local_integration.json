@@ -1,0 +1,23 @@
+{
+  "backup": "self_evolution/real_sim_cycle3/native_backup",
+  "changes": {
+    "scripts/continue_plug_task.py": {
+      "before": "44fe13d29b3936a469f6be92157fb32d8e89ac7b0cc651144df01ae23dc1c004",
+      "after": "c06557afc1b9a6e8079b0946ec980516f3b5789cfbefbabc3b8a256e515caae8"
+    },
+    "scripts/capture_plug_calibration.py": {
+      "before": "55166b4837daaad72d5fba423affe2544e0347cfd87d16e9682a06fe6a82ffd3",
+      "after": "eb820894df901735eacd4683ad44e7f962fa519e9355d6b283235e8b5f9cc8ce"
+    },
+    "scripts/export_plug_calibration.py": {
+      "before": "19581f4ca503eed3489c980a8932ef68c002354e0a10f2ad486e3f84459f8ae3",
+      "after": "180d94419fb557ffb7e475d6fcb23c679f1c22b9dbcf83a8db44bf37d3c8df37"
+    },
+    "scripts/trajectory_contract.py": {
+      "before": null,
+      "after": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540"
+    }
+  },
+  "physical_motion": false,
+  "scope": "Existing executor and RGB/CAN recorder/exporter; controller safety unchanged"
+}

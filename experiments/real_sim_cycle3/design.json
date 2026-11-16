@@ -1,0 +1,26 @@
+{
+  "cycle": 3,
+  "total_cycle_limit": 6,
+  "timestamp": "2026-11-16T04:41:10.500788+00:00",
+  "scope": "Shared reference from current right-arm entry, adapted simulation verification, one observed real attempt",
+  "maximum_full_native_simulations": 2,
+  "maximum_adapted_reference_replays": 2,
+  "maximum_real_task_attempts": 1,
+  "maximum_planner_model_calls": 2,
+  "no_repeat_without_new_evidence": true,
+  "hardware_permission": "User request and latest mission section 6 normal right-arm batch authorization; existing readiness and safety gates retained",
+  "start_state_source": "fresh read-only CAN; existing bounded folded-entry rule only",
+  "real_observations": "two RGB cameras and existing right CAN; no depth or six-axis force",
+  "unmet_before_execution": [
+    "simulate folded entry-to-task path",
+    "right-only mapping and RGB recorder/export integration",
+    "verify resampled reference in MuJoCo",
+    "refresh readiness and scene before movement"
+  ],
+  "mission_sha256": "ce30163fdb49a10782d1ebef92a0c86c8e103ebd22102570939deeb306434abd",
+  "prior_cycles": [
+    "experiments/right_arm_adaptation/cycle1",
+    "experiments/right_arm_adaptation/cycle2"
+  ],
+  "closure": "Regardless of outcome, save data/report and push; next cycle depends on earliest measured discrepancy"
+}
