@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-11-16T11:05:29.097893+00:00",
+  "timestamp": "2026-11-16T11:24:45.893687+00:00",
   "cycle": 11,
-  "cycle_complete": false,
-  "full_real_successes": 0,
-  "full_real_attempts": 1,
+  "cycle_complete": true,
+  "full_real_successes": 1,
+  "full_real_attempts": 2,
   "partial_grasp_carry_observed": true,
-  "object_dropped": true,
-  "current_hardware_state": "Folded enabled hold in existing controller; pending object reset",
-  "pending_input": "Reset dropped yellow plug into original holder slot and clear hands; standing movement permission already granted",
+  "object_dropped": false,
+  "current_hardware_state": "All six motors disabled; err_code0 verified after onsite supported shutdown",
+  "pending_input": null,
   "accepted_metric_calibration": false,
   "third_simulation_pending": false,
   "execution_llm_calls": 0,
@@ -17,6 +17,7 @@
   "third_reference_validation": "SIMULATION_VERIFIED",
   "full_sim_successes": 2,
   "full_sim_attempts": 3,
-  "second_real_attempt": "NOT_EXECUTED_PENDING_PHYSICAL_OBJECT_RESET",
-  "protocol_deviation": "Fixture reserved-view gate failed; tested bounded XY task hypothesis after native simulation checks, without accepting calibration."
+  "second_real_attempt": "REAL_VERIFIED_SINGLE_EPISODE",
+  "protocol_deviation": "Fixture reserved-view gate failed; tested bounded XY task hypothesis after native simulation checks, without accepting calibration.",
+  "repeatability_batch": "User authorized15 additional attempts before optimization"
 }

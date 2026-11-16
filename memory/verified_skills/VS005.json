@@ -1,0 +1,28 @@
+{
+  "id": "VS005",
+  "version": 1,
+  "content": "Current right-arm pick/insert/release succeeded using the simulation-frozen reference and unchanged native controller. Reuse only with current fixture layout, original holder slot, matching start pose and verified recording; require fresh scene observation and retain every failed trial.",
+  "applicability": "Current right Piper, original simulation profile, target3, current holder/socket XY candidate and18mm grasp; no scene-motion adaptation claim",
+  "embodiment": "Single right Piper, RGB-only, no six-axis force sensor",
+  "source_episodes": [
+    "20261116T105302Z_d700416b",
+    "20261116_real_current_socket_repair_000002"
+  ],
+  "validation_status": "REAL_VERIFIED_SINGLE_EPISODE",
+  "success_count": 1,
+  "failure_count": 0,
+  "related_failed_predecessor": "20261116_real_current_holder_repair_000001",
+  "count_unit": "Exact successful candidate; predecessor failure is retained separately",
+  "known_limits": [
+    "Only one successful real episode; repeatability untested",
+    "No accepted camera/geometry/physics calibration",
+    "Native exported record not promoted to policy-training eligibility",
+    "Current fixture configuration only; do not transfer to another arm or moved scene"
+  ],
+  "signatures": [
+    "current_scene_verified_pick_insert"
+  ],
+  "reference_sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+  "entry": "Existing continue_plug_task.py with frozen reference; no new hardware interface",
+  "evidence": "experiments/current_scene_cycle11/result.json"
+}

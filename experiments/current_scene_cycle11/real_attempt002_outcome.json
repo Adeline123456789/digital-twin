@@ -1,0 +1,95 @@
+{
+  "frames": 1651,
+  "steps": 5502,
+  "trajectory_seconds": 55.00000000026932,
+  "max_joint_speed_deg_s": 12.0,
+  "fold_seconds": 0.0,
+  "planned_with_fold_and_holds_seconds": 57.00000000026932,
+  "task_sdk_speed_percent": 15,
+  "phases": [
+    "approach",
+    "descend",
+    "grasp",
+    "lift",
+    "transport",
+    "align",
+    "insert",
+    "release",
+    "retreat",
+    "fold"
+  ],
+  "first_target": [
+    -8.402037381650974e-07,
+    7.468694153791381e-06,
+    -5.2532500990712885e-06,
+    1.7113536159264853e-11,
+    5.271370722578136e-06,
+    -8.426505814808544e-06,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.631578947368421
+  ],
+  "folded_joint_goal_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "real_action_plan": null,
+  "action_provenance": "simulated trajectory",
+  "completed_sequence": true,
+  "physical_task_success": true,
+  "reference_id": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+  "execution_mode": "frozen_sim_reference",
+  "fold_completed": true,
+  "final_feedback": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.6252631578947369
+  ],
+  "physical_success_verification": {
+    "method": "RGB phase/final-state review and independent onsite operator confirmation",
+    "timestamp": "2026-11-16T11:16:49.952310+00:00",
+    "controller_completion_alone_is_not_success": true,
+    "original_execution_report_sha256": "b9f60ed591702b398d28ec9df88772cb6ff9f5ead32f7b279361d5bb72c419f9",
+    "operator_confirmation": "User confirmed the current attempt succeeded after the complete motion.",
+    "observed_facts": [
+      "Plug carried through transport with38.9mm aperture",
+      "Insertion-end aperture39.0mm; no native insertion-slip stop",
+      "Gripper opened to59.3mm at release",
+      "Final external RGB shows plug in target outlet after arm folded; fingers empty"
+    ],
+    "scope": "One real pick, insert and release episode in the current scene; no electrical continuity, force or metric calibration claim",
+    "evidence": [
+      {
+        "dataset_relative_path": "self_evolution/current_scene_cycle11/episodes/20261116_real_current_socket_repair_000002/raw/task/right_wrist/2308.jpg",
+        "sha256": "aa1a7bb932cd459370bdb39e78403b5662c733c48b1dd339cef57f053024c205"
+      },
+      {
+        "dataset_relative_path": "self_evolution/current_scene_cycle11/episodes/20261116_real_current_socket_repair_000002/raw/task/right_wrist/2349.jpg",
+        "sha256": "91abd85b74f39eabc57116856392c42b03706713492d9dda038bbff30cec54ee"
+      },
+      {
+        "dataset_relative_path": "self_evolution/current_scene_cycle11/episodes/20261116_real_current_socket_repair_000002/raw/task/external/last.png",
+        "sha256": "cf1fd84cb3c94da409b3952364a78848ceb0539f5e880f89c8cdddf571aeefd0"
+      },
+      {
+        "dataset_relative_path": "self_evolution/current_scene_cycle11/episodes/20261116_real_current_socket_repair_000002/raw/task/right_wrist/last.png",
+        "sha256": "324ded730b5ccf25917ba372c22db2005de3bc6df5616683ee746cd12a7cf7d2"
+      }
+    ]
+  }
+}

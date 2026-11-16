@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-11-16T11:25:56.478929+00:00",
+  "cycle": 12,
+  "total_cycle_limit": 12,
+  "objective": "15 additional real repetitions of the successful current-scene task policy before further optimization",
+  "status": "PREPARING_FIRST_COLD_START",
+  "planned_real_attempts": 15,
+  "discovery_success_excluded_from_batch_statistics": "20261116_real_current_socket_repair_000002",
+  "fixed_policy": {
+    "source_reference_sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+    "holder_socket_candidate_sha256": "06652aa617cdd66d7ce7f4829f5f2e8e3b7178eb89356cc971be2fb2a058fd0e",
+    "grasp_height_m": 0.018,
+    "grasp_tilt_deg": 0,
+    "target_index": 3,
+    "joint_speed_limit_deg_s": 12,
+    "sdk_speed_percent": 15,
+    "gripper_torque_nm": 0.3
+  },
+  "initial_state_strata": {
+    "attempt1": "Cold start after supported disable; observed J5 sag. Re-simulate same policy from measured normalized entry, retain separate reference and report any path differences.",
+    "attempts2_to15": "Stationary enabled folded-zero entry; reuse successful frozen reference exactly via native handoff."
+  },
+  "success_criteria": [
+    "Complete reference sent without native abort",
+    "Current RGB shows plug inserted, gripper released, plug remains after arm retreat/fold",
+    "Full native recording and action/state/video validation passes"
+  ],
+  "human_work": "Manual plug reset into original holder slot, hands clear before each attempt; no repeated start-safety authorization; final supported shutdown",
+  "analysis": [
+    "Success fraction overall and by startup stratum",
+    "Every failure including aborts retained; infrastructure errors separate but cost included",
+    "Full command time and reference lag",
+    "Failure phase and repeated failure signature",
+    "Human reset/intervention count",
+    "Research Token cost unallocated, not zero; deterministic execution-model tokens recorded separately"
+  ],
+  "stop_conditions": [
+    "Existing hardware/RGB/safety fault",
+    "Fixture placement changed or object not restored",
+    "Repeated physically unsafe failure requires ending fixed-policy batch, not blind retries"
+  ],
+  "no_mid_batch_optimization": true,
+  "real_depth_or_force_sensor": false,
+  "accepted_metric_calibration": false,
+  "simulation_privileged_information_used": true
+}

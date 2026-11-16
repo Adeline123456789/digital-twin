@@ -1,0 +1,119 @@
+{
+  "experiment_id": "cycle11_real_success_20261116",
+  "timestamp": "2026-11-16T11:24:45.893687+00:00",
+  "model": "deterministic frozen-reference execution; Agent RGB review plus operator confirmation",
+  "task": "Pick yellow plug, insert into target3, release, retreat and fold",
+  "environment": "real",
+  "program_version": {
+    "reference_sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+    "controller_source_sha256": "c06557afc1b9a6e8079b0946ec980516f3b5789cfbefbabc3b8a256e515caae8"
+  },
+  "protocol_version": "Existing native safety, slip guard and outcome separation retained",
+  "memory_version": "FP005; current_scene_task_candidate_v1",
+  "initial_state": {
+    "right_joint_deg": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "plug": "Operator restored original holder slot; current RGB confirmed; holder and strip unchanged"
+  },
+  "actions": [
+    "Entire5502-command frozen reference",
+    "Release, retreat and fold"
+  ],
+  "expected_effects": [
+    "Plug remains in target outlet after gripper release and arm return"
+  ],
+  "observed_effects": [
+    "Plug carried through transport with38.9mm aperture",
+    "Insertion-end aperture39.0mm; no native insertion-slip stop",
+    "Gripper opened to59.3mm at release",
+    "Final external RGB shows plug in target outlet after arm folded; fingers empty"
+  ],
+  "failure_signature": null,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "hypotheses": [
+    "Current socket-XY repair with18mm grasp avoids the previous insertion slip; not isolated as unique causal explanation"
+  ],
+  "experiments": [
+    "20261116T105302Z_d700416b",
+    "20261116_real_current_socket_repair_000002"
+  ],
+  "repair": {
+    "holder_xy_delta_mm": [
+      3.634402085,
+      -15.007672252
+    ],
+    "socket_xy_delta_mm": [
+      4.327010365,
+      0.435161711
+    ],
+    "grasp_height_m": 0.018,
+    "yaw_physics_camera_changed": false,
+    "real_comparison_limitation": "Socket XY and grasp height differ from first real attempt; reset and entry also differ. Sequential engineering evidence, not a matched ablation."
+  },
+  "result": "success",
+  "task_success": true,
+  "validation_status": "REAL_VERIFIED_SINGLE_EPISODE",
+  "tokens": 0,
+  "execution_model_calls": 0,
+  "llm_inference_seconds": 0,
+  "research_orchestration_tokens": null,
+  "research_orchestration_cost": "Unallocated; not zero",
+  "execution_time": 58.694417987018824,
+  "reference_execution_seconds": 56.6496147220023,
+  "nominal_reference_seconds": 55.00000000026932,
+  "human_interventions": 2,
+  "human_intervention_definition": "One physical plug reset after failed attempt; one supported shutdown. No mid-motion assistance.",
+  "lessons_learned": [
+    "Preserve successful grasp/carry while investigating insertion",
+    "Simulation-generated unchanged reference completed a real task in this current scene",
+    "One success does not establish repeatability or independently calibrated physics"
+  ],
+  "next_improvement": "User requests15 additional repeatability episodes before further optimization; fixed successful task parameters.",
+  "recording": {
+    "frames": 1760,
+    "format": "connector_mixed.v2, right only",
+    "complete_movement_video_coverage": true,
+    "native_policy_training_eligible": false,
+    "eligibility_note": "Native calibration exporter always keeps policy_training_eligible=false for attempt purpose; this record is not counted as a promoted training demonstration."
+  },
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/videos/cam_external_rgb.mp4",
+      "sha256": "b0173553cea1474b42d55991d407638dd20bbf3733411f2b27b95bba3a9a0292"
+    },
+    {
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "e829c27217d34629a3725f9f5670deff5057c4b5dec83d990c507a81b1dee815"
+    },
+    {
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/proprio_stats/proprio_stats.h5",
+      "sha256": "c665451ac0101f6afe3cfdc9fa44416767b6c7e62a67e1c421230be08aafc767"
+    },
+    {
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/outcome.json",
+      "sha256": "e7ed9140476745ef7cc9826c7cc978760b5363d9433cb2b5c5bd3fd2cb09d565"
+    },
+    {
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/verification.json",
+      "sha256": "5fd85453d5a2f0f7825720a5e6c1a8aabc4c48938b1938a6e256796995e34064"
+    },
+    {
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/commanded_probe.csv",
+      "sha256": "a072c1129ef25a228aea8744c63705aea278c4811e0ba099373f8bed1b5efb60"
+    },
+    {
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/observed_execution_report.json",
+      "sha256": "719e5d850beb0841fb01f16e08e10e5ce3c6f4b31092a7ca96f1bd14ddc96398"
+    }
+  ],
+  "accepted_metric_calibration": false,
+  "privileged_information_used": "Simulation planning/validation only; real evidence is RGB and motor feedback",
+  "hardware_final_state": "All six motors disabled; err_code0 verified after onsite supported shutdown"
+}
