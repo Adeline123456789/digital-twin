@@ -3,6 +3,8 @@ import sys
 from pathlib import Path
 import unittest
 import time
+import tempfile
+import mujoco
 import json
 import numpy as np
 import yaml
@@ -10,7 +12,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from learn import SIM, ROOT
 sys.path.insert(0,str(SIM/'src'))
 from piper_sim.backends.mujoco import MujocoBackend
-from piper_sim.backends.arm_layout import ArmLayout
+from piper_sim.backends.arm_layout import ArmLayout, save_recorded_model
 from piper_sim.config import load
 from piper_sim.contracts import Command
 
@@ -42,6 +44,11 @@ class ArmLayoutTests(unittest.TestCase):
                     self.assertNotIn('left_wrist',sim.rig['cameras'])
                     self.assertEqual(set(sim.rig['cameras']),{'right_wrist','overhead'})
                     self.assertEqual(model.body('task/strip').jntnum,0)
+                    self.assertGreater(model.body('station/vacant_mount_plate').id,0)
+                    with tempfile.TemporaryDirectory() as directory:
+                        save_recorded_model(model,Path(directory)/'recorded.xml')
+                        restored=mujoco.MjModel.from_xml_path(str(Path(directory)/'recorded.xml'))
+                        self.assertEqual(restored.nu,7)
                     with self.assertRaises(ValueError):sim.apply(Command(np.zeros(14),0,0))
                 q=obs.position.copy();sim.set_observation_state(q)
                 np.testing.assert_array_equal(sim.read().position,q)

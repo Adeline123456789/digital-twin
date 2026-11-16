@@ -1,4 +1,4 @@
-"""Build and verify standard three-camera connector_mixed.v1 episodes before publication."""
+"""Verify connector_mixed.v1 dual-arm and v2 right-arm Episodes before publication."""
 import csv
 import hashlib
 import json

@@ -1,0 +1,11 @@
+{
+  "reason": "Right model physics completed but binary/spec loader does not support existing mj_saveLastXML recording interface",
+  "budget_unchanged": 3,
+  "third_case": "right,offset0; replace planned induced failure control with serializer repair acceptance",
+  "claims_excluded": [
+    "physical failure rate",
+    "sustained throughput",
+    "success from incomplete recording"
+  ],
+  "prior_failed_trial": "20261116T031318Z_9da365c4"
+}

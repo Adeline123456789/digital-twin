@@ -53,4 +53,22 @@ def install():
     print('Installed local-only simulator integration:',len(changes),'files')
 
 
-if __name__=='__main__':install()
+def rollback():
+    manifest=json.loads((ROOT/'experiments/right_arm_adaptation/cycle1/local_integration.json').read_text())
+    for rel,change in manifest['changes'].items():
+        if digest(SIM/rel)!=change['after']:
+            raise ValueError('Local file changed after adaptation; refusing overwrite: '+rel)
+    for rel,change in manifest['changes'].items():
+        if change['before'] is None:
+            (SIM/rel).unlink()
+        else:
+            shutil.copy2(BACKUP/rel,SIM/rel)
+    print('Restored original local simulator files; all Episodes retained')
+
+
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--rollback',action='store_true')
+    args=parser.parse_args()
+    rollback() if args.rollback else install()

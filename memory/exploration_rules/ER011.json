@@ -1,0 +1,19 @@
+{
+  "id": "ER011",
+  "version": 1,
+  "content": "When changing robot embodiment, validate named state/action mapping, absent body/contact/camera removal, serializer reload, and complete recorded rollout together. Preserve physically present mounting fixtures. Compilation/render success alone is insufficient.",
+  "applicability": "Existing Piper connector simulator, dual\u2192right; RGB confirms empty installation plate",
+  "source_episodes": [
+    "20261116T031318Z_9da365c4",
+    "20261116T031754Z_76d32ff6"
+  ],
+  "validation_status": "SIMULATION_VERIFIED_SINGLE_SCENE",
+  "success_count": 1,
+  "failure_count": 1,
+  "limitations": [
+    "Not real physical calibration",
+    "No unseen-task or teacher/student capability claim",
+    "Current native source required"
+  ],
+  "evidence": "experiments/right_arm_adaptation/cycle1/result.json"
+}

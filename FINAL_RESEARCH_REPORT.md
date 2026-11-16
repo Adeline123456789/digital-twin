@@ -1,3 +1,5 @@
+> 2026-11-16：本批右臂场景适配及完整采集已通过限定仿真验收，见[右臂报告](experiments/right_arm_adaptation/cycle1/REPORT.md)。新入口`collect_current_scene.py --robot-arms right`，两相机、7维右臂状态。旧compiled skill因原生源码变更暂退出默认；未声称真实校准或模型能力提升。以下保留此前结果。
+
 # 最终研究报告 — 2026-11-12
 
 > 存储路径更新：成功数据已按用户更正统一为`complete_sim/succeed/<episode_id>/{videos,proprio_stats,outcome.json}`，一条数据一个目录。历史报告中的旧路径通过[迁移清单](experiments/maintenance/success_episode_layout/migration.json)解析；原始内容和实验结论不变。

@@ -12,7 +12,7 @@ def main():
     import av
     parser=argparse.ArgumentParser();parser.add_argument('ids',nargs='*');parser.add_argument('--stage',default='self_evolution/recording_stage');args=parser.parse_args()
     for ident in (args.ids or IDS):
-        out,r=record('evaluation','Three-view recording verification '+ident,'simulation_recording')
+        out,r=record('evaluation','Declared-channel recording verification '+ident,'simulation_recording')
         start=time.monotonic()
         try:
             stage=DATA/args.stage

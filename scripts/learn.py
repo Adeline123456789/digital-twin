@@ -160,6 +160,10 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
         r['earliest_observed_anomaly']={'phase':None,'status':'UNKNOWN; final last_phase is not the first physical failure'}
         r['evidence']=[{'dataset_relative_path':str(f.relative_to(DATA)), 'sha256':digest(f)}
                        for f in raw.iterdir() if f.is_file()]
+        if p.returncode != 0:
+            r.update(result='infrastructure_error',task_success=None,
+                     physical_task_success_observed=bool(report['complete_pick_insert']),
+                     validation_status='EXECUTION_OR_RECORDING_INFRA_ERROR')
     except Exception as e:
         r['error_type']=type(e).__name__
         r['error']=str(e).replace(str(SIM),'$PIPER_SIM_ROOT').replace(str(DATA),'$PIPER_DATA_ROOT').replace(str(ROOT),'$PROJECT_ROOT')

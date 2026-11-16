@@ -1,0 +1,168 @@
+{
+  "cycle": 1,
+  "cycle_limit": 6,
+  "result": "ACCEPTED_SIMULATION_RIGHT_ARM_SCOPE",
+  "task_family": "Existing yellow plug insertion",
+  "full_runs": [
+    "20261116T031147Z_46b73db3",
+    "20261116T031318Z_9da365c4",
+    "20261116T031754Z_76d32ff6"
+  ],
+  "physical_success_observed": 3,
+  "formal_episodes": {
+    "dual_success_recovered": 1,
+    "right_success": 1
+  },
+  "right_complete_collection_successes": 1,
+  "right_full_attempts": 2,
+  "infrastructure_events": [
+    {
+      "episode": "20261116T031147Z_46b73db3",
+      "event": "Parent exit143; native successful recording recovered without physics rerun"
+    },
+    {
+      "episode": "20261116T031318Z_9da365c4",
+      "event": "Physical success but incomplete writer; not formal Episode"
+    }
+  ],
+  "final_right_validation": {
+    "active_arms": [
+      "right"
+    ],
+    "schema": "connector_mixed.v2",
+    "video_frames": {
+      "cam_external_rgb.mp4": 1133,
+      "cam_right_wrist_rgb.mp4": 1133
+    },
+    "quality": {
+      "complete_pick_insert": true,
+      "all_substeps_valid": true,
+      "max_penetration_m": 3.1463325182666235e-05,
+      "same_run_max_state_error": 2.220446049250313e-16,
+      "phase_names": [
+        "settle",
+        "descend",
+        "grasp",
+        "lift",
+        "transport",
+        "insert",
+        "release",
+        "approach",
+        "retreat",
+        "align",
+        "fold",
+        "prepare_gripper",
+        "abort_retreat",
+        "final_hold"
+      ]
+    },
+    "duration_s": 37.766666666666666,
+    "object_replay_max_error_m": 0.0,
+    "success": true,
+    "collection_mode": "inline_native_physics",
+    "status": "Format and recorded trajectory verified; native physical task outcome preserved"
+  },
+  "legacy_v1_read_regression": {
+    "active_arms": [
+      "left",
+      "right"
+    ],
+    "schema": "connector_mixed.v1",
+    "video_frames": {
+      "cam_external_rgb.mp4": 1133,
+      "cam_left_wrist_rgb.mp4": 1133,
+      "cam_right_wrist_rgb.mp4": 1133
+    },
+    "quality": {
+      "complete_pick_insert": true,
+      "all_substeps_valid": true,
+      "max_penetration_m": 3.1068761460804385e-05,
+      "same_run_max_state_error": 2.220446049250313e-16,
+      "phase_names": [
+        "settle",
+        "descend",
+        "grasp",
+        "lift",
+        "transport",
+        "insert",
+        "release",
+        "approach",
+        "retreat",
+        "align",
+        "fold",
+        "prepare_gripper",
+        "abort_retreat",
+        "final_hold"
+      ]
+    },
+    "duration_s": 37.766666666666666,
+    "object_replay_max_error_m": 0.0,
+    "success": true,
+    "collection_mode": "inline_native_physics",
+    "status": "Format and recorded trajectory verified; native physical task outcome preserved"
+  },
+  "trajectory_comparison": {
+    "frames": 1133,
+    "phase_sequence_identical": true,
+    "max_right_q_difference_si": 1.1942067028591907e-06,
+    "max_object_position_difference_m": 1.5476293829808085e-08,
+    "max_time_difference_s": 0.0,
+    "dual": {
+      "sampled_max_joint_velocity_deg_s": 11.979390285924007,
+      "joint_path_rad": 5.417539004079927
+    },
+    "right": {
+      "sampled_max_joint_velocity_deg_s": 11.979387845505263,
+      "joint_path_rad": 5.417541391070488
+    }
+  },
+  "actual_entry": "scripts/collect_current_scene.py --robot-arms right",
+  "new_schema": "connector_mixed.v2",
+  "planner_calls": 0,
+  "teacher_calls": 0,
+  "student_calls": 0,
+  "planner_tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_hardware_interventions": 0,
+  "research_manual_edits": "Agent implementation and one serialization repair; not a user intervention metric",
+  "hardware_motion": false,
+  "real_rgb_observations": [
+    {
+      "dataset_relative_path": "self_evolution/right_arm_adapter_v1/observations/right_wrist.png",
+      "sha256": "9bcb9a59d019e42a2ef6670d9b10f6b6d06e07e2120e7ff3fe363b0854b5dead"
+    },
+    {
+      "dataset_relative_path": "self_evolution/right_arm_adapter_v1/observations/external.png",
+      "sha256": "cbf845c2a97407ef6a9a4ec00779f1e015a3d071b3df5c5bcfaee3f45aefcce6"
+    }
+  ],
+  "physics_calibrated": false,
+  "task_adapted_real_validated": false,
+  "current_fixture_status": "Existing static socket assumption preserved; actual rigid fixation and current extrinsics unverified",
+  "right_final_collection_component_seconds": 138.2371791889891,
+  "right_failed_collection_component_seconds": 133.4850198860513,
+  "dual_collection_component_seconds": null,
+  "total_cost_per_success": null,
+  "privileged_information_used": true,
+  "privileged_fields": [
+    "joint and object poses",
+    "contacts and penetration",
+    "native task success",
+    "simulated camera poses"
+  ],
+  "limitations": [
+    "One final right scene only; no unseen task evaluation",
+    "No teacher/student comparison in current scene-only scope",
+    "No end-to-end total cost improvement claim; baseline and first right runs overlapped",
+    "No new true physical failure control; third budget slot used to repair recording",
+    "pytest unavailable in existing runtime; native pytest suite not run; local layout regression plus complete dual task used"
+  ],
+  "targeted_unit_tests_passed": 21,
+  "no_left_state_action_video": true,
+  "right_attempt_collection_seconds_per_valid_success_including_infrastructure_failure": 271.7221990750404,
+  "initial_setup_wall_seconds": null,
+  "initial_setup_wall_seconds_note": "No monotonic timer covered the whole authoring/research process; do not infer it from model load time",
+  "first_right_model_load_and_serialization_check_seconds": 1.7242332900641486,
+  "cached_right_model_load_and_serialization_check_seconds": 1.0006482560420409,
+  "new_difference_handling": "Current RGB revealed retained installation plate; corrected before final acceptance. No independent elapsed-time or model-call accounting for this visual interpretation."
+}

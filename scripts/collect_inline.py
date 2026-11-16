@@ -13,6 +13,7 @@ from learn import SIM
 
 sys.path.insert(0, str(SIM / 'scripts'))
 import try_plug_pick_sim as trial_program
+from arm_layout import save_recorded_model
 from collect_plug_contact_probes import state_row
 from collect_plug_sim_episode import PHASES
 from piper_sim.mixed_recording import MixedEpisodeWriter
@@ -57,7 +58,7 @@ def collect(trial, stage_root, session, arguments):
                 valid = all(check['valid'] for check in checks)
                 success = bool(report['complete_pick_insert'] and valid and
                                self.read().extras['task']['metrics']['success'])
-                mujoco.mj_saveLastXML(str(writer.path / 'model.xml'), self.model)
+                save_recorded_model(self.model, writer.path / 'model.xml')
                 writer.close(success=success, policy_training_eligible=success,
                              complete_pick_insert=success, all_substeps_valid=valid,
                              max_penetration_m=max(check['max_penetration_m'] for check in checks),

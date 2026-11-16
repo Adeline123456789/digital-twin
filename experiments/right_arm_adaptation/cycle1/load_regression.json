@@ -4,7 +4,7 @@
       "left",
       "right"
     ],
-    "load_seconds": 1.4843040680279955,
+    "load_seconds": 1.4366892640246078,
     "nq": 30,
     "nu": 14
   },
@@ -12,7 +12,7 @@
     "arms": [
       "right"
     ],
-    "load_seconds": 0.6723808939568698,
+    "load_seconds": 1.7242332900641486,
     "nq": 22,
     "nu": 7
   },
@@ -20,7 +20,7 @@
     "arms": [
       "right"
     ],
-    "load_seconds": 0.19240333104971796,
+    "load_seconds": 1.0006482560420409,
     "nq": 22,
     "nu": 7
   },
@@ -29,7 +29,7 @@
       "left",
       "right"
     ],
-    "load_seconds": 0.561253137071617,
+    "load_seconds": 0.5577533229952678,
     "nq": 30,
     "nu": 14
   }

@@ -1,0 +1,11 @@
+{
+  "version": "right_arm_layout_v1",
+  "timestamp": "2026-11-16T03:22:36.201427+00:00",
+  "status": "SIMULATION_VERIFIED_SINGLE_SCENE",
+  "evidence": "experiments/right_arm_adaptation/cycle1/result.json",
+  "local_integration": "experiments/right_arm_adaptation/cycle1/local_integration.json",
+  "entry": "scripts/collect_current_scene.py --robot-arms right",
+  "schema": "connector_mixed.v2",
+  "hardware_validated": false,
+  "rollback": "scripts/install_right_arm_support.py --rollback; or select --robot-arms dual for scene switch"
+}

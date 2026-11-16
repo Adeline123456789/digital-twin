@@ -2,7 +2,8 @@
   "version": "v2",
   "previous": "v1",
   "evidence": "20261111T083957Z_05aa3d3d",
-  "previous_planner_policy": "llm",
-  "planner_policy": "compiled_alignment_v1",
-  "planner_evidence": "experiments/research_stage4/round4/result.json"
+  "previous_planner_policy": "compiled_alignment_v1",
+  "planner_policy": "llm",
+  "planner_evidence": "experiments/research_stage4/round4/result.json",
+  "planner_scope_note": "Native embodiment adapter changed source fingerprint; old compiled skill is preserved but not promoted to the new source/embodiment. Current right-only collection uses collect_current_scene.py."
 }
