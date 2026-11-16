@@ -1,0 +1,82 @@
+{
+  "reference_sha256": "e650fca7a02984ff73a01a0c9340b7faceac1e5789479f5309bfafbea1fbf648",
+  "result": "success",
+  "task_success": true,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "100Hz frozen target commands; original numerical integrator, contact bounds and task success detector",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "max_penetration_m": 3.470458173258956e-05,
+  "simulated_seconds": 54.81015625026647,
+  "observation_frames": 1644,
+  "applied_reference_steps": 5482,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 113.66600430302788,
+  "prediction_sha256": "7a4754d4c98e2ae830c44d7c55b02a9d63d14ffe7ca9321eb5ee33f530dfc853",
+  "source_episode": "20261116T054932Z_f8599c34",
+  "reference_manifest": {
+    "trajectory_id": "e650fca7a02984ff73a01a0c9340b7faceac1e5789479f5309bfafbea1fbf648",
+    "source_episode": "20261116T054932Z_f8599c34",
+    "source_trajectory_sha256": "b903f8a2e96d62691c59fa424874b87e692fb3f3839083218410517832a83107",
+    "source_initial_state_sha256": "fcd82b2b1b9705dcc33edf85a8ccf1fd4d1e66083eed7b0277ef97c9e20faa51",
+    "adapter_sha256": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+    "feature_names": [
+      "right.joint1",
+      "right.joint2",
+      "right.joint3",
+      "right.joint4",
+      "right.joint5",
+      "right.joint6",
+      "right.gripper_width"
+    ],
+    "units": [
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "width_mm / 95"
+    ],
+    "command_provenance": "simulation reference action, NOT simulated measured q",
+    "adaptation": "linear interpolation on original relative timeline at100Hz; no smoothing or time stretching",
+    "source_time_origin_s": 0.03333333333333329,
+    "duration_s": 54.80000000026677,
+    "steps": 5482,
+    "first_target": [
+      -6.635614715236242e-07,
+      7.836277803115338e-06,
+      -5.459211042737869e-06,
+      0.4869999592509425,
+      23.026003647603137,
+      0.5809912299456604,
+      0.631578947368421
+    ],
+    "last_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.631578947368421
+    ],
+    "simulation_validation": "PENDING adapted-reference physics replay",
+    "real_execution": "NOT_EXECUTED"
+  }
+}

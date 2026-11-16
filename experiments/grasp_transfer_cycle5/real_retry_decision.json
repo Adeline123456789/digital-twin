@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-11-16T05:56:12.380958+00:00",
+  "candidate": "grasp_height_12mm",
+  "action_change": "Lower gripper target center8mm versus prior real attempt; unchanged grip width, speed and contact profile",
+  "simulation_episodes": [
+    "20261116T054932Z_f8599c34",
+    "20261116T055302Z_3f4ef936"
+  ],
+  "initial_condition_check": "Second Episode holder +1mm world X, known state supplied to native IK; not an unseen task benchmark",
+  "frozen_reference": "e650fca7a02984ff73a01a0c9340b7faceac1e5789479f5309bfafbea1fbf648",
+  "preflight": {
+    "motion_commands": 0,
+    "enable_attempted": false,
+    "passed": true,
+    "measured": [
+      [
+        0.0,
+        -2.371,
+        0.928,
+        0.487,
+        23.026,
+        0.581,
+        0.28526315789473683
+      ]
+    ],
+    "entry": [
+      0.0,
+      0.0,
+      0.0,
+      0.487,
+      23.026,
+      0.581,
+      0.28526315789473683
+    ],
+    "entry_error_deg": 8.770054339524158e-06
+  },
+  "prior_real_success_count": 0,
+  "maximum_real_retries": 1,
+  "permission": "Existing user-authorized normal right-arm batch, current mission section6; support confirmation required at actual shutdown",
+  "physics_change_accepted": false,
+  "status": "SIMULATION_VERIFIED_REAL_PENDING"
+}
