@@ -1,0 +1,32 @@
+{
+  "physical_task_success": false,
+  "plug_retained_in_target_after_release_and_fold": false,
+  "reviewer": "Agent RGB/phase review and onsite user feedback",
+  "observed_at": "2026-11-16T11:39:02.047043+00:00",
+  "observed_facts": [
+    "No successful insertion or release; original guard stopped during align",
+    "User observed inadequate grasp at the lowest pose",
+    "Last grasp aperture47.1mm, constant over final0.3s; lifted aperture33.4mm",
+    "RGB shows plug displaced in fingers after lift, retained off-center after fold"
+  ],
+  "earliest_anomaly": "Grasp/retention during lift; late align guard is not the first physical failure",
+  "root_cause": "UNKNOWN",
+  "evidence": [
+    {
+      "relative_capture_path": "right_wrist/2082.jpg",
+      "sha256": "3875c3a3e2f77b446de99bb9eff5209e788a90e552d964f0ce8bd4773fe0ad46"
+    },
+    {
+      "relative_capture_path": "right_wrist/2142.jpg",
+      "sha256": "9ab019bc4104b2838ea7586474aa8a8a2520c1bb4ce5c3f078678e6b140d3ce2"
+    },
+    {
+      "relative_capture_path": "external/last.png",
+      "sha256": "29e915382a3c90fc914503954660c29f35aa8965f47638475b5c9576377f3dd6"
+    },
+    {
+      "relative_capture_path": "execution_report.json",
+      "sha256": "ca80d3a6f9490dee1d5c35a3fa7f3489807224c1581c4d751868e2dedbf28986"
+    }
+  ]
+}

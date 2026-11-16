@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-11-16T11:41:36.353349+00:00",
+  "measured_grasp_comparison": {
+    "failed_repeat": {
+      "last_0_3s_width_min_max_mm": [
+        47.1,
+        47.1
+      ],
+      "last_0_3s_sdk_motor_effort_mean_nm": -0.31268333333333326,
+      "sdk_motor_effort_is_not_external_contact_force": true,
+      "last_grasp_target_width_mm": 27.0,
+      "end_lift_width_mm": 33.4
+    },
+    "successful_discovery": {
+      "last_0_3s_width_min_max_mm": [
+        46.8,
+        46.8
+      ],
+      "last_0_3s_sdk_motor_effort_mean_nm": -0.3128333333333334,
+      "sdk_motor_effort_is_not_external_contact_force": true,
+      "last_grasp_target_width_mm": 27.0,
+      "end_lift_width_mm": 38.9
+    }
+  },
+  "failed_minus_successful_joint_deg": {
+    "descend": {
+      "target": [
+        5.728484353539898e-10,
+        -3.3279420108556224e-08,
+        -3.609687126981953e-08,
+        4.955467568408534e-12,
+        6.943253794133852e-08,
+        5.856861662323354e-10
+      ],
+      "feedback": [
+        0.028999999999999915,
+        -0.016000000000005343,
+        0.027000000000001023,
+        0.0,
+        -0.009000000000000341,
+        0.028999999999996362
+      ]
+    },
+    "grasp": {
+      "target": [
+        9.066720707551212e-10,
+        4.465939004205666e-05,
+        7.404115426368207e-05,
+        2.760176548584868e-10,
+        -0.0001187004873131059,
+        3.70107500202721e-10
+      ],
+      "feedback": [
+        0.028999999999999915,
+        -0.016000000000005343,
+        0.027000000000001023,
+        0.0,
+        -0.009000000000000341,
+        0.028999999999996362
+      ]
+    },
+    "lift": {
+      "target": [
+        2.1293318361870206e-06,
+        6.892403234814992e-07,
+        -9.243959482319042e-07,
+        -1.5627808480647384e-07,
+        9.236683240487764e-08,
+        2.4049339515386237e-06
+      ],
+      "feedback": [
+        0.028999999999999915,
+        -0.028999999999996362,
+        0.009000000000000341,
+        0.0,
+        0.0010000000000047748,
+        0.028999999999996362
+      ]
+    },
+    "transport": {
+      "target": [
+        -0.00025122197111926425,
+        0.0004785694874414048,
+        -0.0003214495077514812,
+        0.0004533937119690634,
+        0.0002534918063048508,
+        -0.00041157693389948236
+      ],
+      "feedback": [
+        -0.028999999999996362,
+        -0.0010000000000047748,
+        -0.047000000000011255,
+        0.04600000000000026,
+        -0.03700000000000614,
+        -0.0030000000000001137
+      ]
+    }
+  },
+  "finding": "Both attempts already plateaued at approximately47mm at the lowest pose while receiving27mm targets. Motor feedback is near the existing0.3Nm command limit. The command and measured joint endpoints are nearly identical. A missing close command or pure closure delay is not supported. Object retention differs during lift; geometric contact/initial seating/friction are not uniquely isolated.",
+  "root_cause_status": "unknown",
+  "next_hypothesis": "Evaluate a2mm lower grasp contact position,18->16mm, with unchanged torque, speed, fixture and camera parameters. Retain the old successful version.",
+  "user_steering": "User requested clamping firmly at the lowest point after observing the failed grasp; fixed-version repetition suspended for this repair."
+}

@@ -1,0 +1,89 @@
+{
+  "experiment_id": "20261116_real_repeatability_000001",
+  "timestamp": "2026-11-16T11:39:19.171581+00:00",
+  "batch_index": 1,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "2ffa68541d3ab6ceb8eb399aa46e42a039cc080f0eb4d4aa9282b901fe2fbb63",
+    "archive_program_sha256": "25e94fdcacfb9fabeb5c64c65ea17b933fd80a149d1583fb18a7b0636f8feb11"
+  },
+  "initial_state_stratum": "cold_start",
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 1618,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Agent RGB/phase review and onsite user feedback",
+    "observed_at": "2026-11-16T11:39:02.047043+00:00",
+    "observed_facts": [
+      "No successful insertion or release; original guard stopped during align",
+      "User observed inadequate grasp at the lowest pose",
+      "Last grasp aperture47.1mm, constant over final0.3s; lifted aperture33.4mm",
+      "RGB shows plug displaced in fingers after lift, retained off-center after fold"
+    ],
+    "earliest_anomaly": "Grasp/retention during lift; late align guard is not the first physical failure",
+    "root_cause": "UNKNOWN",
+    "evidence": [
+      {
+        "relative_capture_path": "right_wrist/2082.jpg",
+        "sha256": "3875c3a3e2f77b446de99bb9eff5209e788a90e552d964f0ce8bd4773fe0ad46"
+      },
+      {
+        "relative_capture_path": "right_wrist/2142.jpg",
+        "sha256": "9ab019bc4104b2838ea7586474aa8a8a2520c1bb4ce5c3f078678e6b140d3ce2"
+      },
+      {
+        "relative_capture_path": "external/last.png",
+        "sha256": "29e915382a3c90fc914503954660c29f35aa8965f47638475b5c9576377f3dd6"
+      },
+      {
+        "relative_capture_path": "execution_report.json",
+        "sha256": "ca80d3a6f9490dee1d5c35a3fa7f3489807224c1581c4d751868e2dedbf28986"
+      }
+    ]
+  },
+  "reference_commands": 3227,
+  "entire_reference_sent": false,
+  "reference_execution_seconds": 32.85330758302007,
+  "nominal_reference_seconds": 32.26,
+  "execution_time": 53.96391396399122,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One manual plug reset before this attempt; final supported shutdown counted separately",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000001/videos/cam_external_rgb.mp4",
+      "sha256": "464a0dbca187fead8d9be8c7b649cd686f757827f44aea21ed3d5bbf86685330"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000001/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "a163fb2fce95ce9ca5ce443b7830e98a10f23f3a081b5468f097fce32f53a737"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000001/proprio_stats/proprio_stats.h5",
+      "sha256": "9399895283eb5c01dfdaafc9659be2408a89b10e331df53db30faf191ce2de32"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000001/outcome.json",
+      "sha256": "1f9acecbf96fa7e014304e691d19eb69623693211cb0648b8bff60e92dcb987e"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000001/verification.json",
+      "sha256": "11569cddc2ad47f7aa567b117d5d3e19d3ac98558487fc9338e959c19691e550"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000001/raw/task/commanded_probe.csv",
+      "sha256": "2cb5f3b0da2409d881266002d8e0a2e3a8fa341b13049e69fbd52c6c26235217"
+    }
+  ]
+}
