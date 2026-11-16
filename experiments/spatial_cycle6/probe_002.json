@@ -1,0 +1,156 @@
+{
+  "result": "success",
+  "task_success": null,
+  "probe_valid": true,
+  "reference_sha256": "3707fab7f1638a526bea5e4d86e9be477f5cfbf43e75f11055ec33e95ebab482",
+  "privileged_information_used": true,
+  "real_commands": 0,
+  "all_substeps_valid": true,
+  "no_robot_task_contact": true,
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "wall_seconds": 146.76206816500053,
+  "max_penetration_m": 6.65099336778774e-07,
+  "prediction_sha256": "f498e5d5b9aac701ceaf3a4fbe2db8107e2d05f6c2978062b5711d67e803ce80",
+  "experiment_id": "spatial_cycle6_probe_002",
+  "dataset_reference": "self_evolution/spatial_cycle6/probe_002",
+  "hardware_executed": false,
+  "decision": "APPROVED_SIMULATION_PROBE; real execution pending",
+  "model": "deterministic MuJoCo",
+  "tokens": 0,
+  "manifest": {
+    "purpose": "noncontact_spatial_probe",
+    "trajectory_id": "3707fab7f1638a526bea5e4d86e9be477f5cfbf43e75f11055ec33e95ebab482",
+    "task_sha256": "049740d64ea9859e78e3dad3f2350f0532f93967e0c90b3ea0201cdd64ecb124",
+    "program_sha256": "281c3ccf13efc6dd1b632fae346026a07584983d0cff46a41fd9d22811991673",
+    "joint_names": [
+      "right.joint1",
+      "right.joint2",
+      "right.joint3",
+      "right.joint4",
+      "right.joint5",
+      "right.joint6"
+    ],
+    "joint_unit": "degree",
+    "gripper_unit": "width_m/.095",
+    "speed_limit_deg_s": 12,
+    "initial_right_deg": [
+      0.0,
+      0.0,
+      0.0,
+      0.487,
+      23.4,
+      0.517
+    ],
+    "viewpoints": [
+      {
+        "name": "holder",
+        "gap": 0.13,
+        "q_deg": [
+          -7.926871367743849,
+          76.02308550478048,
+          -56.6382316212393,
+          0.00019110105297460785,
+          55.61148965929315,
+          -104.18550704046265
+        ],
+        "xyz_m": [
+          0.2922794865868125,
+          -0.3506987546973821,
+          0.1882
+        ],
+        "rotation": [
+          [
+            0.33875171535410087,
+            -0.9361310563161409,
+            -0.09437118598959021
+          ],
+          [
+            -0.047170481268233144,
+            -0.11707284997146347,
+            0.9920024664770162
+          ],
+          [
+            -0.9396926205103342,
+            -0.33159100289360505,
+            -0.08381638120579829
+          ]
+        ],
+        "translation_joint_deg": [
+          -7.416799958198046,
+          78.63945257160275,
+          -62.446645112033664,
+          -0.20375809190973745,
+          58.80442829624379,
+          -103.60054841237493
+        ],
+        "translation_xyz_m": [
+          0.30727948658681253,
+          -0.3506987546973821,
+          0.2032
+        ]
+      },
+      {
+        "name": "socket",
+        "gap": 0.1,
+        "q_deg": [
+          53.12679479474362,
+          106.24705088844748,
+          -84.11154275112895,
+          -19.414637969648137,
+          64.20822273383772,
+          -35.94732120511169
+        ],
+        "xyz_m": [
+          0.2941117512023881,
+          -0.031047363526757535,
+          0.1533
+        ],
+        "rotation": [
+          [
+            0.33875171535410087,
+            -0.9361310563161409,
+            -0.09437118598959021
+          ],
+          [
+            -0.047170481268233144,
+            -0.11707284997146347,
+            0.9920024664770162
+          ],
+          [
+            -0.9396926205103342,
+            -0.33159100289360505,
+            -0.08381638120579829
+          ]
+        ],
+        "translation_joint_deg": [
+          51.27443552308625,
+          107.58282950694823,
+          -89.55837308499696,
+          -18.53917623377312,
+          67.51473984026144,
+          -39.26554766090022
+        ],
+        "translation_xyz_m": [
+          0.3091117512023881,
+          -0.031047363526757535,
+          0.1683
+        ]
+      }
+    ],
+    "duration_s": 90.52,
+    "note": "No grasp/insert task. Open-gripper observation holds and return; privileged simulation validation."
+  }
+}
