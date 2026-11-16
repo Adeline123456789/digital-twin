@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-11-16T12:26:30.306850+00:00",
+  "status": "PREPARED_NOT_APPLIED_AWAITING_EXPLICIT_LIMIT_AUTHORIZATION",
+  "change": "Only gripper effort limit300->400 SDK units (.3->.4Nm), with matching diagnostic output. Arm path/speed, fault/enable checks, grip target and native slip guard unchanged.",
+  "software_checks": [
+    {
+      "active": true,
+      "stream": true,
+      "fault": null,
+      "mock_calls": [
+        [
+          27000,
+          400,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "active": false,
+      "stream": true,
+      "fault": null,
+      "mock_calls": []
+    },
+    {
+      "active": true,
+      "stream": false,
+      "fault": null,
+      "mock_calls": []
+    },
+    {
+      "active": true,
+      "stream": true,
+      "fault": "fault",
+      "mock_calls": []
+    }
+  ],
+  "hardware_commands": 0,
+  "simulation_scope": "Existing16mm folded-zero reference geometrically/physically replayed with the existing model. Model gripper10N actuator limit has no identified conversion to SDK motor Nm; no claim of calibrated .4Nm simulation.",
+  "rollback": "Restore each exact original from private candidate directory; original hashes recorded. No original simulator or controller source is uploaded.",
+  "program_hashes": [
+    {
+      "original_sha256": "c06a6a1ca024868ab93e042006d3609d00cbea9e0ee3255b215e9efcbdde1f14",
+      "candidate_sha256": "ea17aaf2f9f2494eda6ac20fb2c554b7f909b1f3a8be7237e835dae658bcc873",
+      "file": "replay_controller.py"
+    },
+    {
+      "original_sha256": "c0d4bd9ccc23425d5e34ef6e569f021fb009f4b6cf075991b5d52378b056a45e",
+      "candidate_sha256": "8f44f87906b3b0228231d450c264cf0a0a18d8fe3db2f381ab89e9eea8344088",
+      "file": "replay_connector.py"
+    },
+    {
+      "original_sha256": "c06557afc1b9a6e8079b0946ec980516f3b5789cfbefbabc3b8a256e515caae8",
+      "candidate_sha256": "b569340d90d4ba677ac6d2ddd18b14b1b3bd16b81fd6f745e31c4410fba38207",
+      "file": "continue_plug_task.py"
+    }
+  ]
+}

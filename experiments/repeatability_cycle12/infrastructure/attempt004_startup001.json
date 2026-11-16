@@ -1,0 +1,11 @@
+{
+  "experiment_id": "20261116_real_repeatability_000004_startup_001",
+  "timestamp": "2026-11-16T12:32:30.306918+00:00",
+  "result": "infrastructure_error",
+  "physical_task_attempt_started": false,
+  "task_success": null,
+  "hardware_state_at_rejection": "arm_status0x01, ctrl_mode0x00, err_code0, all six motors enabled",
+  "failure_phase": "Native held-controller feedback gate before handoff, before any new task commands",
+  "recovery": "User confirmed support; original controller disabled; next launch uses normal native reset/connect path",
+  "raw_evidence_relative_path": "self_evolution/repeatability_cycle12/infrastructure/20261116_real_repeatability_000004_startup_001"
+}
