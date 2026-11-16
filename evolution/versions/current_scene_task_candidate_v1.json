@@ -1,0 +1,17 @@
+{
+  "version": "current_scene_task_candidate_v1",
+  "previous": "current_scene_observation_v1",
+  "cycle": 11,
+  "cycle_completed": false,
+  "status": "REAL_GRASP_CARRY_OBSERVED; INSERTION_FAILED; SECOND_REFERENCE_SIMULATION_VERIFIED",
+  "entry": "scripts/learn.py with explicit local PIPER_TASK_CONFIG",
+  "program_sha256": "81109b887e5329e1958e166fb69b3992d193c3ace6048e54c2286f756cf1f09d",
+  "evidence": "experiments/current_scene_cycle11/REPORT.md",
+  "real_episode": "20261116_real_current_holder_repair_000001",
+  "candidate_reference_sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+  "active_policy_changed": false,
+  "physics_or_camera_changed": false,
+  "safety_or_success_detector_changed": false,
+  "rollback": "Unset PIPER_TASK_CONFIG to retain original task default; candidate files are local and opt-in",
+  "timestamp": "2026-11-16T11:05:29.097893+00:00"
+}

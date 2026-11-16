@@ -1,0 +1,27 @@
+{
+  "steps": 5502,
+  "trajectory_seconds": 55.00000000026932,
+  "max_joint_speed_deg_s": 12.0,
+  "task_sdk_speed_percent": 15,
+  "first_target": [
+    -8.402037381650974e-07,
+    7.468694153791381e-06,
+    -5.2532500990712885e-06,
+    1.7113536159264853e-11,
+    5.271370722578136e-06,
+    -8.426505814808544e-06,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.631578947368421
+  ],
+  "reference_id": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+  "hardware_commands": 0,
+  "execution_mode": "frozen_sim_reference"
+}

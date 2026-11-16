@@ -1,0 +1,26 @@
+{
+  "id": "FP005",
+  "version": 1,
+  "content": "A plug retained during lift and transport can slip during insertion and then fall during retreat/fold. Preserve the successful prefix separately from the failed full task; do not assume a held object from an intermediate retreat frame.",
+  "applicability": "Current right Piper; current cycle10/11 scene; yellow plug in original holder slot; RGB-only and gripper motor aperture, no six-axis force sensor",
+  "source_episodes": [
+    "20261116_real_current_holder_repair_000001"
+  ],
+  "validation_status": "REAL_FAILURE_OBSERVED; ROOT_CAUSE_UNKNOWN",
+  "success_count": 0,
+  "failure_count": 1,
+  "count_unit": "Full real pick/insert attempt; one observed successful grasp/carry prefix is not a full task success",
+  "known_limits": [
+    "One real attempt; no independent 3D pose or force measurement",
+    "Cannot isolate socket pose, contact geometry, grasp or friction as unique cause",
+    "18mm follow-up is simulation-only until a new real episode is evaluated"
+  ],
+  "signatures": [
+    "insertion_slip_after_transport"
+  ],
+  "evidence": [
+    "experiments/current_scene_cycle11/real_attempt001_outcome.json",
+    "experiments/current_scene_cycle11/real_attempt001_commands.json",
+    "experiments/current_scene_cycle11/REPORT.md"
+  ]
+}
