@@ -1,0 +1,29 @@
+{
+  "result": "infrastructure_error",
+  "task_success": null,
+  "calibration_promoted": false,
+  "validation_status": "UNQUALIFIED_POSE_CANDIDATE",
+  "opencv_version": "5.0.0",
+  "program_sha256": "5e81963afba878920e07e28d91ba15a016a344c3b9a848e6d55f859fd5d65733",
+  "source_sha256": "f125e605eb19d146129b5cc1f6ed4c183d0303285bcd47df44bf0c0d13091148",
+  "robot_motion_diagnostics": {
+    "pose_count": 8,
+    "pair_count": 28,
+    "translation_system_rank": 3,
+    "singular_values": [
+      0.6605506234817323,
+      0.6484090690062718,
+      0.2294514741082085
+    ],
+    "condition_number": 2.87882492822957,
+    "rhs_error_amplification_bound": 4.358219984799067,
+    "max_pair_rotation_deg": 11.724295236064995,
+    "max_origin_separation_m": 0.07395514068328148,
+    "interpretation": "Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality."
+  },
+  "error": "AttributeError: module 'cv2' has no attribute 'calibrateHandEye'",
+  "execution_time_s": 0.0015517770079895854,
+  "private_result_sha256": "7c7735c384bb592f43bbbb6aef6d29684090db5f0129f49703335a1c95b66803",
+  "experiment_id": "cycle8_fit_001",
+  "accepted": false
+}

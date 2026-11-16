@@ -1,0 +1,27 @@
+{
+  "pose_count": 10,
+  "pair_count": 45,
+  "translation_system_rank": 3,
+  "singular_values": [
+    0.8208963053221716,
+    0.8072356341640564,
+    0.2706562186563129
+  ],
+  "condition_number": 3.032985199444353,
+  "rhs_error_amplification_bound": 3.694723900912208,
+  "max_pair_rotation_deg": 11.736446786242636,
+  "max_origin_separation_m": 0.07427361087463606,
+  "interpretation": "Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality.",
+  "planned_train_phases": [
+    "board_a_center_hold",
+    "board_a_j4_hold",
+    "board_a_j5_hold",
+    "board_a_j6_hold",
+    "board_a_translation_hold",
+    "board_b_center_hold",
+    "board_b_j4_hold",
+    "board_b_j5_hold",
+    "board_b_j6_hold",
+    "board_b_translation_hold"
+  ]
+}

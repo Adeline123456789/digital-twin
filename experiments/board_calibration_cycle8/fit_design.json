@@ -1,0 +1,17 @@
+{
+  "status": "PRE_FIT_RULES",
+  "train_count": 8,
+  "heldout_count": 2,
+  "excluded_train_phases": [
+    "board_a_center_hold",
+    "board_b_translation_hold"
+  ],
+  "training_reprojection_limit_px": 0.5,
+  "requested_bounds": {
+    "max_translation_change_m": 0.05,
+    "max_rotation_change_deg": 15
+  },
+  "acceptance": "Both reserved pose closure metrics must improve at least50%; candidate heldout translation RMSE<=3mm and rotation RMSE<=0.5deg; this would qualify local pose consistency only, not absolute metrology or task success.",
+  "no_calibration_deployment": true,
+  "input_sha256": "f125e605eb19d146129b5cc1f6ed4c183d0303285bcd47df44bf0c0d13091148"
+}

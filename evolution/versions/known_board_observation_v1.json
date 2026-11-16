@@ -1,0 +1,17 @@
+{
+  "version": "known_board_observation_v1",
+  "previous": "robot_silhouette_v1",
+  "cycle": 8,
+  "batch_cycle_limit": 12,
+  "status": "REAL_OBSERVATION_TOOL_VERIFIED; CALIBRATION_NOT_PROMOTED",
+  "entry": [
+    "scripts/chessboard_observation.py",
+    "scripts/spatial_probe.py"
+  ],
+  "evidence": "experiments/board_calibration_cycle8/result.json",
+  "active_policy_changed": false,
+  "active_physics_or_camera_changed": false,
+  "safety_limits_changed": false,
+  "rollback": "Retain existing deployed transforms; observation tools optional. Keep freshness-before-enable fix to avoid the reproduced startup failure.",
+  "limitations": "Not yet dispatched by the main Agent; not a learned successful grasp/insert skill"
+}

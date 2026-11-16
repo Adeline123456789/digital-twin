@@ -1,0 +1,33 @@
+{
+  "result": "infrastructure_error",
+  "task_success": null,
+  "probe_valid": false,
+  "reference_sha256": "771600bccde177970946621499f6ab8a1c2727df3783b2b9a132d3a95a7470c8",
+  "privileged_information_used": true,
+  "real_commands": 0,
+  "all_substeps_valid": false,
+  "no_robot_task_contact": false,
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "wall_seconds": 0.0035394629230722785,
+  "max_penetration_m": 0.0,
+  "prediction_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "experiment_id": "cycle8_probe_002",
+  "error": "Disabled J2=-2.372deg,J3=0.819deg raw feedback is outside native model limits. Existing Hardware.connect uses prepare_entry folded-zero normalization before enabling; simulation must use that same native prepared entry, without changing limits.",
+  "physical_simulation_steps": 0,
+  "log_sha256": "c4577c4cf5d360b0d7d4a47dbfdcfa4eb1b6a44be7a32cb6f5f3e37f00612d12",
+  "program_version": "72140a0868f6f3fb07dc65d3cb826a2ff87cf014df8910d05fe5c38d50e8abf2",
+  "model": "MuJoCo3.3.7, deterministic native reference"
+}

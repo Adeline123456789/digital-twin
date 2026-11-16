@@ -1,7 +1,5 @@
-# Cycle 8 preparation: existing known-size target
+# 第八轮：已知尺寸RGB棋盘格
 
-The user confirms a physical calibration board is available. Its type, row/column convention and metric spacing remain required inputs; an asynchronous question is pending. Do not infer dimensions or dictionary IDs.
+用户已确认单格20mm、12×9格、11×8内角点。已完成真实观测和两项有效手眼数值条件；候选改善留出一致性但未达到接受门槛。完整过程、失败、成本和证据见 [REPORT.md](REPORT.md) 与 [result.json](result.json)。
 
-Existing OpenCV5.0.0 exposes chessboard-SB and aruco; six existing hand-eye/pose tests passed. Reuse those interfaces after the actual target is known. No new solver, dependencies, calibration fit or robot motion has been introduced. This is preparation, not an eighth completed experiment.
-
-Use RGB target coordinates in explicit metres, exposure-matched joint feedback and a rigid stationary target. Keep withheld configurations out of fitting and report closure separately from independent metric validation. Store device transforms only in the local dataset. Planning/capture must continue to use the established right-arm controls and safety checks.
+原始数据、矩阵和临时仿真XML均在本地，未上传。

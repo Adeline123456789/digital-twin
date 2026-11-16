@@ -2,14 +2,28 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import os
+import time
 import unittest
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from spatial_probe import make_reference, load_probe
+from spatial_probe import make_reference, load_probe, require_fresh_rgb
 from learn import digest
 
 
 class SpatialProbeTests(unittest.TestCase):
+    def test_ready_marker_does_not_replace_fresh_rgb(self):
+        with tempfile.TemporaryDirectory() as directory:
+            p=Path(directory)
+            for camera in ('external','right_wrist'):
+                (p/camera).mkdir();(p/camera/'READY').write_text('ready')
+            with self.assertRaises(RuntimeError):require_fresh_rgb(p)
+            for camera in ('external','right_wrist'):
+                for name in ('0000.jpg','0001.jpg'):(p/camera/name).touch()
+            require_fresh_rgb(p)
+            stale=time.time()-1;os.utime(p/'right_wrist/0000.jpg',(stale,stale))
+            with self.assertRaises(RuntimeError):require_fresh_rgb(p)
+
     def test_open_gripper_speed_and_fold(self):
         t,q,ph=make_reference([0,0,0,0,23,0],[{'name':'holder','q_deg':[0,75,-55,0,55,-100]}])
         self.assertLessEqual(np.abs(np.diff(q[:,:6],axis=0)/np.diff(t)[:,None]).max(),12+1e-6)

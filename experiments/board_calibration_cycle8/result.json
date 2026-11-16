@@ -1,0 +1,197 @@
+{
+  "experiment_id": "cycle8_known_size_rgb_board",
+  "timestamp": "2026-11-16T08:55:54.038601+00:00",
+  "cycle": 8,
+  "total_cycle_limit": 12,
+  "completed_cycles": 8,
+  "model": "deterministic OpenCV/MuJoCo; Codex research orchestration",
+  "task": "Known20mm RGB chessboard hand-eye observations; fixed board and sockets",
+  "environment": "real_and_privileged_simulation",
+  "program_version": {
+    "scripts/spatial_probe.py": "de245567dac1d98020c9df2fb84bd392f18a3597393885a3aff9037716e3c228",
+    "scripts/chessboard_observation.py": "ab6fdebfaa3c1746e84d2329b23efd39eedb23f38188ee473090e6e1cc8a85dd",
+    "scripts/plan_board_views.py": "e6b02fda846edbd0ac44a2ff14da3482fd6e4b9376496350b3cb53e6782c7bbe",
+    "scripts/solve_rgb_handeye.py": "5e81963afba878920e07e28d91ba15a016a344c3b9a848e6d55f859fd5d65733"
+  },
+  "protocol_version": "50a06a030985736a4719f97e3a79698c37296f3d6cecd59e495dfe2f871ac771",
+  "memory_version": "ER016/NE015 v1",
+  "initial_state": {
+    "known_grid_square_m": 0.02,
+    "squares": [
+      12,
+      9
+    ],
+    "inner_corners": [
+      11,
+      8
+    ],
+    "RGB_only": true,
+    "six_axis_force": false
+  },
+  "actions": [
+    "Read-only board and native right-arm checks",
+    "Four simulation build entry attempts: two startup errors and two complete physical paths",
+    "One native startup abort followed by one completed frozen noncontact observation batch",
+    "Known-grid sequential optical-flow observations and two useful numerical hand-eye conditions; all failed calls retained"
+  ],
+  "expected_effects": [
+    "Metric fixed-board constraints and smaller heldout closure errors"
+  ],
+  "observed_effects": {
+    "full_grid_detections": 18,
+    "selected_hold_frames": 22,
+    "partial_grid_counts": [
+      86,
+      86,
+      85,
+      84
+    ],
+    "tracker_crosscheck_rmse_range_px": [
+      0.3517191879,
+      0.4388697044
+    ],
+    "dataset_verified_frames": 2126,
+    "baseline_heldout": {
+      "frames": 2,
+      "translation_rmse_m": 0.005495645837581898,
+      "rotation_rmse_deg": 0.8765915678259493
+    },
+    "candidate_heldout": {
+      "frames": 2,
+      "translation_rmse_m": 0.003747407530285097,
+      "rotation_rmse_deg": 0.5347433901427523
+    }
+  },
+  "failure_signature": "heldout_metric_closure_above_predeclared_acceptance",
+  "root_cause": "UNKNOWN for original centimetre grasp mismatch; verified stale READY/90s startup timeout; observed gripper occlusion; runtime-specific OpenCV solver failures",
+  "root_cause_status": "unknown_for_physical_mismatch",
+  "hypotheses": [
+    "Camera mount error contributes, but nominal FK, board pose estimation and mount/geometry are not independently separated"
+  ],
+  "experiments": [
+    "probe_001",
+    "probe_002",
+    "probe_003",
+    "probe_004",
+    "real_startup_failure",
+    "real_completed_observation",
+    "fit_001",
+    "fit_002",
+    "fit_003",
+    "fit_004"
+  ],
+  "repair": {
+    "retained": [
+      "fresh RGB gate before motor enable",
+      "known-size RGB target observations and sequential visible-corner tracking"
+    ],
+    "rejected": [
+      "automatic deployment of fitted wrist extrinsic"
+    ],
+    "active_policy_changed": false,
+    "active_physics_or_camera_changed": false,
+    "safety_limits_changed": false
+  },
+  "result": "failure",
+  "task_success": null,
+  "observation_sequence_success": true,
+  "calibration_accepted": false,
+  "validation_status": "REAL_OBSERVATIONS_VERIFIED; CALIBRATION_ACCEPTANCE_NOT_MET",
+  "acceptance": {
+    "heldout_translation_limit_m": 0.003,
+    "heldout_rotation_limit_deg": 0.5,
+    "required_reduction_each": 0.5,
+    "actual_translation_reduction": 0.31811334990721163,
+    "actual_rotation_reduction": 0.3899742938789851
+  },
+  "tokens": null,
+  "execution_model_tokens": 0,
+  "execution_model_calls": 0,
+  "research_orchestrator_tokens": null,
+  "execution_time": {
+    "reference_s": 60.91,
+    "actual_reference_s": 69.61622728605289,
+    "full_recorded_command_span_s": 71.85218984808307,
+    "complete_physical_simulation_wall_s": 223.09275374899153,
+    "numerical_solver_seconds_only": 0.005866863066330552
+  },
+  "human_interventions": {
+    "motion_permission_messages": 1,
+    "supported_shutdown_confirmations": 2,
+    "board_placement_and_measurement": true,
+    "task_motion_corrections": 0,
+    "interpretation": "Not lower than a matched baseline; board setup time and total research cost not fully metered"
+  },
+  "pair": {
+    "reference_id": "c17c1f1f6423c43eed54684c99473c0402294051c014ed3dfd0cb1fdc8189012",
+    "identical_target_commands": true,
+    "reference_targets": 6092,
+    "nominal_reference_span_s": 60.91,
+    "actual_reference_span_s": 69.61622728605289,
+    "timing_stretch_percent": 14.293592654823328,
+    "absolute_joint_tracking_error_deg": {
+      "rmse_per_joint": [
+        0.162417013870449,
+        0.164970780409632,
+        0.2009595208230223,
+        0.18754632009388908,
+        0.18616906827829718,
+        0.2786157167419274
+      ],
+      "p95_per_joint": [
+        0.41198509147141105,
+        0.3741526076610689,
+        0.47031583851362363,
+        0.4370115817534989,
+        0.4450548806399746,
+        0.5841855740732266
+      ],
+      "max_per_joint": [
+        0.7274818071290596,
+        0.6125573606315058,
+        0.7621731621173709,
+        0.8537271383415499,
+        0.79422339812524,
+        0.8632871099779251
+      ]
+    },
+    "privileged_simulation_used": true,
+    "interpretation": "Identical target arrays; real timing differs. No dynamic equivalence or motion-quality improvement established."
+  },
+  "hardware_disabled_verified": true,
+  "final_err_code": 0,
+  "new_full_task_successes": 0,
+  "new_full_task_attempts": 0,
+  "valid_success_episodes_per_hour": null,
+  "total_cost_per_valid_success": null,
+  "lessons_learned": [
+    "Known geometry provides metric constraints; closure improvement is not absolute calibration",
+    "Tracking can retain visible grid IDs under finger occlusion; heldout poses remain heldout",
+    "READY files outlive camera threads; freshness belongs before enable",
+    "Use documented system OpenCV4.5.4 hand-eye/refinement runtime; simulator OpenCV5.0.0 missing/broken APIs were observed",
+    "Actual target schedule stretched14.29%; no claim of preserved wall-time quality"
+  ],
+  "next_improvement": "Complete pending main-Agent diagnostic integration in cycle9; retain board calibration data for a bounded better-conditioned observation/measurement direction, not more unbounded fits in cycle8",
+  "budget_accounting": {
+    "simulation_build_invocations": 4,
+    "complete_physical_validations": 2,
+    "real_enable_attempts": 2,
+    "complete_real_observation_batches": 1,
+    "handeye_entry_invocations": 4,
+    "useful_numerical_conditions": 2,
+    "failures_counted": true,
+    "deviation": "Startup/software retries exceeded planned entrance-call counts; every retry retained, no extra task trajectory or calibration search condition hidden"
+  },
+  "evidence": {
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/outcome.json": "aabdc933711da0572c38a7cd40ef33a9526381f522c33dcb8cd177d787f847fb",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/verification.json": "d3b82456bc8d62b636b0e14ea6a8de409b25b4988b44139e29a9d69f43b46610",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/pair_manifest.json": "915d6ea4fffc8bbb7876e07f4ed36c5bc9e105abb8f3c4ce92d340c7b5635d06",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/proprio_stats/proprio_stats.h5": "eec13920b680cefa7266ee94fe0f419b4bdb60ac24c6675ea5afab1e34507cc7",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/raw/task/commanded_probe.csv": "a697d525e00be430bc396f5c7beb97c125bc3af0e1beaa2cef578727724fc263",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/videos/cam_external_rgb.mp4": "0309386e428902645c389fc082e4f4bfb9618f90d10230e084347815f2c263ba",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/videos/cam_right_wrist_rgb.mp4": "c00fc079a8d9e05ec7d1338e76baf804572e81e70dd34cdaffe11103cae59673",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000001/outcome.json": "bc5e3324778a9b58176b1f9d5670385ca70ee7f757631a1aa072e18edc254980",
+    "self_evolution/board_cycle8/fit_input_001.json": "f125e605eb19d146129b5cc1f6ed4c183d0303285bcd47df44bf0c0d13091148",
+    "self_evolution/board_cycle8/fit_input_003.json": "3db524b9cc9ab2a6b126b48930aa2f87b2c155a4666f2b3205a8a96d4624441e"
+  }
+}

@@ -3,9 +3,9 @@
   "cycle": 8,
   "batch_cycle_limit": 12,
   "completed_cycles": 7,
-  "status": "PREPARATION; USER_CONFIRMED_BOARD_EXISTS; SPECIFICATION_PENDING",
-  "source_user_answer": "有现成标定板，可提供尺寸",
-  "question_pending": "Board type, cells vs inner-corner rows/columns, physical cell or marker edge in mm; local specification file accepted",
+  "status": "REAL_OBSERVATION_COMPLETE; CALIBRATION_NOT_ACCEPTED",
+  "source_user_answer": "25*31cm including border;12*9 squares;silkscreen GP290-20-12*9; user confirms placed under external camera and square20mm",
+  "question_pending": null,
   "method": "Known-size RGB target poses via existing OpenCV; existing prepare_rgb_handeye.robot_observations and solve_rgb_handeye.solve; heldout fixed-board closure and independent geometry checks",
   "existing_interfaces_verified": {
     "opencv_version": "5.0.0",
@@ -14,12 +14,33 @@
     "test_rgb_handeye_passed": 6
   },
   "new_dependencies": 0,
-  "new_real_motion": 0,
-  "new_calibration_fit": 0,
+  "new_real_motion": 1,
+  "new_calibration_fit": 2,
   "numeric_specification_assumed": false,
   "robot_safety": "No enable or motion in preparation. Retain established right-arm simulation/readiness/stop and supported shutdown requirements.",
-  "interpretation": "Software preparation only, not successful calibration or eighth completed cycle",
-  "remaining_independent_work": "Select detector and final bounded experiment after actual board specification; avoid building unused generic board framework",
+  "interpretation": "One completed real observation batch and one aborted startup; no accepted calibration; see REPORT.md",
+  "remaining_independent_work": "Cycle9 Agent diagnostic integration; no more fitting in cycle8",
   "public_source": "https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html",
-  "evidence_previous_cycle": "experiments/registration_cycle7/REPORT.md"
+  "evidence_previous_cycle": "experiments/registration_cycle7/REPORT.md",
+  "board": {
+    "type": "chessboard",
+    "squares_columns_rows": [
+      12,
+      9
+    ],
+    "inner_corners_columns_rows": [
+      11,
+      8
+    ],
+    "outer_size_mm_approx": [
+      310,
+      250
+    ],
+    "silkscreen": "GP290-20-12*9",
+    "square_size_m": 0.02,
+    "nominal_scale_hypothesis_mm": 20,
+    "metric_dimension_status": "USER_CONFIRMED20mm/2cm",
+    "source": "https://patents.google.com/patent/CN118397074B/zh"
+  },
+  "updated_at": "2026-11-16T07:50:56.275201+00:00"
 }

@@ -1,0 +1,29 @@
+{
+  "result": "failure",
+  "task_success": null,
+  "calibration_promoted": false,
+  "validation_status": "UNQUALIFIED_POSE_CANDIDATE",
+  "opencv_version": "4.5.4",
+  "program_sha256": "5e81963afba878920e07e28d91ba15a016a344c3b9a848e6d55f859fd5d65733",
+  "source_sha256": "148451520e671b5502eeb9d5b68668ef72550528997401395a11f3233f1c7da2",
+  "robot_motion_diagnostics": {
+    "pose_count": 8,
+    "pair_count": 28,
+    "translation_system_rank": 3,
+    "singular_values": [
+      0.6605506234817325,
+      0.6484090690062717,
+      0.2294514741082085
+    ],
+    "condition_number": 2.878824928229571,
+    "rhs_error_amplification_bound": 4.358219984799067,
+    "max_pair_rotation_deg": 11.724295236064986,
+    "max_origin_separation_m": 0.07395514068328148,
+    "interpretation": "Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality."
+  },
+  "error": "OpenCV returned an invalid rigid transform; calibration remains unqualified",
+  "execution_time_s": 0.0012269490398466587,
+  "private_result_sha256": "73998ce0b1df3fa063798153d9a4bb8a19aa5a812f9e432521df4ca65c01f92f",
+  "experiment_id": "cycle8_fit_003",
+  "accepted": false
+}

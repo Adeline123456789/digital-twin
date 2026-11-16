@@ -1,0 +1,117 @@
+{
+  "method": "Existing OpenCV solvePnPRefineLM for each original positive-depth IPPE branch; identical8train/2heldout poses, no split or exclusion changes; reprojection only, no use of joint closure.",
+  "per_pose_reprojection": [
+    {
+      "phase": "board_a_center_hold",
+      "before_px": 0.7964545745134717,
+      "after_px": 141.4030469330425
+    },
+    {
+      "phase": "board_a_j4_hold",
+      "before_px": 0.41666664483807986,
+      "after_px": 68.12986361014956
+    },
+    {
+      "phase": "board_a_return4_hold",
+      "before_px": 0.239685996182458,
+      "after_px": 203.58996543541096
+    },
+    {
+      "phase": "board_a_j5_hold",
+      "before_px": 0.3465967776259763,
+      "after_px": 186.82394124909305
+    },
+    {
+      "phase": "board_a_return5_hold",
+      "before_px": 0.230844555826668,
+      "after_px": 9.640840358196654
+    },
+    {
+      "phase": "board_a_j6_hold",
+      "before_px": 0.24078583089246935,
+      "after_px": 49.38282014039749
+    },
+    {
+      "phase": "board_a_return6_hold",
+      "before_px": 0.24514810657396002,
+      "after_px": 205.43287203561587
+    },
+    {
+      "phase": "board_a_translation_hold",
+      "before_px": 0.23099574822664842,
+      "after_px": 202.302438178137
+    },
+    {
+      "phase": "board_a_translation_return_hold",
+      "before_px": 0.2336930657552258,
+      "after_px": 94.0084694329421
+    },
+    {
+      "phase": "board_a_heldout_hold",
+      "before_px": 0.2711756516110398,
+      "after_px": 0.26512499072249157
+    },
+    {
+      "phase": "board_a_return_heldout_hold",
+      "before_px": 0.24340309747929909,
+      "after_px": 128.98375995897314
+    },
+    {
+      "phase": "board_b_center_hold",
+      "before_px": 0.2202727004556203,
+      "after_px": 214.82875913723012
+    },
+    {
+      "phase": "board_b_j4_hold",
+      "before_px": 0.302628543609573,
+      "after_px": 76.20143855505717
+    },
+    {
+      "phase": "board_b_return4_hold",
+      "before_px": 0.21804160949206425,
+      "after_px": 43.041114260650524
+    },
+    {
+      "phase": "board_b_j5_hold",
+      "before_px": 0.29379313851903294,
+      "after_px": 179.18247170195227
+    },
+    {
+      "phase": "board_b_return5_hold",
+      "before_px": 0.24062605246805907,
+      "after_px": 205.85802853440413
+    },
+    {
+      "phase": "board_b_j6_hold",
+      "before_px": 0.23307852612004853,
+      "after_px": 75.31984801977316
+    },
+    {
+      "phase": "board_b_return6_hold",
+      "before_px": 0.22131252210670746,
+      "after_px": 31.67792085302541
+    },
+    {
+      "phase": "board_b_translation_hold",
+      "before_px": 1.0622000293979634,
+      "after_px": 217.38857941816786
+    },
+    {
+      "phase": "board_b_translation_return_hold",
+      "before_px": 0.22169504698709688,
+      "after_px": 71.71988384139861
+    },
+    {
+      "phase": "board_b_heldout_hold",
+      "before_px": 0.2851250516999805,
+      "after_px": 139.45402361179967
+    },
+    {
+      "phase": "board_b_return_heldout_hold",
+      "before_px": 0.22681145692808527,
+      "after_px": 214.84833123995284
+    }
+  ],
+  "input_sha256": "148451520e671b5502eeb9d5b68668ef72550528997401395a11f3233f1c7da2",
+  "calibration_fit_not_yet_run": true
+}

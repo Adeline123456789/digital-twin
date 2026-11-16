@@ -1,0 +1,72 @@
+{
+  "result": "success",
+  "task_success": null,
+  "calibration_promoted": false,
+  "validation_status": "POSE_CANDIDATE_ONLY",
+  "opencv_version": "4.5.4",
+  "program_sha256": "5e81963afba878920e07e28d91ba15a016a344c3b9a848e6d55f859fd5d65733",
+  "source_sha256": "3db524b9cc9ab2a6b126b48930aa2f87b2c155a4666f2b3205a8a96d4624441e",
+  "robot_motion_diagnostics": {
+    "pose_count": 8,
+    "pair_count": 28,
+    "translation_system_rank": 3,
+    "singular_values": [
+      0.6605506234817325,
+      0.6484090690062717,
+      0.2294514741082085
+    ],
+    "condition_number": 2.878824928229571,
+    "rhs_error_amplification_bound": 4.358219984799067,
+    "max_pair_rotation_deg": 11.724295236064986,
+    "max_origin_separation_m": 0.07395514068328148,
+    "interpretation": "Necessary robot-motion check only. Pair residuals share observations; no independent-noise confidence interval. Does not establish monocular scale or visual pose quality."
+  },
+  "parameter_change": {
+    "translation_m": 0.01702356044499903,
+    "rotation_deg": 8.757124592007171
+  },
+  "requested_bounds": {
+    "max_translation_change_m": 0.05,
+    "max_rotation_change_deg": 15
+  },
+  "within_requested_bounds": true,
+  "translation_system_singular_values": [
+    0.6605506234817325,
+    0.6484090690062717,
+    0.2294514741082085
+  ],
+  "baseline": {
+    "train": {
+      "frames": 8,
+      "translation_rmse_m": 0.0037047336974243335,
+      "rotation_rmse_deg": 0.8104465149740122
+    },
+    "heldout": {
+      "frames": 2,
+      "translation_rmse_m": 0.005495645837581898,
+      "rotation_rmse_deg": 0.8765915678259493
+    }
+  },
+  "candidate": {
+    "train": {
+      "frames": 8,
+      "translation_rmse_m": 0.0026141141534655925,
+      "rotation_rmse_deg": 0.35001406979284033
+    },
+    "heldout": {
+      "frames": 2,
+      "translation_rmse_m": 0.003747407530285097,
+      "rotation_rmse_deg": 0.5347433901427523
+    }
+  },
+  "limitations": [
+    "Closure errors are pose consistency, not independent physical ground truth",
+    "Full numerical rank does not establish adequate conditioning or observability under measurement noise",
+    "Metric target dimensions, RGB pose ambiguity, FK and timestamps must be verified upstream",
+    "No parameter promotion, hardware connection, or XML modification"
+  ],
+  "execution_time_s": 0.0015583339845761657,
+  "private_result_sha256": "390651761513a020ab7e386464cdc2ee534797a495ea70cb7a52223011ae7229",
+  "experiment_id": "cycle8_fit_004",
+  "accepted": false
+}

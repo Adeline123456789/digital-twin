@@ -1,0 +1,19 @@
+{
+  "purpose": "known_size_board_observation",
+  "result": "infrastructure_error",
+  "observation_sequence_success": false,
+  "physical_task_success": null,
+  "task_attempt": false,
+  "recording_complete": false,
+  "reason": "90s trigger timeout; stale READY; no frozen reference targets sent; native folded-entry enable occurred before freshness abort; supported shutdown verified",
+  "root_cause_status": "verified",
+  "experiment_id": "20261116_real_board_probe_000001",
+  "timestamp": "2026-11-16T08:55:54.038601+00:00",
+  "reference_id": "c17c1f1f6423c43eed54684c99473c0402294051c014ed3dfd0cb1fdc8189012",
+  "startup_ready_to_start_s": 159.32008624076843,
+  "trigger_deadline_s": 90,
+  "recorded_commands": 0,
+  "frame_count": 0,
+  "log_sha256": "fb5d384d7524e850ddeb12a42b46c95135b89bad39a3a20f3eaf304bc95ff4f6",
+  "repair": "Start recording before native controller setup and repeat unchanged fresh-frame check before enable; keep native reset/limits/supported-shutdown."
+}

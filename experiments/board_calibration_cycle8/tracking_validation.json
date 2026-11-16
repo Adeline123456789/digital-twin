@@ -1,0 +1,110 @@
+{
+  "method": "OpenCV pyramidal LK on every consecutive RGB frame; forward/backward0.5px; grid homography2px; no replacement of lost/occluded corners",
+  "validation": [
+    {
+      "phase": "board_a_j4_hold",
+      "retained": 87,
+      "rmse_px": 0.35844828851979316,
+      "reversed_rmse_px": 199.59782451360113
+    },
+    {
+      "phase": "board_a_return4_hold",
+      "retained": 88,
+      "rmse_px": 0.4388697043635967,
+      "reversed_rmse_px": 202.10301480680613
+    },
+    {
+      "phase": "board_a_j5_hold",
+      "retained": 86,
+      "rmse_px": 0.4037050455848458,
+      "reversed_rmse_px": 200.53974274121882
+    },
+    {
+      "phase": "board_a_return5_hold",
+      "retained": 86,
+      "rmse_px": 0.41513184279462584,
+      "reversed_rmse_px": 199.75484917057256
+    },
+    {
+      "phase": "board_a_j6_hold",
+      "retained": 88,
+      "rmse_px": 0.3975390513300616,
+      "reversed_rmse_px": 201.9344981728735
+    },
+    {
+      "phase": "board_a_return6_hold",
+      "retained": 88,
+      "rmse_px": 0.4326103412230591,
+      "reversed_rmse_px": 201.94761243016086
+    },
+    {
+      "phase": "board_a_translation_return_hold",
+      "retained": 88,
+      "rmse_px": 0.4360081144989152,
+      "reversed_rmse_px": 201.9353661536954
+    },
+    {
+      "phase": "board_a_return_heldout_hold",
+      "retained": 85,
+      "rmse_px": 0.4199316637135047,
+      "reversed_rmse_px": 198.55623365924745
+    },
+    {
+      "phase": "board_b_center_hold",
+      "retained": 88,
+      "rmse_px": 0.384542170428498,
+      "reversed_rmse_px": 215.06460470428237
+    },
+    {
+      "phase": "board_b_j4_hold",
+      "retained": 87,
+      "rmse_px": 0.3517191879106153,
+      "reversed_rmse_px": 212.01131826610913
+    },
+    {
+      "phase": "board_b_return4_hold",
+      "retained": 87,
+      "rmse_px": 0.37096355478159765,
+      "reversed_rmse_px": 213.4483605104951
+    },
+    {
+      "phase": "board_b_return5_hold",
+      "retained": 85,
+      "rmse_px": 0.36508670968274226,
+      "reversed_rmse_px": 211.90439709183119
+    },
+    {
+      "phase": "board_b_j6_hold",
+      "retained": 88,
+      "rmse_px": 0.3745685067101951,
+      "reversed_rmse_px": 215.10602506575196
+    },
+    {
+      "phase": "board_b_return6_hold",
+      "retained": 88,
+      "rmse_px": 0.38900683259496865,
+      "reversed_rmse_px": 215.10124509942355
+    },
+    {
+      "phase": "board_b_translation_hold",
+      "retained": 86,
+      "rmse_px": 0.36969980602356983,
+      "reversed_rmse_px": 214.96943108676146
+    },
+    {
+      "phase": "board_b_translation_return_hold",
+      "retained": 88,
+      "rmse_px": 0.3914650843669463,
+      "reversed_rmse_px": 215.33002613352505
+    },
+    {
+      "phase": "board_b_return_heldout_hold",
+      "retained": 84,
+      "rmse_px": 0.3763146459945644,
+      "reversed_rmse_px": 210.5201247096015
+    }
+  ],
+  "execution_time_s": 1.7827530400827527,
+  "program_sha256": "ab6fdebfaa3c1746e84d2329b23efd39eedb23f38188ee473090e6e1cc8a85dd",
+  "calibration_fit_performed": false
+}

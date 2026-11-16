@@ -1,0 +1,23 @@
+{
+  "id": "NE015",
+  "version": 1,
+  "content": "READY marker alone survived the camera90s START timeout. Enabling after stale READY caused the existing first-motion RGB freshness guard to abort. Start capture before interactive/reset setup and require fresh frames before enable as well as during execution.",
+  "embodiment": "Existing right Piper and capture_plug_calibration.py wait-trigger interface",
+  "applicability": "Capture/control startup with persistent READY files",
+  "source_episodes": [
+    "20261116_real_board_probe_000001",
+    "20261116_real_board_probe_000002"
+  ],
+  "validation_status": "FAILURE_REPRODUCED; REPAIRED_STARTUP_COMPLETED",
+  "success_count": 1,
+  "failure_count": 1,
+  "count_scope": "Startup attempts, not task success",
+  "ineffective_repairs": [
+    "Treat a persistent READY marker as a live camera"
+  ],
+  "limitations": [
+    "Single repaired batch",
+    "No relaxation of motor reset, safety limits, freshness threshold or shutdown support"
+  ],
+  "evidence": "experiments/board_calibration_cycle8/real_startup_failure.json"
+}

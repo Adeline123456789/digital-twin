@@ -1,0 +1,5 @@
+{
+  "reason": "Installed simulator OpenCV5.0.0 lacks calibrateHandEye and solvePnPRefineLM increased per-pose reprojection by tens/hundreds of pixels. Existing solver header specifies /usr/bin/python3 with OpenCV4.5.4. Identical first-frame refinement there reduces0.79645 to0.78589px.",
+  "retry": "Repeat the same refinement condition under the documented stable interpreter; same8train/2heldout split and fixed thresholds. No further fitting conditions in this cycle.",
+  "budget_deviation": "Three software failures/retries beyond useful numerical conditions are retained and counted; do not report only successful solver runtime. This does not add a research cycle or real observation batch."
+}

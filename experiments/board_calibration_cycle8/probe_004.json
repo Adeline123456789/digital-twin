@@ -1,0 +1,32 @@
+{
+  "result": "success",
+  "task_success": null,
+  "probe_valid": true,
+  "reference_sha256": "c17c1f1f6423c43eed54684c99473c0402294051c014ed3dfd0cb1fdc8189012",
+  "privileged_information_used": true,
+  "real_commands": 0,
+  "all_substeps_valid": true,
+  "no_robot_task_contact": true,
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "wall_seconds": 99.25275284401141,
+  "max_penetration_m": 6.65099336778774e-07,
+  "prediction_sha256": "dcc388b0dea5e2fe5bf3a31ec9b194251b1662f6462263ee705bd80e43609918",
+  "experiment_id": "cycle8_probe_004",
+  "timestamp": "2026-11-16T08:55:54.038601+00:00",
+  "scope": "Noncontact observation motion, not a pick/insert task",
+  "program_version": "9cf8cd08ecd8d2d49a95be377a9c68e41601259f2fba528b6d97c30a24e5c00e",
+  "model": "MuJoCo3.3.7, deterministic native reference"
+}

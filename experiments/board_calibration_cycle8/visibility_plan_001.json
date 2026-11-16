@@ -1,0 +1,144 @@
+{
+  "reference_sha256": "1363250b42c54993f159464e5eb57278d88aaecfb331e93d6cfbc687cef54908",
+  "poses": [
+    {
+      "phase": "board_a_center_hold",
+      "pattern_margin_px": 47.786482580944835,
+      "min_depth_m": 0.3424655432689042,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_a_j4_hold",
+      "pattern_margin_px": -24.891886914595148,
+      "min_depth_m": 0.34309812191366934,
+      "fully_in_predicted_view": false
+    },
+    {
+      "phase": "board_a_return4_hold",
+      "pattern_margin_px": 47.786482580944835,
+      "min_depth_m": 0.3424655432689042,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_a_j5_hold",
+      "pattern_margin_px": 29.843451568350247,
+      "min_depth_m": 0.3346654949121,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_a_return5_hold",
+      "pattern_margin_px": 47.786482580944835,
+      "min_depth_m": 0.3424655432689042,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_a_j6_hold",
+      "pattern_margin_px": 35.18547950764014,
+      "min_depth_m": 0.3445647586517147,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_a_return6_hold",
+      "pattern_margin_px": 47.786482580944835,
+      "min_depth_m": 0.3424655432689042,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_a_translation_hold",
+      "pattern_margin_px": 47.142717232054,
+      "min_depth_m": 0.3504976174608922,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_a_translation_return_hold",
+      "pattern_margin_px": 47.786482580944835,
+      "min_depth_m": 0.3424655432689042,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_a_heldout_hold",
+      "pattern_margin_px": 0.09255578646229878,
+      "min_depth_m": 0.333314710106484,
+      "fully_in_predicted_view": false
+    },
+    {
+      "phase": "board_a_return_heldout_hold",
+      "pattern_margin_px": 47.786482580944835,
+      "min_depth_m": 0.3424655432689042,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_center_hold",
+      "pattern_margin_px": 33.93754141729255,
+      "min_depth_m": 0.3424646758931144,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_j4_hold",
+      "pattern_margin_px": -14.382343221602468,
+      "min_depth_m": 0.345173016565746,
+      "fully_in_predicted_view": false
+    },
+    {
+      "phase": "board_b_return4_hold",
+      "pattern_margin_px": 33.93754141729255,
+      "min_depth_m": 0.3424646758931144,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_j5_hold",
+      "pattern_margin_px": -33.89232712999001,
+      "min_depth_m": 0.3362832002174317,
+      "fully_in_predicted_view": false
+    },
+    {
+      "phase": "board_b_return5_hold",
+      "pattern_margin_px": 33.93754141729255,
+      "min_depth_m": 0.3424646758931144,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_j6_hold",
+      "pattern_margin_px": 17.654683992498235,
+      "min_depth_m": 0.3444336366226087,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_return6_hold",
+      "pattern_margin_px": 33.93754141729255,
+      "min_depth_m": 0.3424646758931144,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_translation_hold",
+      "pattern_margin_px": 36.10516912402238,
+      "min_depth_m": 0.3508711245572405,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_translation_return_hold",
+      "pattern_margin_px": 33.93754141729255,
+      "min_depth_m": 0.3424646758931144,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_heldout_hold",
+      "pattern_margin_px": 25.75423204080593,
+      "min_depth_m": 0.3328537051731007,
+      "fully_in_predicted_view": true
+    },
+    {
+      "phase": "board_b_return_heldout_hold",
+      "pattern_margin_px": 33.93754141729255,
+      "min_depth_m": 0.3424646758931144,
+      "fully_in_predicted_view": true
+    }
+  ],
+  "all_planned_holds_visible": false,
+  "heldout_phases": [
+    "board_a_heldout_hold",
+    "board_b_heldout_hold"
+  ],
+  "scope": "Predicted visibility with existing unqualified camera extrinsics; actual RGB detections are required. Pattern bounds include full12x9squares.",
+  "program_sha256": "c7ce32857da3e9fe018cd51c6f5c1331072c9b60f6f00b6add478373f1ccb3ac"
+}

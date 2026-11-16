@@ -1,0 +1,20 @@
+{
+  "id": "ER016",
+  "version": 1,
+  "content": "Use confirmed metric chessboard dimensions and exposure-matched measured FK; reserve physical viewpoints. For a few obscured corners, retain known grid IDs only through consecutive RGB forward/backward-checked LK, crosscheck against full detections, and never invent occluded points. Keep closure and absolute metrology separate.",
+  "embodiment": "Current right Piper; RGB-only fixed20mm12x9 board; no depth/force",
+  "applicability": "Known stationary target, complete anchor frame and consecutive RGB with measured joints",
+  "source_episodes": [
+    "20261116_real_board_probe_000002"
+  ],
+  "validation_status": "VISIBLE_GRID_OBSERVATIONS_VERIFIED; HAND_EYE_NOT_ACCEPTED",
+  "success_count": 1,
+  "failure_count": 0,
+  "count_scope": "Completed recorded observation batch, not calibration or physical task success",
+  "limitations": [
+    "Two heldout configurations only",
+    "Nominal FK is not external metrology",
+    "Camera candidates did not pass prespecified closure gate"
+  ],
+  "evidence": "experiments/board_calibration_cycle8/REPORT.md"
+}

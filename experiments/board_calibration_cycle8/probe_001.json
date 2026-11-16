@@ -1,0 +1,13 @@
+{
+  "experiment_id": "cycle8_probe_001",
+  "timestamp": "2026-11-16T08:14:15.028018+00:00",
+  "result": "infrastructure_error",
+  "task_success": null,
+  "probe_valid": false,
+  "real_commands": 0,
+  "error": "Native XML recompile default inertia policy differs from source explicit policy; static visual mesh violates inertia triangle inequality. No trajectory executed.",
+  "repair": "Reuse existing arm_layout.save_recorded_model to preserve explicit inertia policy; verify original dynamic arrays unchanged within serialization precision.",
+  "log_sha256": "808565cf81501e91fbf251d6c50252a65949daca693c7430aeff504b9ab05f45",
+  "program_version": "UNRECORDED before first compile failure; traceback hash retained",
+  "model": "MuJoCo3.3.7, deterministic native reference"
+}

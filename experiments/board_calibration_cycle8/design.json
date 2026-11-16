@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-16T07:53:46.970545+00:00",
+  "cycle": 8,
+  "total_cycle_limit": 12,
+  "task": "Metric RGB hand-eye calibration with user-confirmed20mm chessboard,11x8 internal corners",
+  "hypothesis": "Known-size target resolves the free-landmark scale/geometry ambiguity exposed by cycles6/7",
+  "budget": {
+    "real_noncontact_observation_batches": 1,
+    "simulation_probe_validations": 2,
+    "numerical_handeye_fits": 2,
+    "full_pick_insert_attempts": 0,
+    "execution_model_calls": 0
+  },
+  "frozen": "Robot CAD/kinematics, measured intrinsics, safety limits, speed profile and task success detector",
+  "validation": "Reserve observation configurations before fitting; compare fixed-board closure and reprojection before/after. Closure is not independent absolute metrology. No automatic deployment from train errors.",
+  "data": "RGB-only with exposure-matched measured joints;20mm grid confirmed by user; no depth/force",
+  "board_provenance": "GP290-20-12*9; user counted12x9squares; external RGB88corners detected",
+  "movement": "Right-only noncontact observation; validated fixed trajectory, existing stop/retreat/supported shutdown; request remaining fresh motion authorization only after concrete plan is ready",
+  "status": "READ_ONLY_PLACEMENT_CAPTURE_COMPLETE; PLANNING"
+}

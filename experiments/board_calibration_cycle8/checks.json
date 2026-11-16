@@ -1,0 +1,34 @@
+{
+  "spatial_probe_tests": {
+    "passed": 3,
+    "runtime": "existing MuJoCo hardware Python"
+  },
+  "chessboard_tests": {
+    "passed": 2,
+    "runtime": "existing MuJoCo hardware Python"
+  },
+  "handeye_tests": {
+    "passed": 5,
+    "runtime": "system Python/OpenCV4.5.4"
+  },
+  "real_exposure_to_fk_test": {
+    "passed": 1,
+    "runtime": "existing MuJoCo hardware Python"
+  },
+  "initial_combined_system_run": {
+    "passed": 5,
+    "errors": 1,
+    "error": "ModuleNotFoundError: mujoco in FK integration test; resolved by using existing native runtime for that test, no dependency installation"
+  },
+  "dataset_reader_verification": {
+    "passed": true,
+    "frames": 2126,
+    "rgb_streams": 2
+  },
+  "grid_tracking_vs_full_detection": {
+    "validated_frames": 17,
+    "maximum_rmse_px": 0.4388697043635967
+  },
+  "git_diff_check": "passed",
+  "private_json_device_fields_scan": "no hits in explicitly reviewed new experiment files"
+}

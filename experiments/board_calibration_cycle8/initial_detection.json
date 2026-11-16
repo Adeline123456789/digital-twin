@@ -1,0 +1,14 @@
+{
+  "status": "TARGET_POSE_CANDIDATES",
+  "corner_count": 88,
+  "input_sha256": {
+    "last.png": "016217a18475ebd6f6d578b7784862af82ea1606db6642aec0814295f9fdefda",
+    "camera.json": "2dad8e7d960c9b5f39ebb9b860912c37be6e9930579f698d09e4d4673b43ae73"
+  },
+  "reprojection_rms_px": [
+    0.07159005741542455,
+    1.592169882434408
+  ],
+  "private_observation_sha256": "615a1af3b0943f19fe8826503adbce34a86dcf4639fe311403aca052a88e084c",
+  "real_motion_commands": 0
+}

@@ -1,0 +1,9 @@
+{
+  "goal_counter_start": 1029886,
+  "goal_counter_checkpoint": 1174922,
+  "reported_counter_delta": 145036,
+  "scope": "Partial orchestration interval spanning this resumed board task; goal counter is not an invoice or a complete per-cycle input/output usage attribution",
+  "total_cycle_cost": null,
+  "execution_model_calls": 0,
+  "warning": "Do not call this zero-token research or attribute total cost to the millisecond numerical solver"
+}
