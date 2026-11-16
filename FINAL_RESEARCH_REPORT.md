@@ -4,6 +4,8 @@
 
 [完整六周期报告](experiments/research_summary/20261116_six_cycle_closeout/REPORT.md)包含成功/失败、Token与时间、人工、活跃策略、未完成目标和回滚。第六周期[空间观测报告](experiments/spatial_cycle6/REPORT.md)记录了所有候选和排除证据。真机已在人工扶稳确认后下使能，六个电机独立确认为关闭。没有新增被认可的相机、几何或物理参数校准。
 
+补充入口核验：当前右臂Agent实际仍只输出`offset_mm`，新探测/配准工具尚未接入其可调用动作，右臂Skill/失败记忆检索也未完整接入。[关键验收检查](experiments/research_summary/20261116_six_cycle_closeout/COMPLETION_CHECK.md)明确保留这些实现缺口。两份误含设备矩阵的公开报告已纠正，并按用户明确许可清理了这条研究分支的相关历史；未声称清除了GitHub旧对象或缓存。
+
 下面保留此前2026-11-12报告作为历史；其中“没有新增真机运动”和旧默认策略描述不代表2026-11-16当前状态。
 
 ---

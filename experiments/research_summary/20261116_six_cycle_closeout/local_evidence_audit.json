@@ -1,0 +1,184 @@
+{
+  "timestamp": "2026-11-16T07:05:25.713365+00:00",
+  "audit_scope": "Rehash every local evidence artifact referenced by the three real cycle reports; current process names only, no hardware calls",
+  "records": [
+    {
+      "record": "experiments/real_sim_cycle3/real_result.json",
+      "task_success": false,
+      "checked": 10,
+      "all_hashes_match": true,
+      "checks": [
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/pair_manifest.json",
+          "expected_sha256": "31431fbaf0f37671a84b71701f30151d9cd60066fc68c43870b142af92c0f004",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/verification.json",
+          "expected_sha256": "eec0e9113009a834139ed39bfa007bdb40dac6884ce4a6019a61b3049668de2f",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/comparison.json",
+          "expected_sha256": "46792cd1e632f7e025d7b32ec125a060ab236fa0e8dd85a489399ce535fcff71",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/grasp_diagnosis.json",
+          "expected_sha256": "46c204c00fde41684f4034ce2293e3e1091aae7e1aac27cd4b9b0284bd9bca11",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/commanded_probe.csv",
+          "expected_sha256": "959ac1c6215ed9b427e25253411ed1054f9ba601407b774919961099b6b41f2b",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/execution_report.json",
+          "expected_sha256": "d9878832de09b645efc5ac4dc61d13b130701f3d2b9a7f29c334ce81cf9cc2ab",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/right_wrist/0650.jpg",
+          "expected_sha256": "a872a3decd796c3ba84ab1e74212ab5bc9306991b0123fb141e22b3bffbac039",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/right_wrist/0670.jpg",
+          "expected_sha256": "aadb4cfbc62d4c951272e5b4ba573574b226a251dc7fce6f1cb0c4fca9379a7c",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/right_wrist/0710.jpg",
+          "expected_sha256": "5148d597c6400824a37eb4b9f3b9e0bd535874613584c0a18d8e6c31d9786e8c",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_shared_reference_000001/raw/task/external/0710.jpg",
+          "expected_sha256": "506555274a3a14669cf0ea36384dd776fc8e39b1a044563928cfe3f28af2a6d6",
+          "matches": true,
+          "exists": true
+        }
+      ]
+    },
+    {
+      "record": "experiments/grasp_transfer_cycle5/real_result.json",
+      "task_success": false,
+      "checked": 6,
+      "all_hashes_match": true,
+      "checks": [
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_grasp_height12_000001/outcome.json",
+          "expected_sha256": "b26356316fc88add7aec9960dc6c74567c40ca81a984a416ff0e2e0282a33b53",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_grasp_height12_000001/verification.json",
+          "expected_sha256": "dad10049c195190a80b35b91b4ac4185f389f992a13d5c2f64bf25313b21e12c",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_grasp_height12_000001/raw/task/commanded_probe.csv",
+          "expected_sha256": "127017d7d105dc2d4d0553c9e2fad8532e073834f46cb413c048a2b3f33787dc",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_grasp_height12_000001/raw/task/execution_report.json",
+          "expected_sha256": "0787b3b4ed06c150e446542d36a67c8908ed4d523b825e63a230a530f7590b41",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_grasp_height12_000001/raw/task/grasp_diagnosis.json",
+          "expected_sha256": "ebdd6259c87ec22c083de8ce8ba034cd9c997f5d830211fa9b54ab3f2f00048b",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "complete_real/failed/20261116_real_grasp_height12_000001/proprio_stats/metadata.json",
+          "expected_sha256": "d4f5cb3bd906c8617f754d78477d6808f0d88d27830a0b790bc63213ce907863",
+          "matches": true,
+          "exists": true
+        }
+      ]
+    },
+    {
+      "record": "experiments/spatial_cycle6/real_result.json",
+      "task_success": null,
+      "checked": 9,
+      "all_hashes_match": true,
+      "checks": [
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/outcome.json",
+          "expected_sha256": "acd2029e20af4cc75666b2874ff6177f039faa4426f9a341165bec7f4d90c8fd",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/verification.json",
+          "expected_sha256": "ac2842270e90cdbf7a68026151c3beb0d9f6347f7f58f6089f010a17cc221f81",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/pair_manifest.json",
+          "expected_sha256": "353d6345349818395cb4f4ad37af7d272ecfcf543371b850e7eed1a3e92653b3",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/proprio_stats/proprio_stats.h5",
+          "expected_sha256": "7f568484d4cb8fdba35a094443859b80fd8baefd4f7bfdd7bc6dc75ddd5de39a",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/real_20261116T062116Z/commanded_probe.csv",
+          "expected_sha256": "ce181a7dfafe93d36dca20910fede3fab8636e85ec93a4d992bd7c3856bcd071",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/real_20261116T062116Z/probe_views.json",
+          "expected_sha256": "6afb78d3f5d053637dd479cb691e39698c6a1a35667e2f8e31ec394dd35990c9",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/real_20261116T062116Z/execution_report.json",
+          "expected_sha256": "968b007ba8f63b2678d923cc75da374907261136c3ba073405fa7ee5933e1fe2",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/videos/cam_external_rgb.mp4",
+          "expected_sha256": "fa9808905b6881d1023c9051f7068d18acb72984860806fd173a0bd6286600c9",
+          "matches": true,
+          "exists": true
+        },
+        {
+          "dataset_relative_path": "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/videos/cam_right_wrist_rgb.mp4",
+          "expected_sha256": "138b7b33aafd419ad99aa62a5d40435f83144be851176cd7e3fbf2b5a38f0d3e",
+          "matches": true,
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "matching_controller_or_capture_processes": [],
+  "new_robot_commands": 0,
+  "new_model_calls": 0,
+  "no_new_research_cycle": true
+}

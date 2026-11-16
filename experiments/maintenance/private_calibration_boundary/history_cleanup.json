@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-11-16T07:01:44.334787+00:00",
+  "authorization": "User explicitly authorized one force-with-lease update for this research branch",
+  "branch": "research/right-arm-20261116",
+  "previous_remote_head": "2d84b3cb769c78ea4a0de9452fb288cf0009a161",
+  "replacement_commit": "0b75ebccb31e42bbbd175010d7a349a8206d6231",
+  "verified_remote_head": "0b75ebccb31e42bbbd175010d7a349a8206d6231",
+  "file_tree_identical_to_reviewed_corrected_version": true,
+  "two_affected_commits_removed_from_branch_ancestry": true,
+  "force_pushes_used": 1,
+  "other_remote_refs_updated": [],
+  "private_original_artifacts_preserved": true,
+  "limitations": "Only branch ancestry was verified; old GitHub commit objects, caches, forks or copies may remain accessible"
+}

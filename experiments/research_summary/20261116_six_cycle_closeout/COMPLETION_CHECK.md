@@ -1,0 +1,22 @@
+# Critical completion checks against the latest task
+
+Result: **not achieved**. This check does not reopen an experiment cycle or treat report completion as scientific completion. The source task caps the batch at six cycles and requires checkpointing rather than unauthorized extra cycles. All six are used. The prior goal turn made progress by collecting/analyzing/publishing spatial evidence; this continuation corrected publication boundaries and audited actual entry points.
+
+| Required end state | Authoritative inspected evidence | Finding |
+|---|---|---|
+| One validated simulator reference drives the real right arm | cycle3/5 manifests, comparison results, command logs and source references; cycle6 full target-array comparison | Verified for two task prefixes and one complete observation sequence; not complete successful task transfer |
+| Separate simulation commands/state, real commands/feedback and actual times | stored reference/prediction/commanded CSV and real HDF5; cycle6 timing record | Present; actual timing differs by11.985% in cycle6, so movement equality is not established |
+| Earliest physical failure informs the repair | cycle3 retained-grasp diagnosis, cycle5 lower-height test and real failure | The repair path is evidenced, but physical cause remainsUNKNOWN and repair did not improve real outcome |
+| Real evidence updates a task-effective twin and improves a later real execution | rejected fits, unchanged active scene/camera configuration, real0/2 | Not achieved; no accepted physical/geometric update with later real benefit |
+| Existing native interfaces, RGB-only and right-only channels | checked native replay entry; format metadata/verification; no invented left/depth/force channels | Supported for these recorded runs; no claim of external physical TCP accuracy |
+| Valid real successful collection | two observed real task failures; observation outcome null | Not achieved; no success denominator for real unit-success cost |
+| Strong model guides weak model based on receiver feedback | cycle2 one Luna call, cycle4 independent planner-profile comparisons; no teacher-development records | Not performed; these runs do not substitute for teaching |
+| Weak model independently chooses experiments using shared tools | current `agent_loop.py` prompt/validator/dispatch and actual pure validator call | Incomplete implementation: offset only; standalone probe/fitting tools are not exposed through this Agent |
+| Applicable long-term memory is actually consumed on this embodiment | right-arm branches in `agent_loop.py`, active configuration | Old incompatible dual-arm memory is excluded, but right-arm Skill/failure retrieval is also skipped; shared methods are not fully integrated |
+| Independent unseen-task assessment without teacher/test-answer leakage | no such final evaluation record | Missing; current task-family offset tests do not prove this capability |
+| Lower total cost without speed/quality sacrifice | cycle4 input savings but worse pooled cost/success; cycle6 timing stretch; incomplete research/human billing | Not achieved; measured component results are scoped, overall economics are unknown |
+| Versioned acceptance/rejection and rollback | evolution versions/log, unchanged default policy and grasp height, failed-candidate reports | Retained; no rejected camera transform loaded by the checked task/replay entries |
+| Public code/reports, local raw data/private calibration | current Git tree, local private hashes, history-cleanup verification | Two mistaken public matrix copies corrected; branch history replaced with explicit permission. Remote caches/copies remain unverified |
+| No unattended robot control left running | recorded supported shutdown and current process scan in `local_evidence_audit.json` | No matching controller/capture process at audit time; process audit does not send motor commands |
+
+The explicit next missing work is twofold: obtain identifiable physical geometry evidence for camera/tool/scene alignment; connect existing diagnostic primitives and applicable right-arm memory to the actual bounded Agent before receiver-feedback/independent exploration evaluation. Neither is resolved by another report or by claiming the rejected fits are calibration. Additional implementation/experimentation would require a revised cycle budget; no such revision is inferred from the history-cleanup authorization.

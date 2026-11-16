@@ -1,3 +1,13 @@
+# 2026-11-16 最新完成性核验
+
+总体目标仍未达成。六周期记录已收口；当前右臂Agent仍只支持offset动作，新的空间探测/配准工具和右臂经验尚未完整接入，强教弱及独立探索未实现完整验证。真实任务0/2、两份配准候选拒绝；不能把报告与独立工具当作闭环完成。
+
+见[逐项关键要求核验](experiments/research_summary/20261116_six_cycle_closeout/COMPLETION_CHECK.md)、[实际入口检查](experiments/research_summary/20261116_six_cycle_closeout/entry_audit.json)和[本地证据哈希复核](experiments/research_summary/20261116_six_cycle_closeout/local_evidence_audit.json)。25份引用文件哈希一致，检查时没有匹配的机器人控制/录制进程。本次只修正发布错误并核验现状，没有增加第七轮或真机运动。
+
+以下保留历史核验，不代表最新完成状态。
+
+---
+
 # Authorized offline workflow completion audit — 2026-11-11
 
 Scope is the user's requested minimal failure-driven experiment, followed by actual self-evolution/model comparison and publication. Conditional real movement and unidentifiable calibration follow the user's explicit instruction to record the block and complete independent work. This audit does not claim universal autonomy, real success, or completed physical calibration.
