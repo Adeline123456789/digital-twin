@@ -1,0 +1,18 @@
+{
+  "experiment_id": "cycle10_current_probe_sampled_clearance",
+  "nominal_min_sampled_robot_task_clearance_m": 0.0,
+  "at": {
+    "phase": "holder_center",
+    "time_s": 7.533333333331617,
+    "robot_geom": "gripper_right_43",
+    "task_geom": "plug/entry_contact/43"
+  },
+  "sampled_states": 120,
+  "source_sha256": "3f37949e98ec89f15d19c27fc10d330909738fbb10eb44f993db77b5a60706d0",
+  "scope": "Static sampled nominal CAD clearance; not continuous clearance or measured real object position",
+  "hardware_commands": 0,
+  "status": "DISTANCE_API_RESULT_UNRELIABLE_NOT_A_CLEARANCE_GATE",
+  "separating_aabb_lower_bound_for_reported_pair_m": 0.08312832522446972,
+  "reason": "API reports0 despite positively separated geometry AABBs; native no-contact physics validation unchanged",
+  "reference": "https://github.com/google-deepmind/mujoco/issues/3383"
+}

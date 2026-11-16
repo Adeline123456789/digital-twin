@@ -18,6 +18,8 @@ def make_reference(entry, viewpoints):
         q = np.r_[view['q_deg'], .060/.095]
         name = view['name']
         goals.append((name + '_center', q.copy()))
+        if view.get('center_only', False):
+            continue
         for joint, delta in zip((3,4,5), view.get('joint_variation_deg',[6.,-6.,6.])):
             varied = q.copy(); varied[joint] += delta
             goals.extend([(name + f'_j{joint+1}', varied), (name + f'_return{joint+1}', q.copy())])

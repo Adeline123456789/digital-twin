@@ -1,0 +1,27 @@
+{
+  "result": "success",
+  "task_success": null,
+  "probe_valid": true,
+  "reference_sha256": "c9a25e6b553af24a7f062f458257dc37bc54fb7df6aacf070a48a9a295a4c6c8",
+  "privileged_information_used": true,
+  "real_commands": 0,
+  "all_substeps_valid": true,
+  "no_robot_task_contact": true,
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "wall_seconds": 96.8892856669845,
+  "max_penetration_m": 6.65099336778774e-07,
+  "prediction_sha256": "3f37949e98ec89f15d19c27fc10d330909738fbb10eb44f993db77b5a60706d0"
+}

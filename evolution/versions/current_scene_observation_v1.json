@@ -1,0 +1,14 @@
+{
+  "version": "current_scene_observation_v1",
+  "previous": "diagnose_then_repair_v1",
+  "cycle": 10,
+  "status": "REAL_NONCONTACT_OBSERVATION_VERIFIED; POSITION_REPAIR_PENDING",
+  "entry": "scripts/spatial_probe.py",
+  "program_sha256": "bc8c1504dd3d81c51b36d623965c309c8b1ef6ef39a3968e614302a5bae53f53",
+  "evidence": "experiments/end_to_end_cycle10/result.json",
+  "active_policy_changed": false,
+  "physics_or_camera_changed": false,
+  "safety_changed": false,
+  "rollback": "Optional center_only view selection; previous variation plan remains default",
+  "timestamp": "2026-11-16T10:22:02.800752+00:00"
+}

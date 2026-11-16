@@ -1,0 +1,24 @@
+{
+  "episodes": [
+    {
+      "session": "20261116_real_current_location",
+      "episode": "000002",
+      "domain": "real",
+      "num_frames": 2162,
+      "purpose": "wrist_alignment_probe",
+      "success": false,
+      "policy_training_eligible": false,
+      "video_frames": {
+        "cam_external": 2162,
+        "cam_right_wrist": 2162
+      },
+      "known_right_joint_action_frames": 2162,
+      "known_right_gripper_action_frames": 2162
+    }
+  ],
+  "verified_frames": 2162,
+  "full_sim_demonstrations": 0,
+  "full_real_demonstrations": 0,
+  "real_task_attempts": 0,
+  "force_sensor_directory_present": false
+}

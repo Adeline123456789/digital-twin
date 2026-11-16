@@ -1,0 +1,43 @@
+{
+  "reference_sha256": "6fddc3b2914c151359fff0d10ed1573a7d8b566a334197f4641e19e2620e1db5",
+  "exact_reference_sent": true,
+  "commands": 6024,
+  "nominal_seconds": 60.23,
+  "actual_command_span_s": 69.80598016502336,
+  "joint_tracking_rmse_deg": [
+    0.18356317080554818,
+    0.23239996511048205,
+    0.17589995507431777,
+    0.08719802214151164,
+    0.14028930142297336,
+    0.32254974562787875
+  ],
+  "joint_tracking_max_abs_deg": [
+    0.8313573622841517,
+    0.7172667185749759,
+    0.5101759114267317,
+    0.6669494931165305,
+    0.5891076637914239,
+    0.8268843728446953
+  ],
+  "task_success": null,
+  "physical_observation_sequence_completed": true,
+  "raw_observation_hashes": {
+    "holder_center_hold": {
+      "external": "bd1e345dbe8d460ab0fbae057031cd16a6c8425d0be890db32be1c7c65b361aa",
+      "right_wrist": "98088746c35117e18ff593fa10f9af7a459744ed63120b85f2c742ab7cd562aa"
+    },
+    "holder_alternate_center_hold": {
+      "external": "d393b8d945dbd4cd6e34a8b495b65a79de61a8b7cd73449014ef179158cf2779",
+      "right_wrist": "fc5db9d5d79d88ced84fe5f0810cd24ede365ebed46089835ae74eafdbd4a9c7"
+    },
+    "socket_center_hold": {
+      "external": "7474ac85fd67184d1b846765bbdafe4646d3c8a1216c5d43e68b3c13985556e2",
+      "right_wrist": "e0d9bda01563eef4aa37749d9366c4312deff652a1d5491b859b98b1de358d44"
+    },
+    "socket_alternate_center_hold": {
+      "external": "17251188edeab53acaf16c7288d2dc86a202abfa5a110a757b260ba3de9e6e9c",
+      "right_wrist": "7d0526365be4a1e2c3a7ad18f1c9a12fb715bc5e10863ee86137208dc32d8cc0"
+    }
+  }
+}

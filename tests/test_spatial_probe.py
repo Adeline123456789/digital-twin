@@ -31,6 +31,14 @@ class SpatialProbeTests(unittest.TestCase):
         np.testing.assert_allclose(q[-1,:6],0)
         self.assertTrue(ph[-1].startswith('fold'))
 
+    def test_explicit_views_do_not_add_unspecified_joint_probes(self):
+        views=[{'name':'holder','q_deg':[0,75,-55,0,55,-100],'center_only':True}]
+        t,q,ph=make_reference([0,0,0,0,23,0],views)
+        self.assertEqual(set(ph),{'entry','holder_center','holder_center_hold',
+                                 'holder_return','holder_return_hold','fold','fold_hold'})
+        self.assertLessEqual(np.abs(np.diff(q[:,:6],axis=0)/np.diff(t)[:,None]).max(),12+1e-6)
+        np.testing.assert_allclose(q[:,6],.060/.095)
+
     def test_rejects_unvalidated_or_changed_reference(self):
         with tempfile.TemporaryDirectory() as directory:
             p=Path(directory);np.savez(p/'reference.npz',time=[0,1],targets=np.zeros((2,7)),phases=['entry','fold'])

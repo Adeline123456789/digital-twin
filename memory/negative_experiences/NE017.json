@@ -1,0 +1,24 @@
+{
+  "id": "NE017",
+  "version": 1,
+  "content": "Current real fixture pixels and the wrist-attached finger silhouettes both disagree with native measured-pose renders. Do not attribute all pixel residual to object displacement or reuse historical real coordinates after a possible scene change.",
+  "applicability": "This right-arm installation and current cycle10 RGB observations; nominal CAD/factory wrist intrinsics, no depth or force",
+  "source_episodes": [
+    "20261116_real_current_location_000002"
+  ],
+  "validation_status": "CURRENT_RGB_DISAGREEMENT_OBSERVED; UNIQUE_CAUSE_UNKNOWN",
+  "success_count": 0,
+  "failure_count": 1,
+  "count_unit": "One rejected rigid-board calibration candidate, not one full robot-task failure",
+  "known_limits": [
+    "Pixel disagreement does not determine metric displacement",
+    "Finger CAD error and camera mount error are not uniquely isolated"
+  ],
+  "evidence": "experiments/end_to_end_cycle10/current_rgb_disparity.json",
+  "signatures": [
+    "current_scene_registration_mismatch"
+  ],
+  "ineffective_repairs": [
+    "deploy_cycle10_rigid_board_fit_without_passing_heldout_metric_gate"
+  ]
+}

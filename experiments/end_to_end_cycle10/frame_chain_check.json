@@ -1,0 +1,38 @@
+{
+  "experiment_id": "cycle10_frame_chain_check",
+  "external_grid_corners": 88,
+  "external_reprojection_rms_px": 0.07397074585328398,
+  "simulator_urdf_frame_chain_max_error": 2.1600027505334907e-07,
+  "observations": [
+    {
+      "mount": "existing",
+      "board_center_difference_mm": [
+        -17.771382982806895,
+        -10.111899394686795,
+        -7.780378826582169
+      ],
+      "difference_norm_mm": 21.877085207472078,
+      "train_center_spread_rmse_mm": 3.704733697424331
+    },
+    {
+      "mount": "unaccepted_cycle8",
+      "board_center_difference_mm": [
+        28.806390690367778,
+        10.158784456196994,
+        13.341265272827835
+      ],
+      "difference_norm_mm": 33.331642703496314,
+      "train_center_spread_rmse_mm": 2.6141141534655925
+    }
+  ],
+  "scope": "Cross-camera metric constraint with user20mm board and nominal measured-joint FK. Camera/robot geometry errors not uniquely separated; no transform deployed or physics modified.",
+  "hardware_commands": 0,
+  "privileged_simulation_used": true,
+  "source_episode": "20261116_real_board_probe_000002",
+  "input_sha256": {
+    "self_evolution/board_cycle8/fit_input_003.json": "3db524b9cc9ab2a6b126b48930aa2f87b2c155a4666f2b3205a8a96d4624441e",
+    "self_evolution/board_cycle8/fit_004/result.json": "390651761513a020ab7e386464cdc2ee534797a495ea70cb7a52223011ae7229",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/raw/task/external/0000.jpg": "bd78d7b34c058a902648938de7ccdfb2145acc7dde9b593e8b25878ab888e90c",
+    "self_evolution/board_cycle8/episodes/20261116_real_board_probe_000002/raw/task/external/camera.json": "0f88d3661c0b6aa6471899778ee3466523e89e2d80dc16125bba7420924ed074"
+  }
+}

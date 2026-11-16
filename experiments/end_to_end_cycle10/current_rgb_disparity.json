@@ -1,0 +1,210 @@
+{
+  "holder": {
+    "real": {
+      "slot_25": [
+        {
+          "center_px": [
+            391.6695464362851,
+            160.74730021598273
+          ],
+          "area": 1389
+        }
+      ],
+      "slot_35": [
+        {
+          "center_px": [
+            391.8660477453581,
+            160.43501326259948
+          ],
+          "area": 1508
+        }
+      ],
+      "slot_50": [
+        {
+          "center_px": [
+            391.92553846153845,
+            160.62584615384614
+          ],
+          "area": 1625
+        }
+      ],
+      "finger_silhouette_tips": [
+        {
+          "threshold": 30,
+          "uppermost_y": [
+            380,
+            375
+          ]
+        },
+        {
+          "threshold": 45,
+          "uppermost_y": [
+            376,
+            373
+          ]
+        },
+        {
+          "threshold": 60,
+          "uppermost_y": [
+            375,
+            372
+          ]
+        }
+      ]
+    },
+    "simulation": {
+      "slot_25": [
+        {
+          "center_px": [
+            381.187369519833,
+            71.45407098121086
+          ],
+          "area": 1916
+        }
+      ],
+      "slot_35": [
+        {
+          "center_px": [
+            381.243989769821,
+            71.40306905370844
+          ],
+          "area": 1955
+        }
+      ],
+      "slot_50": [
+        {
+          "center_px": [
+            381.2484662576687,
+            71.41104294478528
+          ],
+          "area": 1956
+        }
+      ],
+      "finger_silhouette_tips": [
+        {
+          "threshold": 30,
+          "uppermost_y": [
+            344,
+            365
+          ]
+        },
+        {
+          "threshold": 45,
+          "uppermost_y": [
+            344,
+            365
+          ]
+        },
+        {
+          "threshold": 60,
+          "uppermost_y": [
+            344,
+            365
+          ]
+        }
+      ]
+    },
+    "image_sha256": {
+      "real": "98088746c35117e18ff593fa10f9af7a459744ed63120b85f2c742ab7cd562aa",
+      "simulation": "9da8000dcdf4852492b414c6b40d26864d38f386443ea8b5eb27c43be1cc53e4"
+    }
+  },
+  "socket": {
+    "real": {
+      "panels": [
+        {
+          "center_px": [
+            367.1421551822649,
+            155.21734658896125
+          ],
+          "area": 17502
+        },
+        {
+          "center_px": [
+            363.3497547926884,
+            297.6702333184723
+          ],
+          "area": 13458
+        }
+      ],
+      "finger_silhouette_tips": [
+        {
+          "threshold": 30,
+          "uppermost_y": [
+            381,
+            376
+          ]
+        },
+        {
+          "threshold": 45,
+          "uppermost_y": [
+            376,
+            373
+          ]
+        },
+        {
+          "threshold": 60,
+          "uppermost_y": [
+            374,
+            372
+          ]
+        }
+      ]
+    },
+    "simulation": {
+      "panels": [
+        {
+          "center_px": [
+            361.61199462425805,
+            124.39556501287939
+          ],
+          "area": 17858
+        },
+        {
+          "center_px": [
+            358.12589849705944,
+            271.95222536847456
+          ],
+          "area": 13773
+        }
+      ],
+      "finger_silhouette_tips": [
+        {
+          "threshold": 30,
+          "uppermost_y": [
+            344,
+            365
+          ]
+        },
+        {
+          "threshold": 45,
+          "uppermost_y": [
+            344,
+            365
+          ]
+        },
+        {
+          "threshold": 60,
+          "uppermost_y": [
+            344,
+            365
+          ]
+        }
+      ]
+    },
+    "image_sha256": {
+      "real": "e0d9bda01563eef4aa37749d9366c4312deff652a1d5491b859b98b1de358d44",
+      "simulation": "bbb19c9820e6d61607659e6c68c94b3b2b473c612d28ccecedf6857be26c3e9a"
+    }
+  },
+  "scope": "Same current observation episode; measured joint pose. Pixel disagreement, NOT measured3D displacement. Native K/extrinsics remain unchanged.",
+  "source_episode": "20261116_real_current_location_000002",
+  "privileged_information_used": true,
+  "privileged_fields": [
+    "model geometries",
+    "camera pose",
+    "model projected appearance"
+  ],
+  "hardware_commands": 0,
+  "calibration_deployed": false
+}

@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-11-16T09:30:55.245324+00:00",
+  "cycle": 10,
+  "total_cycle_limit": 12,
+  "task": "Restore and complete existing sim-to-real collection loop; no additional Agent framework expansion",
+  "budget": {
+    "complete_sim_trials": 2,
+    "native_diagnostic_prefixes": 6,
+    "execution_model_calls": 0,
+    "real_batches": 1
+  },
+  "first_test": {
+    "profile": "original",
+    "arms": "right",
+    "target_index": 3,
+    "offset_mm": 0,
+    "start_right_deg": [
+      0,
+      0,
+      0,
+      0,
+      23.25,
+      0
+    ],
+    "grasp_height_m": 0.02,
+    "grasp_tilt_deg": 0,
+    "speed_deg_s": 12
+  },
+  "necessary_registration_check": "Use already captured known-size board, measuredFK, both RGB cameras and existing transforms; no new unconstrained calibration sweep",
+  "physical_gate": "Full native collision/success/recording checks, current visible fixture and fresh authorized real motion. No deployment of cycle8 rejected extrinsics.",
+  "user_direction": "Prioritize full flow and bounded necessary corrections; notify user to remove board before task motion",
+  "status": "CYCLE_CLOSED_PARTIAL_PROGRESS",
+  "latest_user_constraint": "Do not inspect/reuse historical real trajectories for positioning; socket may have moved. Use current scene observations.",
+  "observations": "CurrentRGB001 shows board removed. No new hardware motion.",
+  "latest_authorization": "User explicitly permits normal right-arm operation without repeated safety-start confirmation; attempts must seek successful data while retaining existing controls."
+}
