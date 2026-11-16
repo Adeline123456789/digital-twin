@@ -1,0 +1,132 @@
+{
+  "cycle": 4,
+  "total_cycle_limit": 6,
+  "timestamp": "2026-11-16T05:16:42.269789+00:00",
+  "result": "REJECTED_CANDIDATE_KEEP_DEFAULT",
+  "rows": [
+    {
+      "experiment_id": "20261116T050329Z_b32bc9dd",
+      "model": "gpt-6-luna",
+      "profile": "codex_default",
+      "input_tokens": 16748,
+      "cached_input_tokens": 7168,
+      "output_tokens": 207,
+      "llm_call_seconds": 23.28746785596013,
+      "offset_mm": 0.0,
+      "valid_success": true,
+      "physical_episode": "20261116T050352Z_4cd780ef",
+      "recording_verified": true,
+      "planning_plus_collection_seconds": 195.6507748189615,
+      "simulation_seconds": 54.4,
+      "max_joint_command_speed_deg_s": 11.995933134679543,
+      "max_joint_command_acceleration_deg_s2": 54.06292314094856,
+      "max_reported_penetration_m": 3.1463334542965474e-05
+    },
+    {
+      "experiment_id": "20261116T050651Z_720ad477",
+      "model": "gpt-6-luna",
+      "profile": "bounded_json_v1",
+      "input_tokens": 13338,
+      "cached_input_tokens": 7168,
+      "output_tokens": 152,
+      "llm_call_seconds": 24.144027814967558,
+      "offset_mm": 2.0,
+      "valid_success": false,
+      "physical_episode": "20261116T050715Z_a6d1c3df",
+      "recording_verified": true,
+      "planning_plus_collection_seconds": 146.40980688203126,
+      "simulation_seconds": 41.53333333333333,
+      "max_joint_command_speed_deg_s": 11.995933134679543,
+      "max_joint_command_acceleration_deg_s2": 100.39397529062045,
+      "max_reported_penetration_m": 0.00020233808663257596
+    },
+    {
+      "experiment_id": "20261116T050925Z_d107a1b9",
+      "model": "gpt-6-astra",
+      "profile": "bounded_json_v1",
+      "input_tokens": 13344,
+      "cached_input_tokens": 7168,
+      "output_tokens": 194,
+      "llm_call_seconds": 24.4797282689251,
+      "offset_mm": -0.1785551302327817,
+      "valid_success": true,
+      "physical_episode": "20261116T050950Z_a48bf34e",
+      "recording_verified": true,
+      "planning_plus_collection_seconds": 195.57214067794848,
+      "simulation_seconds": 54.4,
+      "max_joint_command_speed_deg_s": 11.995933134679543,
+      "max_joint_command_acceleration_deg_s2": 54.05247060330991,
+      "max_reported_penetration_m": 3.1463334542965474e-05
+    },
+    {
+      "experiment_id": "20261116T051249Z_766b1b60",
+      "model": "gpt-6-astra",
+      "profile": "codex_default",
+      "input_tokens": 17379,
+      "cached_input_tokens": 7168,
+      "output_tokens": 177,
+      "llm_call_seconds": 26.79706672800239,
+      "offset_mm": -0.18,
+      "valid_success": true,
+      "physical_episode": "20261116T051315Z_0a2a631d",
+      "recording_verified": true,
+      "planning_plus_collection_seconds": 197.07871897798032,
+      "simulation_seconds": 54.4,
+      "max_joint_command_speed_deg_s": 11.995933134679543,
+      "max_joint_command_acceleration_deg_s2": 54.0523868515268,
+      "max_reported_penetration_m": 3.1463334542965474e-05
+    }
+  ],
+  "pairs": [
+    {
+      "model": "gpt-6-luna",
+      "input_token_reduction_fraction": 0.2036064007642704,
+      "baseline_valid_successes": 1,
+      "candidate_valid_successes": 0,
+      "attempts_per_profile": 1
+    },
+    {
+      "model": "gpt-6-astra",
+      "input_token_reduction_fraction": 0.23217676506128082,
+      "baseline_valid_successes": 1,
+      "candidate_valid_successes": 1,
+      "attempts_per_profile": 1
+    }
+  ],
+  "planner_calls": 4,
+  "physical_simulation_attempts": 4,
+  "complete_recordings": 4,
+  "real_task_attempts": 0,
+  "total_reported_planner_tokens": 61539,
+  "real_calibration": false,
+  "privileged_information_used": true,
+  "teacher_student_benefit": null,
+  "unseen_task_success_rate": null,
+  "total_collection_cost_reduction": null,
+  "active_default_changed": false,
+  "negative_experience": "Luna candidate structured offset=2 contradicts reason recommending1; machine executed the structured value and failed.",
+  "remaining_scope": "Real shared-reference attempt/update remains pending in cycle3; cycle5 available for evidence-driven real repair and cycle6 for receiver-feedback learning/held-out exploration. These are remaining goals, not claimed outcomes.",
+  "cost_limits": [
+    "Research orchestrator usage not attributable to this cycle",
+    "API pricing and hardware cost not measured",
+    "Single samples and cache states limit latency conclusions",
+    "Failed candidate has no valid-success denominator"
+  ],
+  "promotion_criterion_met": false,
+  "descriptive_pooled_metrics": {
+    "codex_default": {
+      "attempts": 2,
+      "valid_successes": 2,
+      "tokens_per_valid_success": 17255.5,
+      "planning_collection_seconds_per_valid_success": 196.3647468984709,
+      "scope": "Descriptive pooling of two requested models on this one task; not a population success rate or economic cost"
+    },
+    "bounded_json_v1": {
+      "attempts": 2,
+      "valid_successes": 1,
+      "tokens_per_valid_success": 27028.0,
+      "planning_collection_seconds_per_valid_success": 341.98194755997974,
+      "scope": "Descriptive pooling of two requested models on this one task; not a population success rate or economic cost"
+    }
+  }
+}

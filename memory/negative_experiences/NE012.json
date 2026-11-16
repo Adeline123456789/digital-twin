@@ -1,0 +1,18 @@
+{
+  "id": "NE012",
+  "version": 1,
+  "content": "Do not globally replace the coding-agent base instructions with a compact JSON role solely to save input tokens. In this paired task, Luna produced contradictory structured/prose actions and failed; Astra passed. The common default promotion was rejected.",
+  "applicability": "Bounded right-only plug repair planner with supplied protocol; Codex CLI0.162.1 and requested Luna/Astra model aliases",
+  "source_episodes": [
+    "20261116T050651Z_720ad477",
+    "20261116T050925Z_d107a1b9"
+  ],
+  "validation_status": "SIMULATION_EVALUATED_CANDIDATE_REJECTED",
+  "success_count": 1,
+  "failure_count": 1,
+  "limitations": [
+    "One case per model/profile; not proof every compact role fails",
+    "No real validation or teacher benefit measured"
+  ],
+  "evidence": "experiments/planner_cost_cycle4/result.json"
+}

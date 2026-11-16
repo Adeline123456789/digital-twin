@@ -1,0 +1,11 @@
+{
+  "version": "bounded_json_v1",
+  "timestamp": "2026-11-16T05:18:09.541183+00:00",
+  "cycle": 4,
+  "status": "REJECTED_NOT_PROMOTED",
+  "previous": "codex_default",
+  "evidence": "experiments/planner_cost_cycle4/result.json",
+  "actual_default": "codex_default",
+  "rollback": "Omit ROBOT_PLANNER_PROFILE or set codex_default; no global configuration or hardware change was made",
+  "reason": "Luna physical regression despite fewer tokens; aggregate cost per valid success increased in this sample"
+}

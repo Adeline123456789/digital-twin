@@ -64,3 +64,14 @@ Planner calls in this cycle: 0. Research/orchestration model cost is separate an
 not yet fully accounted. There has been one operator-availability question and
 no physical intervention during this cycle. The six-cycle budget remains intact:
 cycles 1–2 completed, cycle 3 pending real execution; cycles 4–6 not spent here.
+
+## Paired-analysis preparation
+
+`compare_shared_reference.py` verifies the executed command prefix against the
+frozen reference before comparing feedback. It preserves the saved prediction and
+uses elapsed host timestamps without time warping; preparation, recovery and final
+hold are excluded from claims about direct reference execution. It reports timing
+drift and joint/gripper residuals, leaving physical cause UNKNOWN. One synthetic
+contract test checks timing drift, persistent-deviation localization and rejection
+of modified commands. This analyzer has not yet processed a new real task; its
+synthetic test is not real-robot evidence.
