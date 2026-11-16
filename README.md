@@ -1,6 +1,8 @@
+> 2026-11-16 第2周期：右臂已接回实际 `agent_loop.py --robot-arms right`；新增一条完整失败和一条完整成功Episode，1次模型调用完成已知任务修复，成功运动与原右臂程序逐帧一致。实际Token16,934，未证明模型/总成本收益；无真机运动。见[本周期报告](experiments/right_arm_adaptation/cycle2/REPORT.md)。当前策略LLM，旧compiled skill保留原适用范围。
+
 > 2026-11-16：本批右臂场景适配及完整采集已通过限定仿真验收，见[右臂报告](experiments/right_arm_adaptation/cycle1/REPORT.md)。新入口`collect_current_scene.py --robot-arms right`，两相机、7维右臂状态。旧compiled skill因原生源码变更暂退出默认；未声称真实校准或模型能力提升。以下保留此前结果。
 
-> 最新结果：四阶段有界研究完成，见 [FINAL_RESEARCH_REPORT.md](FINAL_RESEARCH_REPORT.md)。完整系统仍NO-GO；当前只验证了限定仿真组件。Agent D默认优先执行适用的已验证Skill；不适用时用LLM。用 `--planner-policy llm` 回滚。所有新完整采集请使用下方 `scripts/agent_loop.py` 入口及已有MuJoCo环境；它核验三路视频、状态/动作并保存成功/失败。`learn.py` 的低层headless示例仅用于诊断，不应把其原始输出当作完整数据集。没有自动接管外部生产Agent或真机。
+> 历史四阶段结果见 [FINAL_RESEARCH_REPORT.md](FINAL_RESEARCH_REPORT.md)。当前 planner 为 `llm`；旧 compiled_alignment_v1 的源码适用范围保留，尚未迁移到右臂。`--arm A/B/C/D` 是实验组，`--robot-arms right/dual` 才选择仿真结构。完整采集按实际通道验收：双臂三相机，右臂外部与右腕两相机。低层 headless 输出不是完整数据集；没有自动接管外部生产 Agent 或真机。
 
 # Failure-driven robot learning (additive prototype)
 
@@ -26,7 +28,10 @@ Updated storage rule: see AGENTS.md for the user-prescribed exact data roots. Ne
 Actual model execution (no hardware):
 
 ```sh
-"$PIPER_SIM_ROOT/.venv-mujoco-hardware/bin/python" scripts/agent_loop.py --arm D --shift-mm 0.5
+"$PIPER_SIM_ROOT/.venv-mujoco-hardware/bin/python" scripts/agent_loop.py --robot-arms right --arm D --shift-mm 0
+# Known-task deterministic collection uses no planner call:
+"$PIPER_SIM_ROOT/.venv-mujoco-hardware/bin/python" scripts/collect_current_scene.py --robot-arms right
+# Select --robot-arms dual to restore the original simulation.
 ```
 
 The planner returns bounded JSON and the adapter physically executes the existing simulation script. A/B/C freeze the first plan; D may revise from actual feedback. Reports keep the model calls and physics trials separate. `scripts/agent_challenge.py` additionally tests a synthetic hidden target-frame error using simulator privileged precontact observations; it is not real visual calibration. Historical scene/source versions must not be pooled.

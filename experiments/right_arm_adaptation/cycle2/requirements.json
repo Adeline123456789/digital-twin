@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-11-16T03:35:08.712858+00:00",
+  "scope": "Mission section 10; right-only plug scene and existing collection workflow",
+  "requirements": [
+    {
+      "requirement": "Dual baseline and reversible scene selection",
+      "evidence": "cycle1/load_regression.json and cycle1/result.json",
+      "status": "PASSED_SIMULATION"
+    },
+    {
+      "requirement": "Named right-only joints/control and no absent left collision/support",
+      "evidence": "scripts/arm_layout.py and cycle1/local_integration.json",
+      "status": "PASSED_LOCAL_MODEL_CHECK"
+    },
+    {
+      "requirement": "Two actual cameras; no fabricated left fields",
+      "evidence": "cycle1/result.json; connector_mixed.v2 metadata",
+      "status": "PASSED"
+    },
+    {
+      "requirement": "Existing Agent planner selects physical arms separately from experiment group",
+      "evidence": "experiments/evaluation/20261116T033254Z_0b9f0331/result.json",
+      "status": "PASSED_SIMULATION"
+    },
+    {
+      "requirement": "Complete physical failure recording",
+      "evidence": "experiments/right_arm_adaptation/20261116T033037Z_8d4d29c4/result.json",
+      "status": "PASSED"
+    },
+    {
+      "requirement": "Existing replay/home rejects absent left before CAN connection",
+      "evidence": "cycle2/hardware_boundary.json; tests/test_right_agent_integration.py",
+      "status": "PASSED_OFFLINE_ONLY"
+    },
+    {
+      "requirement": "Real fixture and camera coordinate validity",
+      "evidence": "cycle1/PROJECT_STATE.md",
+      "status": "UNVERIFIED; no real movement this batch"
+    },
+    {
+      "requirement": "Model-transfer, real calibration and total collection cost benefits",
+      "status": "NOT_ESTABLISHED; outside current scene-only acceptance"
+    }
+  ],
+  "limitations": [
+    "Cached model loading is not autonomous adaptation to an unseen scene",
+    "Explicit right CLI selection is required; legacy default remains dual for existing callers",
+    "The public repository Agent entry is tested; external production orchestrators are not claimed integrated"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ER012",
+  "version": 1,
+  "content": "Embodiment changes must reach the real Agent entry, history applicability, negative-case recorder and hardware selection boundary. Reuse a known correct native task directly when no new decision is needed; an LLM reproducing the same action/trajectory adds planning cost and is not a newly discovered skill.",
+  "applicability": "Original Piper right-arm plug simulator, connector_mixed.v2; no real physical calibration",
+  "source_episodes": [
+    "20261116T033037Z_8d4d29c4",
+    "20261116T033254Z_0b9f0331",
+    "20261116T033317Z_e7924063"
+  ],
+  "validation_status": "SIMULATION_VERIFIED_KNOWN_TASK_INTEGRATION",
+  "success_count": 1,
+  "failure_count": 1,
+  "count_semantics": "Physical positive/negative controls; both recordings valid",
+  "limitations": [
+    "One task condition, not unseen exploration",
+    "No matched teacher/student experiment",
+    "CLI still consumed 16802 input tokens with catalog injection disabled"
+  ],
+  "evidence": "experiments/right_arm_adaptation/cycle2/result.json"
+}

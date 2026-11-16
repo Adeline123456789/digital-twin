@@ -27,6 +27,13 @@ class RightAgentTests(unittest.TestCase):
             self.assertNotIn('DUAL_ONLY_SECRET',planner.call_args.args[0])
             self.assertFalse(planner.call_args.kwargs['include_catalog'])
             self.assertTrue(result['task_success'])
+            trial.update(task_success=False,result='failure')
+            with patch.object(agent_loop,'ROOT',root),patch.object(agent_loop,'record',return_value=(root,{'experiment_id':'agent-feedback'})),patch.object(agent_loop,'finish'),patch.object(agent_loop,'plan_with_memory',return_value=call) as planner,patch.object(agent_loop,'failure_memory') as old_memory,patch.object(benchmark_collection,'run_case',side_effect=collect),patch.dict(agent_loop.os.environ,{'PIPER_ACTIVE_ARMS':'right','PIPER_SIM_PROFILE':'original','PIPER_TARGET_INDEX':'3'}):
+                result=agent_loop.run('D',0,publish=False)
+            self.assertEqual(planner.call_count,2)
+            old_memory.assert_not_called()
+            self.assertTrue(result['repeat_prevented'])
+            self.assertFalse(result['task_success'])
 
     def test_connection_rejects_absent_arm_before_controller_import(self):
         import importlib.util

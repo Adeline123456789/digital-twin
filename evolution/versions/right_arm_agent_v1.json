@@ -1,0 +1,13 @@
+{
+  "version": "right_arm_agent_v1",
+  "previous": "right_arm_layout_v1",
+  "timestamp": "2026-11-16T03:37:45.989379+00:00",
+  "status": "SIMULATION_VERIFIED_KNOWN_TASK",
+  "evidence": "experiments/right_arm_adaptation/cycle2/result.json",
+  "entry": "scripts/agent_loop.py --robot-arms right --arm D",
+  "known_task_no_model_entry": "scripts/collect_current_scene.py --robot-arms right",
+  "actual_policy": "llm",
+  "old_compiled_skill_promoted": false,
+  "hardware_motion_validated": false,
+  "rollback": "Scene-only switch: --robot-arms dual. Agent integration: revert dcbc198f2e8aa46170e26b0de9aa534af8cd72d3. Native adapter restore uses install_right_arm_support.py --rollback. Local hardware connection restriction is separate; preserve until installation changes, backup/hash recorded in cycle2/hardware_boundary.json."
+}

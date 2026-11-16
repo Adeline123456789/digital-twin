@@ -1,3 +1,5 @@
+> 2026-11-16 第2周期：右臂已接回实际 `agent_loop.py --robot-arms right`；新增一条完整失败和一条完整成功Episode，1次模型调用完成已知任务修复，成功运动与原右臂程序逐帧一致。实际Token16,934，未证明模型/总成本收益；无真机运动。见[本周期报告](experiments/right_arm_adaptation/cycle2/REPORT.md)。当前策略LLM，旧compiled skill保留原适用范围。
+
 > 2026-11-16：本批右臂场景适配及完整采集已通过限定仿真验收，见[右臂报告](experiments/right_arm_adaptation/cycle1/REPORT.md)。新入口`collect_current_scene.py --robot-arms right`，两相机、7维右臂状态。旧compiled skill因原生源码变更暂退出默认；未声称真实校准或模型能力提升。以下保留此前结果。
 
 # 最终研究报告 — 2026-11-12
