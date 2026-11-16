@@ -1,0 +1,23 @@
+{
+  "scope": "Offline tests of actual native procfs wait block; no hardware commands",
+  "tests": [
+    {
+      "case": "gone",
+      "result": "exited"
+    },
+    {
+      "case": "absent",
+      "result": "exited"
+    },
+    {
+      "case": "Z",
+      "result": "exited"
+    },
+    {
+      "case": "S",
+      "result": "timeout_rejected"
+    }
+  ],
+  "passed": 4,
+  "lock_and_hardware_gates_changed": false
+}
