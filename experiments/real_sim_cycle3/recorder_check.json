@@ -1,0 +1,14 @@
+{
+  "read_only_camera_check": "PASSED; two cameras,15 frames each, global exposure timestamps, no depth stream/file",
+  "initial_export": "INFRA_ERROR: piper-teleop runtime lacks av; no data written by failed invocation",
+  "repair": "Use existing MuJoCo runtime for offline HDF5/MP4 export; no dependencies installed",
+  "export_num_frames": 14,
+  "export_schema": "connector_mixed.v2",
+  "export_active_arms": [
+    "right"
+  ],
+  "initial_export_purpose_label": "Legacy static_rgbd_calibration was inaccurate; source corrected to static_rgb_calibration before task recordings",
+  "real_motion": false,
+  "corrected_export_purpose": "static_rgb_calibration",
+  "corrected_export_video_and_h5_verified": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ER013",
+  "version": 1,
+  "content": "Validate the actual executable reference from the actual entry. A simulator initialized at the grasp approach omits the physical entry path. Deterministic resampling must be frozen, provenance-labeled and replayed under the original success and contact checks before hardware use. Keep reference actions separate from simulated and measured state.",
+  "applicability": "Piper right-only connector task; named radians/width commands adapted to existing degree/95mm-normalized controller; no physical calibration claim",
+  "source_episodes": [
+    "20261116T044726Z_6d665f3f"
+  ],
+  "validation_status": "SIMULATION_VERIFIED_REAL_PENDING",
+  "success_count": 2,
+  "failure_count": 0,
+  "count_semantics": "One complete native rollout plus one derived adapted-reference replay, correlated and not independent task trials",
+  "limitations": [
+    "No real trajectory execution yet",
+    "Single scene and entry",
+    "Does not establish safe real fixture registration or calibrated contact parameters"
+  ],
+  "evidence": "experiments/real_sim_cycle3/reference_validation.json"
+}

@@ -1,0 +1,14 @@
+{
+  "version": "shared_reference_v1",
+  "previous": "right_arm_agent_v1",
+  "timestamp": "2026-11-16T04:58:24.264509+00:00",
+  "status": "SIMULATION_VERIFIED_REAL_PENDING",
+  "cycle": 3,
+  "cycle_complete": false,
+  "evidence": "experiments/real_sim_cycle3/reference_validation.json",
+  "entry": "native continue_plug_task.py --reference <frozen_reference> --trial <source_trial>",
+  "safety_controller_changed": false,
+  "active_planner_policy_changed": false,
+  "real_motion_validated": false,
+  "rollback": "Before any controller is active, restore the three native scripts from dataset self_evolution/real_sim_cycle3/native_backup after checking before-hashes in local_integration.json; remove only the owned trajectory_contract.py mirror. Do not restore the pre-right-only hardware boundary. Public candidate can be reverted independently."
+}

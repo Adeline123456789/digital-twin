@@ -1,0 +1,178 @@
+{
+  "experiment_id": "real_sim_cycle3_shared_reference",
+  "timestamp": "2026-11-16T04:56:46.710957+00:00",
+  "model": "deterministic native task and reference adapter; no planner model call",
+  "task": "right-arm yellow plug pick and insert",
+  "environment": "simulation and read-only real preflight",
+  "program_version": {
+    "reference_adapter": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+    "reference_validator": "9d1bd277989f8eeab291e6518e60862c7abfe048eab3a553db06e589b734fccb"
+  },
+  "result": "SIMULATION_VERIFIED_REAL_PENDING",
+  "task_success": null,
+  "sim_source_task_success": true,
+  "reference_validation": {
+    "reference_sha256": "dd8950e77027d0106eb260240db235b91aea8e59b808ad6b23e54d706f244b11",
+    "result": "success",
+    "task_success": true,
+    "all_substeps_valid": true,
+    "real_commands": 0,
+    "privileged_information_used": true,
+    "physics_parameter_changes": false,
+    "scope": "100Hz frozen target commands; original numerical integrator, contact bounds and task success detector",
+    "profile": {
+      "timestep_s": 0.00026041666666666666,
+      "task_solref": [
+        0.0006,
+        1
+      ],
+      "task_condim": 6,
+      "task_solimp_first3": [
+        0.99,
+        0.999,
+        0.0001
+      ],
+      "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+    },
+    "max_penetration_m": 3.103685879545787e-05,
+    "simulated_seconds": 54.37682291692762,
+    "observation_frames": 1631,
+    "applied_reference_steps": 5438,
+    "integrator_timestep_s": 0.00026041666666666666,
+    "wall_seconds": 116.00169129495043,
+    "prediction_sha256": "8274aa68dd9fb7d8083cf2cb383b0508adc9c9c539d4667e42aa32c3ef630381"
+  },
+  "reference_manifest": {
+    "trajectory_id": "dd8950e77027d0106eb260240db235b91aea8e59b808ad6b23e54d706f244b11",
+    "source_episode": "20261116T044726Z_6d665f3f",
+    "source_trajectory_sha256": "800bc899a47c1294ecbd43c1668d6310ce42a29e5589992b4808b8192fc2469f",
+    "source_initial_state_sha256": "1d53f2f68d78fdd1e3b6ec40ab8b3a380db5034995b2f352bd086f96a2175d1d",
+    "adapter_sha256": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+    "feature_names": [
+      "right.joint1",
+      "right.joint2",
+      "right.joint3",
+      "right.joint4",
+      "right.joint5",
+      "right.joint6",
+      "right.gripper_width"
+    ],
+    "units": [
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "width_mm / 95"
+    ],
+    "command_provenance": "simulation reference action, NOT simulated measured q",
+    "adaptation": "linear interpolation on original relative timeline at100Hz; no smoothing or time stretching",
+    "source_time_origin_s": 0.03333333333333329,
+    "duration_s": 54.36666666692792,
+    "steps": 5438,
+    "first_target": [
+      -6.360531875256157e-07,
+      7.51142085384065e-06,
+      -5.232896625440735e-06,
+      0.47599996182285786,
+      22.25400355833529,
+      2.2319914610362446,
+      0.631578947368421
+    ],
+    "last_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.631578947368421
+    ],
+    "simulation_validation": "PENDING adapted-reference physics replay",
+    "real_execution": "NOT_EXECUTED"
+  },
+  "source_episode": "complete_sim/succeed/20261116T044726Z_6d665f3f",
+  "paired_real_episode": null,
+  "read_only_preflight": {
+    "motion_commands": 0,
+    "enable_attempted": false,
+    "passed": true,
+    "measured": [
+      [
+        0.0,
+        -2.38,
+        1.155,
+        0.476,
+        22.254,
+        2.232,
+        1.0
+      ]
+    ],
+    "entry": [
+      0.0,
+      0.0,
+      0.0,
+      0.476,
+      22.254,
+      2.232,
+      1.0
+    ],
+    "entry_error_deg": 8.538963755633233e-06
+  },
+  "physical_readiness_pending": "Existing controller requires supported arm for safe disable; current operator availability pending",
+  "physics_calibration": "NOT_PERFORMED",
+  "real_motion_commands": 0,
+  "sim_collection_wall_seconds": 171.97545159806032,
+  "sim_reference_validation_wall_seconds": 116.00169129495043,
+  "tokens": {
+    "planner_calls": 0,
+    "planner_tokens": 0,
+    "research_orchestrator_tokens": null,
+    "active_goal_cumulative_snapshot": 139308,
+    "accounting_scope": "Tool-reported active research goal token usage at checkpoint; cumulative, not cycle-only, not incremental, not a billing amount; do not add planner tokens without checking overlap"
+  },
+  "human_interventions": {
+    "physical": 0,
+    "scene_or_support_questions": 1
+  },
+  "observations": {
+    "right_rgb": true,
+    "external_rgb": true,
+    "real_depth": false,
+    "six_axis_force": false
+  },
+  "evidence": [
+    {
+      "dataset_relative_path": "self_evolution/real_sim_cycle3/reference_20261116T044726Z_6d665f3f/manifest.json",
+      "sha256": "95a27704ae5b39c5dbde9949c2b7db755aeeba89bce03a08f29b60b816090dc7"
+    },
+    {
+      "dataset_relative_path": "self_evolution/real_sim_cycle3/reference_20261116T044726Z_6d665f3f/validation.json",
+      "sha256": "754cf7561b7ef20cb5ae3b1e97fe7f7ba29e301cd0b6ec67981749ba3faf75c0"
+    },
+    {
+      "dataset_relative_path": "self_evolution/real_sim_cycle3/reference_20261116T044726Z_6d665f3f/prediction.jsonl",
+      "sha256": "8274aa68dd9fb7d8083cf2cb383b0508adc9c9c539d4667e42aa32c3ef630381"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261116T044726Z_6d665f3f/initial_state.npz",
+      "sha256": "1d53f2f68d78fdd1e3b6ec40ab8b3a380db5034995b2f352bd086f96a2175d1d"
+    },
+    {
+      "dataset_relative_path": "self_evolution/real_sim_cycle3/preflight_observations/external.png",
+      "sha256": "e1e2086a3395db8e441ad50fd91b334e818d2242c8a014ad317fe7a935a26385"
+    },
+    {
+      "dataset_relative_path": "self_evolution/real_sim_cycle3/preflight_observations/right_wrist.png",
+      "sha256": "a71c7fbd7dcceb79df1a481a3370f913a45dad73f64d8215322699399982bfc0"
+    }
+  ],
+  "root_cause_status": "unknown",
+  "root_cause": "No new physical failure yet observed",
+  "limitations": [
+    "Sim contact parameters remain unvalidated on real hardware",
+    "One simulated success is not a real transfer result",
+    "No demonstrated cost reduction or generalization"
+  ]
+}
