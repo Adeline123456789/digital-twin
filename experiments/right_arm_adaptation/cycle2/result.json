@@ -69,5 +69,11 @@
   "hardware_boundary": "Offline rejection before CAN/controller import; replay and home only, not arbitrary external SDK access",
   "comparison": "motion_comparison.json",
   "literature_and_code_reuse": "../cycle1/METHOD.md; existing native task, observation contract and collector reused; no new framework/dependency",
-  "next_improvement": "For known right task, use deterministic collector. For hardware continuation verify present fixture/coordinates first; if model reasoning is needed, remaining CLI input overhead requires measured optimization."
+  "next_improvement": "For known right task, use deterministic collector. For hardware continuation verify present fixture/coordinates first; if model reasoning is needed, remaining CLI input overhead requires measured optimization.",
+  "research_goal_counter_checkpoint": {
+    "tokens_used": 129661,
+    "elapsed_seconds": 909,
+    "source": "Codex update_goal response at completion checkpoint",
+    "scope": "Current goal only; not the entire two-cycle adaptation, not an API billing statement. Separate accounting from child CLI tokens; overlap is unknown, do not sum. Final publication overhead follows this checkpoint."
+  }
 }
