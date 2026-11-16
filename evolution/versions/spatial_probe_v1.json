@@ -1,0 +1,29 @@
+{
+  "version": "spatial_probe_v1",
+  "cycle": 6,
+  "previous": "grasp_geometry_candidate_v1",
+  "status": "OBSERVATION_SEQUENCE_VERIFIED_CALIBRATION_REJECTED",
+  "real_task_success": null,
+  "observation_sequence_success": true,
+  "real_batches": 1,
+  "candidate_fits": 2,
+  "accepted_camera_or_scene_change": false,
+  "physical_calibration_promoted": false,
+  "new_verified_motion_skill": false,
+  "active_planner_policy": "llm",
+  "active_planner_profile": "codex_default",
+  "safety_controller_changed": false,
+  "rollback": "Do not invoke the optional spatial_probe.py or offline fitting tools. No default, native controller, camera or scene configuration was changed in cycle6.",
+  "evidence": "experiments/spatial_cycle6/REPORT.md",
+  "remaining_overall_goals": [
+    "independent physical registration and calibration",
+    "valid real successful episode",
+    "general weak-model learning",
+    "lower total cost without motion-quality loss"
+  ],
+  "program_sha256": {
+    "scripts/spatial_probe.py": "281c3ccf13efc6dd1b632fae346026a07584983d0cff46a41fd9d22811991673",
+    "scripts/fit_probe_registration.py": "8eeeb8743c8e9acf77e4631d70b93ac966f59a21f28205d6043c97ad4184b25c"
+  },
+  "protocol_sha256": "50a06a030985736a4719f97e3a79698c37296f3d6cecd59e495dfe2f871ac771"
+}

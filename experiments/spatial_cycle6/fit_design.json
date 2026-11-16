@@ -1,0 +1,17 @@
+{
+  "created_before_fit": true,
+  "method": "Known robot FK constrained RGB bundle adjustment (SHECAR Eq23 mechanism); fixed factory intrinsics, one fixed link6-to-RGB transform, unknown static scene points",
+  "train_views_per_region": ["center", "j4", "j5", "j6", "translation"],
+  "validation_views_per_region": ["heldout"],
+  "repeatability_only": "return views are excluded from fitting",
+  "static_image_mask_xyxy": [150, 20, 450, 350],
+  "feature_method": "SIFT, mutual nearest-neighbor ratio0.70; fundamental RANSAC0.8px; at least4/5 train views; heldout observations never select training points",
+  "initialization": "Existing unqualified single-pose camera transform; linear triangulation from training RGB and measured FK only; no depth",
+  "initial_point_gate": "All available training camera depths 0.03..1m, training RMS reprojection below15px",
+  "transform_bounds": {"rotation_component_deg": 25, "translation_component_m": 0.075},
+  "solver": {"loss": "soft_l1", "f_scale_px": 1, "max_nfev": 100},
+  "candidate_gate": "Converged; total rotation change<=25deg and translation<=75mm; no active parameter bound; each region heldout median<=2px, p90<=4px and pooled median at least30% lower than fixed-transform point-only fit",
+  "scope": "Passing establishes reserved-view reprojection consistency only. No automated deployment, no physical calibration claim without uncertainty/observability and separate verification. No intrinsic, FK, safety or physics parameter is optimized.",
+  "candidate_budget": 2,
+  "external_metrology": false
+}

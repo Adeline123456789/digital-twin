@@ -1,0 +1,13 @@
+{
+  "id": "NE014",
+  "version": 1,
+  "content": "A target-only RGB/FK hand-eye fit can improve socket reprojection while worsening the robot-attached finger image. Do not deploy based on one region or training error, and do not call the fitted mount translation a measured object offset.",
+  "applicability": "Current right Piper, fixed wrist RGB camera, nominal FK, low-texture yellow holder and repetitive blue socket panels; no depth or external TCP metrology",
+  "source_episodes": ["20261116_real_spatial_probe_000001", "cycle6_fit_001", "cycle6_fit_002"],
+  "validation_status": "TWO_CALIBRATION_CANDIDATES_REJECTED",
+  "success_count": 0,
+  "failure_count": 2,
+  "ineffective_repairs": ["SIFT fit on socket only", "Two-region LK fit without convergence or heldout agreement"],
+  "limitations": ["One acquisition", "CAD/finger mismatch and camera error are not separated", "No centimetre measurement or physical root cause established"],
+  "evidence": "experiments/spatial_cycle6/REPORT.md"
+}

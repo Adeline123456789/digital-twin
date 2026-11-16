@@ -1,0 +1,10 @@
+{
+  "created_before_fit": true,
+  "reason": "SIFT gave only9 anchor features and no verified holder tracks; fit001 therefore rejected despite socket improvement",
+  "one_changed_factor": "Static feature correspondence: use installed OpenCV Shi-Tomasi plus pyramidal LK instead of SIFT descriptors",
+  "parameters": {"max_corners":150,"quality_level":0.005,"min_distance_px":8,"block_size":5,"lk_window":31,"pyramid_max_level":4,"forward_backward_max_px":0.5,"lk_mean_patch_error_max":20,"fundamental_ransac_px":0.8},
+  "unchanged": "Image mask, train/validation frames, minimum4 train sightings, triangulation gate, optimizer, bounds and validation thresholds from fit_design.json",
+  "validation_limit": "These reserved views have now been inspected for fit001. They are diagnostic for the second candidate; a second untouched acquisition is required for independent acceptance.",
+  "remaining_fit_budget":1,
+  "automatic_deployment":false
+}

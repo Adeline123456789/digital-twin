@@ -1,0 +1,120 @@
+{
+  "scope": "Encoder feedback around selected RGB exposure; not external metrology",
+  "views": [
+    {
+      "phase": "holder_center_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07208550478048892
+    },
+    {
+      "phase": "holder_j4_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07208550478048892
+    },
+    {
+      "phase": "holder_return4_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07208550478048892
+    },
+    {
+      "phase": "holder_j5_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07208550478048892
+    },
+    {
+      "phase": "holder_return5_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07348965929315199
+    },
+    {
+      "phase": "holder_j6_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07348965929315199
+    },
+    {
+      "phase": "holder_return6_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.09450704046265912
+    },
+    {
+      "phase": "holder_translation_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.20375809190973745
+    },
+    {
+      "phase": "holder_translation_return_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.09750704046265923
+    },
+    {
+      "phase": "holder_heldout_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.0765103407068537
+    },
+    {
+      "phase": "holder_return_heldout_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.06791449521951165
+    },
+    {
+      "phase": "socket_center_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.08354275112894527
+    },
+    {
+      "phase": "socket_j4_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.08354275112894527
+    },
+    {
+      "phase": "socket_return4_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.08354275112894527
+    },
+    {
+      "phase": "socket_j5_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.08354275112894527
+    },
+    {
+      "phase": "socket_return5_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.08354275112894527
+    },
+    {
+      "phase": "socket_j6_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.0836787948883071
+    },
+    {
+      "phase": "socket_return6_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.09532120511169495
+    },
+    {
+      "phase": "socket_translation_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.0598295069482333
+    },
+    {
+      "phase": "socket_translation_return_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07579479474361506
+    },
+    {
+      "phase": "socket_heldout_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07579479474361506
+    },
+    {
+      "phase": "socket_return_heldout_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.07579479474361506
+    },
+    {
+      "phase": "holder_return_hold",
+      "max_joint_range_during_100ms_deg": 0.0,
+      "max_joint_target_error_deg": 0.090914495219522
+    }
+  ]
+}

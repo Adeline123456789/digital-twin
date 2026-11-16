@@ -1,0 +1,313 @@
+{
+  "experiment_id": "cycle6_same_hold_rgb_disparity",
+  "result": "success",
+  "task_success": null,
+  "physical_displacement_mm": null,
+  "units": "pixels at640x480",
+  "measurements": {
+    "black_rectangle": {
+      "real_minus_sim_median_px": [
+        -2.675680095616144,
+        81.18660656015822
+      ],
+      "threshold_range_min_px": [
+        -2.7246932033926328,
+        81.04050750173482
+      ],
+      "threshold_range_max_px": [
+        -2.6307924648278913,
+        81.21014198364966
+      ]
+    },
+    "front_hole": {
+      "real_minus_sim_median_px": [
+        6.821807359307343,
+        63.559567962122685
+      ],
+      "threshold_range_min_px": [
+        6.817754981258645,
+        62.14512640940413
+      ],
+      "threshold_range_max_px": [
+        8.417989417989418,
+        63.79080086580089
+      ]
+    },
+    "blue_panel_0": {
+      "real_minus_sim_px": [
+        -0.20151618472345945,
+        29.467411830042124
+      ]
+    },
+    "blue_panel_1": {
+      "real_minus_sim_px": [
+        -0.8487141073658222,
+        26.27341041089943
+      ]
+    }
+  },
+  "scope": "2D appearance disagreement at paired stationary hold phases; component centroids are not externally measured physical points",
+  "limitations": [
+    "No millimetre conversion without qualified hand-eye/object geometry",
+    "Threshold sweep measures segmentation sensitivity only, not total measurement uncertainty",
+    "Shape/rendering differences and slightly different measured joint states remain"
+  ],
+  "source": {
+    "holder": {
+      "real": {
+        "black_rectangle_threshold30": [
+          {
+            "area_px": 971,
+            "center_px": [
+              255.8898043254377,
+              103.70442842430484
+            ],
+            "bounds_xywh": [
+              233,
+              92,
+              46,
+              24
+            ]
+          }
+        ],
+        "black_rectangle_threshold40": [
+          {
+            "area_px": 1057,
+            "center_px": [
+              256.1740775780511,
+              103.76253547776727
+            ],
+            "bounds_xywh": [
+              233,
+              92,
+              48,
+              24
+            ]
+          }
+        ],
+        "black_rectangle_threshold50": [
+          {
+            "area_px": 1094,
+            "center_px": [
+              256.2605118829982,
+              103.81078610603291
+            ],
+            "bounds_xywh": [
+              233,
+              92,
+              48,
+              25
+            ]
+          }
+        ],
+        "front_hole_threshold30": [
+          {
+            "area_px": 329,
+            "center_px": [
+              276.7142857142857,
+              308.45896656534956
+            ],
+            "bounds_xywh": [
+              264,
+              298,
+              25,
+              20
+            ]
+          }
+        ],
+        "front_hole_threshold40": [
+          {
+            "area_px": 555,
+            "center_px": [
+              275.12432432432433,
+              309.9081081081081
+            ],
+            "bounds_xywh": [
+              260,
+              297,
+              30,
+              26
+            ]
+          }
+        ],
+        "front_hole_threshold50": [
+          {
+            "area_px": 660,
+            "center_px": [
+              275.08787878787876,
+              310.1015151515152
+            ],
+            "bounds_xywh": [
+              259,
+              297,
+              32,
+              27
+            ]
+          }
+        ]
+      },
+      "simulation": {
+        "black_rectangle_threshold30": [
+          {
+            "area_px": 1214,
+            "center_px": [
+              258.6144975288303,
+              22.663920922570018
+            ],
+            "bounds_xywh": [
+              234,
+              10,
+              51,
+              26
+            ]
+          }
+        ],
+        "black_rectangle_threshold40": [
+          {
+            "area_px": 1238,
+            "center_px": [
+              258.8497576736672,
+              22.575928917609048
+            ],
+            "bounds_xywh": [
+              234,
+              10,
+              51,
+              26
+            ]
+          }
+        ],
+        "black_rectangle_threshold50": [
+          {
+            "area_px": 1242,
+            "center_px": [
+              258.89130434782606,
+              22.60064412238325
+            ],
+            "bounds_xywh": [
+              234,
+              10,
+              51,
+              26
+            ]
+          }
+        ],
+        "front_hole_threshold30": [
+          {
+            "area_px": 513,
+            "center_px": [
+              268.2962962962963,
+              246.31384015594543
+            ],
+            "bounds_xywh": [
+              251,
+              233,
+              34,
+              25
+            ]
+          }
+        ],
+        "front_hole_threshold40": [
+          {
+            "area_px": 548,
+            "center_px": [
+              268.3065693430657,
+              246.3485401459854
+            ],
+            "bounds_xywh": [
+              251,
+              233,
+              35,
+              26
+            ]
+          }
+        ],
+        "front_hole_threshold50": [
+          {
+            "area_px": 560,
+            "center_px": [
+              268.2660714285714,
+              246.31071428571428
+            ],
+            "bounds_xywh": [
+              251,
+              233,
+              35,
+              26
+            ]
+          }
+        ]
+      },
+      "image_sha256": {
+        "real": "457803c329d6135f89100945443c91b48db1d06211ae71de50270fccc532ee67",
+        "simulation": "95f6306f1c7bf6280069b3e57f43623285967b4c4a359a309184197af809c363"
+      }
+    },
+    "socket": {
+      "real": {
+        "blue_panels": [
+          {
+            "area_px": 13221,
+            "center_px": [
+              284.9375236366387,
+              111.21344830194387
+            ],
+            "bounds_xywh": [
+              227,
+              50,
+              120,
+              123
+            ]
+          },
+          {
+            "area_px": 10235,
+            "center_px": [
+              274.4157303370786,
+              237.36345872007817
+            ],
+            "bounds_xywh": [
+              221,
+              188,
+              111,
+              102
+            ]
+          }
+        ]
+      },
+      "simulation": {
+        "blue_panels": [
+          {
+            "area_px": 13435,
+            "center_px": [
+              285.13903982136213,
+              81.74603647190175
+            ],
+            "bounds_xywh": [
+              225,
+              18,
+              127,
+              127
+            ]
+          },
+          {
+            "area_px": 10350,
+            "center_px": [
+              275.26444444444445,
+              211.09004830917874
+            ],
+            "bounds_xywh": [
+              220,
+              161,
+              116,
+              101
+            ]
+          }
+        ]
+      },
+      "image_sha256": {
+        "real": "db4875c3664446f0ff3e240fd49f0df4105791cdd7c9c062bfdf74e8a054a6ed",
+        "simulation": "f8ca3d93e0b80879ec0df02fe2ecf7a2fb22d7d5667ad93af81e4fde268246ef"
+      }
+    }
+  }
+}

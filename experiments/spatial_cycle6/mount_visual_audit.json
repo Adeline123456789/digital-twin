@@ -1,0 +1,60 @@
+{
+  "method": "Static rendering at measured holder-center joint state/aperture; only fixed finger image regions y330:450 x<200 orx>=440. Real gray thresholds40/60/80; simulated finger geometry masks use privileged segmentation. No optimizer or calibration fit.",
+  "metric_scope": "CAD/finger appearance and camera model joint check, not physical metrology or task success",
+  "results": {
+    "baseline": {
+      "40": {
+        "iou": 0.4381783974142506,
+        "real_pixels": 10550,
+        "sim_pixels": 19262
+      },
+      "60": {
+        "iou": 0.4779122050711538,
+        "real_pixels": 12621,
+        "sim_pixels": 19262
+      },
+      "80": {
+        "iou": 0.5160268185157972,
+        "real_pixels": 13751,
+        "sim_pixels": 19262
+      }
+    },
+    "fit_001": {
+      "40": {
+        "iou": 0.1080181812780369,
+        "real_pixels": 10550,
+        "sim_pixels": 26747
+      },
+      "60": {
+        "iou": 0.16040794670753994,
+        "real_pixels": 12621,
+        "sim_pixels": 26747
+      },
+      "80": {
+        "iou": 0.19080243464965158,
+        "real_pixels": 13751,
+        "sim_pixels": 26747
+      }
+    },
+    "fit_002": {
+      "40": {
+        "iou": 0.5400163483688787,
+        "real_pixels": 10550,
+        "sim_pixels": 10174
+      },
+      "60": {
+        "iou": 0.5171381031613976,
+        "real_pixels": 12621,
+        "sim_pixels": 10174
+      },
+      "80": {
+        "iou": 0.4948453608247423,
+        "real_pixels": 13751,
+        "sim_pixels": 10174
+      }
+    }
+  },
+  "measured_aperture_m": 0.0596,
+  "robot_motion_commands": 0,
+  "simulation_physics_steps": 0
+}

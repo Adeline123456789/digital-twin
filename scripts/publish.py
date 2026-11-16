@@ -1,10 +1,23 @@
 """Publish explicit reviewed paths; reject common secrets/raw media, preserve failed-push commits."""
 import argparse
+import json
 from pathlib import Path
 import re
 import subprocess
 import sys
 ROOT=Path(__file__).resolve().parents[1]
+PRIVATE_CAMERA_FIELDS={'T_link6_rgb','baseline_T_link6_rgb','T_parent_rgb'}
+
+def check_private_calibration(value):
+    """Reject the device matrices accidentally copied into cycle6 reports."""
+    if isinstance(value,dict):
+        for key,item in value.items():
+            if key in PRIVATE_CAMERA_FIELDS:
+                raise ValueError('Keep device calibration local; publish metrics and hashes instead: '+key)
+            check_private_calibration(item)
+    elif isinstance(value,list):
+        for item in value:check_private_calibration(item)
+
 def git(*args): return subprocess.run(['git',*args],cwd=ROOT,check=True)
 def main():
     p=argparse.ArgumentParser();p.add_argument('--message',required=True);p.add_argument('paths',nargs='+');a=p.parse_args()
@@ -17,6 +30,10 @@ def main():
         if f.suffix not in ('.py','.md','.json','.jsonl','') and f.name!='.gitignore': raise ValueError('Unsupported public artifact: '+f.name)
         if f.stat().st_size>2_000_000: raise ValueError('Use dataset reference for large artifacts')
         text=f.read_text()
+        if f.suffix=='.json':check_private_calibration(json.loads(text))
+        if f.suffix=='.jsonl':
+            for line in text.splitlines():
+                if line.strip():check_private_calibration(json.loads(line))
         # Heuristic check supplements manual review; never a guarantee of secret absence.
         if re.search(r'(?i)(?:sk-[A-Za-z0-9_-]{20,}|-----BEGIN [A-Z ]{0,24}PRIVATE KEY-----|(?:api_key|password|access_token)\s*[=:]\s*[\"\x27][^\"\x27]{8,})',text):
             raise ValueError('Potential secret in '+str(f.relative_to(ROOT)))

@@ -1,3 +1,13 @@
+# 最新判断：2026-11-16 六周期真机闭环研究
+
+**总体目标未达成，真实直接执行闭环 NO-GO；已知范围的仿真采集工具 CONDITIONAL GO。** 本批两次完整目标真机尝试均未保持抓取，成功0/2。按用户纠正完成了同动作局部空间观测，9,053条指令完全匹配，真实图像与仿真存在可复核的26–81像素局部差异；两个配准候选均未通过验证，未将其约22mm参数变化当作真实毫米测量。
+
+[完整六周期报告](experiments/research_summary/20261116_six_cycle_closeout/REPORT.md)包含成功/失败、Token与时间、人工、活跃策略、未完成目标和回滚。第六周期[空间观测报告](experiments/spatial_cycle6/REPORT.md)记录了所有候选和排除证据。真机已在人工扶稳确认后下使能，六个电机独立确认为关闭。没有新增被认可的相机、几何或物理参数校准。
+
+下面保留此前2026-11-12报告作为历史；其中“没有新增真机运动”和旧默认策略描述不代表2026-11-16当前状态。
+
+---
+
 > 2026-11-16 第2周期：右臂已接回实际 `agent_loop.py --robot-arms right`；新增一条完整失败和一条完整成功Episode，1次模型调用完成已知任务修复，成功运动与原右臂程序逐帧一致。实际Token16,934，未证明模型/总成本收益；无真机运动。见[本周期报告](experiments/right_arm_adaptation/cycle2/REPORT.md)。当前策略LLM，旧compiled skill保留原适用范围。
 
 > 2026-11-16：本批右臂场景适配及完整采集已通过限定仿真验收，见[右臂报告](experiments/right_arm_adaptation/cycle1/REPORT.md)。新入口`collect_current_scene.py --robot-arms right`，两相机、7维右臂状态。旧compiled skill因原生源码变更暂退出默认；未声称真实校准或模型能力提升。以下保留此前结果。

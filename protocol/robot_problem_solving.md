@@ -26,3 +26,9 @@ Simulator object/goal poses, contact state, velocities and task ground truth may
 ## Executable memory and current scope
 
 Agent D reads evolution/active.json.planner_policy. compiled_alignment_v1 may execute VS002 only when its simulator/source, socket, units, contact and initial-state checks match; otherwise use the bounded LLM path and keep unknowns explicit. Record actual_planner_kind and model_invoked. Retention loss observed during transport takes precedence over a later IK exception when selecting what to investigate; do not infer friction or measured force. The native success and safety detectors stay independent. All full collection passes the existing Episode verifier, including failures. Current evidence does not establish unknown-task-family competence, real calibration or total-cost reduction.
+
+## Spatial disagreement observed on 2026-11-16
+
+When matched real/sim views disagree before grasping, investigate camera mounting, physical finger/tool geometry and scene placement before changing grasp height or contact physics. Nominal FK agreeing with controller pose only checks software consistency. Use bounded, simulation-validated noncontact observation commands under the existing hardware conditions; a successful observation sequence is not a successful task Episode. Report command-array equality separately from actual execution timing.
+
+A scene-only calibration fit must also be checked against robot-attached geometry and withheld views. Reprojection improvement or a fitted22mm translation alone is not a measured object correction. Reject unsupported transforms without a hardware retry; retain the old configuration and record the next missing measurement. Evidence and scope: experiments/spatial_cycle6/REPORT.md and NE014. The current full-task real-transfer result remains0/2, with physical root cause UNKNOWN.

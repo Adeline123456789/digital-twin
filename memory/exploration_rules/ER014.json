@@ -1,0 +1,13 @@
+{
+  "id": "ER014",
+  "version": 1,
+  "content": "For visible pre-grasp real/sim disagreement, separate scene placement, camera mounting and physical tool geometry using matched noncontact views. Check scene-fit candidates against robot-attached geometry excluded from fitting. Measure target-array equality and wall-clock timing separately.",
+  "applicability": "RGB-only robot with reliable recorded joint feedback and simulation-safe stand-off viewpoints; exact camera/robot embodiment must match",
+  "source_episodes": ["20261116_real_spatial_probe_000001"],
+  "validation_status": "APPLIED_TO_REJECT_UNSUPPORTED_CAMERA_CANDIDATES; NOT_TASK_SUCCESS_VERIFIED",
+  "success_count": 0,
+  "failure_count": 2,
+  "count_scope": "Candidate calibrations accepted/rejected, not robot tasks",
+  "limitations": ["One acquisition; no causal proof of improved collection cost", "CAD-versus-camera ambiguity remains", "Known-size target or verified attached landmarks still needed for metric qualification"],
+  "evidence": "experiments/spatial_cycle6/REPORT.md"
+}

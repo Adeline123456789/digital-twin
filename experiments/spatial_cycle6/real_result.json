@@ -1,0 +1,76 @@
+{
+  "experiment_id": "cycle6_real_spatial_probe_001",
+  "timestamp": "2026-11-16T06:39:18.068121+00:00",
+  "model": "deterministic frozen reference execution",
+  "program_version": "281c3ccf13efc6dd1b632fae346026a07584983d0cff46a41fd9d22811991673",
+  "protocol_version": "0c1e28fd8e34f0995560513c56db24a169e00e00bdd63b15b79974abc5cc8965",
+  "environment": "real",
+  "task": "open-gripper noncontact observation at holder and socket",
+  "result": "success",
+  "task_success": null,
+  "observation_sequence_success": true,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "tokens": 0,
+  "llm_execution_calls": 0,
+  "orchestrator_tokens": null,
+  "human_task_motion_corrections": 0,
+  "human_shutdown_support_events": 1,
+  "human_confirmation_messages": 1,
+  "pair": {
+    "simulation_reference": "self_evolution/spatial_cycle6/probe_002",
+    "trajectory_id": "3707fab7f1638a526bea5e4d86e9be477f5cfbf43e75f11055ec33e95ebab482",
+    "real_episode": "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001",
+    "identical_target_commands": true,
+    "command_count": 9053,
+    "reference_duration_s": 90.52,
+    "actual_command_span_s": 101.3691152909305,
+    "timing_stretch_percent": 11.985324006772547,
+    "simulation_privileged_information_used": true,
+    "command_stream_timing_note": "Target arrays match; real wall-clock schedule is not identical. Do not claim preserved timing or dynamic equivalence."
+  },
+  "verification": {
+    "episodes": [
+      {
+        "session": "spatial_probe",
+        "episode": "000001",
+        "domain": "real",
+        "num_frames": 3104,
+        "purpose": "wrist_alignment_probe",
+        "success": false,
+        "policy_training_eligible": false,
+        "video_frames": {
+          "cam_external": 3104,
+          "cam_right_wrist": 3104
+        },
+        "known_right_joint_action_frames": 3104,
+        "known_right_gripper_action_frames": 3104
+      }
+    ],
+    "verified_frames": 3104,
+    "full_sim_demonstrations": 0,
+    "full_real_demonstrations": 0,
+    "real_task_attempts": 0,
+    "force_sensor_directory_present": false
+  },
+  "recording_quality": {
+    "reason": "calibration only; unknown action fields remain invalid",
+    "max_camera_skew_s": 0.015324831008911133,
+    "complete_movement_video_coverage": true,
+    "complete_command_video_coverage": true
+  },
+  "hardware_disabled_verified": true,
+  "final_err_code": 0,
+  "evidence": {
+    "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/outcome.json": "acd2029e20af4cc75666b2874ff6177f039faa4426f9a341165bec7f4d90c8fd",
+    "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/verification.json": "ac2842270e90cdbf7a68026151c3beb0d9f6347f7f58f6089f010a17cc221f81",
+    "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/pair_manifest.json": "353d6345349818395cb4f4ad37af7d272ecfcf543371b850e7eed1a3e92653b3",
+    "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/proprio_stats/proprio_stats.h5": "7f568484d4cb8fdba35a094443859b80fd8baefd4f7bfdd7bc6dc75ddd5de39a",
+    "self_evolution/spatial_cycle6/real_20261116T062116Z/commanded_probe.csv": "ce181a7dfafe93d36dca20910fede3fab8636e85ec93a4d992bd7c3856bcd071",
+    "self_evolution/spatial_cycle6/real_20261116T062116Z/probe_views.json": "6afb78d3f5d053637dd479cb691e39698c6a1a35667e2f8e31ec394dd35990c9",
+    "self_evolution/spatial_cycle6/real_20261116T062116Z/execution_report.json": "968b007ba8f63b2678d923cc75da374907261136c3ba073405fa7ee5933e1fe2",
+    "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/videos/cam_external_rgb.mp4": "fa9808905b6881d1023c9051f7068d18acb72984860806fd173a0bd6286600c9",
+    "self_evolution/spatial_cycle6/episodes/20261116_real_spatial_probe_000001/videos/cam_right_wrist_rgb.mp4": "138b7b33aafd419ad99aa62a5d40435f83144be851176cd7e3fbf2b5a38f0d3e"
+  },
+  "next_improvement": "Check scene-independent wrist/fingertip consistency and report local visual disparity without promoting rejected hand-eye fits"
+}

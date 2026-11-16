@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-11-16T06:58:25.373858+00:00",
+  "kind": "publication_boundary_correction_not_a_research_cycle",
+  "introduced_commit": "1f867d5a3626ba180870e275efeca4ddc1a1c8bb",
+  "affected_reports": [
+    {
+      "public_file": "experiments/spatial_cycle6/fit_001.json",
+      "private_artifact": "self_evolution/spatial_cycle6/fit_001/result.json",
+      "private_sha256": "f61166234541dd306760af41ceec9af50688cac465d6f0e097d914ae78dcfdf8",
+      "result_preserved": "failure",
+      "deployed": false
+    },
+    {
+      "public_file": "experiments/spatial_cycle6/fit_002.json",
+      "private_artifact": "self_evolution/spatial_cycle6/fit_002/result.json",
+      "private_sha256": "342a03f547edd683528bf148a37536657f415d88b15d1d897f1512443e987b8c",
+      "result_preserved": "failure",
+      "deployed": false
+    }
+  ],
+  "current_tracked_json_files_checked": 388,
+  "check_scope": "Known device-transform keys T_link6_rgb, baseline_T_link6_rgb and T_parent_rgb; not a comprehensive secret audit",
+  "private_evidence_preserved": true,
+  "new_fits": 0,
+  "new_simulations": 0,
+  "new_real_movement": 0,
+  "history_cleanup": "NOT_PERFORMED; task document forbids force-push without revised permission",
+  "goal_completed": false,
+  "cycle_budget": {
+    "limit": 6,
+    "used": 6
+  }
+}

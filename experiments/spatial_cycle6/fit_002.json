@@ -1,0 +1,127 @@
+{
+  "experiment_id": "fit_002",
+  "timestamp": "2026-11-16T06:34:36Z",
+  "result": "failure",
+  "status": "REJECTED",
+  "calibration_promoted": false,
+  "hardware_commands": 0,
+  "real_depth": false,
+  "task_success": null,
+  "initializer_sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+  "source_sha256": "6afb78d3f5d053637dd479cb691e39698c6a1a35667e2f8e31ec394dd35990c9",
+  "program_sha256": "56abedfd76577b2fc66270526f638a093941ccbee0ccfae96cc2a6efa4046ed6",
+  "feature_method": "lk",
+  "baseline": {
+    "train": {
+      "observations": 100,
+      "median_px": 1.9911522131150239,
+      "p90_px": 4.476078581221527,
+      "rmse_px": 3.1314379204169356,
+      "positive_depth": true
+    },
+    "heldout": {
+      "observations": 13,
+      "median_px": 5.994036064212893,
+      "p90_px": 7.202036954893241,
+      "rmse_px": 5.732244041510561,
+      "positive_depth": true
+    },
+    "holder_heldout": {
+      "observations": 10,
+      "median_px": 5.448438649647308,
+      "p90_px": 6.156464517280104,
+      "rmse_px": 5.2455680586016316,
+      "positive_depth": true
+    },
+    "socket_heldout": {
+      "observations": 3,
+      "median_px": 7.380929318078613,
+      "p90_px": 7.562713250843775,
+      "rmse_px": 7.118104621185248,
+      "positive_depth": true
+    }
+  },
+  "candidate": {
+    "train": {
+      "observations": 100,
+      "median_px": 0.62783422419132,
+      "p90_px": 1.7694385951112535,
+      "rmse_px": 1.2847700182058366,
+      "positive_depth": true
+    },
+    "heldout": {
+      "observations": 13,
+      "median_px": 2.3448326348101873,
+      "p90_px": 5.872931871032682,
+      "rmse_px": 3.446587999334276,
+      "positive_depth": true
+    },
+    "holder_heldout": {
+      "observations": 10,
+      "median_px": 2.1816107754273926,
+      "p90_px": 3.3967379761382723,
+      "rmse_px": 2.2973057927754827,
+      "positive_depth": true
+    },
+    "socket_heldout": {
+      "observations": 3,
+      "median_px": 6.035667770903957,
+      "p90_px": 6.135549697578329,
+      "rmse_px": 5.820952265389164,
+      "positive_depth": true
+    }
+  },
+  "parameter_change": {
+    "translation_m": 0.022346781714535233,
+    "rotation_deg": 8.752145997350611
+  },
+  "counts": {
+    "holder": {
+      "anchor_features": 96,
+      "matched_views": {
+        "holder_j4_hold": 28,
+        "holder_j5_hold": 15,
+        "holder_j6_hold": 39,
+        "holder_translation_hold": 33,
+        "holder_heldout_hold": 23
+      }
+    },
+    "socket": {
+      "anchor_features": 85,
+      "matched_views": {
+        "socket_j4_hold": 23,
+        "socket_j5_hold": 7,
+        "socket_j6_hold": 48,
+        "socket_translation_hold": 38,
+        "socket_heldout_hold": 13
+      }
+    }
+  },
+  "landmarks": 24,
+  "optimizer": {
+    "success": false,
+    "message": "The maximum number of function evaluations is exceeded.",
+    "nfev": 100,
+    "active_bounds": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "seconds": 0.49836562701966614,
+  "tokens": 0,
+  "llm_calls": 0,
+  "limitations": [
+    "Metric scale relies on nominal FK and factory intrinsics, not external metrology",
+    "Same-session reserved views; no independent physical TCP or object validation",
+    "No depth, force, dynamics, hardware or simulator configuration modified"
+  ],
+  "private_calibration_evidence": {
+    "dataset_relative_path": "self_evolution/spatial_cycle6/fit_002/result.json",
+    "sha256": "342a03f547edd683528bf148a37536657f415d88b15d1d897f1512443e987b8c",
+    "scope": "Device transforms retained locally; no parameter has been deployed"
+  }
+}

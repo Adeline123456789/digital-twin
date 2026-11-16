@@ -1,0 +1,112 @@
+{
+  "experiment_id": "fit_001",
+  "timestamp": "2026-11-16T06:33:34Z",
+  "result": "failure",
+  "status": "REJECTED",
+  "calibration_promoted": false,
+  "hardware_commands": 0,
+  "real_depth": false,
+  "task_success": null,
+  "initializer_sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+  "source_sha256": "6afb78d3f5d053637dd479cb691e39698c6a1a35667e2f8e31ec394dd35990c9",
+  "program_sha256": "efe1c97a384930d9c1ea14edceb4c0139e84d44853c8363944215440122bea6d",
+  "baseline": {
+    "train": {
+      "observations": 65,
+      "median_px": 2.175033149260963,
+      "p90_px": 6.416485566539185,
+      "rmse_px": 3.5428250625630042,
+      "positive_depth": true
+    },
+    "heldout": {
+      "observations": 11,
+      "median_px": 7.295933772855424,
+      "p90_px": 8.062649642777638,
+      "rmse_px": 6.948933377270674,
+      "positive_depth": true
+    },
+    "socket_heldout": {
+      "observations": 11,
+      "median_px": 7.295933772855424,
+      "p90_px": 8.062649642777638,
+      "rmse_px": 6.948933377270674,
+      "positive_depth": true
+    }
+  },
+  "candidate": {
+    "train": {
+      "observations": 65,
+      "median_px": 0.3901754002154846,
+      "p90_px": 0.7583103121214468,
+      "rmse_px": 0.5652924664481095,
+      "positive_depth": true
+    },
+    "heldout": {
+      "observations": 11,
+      "median_px": 1.85610143110114,
+      "p90_px": 2.655365771041151,
+      "rmse_px": 2.078589563272944,
+      "positive_depth": true
+    },
+    "socket_heldout": {
+      "observations": 11,
+      "median_px": 1.85610143110114,
+      "p90_px": 2.655365771041151,
+      "rmse_px": 2.078589563272944,
+      "positive_depth": true
+    }
+  },
+  "parameter_change": {
+    "translation_m": 0.02254337899250003,
+    "rotation_deg": 8.745934688388296
+  },
+  "counts": {
+    "holder": {
+      "anchor_features": 9,
+      "matched_views": {
+        "holder_j4_hold": 0,
+        "holder_j5_hold": 0,
+        "holder_j6_hold": 0,
+        "holder_translation_hold": 0,
+        "holder_heldout_hold": 0
+      }
+    },
+    "socket": {
+      "anchor_features": 65,
+      "matched_views": {
+        "socket_j4_hold": 19,
+        "socket_j5_hold": 18,
+        "socket_j6_hold": 37,
+        "socket_translation_hold": 27,
+        "socket_heldout_hold": 30
+      }
+    }
+  },
+  "landmarks": 16,
+  "optimizer": {
+    "success": true,
+    "message": "`ftol` termination condition is satisfied.",
+    "nfev": 44,
+    "active_bounds": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "seconds": 0.32057813997380435,
+  "tokens": 0,
+  "llm_calls": 0,
+  "limitations": [
+    "Metric scale relies on nominal FK and factory intrinsics, not external metrology",
+    "Same-session reserved views; no independent physical TCP or object validation",
+    "No depth, force, dynamics, hardware or simulator configuration modified"
+  ],
+  "private_calibration_evidence": {
+    "dataset_relative_path": "self_evolution/spatial_cycle6/fit_001/result.json",
+    "sha256": "f61166234541dd306760af41ceec9af50688cac465d6f0e097d914ae78dcfdf8",
+    "scope": "Device transforms retained locally; no parameter has been deployed"
+  }
+}
