@@ -1,0 +1,20 @@
+{
+  "id": "FP006",
+  "version": 1,
+  "content": "An external RGB view of a plug remaining on an outlet after release can be a false positive for insertion; task command completion does not resolve seating.",
+  "applicability": "Occluded peg/plug seating with RGB only",
+  "source_episodes": [
+    "20261116_real_repeatability_000004"
+  ],
+  "validation_status": "REAL_OBSERVED_OPERATOR_CORRECTED",
+  "success_count": 0,
+  "failure_count": 1,
+  "known_limits": [
+    "No electrical continuity or insertion force measured",
+    "Original task detector untouched; human outcome correction overrides Agent RGB inference"
+  ],
+  "evidence": "experiments/repeatability_cycle12/000004/label_correction.json",
+  "signatures": [
+    "retained_on_surface_not_inserted"
+  ]
+}

@@ -75,6 +75,7 @@ def archive(index, review_path, reference, startup):
         program_version=dict(reference_sha256=commands['reference_id'],
                              archive_program_sha256=digest(__file__)),
         initial_state_stratum=startup,
+        task_gripper_effort_nm=original.get('task_gripper_effort_nm'),
         result='success' if review['physical_task_success'] else 'failure',
         task_success=review['physical_task_success'], recording_verified=True,
         frames=verification['verified_frames'], root_cause='UNKNOWN', root_cause_status='unknown',

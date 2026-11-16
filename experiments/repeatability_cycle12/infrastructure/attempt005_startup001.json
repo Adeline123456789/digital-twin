@@ -1,0 +1,10 @@
+{
+  "result": "infrastructure_error",
+  "physical_attempt_started": false,
+  "reason": "ProcessLookupError reading procfs stat after SIGTERM during controller handoff; no task target was sent",
+  "source_controller_pid": 1451599,
+  "local_evidence": "infrastructure/20261116_real_repeatability_000005_startup_001",
+  "fix": "Accept ESRCH/ENOENT as process exited; retain lock, feedback, stationary, joint-limit and fault checks",
+  "old_program_sha256": "807c7526e4a70e8fecc81559b43422e998bfe2f231cb602f023cc9b0eacdcc85",
+  "new_program_sha256": "097f08e68143377948ed37a628f4a49d4aa07c059defedc69bafdf1d53b90e58"
+}

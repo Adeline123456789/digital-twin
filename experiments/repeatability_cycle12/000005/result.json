@@ -1,0 +1,101 @@
+{
+  "experiment_id": "20261116_real_repeatability_000005",
+  "timestamp": "2026-11-16T12:46:31.515244+00:00",
+  "batch_index": 5,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+    "archive_program_sha256": "a9f74e197964aa4a629ee18ea2125badf0e9db9d45c72c9993ecdd4ede6a6b45"
+  },
+  "initial_state_stratum": "enabled_folded_zero",
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 1682,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Agent RGB and native insertion guard review",
+    "observed_at": "2026-11-16T12:46:15.575650+00:00",
+    "observed_facts": [
+      "Insertion guard triggered at frame1647: yellow housing top308 to324 px.",
+      "Robot retreated without release and folded; yellow plug remains between the fingers.",
+      "Target outlet is empty after retreat."
+    ],
+    "phase_end_motor_aperture_mm": {
+      "prepare_gripper": 59.5,
+      "approach": 59.5,
+      "descend": 59.5,
+      "grasp": 44.5,
+      "lift": 42.6,
+      "transport": 42.2,
+      "align": 42.2,
+      "insert": 42.2,
+      "abort_retreat": 41.4,
+      "fold": 41.1,
+      "final_hold": 41.1
+    },
+    "scope": "Insertion failure; image displacement is not a measured contact force or exact root cause.",
+    "evidence": [
+      {
+        "relative_capture_path": "external/last.png",
+        "sha256": "5122114e423d1faff1027fa992794ca726951dd3fed92c6cecedd676f5a6f756"
+      },
+      {
+        "relative_capture_path": "right_wrist/last.png",
+        "sha256": "7f4a9501732bbe71f523058d9a4c17f7290d063facdfcefacaf7d22f2ecf3e63"
+      },
+      {
+        "relative_capture_path": "right_wrist/1647.jpg",
+        "sha256": "9e9182f048ce202071b11c0cb8c86b9dbf5dcc208508c18668f779b2dd692387"
+      },
+      {
+        "relative_capture_path": "execution_report.json",
+        "sha256": "adb9d106bb9d310289093b435261f0caea9a33311ba0c13c6a29a8b7803fb41b"
+      }
+    ]
+  },
+  "reference_commands": 3380,
+  "entire_reference_sent": false,
+  "reference_execution_seconds": 34.90735966793727,
+  "nominal_reference_seconds": 33.79,
+  "execution_time": 56.11503955395892,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One manual plug reset before this attempt; final supported shutdown counted separately",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/videos/cam_external_rgb.mp4",
+      "sha256": "11cd5326efc664798075f4b6424286079edbfc39f69a5bef6acbc53933490c79"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "3e318ebc56e31b9bb9093cef99655330617e1f747bc9c112a46d22aa90ae0438"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/proprio_stats/proprio_stats.h5",
+      "sha256": "06f67ede966b51c8a7ece4d9a6d528c202c565df3ad878cc2bc428617d9c8a24"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/outcome.json",
+      "sha256": "ea30875c2b594aeeb81ebfbfff3c32a9af78ab7228317434947384c04cdc68a5"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/verification.json",
+      "sha256": "696d04f4f203374e22d858598aab9898061f93685cc8cb6c1e63bd116daa03d1"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/raw/task/commanded_probe.csv",
+      "sha256": "ace9c3453e20b3f83213e563a927fa4666d309295bc5e6446ee046d4c55e0890"
+    }
+  ],
+  "task_gripper_effort_nm": 1.0
+}

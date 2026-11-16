@@ -1,0 +1,272 @@
+{
+  "timestamp": "2026-11-16T12:51:54.241032+00:00",
+  "scope": "Current-scene real RGB and gripper motor aperture, comparing two observed successes against attempts4/5. No depth/force data or identified metric calibration.",
+  "observations": [
+    {
+      "episode": "20261116_real_current_socket_repair_000002",
+      "phase": "grasp",
+      "frame": 1852,
+      "aperture_mm": 46.8,
+      "q_deg": [
+        -10.626,
+        99.421,
+        -58.904,
+        0.0,
+        54.212,
+        -106.923
+      ],
+      "image_sha256": "9191170be6243843fd998d70dcf4c0c68b6be6f0042bf00950b2993018ee6cbb",
+      "yellow_housing_bbox_xywh_px": [
+        242,
+        313,
+        201,
+        167
+      ],
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/1852.jpg"
+    },
+    {
+      "episode": "20261116_real_current_socket_repair_000002",
+      "phase": "lift",
+      "frame": 1912,
+      "aperture_mm": 38.9,
+      "q_deg": [
+        -10.626,
+        94.825,
+        -66.589,
+        0.0,
+        66.929,
+        -106.923
+      ],
+      "image_sha256": "be7cdc22edf44963e329153e5ecae6ef49322418d0e42cab9b1ec4612d1bf627",
+      "yellow_housing_bbox_xywh_px": [
+        251,
+        293,
+        181,
+        187
+      ],
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/1912.jpg"
+    },
+    {
+      "episode": "20261116_real_current_socket_repair_000002",
+      "phase": "align",
+      "frame": 2240,
+      "aperture_mm": 38.9,
+      "q_deg": [
+        43.286,
+        117.495,
+        -92.371,
+        0.0,
+        69.63,
+        -47.095
+      ],
+      "image_sha256": "42223ef7726a1322ee737f69f009e00eccf9d936fe2c683fc059a4ea1ad90ccf",
+      "yellow_housing_bbox_xywh_px": [
+        253,
+        292,
+        183,
+        188
+      ],
+      "dataset_relative_path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/2240.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000002",
+      "phase": "grasp",
+      "frame": 2542,
+      "aperture_mm": 47.9,
+      "q_deg": [
+        -10.63,
+        99.598,
+        -58.683,
+        0.0,
+        53.835,
+        -106.9
+      ],
+      "image_sha256": "fd39578c0dcefcefab189e768ff9d8a8e80bd22e65dee1313e964bdd79795ec7",
+      "yellow_housing_bbox_xywh_px": [
+        246,
+        319,
+        196,
+        161
+      ],
+      "dataset_relative_path": "complete_real/successed/20261116_real_repeatability_000002/raw/task/right_wrist/2542.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000002",
+      "phase": "lift",
+      "frame": 2604,
+      "aperture_mm": 39.7,
+      "q_deg": [
+        -10.63,
+        94.793,
+        -66.623,
+        0.0,
+        66.939,
+        -106.9
+      ],
+      "image_sha256": "cd8431d8eb04f3d31907b0c444a9505b572e00a4be169201a69369f92291af50",
+      "yellow_housing_bbox_xywh_px": [
+        253,
+        300,
+        186,
+        180
+      ],
+      "dataset_relative_path": "complete_real/successed/20261116_real_repeatability_000002/raw/task/right_wrist/2604.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000002",
+      "phase": "align",
+      "frame": 2925,
+      "aperture_mm": 39.0,
+      "q_deg": [
+        43.392,
+        117.437,
+        -91.849,
+        -0.389,
+        68.866,
+        -46.958
+      ],
+      "image_sha256": "7ed3b658a37d00fb246324f8db09b6170dd47853f6c980a138ea2ccc95c0b19b",
+      "yellow_housing_bbox_xywh_px": [
+        253,
+        300,
+        181,
+        180
+      ],
+      "dataset_relative_path": "complete_real/successed/20261116_real_repeatability_000002/raw/task/right_wrist/2925.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000004",
+      "phase": "grasp",
+      "frame": 9256,
+      "aperture_mm": 45.8,
+      "q_deg": [
+        -10.594,
+        99.665,
+        -58.643,
+        0.0,
+        53.749,
+        -106.903
+      ],
+      "image_sha256": "fa3cd20bfcee12230e42c59f9ce8827f99ceca17cb4016e2d43fe921a5538b63",
+      "yellow_housing_bbox_xywh_px": [
+        246,
+        320,
+        193,
+        160
+      ],
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/raw/task/right_wrist/9256.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000004",
+      "phase": "lift",
+      "frame": 9318,
+      "aperture_mm": 44.5,
+      "q_deg": [
+        -10.594,
+        94.765,
+        -66.62,
+        0.0,
+        66.941,
+        -106.903
+      ],
+      "image_sha256": "97606512811f289d2ab9a28fa704c15f498a4557325b3fcd1a6c09aabc7db21d",
+      "yellow_housing_bbox_xywh_px": [
+        241,
+        314,
+        198,
+        166
+      ],
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/raw/task/right_wrist/9318.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000004",
+      "phase": "align",
+      "frame": 9653,
+      "aperture_mm": 44.1,
+      "q_deg": [
+        43.348,
+        117.523,
+        -91.818,
+        -0.368,
+        68.992,
+        -47.0
+      ],
+      "image_sha256": "dac8c40fa2e97f3d60f632c565099a207ce9bb34ca83fdd47ea2b11e1ea7063c",
+      "yellow_housing_bbox_xywh_px": [
+        242,
+        317,
+        197,
+        163
+      ],
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004/raw/task/right_wrist/9653.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000005",
+      "phase": "grasp",
+      "frame": 1214,
+      "aperture_mm": 44.5,
+      "q_deg": [
+        -10.587,
+        99.381,
+        -58.908,
+        0.0,
+        54.194,
+        -106.863
+      ],
+      "image_sha256": "f1c8e0f410bb616871cf7d3a34041ec60832dfd57efcb01be138edca91ea48a5",
+      "yellow_housing_bbox_xywh_px": [
+        244,
+        313,
+        196,
+        167
+      ],
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/raw/task/right_wrist/1214.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000005",
+      "phase": "lift",
+      "frame": 1275,
+      "aperture_mm": 42.6,
+      "q_deg": [
+        -10.587,
+        94.822,
+        -66.605,
+        0.0,
+        66.936,
+        -106.863
+      ],
+      "image_sha256": "2465f30b677d7ec3e5503543d5df327fa70da4c1bca6378e85603f67dd75e767",
+      "yellow_housing_bbox_xywh_px": [
+        244,
+        307,
+        192,
+        173
+      ],
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/raw/task/right_wrist/1275.jpg"
+    },
+    {
+      "episode": "20261116_real_repeatability_000005",
+      "phase": "align",
+      "frame": 1602,
+      "aperture_mm": 42.2,
+      "q_deg": [
+        43.312,
+        117.515,
+        -92.356,
+        0.0,
+        69.657,
+        -47.101
+      ],
+      "image_sha256": "8b7ed1cb54380c6ee5ccfdc05cb2a22edcdcc131250c072a33202c0470acc911",
+      "yellow_housing_bbox_xywh_px": [
+        245,
+        308,
+        190,
+        172
+      ],
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005/raw/task/right_wrist/1602.jpg"
+    }
+  ],
+  "conclusion": "Lowest-pose views are similar; successful trials settle to38.9/39.7mm after lift, versus44.5/42.6mm failures. Object-to-finger pose differs before insertion. Exact contact point/causal geometry remains unmeasured.",
+  "candidate": "Hold1Nm and current fixture XY/speed; test22mm grasp height instead of18mm, then observe retained pose; do not treat simulation contact forces as measured real torque."
+}

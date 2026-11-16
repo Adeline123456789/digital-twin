@@ -1,33 +1,53 @@
 {
-  "timestamp": "2026-11-16T11:52:56.780879+00:00",
+  "timestamp": "2026-11-16T12:52:55.559130+00:00",
   "planned_additional_real_trials": 15,
-  "completed_real_trials": 2,
+  "completed_real_trials": 5,
   "real_successes": 1,
-  "real_failures": 1,
-  "current_hardware_state": "Folded-zero enabled hold after successful attempt2; awaiting plug reset for attempt3",
-  "latest_user_reset_confirmed": false,
-  "status": "GRASP16_REAL_SUCCESS_AWAITING_RESET",
-  "reason_for_amendment": "User requested firm clamping at the lowest point after failure; measured plateau and near-limit motor effort do not support a missing close command. Test contact geometry within existing torque cap.",
-  "candidate": {
-    "change": "grasp_height_m .018 -> .016",
-    "unchanged": [
-      "holder XY",
-      "socket XY",
-      "grasp tilt0",
-      "gripper27mm target",
-      "gripper0.3Nm command limit",
-      "joint12deg/s",
-      "SDK15%",
-      "safety and success criteria"
-    ]
-  },
-  "source_knowledge_checked": "NE006 rejects global aperture-offset and timing-only calibration; no such correction applied",
-  "unmet_requests": [
-    "15-trial repeatability collection not completed",
-    "16mm candidate has one real success; repeatability unknown"
+  "real_failures": 4,
+  "success_rate": 0.2,
+  "attempt4_label": "FAILURE, corrected by operator; original false-positive retained",
+  "current_hardware_state": "Native controller disabled after attempt5 with operator support; not a live feedback assertion",
+  "latest_user_reset_confirmed": true,
+  "status": "GRASP22_SIMULATION_RUNNING",
+  "versions": [
+    {
+      "grasp_height_mm": 18,
+      "gripper_effort_nm": 0.3,
+      "successes": 0,
+      "attempts": 1
+    },
+    {
+      "grasp_height_mm": 16,
+      "gripper_effort_nm": 0.3,
+      "successes": 1,
+      "attempts": 2
+    },
+    {
+      "grasp_height_mm": 16,
+      "gripper_effort_nm": 1,
+      "successes": 0,
+      "attempts": 1
+    },
+    {
+      "grasp_height_mm": 18,
+      "gripper_effort_nm": 1,
+      "successes": 0,
+      "attempts": 1
+    }
   ],
-  "candidate_sim_episode": "20261116T114211Z_dc56f5b3",
-  "candidate16_successes": 1,
-  "candidate16_failures": 0,
-  "warm_reference_sha256": "4b4719f3fb95442aa59ce5d921b6e63af98aa7485fea025433d292597d5b0672"
+  "infrastructure_failures_before_task": 2,
+  "execution_time_s": 282.41982821782585,
+  "research_orchestration_tokens": null,
+  "accepted_metric_calibration": false,
+  "unmet_requests": [
+    "15-trial batch unfinished",
+    "No stable1Nm grasp/insertion demonstrated",
+    "No independent calibrated force/contact model"
+  ],
+  "next_candidate": {
+    "grasp_height_mm": 22,
+    "gripper_effort_nm": 1,
+    "reason": "Current-scene successful RGB contact/retention comparison",
+    "status": "SIMULATION_PENDING"
+  }
 }

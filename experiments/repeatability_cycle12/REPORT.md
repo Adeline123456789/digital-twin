@@ -1,7 +1,14 @@
 # Repeatability batch in progress
 
-Planned15 additional attempts. Attempt1 failed, preserved with1618 frames and full native verification. The initial cold-start trajectory has the same successful task parameters; task joint endpoints differ by less than0.001deg from the discovery success.
+Five of15 requested physical attempts are complete: **1 success,4 failures (20%)**. The earlier discovery success is excluded. Attempt4 was incorrectly labelled successful from final external RGB; the operator reports missed insertion, and insertion wrist RGB shows plug rotation. The label is corrected to failure everywhere in the formal Episode and public result, with prior labels preserved.
 
-The user identified inadequate bottom-pose grasp and requested correction before further repeats. Diagnosis shows an existing aperture plateau and near0.3Nm motor effort, followed by differing retention during lift. No missing close command or unique physical root cause is established. A2mm lower grasp is the next simulation hypothesis; torque/speed/safety unchanged. Candidate changes will be reported separately, not pooled as repetitions of one frozen version.
+| Grasp height | Effort setting | Batch successes/attempts |
+|---|---|---|
+|18mm|0.3N·m|0/1|
+|16mm|0.3N·m|1/2|
+|16mm|1N·m|0/1|
+|18mm|1N·m|0/1|
 
-Attempt2 succeeded using the16mm grasp candidate, with all native gates retained. Real grasp-end aperture47.9mm, lift39.7mm, transport39.0mm, insert39.1mm; released plug remained in target after fold. This is1/1 for the new candidate, not yet reliability evidence. The planned13 remaining trials will reuse the validated folded-zero16mm reference; the initial18mm failure remains a separate version.
+Versions differ; pooled20% is batch yield, not reliability of one frozen policy. Two startup failures before task motion are recorded separately and remain collection costs. All five Episodes retain videos, commands, feedback, outcomes and native validation in the existing local layout. Native training eligibility stays false.
+
+The explicit user-authorized1N·m command did not solve insertion. Successful lift apertures38.9/39.7mm contrast with44.5/42.6mm for attempts4/5; wrist RGB also differs before insertion. The exact contact point and metric physical cause remain UNKNOWN. A22mm grasp-height candidate is being validated, with current fixture XY,1N·m and arm speed unchanged. This is a contact-placement hypothesis, not an accepted digital-twin calibration.
