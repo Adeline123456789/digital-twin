@@ -1,0 +1,13 @@
+{
+  "version": "transport_ik_probe_right_v2",
+  "previous": "transport_ik_probe_v1",
+  "cycle": 9,
+  "cycle_completed": false,
+  "status": "ARM_LAYOUT_DIAGNOSTIC_FIX_VERIFIED",
+  "entry": "scripts/probe_transport_ik.py",
+  "evidence": "experiments/harness_cycle9/REPORT.md",
+  "active_policy_changed": false,
+  "physics_or_safety_changed": false,
+  "full_task_repair_verified": false,
+  "rollback": "Diagnostic is standalone opt-in; no active task policy was replaced"
+}

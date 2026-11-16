@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-16T07:44:10.916499+00:00",
+  "cycle": 9,
+  "batch_cycle_limit": 12,
+  "completed_cycles_before": 7,
+  "cycle8": "Board calibration preparation; actual board dimensions pending, not completed or replaced",
+  "baseline_commit": "83a141120759b8da0c908dd9d0d774458cac9a73",
+  "problem": "Right Agent excludes all prior experience; native IK probe slices dual-arm action layout; only offset action available despite earliest failures outside insertion",
+  "primary_change": "Wire existing retention and bounded native IK diagnostics into main right-arm feedback path; preserve original execution and safety controls",
+  "candidate": "opt-in diagnose_then_repair policy; no new framework",
+  "budget": {
+    "new_complete_sim_episodes": 3,
+    "native_ik_probe_batches": 2,
+    "execution_llm_calls": 2,
+    "max_llm_wall_seconds_per_call": 120,
+    "real_robot_motion": 0
+  },
+  "evaluation": "Current source and identical seed failure for baseline and candidate, same model and one repair execution each; report any extra diagnostics time. If seed is already successful or retention invalidates IK premise, stop that branch rather than manufacture failure.",
+  "scope": "Simulation-only tool/repair evaluation, not unseen-task-family generalization or real calibration",
+  "retention_gate": "Observed grasp loss takes precedence over later IK failure; no height/tilt repair promoted without full motion and complete recording",
+  "status": "PREPARATION"
+}

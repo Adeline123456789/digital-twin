@@ -25,6 +25,15 @@ def body_transform(sim, name):
     return transform
 
 
+def right_joint_seed(action, arms):
+    """Actions follow the active ArmLayout, seven entries per present arm."""
+    values=np.asarray(action,float)
+    if values.shape!=(7*len(arms),) or 'right' not in arms:
+        raise ValueError('Recorded action does not match the active robot layout')
+    start=arms.index('right')*7
+    return values[start:start+6].copy()
+
+
 def probe(ident, gaps, tilts=None):
     out,result=record('research_stage4','Native IK approach-height probes for '+ident,'offline_kinematic_simulation')
     started=time.monotonic()
@@ -47,7 +56,7 @@ def probe(ident, gaps, tilts=None):
         plug=body_transform(sim,'task/yellow_plug')
         socket=body_transform(sim,'task/strip')
         ik=PoseIK(sim)
-        native_seed=np.array(trace[-1]['action'][7:13])
+        native_seed=right_joint_seed(trace[-1]['action'],sim.arms)
         attempts=[]
         assert gaps[0]==native_report['preinsert_gap_m'], 'First probe must reproduce the saved baseline'
         native_goal=np.fromstring(native_report['error'].split('pose [')[1].split(']')[0],sep=' ')
