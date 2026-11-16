@@ -1,0 +1,130 @@
+{
+  "result": "success",
+  "task_success": null,
+  "probe_valid": true,
+  "reference_sha256": "8af605abb86b5a2e8c5b5b151e981f2d05f06a6266bcdc665957e42d8faf504e",
+  "privileged_information_used": true,
+  "real_commands": 0,
+  "all_substeps_valid": true,
+  "no_robot_task_contact": true,
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "wall_seconds": 137.33142478193622,
+  "max_penetration_m": 6.65099336778774e-07,
+  "prediction_sha256": "5e19e95fde04edc903905ec078dc32e2d083a02936db0de897c2f88ca223ea7a",
+  "experiment_id": "spatial_cycle6_probe_001",
+  "dataset_reference": "self_evolution/spatial_cycle6/probe_001",
+  "hardware_executed": false,
+  "decision": "SUPERSEDED_BEFORE_REAL: add Cartesian translation to reduce hand-eye scale/axial ambiguity",
+  "model": "deterministic MuJoCo",
+  "tokens": 0,
+  "manifest": {
+    "purpose": "noncontact_spatial_probe",
+    "trajectory_id": "8af605abb86b5a2e8c5b5b151e981f2d05f06a6266bcdc665957e42d8faf504e",
+    "task_sha256": "049740d64ea9859e78e3dad3f2350f0532f93967e0c90b3ea0201cdd64ecb124",
+    "program_sha256": "48dd51436169a4383122bc9417efed1e3716a7adb6038d8a653c68fad6354d67",
+    "joint_names": [
+      "right.joint1",
+      "right.joint2",
+      "right.joint3",
+      "right.joint4",
+      "right.joint5",
+      "right.joint6"
+    ],
+    "joint_unit": "degree",
+    "gripper_unit": "width_m/.095",
+    "speed_limit_deg_s": 12,
+    "initial_right_deg": [
+      0.0,
+      0.0,
+      0.0,
+      0.487,
+      23.4,
+      0.517
+    ],
+    "viewpoints": [
+      {
+        "name": "holder",
+        "gap": 0.13,
+        "q_deg": [
+          -7.926871367743849,
+          76.02308550478048,
+          -56.6382316212393,
+          0.00019110105297460785,
+          55.61148965929315,
+          -104.18550704046265
+        ],
+        "xyz_m": [
+          0.2922794865868125,
+          -0.3506987546973821,
+          0.1882
+        ],
+        "rotation": [
+          [
+            0.33875171535410087,
+            -0.9361310563161409,
+            -0.09437118598959021
+          ],
+          [
+            -0.047170481268233144,
+            -0.11707284997146347,
+            0.9920024664770162
+          ],
+          [
+            -0.9396926205103342,
+            -0.33159100289360505,
+            -0.08381638120579829
+          ]
+        ]
+      },
+      {
+        "name": "socket",
+        "gap": 0.1,
+        "q_deg": [
+          53.12679479474362,
+          106.24705088844748,
+          -84.11154275112895,
+          -19.414637969648137,
+          64.20822273383772,
+          -35.94732120511169
+        ],
+        "xyz_m": [
+          0.2941117512023881,
+          -0.031047363526757535,
+          0.1533
+        ],
+        "rotation": [
+          [
+            0.33875171535410087,
+            -0.9361310563161409,
+            -0.09437118598959021
+          ],
+          [
+            -0.047170481268233144,
+            -0.11707284997146347,
+            0.9920024664770162
+          ],
+          [
+            -0.9396926205103342,
+            -0.33159100289360505,
+            -0.08381638120579829
+          ]
+        ]
+      }
+    ],
+    "duration_s": 83.78,
+    "note": "No grasp/insert task. Open-gripper observation holds and return; privileged simulation validation."
+  }
+}
