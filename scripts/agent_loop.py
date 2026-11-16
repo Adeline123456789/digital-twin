@@ -26,15 +26,78 @@ def validate_plan(plan):
 def compatible_seed_history(profile, target, robot_arms='dual'):
     return robot_arms=='dual' and profile=='original' and str(target)=='3'
 
-def run(arm, shift, publish=True, planner_policy=None, seed_episode=None):
+
+def rejected_tilts(seed,memories):
+    scope=dict(task_config_sha256=seed.get('initial_state',{}).get('task_config_sha256'),
+        source_profile=seed['actions'][0].get('profile'),active_arms=seed.get('active_arms'),
+        native_sha256=seed.get('program_version',{}).get('source_sha256',{}).get('scripts/try_plug_pick_sim.py'))
+    return [m['exact_rejection']['value'] for m in memories if (m.get('exact_rejection') or {}).get('parameter')=='grasp_tilt_deg'
+            and all(value is not None and m['exact_rejection'].get(key)==value for key,value in scope.items())]
+
+
+def repair_diagnosis(seed):
+    """Expose existing trace/IK tools to the planner, without promoting a repair."""
+    from diagnose_retention import diagnose_episode
+    native=seed['observed_effects'][0]
+    retention=seed.get('causal_diagnosis') or diagnose_episode(seed)
+    context=dict(source_episode=seed['experiment_id'],retention=retention,
+        baseline=dict(offset_mm=seed['actions'][0]['offset_mm'][0],
+                      grasp_tilt_deg=native.get('grasp_tilt_deg',0.)),
+        allowed_grasp_tilt_deg=[],root_cause='UNKNOWN',privileged_information_used=True,
+        prior_failure_warnings=[{k:m.get(k) for k in ('id','content','applicability','source_profile','source_episodes','validation_status','exact_rejection')}
+                               for m in failure_memory(seed['observed_effects'])],
+        memory_scope='Failure warnings only. Different profiles/embodiments are analogies, not current-scene facts or replayable motions.')
+    context['rejected_grasp_tilt_deg']=rejected_tilts(seed,context['prior_failure_warnings'])
+    if retention['status']=='GRASP_RETENTION_LOSS_OBSERVED':
+        context['next_unknown']='Grasp loss precedes planning error; do not diagnose a new transport IK repair from the detached-object state.'
+    elif native.get('last_phase')=='transport' and 'Unreachable pose' in str(native.get('error')):
+        from probe_transport_ik import probe
+        baseline=context['baseline']['grasp_tilt_deg']
+        deltas=[0.]+[x-baseline for x in (-10.,-5.,0.,5.,10.) if x!=baseline and abs(x-baseline)<=10]
+        result=probe(seed['experiment_id'],[native['preinsert_gap_m']],deltas)
+        context.update(probe_experiment_id=result['experiment_id'],probe_result=result['result'],
+            diagnostic_seconds=result['execution_time'],counterfactual_limit=result.get('counterfactual_limit'))
+        if result['result']=='success':
+            context['ik_screen']=[{k:x[k] for k in ('hypothetical_grasp_tilt_delta_deg','ik_success','position_error_m','orientation_error_deg')}
+                                  for x in result['experiments']]
+            context['allowed_grasp_tilt_deg']=[baseline+x['hypothetical_grasp_tilt_delta_deg'] for x in result['experiments']
+                if x['ik_success'] and x['hypothetical_grasp_tilt_delta_deg']!=0
+                and baseline+x['hypothetical_grasp_tilt_delta_deg'] not in context['rejected_grasp_tilt_deg']]
+        else:context['probe_error']=result.get('error','UNKNOWN')
+    return context
+
+
+def validate_diagnostic_plan(plan,context):
+    keys={'offset_mm','grasp_tilt_deg','stop','hypotheses','predicted_effect','reason'}
+    if set(plan)-keys or sum(k in plan for k in ('offset_mm','grasp_tilt_deg','stop'))!=1:
+        raise ValueError('Choose one existing parameter or stop; no arbitrary commands')
+    if not isinstance(plan.get('hypotheses'),list) or len(plan['hypotheses'])>3:
+        raise ValueError('Provide at most three hypotheses')
+    if 'stop' in plan:
+        if plan['stop'] is not True:raise ValueError('Stop must be true')
+        return None
+    if 'offset_mm' in plan:
+        value=validate_plan(plan);parameter='offset_mm'
+    else:
+        value=plan['grasp_tilt_deg'];parameter='grasp_tilt_deg'
+        if (isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value)
+            or not -10<=value<=10 or value not in context['allowed_grasp_tilt_deg']):
+            raise ValueError('Grasp tilt must have current-source native IK screening evidence')
+    case=dict(context['baseline']);case[parameter]=value;case['repair_parameter']=parameter
+    if parameter=='offset_mm' and case['grasp_tilt_deg']==0:case.pop('grasp_tilt_deg')
+    return case
+
+
+def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_executions=2):
+    if max_executions not in (1,2):raise ValueError('Execution budget must be one or two')
     robot_arms=os.environ.get('PIPER_ACTIVE_ARMS','dual')
     if robot_arms not in ('dual','right'):raise ValueError('Physical simulation arms must be dual or right')
     out,r=record('evaluation',f'Luna {arm} executable repair loop; target {os.environ.get("PIPER_TARGET_INDEX","3")}; holder shift {shift} mm','llm_driven_simulation')
     r['model']=os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna');r['runner_sha256']=digest(__file__)
     local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
-    started=time.monotonic();calls=[];trials=[]
+    started=time.monotonic();calls=[];trials=[];diagnoses=[]
     policy=planner_policy or json.loads((ROOT/'evolution/active.json').read_text()).get('planner_policy','llm')
-    if arm!='D' or robot_arms=='right':policy='llm'
+    if arm!='D' or (robot_arms=='right' and policy=='compiled_alignment_v1'):policy='llm'
     r['actual_planner_policy']=policy
     # Use historical evidence only when task and source profile match.
     seed=json.loads((ROOT/'experiments/baseline/20261111T083720Z_f64309a8/result.json').read_text())
@@ -59,7 +122,10 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None):
            'initial_state':'Existing scene with requested holder initial X position; no physical parameters changed',
            'previous_action':seed['actions'] if seed_compatible else [],'previous_observation':seed['observed_effects'] if seed_compatible else [],
            'root_cause':'UNKNOWN; this is simulation evidence, not a verified real cause'}
-    prompt='Do not use tools or read files. Choose ONE next experiment using the existing simulation adapter. Return only JSON with offset_mm (finite number [-4,4]), hypotheses (0 to 3 short hypotheses), predicted_effect, reason. No shell or hardware commands. Offset is XY target X correction in socket coordinates; only this variable can change. Budget: two simulated executions. Task facts:'+json.dumps(facts)
+    action_spec=('Return only JSON with exactly ONE of offset_mm (finite [-4,4]), grasp_tilt_deg (one screened absolute angle), or stop:true; plus hypotheses (0 to3), predicted_effect and reason. Change one existing parameter. Screened IK is only a hypothesis: actual grasp/transport/insertion must be tested. Stop if no supported low-cost next experiment exists.'
+                 if policy=='diagnose_then_repair' else
+                 'Return only JSON with offset_mm (finite number [-4,4]), hypotheses (0 to 3 short hypotheses), predicted_effect, reason. Offset is XY target X correction in socket coordinates; only this variable can change.')
+    prompt='Do not use tools or read files. Choose ONE next experiment using the existing simulation adapter. No shell or hardware commands. '+action_spec+f' Budget: {max_executions} simulated executions. Task facts:'+json.dumps(facts)
     if arm in 'BCD':prompt+='\n'+(ROOT/'protocol/robot_problem_solving.md').read_text()
     if arm in 'CD' and robot_arms=='dual':prompt+='\nApplicable verified result-checking skills:'+json.dumps([m for m in retrieve('plug_not_seated') if m['validation_status']=='SIMULATION_VERIFIED'])
     if seed_episode:
@@ -68,31 +134,39 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None):
         prompt+='\nCoordinate contract:'+json.dumps(frame_contract(seed['experiment_id'],shift,seed['initial_state'].get('holder_x_shift_mm',0)))
     context=context_for(seed,shift) if policy=='compiled_alignment_v1' and seed_compatible else {}
     if context:prompt+='\nTyped applicability evidence:'+json.dumps(context)
-    r['initial_state']={'target_index':int(os.environ.get('PIPER_TARGET_INDEX','3')),'mode':facts['mode'],'arm':arm,'robot_arms':robot_arms,'holder_shift_mm':shift,'execution_budget':2,'llm_call_budget':2,'seed_failure':seed['experiment_id'] if seed_compatible else None,'incompatible_history_excluded':not seed_compatible}
+    r['initial_state']={'target_index':int(os.environ.get('PIPER_TARGET_INDEX','3')),'mode':facts['mode'],'arm':arm,'robot_arms':robot_arms,'holder_shift_mm':shift,'execution_budget':max_executions,'llm_call_budget':max_executions,'seed_failure':seed['experiment_id'] if seed_compatible else None,'incompatible_history_excluded':not seed_compatible}
     seen=set()
     try:
+        if policy=='diagnose_then_repair':
+            if not seed_compatible:raise ValueError('Diagnostic policy requires a compatible recorded failure')
+            context=repair_diagnosis(seed);diagnoses.append(context)
+            prompt+='\nMeasured diagnostic evidence and scoped prior failures:'+json.dumps(context)
         call=plan_with_memory(prompt,local,policy,context,include_catalog=robot_arms!='right');calls.append(call)
-        for step in range(2):
+        for step in range(max_executions):
             if call['tool_events']:raise ValueError('Unexpected tool use in planner; trial not executed')
-            offset=validate_plan(call['answer'])
-            fingerprint=(shift,offset)
+            if policy=='diagnose_then_repair':
+                case=validate_diagnostic_plan(call['answer'],context)
+                if case is None:r['stopped_unknown']=True;break
+            else:case={'offset_mm':validate_plan(call['answer'])}
+            offset=case['offset_mm'];fingerprint=(shift,offset,case.get('grasp_tilt_deg',0.))
             if arm=='D' and fingerprint in seen:
                 r['repeat_prevented']=True
                 break
             from benchmark_collection import run_case
-            trial=run_case(dict(name=f'{r["experiment_id"]} action {step+1}',offset_mm=offset,shift_mm=shift),
+            trial=run_case(dict(case,name=f'{r["experiment_id"]} action {step+1}',shift_mm=shift),
                 inline=os.environ.get('PIPER_SIM_PROFILE','original')=='original',label=f'Agent {arm}',kind='evaluation',publish=publish)
-            trials.append({'experiment_id':trial['experiment_id'],'offset_mm':offset,'task_success':trial['task_success'],
+            trials.append({'experiment_id':trial['experiment_id'],'offset_mm':offset,'grasp_tilt_deg':case.get('grasp_tilt_deg',0.),'task_success':trial['task_success'],
                 'result':trial['result'],'observed_effects':trial['observed_effects'],'simulation_seconds':trial.get('simulation_seconds'),
                 'execution_time':trial['execution_time'],'collection_component_seconds':trial['collection_component_seconds'],
                 'recording_verified':trial['recording_verified'],'causal_diagnosis':trial.get('causal_diagnosis')})
             if not trial['recording_verified']:raise RuntimeError('Physical trial preserved but complete recording not verified')
             if trial['task_success'] or trial['result']=='infrastructure_error':break
             seen.add(fingerprint)
-            if step==0 and arm=='D':
+            if step+1<max_executions and arm=='D':
                 feedback={'actual_execution':trials[-1],'relevant_prior_failures':failure_memory(trial['observed_effects']) if robot_arms=='dual' else [],'failed_offsets':sorted(x[1] for x in seen),'instruction':'Use actual evidence to update hypotheses. Do not repeat the same failed offset without new evidence.'}
                 if seed_episode:feedback['precontact_observation']=precontact_observation(trial['experiment_id'])
                 context=context_for(trial,shift) if policy=='compiled_alignment_v1' and seed_compatible else {}
+                if policy=='diagnose_then_repair':context=repair_diagnosis(trial);diagnoses.append(context)
                 call=plan_with_memory(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback)+'\nTyped applicability evidence:'+json.dumps(context),local,policy,context,include_catalog=robot_arms!='right');calls.append(call)
             # A/B/C remain fixed-policy after planning; retries consume the same execution ceiling.
         r.update(result='success' if any(t['task_success'] for t in trials) else 'failure',
@@ -100,7 +174,7 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None):
             experiments=trials,actions=[c['answer'] for c in calls],planner_calls=calls,
             hypotheses=calls[-1]['answer'].get('hypotheses',[]),
             tokens={k:sum(c['usage'].get(k,0) for c in calls if c['usage']) for k in ['input_tokens','output_tokens','cached_input_tokens']},
-            repeated_failures=sum(t['task_success'] is False and i>0 and t['offset_mm']==trials[i-1]['offset_mm'] for i,t in enumerate(trials)),
+            repeated_failures=sum(t['task_success'] is False and i>0 and (t['offset_mm'],t['grasp_tilt_deg'])==(trials[i-1]['offset_mm'],trials[i-1]['grasp_tilt_deg']) for i,t in enumerate(trials)),
             new_skills=0,lessons_learned=['Actual model-selected actions were physically executed; no hardware or physics parameter changes.'],
             next_improvement='Evaluate more failure types; an unseen initial state is not an unseen task family')
         r['limitations']=['Small sample of one task family; no unseen task-family capability claim',
@@ -110,12 +184,15 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None):
     except Exception as exc:
         r['error']=str(exc);r['experiments']=trials;r['planner_calls']=calls
     finally:
+        r['diagnostic_contexts']=diagnoses
         r['execution_time']=time.monotonic()-started
         finish(out,r)
-        if publish:subprocess.run([sys.executable,str(ROOT/'scripts/publish.py'),'--message','Record executable Agent loop '+r['experiment_id'],str(out.relative_to(ROOT))],check=True)
+        if publish:
+            paths=[str(out.relative_to(ROOT))]+['experiments/research_stage4/'+d['probe_experiment_id'] for d in diagnoses if 'probe_experiment_id' in d]
+            subprocess.run([sys.executable,str(ROOT/'scripts/publish.py'),'--message','Record executable Agent loop '+r['experiment_id'],*paths],check=True)
     return r
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--robot-arms',choices=['dual','right'],default='dual');p.add_argument('--seed-episode');p.add_argument('--arm',choices=list('ABCD'),required=True);p.add_argument('--shift-mm',type=float,default=.5);p.add_argument('--local-only',action='store_true');p.add_argument('--planner-policy',choices=['llm','compiled_alignment_v1']);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--robot-arms',choices=['dual','right'],default='dual');p.add_argument('--seed-episode');p.add_argument('--arm',choices=list('ABCD'),required=True);p.add_argument('--shift-mm',type=float,default=.5);p.add_argument('--local-only',action='store_true');p.add_argument('--planner-policy',choices=['llm','compiled_alignment_v1','diagnose_then_repair']);p.add_argument('--max-executions',type=int,choices=[1,2],default=2);a=p.parse_args()
     os.environ['PIPER_ACTIVE_ARMS']=a.robot_arms
-    run(a.arm,a.shift_mm,not a.local_only,a.planner_policy,a.seed_episode)
+    run(a.arm,a.shift_mm,not a.local_only,a.planner_policy,a.seed_episode,a.max_executions)

@@ -1,0 +1,119 @@
+{
+  "experiment_id": "cycle9_diagnostic_harness",
+  "timestamp": "2026-11-16T09:28:53.735867+00:00",
+  "cycle": 9,
+  "total_cycle_limit": 12,
+  "completed_cycles": 9,
+  "result": "failure",
+  "task_success": false,
+  "model": "gpt-6-luna requested API model",
+  "task": "Wire current diagnostic tools into actual Agent and evaluate one bounded repair",
+  "environment": "simulation",
+  "privileged_information_used": true,
+  "comparison": [
+    {
+      "policy": "baseline",
+      "agent_run": "20261116T091216Z_1002d5f2",
+      "episode": "20261116T091231Z_48da6f78",
+      "task_success": false,
+      "recording_verified": true,
+      "tokens": {
+        "input_tokens": 16973,
+        "output_tokens": 131,
+        "cached_input_tokens": 0
+      },
+      "model_wall_seconds": 14.623803876922466,
+      "loop_wall_seconds": 33.880585865001194,
+      "collection_seconds": 19.119898870936595,
+      "simulation_seconds": 5.2,
+      "speed_deg_s": 12.0,
+      "grasp_tilt_deg": 0.0,
+      "earliest_observed_failure": "transport IK; retention UNKNOWN",
+      "verification": "experiments/evaluation/20261116T091250Z_d8a082cb",
+      "program_sha256": "0a70197a21303a4b84a89cbdc1800bedf131e24877121fbd36b45aa41a4116bb"
+    },
+    {
+      "policy": "candidate",
+      "agent_run": "20261116T091440Z_53489a1a",
+      "episode": "20261116T091456Z_1b263f34",
+      "task_success": false,
+      "recording_verified": true,
+      "tokens": {
+        "input_tokens": 18256,
+        "output_tokens": 122,
+        "cached_input_tokens": 7168
+      },
+      "model_wall_seconds": 14.311031133052893,
+      "loop_wall_seconds": 36.65539114794228,
+      "collection_seconds": 20.465245348983444,
+      "simulation_seconds": 5.466666666666667,
+      "speed_deg_s": 12.0,
+      "grasp_tilt_deg": -10.0,
+      "earliest_observed_failure": "transport IK; retention UNKNOWN",
+      "verification": "experiments/evaluation/20261116T091516Z_c43ccd4f",
+      "program_sha256": "0a70197a21303a4b84a89cbdc1800bedf131e24877121fbd36b45aa41a4116bb"
+    }
+  ],
+  "fairness": {
+    "passed": false,
+    "initial_state_max_difference": {
+      "qpos": 0.20716572629004493,
+      "qvel": 0.0,
+      "ctrl": 0.20716572629004493
+    },
+    "reason": "Native program initializes at tilt-dependent IK approach unless --start-right-deg is supplied. Same task config did not imply same robot state.",
+    "consequence": "Raw outcomes0/1 and0/1 retained; no strict paired efficiency or success gain claim.",
+    "next_fix": "Use the existing explicit common joint entry and --stop-after-lift diagnostic prefix, not virtual grasp rotation."
+  },
+  "probe_experiment": "20261116T091440Z_d132a930",
+  "probe_seconds": 1.5316939289914444,
+  "counterfactual_check": {
+    "method": "Restore saved native lift-end states; compare counterfactual rotated original grasp with actually executed regrasp. No new rollout/optimization.",
+    "source_episodes": [
+      "20261116T074428Z_67e27d74",
+      "20261116T091456Z_1b263f34"
+    ],
+    "privileged_information_used": true,
+    "reference": "current original right-arm profile only",
+    "relative_grasp_translation_m": 0.007677018804144426,
+    "relative_grasp_rotation_deg": 5.343374753292587,
+    "screened_vs_actual_goal_distance_m": 0.007113169633440806,
+    "screened_ik_success": true,
+    "actual_transport_ik_success": false,
+    "root_cause": "Actual post-grasp object/gripper state differs from hypothetical rotation-only probe",
+    "root_cause_status": "verified_counterfactual_mismatch; unique physical cause of original IK failure UNKNOWN",
+    "parameters_changed": 0,
+    "hardware_commands": 0,
+    "evidence": {
+      "self_evolution/20261116T074428Z_67e27d74/final_state.npz": "f600e75d556dfad3db92af0d4408c6a00e2282e911ec5a583e39ab2dbfc00133",
+      "self_evolution/20261116T074428Z_67e27d74/task.yaml": "c0251dafaff2ff3121084cbbb976705a1a44a888df0844137f1f4531746a30a0",
+      "self_evolution/20261116T074428Z_67e27d74/trajectory.jsonl": "647c717c6aadb548a33a53baa8ee3afb8193c0c3f73f6cc8ad662acabbb62004",
+      "self_evolution/20261116T091456Z_1b263f34/final_state.npz": "41ed011bde58d3bc54573cfd530e41746cdd355c4fb08db5ab7a2ca5a365b4c2",
+      "self_evolution/20261116T091456Z_1b263f34/task.yaml": "bb2f63ed0a56c366c48ef17f2bd2002c61f3c27919193151d595b4452757e3f1",
+      "self_evolution/20261116T091456Z_1b263f34/trajectory.jsonl": "8e27e31d93bc1f9b70a3cec665b62de15ebc87a50bffec2124eabe70bd7461db"
+    }
+  },
+  "active_policy": "llm",
+  "candidate_promoted": false,
+  "new_skills": 0,
+  "successful_complete_episodes": 0,
+  "new_complete_episodes_in_cycle": 3,
+  "execution_model_calls": 2,
+  "execution_model_total_tokens": 35482,
+  "research_orchestrator_tokens": null,
+  "unit_success_cost": null,
+  "human_experiment_interventions": 0,
+  "program_version": {
+    "evaluated_agent_sha256": "0a70197a21303a4b84a89cbdc1800bedf131e24877121fbd36b45aa41a4116bb",
+    "post_feedback_agent_sha256": "eb57fa8d45e07869e2e3f6eb159b8e0defcec0e8738509862a98875b53d6f5b2"
+  },
+  "post_feedback_change": "NE016 exact-scoped rejection of already failed angle; unit/current-memory checks only, no extra full rollout",
+  "software_checks": {
+    "passed": 16,
+    "first_run_failure": "Legacy test compared .012 and0.012 as strings; changed assertion to numeric equality without changing the expected value",
+    "final_log_sha256": "95549bb20ea8589fbd02372703dfdc7ffded4b255e7308d2d22908e1306efd9e"
+  },
+  "next_improvement": "User reprioritized completion of the full sim-to-real collection flow; stop extending the harness. Use existing full native trajectory and only necessary registration corrections.",
+  "root_cause": "UNKNOWN for original real grasp failure; verified counterfactual grasp mismatch and comparison initialization defect",
+  "validation_status": "HARNESS_TOOL_ROUTE_VERIFIED; TASK_REPAIR_FAILED; STRICT_COMPARISON_INVALID"
+}

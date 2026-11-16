@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "initial_state_max_difference": {
+    "qpos": 0.20716572629004493,
+    "qvel": 0.0,
+    "ctrl": 0.20716572629004493
+  },
+  "reason": "Native program initializes at tilt-dependent IK approach unless --start-right-deg is supplied. Same task config did not imply same robot state.",
+  "consequence": "Raw outcomes0/1 and0/1 retained; no strict paired efficiency or success gain claim.",
+  "next_fix": "Use the existing explicit common joint entry and --stop-after-lift diagnostic prefix, not virtual grasp rotation."
+}

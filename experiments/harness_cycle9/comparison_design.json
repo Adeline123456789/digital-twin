@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-11-16T09:12:16.759372+00:00",
+  "seed": "20261116T074428Z_67e27d74",
+  "model": "gpt-6-luna",
+  "model_identity_scope": "Requested API model; backend identity not independently verifiable",
+  "planner_profile": "codex_default",
+  "robot_arms": "right",
+  "source_profile": "original",
+  "target_index": 1,
+  "holder_shift_mm": 0,
+  "order": [
+    "llm",
+    "diagnose_then_repair"
+  ],
+  "per_policy_budget": {
+    "model_calls": 1,
+    "complete_sim_executions": 1,
+    "model_timeout_seconds": 120
+  },
+  "candidate_extra_budget": {
+    "native_ik_batches": 1,
+    "candidate_angles_deg": [
+      0,
+      -10,
+      -5,
+      5,
+      10
+    ]
+  },
+  "primary_outcome": "Independent native task success AND complete Episode recording",
+  "secondary_outcomes": [
+    "earliest observed failure",
+    "repeat of seed failure phase",
+    "measured token usage",
+    "model wall time",
+    "collection time",
+    "added numeric diagnostic cost"
+  ],
+  "unchanged": [
+    "native speed12deg/s",
+    "native dynamics/scene",
+    "complete collector",
+    "independent success and collision limits"
+  ],
+  "limitation": "Integrated diagnostic/action-interface change: cannot isolate information from action-space expansion; N=1 paired failure; no unseen task-family claim. Retain candidate as optional tool only unless full repair and later independent verification pass.",
+  "runner_sha256": "0a70197a21303a4b84a89cbdc1800bedf131e24877121fbd36b45aa41a4116bb",
+  "tests_log_sha256": "2065cbaacf58cdcb7f6dd598b95fc20b616368ea765553d835456c18007a73bd",
+  "baseline_agent_run": "20261116T091216Z_1002d5f2",
+  "baseline_physical_episode": "20261116T091231Z_48da6f78"
+}

@@ -1,22 +1,14 @@
 {
   "cycle": 9,
-  "status": "IN_PROGRESS_NOT_EVALUATED",
-  "completed_cycles": 8,
+  "status": "CLOSED_FAILED_REPAIR_AND_FAIRNESS_AUDIT",
+  "completed_cycles": 9,
   "total_cycle_limit": 12,
-  "source_episode": "20261116T074428Z_67e27d74",
-  "verification_experiment": "20261116T074447Z_47159f6b",
-  "ik_probe": "20261116T074607Z_22780415",
   "budgets_used": {
-    "sim_episodes": 1,
-    "ik_batches": 1,
-    "execution_llm_calls": 0
-  },
-  "budgets_remaining": {
-    "sim_episodes": 2,
-    "ik_batches": 1,
+    "sim_episodes": 3,
+    "ik_batches": 2,
     "execution_llm_calls": 2
   },
-  "main_agent_wiring_completed": false,
+  "main_agent_wiring_completed": true,
   "active_policy_changed": false,
   "full_repair_verified": false
 }

@@ -1,0 +1,14 @@
+{
+  "version": "diagnose_then_repair_v1",
+  "cycle": 9,
+  "status": "OPTIONAL_DIAGNOSTIC_ONLY_NOT_PROMOTED",
+  "previous": "transport_ik_probe_right_v2",
+  "entry": "scripts/agent_loop.py --planner-policy diagnose_then_repair",
+  "evidence": "experiments/harness_cycle9/result.json",
+  "evaluated_program_sha256": "0a70197a21303a4b84a89cbdc1800bedf131e24877121fbd36b45aa41a4116bb",
+  "retained_program_sha256": "eb57fa8d45e07869e2e3f6eb159b8e0defcec0e8738509862a98875b53d6f5b2",
+  "active_policy_changed": false,
+  "physics_or_safety_changed": false,
+  "rollback": "Existing default llm route remains active; do not select opt-in diagnostic policy for collection gains",
+  "post_feedback_check": "Exact failure rejection verified; not a new successful physical repair"
+}

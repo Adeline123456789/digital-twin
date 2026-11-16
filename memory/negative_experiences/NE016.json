@@ -1,0 +1,40 @@
+{
+  "id": "NE016",
+  "version": 1,
+  "content": "In the current original right-arm scene, a virtual-rotation minus10deg grasp passed static transport IK, but executing that grasp still failed transport IK. Its post-grasp transform differed7.677mm/5.343deg from the counterfactual, shifting the actual target7.113mm. Do not repeat this exact repair without a changed, validated condition.",
+  "applicability": "Exact task config, active arms, simulator native program hash and original profile below; other scenes remain unverified analogies",
+  "source_profile": "original",
+  "active_arms": [
+    "right"
+  ],
+  "source_episodes": [
+    "20261116T074428Z_67e27d74",
+    "20261116T091456Z_1b263f34"
+  ],
+  "validation_status": "SIMULATION_FAILED_REPAIR",
+  "success_count": 0,
+  "failure_count": 1,
+  "count_scope": "One complete recorded candidate execution",
+  "signatures": [
+    "transport_ik_failure"
+  ],
+  "ineffective_repairs": [
+    "rotation_only_counterfactual_minus10_grasp"
+  ],
+  "exact_rejection": {
+    "task_config_sha256": "157822822f0a5bde39de872a8dbf1bc988f363d2d536ff20118388f521d07594",
+    "source_profile": "original",
+    "active_arms": [
+      "right"
+    ],
+    "native_sha256": "fe9064eef02aecafb12881288340574a9759b3203779dcb111889b74ce2dc3c4",
+    "parameter": "grasp_tilt_deg",
+    "value": -10
+  },
+  "limitations": [
+    "Unique physical cause of original transport infeasibility remainsUNKNOWN",
+    "Paired robot initialization was not identical",
+    "No real transfer or global ban on other embodiments"
+  ],
+  "evidence": "experiments/harness_cycle9/counterfactual_check.json"
+}

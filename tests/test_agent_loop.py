@@ -33,13 +33,13 @@ class RetainedProfileTests(unittest.TestCase):
                 learn.simulate('evaluation',0,.25,'invalid tilt check',grasp_tilt_deg=11.)
             command=next(c for c in calls if '--grasp-roll-deg' in c)
             self.assertEqual(command[command.index('--speed')+1],'25')
-            self.assertEqual(command[command.index('--grasp-height')+1],'.012')
+            self.assertEqual(float(command[command.index('--grasp-height')+1]),.012)
             self.assertEqual(command[command.index('--align-corrections')+1],'4')
             modified=[c for c in calls if '--grasp-tilt-deg' in c]
             self.assertEqual(len(modified),1)
             self.assertEqual(modified[0][modified[0].index('--grasp-tilt-deg')+1],'5.0')
             self.assertEqual(modified[0][modified[0].index('--speed')+1],'25')
-            self.assertEqual(modified[0][modified[0].index('--grasp-height')+1],'.012')
+            self.assertEqual(float(modified[0][modified[0].index('--grasp-height')+1]),.012)
 
 class FeedbackMemoryTests(unittest.TestCase):
     def test_transport_failure_retrieves_previous_ineffective_repair(self):

@@ -1,0 +1,26 @@
+{
+  "method": "Restore saved native lift-end states; compare counterfactual rotated original grasp with actually executed regrasp. No new rollout/optimization.",
+  "source_episodes": [
+    "20261116T074428Z_67e27d74",
+    "20261116T091456Z_1b263f34"
+  ],
+  "privileged_information_used": true,
+  "reference": "current original right-arm profile only",
+  "relative_grasp_translation_m": 0.007677018804144426,
+  "relative_grasp_rotation_deg": 5.343374753292587,
+  "screened_vs_actual_goal_distance_m": 0.007113169633440806,
+  "screened_ik_success": true,
+  "actual_transport_ik_success": false,
+  "root_cause": "Actual post-grasp object/gripper state differs from hypothetical rotation-only probe",
+  "root_cause_status": "verified_counterfactual_mismatch; unique physical cause of original IK failure UNKNOWN",
+  "parameters_changed": 0,
+  "hardware_commands": 0,
+  "evidence": {
+    "self_evolution/20261116T074428Z_67e27d74/final_state.npz": "f600e75d556dfad3db92af0d4408c6a00e2282e911ec5a583e39ab2dbfc00133",
+    "self_evolution/20261116T074428Z_67e27d74/task.yaml": "c0251dafaff2ff3121084cbbb976705a1a44a888df0844137f1f4531746a30a0",
+    "self_evolution/20261116T074428Z_67e27d74/trajectory.jsonl": "647c717c6aadb548a33a53baa8ee3afb8193c0c3f73f6cc8ad662acabbb62004",
+    "self_evolution/20261116T091456Z_1b263f34/final_state.npz": "41ed011bde58d3bc54573cfd530e41746cdd355c4fb08db5ab7a2ca5a365b4c2",
+    "self_evolution/20261116T091456Z_1b263f34/task.yaml": "bb2f63ed0a56c366c48ef17f2bd2002c61f3c27919193151d595b4452757e3f1",
+    "self_evolution/20261116T091456Z_1b263f34/trajectory.jsonl": "8e27e31d93bc1f9b70a3cec665b62de15ebc87a50bffec2124eabe70bd7461db"
+  }
+}
