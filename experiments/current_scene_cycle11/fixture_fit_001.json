@@ -1,0 +1,57 @@
+{
+  "results": [
+    {
+      "region": "holder",
+      "delta_xy_mm": [
+        3.6344020849170544,
+        -15.007672251561145
+      ],
+      "delta_yaw_deg": -4.398638570492826,
+      "baseline_corner_rmse_px": [
+        60.81180257275603,
+        60.55222954202323
+      ],
+      "candidate_corner_rmse_px": [
+        4.458672834217642,
+        11.144831695845818
+      ],
+      "heldout_pixel_gate_passed": false,
+      "active_bounds": [
+        0,
+        0,
+        0
+      ],
+      "train_phase": "holder_center_hold",
+      "heldout_phase": "holder_alternate_center_hold"
+    },
+    {
+      "region": "socket",
+      "delta_xy_mm": [
+        4.327010365009351,
+        0.4351617112629078
+      ],
+      "delta_yaw_deg": -1.9292541045924063,
+      "baseline_corner_rmse_px": [
+        18.517177834801213,
+        14.519496107331856
+      ],
+      "candidate_corner_rmse_px": [
+        9.168631121081305,
+        22.25202683210379
+      ],
+      "heldout_pixel_gate_passed": false,
+      "active_bounds": [
+        0,
+        0,
+        0
+      ],
+      "train_phase": "socket_center_hold",
+      "heldout_phase": "socket_alternate_center_hold"
+    }
+  ],
+  "scope": "Known native fixture geometry, fixed table height and current RGB; one view fit, one view check. No physical calibration claim or deployment.",
+  "source_episode": "20261116_real_current_location_000002",
+  "camera_candidate_hash": "67be70bac70ba97800f4a5fae21738a5b4dbdc8a256188604dc6ffe8123ef0e5",
+  "private_fit_sha256": "91ee7407dbcfb2cc96f1b91b1ac791572377618de210fadb2d0d90affefdd368",
+  "hardware_commands": 0
+}

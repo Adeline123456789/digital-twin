@@ -107,7 +107,10 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
                 raise ValueError('Simulation grasp height must be finite and between 10 and 25 mm')
             grasp_height = grasp_height_m
         config_name='real_connector_final.yaml' if retained else 'real_connector_calibrated.yaml'
-        cfg=yaml.safe_load((SIM/'configs/tasks'/config_name).read_text())
+        config_path=Path(os.environ.get('PIPER_TASK_CONFIG',SIM/'configs/tasks'/config_name))
+        cfg=yaml.safe_load(config_path.read_text())
+        if 'PIPER_TASK_CONFIG' in os.environ:
+            r['scene_candidate']={'task_sha256':digest(config_path),'scope':'Explicit local candidate; not an accepted calibration or default change'}
         target_index=int(os.environ.get('PIPER_TARGET_INDEX',cfg['target_index']))
         if target_index not in (1,2,3):raise ValueError('Target must be an existing AC outlet 1, 2 or 3')
         cfg['target_index']=target_index

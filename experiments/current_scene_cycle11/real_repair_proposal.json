@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-16T10:34:33.226050+00:00",
+  "candidate": "holder_translation_only",
+  "translation_mm": [
+    3.6344020849170544,
+    -15.007672251561145
+  ],
+  "provenance": "Current holder RGB rectangle; orientation-corrected camera proposal. Metric fixture gate failed and is NOT promoted.",
+  "hypothesis": "A bounded local holder-position repair can recover grasp despite unresolved absolute camera calibration.",
+  "changed": "Holder XY position in per-invocation simulation candidate only",
+  "unchanged": [
+    "Holder yaw and height",
+    "Socket position",
+    "Camera/default calibration",
+    "Robot/safety/velocity/physics",
+    "Task success detector"
+  ],
+  "validation": "Complete native simulation and frozen-reference replay, then one authorized real attempt; independently observe grip/lift and abort under existing controller rules",
+  "status": "EXPERIMENTAL_TASK_REPAIR_NOT_CALIBRATION"
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-16T10:48:46.333550+00:00",
+  "candidate": "retain_successful_grasp_adjust_socket_xy",
+  "translation_mm": [
+    4.327010365009351,
+    0.4351617112629078
+  ],
+  "source": "Current cycle10 RGB plane-fit proposal; metric acceptance gate failed, not a calibration",
+  "real_feedback": "Cycle11 first attempt retained38.8mm aperture through lift/transport/align; insertion increased aperture to43.7mm and triggered original visual stop; later dropped in fold",
+  "changed": "Only socket XY relative to the first tested scene",
+  "unchanged": [
+    "Working holder correction",
+    "Grasp height/tilt",
+    "Socket yaw and height",
+    "Controller/safety/speed",
+    "Success and slip detectors"
+  ],
+  "required_initial_state": "User resets dropped plug to holder. Folded enabled robot held by existing controller; native handoff verifies entry before any new movement.",
+  "status": "SIMULATE_BEFORE_REAL_SECOND_ATTEMPT"
+}

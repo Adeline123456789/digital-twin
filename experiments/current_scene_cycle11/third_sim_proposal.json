@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-11-16T10:53:01.564299+00:00",
+  "candidate": "socket_xy_with_18mm_grasp_height",
+  "changed_from_second_sim": "Grasp contact height20\u219218mm",
+  "reason": "Native aligned grasp goal hits unchanged J5 upper bound69.90085deg. Reduce required gripper height by2mm; do not relax IK/safety limits.",
+  "scope": "Bounded task-program candidate; successful holder XY correction retained; real insertion still unverified"
+}

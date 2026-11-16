@@ -1,0 +1,44 @@
+{
+  "candidate": "wrist_optical_xz_rotation_only",
+  "delta_deg": [
+    3.3844696582824594,
+    4.584737987542282
+  ],
+  "translation_changed": false,
+  "intrinsics_changed": false,
+  "optimizer_success": true,
+  "nfev": 128,
+  "comparisons": [
+    {
+      "phase": "holder_center_hold",
+      "split": "train",
+      "baseline_iou": 0.5270995781669436,
+      "candidate_iou": 0.7793931411782584
+    },
+    {
+      "phase": "holder_alternate_center_hold",
+      "split": "heldout",
+      "baseline_iou": 0.5155203321068025,
+      "candidate_iou": 0.76248821866164
+    },
+    {
+      "phase": "socket_center_hold",
+      "split": "heldout",
+      "baseline_iou": 0.5316500143646056,
+      "candidate_iou": 0.7856131837023557
+    },
+    {
+      "phase": "socket_alternate_center_hold",
+      "split": "heldout",
+      "baseline_iou": 0.5149195193122275,
+      "candidate_iou": 0.7629039441777602
+    }
+  ],
+  "source_episode": "20261116_real_current_location_000002",
+  "hardware_commands": 0,
+  "calibration_deployed": false,
+  "scope": "Current finger-CAD silhouette alignment only; not independent metric calibration",
+  "seconds": 0.9946834240108728,
+  "program_sha256": "332401f2eb6d537be9c17f743e27a7cd869f838bef15f2c8619a463d2cf2e600",
+  "private_mount_sha256": "67be70bac70ba97800f4a5fae21738a5b4dbdc8a256188604dc6ffe8123ef0e5"
+}

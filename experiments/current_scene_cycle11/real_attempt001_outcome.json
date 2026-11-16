@@ -1,0 +1,69 @@
+{
+  "frames": 1653,
+  "steps": 5508,
+  "trajectory_seconds": 55.06666666693683,
+  "max_joint_speed_deg_s": 12.0,
+  "fold_seconds": 0.0,
+  "planned_with_fold_and_holds_seconds": 57.06666666693683,
+  "task_sdk_speed_percent": 15,
+  "phases": [
+    "approach",
+    "descend",
+    "grasp",
+    "lift",
+    "transport",
+    "align",
+    "insert",
+    "release",
+    "retreat",
+    "fold"
+  ],
+  "first_target": [
+    -8.060468499136336e-07,
+    7.165068568701104e-06,
+    -5.039689187068168e-06,
+    0.491999962817438,
+    23.460003283316922,
+    1.5059918021926157,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.631578947368421
+  ],
+  "folded_joint_goal_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "real_action_plan": null,
+  "action_provenance": "simulated trajectory",
+  "completed_sequence": false,
+  "physical_task_success": false,
+  "reference_id": "feb8c724d4600b2e80aa2226f99665e0dfaa0ae678c16fd4f6deea02c8993435",
+  "execution_mode": "frozen_sim_reference",
+  "insertion_stopped_frame": "2320.jpg",
+  "baseline_yellow_top_px": 295,
+  "observed_yellow_top_px": 314,
+  "insertion_stop_reason": "yellow housing moved in gripper or disappeared",
+  "fold_completed": true,
+  "final_feedback": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.2863157894736842
+  ],
+  "final_state": "Folded, enabled hold; object dropped; waiting for physical object reset, not assumed still grasped",
+  "partial_outcome": "Current RGB shows retained plug through transport; insertion guard then retreat; no complete task success"
+}

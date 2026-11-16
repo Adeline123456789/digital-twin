@@ -1,0 +1,132 @@
+{
+  "results": [
+    {
+      "mount": "existing",
+      "phase": "holder_center_hold",
+      "thresholds": [
+        {
+          "threshold": 30,
+          "iou": 0.34295619491964746,
+          "disagreement": 20279
+        },
+        {
+          "threshold": 45,
+          "iou": 0.5265366259889177,
+          "disagreement": 14782
+        },
+        {
+          "threshold": 60,
+          "iou": 0.5567469534506347,
+          "disagreement": 13931
+        }
+      ]
+    },
+    {
+      "mount": "existing",
+      "phase": "socket_center_hold",
+      "thresholds": [
+        {
+          "threshold": 30,
+          "iou": 0.38342773911636185,
+          "disagreement": 19049
+        },
+        {
+          "threshold": 45,
+          "iou": 0.530861826098092,
+          "disagreement": 14654
+        },
+        {
+          "threshold": 60,
+          "iou": 0.5588066916862795,
+          "disagreement": 13872
+        }
+      ]
+    },
+    {
+      "mount": "board_park",
+      "phase": "holder_center_hold",
+      "thresholds": [
+        {
+          "threshold": 30,
+          "iou": 0.3017279904662595,
+          "disagreement": 9375
+        },
+        {
+          "threshold": 45,
+          "iou": 0.21444347424110125,
+          "disagreement": 15294
+        },
+        {
+          "threshold": 60,
+          "iou": 0.20377613597952582,
+          "disagreement": 16489
+        }
+      ]
+    },
+    {
+      "mount": "board_park",
+      "phase": "socket_center_hold",
+      "thresholds": [
+        {
+          "threshold": 30,
+          "iou": 0.2860764697821022,
+          "disagreement": 10419
+        },
+        {
+          "threshold": 45,
+          "iou": 0.21564428127071542,
+          "disagreement": 15382
+        },
+        {
+          "threshold": 60,
+          "iou": 0.20589086000771306,
+          "disagreement": 16473
+        }
+      ]
+    },
+    {
+      "mount": "board_pixel",
+      "phase": "holder_center_hold",
+      "thresholds": [
+        {
+          "threshold": 30,
+          "iou": 0.3172881034727815,
+          "disagreement": 14410
+        },
+        {
+          "threshold": 45,
+          "iou": 0.2667683493917637,
+          "disagreement": 19710
+        },
+        {
+          "threshold": 60,
+          "iou": 0.2542337298810357,
+          "disagreement": 21314
+        }
+      ]
+    },
+    {
+      "mount": "board_pixel",
+      "phase": "socket_center_hold",
+      "thresholds": [
+        {
+          "threshold": 30,
+          "iou": 0.303804407411468,
+          "disagreement": 12700
+        },
+        {
+          "threshold": 45,
+          "iou": 0.24519023380208782,
+          "disagreement": 17498
+        },
+        {
+          "threshold": 60,
+          "iou": 0.23462059342553454,
+          "disagreement": 18650
+        }
+      ]
+    }
+  ],
+  "scope": "Current real wrist finger silhouette independent of chessboard fit; CAD/mask dependent. No automatic deployment.",
+  "hardware_commands": 0
+}
