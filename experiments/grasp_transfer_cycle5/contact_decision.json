@@ -1,0 +1,11 @@
+{
+  "result": "HYPOTHESIS_NOT_SUPPORTED",
+  "decision": "Keep original condim6; no physical calibration accepted",
+  "evidence": "Both frozen prefixes lifted >40mm; condim3 changes pose but does not reproduce real grasp loss",
+  "next_candidate": {
+    "grasp_height_m": 0.014,
+    "baseline_grasp_height_m": 0.02,
+    "physical_reason": "Original fingertip contacts at about13.39mm above plug face lie on a sloping shoulder. Lowering center6mm aims at the cylindrical lower rim; keep friction, gripper effort, command width and speed unchanged."
+  },
+  "status": "operation candidate, not measured real geometry correction"
+}

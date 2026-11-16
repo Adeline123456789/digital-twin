@@ -1,0 +1,8 @@
+{
+  "file": "scripts/try_plug_pick_sim.py",
+  "backup": "self_evolution/grasp_transfer_cycle5/native_backup/try_plug_pick_sim.py",
+  "before_sha256": "82735205df93aa02d9308e4ca4f40b2492382bf44d481f60e7e01cacfa00c362",
+  "after_sha256": "fe9064eef02aecafb12881288340574a9759b3203779dcb111889b74ce2dc3c4",
+  "change": "Optional diagnostic stop-after-lift flag; default full execution unchanged; no physics/safety changes",
+  "public_source": "Original simulator source is kept local"
+}

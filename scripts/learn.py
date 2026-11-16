@@ -84,7 +84,7 @@ def decide(signature, repair, version_name=None):
         if repair in item.get('ineffective_repairs',[]): return 'REJECT_REPEAT_REQUIRE_NEW_EVIDENCE'
     return 'UNKNOWN_TASK_MODE' if not retrieve(signature) else 'ALLOW_SIMULATION'
 
-def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False, grasp_tilt_deg=None, start_right_deg=None):
+def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False, grasp_tilt_deg=None, start_right_deg=None, grasp_height_m=None):
     out,r=record(kind,label,'simulation')
     raw=DATA/'self_evolution'/r['experiment_id']
     start=time.monotonic()
@@ -101,6 +101,11 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
         raw.parent.mkdir(parents=True, exist_ok=True)
         retained=os.environ.get('PIPER_SIM_PROFILE')=='retained_final'
         speed=25 if retained else 12
+        grasp_height = .012 if retained else .020
+        if grasp_height_m is not None:
+            if isinstance(grasp_height_m, bool) or not math.isfinite(grasp_height_m) or not .010 <= grasp_height_m <= .025:
+                raise ValueError('Simulation grasp height must be finite and between 10 and 25 mm')
+            grasp_height = grasp_height_m
         config_name='real_connector_final.yaml' if retained else 'real_connector_calibrated.yaml'
         cfg=yaml.safe_load((SIM/'configs/tasks'/config_name).read_text())
         target_index=int(os.environ.get('PIPER_TARGET_INDEX',cfg['target_index']))
@@ -118,7 +123,7 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
         runtime=SIM/('.venv-mujoco/bin/python' if retained else '.venv-mujoco-hardware/bin/python')
         cmd=[str(runtime),str(SIM/'scripts/try_plug_pick_sim.py'),
              '--output',str(raw),'--task',str(task),'--smooth-timing','--speed',str(speed),
-             '--grasp-height',('.012' if retained else '.020'),'--insertion-offset-mm',str(offset),'0']
+             '--grasp-height',str(grasp_height),'--insertion-offset-mm',str(offset),'0']
         if retained:cmd+=['--grasp-roll-deg','30','--align-corrections','4','--grasp-opening','0','--start-right-deg','0','0','0','0','0','0']
         if grasp_tilt_deg is not None:
             if isinstance(grasp_tilt_deg,bool) or not math.isfinite(grasp_tilt_deg) or not -10<=grasp_tilt_deg<=10:
@@ -138,11 +143,12 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
         r['collection_mode']='inline_native_physics' if record_inline else 'headless_then_replay'
         r['initial_state']={'target_index':target_index,'holder_x_shift_mm':shift,'task_config_sha256':digest(task)}
         if start_right_deg is not None:r['initial_state']['start_right_joint_degrees']=list(start_right_deg)
-        r['actions']=[{'script':'try_plug_pick_sim.py','profile':('retained_final' if retained else 'original'),'grasp_height_m':(.012 if retained else .020),'offset_mm':[offset,0],
+        r['actions']=[{'script':'try_plug_pick_sim.py','profile':('retained_final' if retained else 'original'),'grasp_height_m':grasp_height,'offset_mm':[offset,0],
                        'speed_deg_s':speed,'smooth_timing':True}]
         if grasp_tilt_deg is not None:r['actions'][0]['grasp_tilt_deg']=grasp_tilt_deg
         r['experiments']=[{'changed_variable':'insertion_offset_mm','value':offset,'heldout_initial_shift_mm':shift}]
         if grasp_tilt_deg is not None:r['experiments']=[{'changed_variable':'grasp_tilt_deg','value':grasp_tilt_deg,'heldout_initial_shift_mm':shift,'fixed_offset_mm':offset}]
+        if grasp_height_m is not None:r['experiments']=[{'changed_variable':'grasp_height_m','value':grasp_height,'heldout_initial_shift_mm':shift,'fixed_offset_mm':offset}]
         env=dict(os.environ,MUJOCO_GL='egl',OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1')
         with (local/'stdout.log').open('w') as log:
             p=subprocess.run(cmd,cwd=SIM,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=900)

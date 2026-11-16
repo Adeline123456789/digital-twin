@@ -1,0 +1,319 @@
+{
+  "reference_sha256": "dd8950e77027d0106eb260240db235b91aea8e59b808ad6b23e54d706f244b11",
+  "result": "diagnostic_completed",
+  "task_success": null,
+  "diagnostic_only": true,
+  "privileged_information_used": true,
+  "real_commands": 0,
+  "contact_dim": 6,
+  "root_cause_status": "UNKNOWN",
+  "base_profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "changed_geoms": 833,
+  "lift_height_m": 0.0529074278729561,
+  "simulated_seconds": 21.84010416665194,
+  "max_penetration_m": 3.103685879545787e-05,
+  "phase_ends": {
+    "approach": {
+      "time_s": 16.633333333323343,
+      "phase": "approach",
+      "plug_xyz_m": [
+        0.29227948570227125,
+        -0.35069875464290756,
+        0.058199995757096834
+      ],
+      "measured_gripper_width_m": 0.0600000000361442,
+      "geometry": {
+        "contacts": [],
+        "opposing_body_pairs": [],
+        "any_antipodal_pair": false
+      }
+    },
+    "descend": {
+      "time_s": 18.566666666654918,
+      "phase": "descend",
+      "plug_xyz_m": [
+        0.29227948559953626,
+        -0.35069875463455896,
+        0.0581999956645409
+      ],
+      "measured_gripper_width_m": 0.05999833116010592,
+      "geometry": {
+        "contacts": [],
+        "opposing_body_pairs": [],
+        "any_antipodal_pair": false
+      }
+    },
+    "grasp": {
+      "time_s": 19.89999999998704,
+      "phase": "grasp",
+      "plug_xyz_m": [
+        0.29228003088083354,
+        -0.35069892036642736,
+        0.058199990603304635
+      ],
+      "measured_gripper_width_m": 0.039964009519471426,
+      "geometry": {
+        "contacts": [
+          {
+            "robot_body": "right/link7",
+            "position_m": [
+              0.3121443664370719,
+              -0.34852058190810176,
+              0.07159060775493753
+            ],
+            "object_outward_normal": [
+              0.922926752581264,
+              0.10136532007804176,
+              0.37139100858162755
+            ],
+            "distance_m": -6.182035741282154e-07,
+            "contact_dim": 6,
+            "sliding_friction": 0.7,
+            "geom_names": [
+              "gripper_right_46",
+              "plug/grip_contact/1/11/0"
+            ]
+          },
+          {
+            "robot_body": "right/link7",
+            "position_m": [
+              0.3121443664099885,
+              -0.34852058194887847,
+              0.07159060774239721
+            ],
+            "object_outward_normal": [
+              0.9229267415621187,
+              0.10136531875765652,
+              0.3713910363251769
+            ],
+            "distance_m": -6.181360008310112e-07,
+            "contact_dim": 6,
+            "sliding_friction": 0.7,
+            "geom_names": [
+              "gripper_right_46",
+              "plug/grip_contact/1/12/1"
+            ]
+          },
+          {
+            "robot_body": "right/link8",
+            "position_m": [
+              0.2724135299693743,
+              -0.35287749596517176,
+              0.07158513503807398
+            ],
+            "object_outward_normal": [
+              -0.9229252371242456,
+              -0.10138131450355554,
+              0.3713904088000742
+            ],
+            "distance_m": -6.446914327734466e-07,
+            "contact_dim": 6,
+            "sliding_friction": 0.7,
+            "geom_names": [
+              "gripper_right_36",
+              "plug/grip_contact/1/35/0"
+            ]
+          },
+          {
+            "robot_body": "right/link8",
+            "position_m": [
+              0.2724135299963854,
+              -0.3528774959244785,
+              0.07158513502556815
+            ],
+            "object_outward_normal": [
+              -0.922925226113217,
+              -0.10138131334223822,
+              0.3713904364800883
+            ],
+            "distance_m": -6.446240342198265e-07,
+            "contact_dim": 6,
+            "sliding_friction": 0.7,
+            "geom_names": [
+              "gripper_right_36",
+              "plug/grip_contact/1/36/1"
+            ]
+          }
+        ],
+        "opposing_body_pairs": [
+          {
+            "indices": [
+              0,
+              2
+            ],
+            "antipodal_point_contact": true
+          },
+          {
+            "indices": [
+              0,
+              3
+            ],
+            "antipodal_point_contact": true
+          },
+          {
+            "indices": [
+              1,
+              2
+            ],
+            "antipodal_point_contact": true
+          },
+          {
+            "indices": [
+              1,
+              3
+            ],
+            "antipodal_point_contact": true
+          }
+        ],
+        "any_antipodal_pair": true
+      }
+    },
+    "lift": {
+      "time_s": 21.833333333318613,
+      "phase": "lift",
+      "plug_xyz_m": [
+        0.2922014127097918,
+        -0.3506955964358582,
+        0.11109229725509394
+      ],
+      "measured_gripper_width_m": 0.039458115638471694,
+      "geometry": {
+        "contacts": [
+          {
+            "robot_body": "right/link7",
+            "position_m": [
+              0.31185791432344256,
+              -0.34854238180314046,
+              0.1251057685479
+            ],
+            "object_outward_normal": [
+              0.9252891916583882,
+              0.10157346769761859,
+              0.36540763875437454
+            ],
+            "distance_m": -6.221154745227958e-07,
+            "contact_dim": 6,
+            "sliding_friction": 0.7,
+            "geom_names": [
+              "gripper_right_46",
+              "plug/grip_contact/1/11/0"
+            ]
+          },
+          {
+            "robot_body": "right/link7",
+            "position_m": [
+              0.3118579142862452,
+              -0.3485423818553218,
+              0.12510576853115124
+            ],
+            "object_outward_normal": [
+              0.9252891808057546,
+              0.10157346653132748,
+              0.36540766655972773
+            ],
+            "distance_m": -6.220237971806233e-07,
+            "contact_dim": 6,
+            "sliding_friction": 0.7,
+            "geom_names": [
+              "gripper_right_46",
+              "plug/grip_contact/1/12/1"
+            ]
+          },
+          {
+            "robot_body": "right/link8",
+            "position_m": [
+              0.27262977758464546,
+              -0.35284238531894746,
+              0.12512121798109266
+            ],
+            "object_outward_normal": [
+              -0.9205245755773995,
+              -0.10116895317873176,
+              0.37735838227177143
+            ],
+            "distance_m": -6.158993782372414e-07,
+            "contact_dim": 6,
+            "sliding_friction": 0.7,
+            "geom_names": [
+              "gripper_right_36",
+              "plug/grip_contact/1/35/0"
+            ]
+          },
+          {
+            "robot_body": "right/link8",
+            "position_m": [
+              0.2726297776184523,
+              -0.35284238527041273,
+              0.125121217965257
+            ],
+            "object_outward_normal": [
+              -0.9205245643869204,
+              -0.10116895205265343,
+              0.3773584098716213
+            ],
+            "distance_m": -6.158153662845776e-07,
+            "contact_dim": 6,
+            "sliding_friction": 0.7,
+            "geom_names": [
+              "gripper_right_36",
+              "plug/grip_contact/1/36/1"
+            ]
+          }
+        ],
+        "opposing_body_pairs": [
+          {
+            "indices": [
+              0,
+              2
+            ],
+            "antipodal_point_contact": true
+          },
+          {
+            "indices": [
+              0,
+              3
+            ],
+            "antipodal_point_contact": true
+          },
+          {
+            "indices": [
+              1,
+              2
+            ],
+            "antipodal_point_contact": true
+          },
+          {
+            "indices": [
+              1,
+              3
+            ],
+            "antipodal_point_contact": true
+          }
+        ],
+        "any_antipodal_pair": true
+      }
+    }
+  },
+  "wall_seconds": 33.21206753398292,
+  "trace_sha256": "035b0a7a7860c6c04adb44dab9fc7eccdc6a4920fe4b4ef213cb291d359189fd",
+  "experiment_id": "cycle5_frozen_grasp_condim6",
+  "model": "deterministic MuJoCo replay; no planner call",
+  "tokens": 0,
+  "environment": "simulation",
+  "program_version": "69df926e53185080e06a7c4bc5f954bf68239967a644522b5ad11199b2151e09",
+  "dataset_reference": "self_evolution/grasp_transfer_cycle5/condim6",
+  "timestamp": "2026-11-16T05:48:08.873752+00:00"
+}
