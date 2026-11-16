@@ -1,0 +1,15 @@
+{
+  "version": "grasp_geometry_candidate_v1",
+  "cycle": 5,
+  "status": "NOT_PROMOTED_REAL_REPAIR_FAILED",
+  "previous": "shared_reference_v1_real_attempt_1",
+  "real_attempts": 1,
+  "real_successes": 0,
+  "sim_complete_attempts": 2,
+  "sim_complete_successes": 2,
+  "active_default_grasp_height_m": 0.02,
+  "candidate_height_m": 0.012,
+  "physics_change_accepted": false,
+  "rollback": "Omit grasp_height_m to retain prior default; original simulator source backup stays local",
+  "next_cycle": "same-motion spatial exploration per user correction"
+}

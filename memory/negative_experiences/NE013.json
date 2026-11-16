@@ -1,0 +1,24 @@
+{
+  "id": "NE013",
+  "content": "Lowering simulated grasp center20mm to12mm moved contact to simulated cylindrical rim and passed full simulation, but real lift still lost/not established grasp. Do not infer real contact location from the simulated mesh or retry the same height change without new spatial evidence.",
+  "applicability": "right-only current original-profile scene and two frozen-reference real attempts, 2026-11-16",
+  "source_episodes": [
+    "20261116_real_shared_reference_000001",
+    "20261116_real_grasp_height12_000001"
+  ],
+  "validation_status": "REAL_REPAIR_FAILED",
+  "success_count": 0,
+  "failure_count": 1,
+  "limitations": [
+    "Actual finger/tool and object coordinate relationship not independently verified",
+    "No real force/depth; encoder aperture does not identify unique cause"
+  ],
+  "version": 1,
+  "signatures": [
+    "grasp_retention_failed",
+    "sim_real_spatial_mismatch"
+  ],
+  "ineffective_repairs": [
+    "lower_grasp_height_to12mm_without_real_spatial_registration"
+  ]
+}

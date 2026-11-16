@@ -1,0 +1,267 @@
+{
+  "experiment_id": "cycle5_real_grasp_height12",
+  "timestamp": "2026-11-16T06:03:21.806541+00:00",
+  "model": "deterministic reference replay; no execution LLM call",
+  "tokens": 0,
+  "research_orchestrator_tokens": null,
+  "task": "same-reference right-arm yellow plug pick and insert",
+  "environment": "real",
+  "program_version": "c06557afc1b9a6e8079b0946ec980516f3b5789cfbefbabc3b8a256e515caae8",
+  "protocol_version": "0c1e28fd8e34f0995560513c56db24a169e00e00bdd63b15b79974abc5cc8965",
+  "result": "failure",
+  "task_success": false,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "human_task_motion_corrections": 0,
+  "human_shutdown_support_events": 1,
+  "human_confirmation_messages": 1,
+  "pair": {
+    "pair_id": "cycle5_lower_rim_shared_reference",
+    "trajectory_id": "e650fca7a02984ff73a01a0c9340b7faceac1e5789479f5309bfafbea1fbf648",
+    "simulation_episode": "20261116T054932Z_f8599c34",
+    "simulation_status": "SIMULATION_VERIFIED",
+    "real_episode": "20261116_real_grasp_height12_000001",
+    "real_status": "REAL_FAILED",
+    "execution_mode": "frozen_sim_reference_prefix_then_native_abort_retreat_fold",
+    "entire_reference_sent": false,
+    "command_provenance": "identical reference prefix checked numerically",
+    "real_visual_modality": "RGB only",
+    "force_sensor_present": false,
+    "reference_package": "self_evolution/grasp_transfer_cycle5/reference_20261116T054932Z_f8599c34"
+  },
+  "diagnosis": {
+    "observed_failure": "No retained grasp after lift; real measured aperture returns near empty target",
+    "root_cause": "UNKNOWN",
+    "first_persistent_empty_lift_s": 21.243983068037778,
+    "nearest_wrist_frame": 679,
+    "phase_end_aperture_mm": {
+      "approach": 59.6,
+      "descend": 59.6,
+      "grasp": 47.5,
+      "lift": 27.099999999999998,
+      "transport": 27.099999999999998
+    },
+    "evidence_note": "RGB is retained for visual review; encoder aperture is not physical force or calibrated object position",
+    "geometry_repair": {
+      "old_grasp_height_m": 0.02,
+      "new_grasp_height_m": 0.012,
+      "real_task_success": false,
+      "prior_real_task_success": false,
+      "conclusion": "Height change did not solve transfer. Do not promote the simulated geometry assumption as real geometry."
+    }
+  },
+  "comparison": {
+    "reference_id": "e650fca7a02984ff73a01a0c9340b7faceac1e5789479f5309bfafbea1fbf648",
+    "identical_reference_prefix": true,
+    "command_samples": 3170,
+    "reference_samples": 5482,
+    "entire_reference_sent": false,
+    "real_logged_span_s": 32.295370436040685,
+    "reference_prefix_span_s": 31.69,
+    "final_logged_time_lag_s": 0.6053704360406833,
+    "phase_trace": [
+      {
+        "phase": "approach",
+        "samples": 1640,
+        "command_tracking_rmse_deg_mm": [
+          0.07490417014894236,
+          0.2982657128370606,
+          0.2102462495655915,
+          0.1038892830188841,
+          0.15398552284668235,
+          0.35805458033475956,
+          0.41847574746873006
+        ],
+        "sim_real_rmse_deg_mm": [
+          0.10724377157392619,
+          0.7325377198489192,
+          0.5110863135548273,
+          0.10219139232206595,
+          0.35056739277749543,
+          0.8440096338671509,
+          0.4055893673588982
+        ],
+        "sim_real_paired_samples": 1636
+      },
+      {
+        "phase": "descend",
+        "samples": 220,
+        "command_tracking_rmse_deg_mm": [
+          0.06184498658935686,
+          0.13934403775863394,
+          0.20884210906317913,
+          0.00023159731188752297,
+          0.3478509196837428,
+          0.022553706520446366,
+          0.39997301066561813
+        ],
+        "sim_real_rmse_deg_mm": [
+          0.061840711805978686,
+          0.7973080282057761,
+          1.2425693598981176,
+          0.00023533662094761906,
+          2.0466772656498327,
+          0.022553761283628175,
+          0.7070481052644485
+        ],
+        "sim_real_paired_samples": 220
+      },
+      {
+        "phase": "grasp",
+        "samples": 134,
+        "command_tracking_rmse_deg_mm": [
+          0.06182564126969211,
+          0.04236031671487006,
+          0.06847010251856213,
+          0.00024744737506177496,
+          0.17341530416475434,
+          0.022566115310697223,
+          11.979652455657986
+        ],
+        "sim_real_rmse_deg_mm": [
+          0.06188036287130516,
+          0.041919793362978894,
+          0.06804299687390769,
+          0.00027113493637284083,
+          0.20299600016197336,
+          0.022569540785701593,
+          7.420389531390866
+        ],
+        "sim_real_paired_samples": 134
+      },
+      {
+        "phase": "lift",
+        "samples": 220,
+        "command_tracking_rmse_deg_mm": [
+          0.061845954960647403,
+          0.14284538006554853,
+          0.22273531578784314,
+          0.00023063159034916953,
+          0.2633607405520376,
+          0.022552777219392858,
+          11.955637696387084
+        ],
+        "sim_real_rmse_deg_mm": [
+          0.06107647372474586,
+          0.9772320892461341,
+          1.545701868278363,
+          0.0007813571303810926,
+          2.4374294131633185,
+          0.021636288061579176,
+          13.487897415239326
+        ],
+        "sim_real_paired_samples": 220
+      },
+      {
+        "phase": "transport",
+        "samples": 956,
+        "command_tracking_rmse_deg_mm": [
+          0.2968176001282608,
+          0.12158633443273352,
+          0.13995027132503307,
+          0.08533066166182188,
+          0.048572377750452055,
+          0.3599369919178464,
+          0.0999999999999987
+        ],
+        "sim_real_rmse_deg_mm": [
+          2.9730433890561865,
+          1.1999891161394771,
+          1.2737109882652595,
+          0.5163032197056069,
+          0.23619321566575044,
+          3.4199051127576663,
+          16.89629115889722
+        ],
+        "sim_real_paired_samples": 956
+      }
+    ],
+    "first_persistent_tracking_deviation": {
+      "sample": 1906,
+      "time_s": 19.433750096010044,
+      "phase": "grasp"
+    },
+    "diagnostic_threshold": ">2 degrees in any joint OR >3mm gripper, five samples; not a safety or task-success detector",
+    "physical_task_success": false,
+    "root_cause": "UNKNOWN",
+    "observed_joint_and_gripper_units": [
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "degree",
+      "mm"
+    ],
+    "alignment": "Subtract first logged command/feedback receipt only. Interpolate saved prediction at real elapsed time inside its support; no time warping.",
+    "limitations": [
+      "Host logging time is not an independent actuator execution timestamp",
+      "Tracking deviation alone cannot identify collision, slip, object pose or friction",
+      "Simulation predictions use privileged state; real motor feedback is not force measurement"
+    ],
+    "evidence_hashes": {
+      "commanded_probe.csv": "127017d7d105dc2d4d0553c9e2fad8532e073834f46cb413c048a2b3f33787dc",
+      "execution_report.json": "0787b3b4ed06c150e446542d36a67c8908ed4d523b825e63a230a530f7590b41",
+      "prediction.jsonl": "7a4754d4c98e2ae830c44d7c55b02a9d63d14ffe7ca9321eb5ee33f530dfc853"
+    }
+  },
+  "recording_verified": {
+    "episodes": [
+      {
+        "session": "20261116_real_grasp_height12",
+        "episode": "000001",
+        "domain": "real",
+        "num_frames": 1603,
+        "purpose": "yellow_pick_insert_attempt",
+        "success": false,
+        "policy_training_eligible": false,
+        "video_frames": {
+          "cam_external": 1603,
+          "cam_right_wrist": 1603
+        },
+        "known_right_joint_action_frames": 1603,
+        "known_right_gripper_action_frames": 1603
+      }
+    ],
+    "verified_frames": 1603,
+    "full_sim_demonstrations": 0,
+    "full_real_demonstrations": 0,
+    "real_task_attempts": 1,
+    "force_sensor_directory_present": false
+  },
+  "recording_quality": {
+    "reason": "observed real task outcome retained; missing action fields remain invalid",
+    "max_camera_skew_s": 0.009626626968383789,
+    "complete_movement_video_coverage": true,
+    "complete_command_video_coverage": true
+  },
+  "final_hardware": {
+    "six_motor_enabled": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "err_code": 0,
+    "joint_degrees_after_disable": [
+      0.0,
+      -2.319,
+      0.826,
+      0.487,
+      23.4,
+      0.517
+    ],
+    "controller_exit_code": 0
+  },
+  "evidence": {
+    "complete_real/failed/20261116_real_grasp_height12_000001/outcome.json": "b26356316fc88add7aec9960dc6c74567c40ca81a984a416ff0e2e0282a33b53",
+    "complete_real/failed/20261116_real_grasp_height12_000001/verification.json": "dad10049c195190a80b35b91b4ac4185f389f992a13d5c2f64bf25313b21e12c",
+    "complete_real/failed/20261116_real_grasp_height12_000001/raw/task/commanded_probe.csv": "127017d7d105dc2d4d0553c9e2fad8532e073834f46cb413c048a2b3f33787dc",
+    "complete_real/failed/20261116_real_grasp_height12_000001/raw/task/execution_report.json": "0787b3b4ed06c150e446542d36a67c8908ed4d523b825e63a230a530f7590b41",
+    "complete_real/failed/20261116_real_grasp_height12_000001/raw/task/grasp_diagnosis.json": "ebdd6259c87ec22c083de8ce8ba034cd9c997f5d830211fa9b54ab3f2f00048b",
+    "complete_real/failed/20261116_real_grasp_height12_000001/proprio_stats/metadata.json": "d4f5cb3bd906c8617f754d78477d6808f0d88d27830a0b790bc63213ce907863"
+  },
+  "next_improvement": "User redirects remaining cycle to direct real/sim spatial comparison and bounded partial exploration, before further grasp/insert attempts"
+}

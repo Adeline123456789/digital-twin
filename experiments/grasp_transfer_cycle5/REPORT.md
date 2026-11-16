@@ -1,0 +1,11 @@
+# Cycle5: lower grasp geometry did not repair real transfer
+
+The original frozen command prefix lifted under both condim6 and3. Removing finite-pad rotational friction did not reproduce the real failure, so no physics change was accepted. Geometry-guided heights14mm and12mm passed diagnostic lift checks. The12mm candidate then passed two complete recorded simulations and an independent100Hz replay, with the original collision and task detectors.
+
+Real retry failed: 3170 identical reference-prefix commands, followed by the existing visual stop before insertion and native retreat/fold. Motor-reported aperture at grasp end was47.5mm and at lift end27.1mm, near the27mm empty target. This repeats the earlier no-retained-grasp failure; no unique friction or position cause is established. Simulated contact geometry did not establish actual real contact location. User observed a large spatial discrepancy and explicitly redirected subsequent work to same-motion real/sim positional exploration. That upstream spatial check must precede further contact tuning.
+
+Complete failed Episode: `complete_real/failed/20261116_real_grasp_height12_000001/`. Two RGB videos and right-only HDF5 have1603 matching frames; movement and command coverage passed. No depth, left-arm channel or six-axis force was invented. Supported disable succeeded, all six motors were independently confirmed disabled, err_code0. No robot controller remains. Task motion corrections0; operator shutdown support1.
+
+This cycle's complete simulation score is2/2, real task0/1; cumulative shared-reference real tasks0/2. These small counts do not establish a success-rate change. Source simulation motion54.83s versus prior54.4s; speed remained12deg/s, extra travel came from the changed grasp height. Source collection/verification172.19s; adapted-reference replay113.67s. No execution planner calls; research orchestration cost is unallocated. Cost per valid real success remains undefined.
+
+Neither contact model nor12mm grasp is promoted as a real Skill. The ordinary collector default remains20mm; the12mm candidate was explicit per invocation. Native diagnostic flag is optional, backed up locally and has no default effect. No new physics calibration. The remaining sixth cycle follows the user's spatial-comparison priority; the pending weak-model study is not falsely reported as completed.
