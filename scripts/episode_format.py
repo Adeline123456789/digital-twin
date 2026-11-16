@@ -38,22 +38,31 @@ def fingerprint(trial,source):
 def validate(episode,trial,expected_success=False):
     meta=json.loads((episode/'proprio_stats/metadata.json').read_text())
     ref=json.loads((REFERENCE/'proprio_stats/metadata.json').read_text())
-    assert meta['schema']==ref['schema'] and meta['units']==ref['units']
+    arms=meta.get('active_arms',['left','right'])
+    assert arms in (['left','right'],['right']), 'Unknown embodiment'
+    assert meta['schema']==('connector_mixed.v2' if arms==['right'] else ref['schema']) and meta['units']==ref['units']
+    cameras=('cam_external_rgb.mp4', *[f'cam_{side}_wrist_rgb.mp4' for side in arms])
+    assert {p.name for p in (episode/'videos').glob('*.mp4')}==set(cameras)
     assert meta['domain']=='sim' and meta['success'] is expected_success and meta['force_sensor_present'] is False
     rows=[json.loads(x) for x in (trial/'trajectory.jsonl').read_text().splitlines()]
     n=meta['num_frames'];assert n==len(rows) and n>0, 'Incomplete replay'
     with h5py.File(REFERENCE/'proprio_stats/proprio_stats.h5') as f:
         fields={};f.visititems(lambda k,v:fields.update({k:(v.shape[1:],str(v.dtype))}) if isinstance(v,h5py.Dataset) else None)
     with h5py.File(episode/'proprio_stats/proprio_stats.h5') as f:
-        for key,(shape,dtype) in fields.items():assert f[key].shape==(n,*shape) and str(f[key].dtype)==dtype,(key,'schema mismatch')
+        for key,(shape,dtype) in fields.items():
+            if arms==['right'] and '/left_arm/' in key:continue
+            assert f[key].shape==(n,*shape) and str(f[key].dtype)==dtype,(key,'schema mismatch')
+        if arms==['right']:
+            assert 'left_arm' not in f['state'] and 'left_arm' not in f['action']
         q=np.array([x['q'] for x in rows]);actions=np.array([x['action'] for x in rows])
-        for arm,offset in [('left_arm',0),('right_arm',7)]:
+        for i,side in enumerate(arms):
+            arm=side+'_arm';offset=7*i
             assert np.max(abs(np.deg2rad(f[f'state/{arm}/joint_positions'][:])-q[:,offset:offset+6]))<=1e-5
             assert np.max(abs(f[f'state/{arm}/gripper_width_m'][:]-q[:,offset+6]))<=1e-5
             assert np.max(abs(np.deg2rad(f[f'action/{arm}/joint_positions'][:])-actions[:,offset:offset+6]))<=1e-8
         assert np.max(abs(f['sim_time'][:]-np.array([x['time'] for x in rows])))<=1e-8
     frames={}
-    for camera in CAMERAS:
+    for camera in cameras:
         with av.open(str(episode/'videos'/camera)) as video:frames[camera]=sum(1 for _ in video.decode(video=0))
         assert frames[camera]==n,'Video frame count mismatch'
     privileged=[json.loads(x) for x in (episode/'proprio_stats/privileged.jsonl').read_text().splitlines()]
@@ -61,7 +70,7 @@ def validate(episode,trial,expected_success=False):
     object_error=max(np.max(abs(np.array(row['objects']['yellow_plug']['position'])-source['plug'])) for row,source in zip(privileged,rows))
     assert object_error<=1e-6, 'Object trajectory mismatch'
     for name in ('model.xml','initial_state.npz','recorded_commands.csv'):assert (episode/'proprio_stats'/name).is_file()
-    return dict(video_frames=frames,quality=meta['quality'],duration_s=n/meta['fps'],
+    return dict(active_arms=arms,schema=meta['schema'],video_frames=frames,quality=meta['quality'],duration_s=n/meta['fps'],
         object_replay_max_error_m=float(object_error),success=expected_success,
         collection_mode=meta.get('collection_mode','physics_replay'),
         status='Format and recorded trajectory verified; native physical task outcome preserved')

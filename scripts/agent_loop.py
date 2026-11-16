@@ -31,6 +31,8 @@ def run(arm, shift, publish=True, planner_policy=None):
     r['model']=os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna');r['runner_sha256']=digest(__file__)
     local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
     started=time.monotonic();calls=[];trials=[]
+    if os.environ.get('PIPER_ACTIVE_ARMS','dual')!='dual':
+        raise ValueError('Existing planner memories are dual-arm scoped; use collect_current_scene.py for verified right-arm collection')
     policy=planner_policy or json.loads((ROOT/'evolution/active.json').read_text()).get('planner_policy','llm')
     if arm!='D':policy='llm'
     r['actual_planner_policy']=policy

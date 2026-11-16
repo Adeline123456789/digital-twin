@@ -106,6 +106,12 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
         target_index=int(os.environ.get('PIPER_TARGET_INDEX',cfg['target_index']))
         if target_index not in (1,2,3):raise ValueError('Target must be an existing AC outlet 1, 2 or 3')
         cfg['target_index']=target_index
+        active_arms=os.environ.get('PIPER_ACTIVE_ARMS','dual')
+        if active_arms not in ('dual','right'):raise ValueError('Simulation arms must be dual or right')
+        if active_arms=='right':
+            if retained:raise ValueError('Right-arm adaptation uses original simulator only')
+            if not record_inline:raise ValueError('Right-arm collection requires inline recording')
+            cfg['active_arms']=['right']
         cfg['holder_xy_m'][0]+=shift/1000
         local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
         task=local/'task.yaml';task.write_text(yaml.safe_dump(cfg))
@@ -123,6 +129,7 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
             stage=DATA/'self_evolution'/('stage3_recording_'+r['experiment_id'])
             cmd=[str(runtime),str(ROOT/'scripts/collect_inline.py'),'--trial',str(raw),
                  '--stage-root',str(stage),'--session','learning_'+r['experiment_id'],*cmd[4:]]
+        r['active_arms']=['right'] if active_arms=='right' else ['left','right']
         r['collection_mode']='inline_native_physics' if record_inline else 'headless_then_replay'
         r['initial_state']={'target_index':target_index,'holder_x_shift_mm':shift,'task_config_sha256':digest(task)}
         r['actions']=[{'script':'try_plug_pick_sim.py','profile':('retained_final' if retained else 'original'),'grasp_height_m':(.012 if retained else .020),'offset_mm':[offset,0],

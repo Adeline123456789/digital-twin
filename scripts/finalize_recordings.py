@@ -23,7 +23,8 @@ def main():
             counts={}
             for f in (source/'videos').glob('*.mp4'):
                 with av.open(str(f)) as video: counts[f.name]=sum(1 for _ in video.decode(video=0))
-            if len(counts)!=3 or any(n!=meta['num_frames'] for n in counts.values()):raise ValueError('Video frame count mismatch')
+            expected_cameras={name+'_rgb.mp4' for name in meta.get('camera_channels',['cam_external','cam_left_wrist','cam_right_wrist'])}
+            if set(counts)!=expected_cameras or any(n!=meta['num_frames'] for n in counts.values()):raise ValueError('Video frame count mismatch')
             success=bool(outcome['success'])
             trial=DATA/'self_evolution'/ident
             supplement(source,trial)

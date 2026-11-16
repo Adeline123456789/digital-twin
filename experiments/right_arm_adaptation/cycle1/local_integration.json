@@ -1,0 +1,26 @@
+{
+  "backup": "self_evolution/right_arm_adapter_v1/native_backup",
+  "changes": {
+    "src/piper_sim/backends/mujoco.py": {
+      "before": "32e8326d506f972ed870421ff3a4493d5fae51ccfa109ca2f0cda4d7ed0cead9",
+      "after": "0c0e68eab7a86ca358ee4c340b9861fd12bae05781ce5f15bfc3e6c430265d3d"
+    },
+    "scripts/try_plug_pick_sim.py": {
+      "before": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+      "after": "82735205df93aa02d9308e4ca4f40b2492382bf44d481f60e7e01cacfa00c362"
+    },
+    "scripts/collect_plug_contact_probes.py": {
+      "before": "368871f8ed9ecd7349e9f55764f11a8e8bf6292135db38da31e9e54d9da05eb2",
+      "after": "71425450959fdfabbf7b7cec46cf0ae4d6adf25fc5ae976576c9848ee7bc25e9"
+    },
+    "src/piper_sim/mixed_recording.py": {
+      "before": "4daa7f8b10a6fff4211cd26fe08db1c486593a76b1240707548a2e77683f2269",
+      "after": "b5cee1dfbb6148ec7ed12e4d3a05b13d4cf792306abcae6660ad761de53107f7"
+    },
+    "src/piper_sim/backends/arm_layout.py": {
+      "before": null,
+      "after": "243143ff429bdbfec78bc8932bceae4d9734c80394b4f5ee809bfffc51217139"
+    }
+  },
+  "hardware_code_changed": false
+}

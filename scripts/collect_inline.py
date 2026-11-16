@@ -40,7 +40,8 @@ def collect(trial, stage_root, session, arguments):
                 error = 0.
                 for row, reference in zip(writer.rows, history):
                     row['phase_index'] = np.asarray(PHASES.index(reference['phase']))
-                    for side, start in [('left', 0), ('right', 7)]:
+                    for i, side in enumerate(self.arms):
+                        start = 7*i
                         q = np.r_[np.deg2rad(row[f'state/{side}_arm/joint_positions']),
                                   row[f'state/{side}_arm/gripper_width_m']]
                         error = max(error, float(np.max(abs(q - reference['q'][start:start + 7]))))
@@ -80,13 +81,18 @@ def collect(trial, stage_root, session, arguments):
                 metadata=dict(source_trial=str(trial), force_sensor_present=False,
                               ee_pose_frame='each arm base', privileged_information='simulator only',
                               collection_mode='inline_native_physics',
+                              active_arms=list(sim.arms),
+                              state_feature_names=list(sim.layout.names),
+                              camera_channels=['cam_external', *[f'cam_{side}_wrist' for side in sim.arms]],
+                              camera_provenance='simulated RGB; current hardware extrinsics unverified',
+                              embodiment_version='piper_arm_layout_v1',
                               success_definition='original task program and native stable seating detector'))
         row, obs = state_row(sim, origin + sim.sim_time, sim.control_targets(), True)
         row['valid/collision'] = check['valid']
         row['contact/max_penetration_m'] = check['max_penetration_m']
         row['phase_index'] = -1
         writer.append(row, {name: obs.images[key] for name, key in
-            [('cam_external', 'overhead'), ('cam_left_wrist', 'left_wrist'), ('cam_right_wrist', 'right_wrist')]},
+            [('cam_external', 'overhead'), *[(f'cam_{side}_wrist', f'{side}_wrist') for side in sim.arms]]},
             privileged=dict(objects=obs.extras['objects'], task_metrics=obs.extras['task']['metrics'],
                             contacts=check['contacts'], cameras=obs.extras['cameras'],
                             appearance=obs.extras.get('appearance'), qvel=sim.data.qvel.tolist()))

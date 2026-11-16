@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-11-16T03:11:38.155797+00:00",
+  "scope": "Current mission section10: right-arm scene and complete collection only",
+  "system_cycle": 1,
+  "system_cycle_limit": 6,
+  "full_collection_budget": 3,
+  "cases": [
+    {
+      "arms": "dual",
+      "offset_mm": 0,
+      "purpose": "Current source dual regression"
+    },
+    {
+      "arms": "right",
+      "offset_mm": 0,
+      "purpose": "Matched right-only task"
+    },
+    {
+      "arms": "right",
+      "offset_mm": 2,
+      "purpose": "Deliberate failure recording control, not natural success rate"
+    }
+  ],
+  "acceptance": [
+    "no left bodies/actuators/state/action/video in right model",
+    "original right joint bounds/task success/physics/speed unchanged",
+    "existing task actually executes, success or failure preserved",
+    "complete two-camera state/action validation",
+    "dual reload and old datasets remain readable"
+  ],
+  "teacher_calls_budget": 0,
+  "student_calls_budget": 0,
+  "models": "No new teacher/student capability claims in embodiment adaptation; reuse native task",
+  "hardware_motion": false,
+  "reason": "Current fixture/registration not validated; no new executable hardware service",
+  "privileged_information_used": true
+}
