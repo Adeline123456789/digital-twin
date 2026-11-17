@@ -9,6 +9,7 @@ import mujoco
 import yaml
 from learn import SIM, save, digest
 from trajectory_contract import load_reference
+from contact_evidence import grasp_relation
 sys.path.insert(0,str(SIM/'src'))
 from piper_sim.backends.mujoco import MujocoBackend
 from piper_sim.config import load
@@ -54,6 +55,7 @@ def validate(trial,reference):
                 obs=sim.read()
                 history.append(dict(time=sim.sim_time,reference_index=int(index),phase=phases[index],q=obs.position.tolist(),
                     action=q.tolist(),plug=sim.data.body('task/yellow_plug').xpos.tolist(),
+                    grasp_relation=grasp_relation(sim.data),
                     gripper=sim.data.body('right/gripper_center').xpos.tolist(),penetration_m=penetration,
                     task_metrics=obs.extras['task']['metrics']))
         else:

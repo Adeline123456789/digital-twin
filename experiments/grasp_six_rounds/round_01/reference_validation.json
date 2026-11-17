@@ -1,0 +1,31 @@
+{
+  "reference_sha256": "cd80230dbe9718f84a375ce62bb7d2755715de18772c9f27a90e49e87396cca0",
+  "result": "success",
+  "task_success": true,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "100Hz frozen target commands; original numerical integrator, contact bounds and task success detector",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "max_penetration_m": 3.204855917238174e-05,
+  "simulated_seconds": 55.076822916936536,
+  "observation_frames": 1652,
+  "applied_reference_steps": 5508,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 133.4313609820092,
+  "prediction_sha256": "50093687d06e8804cb26872568b8ca1d02dcda4fe10052bbacd8fabede24f6a8"
+}

@@ -1,0 +1,25 @@
+{
+  "source": "Current round1 frozen18mm grasp prefix, original condim6 archive vs condim3 diagnostic",
+  "condim6": {
+    "translation_mm": 0.6252969614565834,
+    "rotation_deg": 0.37355372181261154
+  },
+  "condim3": {
+    "translation_mm": 22.530353839669168,
+    "rotation_deg": 130.57010109913182
+  },
+  "condim3_lift_m": 0.06562856224026492,
+  "condim3_penetration_m": 4.823025166040251e-05,
+  "diagnostic_wall_seconds": 31.95607195899356,
+  "scope": "Simulation sensitivity to unmeasured angular friction; not calibrated real pose or accepted physics change",
+  "hardware_commands": 0,
+  "source_reference": "cd80230dbe9718f84a375ce62bb7d2755715de18772c9f27a90e49e87396cca0",
+  "grasp14_point": {
+    "translation_mm": 10.817211579434217,
+    "rotation_deg": 170.09022948345495
+  },
+  "grasp22_point": {
+    "translation_mm": 0.2827479237733907,
+    "rotation_deg": 0.20648299320213864
+  }
+}

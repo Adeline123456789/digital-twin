@@ -1,0 +1,49 @@
+{
+  "id": "NE021",
+  "version": 1,
+  "content": "Current18mm/25mm/0.3Nm full reference passed simulation but real grasp changed during lift, then native align abort and plug dropped during recovery. Do not admit full insertion solely from lifted height or original condim6 success. In matched18mm simulation, grasp-to-lift rotation0.37deg under original angular friction versus130.57deg under point-contact sensitivity; both lift. This is model sensitivity, not measured real friction.22mm point-contact diagnostic stays0.21deg; real22mm validation pending.",
+  "applicability": "Current right-only original Piper task,target3,RGB-only; historical success and current failure remain distinct",
+  "source_episodes": [
+    "20261117_real_grasp_six_rounds_000001",
+    "20261117T113906Z_a161f852"
+  ],
+  "source_experiments": [
+    "experiments/grasp_six_rounds/grasp_correction1.json",
+    "experiments/grasp_six_rounds/round_01/real/result.json"
+  ],
+  "validation_status": "REAL_FAILURE_OBSERVED; MODEL_SENSITIVITY_ONLY",
+  "success_count": 0,
+  "failure_count": 1,
+  "count_unit": "One new real full-task round, plus separately recorded offline diagnostics",
+  "known_limits": [
+    "Root cause UNKNOWN",
+    "No accepted friction or force calibration",
+    "Qualitative real RGB posture, not metric real6DoF pose",
+    "No successful grasp22 real evidence yet"
+  ],
+  "signatures": [
+    "sim_success_real_insertion_failure",
+    "in_hand_pose_mismatch",
+    "plug_not_seated"
+  ],
+  "retrieval_scope": {
+    "active_arms": [
+      "right"
+    ],
+    "source_profile": "original",
+    "target_index": 3
+  },
+  "phases": [
+    "grasp",
+    "lift",
+    "transport",
+    "align"
+  ],
+  "next_checks": [
+    {
+      "when": "Candidate lifts in simulation",
+      "check": "Inspect object-in-gripper translation and rotation through lift; keep model sensitivity separate from accepted calibration, then physically validate grasp before full task.",
+      "evidence": "experiments/grasp_six_rounds/grasp_correction1.json"
+    }
+  ]
+}

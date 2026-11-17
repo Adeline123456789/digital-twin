@@ -26,10 +26,9 @@
     "batch_decision_maker": "Current supervising model; no child-model calls. Existing runtime model defaults were not promoted or executed."
   },
   "last_hardware_observation": {
-    "state": "Native fold/disable finished; independent query confirms all six motors and gripper disabled,err_code0; both controller and recorder exited",
-    "source": "experiments/teacher_reliability/real2_cost_and_shutdown.json",
-    "live_telemetry": false,
-    "plug_reset": "Last recorded plug remained in folded gripper; no reset after candidate2"
+    "state": "All six motors/gripper disabled, controller exited; no live claim",
+    "source": "experiments/grasp_six_rounds/round_01/cost_shutdown.json",
+    "live_telemetry": false
   },
   "batch": {
     "id": "goal_aligned_batch2",
@@ -104,9 +103,11 @@
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "six_round_continuation": {
     "protocol": "experiments/grasp_six_rounds/protocol.json",
-    "status": "ROUND1_SIMULATION",
+    "status": "ROUND1_REVIEWED",
     "hardware_resume_authorized": true,
     "reset": "User confirmed restored and available for later resets",
-    "old_budget_constraints": "Superseded for new six-round work by explicit user instruction; historical accounting retained"
+    "old_budget_constraints": "Superseded for new six-round work by explicit user instruction; historical accounting retained",
+    "latest_result": "experiments/grasp_six_rounds/round_01/real/result.json",
+    "remaining_main_rounds": 5
   }
 }

@@ -1,0 +1,12 @@
+{
+  "candidate_height_mm": 22,
+  "task": "grasp_lift_return_diagnostic",
+  "full_insertion_commands": 0,
+  "source_sha256": "61d13c7311aca541e8a26292240951e9bbd50a5e7efc434fcf7851b83addba1d",
+  "candidate_sha256": "3dc4cde156c7b3399f0272611568d51749b65543866435970c91519d3c3ef8e8",
+  "private_patch_sha256": "3e423983b4e17763d8c6e6639fd7574c62a48d343f4c02268f16c13c9372cb8d",
+  "entry_relative_path": "self_evolution/grasp_six_rounds_20261117/controller03/continue_grasp_check.py",
+  "prefix_wall_seconds": 34.936762149911374,
+  "rollback": "Do not load stage entry; original full-task controller remains unchanged",
+  "validation": "Reference hash/scope/phase restriction, simulation stage criteria, original limit/fault/entry/freshness controls retained"
+}

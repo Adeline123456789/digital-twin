@@ -1,0 +1,48 @@
+{
+  "trajectory_id": "088f380ed927db18c41d90375fc91e23c89db5434250521cd408cc743a5c7b83",
+  "source_episode": "diagnostic_grasp22",
+  "source_trajectory_sha256": "08c6a32e99737b4cb98ce1a389eabbeec5f07669fbf7e45d6865a0c4c14ee8a9",
+  "source_initial_state_sha256": "92939b017aeca9dc15136d73eb3b63874efe0921189bcb3a7d5c94c85ce24ece",
+  "feature_names": [
+    "right.joint1",
+    "right.joint2",
+    "right.joint3",
+    "right.joint4",
+    "right.joint5",
+    "right.joint6",
+    "right.gripper_width"
+  ],
+  "units": [
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "width_mm / 95"
+  ],
+  "task_scope": "grasp_lift_return_diagnostic",
+  "adaptation": "100Hz original grasp prefix plus original12deg/s quintic fold, preserving closed gripper",
+  "duration_s": 38.47666666665198,
+  "steps": 3849,
+  "first_target": [
+    -8.302508105916094e-07,
+    7.38022112206748e-06,
+    -5.191020885624012e-06,
+    0.48399996232394493,
+    23.732003360725482,
+    0.4689916367885149,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.28421052631578947
+  ],
+  "source_time_origin_s": 0.03333333333333329,
+  "command_provenance": "Simulated grasp prefix + numerically validated existing fold interpolation; no insertion task claim"
+}

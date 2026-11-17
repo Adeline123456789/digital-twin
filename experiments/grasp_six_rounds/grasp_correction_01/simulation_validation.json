@@ -1,0 +1,43 @@
+{
+  "reference_sha256": "088f380ed927db18c41d90375fc91e23c89db5434250521cd408cc743a5c7b83",
+  "result": "failure",
+  "task_success": false,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "Stage-only grasp-retention and return check; original integrator/contact bound retained. This is not successful insertion.",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "max_penetration_m": 2.9099677565470114e-05,
+  "simulated_seconds": 38.48671875005863,
+  "observation_frames": 1154,
+  "applied_reference_steps": 3849,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 86.24144608003553,
+  "prediction_sha256": "503691d6db2d16e45251b7ded53e795bedc2bcc0fc2e8429f78d5657017da361",
+  "stage_goal": "grasp_lift_return_diagnostic",
+  "stage_success": true,
+  "grasp_to_lift": {
+    "translation_mm": 0.29859215626525826,
+    "rotation_deg": 0.14205360597094205
+  },
+  "grasp_to_fold": {
+    "translation_mm": 2.0080077565905445,
+    "rotation_deg": 0.2672997071337494
+  },
+  "lift_height_m": 0.05113968021490161,
+  "expected_insertion_task_success": false
+}

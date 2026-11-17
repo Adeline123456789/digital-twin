@@ -1,12 +1,12 @@
 {
-  "status": "USER_AUTHORIZED",
+  "status": "GRASP_CORRECTION1_SIM_POSE_DIAGNOSIS",
   "objective": "evolution/ACTIVE_GOAL.md",
   "main_rounds_planned": 6,
   "main_rounds_started": 1,
-  "main_rounds_real_started": 0,
+  "main_rounds_real_started": 1,
   "extra_corrections_allowed_per_stage": 4,
   "extra_corrections_used": {
-    "grasp": 0,
+    "grasp": 1,
     "transport": 0,
     "insert": 0
   },
@@ -15,5 +15,16 @@
   "teacher_student_suspended": true,
   "onsite_reset_confirmed": true,
   "latest_instruction": "Still follow previous document; six complete rounds, each phase may have four extra correction rounds",
-  "authorized_utc": "2026-11-17T11:39:06.609234+00:00"
+  "authorized_utc": "2026-11-17T11:39:06.609234+00:00",
+  "results": [
+    {
+      "round": 1,
+      "physical_success": false,
+      "dataset_valid": true,
+      "root_cause": "UNKNOWN",
+      "result": "experiments/grasp_six_rounds/round_01/real/result.json"
+    }
+  ],
+  "main_rounds_completed": 1,
+  "reset_source": "User: scene restored after round1; cannot grip"
 }

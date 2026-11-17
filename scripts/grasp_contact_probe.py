@@ -11,6 +11,7 @@ import yaml
 
 from learn import SIM, digest, save
 from trajectory_contract import load_reference
+from contact_evidence import grasp_relation
 
 sys.path.insert(0, str(SIM / 'src'))
 from piper_sim.backends.mujoco import MujocoBackend
@@ -101,6 +102,7 @@ def probe(trial, reference, output, contact_dim):
                 row = dict(time_s=sim.sim_time, phase=phases[index],
                            plug_xyz_m=sim.data.body('task/yellow_plug').xpos.tolist(),
                            measured_gripper_width_m=float(sim.read().position[-1]),
+                           grasp_relation=grasp_relation(sim.data),
                            geometry=contact_snapshot(sim))
                 history.append(row)
                 phase_ends[phases[index]] = row
