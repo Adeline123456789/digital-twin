@@ -1,0 +1,59 @@
+{
+  "candidate_width_offset_mm": 2.988032990796624,
+  "bounds_mm": [
+    -3,
+    3
+  ],
+  "evaluations": 13,
+  "comparisons": [
+    {
+      "number": 1,
+      "phase": "descend",
+      "split": "train",
+      "frame": 609,
+      "image_sha256": "eb7e5ce76bb7226fc123f0b4ca04f00a9140f920f9f6024259b95be49e8d4891",
+      "baseline_iou": 0.47727493287613626,
+      "candidate_iou": 0.49672041099873987
+    },
+    {
+      "number": 1,
+      "phase": "lift",
+      "split": "train",
+      "frame": 707,
+      "image_sha256": "60ec982b010560b4a6f9dce1cde1b8e4527eb5022c9a8bc36d17da5bc374450b",
+      "baseline_iou": 0.47281473203440066,
+      "candidate_iou": 0.4769697526891606
+    },
+    {
+      "number": 2,
+      "phase": "lift",
+      "split": "heldout",
+      "frame": 720,
+      "image_sha256": "5639bd06b461024d87a886122c381b2e02f6d66a3fbda573dd33d9bbb6372fb9",
+      "baseline_iou": 0.5035159302022745,
+      "candidate_iou": 0.49484750270090583
+    },
+    {
+      "number": 2,
+      "phase": "align",
+      "split": "heldout",
+      "frame": 1046,
+      "image_sha256": "278213d6b4ce9c5d5225f283271879c71597f9f789605f1e8484ea6160ad850b",
+      "baseline_iou": 0.5030407591114945,
+      "candidate_iou": 0.49382817982908805
+    }
+  ],
+  "wall_seconds": 0.41259464400354773,
+  "hardware_commands": 0,
+  "model_sha256": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+  "program_sha256": "65a88f6dea607f2018d18987c5d25c1b996425891a451e6f1c91dadca96a32ca",
+  "deployed": false,
+  "scope": "RGB finger silhouette consistency; camera mount and CAD held fixed. Not independent metric calibration.",
+  "limitations": [
+    "Receipt-nearest phase frame; first trial clock uncertainty retained.",
+    "Lighting/occlusion and camera/CAD error may confound width offset.",
+    "No object geometry, contact physics, controller, force or success detector changed."
+  ],
+  "decision": "REJECTED_FOR_DEPLOYMENT",
+  "reason": "Bound-saturating width fit; original camera worsens both heldout views. Prior visual camera candidate improves heldout silhouette with positive width offset, but camera/geometry/width mapping remain confounded; no metric or physical calibration accepted."
+}

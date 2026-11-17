@@ -1,0 +1,80 @@
+{
+  "experiment_id": "20261117_real_batch2_000002",
+  "timestamp": "2026-11-17T07:43:57.913176+00:00",
+  "batch_index": 2,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "6f98dbf29eff6f26ff24eed91a242deb4a23b935a624ad1c084aefa545cf316e",
+    "archive_program_sha256": "19d6c41bb58de076ad60abca07ad411763b0ff16ffd03c1fadab90020cc4e00a"
+  },
+  "initial_state_stratum": "cold_start",
+  "task_gripper_effort_nm": 1.0,
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 1761,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Onsite user failure confirmation plus Agent RGB review",
+    "observations": [
+      "User explicitly confirms failure.",
+      "Controller completed release and fold; this is not physical success.",
+      "Wrist1110 and1151 show changed plug face appearance during insertion/release compared with align1046; metric in-hand pose UNKNOWN.",
+      "Final external1777 shows plug near target, but full insertion was not achieved according to onsite user."
+    ],
+    "evidence": [
+      "raw/task/right_wrist/1046.jpg",
+      "raw/task/right_wrist/1110.jpg",
+      "raw/task/right_wrist/1151.jpg",
+      "raw/task/external/1777.jpg"
+    ],
+    "root_cause": "UNKNOWN",
+    "supported_shutdown_confirmed": true,
+    "limitations": [
+      "No measured six-axis force or metric real object pose."
+    ]
+  },
+  "reference_commands": 5525,
+  "entire_reference_sent": true,
+  "reference_execution_seconds": 56.66444503108505,
+  "nominal_reference_seconds": 55.23333333360562,
+  "execution_time": 58.69730094191618,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One manual plug reset before this attempt; final supported shutdown counted separately",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_batch2_000002/videos/cam_external_rgb.mp4",
+      "sha256": "91d467d630a6e98d242235510b77984c28a31b4eae5c7f7c791bffa31fe538e6"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_batch2_000002/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "44dee43dabd019f24ca572f780cc381dac302efc9a6ead60e6cad6ae2e6a7776"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_batch2_000002/proprio_stats/proprio_stats.h5",
+      "sha256": "c1f699176328ee6df0cad1d465e54ab5d3b05deca5a69f0252026c6f2295d1cb"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_batch2_000002/outcome.json",
+      "sha256": "be932c7da079f526b8d2209366fbb131446fbb298b22192c578c86f41623f10b"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_batch2_000002/verification.json",
+      "sha256": "6f8accde1af91ce16a5c5992038ac2c1248d31b406faa16c670f780a429bcd3f"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_batch2_000002/raw/task/commanded_probe.csv",
+      "sha256": "2d2fb117c856af3e0e96e8233120d00a4cb5b62255ff5e65547fd295deadbcf3"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "reason": "User rejected continued teaching/repeated poor grasp; prioritize physical stability within current budget.",
+  "comparison_status": "Frozen comparison finished; candidate rejected, no default promotion",
+  "model_calls_remaining": 0,
+  "recorded_model_tokens": 253720,
+  "simulations_used": 4,
+  "next_experiment": {
+    "change": "grasp_height_m 0.020 to 0.016 only",
+    "motivation": "Historical current-installation real success used 16mm grasp; current20mm retained plug at different contact depth and failed. Transfer is hypothesis, not root-cause claim.",
+    "reference_success_episode": "20261116_real_repeatability_000002",
+    "other_parameters": "Keep current alignment gap23mm, original speed,1Nm gripper; recompute from fresh folded entry.",
+    "validation": "Full existing MuJoCo recording, frozen100Hz replay, then same-reference real if passed.",
+    "limitations": "Earlier successful trial had0.3Nm effort and25mm align gap; one success does not prove16mm will fix current failure."
+  }
+}

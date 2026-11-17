@@ -1,0 +1,152 @@
+{
+  "scope": "Simulation privileged relative-pose comparison via actual EpisodeTools.inspect_contact; not real pose calibration or new physical Episode",
+  "results": [
+    {
+      "episode": "20261117T071047Z_e43b1ad6",
+      "tool_calls": [
+        {
+          "phase": "grasp",
+          "frame": 600,
+          "position_in_gripper_mm": [
+            20.08911918229402,
+            -0.0010207051329230742,
+            0.001264894952226742
+          ],
+          "relative_to_grasp": {
+            "translation_mm": 0.0,
+            "rotation_deg": 0.0
+          },
+          "active_finger_contacts": 4,
+          "cache_key": "2140aaf3785294ed22779c1f8c80486bd3cf15f95cb338ec44e0ca831cae5cdb",
+          "seconds": 18.34194689791184,
+          "privileged_information_used": true
+        },
+        {
+          "phase": "lift",
+          "frame": 657,
+          "position_in_gripper_mm": [
+            20.690897818224073,
+            0.03061759094258873,
+            0.002030934893946798
+          ],
+          "relative_to_grasp": {
+            "translation_mm": 0.6026102349426108,
+            "rotation_deg": 0.29888569854144076
+          },
+          "active_finger_contacts": 4,
+          "cache_key": "f5722a93d54c545cee3933a3cc648704126d4692b925d25bd18879be08b99862",
+          "seconds": 0.619518800987862,
+          "privileged_information_used": true
+        },
+        {
+          "phase": "transport",
+          "frame": 954,
+          "position_in_gripper_mm": [
+            22.1714523140542,
+            0.02119834275829532,
+            -0.003213010004714894
+          ],
+          "relative_to_grasp": {
+            "translation_mm": 2.0824564843828455,
+            "rotation_deg": 0.11934791559132699
+          },
+          "active_finger_contacts": 6,
+          "cache_key": "bff133af664f9ea43525581403cc7053a1320d77f258f496d498dafbb3ddd610",
+          "seconds": 0.5733247129246593,
+          "privileged_information_used": true
+        },
+        {
+          "phase": "align",
+          "frame": 975,
+          "position_in_gripper_mm": [
+            22.296916408596424,
+            0.020676646058409586,
+            -0.003989647760615598
+          ],
+          "relative_to_grasp": {
+            "translation_mm": 2.207910092765653,
+            "rotation_deg": 0.11806424029159093
+          },
+          "active_finger_contacts": 6,
+          "cache_key": "f65e2e0262b19249d933cea2f56a4f269d5b7000818482b1263945eb8c122cdd",
+          "seconds": 0.7484207929810509,
+          "privileged_information_used": true
+        }
+      ]
+    },
+    {
+      "episode": "20261117T073201Z_efc6139b",
+      "tool_calls": [
+        {
+          "phase": "grasp",
+          "frame": 604,
+          "position_in_gripper_mm": [
+            16.06241954535072,
+            -0.001422917774594669,
+            0.0007954470888064653
+          ],
+          "relative_to_grasp": {
+            "translation_mm": 0.0,
+            "rotation_deg": 0.0
+          },
+          "active_finger_contacts": 4,
+          "cache_key": "2bb3cb8591ed79bff667b971540ddb1ddf390a78779cdc7144c120c7d522ebf2",
+          "seconds": 1.079575121984817,
+          "privileged_information_used": true
+        },
+        {
+          "phase": "lift",
+          "frame": 665,
+          "position_in_gripper_mm": [
+            16.469729706984896,
+            0.033837449241059324,
+            0.001436904626935894
+          ],
+          "relative_to_grasp": {
+            "translation_mm": 0.4088340405596264,
+            "rotation_deg": 0.40088918409368884
+          },
+          "active_finger_contacts": 4,
+          "cache_key": "f52efab96c7dd0918938e3cfa17c9bff8f3bd07f485bc3cd42fbdeac3cb49db9",
+          "seconds": 0.5648291619727388,
+          "privileged_information_used": true
+        },
+        {
+          "phase": "transport",
+          "frame": 962,
+          "position_in_gripper_mm": [
+            18.292772911495913,
+            0.028675491983424846,
+            -0.0059528594097544
+          ],
+          "relative_to_grasp": {
+            "translation_mm": 2.2305666526212002,
+            "rotation_deg": 0.5246816570057694
+          },
+          "active_finger_contacts": 4,
+          "cache_key": "5fe418b1ffea641dacc13b41f3f6a01aa5d3dffb2cf3530d40f412d3c3f0cfaa",
+          "seconds": 0.6534462220733985,
+          "privileged_information_used": true
+        },
+        {
+          "phase": "align",
+          "frame": 982,
+          "position_in_gripper_mm": [
+            18.42671755761433,
+            0.029209645209983353,
+            -0.005474418750567103
+          ],
+          "relative_to_grasp": {
+            "translation_mm": 2.3645047591253245,
+            "rotation_deg": 0.5173557249296243
+          },
+          "active_finger_contacts": 4,
+          "cache_key": "343b8da4800e5a8e4e92912d5152243b8f8ab008bf2878e41230349e6203449d",
+          "seconds": 0.5646589640527964,
+          "privileged_information_used": true
+        }
+      ]
+    }
+  ],
+  "contact_count_basis": "Current archived gripper_right_* collision geoms, not visual body-name substrings"
+}

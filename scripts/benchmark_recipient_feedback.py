@@ -69,6 +69,7 @@ def teacher_feedback(run):
         execution_feedback=exploration['feedback'] if exploration else [],
         recipient_steps=[dict(plan=c['answer'],status=c['status'],tools=prompt_events(c['tool_trace']),
                              execution_scene=c.get('execution_scene'),
+                             related_real_evidence=c.get('related_real_evidence'),
                              initial_observation=(c.get('initial_observation') or {}).get('result',{}).get('value'))
                          for c in exploration['planners']] if exploration else [],
         physical_result=run.get('physical_result'),native_outcome=run.get('native_outcome'),
@@ -123,7 +124,7 @@ def run(design_path,resume=None):
     if previous and previous.get('error')!='Invalid teacher guidance':
         raise ValueError('This continuation reuses the rejected teacher-format result only')
     budget=BatchBudget(design['limits'],out/'ledger.json',prior,
-                      (prior.get('started_at') or previous['timestamp']) if prior else None)
+                      (prior.get('started_at') or previous['timestamp']) if prior else design.get('authorization',{}).get('timestamp_utc'))
     inherited_tokens=budget.tokens()
     started=time.monotonic();runs=[]
     guidance=(ROOT/'protocol/robot_problem_solving.md').read_text()
@@ -153,6 +154,7 @@ def run(design_path,resume=None):
             before=json.loads((resume/'runs.json').read_text())[0]
         else:
             seed=budget.simulate(dict(base,**dev['parameters'],name='development_seed',shift_mm=dev['layout_shift_mm']),'development seed')
+            seed=dict(seed,related_real_evidence=design.get('related_real_evidence'))
             before=execute_student(seed,guidance,'recipient before teacher',dev['layout_shift_mm'],budget,local,design['student'],execution_limit)
         runs.append(before);save(out/'runs.json',runs)
         prompt=('Revise general tool-use guidance from this recipient execution. Do not solve held-out cases or invent measurements. '
@@ -174,7 +176,9 @@ def run(design_path,resume=None):
         # No teacher call occurs below this line. Tools and guidance are frozen before held-out construction.
         r['heldout_guidance_sha256']=__import__('hashlib').sha256(revised.encode()).hexdigest()
         held=design['heldout']
+        os.environ['PIPER_TARGET_INDEX']=str(held.get('target_index',source['initial_state']['target_index']))
         held_seed=budget.simulate(dict(base,**held['parameters'],name='heldout_seed',shift_mm=held['layout_shift_mm']),'heldout seed')
+        held_seed=dict(held_seed,related_real_evidence=design.get('related_real_evidence'))
         for name,text in [('parent',guidance),('candidate',revised)]:
             if any(digest(ROOT/p)!=h for p,h in frozen.items()):raise RuntimeError('Frozen tool changed during comparison')
             if {str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'memory').rglob('*.json')}!=frozen_memory:

@@ -1,0 +1,7 @@
+{
+  "status": "REJECTED_NOT_DEPLOYED",
+  "reason": "Replacing receipt-elapsed consistency with cumulative nominal30Hz frame-cadence consistency also rejects actual second-trial wrist data, despite stable receipt timing. Keep original exporter mapping; first raw trial remains preserved with export error.",
+  "changed_safety_or_success_rules": false,
+  "candidate_patch": "Local .local/goal_aligned_runtime/rejected_clock_candidate.patch; hash in report",
+  "candidate_patch_sha256": "a3380f9eb218405a028b7b26e98a2a621ba70fceab1438d5fe0d96a9db8b9691"
+}

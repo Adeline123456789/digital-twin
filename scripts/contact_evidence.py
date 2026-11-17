@@ -122,6 +122,16 @@ def inspect_state(model, data, focus_body='task/yellow_plug', surfaces=True):
         units_limit='Prismatic actuator N is not real gripper motor N.m; no identified conversion')
 
 
+def grasp_relation(data, side='right'):
+    """Object pose in the moving gripper frame; contact alone does not imply retention."""
+    grip, plug = data.body(side+'/gripper_center'), data.body('task/yellow_plug')
+    rotation = grip.xmat.reshape(3, 3).T
+    return dict(position_m=(rotation @ (plug.xpos-grip.xpos)).tolist(),
+        rotation_matrix=(rotation @ plug.xmat.reshape(3, 3)).tolist(),
+        frame=side+'/gripper_center', source='Simulation privileged body poses',
+        interpretation='Compare across grasp/lift/transport to detect in-gripper translation or rotation; not a real pose measurement')
+
+
 def inspect_frame(ident, frame, cache, surfaces=True):
     from importlib.metadata import version
     report, episode, raw = locate(ident)
@@ -139,6 +149,7 @@ def inspect_frame(ident, frame, cache, surfaces=True):
         scope = restore(model, data, row, extra, deps['initial'])
         result = inspect_state(model, data, surfaces=surfaces)
         result.update(episode_id=ident, frame=frame, phase=row['phase'], time_s=row['time'],
+            grasp_relation=grasp_relation(data),
             state_source=scope, force_source='mj_forward solver on restored state, not measured real force',
             recorded_contact_count=len(extra['contacts']),
             historical_external_forces_status='RECORDED' if scope == 'RECORDED_INTEGRATION_STATE' else 'UNKNOWN',

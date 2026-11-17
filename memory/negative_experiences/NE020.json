@@ -1,0 +1,14 @@
+{
+  "id": "NE020",
+  "version": 1,
+  "content": "At the current right-Piper fixture,20mm grasp/23mm align and16mm grasp/23mm align both produced full simulation successes but failed their real frozen-reference executions. A complete release/fold sequence also failed physically. Do not reuse simulation success or unchanged gripper width as proof of real stable retention or insertion.",
+  "applicability": "Current right-only Piper, RGB-only, original speed and1.0N.m command, target socket3; current scene/configuration hashes in batch2 reports",
+  "source_episodes": ["20261117T071047Z_e43b1ad6", "20261117T073201Z_efc6139b", "20261117_real_batch2_000001", "20261117_real_batch2_000002"],
+  "source_experiments": ["experiments/goal_aligned_runtime/batch2/REPORT.md"],
+  "validation_status": "REAL_OBSERVED_FAILURE; FIRST_RECORDING_EXPORT_UNVERIFIED",
+  "success_count": 0,
+  "failure_count": 2,
+  "count_unit": "Two distinct real executions, different grasp heights; not independent fixed-policy reliability trials",
+  "known_limits": ["Root cause UNKNOWN", "Static real-width substitution assumes simulated object pose and cannot identify a unique parameter", "One raw capture has unresolved timing/export rejection", "Historical successful grasp heights are not validated under the present grip/contact state"],
+  "signatures": ["sim_success_real_insertion_failure", "in_hand_pose_mismatch", "sequence_complete_physical_failure"]
+}

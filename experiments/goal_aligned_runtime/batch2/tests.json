@@ -1,0 +1,10 @@
+{
+  "tests_passed": 29,
+  "groups": {
+    "scene_context": 4,
+    "evidence_tools": 14,
+    "recipient_feedback": 9,
+    "recording_clock_unchanged_after_rejection": 2
+  },
+  "scope": "Offline unit/regression tests, not physical success evidence"
+}

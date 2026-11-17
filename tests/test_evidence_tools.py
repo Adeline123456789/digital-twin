@@ -9,12 +9,28 @@ import mujoco
 import numpy as np
 from evidence_cache import EvidenceCache
 from episode_evidence import compact_frame
-from contact_evidence import integration_snapshot, inspect_state
+from contact_evidence import integration_snapshot, inspect_state, grasp_relation
 from bounded_tools import plan, total_usage, baseline_case, validate_tool_plan, prompt_events
 from model_compare import ask, ModelCallError
 
 
 class EvidenceTests(unittest.TestCase):
+    def test_grasp_relation_distinguishes_rigid_carry_from_in_hand_rotation(self):
+        model=mujoco.MjModel.from_xml_string('''<mujoco><worldbody>
+          <body name="right/gripper_center"><freejoint/><geom type="sphere" size=".01" mass="1"/></body>
+          <body name="task/yellow_plug" pos="0 0 .02"><freejoint/><geom type="sphere" size=".005" mass=".1"/></body>
+        </worldbody></mujoco>''')
+        data=mujoco.MjData(model);mujoco.mj_forward(model,data)
+        initial=grasp_relation(data)
+        data.qpos[:3]+=[.1,.2,.3];data.qpos[7:10]+=[.1,.2,.3]
+        mujoco.mj_forward(model,data)
+        np.testing.assert_allclose(grasp_relation(data)['position_m'],initial['position_m'],atol=1e-12)
+        data.qpos[10:14]=[np.cos(.1),0,0,np.sin(.1)];mujoco.mj_forward(model,data)
+        self.assertFalse(np.allclose(grasp_relation(data)['rotation_matrix'],initial['rotation_matrix']))
+        data.qpos[3:7]=data.qpos[10:14]
+        mujoco.mj_forward(model,data)
+        np.testing.assert_allclose(grasp_relation(data)['rotation_matrix'],np.eye(3),atol=1e-12)
+
     def test_summary_contact_pairs_survive_json_roundtrip(self):
         row=dict(phase='grasp',time=1,plug=[0,0,0],grip=[0,0,.02])
         extra=dict(contacts=[dict(body1='task/yellow_plug',body2='right/link7')])

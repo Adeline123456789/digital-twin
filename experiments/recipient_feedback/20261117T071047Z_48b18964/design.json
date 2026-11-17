@@ -1,0 +1,84 @@
+{
+  "status": "AUTHORIZED",
+  "source_episode": "20261117T053833Z_25cf43e3",
+  "task_sha256": "1df8bb99725a383553765b87673d8e09cac59f44a3963b0dfcf328f19512331f",
+  "hardware_executions": 0,
+  "real_pairing": "Separate existing hardware controller; up to8 same-reference successful-simulation counterparts authorized",
+  "student": "gpt-6-luna",
+  "teacher": "gpt-6-astra",
+  "recipient_executions": 1,
+  "limits": {
+    "model_calls": 14,
+    "tokens": 250000,
+    "simulations": 8,
+    "seconds": 4500
+  },
+  "development": {
+    "layout_shift_mm": 0,
+    "parameters": {
+      "offset_mm": 0,
+      "start_right_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.784,
+        21.999,
+        0.536
+      ]
+    }
+  },
+  "heldout": {
+    "layout_shift_mm": 0,
+    "parameters": {
+      "offset_mm": 0,
+      "start_right_deg": [
+        0.0,
+        0.0,
+        0.0,
+        0.784,
+        21.999,
+        0.536
+      ]
+    },
+    "target_index": 2
+  },
+  "scope": "Same fixed real fixture, development socket3 and heldout socket2; task-family target adaptation, not cross-task-family capability. No artificial offset failure injected.",
+  "authorization": {
+    "timestamp_utc": "2026-11-17T07:04:53+00:00",
+    "source": "Explicit user approval; prior batch remains unchanged"
+  },
+  "preflight": {
+    "connection_sha256": "263cb94adf86574a8a917402b6c9aa8f51ec36cb5c8aa822629f86d208941069",
+    "start_right_deg": [
+      0.0,
+      0.0,
+      0.0,
+      0.784,
+      21.999,
+      0.536
+    ],
+    "raw_feedback_kept_private": true
+  },
+  "budget_reserve": "At most7 planned full episodes including return scene; eighth uncommitted. Student per-arm execution limit1. No extra attempt hidden as preflight.",
+  "related_real_evidence": {
+    "source_real_episode": "20261117_real_recipient_pair_000001",
+    "source_simulation_episode": "20261117T053833Z_25cf43e3",
+    "scope": "Prior same-fixture right-arm socket3 trial; different measured startup. For socket2 this is only analogous evidence, not a measured result.",
+    "simulation_result": "success",
+    "physical_task_success": false,
+    "observed_phases": "Grasp and transport retained the plug. Insert triggered existing wrist RGB slip guard; retreat without release. Final plug remained in fingers, socket empty.",
+    "gripper_feedback_mm": {
+      "real_lift_end": 41.3,
+      "sim_lift_end": 39.486,
+      "real_align_end": 40.6,
+      "sim_align_end": 38.365
+    },
+    "root_cause": "UNKNOWN",
+    "limitations": [
+      "Motor opening is not six-axis force",
+      "Pixel motion cannot distinguish grasp pose, alignment, slip or contact cause",
+      "Prior failed zero-offset reference is not a verified real skill; repeating it is not a demonstrated repair"
+    ],
+    "evidence": "experiments/goal_aligned_runtime/current_entry_pair/real/physical_review.json"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "experiment_id": "goal_aligned_batch2_20261117",
+  "timestamp": "2026-11-17T07:59:39.630112+00:00",
+  "model_summary": {
+    "gpt-6-luna": {
+      "calls": 8,
+      "input_tokens": 228357,
+      "output_tokens": 1621,
+      "cached_input_tokens": 85248,
+      "wall_seconds": 193.24460689385887,
+      "timeouts": 1
+    },
+    "gpt-6-astra": {
+      "calls": 1,
+      "input_tokens": 22616,
+      "output_tokens": 1126,
+      "cached_input_tokens": 7168,
+      "wall_seconds": 75.44585672602989,
+      "timeouts": 0
+    }
+  },
+  "reported_model_tokens": 253720,
+  "model_call_count": 9,
+  "simulation_episode_count": 5,
+  "simulation_success_count": 3,
+  "real_executions": 2,
+  "real_task_successes": 0,
+  "valid_successful_real_episodes": 0,
+  "manual_resets": 1,
+  "supported_shutdowns": 2,
+  "cost_per_valid_real_success": null,
+  "research_orchestrator_tokens": null,
+  "root_cause": "UNKNOWN",
+  "physical_calibrated": false,
+  "default_policy_promoted": false,
+  "status": "STABILITY_NOT_ACHIEVED; TEACHER_CANDIDATE_REJECTED",
+  "last_hardware_state": "Right arm supported, disabled and disconnected after attempt2",
+  "evidence": [
+    "pairing_ledger.json",
+    "grasp_relation_comparison.json",
+    "real_aperture_contact_probe.json",
+    "tracking_diagnosis.json",
+    "real_000002/result.json"
+  ],
+  "limits": "75-minute authorized batch; nine calls crossed250000 threshold to253720 on final allowed in-flight call; no later model calls.",
+  "model_identity_scope": "Requested CLI endpoint names; backend weights not independently verified",
+  "batch_decision": "No further blind hardware repeats; preserve unused episode allowance. Physical stability unmet."
+}

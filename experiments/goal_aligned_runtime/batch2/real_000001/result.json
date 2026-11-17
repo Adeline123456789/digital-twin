@@ -1,0 +1,67 @@
+{
+  "experiment_id": "20261117_real_batch2_000001",
+  "environment": "real",
+  "result": "failure",
+  "task_success": false,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "recording_verified": false,
+  "recording_status": "RAW_PRESERVED_EXPORT_REJECTED",
+  "execution_time": 55.000697046052665,
+  "human_interventions": 0,
+  "supported_shutdowns": 1,
+  "tokens": 0,
+  "execution_llm_calls": 0,
+  "research_orchestrator_tokens": null,
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Codex RGB review",
+    "observations": [
+      "Original insertion guard stopped at wrist frame 1058: yellow top 299 to 317 pixels.",
+      "External frame 1611 after fold: yellow plug remains between fingers; target socket is empty.",
+      "No release phase executed."
+    ],
+    "evidence": [
+      "raw/task/external/1611.jpg",
+      "raw/task/right_wrist/1058.jpg",
+      "raw/task/execution_report.json"
+    ],
+    "root_cause": "UNKNOWN",
+    "limitations": [
+      "Pixel motion does not identify pose, friction or contact root cause.",
+      "No six-axis force measurement."
+    ],
+    "supported_shutdown_confirmed": true
+  },
+  "evidence": [
+    {
+      "dataset_relative_path": "self_evolution/goal_aligned_batch2/real_000001/commanded_probe.csv",
+      "sha256": "bb70fd002e2da12c8f5b755d6d16d13e4a2e52cc2fac8f1ed48f748a0fe3d35c"
+    },
+    {
+      "dataset_relative_path": "self_evolution/goal_aligned_batch2/real_000001/execution_report.json",
+      "sha256": "378d2e72190f20da847b64bb3992c916a322c7c50a7e622de7d7c7f322f8867d"
+    },
+    {
+      "dataset_relative_path": "self_evolution/goal_aligned_batch2/real_000001/raw_can.jsonl",
+      "sha256": "9166337b9a58b150076137d69ee30184beef32fb94848993d315ac7852607626"
+    },
+    {
+      "dataset_relative_path": "self_evolution/goal_aligned_batch2/real_000001/external/camera.json",
+      "sha256": "177567972c7389bcafa7b74766f05e0c1f7ae25a78c1048d0d263b560ca66fdf"
+    },
+    {
+      "dataset_relative_path": "self_evolution/goal_aligned_batch2/real_000001/right_wrist/camera.json",
+      "sha256": "f0538a6218186144e75af0d42627991d8f848a0da7b35d156e0972b4b540adaa"
+    },
+    {
+      "dataset_relative_path": "self_evolution/goal_aligned_batch2/real_000001/external/1611.jpg",
+      "sha256": "764866d2fd936d7637986b834a592a46e2b5dbe9111c498ef8e5e55e3f9e8ca6"
+    },
+    {
+      "dataset_relative_path": "self_evolution/goal_aligned_batch2/real_000001/right_wrist/1058.jpg",
+      "sha256": "09061fcdfb1c8bc8536b2638a7ebdf534dc70f407818b3df64ac4b4d32a872f7"
+    }
+  ]
+}

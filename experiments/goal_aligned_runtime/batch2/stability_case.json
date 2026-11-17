@@ -1,0 +1,16 @@
+{
+  "offset_mm": 0,
+  "grasp_tilt_deg": 0.0,
+  "grasp_height_m": 0.016,
+  "align_gap_m": 0.023,
+  "start_right_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.603,
+    22.703,
+    0.501
+  ],
+  "name": "grasp16_current_entry",
+  "shift_mm": 0
+}

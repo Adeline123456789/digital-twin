@@ -102,6 +102,7 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
         validation_status=seed['validation_status'], task_success=seed['task_success'],
         current_parameters=dispatch.context['baseline'],
         requested_execution_scene=scene,
+        related_real_evidence=seed.get('related_real_evidence'),
         root_cause='UNKNOWN', source='Archived simulation; privileged data available on request')
     contract=('Return {"tool":"name","args":{...},"reason":"short reason"} or '
         '{"plan":{"offset_mm":number OR "grasp_tilt_deg":screened_angle OR "grasp_height_m":number OR "align_gap_m":number OR "stop":true,'
@@ -154,6 +155,7 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
         wall_seconds=time.monotonic()-started,status=status,calls=calls,tool_trace=events,
         applicability=dispatch.context,model_calls_attempted=len(calls),
         execution_scene=scene,
+        related_real_evidence=seed.get('related_real_evidence'),
         initial_observation=bootstrap,
         timing=dict(llm_cli_network_inference_seconds=sum(c['wall_seconds'] for c in calls),
                     tools_seconds=sum(e.get('wall_seconds',0) for e in events),

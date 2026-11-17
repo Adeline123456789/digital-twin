@@ -1,0 +1,10 @@
+{
+  "result": "infrastructure_error",
+  "error": "Native exporter rejected camera clock continuity",
+  "external_max_elapsed_error_s": 0.25032975641079247,
+  "wrist_max_elapsed_error_s": 0.2500116806477308,
+  "raw_capture": "self_evolution/goal_aligned_batch2/real_000001",
+  "physical_task_success": false,
+  "formal_dataset_status": "NOT_EXPORTED",
+  "training_eligible": false
+}

@@ -1,0 +1,49 @@
+{
+  "authorization": "experiments/goal_aligned_runtime/batch2/authorization.json",
+  "deadline_utc": "2026-11-17T08:19:53+00:00",
+  "limits": {
+    "real_executions": 8,
+    "manual_resets": 8
+  },
+  "real_executions": 2,
+  "manual_resets": 1,
+  "pairs": [
+    {
+      "simulation_episode": "20261117T071047Z_e43b1ad6",
+      "role": "development seed",
+      "reference_sha256": "78cd5917bb57da2ce82a20f928637176238a909bb636085e0c154a989427b5c4",
+      "validation_status": "SIMULATION_VERIFIED",
+      "real_status": "FAILED_SUPPORTED_SHUTDOWN",
+      "physical_task_success": false,
+      "real_episode": "20261117_real_batch2_000001",
+      "recording_status": "RAW_PRESERVED_EXPORT_REJECTED_CLOCK_DRIFT"
+    },
+    {
+      "simulation_episode": "20261117T071708Z_94246e78",
+      "role": "recipient after feedback",
+      "reference_sha256": "78cd5917bb57da2ce82a20f928637176238a909bb636085e0c154a989427b5c4",
+      "validation_status": "SIMULATION_VERIFIED",
+      "real_status": "DEFERRED_IDENTICAL_REFERENCE_AFTER_OBSERVED_FAILURE",
+      "physical_task_success": null,
+      "reason": "Byte-identical command reference and simulator prediction to seed; one shared physical failure is relevant, but does not count as two independent real executions.",
+      "same_reference_real_evidence": "20261117_real_batch2_000001",
+      "independent_real_replicate": false
+    },
+    {
+      "simulation_episode": "20261117T073201Z_efc6139b",
+      "role": "grasp height16mm stability candidate",
+      "reference_sha256": "6f98dbf29eff6f26ff24eed91a242deb4a23b935a624ad1c084aefa545cf316e",
+      "validation_status": "SIMULATION_VERIFIED",
+      "real_status": "FAILED_SUPPORTED_SHUTDOWN",
+      "real_episode": "20261117_real_batch2_000002",
+      "physical_task_success": false,
+      "recording_status": "FORMAL_EPISODE_VERIFIED",
+      "recording_frames": 1761
+    }
+  ],
+  "notes": [
+    "Simulation validation replays the frozen 100Hz command reference; no changed speed or success detector.",
+    "Real physical result is reviewed separately from controller completion.",
+    "Initial plug already in holder according to fresh RGB; no requested manual reset so far."
+  ]
+}

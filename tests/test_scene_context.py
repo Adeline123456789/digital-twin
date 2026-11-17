@@ -12,6 +12,19 @@ import agent_challenge
 
 
 class SceneContextTests(unittest.TestCase):
+    def test_archived_camera_copy_is_same_dependency_but_changed_contents_are_not(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);raw=root/'self_evolution/seed';raw.mkdir(parents=True)
+            old=raw/'cameras.json';new=root/'cameras.json'
+            old.write_text('{"version":1}');new.write_text(old.read_text())
+            before=dict(holder_xy_m=[.3,-.3],target_index=3,active_arms=['right'],camera_calibration=str(old))
+            after=dict(before,camera_calibration=str(new));path=root/'task.yaml'
+            (raw/'task.yaml').write_text(yaml.safe_dump(before));path.write_text(yaml.safe_dump(after))
+            with patch.object(agent_challenge,'DATA',root),patch.dict(os.environ,{'PIPER_SIM_PROFILE':'original','PIPER_TASK_CONFIG':str(path),'PIPER_ACTIVE_ARMS':'right','PIPER_TARGET_INDEX':'3'}):
+                self.assertEqual(agent_challenge.execution_scene('seed',0)['changed_fields'],[])
+                new.write_text('{"version":2}')
+                self.assertEqual(agent_challenge.execution_scene('seed',0)['changed_fields'],['camera_calibration'])
+
     def test_config_return_does_not_accumulate_shift_and_explicit_arms_override_saved_right(self):
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/'task.yaml'

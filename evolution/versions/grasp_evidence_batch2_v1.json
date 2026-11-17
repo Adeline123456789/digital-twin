@@ -1,0 +1,25 @@
+{
+  "version": "grasp_evidence_batch2_v1",
+  "parent_git_head": "04b8e145ecab929ffa70cadd16f7ef7ccf1840e5",
+  "timestamp": "2026-11-17T08:02:50.866736+00:00",
+  "status": "OBSERVATION_FIX_VERIFIED; TEACHER_AND_PHYSICAL_REPAIRS_REJECTED",
+  "default_changed": false,
+  "active_planner_policy": "llm",
+  "tool_route": "agent_loop --planner-policy bounded_tools_v1 -> EpisodeTools.inspect_contact -> contact_evidence.inspect_frame/grasp_relation",
+  "actual_tool_evidence": "experiments/goal_aligned_runtime/batch2/grasp_relation_comparison.json",
+  "source_sha256": {
+    "scripts/contact_evidence.py": "6d8c8a6f3aee9e8144fd89ad328afa5b4950be0f2bc6f9a1c6f7c17d677de434",
+    "scripts/agent_challenge.py": "92e6be2040e82a1dcbcef545f2941ea12ae54f70fb86e06ee3a0349f76b3dc91",
+    "scripts/benchmark_recipient_feedback.py": "cf02634a0fdaf9f038d46da269816a278f4951fd7221204b949967a1e2697c37",
+    "scripts/bounded_tools.py": "1caaad6c7989ca8694a21ea4f8073fefbd4b1e4435509d6433eac742098c45b9"
+  },
+  "independent_tests": "tests/test_scene_context.py; tests/test_evidence_tools.py",
+  "rejected": [
+    "teacher guidance",
+    "16mm/23mm real repair",
+    "width-only image fit",
+    "clock-cadence export candidate"
+  ],
+  "rollback": "Restore parent observation functions; original active planner and physical settings unchanged",
+  "scope": "Not complete Agent self-evolution or accepted physical calibration"
+}

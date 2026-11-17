@@ -1,0 +1,80 @@
+{
+  "method": "Restore recorded simulation integration state; replace only symmetric finger aperture by same-phase real encoder reading; mj_forward, zero physics steps.",
+  "assumptions": [
+    "Plug pose remains simulated, not measured.",
+    "Real encoder width uses existing95mm mapping, not independently calibrated.",
+    "Same-phase endpoints are diagnostic correspondences, not exposure-time registration."
+  ],
+  "scope": "Static counterfactual, not a full Episode or fitted physical calibration",
+  "root_cause": "UNKNOWN",
+  "privileged_information_used": true,
+  "wall_seconds": 2.225897805998102,
+  "results": [
+    {
+      "episode": "20261117T071047Z_e43b1ad6",
+      "real_attempt": 1,
+      "phase": "grasp",
+      "frame": 600,
+      "sim_aperture_mm": 39.96632550440138,
+      "measured_real_aperture_mm": 42.6,
+      "before_active_contacts": 4,
+      "real_width_only_active_contacts": 0,
+      "real_width_only_contact_distances_m": []
+    },
+    {
+      "episode": "20261117T071047Z_e43b1ad6",
+      "real_attempt": 1,
+      "phase": "lift",
+      "frame": 657,
+      "sim_aperture_mm": 39.485513525354406,
+      "measured_real_aperture_mm": 40.6,
+      "before_active_contacts": 4,
+      "real_width_only_active_contacts": 0,
+      "real_width_only_contact_distances_m": []
+    },
+    {
+      "episode": "20261117T071047Z_e43b1ad6",
+      "real_attempt": 1,
+      "phase": "align",
+      "frame": 975,
+      "sim_aperture_mm": 38.36511614899197,
+      "measured_real_aperture_mm": 39.9,
+      "before_active_contacts": 6,
+      "real_width_only_active_contacts": 0,
+      "real_width_only_contact_distances_m": []
+    },
+    {
+      "episode": "20261117T073201Z_efc6139b",
+      "real_attempt": 2,
+      "phase": "grasp",
+      "frame": 604,
+      "sim_aperture_mm": 42.95663335933988,
+      "measured_real_aperture_mm": 45.6,
+      "before_active_contacts": 4,
+      "real_width_only_active_contacts": 0,
+      "real_width_only_contact_distances_m": []
+    },
+    {
+      "episode": "20261117T073201Z_efc6139b",
+      "real_attempt": 2,
+      "phase": "lift",
+      "frame": 665,
+      "sim_aperture_mm": 42.77849748123335,
+      "measured_real_aperture_mm": 44.1,
+      "before_active_contacts": 4,
+      "real_width_only_active_contacts": 0,
+      "real_width_only_contact_distances_m": []
+    },
+    {
+      "episode": "20261117T073201Z_efc6139b",
+      "real_attempt": 2,
+      "phase": "align",
+      "frame": 982,
+      "sim_aperture_mm": 41.298137457435764,
+      "measured_real_aperture_mm": 44.1,
+      "before_active_contacts": 4,
+      "real_width_only_active_contacts": 0,
+      "real_width_only_contact_distances_m": []
+    }
+  ]
+}

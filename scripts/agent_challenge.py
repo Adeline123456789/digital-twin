@@ -74,6 +74,11 @@ def execution_scene(ident, shift):
     before.setdefault('active_arms',['left','right'])
     after,base_path=execution_task(shift,record_inline=os.environ.get('PIPER_SIM_PROFILE','original')=='original')
     changed=sorted(k for k in before.keys()|after.keys() if before.get(k)!=after.get(k))
+    if ('camera_calibration' in changed and before.get('camera_calibration')
+            and after.get('camera_calibration')):
+        old, new = Path(before['camera_calibration']), Path(after['camera_calibration'])
+        if old.is_file() and new.is_file() and digest(old)==digest(new):
+            changed.remove('camera_calibration')
     # Only task poses/identity go to the planner. Camera and physics changes remain named dependencies.
     public={'holder_xy_m','strip_xy_m','strip_yaw_deg','target_index','active_arms'}
     return dict(observed_episode=ident,scope='Requested simulation state; not a measured real-world change',

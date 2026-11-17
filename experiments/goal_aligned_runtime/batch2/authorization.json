@@ -1,0 +1,93 @@
+{
+  "status": "AUTHORIZED",
+  "objective": "Evaluate the shared recipient execution loop and scene context against the full mission; preserve remaining acceptance gaps",
+  "prior_batch": {
+    "tokens": 255279,
+    "model_calls": 6,
+    "complete_simulation_episodes": 3,
+    "real_episodes": 1,
+    "wall_budget_expired": true,
+    "reset": false
+  },
+  "requested_limits": {
+    "model_calls": 14,
+    "token_stop_threshold": 250000,
+    "complete_simulation_episodes": 8,
+    "real_counterparts_max": 8,
+    "wall_seconds": 4500,
+    "manual_resets_max": 8,
+    "in_flight_call_may_cross_token_threshold": true
+  },
+  "roles": {
+    "student": "gpt-6-luna requested existing backend",
+    "teacher": "gpt-6-astra requested existing backend",
+    "weights_verified": false
+  },
+  "comparison": [
+    "Development: student acts with generic guidance and current observations",
+    "Teacher revises from compact actual student feedback",
+    "Student acts again from the same development initial condition",
+    "Freeze tools/guidance/memory; teacher-off parent and candidate on a separate layout/goal condition with equal per-arm budgets",
+    "If recording/physical checks permit, return to the original scene and verify no stale scene state is reused"
+  ],
+  "allocation": {
+    "development_seed": 1,
+    "development_student_before": 1,
+    "development_student_after": 1,
+    "heldout_seed": 1,
+    "heldout_parent": 1,
+    "heldout_candidate": 1,
+    "return_original_scene": 1,
+    "uncommitted_reserve": 1
+  },
+  "comparison_resources": {
+    "model_calls_per_recipient_max": 3,
+    "tool_calls_per_recipient_max": 2,
+    "complete_executions_per_recipient": 1,
+    "same_tools_and_observations": true,
+    "teacher_in_heldout": false
+  },
+  "cost_review": "Inspect actual reported input/event counts after the first recipient run; do not continue expensive repeated calls without identifying whether the input budget can support the heldout comparison.",
+  "physical_rules": [
+    "Every successful complete simulation receives the same frozen reference real counterpart or remains explicitly pending; failures do not require real replay",
+    "Read current RGB/joints before freezing the execution start; no blind restart of the old 15-trial batch",
+    "Only right-arm existing workspace/speed/gripper/slip controls; onsite plug reset and supported shutdown remain necessary",
+    "Unmatched actual layouts must be labelled unmatched, never a fair sim-real success comparison",
+    "New successful episode does not automatically imply training eligibility"
+  ],
+  "not_claimed": [
+    "No guarantee all hypotheses succeed",
+    "No physical calibration or weak-model gain from code/fixture checks",
+    "No cross-task-family generalization without a separate task validation"
+  ],
+  "prepared_code": [
+    "scripts/bounded_tools.py",
+    "scripts/agent_challenge.py",
+    "scripts/learn.py",
+    "scripts/agent_loop.py",
+    "scripts/benchmark_recipient_feedback.py"
+  ],
+  "evidence": [
+    "experiments/goal_aligned_runtime/continuation/REPORT.md",
+    "experiments/goal_aligned_runtime/scene_context/REPORT.md"
+  ],
+  "recipient_executions": 1,
+  "prepared_code_sha256": {
+    "scripts/bounded_tools.py": "557e73f856062d8fab07b35884b2014116dfa1fe3790199149ff6c0b487d70af",
+    "scripts/agent_challenge.py": "8df6f1a41a13a16e81f88beb43a1084a38ae1188fdda8134ec29ba33a6249ead",
+    "scripts/learn.py": "9af98aec69173a9870b68e02fb221295de8299487feb00bea6ca9c56fe7cd560",
+    "scripts/agent_loop.py": "7b05055d734997dfb61660d444e5026a761552828f584c583a143f4db4c6e246",
+    "scripts/benchmark_recipient_feedback.py": "33998cf0a1ec7c62d2ee8ccb0585288965e27434bfc3d484e2317aa9304ac62f"
+  },
+  "budget_wiring_validation": {
+    "tests_passed": 9,
+    "scope": "All four recipient arms receive the same proposed one-execution limit; no model or physics calls"
+  },
+  "authorization": {
+    "timestamp_utc": "2026-11-17T07:04:53+00:00",
+    "source": "User explicitly approved this batch in this thread",
+    "real_counterparts_max": 8,
+    "manual_resets_max": 8,
+    "prior_batch_not_reset": true
+  }
+}

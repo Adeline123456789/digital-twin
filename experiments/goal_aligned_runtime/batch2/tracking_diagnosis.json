@@ -1,0 +1,245 @@
+{
+  "scope": "Encoder target-versus-feedback FK using archived robot model, last10 samples per phase; not external metric pose calibration. Same-row command/feedback, no camera clock fit.",
+  "results": [
+    {
+      "episode": "20261117T071047Z_e43b1ad6",
+      "real_attempt": 1,
+      "phase_end": [
+        {
+          "phase": "descend",
+          "mean_fk_translation_error_world_mm": [
+            0.2141134439509862,
+            0.12411907568314895,
+            0.2602948516550213
+          ],
+          "max_fk_rotation_error_deg": 0.046982480245901834,
+          "mean_joint_error_deg": [
+            0.03087812746743861,
+            -0.004337167474852776,
+            -0.06251036490641723,
+            -0.00024433990588392494,
+            0.05151507240988238,
+            -0.013390885125664909
+          ],
+          "feedback_aperture_mm": 59.49999999999999,
+          "last_target_aperture_mm": 59.9965246230451
+        },
+        {
+          "phase": "grasp",
+          "mean_fk_translation_error_world_mm": [
+            1.1094240773828368,
+            -0.04392563852732567,
+            0.2671465491354719
+          ],
+          "max_fk_rotation_error_deg": 0.24931965088085378,
+          "mean_joint_error_deg": [
+            0.030878124146646434,
+            -0.004778075167462248,
+            -0.06325178499003244,
+            -0.00024434257107774194,
+            -0.17730259981813531,
+            -0.013390883004660736
+          ],
+          "feedback_aperture_mm": 42.6,
+          "last_target_aperture_mm": 27.0
+        },
+        {
+          "phase": "lift",
+          "mean_fk_translation_error_world_mm": [
+            -0.18425458009631024,
+            0.19904998236378035,
+            -0.4069381555048768
+          ],
+          "max_fk_rotation_error_deg": 0.10095978360721639,
+          "mean_joint_error_deg": [
+            0.030908202864168288,
+            0.028234971489511908,
+            0.06198644435246905,
+            -0.00021687062630733285,
+            -0.03175357088228026,
+            -0.013416824641473113
+          ],
+          "feedback_aperture_mm": 40.6,
+          "last_target_aperture_mm": 27.0
+        },
+        {
+          "phase": "transport",
+          "mean_fk_translation_error_world_mm": [
+            -0.2156303138964366,
+            0.017369013778724754,
+            0.2325345779359056
+          ],
+          "max_fk_rotation_error_deg": 0.0889352135930514,
+          "mean_joint_error_deg": [
+            -0.021858183190991552,
+            -0.05941772503620797,
+            0.03738166806309238,
+            0.08754869102993323,
+            -0.004401921109740669,
+            -0.08687061779486953
+          ],
+          "feedback_aperture_mm": 40.0,
+          "last_target_aperture_mm": 27.0
+        },
+        {
+          "phase": "align",
+          "mean_fk_translation_error_world_mm": [
+            -0.6410256051215815,
+            0.5530794001952455,
+            0.33471992668460404
+          ],
+          "max_fk_rotation_error_deg": 0.15073235455854203,
+          "mean_joint_error_deg": [
+            0.07122616144911476,
+            -0.08157270201929663,
+            0.05818761170225315,
+            0.08987111631972264,
+            -0.030945205308528047,
+            0.046846894924368596
+          ],
+          "feedback_aperture_mm": 39.9,
+          "last_target_aperture_mm": 27.0
+        },
+        {
+          "phase": "insert",
+          "mean_fk_translation_error_world_mm": [
+            0.30170323364641094,
+            1.593522431895585,
+            2.0547522624893313
+          ],
+          "max_fk_rotation_error_deg": 0.6526858039062433,
+          "mean_joint_error_deg": [
+            0.0753876327544738,
+            -0.17643716675898985,
+            -0.1883505058958491,
+            0.11415774784767949,
+            -0.023204068954972002,
+            0.0037612767432122496
+          ],
+          "feedback_aperture_mm": 39.9,
+          "last_target_aperture_mm": 27.0
+        }
+      ]
+    },
+    {
+      "episode": "20261117T073201Z_efc6139b",
+      "real_attempt": 2,
+      "phase_end": [
+        {
+          "phase": "descend",
+          "mean_fk_translation_error_world_mm": [
+            0.3160855412558561,
+            0.345787144622689,
+            0.6655969150146961
+          ],
+          "max_fk_rotation_error_deg": 0.09734323723568605,
+          "mean_joint_error_deg": [
+            0.07587561436167842,
+            -0.0953805772850032,
+            -0.04358069123861199,
+            -0.0002470876233532513,
+            0.04162874896717739,
+            0.07461131882486285
+          ],
+          "feedback_aperture_mm": 59.49999999999999,
+          "last_target_aperture_mm": 59.99553165820132
+        },
+        {
+          "phase": "grasp",
+          "mean_fk_translation_error_world_mm": [
+            1.0471633663053037,
+            0.2091620835429131,
+            0.67114162340223
+          ],
+          "max_fk_rotation_error_deg": 0.34933572508022753,
+          "mean_joint_error_deg": [
+            0.07587561224909364,
+            -0.09566614274770587,
+            -0.04404725467093229,
+            -0.00024708936129558555,
+            -0.1454191221437334,
+            0.07461132020897168
+          ],
+          "feedback_aperture_mm": 45.6,
+          "last_target_aperture_mm": 27.0
+        },
+        {
+          "phase": "lift",
+          "mean_fk_translation_error_world_mm": [
+            -0.32090656734435896,
+            0.46500664922167206,
+            -0.6208995787716691
+          ],
+          "max_fk_rotation_error_deg": 0.16886218790904228,
+          "mean_joint_error_deg": [
+            0.07590947913932648,
+            0.0721571062331762,
+            0.05807489697832295,
+            -0.00021695861499548878,
+            0.014535766800109684,
+            -0.009415387845074008
+          ],
+          "feedback_aperture_mm": 44.1,
+          "last_target_aperture_mm": 27.0
+        },
+        {
+          "phase": "transport",
+          "mean_fk_translation_error_world_mm": [
+            0.07685580810498083,
+            -0.28357941147869187,
+            0.10376208743497761
+          ],
+          "max_fk_rotation_error_deg": 0.033269497196063286,
+          "mean_joint_error_deg": [
+            -0.03677009257996673,
+            -0.05757859012401809,
+            0.06995323533946732,
+            0.0007425925638302466,
+            -0.04273483859813467,
+            -0.049476778499151663
+          ],
+          "feedback_aperture_mm": 44.1,
+          "last_target_aperture_mm": 27.0
+        },
+        {
+          "phase": "align",
+          "mean_fk_translation_error_world_mm": [
+            -0.5985318160943166,
+            0.08232600790974536,
+            0.25570061438257297
+          ],
+          "max_fk_rotation_error_deg": 0.14496726136201943,
+          "mean_joint_error_deg": [
+            0.0827759703972383,
+            -0.07347933222631582,
+            0.06311476662575757,
+            -0.03232381775886258,
+            0.034533515906561264,
+            0.01385759216316842
+          ],
+          "feedback_aperture_mm": 44.1,
+          "last_target_aperture_mm": 27.0
+        },
+        {
+          "phase": "insert",
+          "mean_fk_translation_error_world_mm": [
+            -0.19330042956252624,
+            0.9623907731659862,
+            1.151490334961325
+          ],
+          "max_fk_rotation_error_deg": 0.35124904791932043,
+          "mean_joint_error_deg": [
+            0.08283740361227246,
+            -0.11655503741935007,
+            -0.07728340227547222,
+            0.06772923241489175,
+            0.02056648202827773,
+            -0.0338145872372543
+          ],
+          "feedback_aperture_mm": 44.1,
+          "last_target_aperture_mm": 27.003971859373646
+        }
+      ]
+    }
+  ]
+}

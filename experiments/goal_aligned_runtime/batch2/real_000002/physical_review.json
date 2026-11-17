@@ -1,0 +1,22 @@
+{
+  "physical_task_success": false,
+  "plug_retained_in_target_after_release_and_fold": false,
+  "reviewer": "Onsite user failure confirmation plus Agent RGB review",
+  "observations": [
+    "User explicitly confirms failure.",
+    "Controller completed release and fold; this is not physical success.",
+    "Wrist1110 and1151 show changed plug face appearance during insertion/release compared with align1046; metric in-hand pose UNKNOWN.",
+    "Final external1777 shows plug near target, but full insertion was not achieved according to onsite user."
+  ],
+  "evidence": [
+    "raw/task/right_wrist/1046.jpg",
+    "raw/task/right_wrist/1110.jpg",
+    "raw/task/right_wrist/1151.jpg",
+    "raw/task/external/1777.jpg"
+  ],
+  "root_cause": "UNKNOWN",
+  "supported_shutdown_confirmed": true,
+  "limitations": [
+    "No measured six-axis force or metric real object pose."
+  ]
+}
