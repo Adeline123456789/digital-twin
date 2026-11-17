@@ -47,17 +47,25 @@
   "full_simulation_recording_valid": 2,
   "reference_replays_valid": 2,
   "outer_goal_usage_last_observed": {
-    "tokens": 338180,
+    "tokens": 343992,
     "batch_start": 141580,
-    "batch_delta": 196600,
+    "batch_delta": 202412,
     "stop_threshold": 341580,
-    "preflight_stop": 291580,
-    "remaining_at_snapshot": 3400,
-    "inflight_overrun_observed": 0,
-    "scope": "Final archive/tests complete; Git publication and final response still pending. No new analysis or physical experiment."
+    "inflight_overrun_observed": 2412,
+    "scope": "Snapshot after automatic continuation and closure; no new experiment or motion. Further budget request pending, not approved."
   },
   "new_model_subcall_tokens": 0,
   "total_monetary_cost": null,
   "closed_experiment_at_utc": "2026-11-17T10:54:13.105951+00:00",
-  "candidate2_result": "experiments/teacher_reliability/real_000002/result.json"
+  "candidate2_result": "experiments/teacher_reliability/real_000002/result.json",
+  "pending_batch_request": {
+    "approved": false,
+    "wall_minutes": 20,
+    "outer_tokens_max": 30000,
+    "reserve_tokens": 10000,
+    "child_model_calls": 0,
+    "new_simulations": 0,
+    "hardware_motion": false,
+    "scope": "Existing RGB/command evidence comparison only"
+  }
 }

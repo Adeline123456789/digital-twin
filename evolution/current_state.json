@@ -78,7 +78,7 @@
   "publication": "Use git status and git ls-remote to verify current commit; this checkpoint does not self-certify remote state",
   "continuation": {
     "id": "teacher_reliability_20261117",
-    "status": "STOPPED_DEVELOPMENT_LIMIT",
+    "status": "BLOCKED_PENDING_NEW_BUDGET",
     "new_model_subcalls": 0,
     "new_simulation_episodes": 2,
     "new_real_attempts": 2,
@@ -86,14 +86,12 @@
     "prior_budget_reset": false,
     "hardware_resume_authorized": false,
     "outer_goal_usage_last_observed": {
-      "tokens": 338180,
+      "tokens": 343992,
       "batch_start": 141580,
-      "batch_delta": 196600,
+      "batch_delta": 202412,
       "stop_threshold": 341580,
-      "preflight_stop": 291580,
-      "remaining_at_snapshot": 3400,
-      "inflight_overrun_observed": 0,
-      "scope": "Final archive/tests complete; Git publication and final response still pending. No new analysis or physical experiment."
+      "inflight_overrun_observed": 2412,
+      "scope": "Snapshot after automatic continuation and closure; no new experiment or motion. Further budget request pending, not approved."
     },
     "next_batch_proposal": "experiments/teacher_reliability/batch_proposal.json",
     "authorization": "experiments/teacher_reliability/authorization.json",
