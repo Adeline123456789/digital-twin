@@ -1,7 +1,7 @@
 {
   "id": "NE021",
-  "version": 1,
-  "content": "Current18mm/25mm/0.3Nm full reference passed simulation but real grasp changed during lift, then native align abort and plug dropped during recovery. Do not admit full insertion solely from lifted height or original condim6 success. In matched18mm simulation, grasp-to-lift rotation0.37deg under original angular friction versus130.57deg under point-contact sensitivity; both lift. This is model sensitivity, not measured real friction.22mm point-contact diagnostic stays0.21deg; real22mm validation pending.",
+  "version": 2,
+  "content": "Current18mm/25mm/0.3Nm full reference passed simulation but real grasp changed during lift, then native align abort and plug dropped during recovery. Do not admit full insertion solely from lifted height or original condim6 success. In matched18mm simulation, grasp-to-lift rotation0.37deg under original angular friction versus130.57deg under point-contact sensitivity; both lift. This is model sensitivity, not measured real friction.22mm point-contact diagnostic stays0.21deg; real22mm validation pending. Real22mm/0.3Nm stage check kept near-upright lift but lost plug3.9s into return; repeating same reference with1Nm holding after lift retained plug through return. Stage-only one trial, not insertion or stable validation.",
   "applicability": "Current right-only original Piper task,target3,RGB-only; historical success and current failure remain distinct",
   "source_episodes": [
     "20261117_real_grasp_six_rounds_000001",
@@ -9,7 +9,9 @@
   ],
   "source_experiments": [
     "experiments/grasp_six_rounds/grasp_correction1.json",
-    "experiments/grasp_six_rounds/round_01/real/result.json"
+    "experiments/grasp_six_rounds/round_01/real/result.json",
+    "experiments/grasp_six_rounds/grasp_correction_01/real_result.json",
+    "experiments/grasp_six_rounds/transport_correction_01/real_result.json"
   ],
   "validation_status": "REAL_FAILURE_OBSERVED; MODEL_SENSITIVITY_ONLY",
   "success_count": 0,
@@ -19,7 +21,7 @@
     "Root cause UNKNOWN",
     "No accepted friction or force calibration",
     "Qualitative real RGB posture, not metric real6DoF pose",
-    "No successful grasp22 real evidence yet"
+    "22mm stage return retention1/1 with post-lift1Nm; full insertion and repeatability unverified."
   ],
   "signatures": [
     "sim_success_real_insertion_failure",

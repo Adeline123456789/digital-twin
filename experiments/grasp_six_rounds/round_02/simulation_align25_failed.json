@@ -1,0 +1,23 @@
+{
+  "experiment_id": "20261117T120935Z_745e0917",
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "collection_component_seconds": 94.26360038400162,
+  "comparison_case": {
+    "name": "round2_grasp_height_22",
+    "offset_mm": 0,
+    "shift_mm": 0,
+    "grasp_height_m": 0.022,
+    "align_gap_m": 0.025,
+    "start_right_deg": [
+      -0.623,
+      0,
+      0,
+      0.477,
+      23.263,
+      0.461
+    ]
+  },
+  "recording_report": "experiments/evaluation/20261117T121108Z_a80d0a67"
+}

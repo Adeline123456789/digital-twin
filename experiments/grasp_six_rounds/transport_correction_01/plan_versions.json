@@ -1,0 +1,13 @@
+{
+  "scope": "Stage-only grasp22/lift/return; same validated joint/width reference",
+  "changed": "0.3Nm grasp/lift,1.0Nm return hold within original authorized upper bound",
+  "evidence": "Grasp correction1 remains near upright at lift, loses hold3.90s into return; not the earlier16mm already-rotated condition",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "entry_sha256": "2fe1013605783ab65250f0fe2047a8bcacd265f145a66db43a166a5cb23094fa",
+  "entry_relative_path": "self_evolution/grasp_six_rounds_20261117/controller03to1/continue_grasp_check.py",
+  "private_patch_sha256": "41e1e1f88c5b20dcfe612b1e10189a75c1a62948ac37e59c006913c20354eda3",
+  "motion_reference_sha256": "088f380ed927db18c41d90375fc91e23c89db5434250521cd408cc743a5c7b83",
+  "checks": "Compile and fake-CAN effort/fault gates passed; reference unchanged",
+  "simulation_limit": "Motor torque conversion to simulated actuator force is not identified; no prediction of torque treatment claimed",
+  "rollback": "Original defaults unchanged; omit private controller03to1 override"
+}

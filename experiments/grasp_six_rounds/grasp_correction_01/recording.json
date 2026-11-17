@@ -1,0 +1,24 @@
+{
+  "episodes": [
+    {
+      "session": "grasp22",
+      "episode": "000001",
+      "domain": "real",
+      "num_frames": 1224,
+      "purpose": "task_approach",
+      "success": false,
+      "policy_training_eligible": false,
+      "video_frames": {
+        "cam_external": 1224,
+        "cam_right_wrist": 1224
+      },
+      "known_right_joint_action_frames": 1224,
+      "known_right_gripper_action_frames": 1224
+    }
+  ],
+  "verified_frames": 1224,
+  "full_sim_demonstrations": 0,
+  "full_real_demonstrations": 0,
+  "real_task_attempts": 0,
+  "force_sensor_directory_present": false
+}

@@ -1,14 +1,14 @@
 {
-  "status": "GRASP_CORRECTION1_SIM_POSE_DIAGNOSIS",
+  "status": "ROUND2_ALIGN23_CORRECTION_SIMULATION",
   "objective": "evolution/ACTIVE_GOAL.md",
   "main_rounds_planned": 6,
-  "main_rounds_started": 1,
+  "main_rounds_started": 2,
   "main_rounds_real_started": 1,
   "extra_corrections_allowed_per_stage": 4,
   "extra_corrections_used": {
     "grasp": 1,
-    "transport": 0,
-    "insert": 0
+    "transport": 1,
+    "insert": 1
   },
   "prior_history_reset": false,
   "old_budget_stop_superseded_by_user": true,
@@ -26,5 +26,19 @@
     }
   ],
   "main_rounds_completed": 1,
-  "reset_source": "User: scene restored after round1; cannot grip"
+  "reset_source": "User: scene restored after round1; cannot grip",
+  "round2_candidates": [
+    {
+      "height_mm": 22,
+      "align_gap_mm": 25,
+      "result": "simulation_failed_original_ik",
+      "real_started": false
+    },
+    {
+      "height_mm": 22,
+      "align_gap_mm": 23,
+      "result": "simulation_running",
+      "real_started": false
+    }
+  ]
 }

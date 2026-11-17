@@ -103,11 +103,24 @@
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "six_round_continuation": {
     "protocol": "experiments/grasp_six_rounds/protocol.json",
-    "status": "ROUND1_REVIEWED",
+    "status": "ROUND2_FULL_SIMULATION_RUNNING",
     "hardware_resume_authorized": true,
-    "reset": "User confirmed restored and available for later resets",
+    "reset": "User confirmed restored and hands clear after hold-check",
     "old_budget_constraints": "Superseded for new six-round work by explicit user instruction; historical accounting retained",
     "latest_result": "experiments/grasp_six_rounds/round_01/real/result.json",
-    "remaining_main_rounds": 5
+    "remaining_main_rounds": 5,
+    "main_rounds_real_completed": 1,
+    "grasp_extra_corrections_started": 1,
+    "active_stage_scope": "Same22mm grasp/lift/fold,0.3Nm through lift then1Nm return; no insertion",
+    "active_capture": "self_evolution/grasp_six_rounds_20261117/hold_check22_real",
+    "runtime_sessions": {
+      "simulation": 95466,
+      "diagnostic_grasp_export": 15807,
+      "diagnostic_hold_export": 32154
+    },
+    "latest_source": "experiments/grasp_six_rounds/transport_correction_01",
+    "transport_extra_corrections_started": 1,
+    "stage_result": "grasp22 low-effort lifts near-upright but loses during return;0.3->1Nm return retains plug through fold, one trial only",
+    "current_candidate": "22mm/25mm/0.3Nm grasp-lift then1Nm transport onward"
   }
 }

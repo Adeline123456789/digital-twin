@@ -1,0 +1,28 @@
+{
+  "scope": "Static original IK on failed recorded transport endpoint; not physics or hardware validation",
+  "results": [
+    {
+      "gap_mm": 25.0,
+      "passed_original_ik": false,
+      "error": "Unreachable pose [ 0.29840988 -0.03061442  0.10183772]: residual [-5.69063187e-04 -5.34816989e-04 -1.11307190e-03 -1.55500027e-08\n -3.39263840e-03 -3.66806581e-03]"
+    },
+    {
+      "gap_mm": 24.0,
+      "passed_original_ik": false,
+      "error": "Unreachable pose [ 0.29840988 -0.03061442  0.10083772]: residual [-3.34320884e-04 -3.14197033e-04 -6.50144911e-04 -9.12293727e-09\n -1.98578580e-03 -2.14699103e-03]"
+    },
+    {
+      "gap_mm": 23.0,
+      "passed_original_ik": true,
+      "joint_deg": [
+        43.153028546579144,
+        117.57955683321985,
+        -92.65089238207288,
+        -0.0735936530019635,
+        69.90085100596042,
+        -47.214488766441896
+      ]
+    }
+  ],
+  "hardware_commands": 0
+}

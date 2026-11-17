@@ -1,0 +1,64 @@
+{
+  "task_scope": "grasp_lift_return_diagnostic",
+  "physical_insertion_success": null,
+  "insertion_attempted": false,
+  "completed_stage_sequence": true,
+  "stage_lift_holding_observed": true,
+  "stage_return_holding_observed": false,
+  "stage_success": false,
+  "dataset_valid": true,
+  "training_eligible": false,
+  "root_cause": "UNKNOWN",
+  "observation": "Near-upright object at lift, then visible slip/drop at3.90–3.98s into return, final empty gripper.",
+  "pose_limit": "Qualitative RGB posture, not calibrated rotation or6DoF ground truth",
+  "command_log_span_seconds": 40.827754021040164,
+  "model_pause_seconds": 0,
+  "fold_width_range_mm": [
+    27.300000000000004,
+    40.9
+  ],
+  "actual_effort_command_nm_counts": {
+    "0.3": 4001
+  },
+  "effort_transition": null,
+  "recording_frames_per_camera": 1224,
+  "recording_reference": "self_evolution/grasp_six_rounds_20261117/diagnostic_grasp22",
+  "recording_manifest_sha256": "66eaa4ca8f89aed2f6329d1609c037d1fbb99c4cba2d4113f5be6dd6142cd465",
+  "raw_reference": "self_evolution/grasp_six_rounds_20261117/grasp_check22_real",
+  "raw_evidence": [
+    {
+      "path": "right_wrist/0701.jpg",
+      "sha256": "e3d34b67585ff4db6ccdf82fe9ab9032d041aea41de4e9ad65f7eff7f84c8fe9"
+    },
+    {
+      "path": "external/last.png",
+      "sha256": "cfae1ff270f271d40b56706a653a21b08095a225e29c9360a8afbd32e2a85dc7"
+    },
+    {
+      "path": "right_wrist/last.png",
+      "sha256": "8a28b5b2a5cf27a50b8b7ef55d53ab2e5b00af316eabfa0d79f938c08c51bfb9"
+    },
+    {
+      "path": "execution_report.json",
+      "sha256": "f4ffbe8324961cae7753296dbf54e190055d7795aff39e26ca245bb03dc487f8"
+    },
+    {
+      "path": "commanded_probe.csv",
+      "sha256": "e4e2024cf9e037ef82e2f2b6621258e543d4ca154fbea0af7d04cd1865c045d1"
+    },
+    {
+      "path": "raw_can.jsonl",
+      "sha256": "7bef35abade05e4699e2e58e7931ae75c4db59d28d7417d9438bf187cd2f4594"
+    }
+  ],
+  "disabled": {
+    "all_six_motors": true,
+    "gripper": true,
+    "err_code": 0,
+    "check_sha256": "5653a842c3d2fab2e98a2685a2bf30ea355e6d302758ca47b05ff64dabc197c9",
+    "observed_utc": "2026-11-17T12:02:13.580564+00:00"
+  },
+  "child_model_calls": 0,
+  "monetary_cost": null,
+  "manual_resets": 1
+}
