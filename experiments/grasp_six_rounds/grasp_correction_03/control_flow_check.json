@@ -1,0 +1,68 @@
+{
+  "emitted": [
+    [
+      "descend",
+      300
+    ],
+    [
+      "grasp",
+      300
+    ],
+    [
+      "preload",
+      1000
+    ],
+    [
+      "lift",
+      1000
+    ],
+    [
+      "fold",
+      1000
+    ]
+  ],
+  "report": {
+    "before_close": {
+      "width_mm": 59.5,
+      "top_px": 305,
+      "frame": "open"
+    },
+    "before_preload": {
+      "width_mm": 45.2,
+      "top_px": 305,
+      "frame": "closed"
+    },
+    "gripper_effort_transition": {
+      "reference_index": 2,
+      "monotonic": 1.0,
+      "effort_nm": 1.0
+    },
+    "after_preload": {
+      "width_mm": 40.0,
+      "top_px": 302,
+      "frame": "preloaded"
+    },
+    "lift_handoff": {
+      "allow_transport": true,
+      "reason": "No screened change detected",
+      "encoder_width_change_mm": 0.20000000000000284,
+      "yellow_top_change_px": 1,
+      "thresholds": {
+        "encoder_width_change_mm": 5.0,
+        "yellow_top_change_px": 15.0
+      },
+      "limit": "Change rejection only: an already tilted grasp can pass. Not absolute pose, force or stable-grasp certification",
+      "preload": {
+        "width_mm": 40.0,
+        "top_px": 302,
+        "frame": "preloaded"
+      },
+      "lift": {
+        "width_mm": 39.8,
+        "top_px": 301,
+        "frame": "lifted"
+      }
+    }
+  },
+  "hardware_commands": 0
+}

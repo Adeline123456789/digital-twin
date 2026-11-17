@@ -1,0 +1,9 @@
+{
+  "status": "PASSED",
+  "failure": null,
+  "waypoints": 101,
+  "seconds": 0.4410433020675555,
+  "geometry": "Constant socket-normal plug axis (initial measured-simulation tilt interpolated to zero),23mm face clearance; no5deg carry tilt",
+  "source": "Existing reference2 prefix preserved; object/gripper relation is simulation privileged, not measured real pose",
+  "hardware_commands": 0
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "grasp_transport_return_diagnostic",
+  "entry": "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/self_evolution/grasp_six_rounds_20261117/controller_transport/continue_transport_check.py",
+  "entry_sha256": "ad851106af4c3e1943bfa2582474289b3fe47369c0f80aff9eb138268d10cee2",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "helper_sha256": "57e88436acb1702abfd0cfbcb0a3f5fe6e727f45cd5f15876203b4eab1d43e96",
+  "reference_id": "9875e077e72d129b5f18064e20732d5946f6b68bfff6428e3f81fbf711b56e4c",
+  "change": "Exact grasp/lift prefix retained; vertical Cartesian transport replacing5deg tilted target; no insertion",
+  "effort_nm": {
+    "grasp": 0.3,
+    "lift_onward": 1.0
+  },
+  "rollback": "Do not load vertical_transport_reference; prior transport retained for evidence but rejected for tilt",
+  "status": "REAL_GATED_BEFORE_TRANSPORT",
+  "generator_relative_to_batch": "vertical_transport_builder.py",
+  "generator_sha256": "393fdc990b0dbfed7f26aba0723c2453ea04f9dbcb24e845fd751f5e8f31e174"
+}

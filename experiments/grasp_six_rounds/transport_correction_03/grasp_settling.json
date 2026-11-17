@@ -1,0 +1,37 @@
+[
+  {
+    "capture": "hold_check22_real",
+    "grasp_end_width_mm": 43.1,
+    "last_200ms_width_change_mm": 0.0,
+    "last_200ms_slope_mm_s": -1.5299151683430095e-13,
+    "lift_end_width_mm": 41.0
+  },
+  {
+    "capture": "real_000002",
+    "grasp_end_width_mm": 44.3,
+    "last_200ms_width_change_mm": 0.0,
+    "last_200ms_slope_mm_s": -3.1101699406036425e-14,
+    "lift_end_width_mm": 33.6
+  },
+  {
+    "capture": "before_lift_real",
+    "grasp_end_width_mm": 43.2,
+    "last_200ms_width_change_mm": 0.0,
+    "last_200ms_slope_mm_s": -7.091371696162575e-14,
+    "lift_end_width_mm": 39.8
+  },
+  {
+    "capture": "transport_real",
+    "grasp_end_width_mm": 43.3,
+    "last_200ms_width_change_mm": 0.0,
+    "last_200ms_slope_mm_s": 9.832141000184666e-14,
+    "lift_end_width_mm": 39.9
+  },
+  {
+    "capture": "vertical_transport_real",
+    "grasp_end_width_mm": 45.2,
+    "last_200ms_width_change_mm": 0.0,
+    "last_200ms_slope_mm_s": -9.748761028530475e-14,
+    "lift_end_width_mm": 40.0
+  }
+]

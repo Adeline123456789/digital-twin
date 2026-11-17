@@ -1,5 +1,5 @@
 {
-  "status": "VERTICAL_TRANSPORT_SIM_RUNNING",
+  "status": "PRELOAD_SIM_VALIDATED_PENDING_RESET",
   "objective": "evolution/ACTIVE_GOAL.md",
   "main_rounds_planned": 6,
   "main_rounds_started": 2,
@@ -7,7 +7,7 @@
   "extra_corrections_allowed_per_stage": 4,
   "extra_corrections_used": {
     "grasp": 2,
-    "transport": 2,
+    "transport": 3,
     "insert": 1
   },
   "prior_history_reset": false,
@@ -50,5 +50,7 @@
   ],
   "outer_session_cost": null,
   "cost_note": "Actual simulation, command duration and child-model counts recorded per attempt. Native goal counter belongs to old blocked goal, not a reliable meter for this resumed scope. Monetary cost unknown.",
-  "vertical_transport_required": true
+  "vertical_transport_required": true,
+  "native_goal_recreated_utc": "2026-11-17T13:09:57.154554+00:00",
+  "native_goal_recreation_resets_counts": false
 }

@@ -1,0 +1,86 @@
+{
+  "task_scope": "grasp_transport_return_diagnostic",
+  "stage_success": false,
+  "gripper_retention_observed": true,
+  "transport_executed": false,
+  "vertical_transport_physical_validation": "NOT_EXECUTED",
+  "physical_slip_observed": false,
+  "gate_rejection": "5.2mm encoder change exceeds5mm while RGB top changes3px; likely confounds intentional effort tightening, mechanical cause still uncertain",
+  "physical_insertion_success": null,
+  "insertion_attempted": false,
+  "training_eligible": false,
+  "dataset_valid": true,
+  "observation": "Wrist RGB at grasp/lift/fold does not show prior gross flip; do not label this gate rejection as confirmed slip",
+  "lift_handoff": {
+    "allow_transport": false,
+    "reason": "Grasp-to-lift observation changed",
+    "encoder_width_change_mm": 5.200000000000003,
+    "yellow_top_change_px": 3,
+    "thresholds": {
+      "encoder_width_change_mm": 5.0,
+      "yellow_top_change_px": 15.0
+    },
+    "limit": "Change rejection only: an already tilted grasp can pass. Not absolute pose, force or stable-grasp certification",
+    "grasp": {
+      "width_mm": 45.2,
+      "top_px": 305,
+      "frame": "0646.jpg"
+    },
+    "lift": {
+      "width_mm": 40.0,
+      "top_px": 302,
+      "frame": "0701.jpg"
+    }
+  },
+  "real_reference": "self_evolution/grasp_six_rounds_20261117/vertical_transport_real",
+  "command_seconds": 40.88753199693747,
+  "effort_transition": {
+    "reference_index": 1997,
+    "monotonic": 648643.042318566,
+    "effort_nm": 1.0
+  },
+  "actual_effort_command_nm_counts": {
+    "0.3": 2004,
+    "1.0": 1908
+  },
+  "independent_reset": true,
+  "model_pause_seconds": 0,
+  "child_model_calls": 0,
+  "money_cost": null,
+  "recording_frames_per_camera": 1226,
+  "recording_reference": "self_evolution/grasp_six_rounds_20261117/diagnostic_vertical",
+  "recording_manifest_sha256": "bc39c3d9acc95eab3619330e5dcab8f98a5e50cde0bbaf6f7a451e49942cb477",
+  "disabled_check_sha256": "bdefaca89306777548de1a27744951d7f4a5b58b9dc3b5fea8b80d0dfd5eb64b",
+  "all_motors_and_gripper_disabled": true,
+  "evidence": [
+    {
+      "path": "right_wrist/0648.jpg",
+      "sha256": "742cf44c75cea57fb600f868be06d371afcd2697ee80799ccde18aa47f45555a"
+    },
+    {
+      "path": "right_wrist/0703.jpg",
+      "sha256": "33f1d7ca2b86713d527242a51f34e0bb4ef3f4999e2687dbadcd4181f5712dba"
+    },
+    {
+      "path": "right_wrist/last.png",
+      "sha256": "ea8fc7d60a56fda948c962ca862b64c8fcb7a88edc999dc65183e13ba48c758e"
+    },
+    {
+      "path": "external/last.png",
+      "sha256": "b221ae63dfad44b6f835963f5feebf488cd7c641e676b598868b6ba402293430"
+    },
+    {
+      "path": "commanded_probe.csv",
+      "sha256": "633c89bcc3f2b632ae6be9e06a126d5c375c13ac51eb16ce0076c077966963be"
+    },
+    {
+      "path": "execution_report.json",
+      "sha256": "f3c859c66b0c2701ecc7af0f497d47e2a6785da61105b12873c7379f28a2f55e"
+    }
+  ],
+  "limits": [
+    "Uncalibrated absolute grasp pose; no full-success claim",
+    "New threshold had no held-out error-rate estimate; do not call this avoided physical failure",
+    "Native terminal text says insertion slip generically; actual recorded event is lift screen and insertion was never attempted"
+  ]
+}

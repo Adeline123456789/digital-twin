@@ -1,0 +1,48 @@
+{
+  "trajectory_id": "7070687adf90d62072751b25db5909b5cd81491cd6ca4e06049e489f01c2b9f9",
+  "source_episode": "diagnostic_grasp22",
+  "source_trajectory_sha256": "08c6a32e99737b4cb98ce1a389eabbeec5f07669fbf7e45d6865a0c4c14ee8a9",
+  "source_initial_state_sha256": "92939b017aeca9dc15136d73eb3b63874efe0921189bcb3a7d5c94c85ce24ece",
+  "feature_names": [
+    "right.joint1",
+    "right.joint2",
+    "right.joint3",
+    "right.joint4",
+    "right.joint5",
+    "right.joint6",
+    "right.gripper_width"
+  ],
+  "units": [
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "width_mm / 95"
+  ],
+  "task_scope": "grasp_lift_return_diagnostic",
+  "adaptation": "Exact grasp/lift/fold commands; insert0.5s stationary preload before lift. Hardware1Nm transition occurs at preload start; simulation torque mapping unknown.",
+  "duration_s": 38.97666666665198,
+  "steps": 3899,
+  "first_target": [
+    -8.302508105916094e-07,
+    7.38022112206748e-06,
+    -5.191020885624012e-06,
+    0.48399996232394493,
+    23.732003360725482,
+    0.4689916367885149,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.28421052631578947
+  ],
+  "source_time_origin_s": 0.03333333333333329,
+  "command_provenance": "Simulated grasp prefix + numerically validated existing fold interpolation; no insertion task claim"
+}

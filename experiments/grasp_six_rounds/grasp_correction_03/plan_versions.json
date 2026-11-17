@@ -1,0 +1,17 @@
+{
+  "entry": "self_evolution/grasp_six_rounds_20261117/controller_preload/continue_preload_check.py",
+  "entry_sha256": "d809aae7f43e97bef88e33e70f4a78e03b384ffcf1c7c64b2b0ba8e6cdb7a92b",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "helper_sha256": "57e88436acb1702abfd0cfbcb0a3f5fe6e727f45cd5f15876203b4eab1d43e96",
+  "reference_id": "7070687adf90d62072751b25db5909b5cd81491cd6ca4e06049e489f01c2b9f9",
+  "change": "Separate intentional0.3→1Nm tightening on stationary supported plug from subsequent lift observation; same5mm/15px thresholds, no transport commands",
+  "hypothesis": "Preload may change aperture without the observed flip; baseline under same holding effort avoids conflating effort change with slip. Stable grasp not yet established.",
+  "rollback": "Use prior controller_before_lift stage; defaults unchanged",
+  "status": "SIM_VALIDATED_PENDING_REAL",
+  "observation_contract": [
+    "before_close",
+    "before_preload",
+    "after_preload",
+    "lift_handoff"
+  ]
+}

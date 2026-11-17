@@ -1,0 +1,36 @@
+{
+  "reference_sha256": "7070687adf90d62072751b25db5909b5cd81491cd6ca4e06049e489f01c2b9f9",
+  "result": "failure",
+  "task_success": false,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "Stationary preload then grasp/lift/fold only; not insertion or identified force model",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "max_penetration_m": 2.9201248937595886e-05,
+  "simulated_seconds": 38.986718750064995,
+  "observation_frames": 1169,
+  "applied_reference_steps": 3899,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 89.16188368294388,
+  "prediction_sha256": "904f937e543381aad8239f4545ccebb642acb43c65fa6bccc2475dbd17383269",
+  "stage_goal": "grasp_lift_return_diagnostic",
+  "stage_success": true,
+  "max_in_gripper_translation_mm": 2.0227869277259534,
+  "max_in_gripper_rotation_deg": 0.24686902253800824,
+  "lift_height_m": 0.05109742425775149
+}
