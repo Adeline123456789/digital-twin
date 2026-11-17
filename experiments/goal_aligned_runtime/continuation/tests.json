@@ -1,0 +1,17 @@
+{
+  "suites": [
+    "test_exploration_loop",
+    "test_evidence_tools",
+    "test_recipient_feedback",
+    "test_episode_publication",
+    "test_agent_loop",
+    "test_agent_repair_diagnosis",
+    "test_right_agent_integration",
+    "test_planner_context"
+  ],
+  "tests_run": 44,
+  "failures": 0,
+  "errors": 0,
+  "wall_seconds": 0.3991670460673049,
+  "scope": "Offline code and fixture checks; no fresh LLM/physics/hardware evaluation"
+}

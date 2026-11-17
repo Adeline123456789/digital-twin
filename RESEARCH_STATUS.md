@@ -1,6 +1,8 @@
+> 2026-11-17 文档全范围续作：[执行反馈候选与完整验收缺口](experiments/goal_aligned_runtime/continuation/REPORT.md)。教学与可选 Agent 入口共用观察—执行—反馈循环，44 项离线检查通过；尚无新模型/真机评估，默认仍为 `llm`，总体未完成。
+
 > 2026-11-17 continuation: [actual model study and real–sim pair](experiments/goal_aligned_runtime/BATCH_REPORT.md). Three new simulations (one success, two failures); the successful simulation has a verified real failure counterpart. Teacher guidance not promoted; default remains `llm`. Model budget consumed; goal active.
 
-> **2026-11-17最新归档：** 用户已暂停研究。本批真机6/15条已执行，1成功、5失败（16.7%）；第4条误判已更正，第6条完整失败轨迹已归档。总体目标未完成，未接受物理校准或宣称成本下降。此状态覆盖下文历史进度，详见[当前采集报告](experiments/repeatability_cycle12/REPORT.md)和[逐条结果](experiments/repeatability_cycle12/episode_inventory.json)。本次只归档和发布，没有新增真机运动。
+> **2026-11-17历史归档：** 当时用户暂停研究。本批真机6/15条已执行，1成功、5失败（16.7%）；第4条误判已更正，第6条完整失败轨迹已归档。总体目标未完成，未接受物理校准或宣称成本下降。此状态覆盖下文历史进度，详见[当前采集报告](experiments/repeatability_cycle12/REPORT.md)和[逐条结果](experiments/repeatability_cycle12/episode_inventory.json)。本次只归档和发布，没有新增真机运动。
 
 > **第十一轮完成（11/12）：取得1条完整真机成功Episode。** 当前修正的5502条仿真指令全部原样执行，真实参考段56.65秒，抓取、插入、释放、回收均完成；两路视频/1760帧状态通过原校验。此前失败完整保留，本轮真机1/2、仿真2/3，不能据此声称稳定成功率或独立物理校准。右臂已扶稳下使能。用户要求下一批固定版本再采15条，先检验稳定性再优化。见 [第十一轮结果](experiments/current_scene_cycle11/result.json)。
 

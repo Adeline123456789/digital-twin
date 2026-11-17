@@ -1,0 +1,32 @@
+{
+  "version": "recipient_execution_loop_v1",
+  "timestamp": "2026-11-17T06:45:52.231459+00:00",
+  "parent_commit": "6f19b8049b53a74dea4deeceff7b57226275d83e",
+  "status": "CANDIDATE_OFFLINE_VERIFIED_MODEL_UNTESTED",
+  "actual_default": "llm",
+  "default_changed": false,
+  "mission_sha256": "b9cd40fdf12548035e5a03fa6693983fa9726426f5e6257b7f847f5dd836dc6f",
+  "entry_points": [
+    "scripts/agent_loop.py --planner-policy bounded_tools_v1",
+    "scripts/benchmark_recipient_feedback.py execute_student"
+  ],
+  "evidence": "experiments/goal_aligned_runtime/continuation/REPORT.md",
+  "tests_passed": 44,
+  "new_model_calls": 0,
+  "new_physical_episodes": 0,
+  "files": {
+    "scripts/bounded_tools.py": "5d397ae89a77e1b4884d2de4333ae5bf86603a1e74a2389ef7b07ab0b231fbbb",
+    "scripts/agent_loop.py": "e2f0131d5562d9cd314cb1378a7dbfeb35bda7c453d5890a2ba0f74da220aacc",
+    "scripts/benchmark_recipient_feedback.py": "11e4bc9e54c2caeed638dbc4d322734276d2687f43456f427685654a489fcbac",
+    "scripts/episode_format.py": "e944e7f99ce75fdf4dfa002f163f7e880a03b73b61230d1b7de571f43a9eec5e",
+    "protocol/bounded_tool_instructions.md": "7210d71cfcb811fbb31e6d0e6e071dcceb077b218a070975f40b06dea39a274b"
+  },
+  "rollback": "Keep llm default; revert the commit containing this candidate to restore the prior optional loop. No robot or simulator source changed in this candidate.",
+  "acceptance_remaining": [
+    "matched fresh model execution",
+    "student action after teacher feedback",
+    "teacher-off independent evaluation",
+    "real counterparts of successful simulations",
+    "default promotion and subsequent independent use"
+  ]
+}

@@ -9,6 +9,18 @@ import archive_trial
 import episode_format
 
 class PublicationTests(unittest.TestCase):
+    def test_real_exporter_change_does_not_invalidate_unchanged_simulation(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);(root/'scripts').mkdir()
+            sim=root/'scripts/try_plug_pick_sim.py';sim.write_text('unchanged simulation')
+            export=root/'scripts/export_plug_calibration.py';export.write_text('old exporter')
+            record={'program_version':{'source_sha256':{str(p.relative_to(root)):episode_format.digest(p) for p in (sim,export)}}}
+            export.write_text('fixed real clock mapping')
+            with patch.object(episode_format,'ORIGINAL',root):
+                self.assertEqual(episode_format.source_for(record),root)
+                sim.write_text('different physics program')
+                with self.assertRaisesRegex(ValueError,'try_plug_pick_sim.py'):episode_format.source_for(record)
+
     def test_failed_conversion_never_publishes_source_only_folder(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td);data=root/'data';ident='test_failure'

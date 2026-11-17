@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-11-17T06:31:25.485918+00:00",
+  "validation_status": "OFFLINE_WIRING_ONLY",
+  "mission_sha256": "b9cd40fdf12548035e5a03fa6693983fa9726426f5e6257b7f847f5dd836dc6f",
+  "parent_commit": "6f19b8049b53a74dea4deeceff7b57226275d83e",
+  "result": "success",
+  "task_success": null,
+  "source_checks": [
+    {
+      "episode_id": "20261117T051833Z_1ddf3521",
+      "previous_whole_tree_check_mismatches": [
+        "scripts/export_plug_calibration.py"
+      ],
+      "current_simulation_source_accepted": true,
+      "report_sha256": "60f7ccc96735e911ede1b4f02c79e5a7d5d9935b54699e0847c007fba87c1e56"
+    },
+    {
+      "episode_id": "20261117T052906Z_4f6da96b",
+      "previous_whole_tree_check_mismatches": [
+        "scripts/export_plug_calibration.py"
+      ],
+      "current_simulation_source_accepted": true,
+      "report_sha256": "fb533edde4fc0fc0c9fcc732b7ce963284cb43ef90b34259681aea423eae7cfa"
+    },
+    {
+      "episode_id": "20261117T053833Z_25cf43e3",
+      "previous_whole_tree_check_mismatches": [
+        "scripts/export_plug_calibration.py"
+      ],
+      "current_simulation_source_accepted": true,
+      "report_sha256": "8bbe46fd9c9a7a8c6d1b43713ea37e3f7b644cf11e69a722b2d2679b66e214de"
+    }
+  ],
+  "recorded_decision_source": "experiments/recipient_feedback/20261117T051833Z_9fab0182/runs.json",
+  "recorded_decision_sha256": "5e4cc002135ef250b763c1c35c3a57a659d0003828fd599a6aa0c1037af1eade",
+  "new_model_calls": 0,
+  "new_model_tokens": 0,
+  "new_simulation_episodes": 0,
+  "new_real_executions": 0,
+  "research_orchestrator_tokens": null,
+  "replayed_decisions": 3,
+  "loop_status": "STOPPED_UNKNOWN",
+  "actual_tools": [
+    {
+      "tool": "episode_summary",
+      "args": {},
+      "reason": "Inspect the failed episode and its available observations before considering a repair."
+    },
+    {
+      "tool": "inspect_contact",
+      "args": {
+        "frame": 1068
+      },
+      "reason": "Inspect the observed strip–plug interaction at release before selecting a one-parameter repair; contact pairs alone do not establish force."
+    }
+  ],
+  "evidence_keys": [
+    "07c10267cbda53991c64aefc8d5402fd7d44dffe9069b5e005d8222ff426a3e3",
+    "a26d51270dc43f89afa3fefc8fbf6f8380f7cf1f09f6e733d00788573fb39784"
+  ],
+  "prompt_sizes_and_hashes": [
+    {
+      "bytes": 8707,
+      "sha256": "7fc4401a2dce498c3d29b23d24734de78b4b795dff5de7308c7caa32c8cca173"
+    },
+    {
+      "bytes": 16279,
+      "sha256": "96270477b402b5742e6261cf43419c1ef715162de344e3b86838eb5abbc6bab3"
+    },
+    {
+      "bytes": 23136,
+      "sha256": "834f83c610a68f3d34c1acb360d1f064b33d4597943a5694be822895f70a6b22"
+    }
+  ],
+  "wall_seconds": 2.0089431370142847,
+  "limitations": [
+    "Previously recorded model choices, not new model inference or capability evaluation",
+    "No new physical repair executed; no success-rate or cost improvement claim",
+    "Simulation privileged states used by actual offline tools; not real force measurements"
+  ],
+  "candidate_sha256": {
+    "scripts/bounded_tools.py": "be44c65f61f2447132b080f3609289143c83e74ccc18fb125c54766f94d1f859",
+    "scripts/agent_loop.py": "e2f0131d5562d9cd314cb1378a7dbfeb35bda7c453d5890a2ba0f74da220aacc",
+    "scripts/benchmark_recipient_feedback.py": "e4bd17114f02f96ff4a9ac411741610b59572ae0d87fb924239fe0bf67bbc093",
+    "scripts/episode_format.py": "e944e7f99ce75fdf4dfa002f163f7e880a03b73b61230d1b7de571f43a9eec5e"
+  }
+}

@@ -10,6 +10,21 @@ from model_compare import ModelCallError
 
 
 class RecipientStudyTests(unittest.TestCase):
+    def test_plan_ready_before_execution_timeout_is_incomplete(self):
+        run=dict(label='candidate',planner={'status':'PLAN_READY'},exploration={'status':'TIME_BUDGET_EXHAUSTED'})
+        self.assertEqual(study.comparison_status([run])['validation_status'],'COMPARISON_INCOMPLETE')
+
+    def test_teacher_receives_both_recipient_decisions_and_observed_failure(self):
+        first=dict(answer={'offset_mm':1},status='PLAN_READY',tool_trace=[],
+                   initial_observation={'result':{'value':{'episode_id':'before'}}})
+        second=dict(answer={'stop':True},status='STOPPED_UNKNOWN',tool_trace=[])
+        feedback=[dict(proposal=first['answer'],observed={'task_success':False})]
+        run=dict(planner=second,exploration=dict(planners=[first,second],feedback=feedback),physical_result={'task_success':False})
+        value=study.teacher_feedback(run)
+        self.assertEqual(len(value['recipient_steps']),2)
+        self.assertEqual(value['recipient_steps'][0]['initial_observation']['episode_id'],'before')
+        self.assertEqual(value['execution_feedback'],feedback)
+
     def test_unexecuted_holdout_does_not_count_as_completed_comparison(self):
         runs=[{'label':'heldout parent','planner':{'status':'STOPPED_UNKNOWN'}},
               {'label':'heldout candidate','planner':{'status':'EVIDENCE_OR_REQUEST_ERROR'}}]
@@ -50,10 +65,13 @@ class RecipientStudyTests(unittest.TestCase):
     def test_stopping_is_not_counted_as_physical_success(self):
         call={'answer':{'stop':True,'hypotheses':[]},'applicability':{},'status':'STOPPED_UNKNOWN','tool_trace':[]}
         budget=Mock()
-        with patch.object(study,'plan',return_value=call):
+        loop=dict(planners=[call],experiments=[],feedback=[],status='STOPPED_UNKNOWN')
+        with patch.object(study,'explore',return_value=loop) as explore:
             result=study.execute_student({'experiment_id':'seed'},'guidance','test',0,budget,Path('/tmp'),'student')
         self.assertIsNone(result['physical_result'])
         budget.simulate.assert_not_called()
+        self.assertIs(explore.call_args.kwargs['ask_fn'],budget.model)
+        self.assertEqual(explore.call_args.kwargs['max_executions'],2)
 
     def test_teacher_context_contains_recipient_feedback_without_heldout_or_private_state(self):
         record=dict(planner={'answer':{'stop':True},'status':'STOPPED_UNKNOWN','tool_trace':[]},

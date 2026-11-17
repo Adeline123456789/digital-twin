@@ -143,16 +143,31 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
             prompt+='\nMeasured diagnostic evidence and scoped prior failures:'+json.dumps(context)
         if policy=='bounded_tools_v1':
             if not seed_compatible:raise ValueError('Tool policy requires a compatible recorded Episode')
-            from bounded_tools import plan as tool_plan, validate_tool_plan
-            call=tool_plan(seed,local,initial_summary=True);context=call['applicability'];diagnoses.append(context)
+            from bounded_tools import explore
+            from benchmark_collection import run_case
+            def execute_case(case):
+                return run_case(dict(case,name=f'{r["experiment_id"]} bounded action',shift_mm=shift),
+                    inline=os.environ.get('PIPER_SIM_PROFILE','original')=='original',
+                    label=f'Agent {arm}',kind='evaluation',publish=publish)
+            exploration=explore(seed,local,execute_case,max_calls=4*max_executions,
+                max_tools=3*max_executions,max_executions=max_executions)
+            calls.extend(exploration['planners'])
+            diagnoses.extend(c['applicability'] for c in calls)
+            for trial,event in zip(exploration['experiments'],exploration['feedback']):
+                trials.append(dict(event['observed']['parameters'],**{k:trial.get(k) for k in
+                    ('experiment_id','task_success','result','observed_effects','simulation_seconds',
+                     'execution_time','collection_component_seconds','recording_verified','causal_diagnosis')}))
+            r['exploration']=exploration
+            r['pending_real_comparisons']=exploration['pending_real_comparisons']
             r['initial_state']['llm_call_budget']=4*max_executions
             r['initial_state']['diagnostic_tool_budget']=3*max_executions
-        else:call=plan_with_memory(prompt,local,policy,context,include_catalog=robot_arms!='right')
-        calls.append(call)
-        for step in range(max_executions):
+        else:
+            call=plan_with_memory(prompt,local,policy,context,include_catalog=robot_arms!='right')
+            calls.append(call)
+        for step in range(0 if policy=='bounded_tools_v1' else max_executions):
             if call['tool_events']:raise ValueError('Unexpected tool use in planner; trial not executed')
-            if policy in ('diagnose_then_repair','bounded_tools_v1'):
-                case=(validate_tool_plan if policy=='bounded_tools_v1' else validate_diagnostic_plan)(call['answer'],context)
+            if policy=='diagnose_then_repair':
+                case=validate_diagnostic_plan(call['answer'],context)
                 if case is None:r['stopped_unknown']=True;break
             else:case={'offset_mm':validate_plan(call['answer'])}
             offset=case['offset_mm'];fingerprint=(shift,offset,case.get('grasp_tilt_deg',0.),case.get('grasp_height_m'),case.get('align_gap_m'))
@@ -175,26 +190,28 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
                 if seed_episode and policy!='bounded_tools_v1':feedback['precontact_observation']=precontact_observation(trial['experiment_id'])
                 context=context_for(trial,shift) if policy=='compiled_alignment_v1' and seed_compatible else {}
                 if policy=='diagnose_then_repair':context=repair_diagnosis(trial);diagnoses.append(context)
-                if policy=='bounded_tools_v1':
-                    call=tool_plan(trial,local,initial_summary=True,guidance='Prior failed parameter tuples '+json.dumps(sorted(seen))+'. Do not repeat without new evidence.')
-                    context=call['applicability'];diagnoses.append(context)
-                else:call=plan_with_memory(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback)+'\nTyped applicability evidence:'+json.dumps(context),local,policy,context,include_catalog=robot_arms!='right')
+                call=plan_with_memory(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback)+'\nTyped applicability evidence:'+json.dumps(context),local,policy,context,include_catalog=robot_arms!='right')
                 calls.append(call)
             # A/B/C remain fixed-policy after planning; retries consume the same execution ceiling.
         r.update(result='success' if any(t['task_success'] for t in trials) else 'failure',
-            task_success=any(t['task_success'] for t in trials),validation_status='SIMULATION_VERIFIED' if any(t['task_success'] for t in trials) else 'SIMULATION_FAILED',
+            task_success=any(t['task_success'] for t in trials) if trials else None,
+            validation_status=('SIMULATION_VERIFIED' if any(t['task_success'] for t in trials) else 'SIMULATION_FAILED') if trials else 'NO_PHYSICAL_EXECUTION',
             experiments=trials,actions=[c['answer'] for c in calls],planner_calls=calls,
-            hypotheses=calls[-1]['answer'].get('hypotheses',[]),
+            hypotheses=calls[-1]['answer'].get('hypotheses',[]) if calls else [],
             tokens=({k:sum(c['usage'].get(k,0) for c in calls) for k in ['input_tokens','output_tokens','cached_input_tokens']}
                     if all(c.get('usage') is not None for c in calls) else None),
             repeated_failures=sum(t['task_success'] is False and i>0 and
                 all(t.get(k)==trials[i-1].get(k) for k in ('offset_mm','grasp_tilt_deg','grasp_height_m','align_gap_m')) for i,t in enumerate(trials)),
-            new_skills=0,lessons_learned=['Actual model-selected actions were physically executed; no hardware or physics parameter changes.'],
+            new_skills=0,lessons_learned=['Actual model-selected actions were physically executed; no hardware or physics parameter changes.' if trials else
+                'No physical experiment selected; UNKNOWN is not a measured physical failure or success.'],
             next_improvement='Evaluate more failure types; an unseen initial state is not an unseen task family')
         r['limitations']=['Small sample of one task family; no unseen task-family capability claim',
            'A/B/C freeze their first policy; D may use actual execution feedback',
            'Model context may contain general safety knowledge; model CLI startup included in wall time',
            'Existing successful newer episode cannot be exactly reproduced from removed source artifacts']
+        if policy=='bounded_tools_v1' and exploration['status'] in ('EXPLORATION_ERROR','RECORDING_ERROR','EXECUTION_ERROR'):
+            r.update(result='infrastructure_error',validation_status=exploration['status'],error=exploration['error'])
+        if policy=='bounded_tools_v1':r['task_success']=exploration['task_success']
     except Exception as exc:
         r['error']=str(exc);r['experiments']=trials;r['planner_calls']=calls
     finally:

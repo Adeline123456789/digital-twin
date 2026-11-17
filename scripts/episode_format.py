@@ -17,11 +17,14 @@ REFERENCE=FAILED/'20261111_sim_real05_failure_replay_000001'
 ORIGINAL=Path('/media/midea/F496AC8096AC4548/piper_simulation')
 RETAINED=DATA/'calibration/offline_workspace_20261110'
 CAMERAS=('cam_external_rgb.mp4','cam_left_wrist_rgb.mp4','cam_right_wrist_rgb.mp4')
+# Neither real-data exporter is imported by simulation collection/replay.
+REAL_EXPORT_FILES={'scripts/export_plug_calibration.py','scripts/recording_clock.py'}
 
 def source_for(record):
     hashes=record['program_version']['source_sha256']
     source=RETAINED if 'configs/tasks/real_connector_final.yaml' in hashes else ORIGINAL
     for rel,expected in hashes.items():
+        if rel in REAL_EXPORT_FILES:continue
         if rel.startswith(('src/','scripts/','configs/')) and digest(source/rel)!=expected:
             raise ValueError('Source changed since trial: '+rel)
     return source

@@ -8,7 +8,7 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 import time
-from bounded_tools import plan, validate_tool_plan, baseline_case, prompt_events
+from bounded_tools import explore, baseline_case, prompt_events
 from model_compare import ask, ModelCallError
 from learn import ROOT, DATA, digest, save, record, finish
 
@@ -63,29 +63,39 @@ class BatchBudget:
 
 def teacher_feedback(run):
     """No source tree, held-out cases, raw video or dependency manifests in teacher context."""
+    exploration=run.get('exploration')
     return dict(plan=run['planner']['answer'],planner_status=run['planner']['status'],
         tools=prompt_events(run['planner']['tool_trace']),
+        execution_feedback=exploration['feedback'] if exploration else [],
+        recipient_steps=[dict(plan=c['answer'],status=c['status'],tools=prompt_events(c['tool_trace']),
+                             initial_observation=(c.get('initial_observation') or {}).get('result',{}).get('value'))
+                         for c in exploration['planners']] if exploration else [],
         physical_result=run.get('physical_result'),native_outcome=run.get('native_outcome'),
         scope='Student decisions and actual feedback from development only; not a verified causal diagnosis')
 
 
 def execute_student(seed,guidance,label,layout,budget,local,student):
-    call=plan(seed,local,model=student,max_calls=3,max_tools=2,seconds=90,
-              guidance=guidance,ask_fn=budget.model,cache_directory=local/label/'cache')
-    run=dict(label=label,source_episode=seed['experiment_id'],planner=call,physical_result=None)
-    case=validate_tool_plan(call['answer'],call['applicability'])
-    if case is None:return run
-    result=budget.simulate(dict(case,name=label,shift_mm=layout),label)
-    run.update(physical_result=dict(experiment_id=result['experiment_id'],task_success=result['task_success'],
-        recording_verified=result['recording_verified'],result=result['result']),
-        native_outcome=[{k:native.get(k) for k in ('last_phase','error','complete_pick_insert','grasp_height_m','align_gap_m','grasp_tilt_deg')}
-                        for native in result['observed_effects']],collection_component_seconds=result['collection_component_seconds'])
+    exploration=explore(seed,local,lambda case:budget.simulate(dict(case,name=label,shift_mm=layout),label),
+        model=student,max_calls=3,max_tools=2,max_executions=2,seconds=600,
+        guidance=guidance,ask_fn=budget.model,cache_directory=local/label/'cache')
+    call=exploration['planners'][-1] if exploration['planners'] else dict(
+        answer={'stop':True},status=exploration['status'],tool_trace=[])
+    run=dict(label=label,source_episode=seed['experiment_id'],planner=call,
+        exploration=exploration,physical_result=None)
+    if exploration['feedback']:
+        result=exploration['feedback'][-1]['observed']
+        run.update(physical_result={k:result[k] for k in ('experiment_id','task_success','recording_verified','result')},
+            native_outcome=result['native_outcome'],
+            collection_component_seconds=sum(e['observed']['collection_component_seconds'] for e in exploration['feedback']))
     return run
 
 
 def comparison_status(runs):
-    incomplete=[run['label'] for run in runs
-                if run['planner']['status'] not in ('PLAN_READY','STOPPED_UNKNOWN')]
+    completed={'STOPPED_UNKNOWN','SIMULATION_SUCCESS_PENDING_REAL','EXECUTION_BUDGET_EXHAUSTED',
+               'MODEL_BUDGET_EXHAUSTED','REPEATED_EXPERIMENT_REJECTED'}
+    incomplete=[run['label'] for run in runs if
+        (run['exploration']['status'] not in completed if 'exploration' in run else
+         run['planner']['status'] not in ('PLAN_READY','STOPPED_UNKNOWN'))]
     return dict(result='infrastructure_error' if incomplete else 'success',task_success=None,
         validation_status='COMPARISON_INCOMPLETE' if incomplete else 'COMPARISON_EXECUTED_NOT_PROMOTED',
         incomplete_arms=incomplete)
@@ -116,12 +126,18 @@ def run(design_path,resume=None):
     guidance=(ROOT/'protocol/robot_problem_solving.md').read_text()
     initial_hash=digest(ROOT/'protocol/robot_problem_solving.md')
     files=['scripts/bounded_tools.py','scripts/contact_evidence.py','scripts/episode_evidence.py',
-           'scripts/benchmark_recipient_feedback.py','scripts/model_compare.py','scripts/collect_inline.py']
+           'scripts/benchmark_recipient_feedback.py','scripts/model_compare.py','scripts/collect_inline.py',
+           'protocol/bounded_tool_instructions.md','scripts/agent_loop.py','scripts/probe_transport_ik.py',
+           'scripts/diagnose_retention.py','scripts/episode_format.py','scripts/benchmark_collection.py',
+           'scripts/learn.py','scripts/evidence_cache.py']
     frozen={name:digest(ROOT/name) for name in files}
+    frozen_memory={str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'memory').rglob('*.json')}
     r.update(initial_state=dict(design_sha256=digest(design_path),tool_sha256=frozen,protocol_sha256=initial_hash,
         source_episode=design['source_episode'],teacher_visible_split='development only',
+        recipient_limits=dict(model_calls=3,diagnostic_tools=2,executions=2,seconds=600),
+        execution_loop='bounded_tools.explore shared with agent_loop bounded_tools_v1; aggregate per-recipient budget',
         heldout_scope='same task family, new layout; not cross-task-family generalization',
-        cross_case_memory_updates=False),model=design['student'],privileged_information_used=True,
+        cross_case_memory_updates=False,memory_snapshot_sha256=frozen_memory),model=design['student'],privileged_information_used=True,
         promotion_status='NOT_PROMOTED',research_orchestrator_tokens=None,human_interventions=0,
         resumed_from=resume.name if resume else None,inherited_tokens=inherited_tokens,
         token_accounting='Cumulative batch ledger; do not sum the resumed parent and child token totals')
@@ -158,6 +174,8 @@ def run(design_path,resume=None):
         held_seed=budget.simulate(dict(base,**held['parameters'],name='heldout_seed',shift_mm=held['layout_shift_mm']),'heldout seed')
         for name,text in [('parent',guidance),('candidate',revised)]:
             if any(digest(ROOT/p)!=h for p,h in frozen.items()):raise RuntimeError('Frozen tool changed during comparison')
+            if {str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'memory').rglob('*.json')}!=frozen_memory:
+                raise RuntimeError('Frozen memory changed during comparison')
             runs.append(execute_student(held_seed,text,'heldout '+name,held['layout_shift_mm'],budget,local,design['student']))
             save(out/'runs.json',runs)
         r.update(comparison_status(runs))

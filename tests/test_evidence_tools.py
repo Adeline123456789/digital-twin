@@ -129,7 +129,8 @@ class RouterTests(unittest.TestCase):
             for rel in ['baseline/20261111T083720Z_f64309a8','evaluation/seed']:
                 (root/'experiments'/rel/'result.json').write_text(json.dumps(seed))
             context={'baseline':{'offset_mm':0,'grasp_tilt_deg':0,'grasp_height_m':.016,'align_gap_m':.023},'allowed_grasp_tilt_deg':[]}
-            call=dict(answer={'offset_mm':1,'hypotheses':[]},applicability=context,usage={'input_tokens':5},tool_events=0)
+            call=dict(answer={'offset_mm':1,'hypotheses':[]},applicability=context,usage={'input_tokens':5},tool_events=0,
+                      status='PLAN_READY',model_calls_attempted=1,tool_trace=[])
             trial=dict(experiment_id='physics',task_success=False,result='failure',observed_effects=[],execution_time=1,
                        collection_component_seconds=1,recording_verified=True)
             with patch.object(agent_loop,'ROOT',root),patch.object(agent_loop,'record',return_value=(root,{'experiment_id':'candidate'})),patch.object(agent_loop,'finish'),patch('bounded_tools.plan',return_value=call) as planner,patch.object(benchmark_collection,'run_case',return_value=trial) as collect,patch('episode_format.source_for'),patch.dict(agent_loop.os.environ,{'PIPER_ACTIVE_ARMS':'right','PIPER_SIM_PROFILE':'original','PIPER_TARGET_INDEX':'3'}):
@@ -144,6 +145,21 @@ class RouterTests(unittest.TestCase):
     def test_unscreened_tilt_cannot_be_executed(self):
         r,_=self.run_requests([{'plan':{'grasp_tilt_deg':5,'hypotheses':[]}}])
         self.assertEqual(r['status'],'EVIDENCE_OR_REQUEST_ERROR');self.assertTrue(r['answer']['stop'])
+
+    def test_agent_entry_unknown_is_not_labelled_a_simulated_failure(self):
+        import agent_loop, benchmark_collection
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            seed=dict(experiment_id='seed',active_arms=['right'],initial_state={'target_index':3},actions=[],observed_effects=[])
+            for rel in ['baseline/20261111T083720Z_f64309a8','evaluation/seed']:
+                path=root/'experiments'/rel/'result.json';path.parent.mkdir(parents=True);path.write_text(json.dumps(seed))
+            call=dict(answer={'stop':True,'hypotheses':[]},applicability={},usage={'input_tokens':5},tool_events=0,
+                      status='STOPPED_UNKNOWN',model_calls_attempted=1,tool_trace=[])
+            with patch.object(agent_loop,'ROOT',root),patch.object(agent_loop,'record',return_value=(root,{'experiment_id':'candidate'})),patch.object(agent_loop,'finish'),patch('bounded_tools.plan',return_value=call),patch.object(benchmark_collection,'run_case') as collect,patch('episode_format.source_for'),patch.dict(agent_loop.os.environ,{'PIPER_ACTIVE_ARMS':'right','PIPER_SIM_PROFILE':'original','PIPER_TARGET_INDEX':'3'}):
+                result=agent_loop.run('D',0,False,'bounded_tools_v1','seed',max_executions=1)
+            collect.assert_not_called()
+            self.assertIsNone(result['task_success'])
+            self.assertEqual(result['validation_status'],'NO_PHYSICAL_EXECUTION')
 
     def test_one_parameter_repair_preserves_recorded_height_gap_and_start(self):
         seed=dict(actions=[{'offset_mm':[0,0],'grasp_height_m':.016}],initial_state={},

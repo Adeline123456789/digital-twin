@@ -1,6 +1,8 @@
+> 2026-11-17 文档全范围续作：[执行反馈候选与完整验收缺口](experiments/goal_aligned_runtime/continuation/REPORT.md)。教学与可选 Agent 入口共用观察—执行—反馈循环，44 项离线检查通过；尚无新模型/真机评估，默认仍为 `llm`，总体未完成。
+
 > 2026-11-17 continuation: [actual model study and real–sim pair](experiments/goal_aligned_runtime/BATCH_REPORT.md). Three new simulations (one success, two failures); the successful simulation has a verified real failure counterpart. Teacher guidance not promoted; default remains `llm`. Model budget consumed; goal active.
 
-> **2026-11-17最新归档：** 用户已暂停研究。本批真机6/15条已执行，1成功、5失败（16.7%）；第4条误判已更正，第6条完整失败轨迹已归档。总体目标未完成，未接受物理校准或宣称成本下降。此状态覆盖下文历史进度，详见[当前采集报告](experiments/repeatability_cycle12/REPORT.md)和[逐条结果](experiments/repeatability_cycle12/episode_inventory.json)。本次只归档和发布，没有新增真机运动。
+> **2026-11-17历史归档：** 当时用户暂停研究。本批真机6/15条已执行，1成功、5失败（16.7%）；第4条误判已更正，第6条完整失败轨迹已归档。总体目标未完成，未接受物理校准或宣称成本下降。此状态覆盖下文历史进度，详见[当前采集报告](experiments/repeatability_cycle12/REPORT.md)和[逐条结果](experiments/repeatability_cycle12/episode_inventory.json)。本次只归档和发布，没有新增真机运动。
 
 > 2026-11-16 第2周期：右臂已接回实际 `agent_loop.py --robot-arms right`；新增一条完整失败和一条完整成功Episode，1次模型调用完成已知任务修复，成功运动与原右臂程序逐帧一致。实际Token16,934，未证明模型/总成本收益；无真机运动。见[本周期报告](experiments/right_arm_adaptation/cycle2/REPORT.md)。当前策略LLM，旧compiled skill保留原适用范围。
 

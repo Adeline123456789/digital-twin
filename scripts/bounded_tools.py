@@ -89,7 +89,7 @@ def prompt_events(events):
 
 
 def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
-         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None, initial_summary=False):
+         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None, initial_summary=False, feedback=()):
     if not 1 <= max_calls <= 8 or not 0 <= max_tools <= 6 or not 1 <= seconds <= 240:
         raise ValueError('Planner budget outside supported bounds')
     started=time.monotonic();calls=[];events=[];seen=set();bootstrap=None
@@ -100,11 +100,13 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
     initial=dict(episode_id=seed['experiment_id'], active_arms=seed.get('active_arms'),
         task=seed['task'], target=seed['initial_state'].get('target_index'),
         validation_status=seed['validation_status'], task_success=seed['task_success'],
+        current_parameters=dispatch.context['baseline'],
         root_cause='UNKNOWN', source='Archived simulation; privileged data available on request')
     contract=('Return {"tool":"name","args":{...},"reason":"short reason"} or '
         '{"plan":{"offset_mm":number OR "grasp_tilt_deg":screened_angle OR "grasp_height_m":number OR "align_gap_m":number OR "stop":true,'
         '"hypotheses":[],"predicted_effect":"...","reason":"..."}}. '
         'One parameter only. Offset [-4,4]mm in socket X; height [0.010,0.025]m; align gap [0.020,0.025]m. Tilt requires diagnose_repair screening. '
+        'The host executes your JSON tool requests; these are not native shell tools. '
         'A plan requests the existing complete simulation collector, never hardware. '
         'Inspect uncertainty before proposing a repair; no forced friction assumption.')
     try:
@@ -119,7 +121,7 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
             if remaining<=0: status='TIME_BUDGET_EXHAUSTED';break
             prompt=contract+'\n'+json.dumps(dict(state=initial,tools=TOOLS,guidance=guidance,
                 budget=dict(calls_remaining=max_calls-len(calls),tools_remaining=max_tools-len(events),seconds_remaining=round(remaining,2)),
-                evidence=prompt_events(events)),ensure_ascii=False,separators=(',',':'))
+                prior_experiments=feedback,evidence=prompt_events(events)),ensure_ascii=False,separators=(',',':'))
             try:
                 call=ask_fn(prompt,local,include_catalog=False,profile='bounded_tools_v1',model=model,timeout=remaining)
             except ModelCallError as exc:
@@ -155,3 +157,59 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
                     tools_seconds=sum(e.get('wall_seconds',0) for e in events),
                     initial_observation_seconds=bootstrap['wall_seconds'] if bootstrap else 0),
         inference_only_seconds=None, research_orchestrator_tokens=None)
+
+
+def experiment_feedback(result, case):
+    """Keep the action/effect link, without raw frames or the full source manifest."""
+    return dict(experiment_id=result['experiment_id'],parameters=case,
+        task_success=result['task_success'],result=result['result'],
+        recording_verified=result['recording_verified'],
+        native_outcome=[{k:n.get(k) for k in ('last_phase','error','complete_pick_insert',
+            'grasp_height_m','align_gap_m','grasp_tilt_deg')} for n in result['observed_effects']],
+        causal_diagnosis=result.get('causal_diagnosis'),
+        execution_time=result['execution_time'],collection_component_seconds=result['collection_component_seconds'])
+
+
+def explore(seed, local, execute_case, *, model=None, guidance='', ask_fn=ask,
+            max_calls=4, max_tools=3, max_executions=2, seconds=600, cache_directory=None):
+    """Shared recipient/runtime loop; the trusted collector owns physics and outcomes.
+
+    Each failed execution becomes the next observation. Call/tool/time budgets span
+    the whole loop, not each retry. Teacher revision occurs outside this function.
+    """
+    if not 1<=max_calls<=8 or not 0<=max_tools<=6 or max_executions not in (1,2) or seconds<=0:
+        raise ValueError('Unsupported exploration budget')
+    started=time.monotonic();planners=[];experiments=[];feedback=[];seen=set()
+    calls_left=max_calls;tools_left=max_tools;status='EXECUTION_BUDGET_EXHAUSTED';error=None
+    try:
+        for _ in range(max_executions):
+            remaining=seconds-(time.monotonic()-started)
+            if remaining<1:status='TIME_BUDGET_EXHAUSTED';break
+            if calls_left<=0:status='MODEL_BUDGET_EXHAUSTED';break
+            call=plan(seed,local,model=model,guidance=guidance,ask_fn=ask_fn,
+                max_calls=calls_left,max_tools=tools_left,seconds=min(90,remaining),
+                cache_directory=cache_directory,initial_summary=True,feedback=feedback)
+            planners.append(call)
+            calls_left-=call['model_calls_attempted']
+            tools_left-=sum('request' in e for e in call['tool_trace'])
+            if call['status']!='PLAN_READY':status=call['status'];break
+            case=validate_tool_plan(call['answer'],call['applicability'])
+            fingerprint=json.dumps({k:v for k,v in case.items() if k!='repair_parameter'},sort_keys=True)
+            if fingerprint in seen:status='REPEATED_EXPERIMENT_REJECTED';break
+            if time.monotonic()-started>=seconds:status='TIME_BUDGET_EXHAUSTED';break
+            seen.add(fingerprint)
+            result=execute_case(case)
+            experiments.append(result)
+            feedback.append(dict(proposal=call['answer'],observed=experiment_feedback(result,case)))
+            if not result['recording_verified']:status='RECORDING_ERROR';break
+            if result['result']=='infrastructure_error':status='EXECUTION_ERROR';break
+            if result['task_success']:status='SIMULATION_SUCCESS_PENDING_REAL';break
+            seed=result
+    except Exception as exc:
+        status='EXPLORATION_ERROR';error=dict(type=type(exc).__name__,message=str(exc))
+    return dict(status=status,error=error,planners=planners,experiments=experiments,feedback=feedback,
+        usage=total_usage(planners),wall_seconds=time.monotonic()-started,
+        task_success=(any(r['task_success'] is True for r in experiments)
+                      if any(r['task_success'] is not None for r in experiments) else None),
+        budget_used=dict(model_calls=max_calls-calls_left,tools=max_tools-tools_left,executions=len(experiments)),
+        pending_real_comparisons=[r['experiment_id'] for r in experiments if r['task_success'] and r['recording_verified']])
