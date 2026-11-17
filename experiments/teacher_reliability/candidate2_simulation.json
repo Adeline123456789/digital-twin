@@ -1,0 +1,23 @@
+{
+  "experiment_id": "20261117T104159Z_a33bacec",
+  "result": "success",
+  "task_success": true,
+  "recording_verified": true,
+  "collection_component_seconds": 168.56375950493384,
+  "comparison_case": {
+    "name": "staged_gripper_effort_fresh_entry",
+    "offset_mm": 0,
+    "shift_mm": 0,
+    "grasp_height_m": 0.016,
+    "align_gap_m": 0.025,
+    "start_right_deg": [
+      0.0,
+      0,
+      0,
+      0.482,
+      23.359,
+      1.541
+    ]
+  },
+  "recording_report": "experiments/evaluation/20261117T104446Z_235a07f4"
+}

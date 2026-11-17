@@ -1,0 +1,8 @@
+{
+  "json_privacy_checks": 35,
+  "runtime_memory_tests": 4,
+  "result": "passed",
+  "initial_regression_failure": "Expected archived failure_count2; actual new real failure raises corpus count to3, assertion updated.",
+  "original_motion_and_safety_source_modified": false,
+  "private_candidates_uploaded": false
+}

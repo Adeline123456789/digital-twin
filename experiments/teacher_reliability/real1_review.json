@@ -1,0 +1,38 @@
+{
+  "physical_task_success": false,
+  "plug_retained_in_target_after_release_and_fold": false,
+  "reviewer": "Recorded native abort plus two-camera final-state review",
+  "observations": [
+    "Original slip guard triggered at alignment before insertion; release was not executed.",
+    "Final recorded external RGB shows yellow plug at the folded right gripper, not in target outlet.",
+    "Held-object appearance changed from lift to final wrist view. Cause of changed relative pose remains UNKNOWN."
+  ],
+  "diagnostic_intervention": "45.829235s pause after lift for Agent RGB review; not blind continuous replay",
+  "evidence": [
+    {
+      "path": "right_wrist/2400.jpg",
+      "sha256": "c3a8b8ea97307510df8a342fadb4be2215d748e11d10e777907aea8e62d69953"
+    },
+    {
+      "path": "external/last.png",
+      "sha256": "44ce83ae0404a0aaf40f77a2c88cdb787f0f61b0ee3466f9ef6dc09da970d009"
+    },
+    {
+      "path": "right_wrist/last.png",
+      "sha256": "19aa95e3def7eae8706a3a8fc3256de5298320e937f82e5ed42aa058bbd9f227"
+    },
+    {
+      "path": "execution_report.json",
+      "sha256": "602590b12a519504536214813d8fccbbad20ea3ecdeda3b25d6f28bbbd5c3fc3"
+    },
+    {
+      "path": "diagnostic_review.json",
+      "sha256": "127e79e30fe5c4231aefad103878eed59585f58e369cefc096c463786691cfb9"
+    }
+  ],
+  "root_cause": "UNKNOWN",
+  "limits": [
+    "Final capture precedes automatic disable; do not claim post-disable object pose.",
+    "No measured force/torque or metric object pose; ordinary ruler gap is one unloaded point."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "episodes": [
+    {
+      "session": "20261117_real_teacher_reliability",
+      "episode": "000001",
+      "domain": "real",
+      "num_frames": 2993,
+      "purpose": "yellow_pick_insert_attempt",
+      "success": false,
+      "policy_training_eligible": false,
+      "video_frames": {
+        "cam_external": 2993,
+        "cam_right_wrist": 2993
+      },
+      "known_right_joint_action_frames": 2993,
+      "known_right_gripper_action_frames": 2993
+    }
+  ],
+  "verified_frames": 2993,
+  "full_sim_demonstrations": 0,
+  "full_real_demonstrations": 0,
+  "real_task_attempts": 1,
+  "force_sensor_directory_present": false
+}

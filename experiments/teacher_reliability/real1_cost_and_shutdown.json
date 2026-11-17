@@ -1,0 +1,32 @@
+{
+  "physical_task_success": false,
+  "command_log_span_seconds": 99.83204258198384,
+  "diagnostic_pause_seconds": 45.82923502800986,
+  "span_excluding_pause_seconds": 54.00280755397398,
+  "sim_collection_seconds": 165.51422156998888,
+  "frozen_validation_seconds": 117.06954135198612,
+  "disable_countdown_seconds": 10,
+  "observed_gripper_command_effort_nm_counts": {
+    "0.3": 8987
+  },
+  "command_source": "Recorded CAN0x159 effort bytes4:6, motor command not measured contact force",
+  "disabled_check": {
+    "checked_at_utc": "2026-11-17T10:32:00.010706+00:00",
+    "communication_passed": true,
+    "motors_enabled": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "err_code": 0,
+    "gripper_status": "time stamp:1794911522.0136893\nHz:200.0\nArmMsgFeedBackGripper(\n  grippers_angle: 34100, 34.100,\n  grippers_effort: -109 \t -0.109,\n  status_code: \n    voltage_too_low : False\n    motor_overheating: False\n    driver_overcurrent: False\n    driver_overheating: False\n    sensor_status: False\n    driver_error_status: False\n    driver_enable_status: False\n    homing_status: False\n\n)\n"
+  },
+  "disabled_report_sha256": "2739b92af451d156047bf6257a90c8060da37ea7c41abc4825e958152561560e",
+  "monetary_cost": null,
+  "root_cause": "UNKNOWN",
+  "candidate_decision": "REJECTED; no default promotion",
+  "latency_decision": "Do not wait for an LLM while holding the arm. Retire this paused candidate; unchanged deployed controller has no inserted pause. Reuse frozen validation for unchanged scope, not rerun it per repetition."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PRIVATE_CANDIDATE_NOT_DEFAULT",
+  "changes": [
+    {
+      "component": "replay_controller.py",
+      "source_sha256": "72d3a06e392bf8562ce0e0850f333c96e2fe520080474d1588aec9c55599600f",
+      "candidate_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+      "candidate_path": "self_evolution/teacher_reliability_20261117/candidate2/replay_controller.py",
+      "private_patch_sha256": "58beac119dc097ebf63157503cbf79375b6ed2f5e4f5e9a157172b22c83da661"
+    },
+    {
+      "component": "continue_plug_task.py",
+      "source_sha256": "097f08e68143377948ed37a628f4a49d4aa07c059defedc69bafdf1d53b90e58",
+      "candidate_sha256": "f791eebd57556fbbf8ea364e3b837cc979ab8b5ac0532bb14a068ed5ab104d21",
+      "candidate_path": "self_evolution/teacher_reliability_20261117/candidate2/continue_plug_task.py",
+      "private_patch_sha256": "d69f15d064a71337a546379078094933c86dd14267fc2a9ae06ae4f07828de9f"
+    }
+  ],
+  "reason": "Attempt1 aperture stayed40.2mm through pause but changed40.2->33.4mm during transport. Test restoring the previously authorized1Nm cap only after the low-effort grasp/lift; no LLM pause.",
+  "simulation_scope": "Reuse unchanged validated joint/width reference if fresh start passes original1degree gate. Simulation does not identify N-to-Nm mapping or predict this motor-effort treatment.",
+  "validation": "Compile and fake-CAN command/gate check passed",
+  "rollback": "Original default files remain unchanged; run original entry to roll back."
+}

@@ -1,0 +1,102 @@
+{
+  "experiment_id": "20261117_real_teacher_reliability_000001",
+  "timestamp": "2026-11-17T10:33:23.441540+00:00",
+  "batch_index": 1,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "271587013a3f91c05d3aa48fccf2f2402c5c0ce98f1ca37a85990ccd8d942d2b",
+    "archive_program_sha256": "19d6c41bb58de076ad60abca07ad411763b0ff16ffd03c1fadab90020cc4e00a"
+  },
+  "initial_state_stratum": "cold_start",
+  "task_gripper_effort_nm": 0.3,
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 2993,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Recorded native abort plus two-camera final-state review",
+    "observations": [
+      "Original slip guard triggered at alignment before insertion; release was not executed.",
+      "Final recorded external RGB shows yellow plug at the folded right gripper, not in target outlet.",
+      "Held-object appearance changed from lift to final wrist view. Cause of changed relative pose remains UNKNOWN."
+    ],
+    "diagnostic_intervention": "45.829235s pause after lift for Agent RGB review; not blind continuous replay",
+    "evidence": [
+      {
+        "path": "right_wrist/2400.jpg",
+        "sha256": "c3a8b8ea97307510df8a342fadb4be2215d748e11d10e777907aea8e62d69953"
+      },
+      {
+        "path": "external/last.png",
+        "sha256": "44ce83ae0404a0aaf40f77a2c88cdb787f0f61b0ee3466f9ef6dc09da970d009"
+      },
+      {
+        "path": "right_wrist/last.png",
+        "sha256": "19aa95e3def7eae8706a3a8fc3256de5298320e937f82e5ed42aa058bbd9f227"
+      },
+      {
+        "path": "execution_report.json",
+        "sha256": "602590b12a519504536214813d8fccbbad20ea3ecdeda3b25d6f28bbbd5c3fc3"
+      },
+      {
+        "path": "diagnostic_review.json",
+        "sha256": "127e79e30fe5c4231aefad103878eed59585f58e369cefc096c463786691cfb9"
+      }
+    ],
+    "root_cause": "UNKNOWN",
+    "limits": [
+      "Final capture precedes automatic disable; do not claim post-disable object pose.",
+      "No measured force/torque or metric object pose; ordinary ruler gap is one unloaded point."
+    ]
+  },
+  "reference_commands": 3240,
+  "entire_reference_sent": false,
+  "reference_execution_seconds": 78.65903754800092,
+  "nominal_reference_seconds": 32.39,
+  "execution_time": 99.83204258198384,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One ordinary-ruler aperture measurement. No new manual plug reset in this batch; initial plug restoration preceded first observation and is not attributed to a known operator action.",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000001/videos/cam_external_rgb.mp4",
+      "sha256": "da525f8d24fea4eaf72400cbae59ef1bf60428a9a36f4ec1d0b2db5eb24ea67e"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000001/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "3bc819cd2955c5a9f37ee01ef94c87c6ca9fc000f05b3dceec0a6d44a030c001"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000001/proprio_stats/proprio_stats.h5",
+      "sha256": "c886ddc7a7aafe94d4aaa13a3c66be6e70885cb8d85de07be0f83c8a5d3e079d"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000001/outcome.json",
+      "sha256": "bd694948e500475730670a945e862a20b892086fcdb5fcecb86a4f7b6d0cee4d"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000001/verification.json",
+      "sha256": "de38aa72fbe0574f1ccf8a9f08cd42e8d6db7938f6bb337e17c4af5a937f4183"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000001/raw/task/commanded_probe.csv",
+      "sha256": "975f960d5a9dd485421525f53878e1f1bc6f9135c6ea4b98b16372d045d34f11"
+    }
+  ],
+  "manual_resets": 0,
+  "diagnostic_pause_seconds": 45.82923502800986,
+  "execution_scope": "Diagnostic paused replay of unchanged command prefix; not a continuous same-time reference counterpart. Continuous-simulation residuals after the pause include that intentional timing intervention.",
+  "dataset_valid": true,
+  "training_eligible": false,
+  "candidate_version_evidence": "experiments/teacher_reliability/candidate1_versions.json"
+}

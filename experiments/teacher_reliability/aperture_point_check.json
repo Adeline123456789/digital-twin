@@ -1,0 +1,171 @@
+{
+  "physical_measurement": {
+    "source": "User reply58mm after requested empty-jaw measurement",
+    "reported_gap_mm": 58,
+    "encoder_at_previous_read_mm": 59.5,
+    "measurement_tool": "ordinary ruler, user confirmed",
+    "measurement_uncertainty_mm": null,
+    "loaded_mapping_validated": false,
+    "measurement_finished": true
+  },
+  "method": "Recorded integration state; only symmetric aperture changed; no physics steps or raw edits.",
+  "assumptions": [
+    "The -1.5mm difference at a single empty59.5mm encoder reading is extrapolated to loaded39.9–45.6mm for hypothesis testing only.",
+    "Object pose remains simulated, not measured. No new physical calibration is accepted."
+  ],
+  "results": [
+    {
+      "episode": "20261117T071047Z_e43b1ad6",
+      "phase": "grasp",
+      "frame": 600,
+      "sim_width_mm": 39.96632550440138,
+      "encoder_width_mm": 42.6,
+      "original": {
+        "active": 4,
+        "max_penetration_mm": 0.000643928338383087
+      },
+      "counterfactual": [
+        {
+          "offset_mm": 0.0,
+          "assumed_physical_width_mm": 42.6,
+          "active": 0,
+          "max_penetration_mm": 0
+        },
+        {
+          "offset_mm": -1.5,
+          "assumed_physical_width_mm": 41.1,
+          "active": 0,
+          "max_penetration_mm": 0
+        }
+      ]
+    },
+    {
+      "episode": "20261117T071047Z_e43b1ad6",
+      "phase": "lift",
+      "frame": 657,
+      "sim_width_mm": 39.485513525354406,
+      "encoder_width_mm": 40.6,
+      "original": {
+        "active": 4,
+        "max_penetration_mm": 0.0006220975253425097
+      },
+      "counterfactual": [
+        {
+          "offset_mm": 0.0,
+          "assumed_physical_width_mm": 40.6,
+          "active": 0,
+          "max_penetration_mm": 0
+        },
+        {
+          "offset_mm": -1.5,
+          "assumed_physical_width_mm": 39.1,
+          "active": 12,
+          "max_penetration_mm": 0.1800943127670802
+        }
+      ]
+    },
+    {
+      "episode": "20261117T071047Z_e43b1ad6",
+      "phase": "align",
+      "frame": 975,
+      "sim_width_mm": 38.36511614899197,
+      "encoder_width_mm": 39.9,
+      "original": {
+        "active": 6,
+        "max_penetration_mm": 0.0004446568976094382
+      },
+      "counterfactual": [
+        {
+          "offset_mm": 0.0,
+          "assumed_physical_width_mm": 39.9,
+          "active": 0,
+          "max_penetration_mm": 0
+        },
+        {
+          "offset_mm": -1.5,
+          "assumed_physical_width_mm": 38.4,
+          "active": 0,
+          "max_penetration_mm": 0
+        }
+      ]
+    },
+    {
+      "episode": "20261117T073201Z_efc6139b",
+      "phase": "grasp",
+      "frame": 604,
+      "sim_width_mm": 42.95663335933988,
+      "encoder_width_mm": 45.6,
+      "original": {
+        "active": 4,
+        "max_penetration_mm": 0.0006668903844848416
+      },
+      "counterfactual": [
+        {
+          "offset_mm": 0.0,
+          "assumed_physical_width_mm": 45.6,
+          "active": 0,
+          "max_penetration_mm": 0
+        },
+        {
+          "offset_mm": -1.5,
+          "assumed_physical_width_mm": 44.1,
+          "active": 0,
+          "max_penetration_mm": 0
+        }
+      ]
+    },
+    {
+      "episode": "20261117T073201Z_efc6139b",
+      "phase": "lift",
+      "frame": 665,
+      "sim_width_mm": 42.77849748123335,
+      "encoder_width_mm": 44.1,
+      "original": {
+        "active": 4,
+        "max_penetration_mm": 0.0006562551234153861
+      },
+      "counterfactual": [
+        {
+          "offset_mm": 0.0,
+          "assumed_physical_width_mm": 44.1,
+          "active": 0,
+          "max_penetration_mm": 0
+        },
+        {
+          "offset_mm": -1.5,
+          "assumed_physical_width_mm": 42.6,
+          "active": 16,
+          "max_penetration_mm": 0.08756346586179052
+        }
+      ]
+    },
+    {
+      "episode": "20261117T073201Z_efc6139b",
+      "phase": "align",
+      "frame": 982,
+      "sim_width_mm": 41.298137457435764,
+      "encoder_width_mm": 44.1,
+      "original": {
+        "active": 4,
+        "max_penetration_mm": 0.0006283749692442049
+      },
+      "counterfactual": [
+        {
+          "offset_mm": 0.0,
+          "assumed_physical_width_mm": 44.1,
+          "active": 0,
+          "max_penetration_mm": 0
+        },
+        {
+          "offset_mm": -1.5,
+          "assumed_physical_width_mm": 42.6,
+          "active": 0,
+          "max_penetration_mm": 0
+        }
+      ]
+    }
+  ],
+  "wall_seconds": 3.728222195059061,
+  "source_probe_sha256": "3301e32a93ae36827836b9be2808c4cd14198646d8efa14de96975bef0bd0d19",
+  "conclusion": "A hypothetical constant-1.5mm offset restores active contacts at only2/6 saved points and introduces0.088/0.180mm penetration there. Single-point ruler measurement does not establish a loaded mapping or a complete repair."
+}

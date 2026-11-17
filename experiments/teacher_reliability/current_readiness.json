@@ -1,0 +1,73 @@
+{
+  "checked_at_utc": "2026-11-17T10:01:40.501587+00:00",
+  "connection_verified": true,
+  "physical_side_mapping_verified": true,
+  "joint_degrees": [
+    0.0,
+    -2.418,
+    0.814,
+    0.483,
+    23.356,
+    0.46
+  ],
+  "err_code": 0,
+  "arm_status": 1,
+  "joint_motors_enabled": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "driver_temperature_c": [
+    34,
+    33,
+    33,
+    34,
+    36,
+    36
+  ],
+  "empty_gripper_encoder_mm": 59.5,
+  "gripper_enabled": false,
+  "observed_rgb": "Yellow plug restored on gray holder; empty right gripper; no depth observations.",
+  "motion_commands": 0,
+  "connection_report_sha256": "dcac7da36a261f00f4f86e1be156a93d782bae4ee0e23508a53bb871c4833ba8",
+  "camera_clocks": {
+    "external": {
+      "frames": 150,
+      "max_elapsed_error_s": 0.0022821720922365785,
+      "first_outside_one_frame": null,
+      "recorded_frame_number_gaps": 0,
+      "status": "ACCEPTED_BY_CURRENT_MAPPING",
+      "mapping": {
+        "method": "first_epoch_anchor_continuous_camera_v1",
+        "max_camera_receipt_elapsed_error_s": 0.0022821720922365785,
+        "largest_wallclock_step_s": 1.6689300537109375e-06,
+        "max_change_from_per_frame_wall_mapping_s": 1.3739336282014847e-06,
+        "initial_exposure_to_receipt_s": 0.0300140380859375,
+        "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration."
+      },
+      "source_sha256": "9f9eda94e3bb5938216d4f5830a42ca3968786a6d46e2ebb42fb5c1446d2f89d",
+      "last_image_sha256": "01ca147780efc944db9e078407006f16d36b7118171f7f6036ce18e479c1f657"
+    },
+    "right_wrist": {
+      "frames": 150,
+      "max_elapsed_error_s": 0.000948859378695488,
+      "first_outside_one_frame": null,
+      "recorded_frame_number_gaps": 0,
+      "status": "ACCEPTED_BY_CURRENT_MAPPING",
+      "mapping": {
+        "method": "first_epoch_anchor_continuous_camera_v1",
+        "max_camera_receipt_elapsed_error_s": 0.000948859378695488,
+        "largest_wallclock_step_s": 1.6689300537109375e-06,
+        "max_change_from_per_frame_wall_mapping_s": 2.914224751293659e-06,
+        "initial_exposure_to_receipt_s": 0.03336143493652344,
+        "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration."
+      },
+      "source_sha256": "4f896d725cdfe473baaea4a294602832fd83710e5b060a35acb1b027675c4b0e",
+      "last_image_sha256": "922c2c845c11e62fc96727da180bb1e93ea423ffb461e864a947000f7f87070f"
+    }
+  },
+  "manual_aperture_measurement": "REQUESTED; keep disabled until user finishes"
+}

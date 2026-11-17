@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T09:59:51.801142+00:00",
+  "updated_at": "2026-11-17T10:44:06.538036+00:00",
   "purpose": "Development continuation checkpoint, not robot prompt or live telemetry",
   "mission": {
     "path": "/home/midea/下载/codex_teacher_reliability_first.md",
@@ -16,7 +16,7 @@
     "automatic_teaching_after_simulation": false
   },
   "branch": "codex/teacher-reliability-20261117",
-  "status": "PARTIAL_AWAITING_NEW_BATCH_AUTHORIZATION",
+  "status": "CANDIDATE1_REAL_FAILED_CANDIDATE2_SIMULATION_RUNNING",
   "active": {
     "planner_policy": "llm",
     "tool_planner": "bounded_tools_v1 is opt-in",
@@ -26,10 +26,10 @@
     "batch_decision_maker": "Current supervising model; no child-model calls. Existing runtime model defaults were not promoted or executed."
   },
   "last_hardware_observation": {
-    "state": "Right arm supported, disabled and disconnected after batch2 attempt2",
-    "source": "experiments/goal_aligned_runtime/batch2/real_000002/result.json",
+    "state": "Independent check after candidate1: all six joint motors and gripper disabled, err_code0; controller exited",
+    "source": "experiments/teacher_reliability/real1_cost_and_shutdown.json",
     "live_telemetry": false,
-    "plug_reset_after_attempt2": "NOT_CONFIRMED"
+    "plug_reset": "User explicitly confirmed reset for candidate2 after this check"
   },
   "batch": {
     "id": "goal_aligned_batch2",
@@ -57,7 +57,8 @@
     "Batch2 teacher guidance: no supported recipient benefit",
     "16mm grasp/23mm alignment: real failure",
     "Width-only image fit: unvalidated and bound-limited",
-    "Camera-clock cadence export candidate: rejected"
+    "Camera-clock cadence export candidate: rejected",
+    "Reliability candidate1: historical16mm/25mm/0.3Nm bundle with45.8s model pause; real align abort. No default promotion."
   ],
   "next_unresolved": [
     "Fresh authorized empty-gripper aperture/plug-in-finger observation to distinguish mapping from actual held pose; no more blind insertion based on unchanged simulation.",
@@ -68,7 +69,7 @@
     "latest_physical": "experiments/goal_aligned_runtime/batch2/REPORT.md",
     "memory": "experiments/goal_aligned_runtime/runtime_memory/REPORT.md",
     "receiver": "experiments/goal_aligned_runtime/completion_receiver/REPORT.md",
-    "reliability_checkpoint": "experiments/teacher_reliability/REPORT.md",
+    "reliability_checkpoint": "experiments/teacher_reliability/BATCH_RESULT.md",
     "historical_success": "experiments/teacher_reliability/historical_success_reference.json",
     "current_versions": "experiments/teacher_reliability/current_versions.json",
     "offline_real_index": "experiments/teacher_reliability/offline_verification.json"
@@ -76,18 +77,23 @@
   "publication": "Use git status and git ls-remote to verify current commit; this checkpoint does not self-certify remote state",
   "continuation": {
     "id": "teacher_reliability_20261117",
-    "status": "OFFLINE_CHECKPOINT_ONLY",
+    "status": "AUTHORIZED",
     "new_model_subcalls": 0,
-    "new_simulation_episodes": 0,
-    "new_real_attempts": 0,
-    "new_manual_resets": 0,
+    "new_simulation_episodes": 2,
+    "new_real_attempts": 1,
+    "new_manual_resets": 1,
     "prior_budget_reset": false,
-    "hardware_resume_authorized": false,
+    "hardware_resume_authorized": true,
     "outer_goal_usage_last_observed": {
-      "tokens": 137169,
-      "elapsed_seconds": 687,
-      "scope": "get_goal snapshot including outer work; not child-model billed tokens, monetary cost unknown"
+      "tokens": 242893,
+      "elapsed_seconds": null,
+      "scope": "get_goal snapshot;101313 since batch start, monetary cost unknown"
     },
-    "next_batch_proposal": "experiments/teacher_reliability/batch_proposal.json"
+    "next_batch_proposal": "experiments/teacher_reliability/batch_proposal.json",
+    "authorization": "experiments/teacher_reliability/authorization.json",
+    "ledger": "experiments/teacher_reliability/batch_ledger.json",
+    "pending_user_observation": null,
+    "supported_shutdown": "User explicitly confirmed foam protection at original folded position; return/fold before automatic disable. Manual-reset5-trial acceptance remains unavailable while user is away.",
+    "current_candidate": "candidate2: staged0.3->1Nm after lift, no model pause; full simulation/frozen validation in progress"
   }
 }

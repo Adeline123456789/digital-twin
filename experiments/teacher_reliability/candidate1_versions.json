@@ -1,0 +1,30 @@
+{
+  "status": "REJECTED_AFTER_REAL_FAILURE_NOT_DEFAULT",
+  "changes": [
+    {
+      "component": "replay_controller.py",
+      "source_sha256": "72d3a06e392bf8562ce0e0850f333c96e2fe520080474d1588aec9c55599600f",
+      "candidate_sha256": "c06a6a1ca024868ab93e042006d3609d00cbea9e0ee3255b215e9efcbdde1f14",
+      "candidate_path": "self_evolution/teacher_reliability_20261117/candidate1/replay_controller.py",
+      "private_patch_sha256": "ab348e41595827c6ca228c8decaac62ae54ac8097c333301421cdd957e56bb60"
+    },
+    {
+      "component": "continue_plug_task.py",
+      "source_sha256": "097f08e68143377948ed37a628f4a49d4aa07c059defedc69bafdf1d53b90e58",
+      "candidate_sha256": "1e641af836a774fcbc96c9ebc394f64315a66e9f963c53bf00dacb2b76d9947f",
+      "candidate_path": "self_evolution/teacher_reliability_20261117/candidate1/continue_plug_task.py",
+      "private_patch_sha256": "23c72da7e4fa8641153ffe230e524961ccaa2856f746a8d05b0094cc7f0df12a"
+    }
+  ],
+  "new_behavior": [
+    "Historical0.3Nm gripper command, no torque increase",
+    "Existing pause is engaged after lift for recorded Agent RGB review",
+    "Explicit abort marker uses original preinsert retreat/fold, no insertion",
+    "Existing10-second disable only after fold completed; user confirmed foam support"
+  ],
+  "validation": "Python compile and fake-sink effort/fault-gate check passed; physical effects unverified",
+  "rollback": "Run original SIM/scripts/continue_plug_task.py; original source/controller files untouched. Private candidate has not replaced default.",
+  "safety_note": "All existing limit/freshness/fault/slip checks remain; no automatic disable away from completed fold.",
+  "real_result": "experiments/teacher_reliability/real_000001/result.json",
+  "actual_effort_verified_from_can_nm": 0.3
+}

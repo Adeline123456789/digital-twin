@@ -1,0 +1,15 @@
+{
+  "decision": "CONTINUE_FROZEN_REFERENCE",
+  "observation": "Yellow plug visibly retained between both fingers at lift, upper face approximately level; no gross rotation or loss in inspected wrist/external views. Encoder40.6mm is not treated as contact-force or pose proof.",
+  "scope": "Bounded development candidate with explicit visual inspection pause, not a direct blind replay or verified repair.",
+  "evidence": [
+    {
+      "path": "right_wrist/1155.jpg",
+      "sha256": "18cb71f9f2c7744f4ce2ccb82e653bc6419830450991ca10ca3c98eb5ecb59d5"
+    },
+    {
+      "path": "external/1155.jpg",
+      "sha256": "48074382228059705966665667197f3e411070bd6a930968cedda823568138ad"
+    }
+  ]
+}
