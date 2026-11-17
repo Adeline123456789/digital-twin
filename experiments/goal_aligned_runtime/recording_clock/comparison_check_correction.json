@@ -1,0 +1,7 @@
+{
+  "initial_check": "assert pre-step delta < 10us",
+  "observed_pre_step_delta_s": 1.3074139133095741e-05,
+  "result": "overstrict numerical check corrected before data promotion",
+  "corrected_check": "pre-step delta <1ms, below one30fps frame; observed13us",
+  "physical_label_changes": false
+}

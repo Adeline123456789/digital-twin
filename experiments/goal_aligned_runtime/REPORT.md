@@ -1,3 +1,5 @@
+> Historical offline checkpoint below. Superseded by [the authorized batch and real comparison](BATCH_REPORT.md); its former pending-authorization statements describe the earlier checkpoint.
+
 # Goal-aligned continuation — offline tool checkpoint, 2026-11-17
 
 Parent: `63e835f767e7b5d6cd72651955fcf1fa74e7d6b1`; branch: `codex/goal-aligned-runtime-20261117`.

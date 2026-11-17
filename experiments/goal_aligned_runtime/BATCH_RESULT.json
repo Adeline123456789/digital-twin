@@ -1,0 +1,122 @@
+{
+  "experiment_id": "20261117_recipient_feedback_paired_batch",
+  "timestamp": "2026-11-17T05:59:06.163589+00:00",
+  "batch_started_at": "2026-11-17T05:18:33.708446+00:00",
+  "limits": {
+    "model_calls": 16,
+    "tokens": 250000,
+    "simulations": 8,
+    "seconds": 5400
+  },
+  "model_calls": 6,
+  "tokens": 255279,
+  "model_cli_network_inference_seconds": 180.9011069490807,
+  "inference_only_seconds": null,
+  "research_orchestration_tokens": null,
+  "simulations": [
+    {
+      "label": "development seed",
+      "status": "FINISHED",
+      "experiment_id": "20261117T051833Z_1ddf3521",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "failure",
+      "execution_time": 154.10960660502315,
+      "collection_component_seconds": 155.65214207500685,
+      "recording_report": "experiments/evaluation/20261117T052107Z_87ea8231"
+    },
+    {
+      "label": "heldout seed",
+      "status": "FINISHED",
+      "experiment_id": "20261117T052906Z_4f6da96b",
+      "task_success": false,
+      "recording_verified": true,
+      "result": "failure",
+      "execution_time": 155.52185984305106,
+      "collection_component_seconds": 157.11285176698584,
+      "recording_report": "experiments/evaluation/20261117T053142Z_6fbd5973"
+    },
+    {
+      "label": "Current-entry paired control",
+      "status": "FINISHED",
+      "experiment_id": "20261117T053833Z_25cf43e3",
+      "task_success": true,
+      "recording_verified": true,
+      "result": "success",
+      "execution_time": 175.8567121719243,
+      "collection_component_seconds": 177.4228180629434,
+      "recording_report": "experiments/evaluation/20261117T054129Z_b5bd8750"
+    }
+  ],
+  "simulation_successes": 1,
+  "simulation_failures": 2,
+  "simulation_execution_wall_seconds": 485.4881786199985,
+  "simulation_collection_wall_seconds": 490.1878119049361,
+  "reference_validation_wall_seconds": 116.87794991396368,
+  "real_attempts": 1,
+  "real_successes": 0,
+  "real_failures": 1,
+  "real_execution_seconds": 54.65667094103992,
+  "paired_successful_simulations": 1,
+  "unpaired_successful_simulations": 0,
+  "human_interventions": 1,
+  "human_intervention_definition": "Supported shutdown in this new paired attempt; no new plug reset requested",
+  "learner_runs": [
+    {
+      "label": "recipient before teacher",
+      "status": "STOPPED_UNKNOWN",
+      "model_calls": 3,
+      "tool_requests": 2,
+      "physical_result": null
+    },
+    {
+      "label": "recipient after feedback",
+      "status": "STOPPED_UNKNOWN",
+      "model_calls": 1,
+      "tool_requests": 0,
+      "physical_result": null
+    },
+    {
+      "label": "heldout parent",
+      "status": "STOPPED_UNKNOWN",
+      "model_calls": 1,
+      "tool_requests": 0,
+      "physical_result": null
+    },
+    {
+      "label": "heldout candidate",
+      "status": "EVIDENCE_OR_REQUEST_ERROR",
+      "model_calls": 0,
+      "tool_requests": 0,
+      "physical_result": null
+    }
+  ],
+  "teacher_guidance_promoted": false,
+  "default_planner": "llm",
+  "default_changed": false,
+  "physical_calibration_accepted": false,
+  "unseen_task_family_success_rate": null,
+  "valid_real_successes_per_hour": 0,
+  "total_cost_per_valid_real_success": null,
+  "weak_transfer_real_comparison": "NOT_EXECUTED: learner produced no successful simulation candidate",
+  "motion_speed_changed": false,
+  "safety_changed": false,
+  "task_success_detector_changed": false,
+  "claim_status": "NO_GO_FOR_COMPLETION_OR_COST_REDUCTION",
+  "budget_status": "MODEL_TOKEN_THRESHOLD_REACHED; no further model calls",
+  "remaining_simulation_slots": 5,
+  "remaining_slots_not_used_reason": "No supported new repair selected; repeat of unchanged real failure avoided",
+  "known_limitations": [
+    "Same task family; engineering conditions differ, no stability estimate",
+    "Real archive policy_training_eligible remains false",
+    "Completed weak-model planning runs stopped without choosing physical experiments; physical success-rate denominator is zero",
+    "Held-out candidate never executed because token threshold was reached",
+    "CLI wall time includes startup/network/model; inference-only and orchestration costs unknown"
+  ],
+  "recording_clock_repair": "ACCEPTED_FOR_CONTINUOUS_SHORT_RECORDINGS",
+  "recording_revision": 2,
+  "real_export_frames_per_camera": 1639,
+  "initial_export_frames_per_camera": 1615,
+  "tests_passed": 36,
+  "model_tokens_unchanged_after_threshold": true
+}

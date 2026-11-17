@@ -1,0 +1,42 @@
+{
+  "physical_task_success": false,
+  "plug_retained_in_target_after_release_and_fold": false,
+  "reviewer": "Agent review of recorded RGB and unchanged native controller guard",
+  "observed_facts": [
+    "Yellow plug retained through lift and transport in reviewed wrist frames.",
+    "Insertion guard stopped at wrist frame1046: yellow top304 to321px (17px).",
+    "Final external RGB shows plug still held in fingers and target outlet empty.",
+    "Controller completed retreat/fold and exited after onsite support confirmation and DISABLE."
+  ],
+  "root_cause": "UNKNOWN",
+  "limitations": [
+    "RGB only; no measured depth or six-axis force",
+    "Slip guard identifies image displacement, not a uniquely verified physical cause"
+  ],
+  "evidence": [
+    {
+      "relative_capture_path": "external/last.png",
+      "sha256": "aa9d22650f5f8f0713d0842d6394aa63a18d74af22c0a00280779b27fd2b1d3b"
+    },
+    {
+      "relative_capture_path": "right_wrist/0619.jpg",
+      "sha256": "5b4d407a5c1d2538dcdc41f094355cbfe779322948a94f1a781d12dacbdf0631"
+    },
+    {
+      "relative_capture_path": "right_wrist/0677.jpg",
+      "sha256": "9e16e6aa77be8bfaec89ea0e22cede96f3800f428d61d132a562810e3b7fda5f"
+    },
+    {
+      "relative_capture_path": "right_wrist/0979.jpg",
+      "sha256": "fe4fa2a71385c42815e4c5c1962a671b3de30bf999797b47d8b3222019cfc2b9"
+    },
+    {
+      "relative_capture_path": "right_wrist/1046.jpg",
+      "sha256": "d0f2be714478a94b82b2c57cd9a016fa83e6f86439dd897164f90c9c96dc89d8"
+    },
+    {
+      "relative_capture_path": "execution_report.json",
+      "sha256": "ce857ea35afc89ad4bc84efd095be085f164f0b8cb42875c996e3f0a6cbc6445"
+    }
+  ]
+}

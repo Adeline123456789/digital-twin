@@ -1,0 +1,8 @@
+{
+  "native_path": "scripts/export_plug_calibration.py",
+  "before_sha256": "9747211525cdfba93a0a4c198304925f755f6f1889ca814b3bfd4532864b49f4",
+  "after_sha256": "af1a1d5f6405db70cf18f30fcc062e327c0c073496b868627f9e0fb7dbf66f83",
+  "new_helper_sha256": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595",
+  "private_backup": ".local/recording_clock_fix/export_plug_calibration.py",
+  "changes": "Replace per-frame wall clock offset with verified continuous camera-to-monotonic mapping. No recording schema, action, safety or success label change."
+}

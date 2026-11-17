@@ -1,0 +1,39 @@
+{
+  "control": "Existing successful program, no new model decision or teacher-transfer claim",
+  "source_episode": "20261116T125834Z_58df2069",
+  "connection_sha256": "3ae459ae4097be5a74f3151cdb8b50a5aa88b7f18da48f0eadfbd7dd81da7f80",
+  "measured_joint_degrees": [
+    -2.719,
+    -2.232,
+    1.667,
+    5.055,
+    17.175,
+    -8.506
+  ],
+  "native_folded_entry_joint_degrees": [
+    -2.719,
+    0.0,
+    0.0,
+    5.055,
+    17.175,
+    -8.506
+  ],
+  "case": {
+    "offset_mm": 0,
+    "grasp_tilt_deg": 0.0,
+    "grasp_height_m": 0.02,
+    "align_gap_m": 0.023,
+    "start_right_deg": [
+      -2.719,
+      0.0,
+      0.0,
+      5.055,
+      17.175,
+      -8.506
+    ],
+    "name": "Known successful program at current measured folded entry",
+    "shift_mm": 0
+  },
+  "model_tokens_before": 255279,
+  "successful_simulation_requires_real_pair": true
+}

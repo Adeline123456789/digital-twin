@@ -1,0 +1,26 @@
+{
+  "id": "ER018",
+  "version": 1,
+  "content": "When comparing RGB to robot feedback, validate elapsed camera time against host monotonic receipt time; do not assume a per-frame Unix-to-monotonic offset remains correct after a host-clock step. Preserve original exports and labels when repairing correspondence.",
+  "applicability": "Current RGB-only Piper recordings with continuous30fps camera global timestamps and recorded host epoch/monotonic pairs; device-clock resets are outside the accepted method",
+  "source_episodes": [
+    "20261117_real_recipient_pair_000001"
+  ],
+  "source_experiments": [
+    "20261117_recording_clock_000001"
+  ],
+  "validation_status": "REAL_RECORDED_TIME_MAPPING_VERIFIED; NOT_EXPOSURE_TRIGGER_CALIBRATED",
+  "success_count": 2,
+  "failure_count": 1,
+  "count_unit": "Two corrected capture checks (task and independent read-only); one observed defective task export. Not robot task counts.",
+  "known_limits": [
+    "Initial epoch/exposure offset not independently measured",
+    "No claim about physical insertion cause",
+    "No new collection cost or reliability result"
+  ],
+  "evidence": "experiments/goal_aligned_runtime/recording_clock/REPORT.md",
+  "signatures": [
+    "rgb_action_clock_step",
+    "recording_alignment_error"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-11-17T05:27:23.356053+00:00",
+  "source": "Current user correction",
+  "scope": "Every successful simulation Episode requires an actual real counterpart from the same frozen reference; failed simulation Episodes do not require real replay. Weak-model transfer requires real comparison.",
+  "hardware_policy": "Use existing safety and validated-reference gates; do not replay failed unsafe simulations. Confirm current onsite reset/support conditions before movement if unknown.",
+  "original_model_sim_budget_unchanged": true,
+  "simulations_consumed": 1,
+  "model_calls_consumed": 4,
+  "reported_tokens_consumed": 132914,
+  "format_issue": {
+    "teacher_guidance_characters": 6097,
+    "old_target": 6000,
+    "resolution": "Soft length warning; actual usage remains charged. Original rejected result is preserved."
+  }
+}

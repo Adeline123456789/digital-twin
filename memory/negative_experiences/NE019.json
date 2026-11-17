@@ -1,0 +1,27 @@
+{
+  "id": "NE019",
+  "version": 1,
+  "content": "Generic uncertainty guidance plus an on-demand JSON tool broker did not produce a repair in this recipient study. Two student runs stopped before requesting available observations; the held-out candidate was not run after the token threshold. Do not promote this guidance or report a completed comparison.",
+  "applicability": "Requested Luna endpoint in bounded_tools_v1; two right-Piper insertion layouts, privileged simulation evidence; not a cross-task result",
+  "source_episodes": [
+    "20261117T051833Z_1ddf3521",
+    "20261117T052906Z_4f6da96b"
+  ],
+  "source_experiments": [
+    "20261117T051833Z_9fab0182",
+    "20261117T052843Z_a72dd31c"
+  ],
+  "validation_status": "OBSERVED_RECIPIENT_NON_EXECUTION; HELDOUT_INCOMPLETE",
+  "success_count": 0,
+  "failure_count": 3,
+  "count_unit": "Three completed student planning runs stopped UNKNOWN; not physical failures",
+  "known_limits": [
+    "One teacher revision",
+    "Candidate held-out arm unexecuted",
+    "Observed usage255279 includes teacher and all student calls, not outer research tokens"
+  ],
+  "signatures": [
+    "recipient_stops_without_observations",
+    "teacher_guidance_no_observed_benefit"
+  ]
+}

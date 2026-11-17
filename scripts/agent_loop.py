@@ -144,7 +144,7 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
         if policy=='bounded_tools_v1':
             if not seed_compatible:raise ValueError('Tool policy requires a compatible recorded Episode')
             from bounded_tools import plan as tool_plan, validate_tool_plan
-            call=tool_plan(seed,local);context=call['applicability'];diagnoses.append(context)
+            call=tool_plan(seed,local,initial_summary=True);context=call['applicability'];diagnoses.append(context)
             r['initial_state']['llm_call_budget']=4*max_executions
             r['initial_state']['diagnostic_tool_budget']=3*max_executions
         else:call=plan_with_memory(prompt,local,policy,context,include_catalog=robot_arms!='right')
@@ -176,7 +176,7 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
                 context=context_for(trial,shift) if policy=='compiled_alignment_v1' and seed_compatible else {}
                 if policy=='diagnose_then_repair':context=repair_diagnosis(trial);diagnoses.append(context)
                 if policy=='bounded_tools_v1':
-                    call=tool_plan(trial,local,guidance='Prior failed parameter tuples '+json.dumps(sorted(seen))+'. Do not repeat without new evidence.')
+                    call=tool_plan(trial,local,initial_summary=True,guidance='Prior failed parameter tuples '+json.dumps(sorted(seen))+'. Do not repeat without new evidence.')
                     context=call['applicability'];diagnoses.append(context)
                 else:call=plan_with_memory(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback)+'\nTyped applicability evidence:'+json.dumps(context),local,policy,context,include_catalog=robot_arms!='right')
                 calls.append(call)

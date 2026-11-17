@@ -1,0 +1,410 @@
+{
+  "value": {
+    "episode_id": "20261117T053833Z_25cf43e3",
+    "scope": "Simulation-only",
+    "task_success": true,
+    "recording_verified": true,
+    "validation_status": "SIMULATION_VERIFIED",
+    "active_arms": [
+      "right"
+    ],
+    "source_versions": {
+      "scene": "6cd236701d17f30f6e7250c4d446fc1f225795c6f3d8c80525995dd89b079e42",
+      "native_program": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+      "camera": "Not used by this state/contact analyzer",
+      "controller": "Recorded simulation actions"
+    },
+    "actions": [
+      {
+        "script": "try_plug_pick_sim.py",
+        "profile": "original",
+        "grasp_height_m": 0.02,
+        "offset_mm": [
+          0,
+          0
+        ],
+        "speed_deg_s": 12,
+        "smooth_timing": true,
+        "grasp_tilt_deg": 0.0
+      }
+    ],
+    "native_error": null,
+    "last_phase": "fold",
+    "phases": [
+      {
+        "frame": 461,
+        "phase": "approach",
+        "time_s": 15.39999999999113,
+        "plug_gripper_separation_mm": 74.00232171361323,
+        "plug_position_world_m": [
+          0.2959138878528055,
+          -0.36570642690299954,
+          0.05819999552886341
+        ],
+        "gripper_position_world_m": [
+          0.2959122726628243,
+          -0.3657052654851077,
+          0.13220231721573605
+        ],
+        "recorded_contact_pairs": [
+          [
+            "task/board",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.3351037371833833,
+          "face_gap_m": 0.004899995528863409,
+          "yaw_rad": 0.10135512778483877,
+          "tilt_rad": 4.2146848510894035e-08,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      {
+        "frame": 518,
+        "phase": "descend",
+        "time_s": 17.299999999989403,
+        "plug_gripper_separation_mm": 20.26983271069175,
+        "plug_position_world_m": [
+          0.29591388775121785,
+          -0.3657064268999982,
+          0.05819999549331143
+        ],
+        "gripper_position_world_m": [
+          0.29591920316118225,
+          -0.36570741242609184,
+          0.0784698274831081
+        ],
+        "recorded_contact_pairs": [
+          [
+            "task/board",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.3351037371811475,
+          "face_gap_m": 0.004899995493311431,
+          "yaw_rad": 0.10135511320978159,
+          "tilt_rad": 3.942476676500724e-08,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      {
+        "frame": 558,
+        "phase": "grasp",
+        "time_s": 18.633333333321524,
+        "plug_gripper_separation_mm": 20.089117659713132,
+        "plug_position_world_m": [
+          0.29591491701571393,
+          -0.36570654526768664,
+          0.058199990916910575
+        ],
+        "gripper_position_world_m": [
+          0.29591104217919423,
+          -0.3657072633515245,
+          0.07828910819009596
+        ],
+        "recorded_contact_pairs": [
+          [
+            "right/link7",
+            "task/yellow_plug"
+          ],
+          [
+            "right/link8",
+            "task/yellow_plug"
+          ],
+          [
+            "task/board",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.3351038477919594,
+          "face_gap_m": 0.004899990916910575,
+          "yaw_rad": 0.10135308994788143,
+          "tilt_rad": 3.668228872147572e-07,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      {
+        "frame": 615,
+        "phase": "lift",
+        "time_s": 20.533333333319796,
+        "plug_gripper_separation_mm": 20.69091906866587,
+        "plug_position_world_m": [
+          0.2958462722797015,
+          -0.36570082642262114,
+          0.11108184778391893
+        ],
+        "gripper_position_world_m": [
+          0.29588466087989623,
+          -0.36570095680470843,
+          0.13177273124027372
+        ],
+        "recorded_contact_pairs": [
+          [
+            "right/link7",
+            "task/yellow_plug"
+          ],
+          [
+            "right/link8",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.33509865314829684,
+          "face_gap_m": 0.05778184778391892,
+          "yaw_rad": 0.10132836519165819,
+          "tilt_rad": 0.005726700689775659,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      {
+        "frame": 912,
+        "phase": "transport",
+        "time_s": 30.43333333331079,
+        "plug_gripper_separation_mm": 22.171462482767225,
+        "plug_position_world_m": [
+          0.29851637000027953,
+          -0.03070681934792868,
+          0.09679702114766746
+        ],
+        "gripper_position_world_m": [
+          0.29649748760824973,
+          -0.030708309786787808,
+          0.11887637485855534
+        ],
+        "recorded_contact_pairs": [
+          [
+            "right/link7",
+            "task/yellow_plug"
+          ],
+          [
+            "right/link8",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.00012237461459922654,
+          "face_gap_m": 0.04349702114766745,
+          "yaw_rad": 0.00011937271881648436,
+          "tilt_rad": 0.08992631093993944,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      {
+        "frame": 933,
+        "phase": "align",
+        "time_s": 31.133333333310155,
+        "plug_gripper_separation_mm": 22.2969261366203,
+        "plug_position_world_m": [
+          0.2983774682332886,
+          -0.03078694644518194,
+          0.07719058352086805
+        ],
+        "gripper_position_world_m": [
+          0.2982435076429409,
+          -0.03076334196062978,
+          0.09948709473967635
+        ],
+        "recorded_contact_pairs": [
+          [
+            "right/link7",
+            "task/yellow_plug"
+          ],
+          [
+            "right/link8",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.00018518250028212642,
+          "face_gap_m": 0.02389058352086805,
+          "yaw_rad": -4.2727826065631554e-05,
+          "tilt_rad": 0.004879709810796454,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      {
+        "frame": 987,
+        "phase": "insert",
+        "time_s": 32.93333333332125,
+        "plug_gripper_separation_mm": 22.470013107373443,
+        "plug_position_world_m": [
+          0.2983494403560675,
+          -0.030696714560699008,
+          0.053502212031253375
+        ],
+        "gripper_position_world_m": [
+          0.2983261957636822,
+          -0.030693584320324242,
+          0.07597221289765421
+        ],
+        "recorded_contact_pairs": [
+          [
+            "right/link7",
+            "task/yellow_plug"
+          ],
+          [
+            "right/link8",
+            "task/yellow_plug"
+          ],
+          [
+            "task/strip",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.00012296618598394994,
+          "face_gap_m": 0.0002022120312533751,
+          "yaw_rad": 8.224778658034231e-05,
+          "tilt_rad": 0.00011235254101565667,
+          "seated": true,
+          "hold_seconds": 0.3,
+          "success": true
+        }
+      },
+      {
+        "frame": 1027,
+        "phase": "release",
+        "time_s": 34.26666666667156,
+        "plug_gripper_separation_mm": 22.297173041602505,
+        "plug_position_world_m": [
+          0.29835043183521737,
+          -0.030695605209843387,
+          0.05349999952911325
+        ],
+        "gripper_position_world_m": [
+          0.2984108089945784,
+          -0.030612918121521122,
+          0.07579693750479094
+        ],
+        "recorded_contact_pairs": [
+          [
+            "task/strip",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.0001214836111412068,
+          "face_gap_m": 0.00019999952911325253,
+          "yaw_rad": 8.773888598477641e-05,
+          "tilt_rad": 0.0,
+          "seated": true,
+          "hold_seconds": 1.633333333333335,
+          "success": true
+        }
+      },
+      {
+        "frame": 1072,
+        "phase": "retreat",
+        "time_s": 35.76666666669066,
+        "plug_gripper_separation_mm": 65.25262193585151,
+        "plug_position_world_m": [
+          0.2983504318351511,
+          -0.030695605209823458,
+          0.05349999952905365
+        ],
+        "gripper_position_world_m": [
+          0.2965948769657088,
+          -0.030581740961636992,
+          0.11872890210710207
+        ],
+        "recorded_contact_pairs": [
+          [
+            "task/strip",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.00012148361117570708,
+          "face_gap_m": 0.00019999952905364743,
+          "yaw_rad": 8.773879421838197e-05,
+          "tilt_rad": 0.0,
+          "seated": true,
+          "hold_seconds": 3.133333333333332,
+          "success": true
+        }
+      },
+      {
+        "frame": 1607,
+        "phase": "fold",
+        "time_s": 53.600000000251065,
+        "plug_gripper_separation_mm": 364.0178426201229,
+        "plug_position_world_m": [
+          0.29835043183440746,
+          -0.030695605209576843,
+          0.05349999952913941
+        ],
+        "gripper_position_world_m": [
+          0.19142686807250295,
+          -0.31000104591454414,
+          0.2610206299514339
+        ],
+        "recorded_contact_pairs": [
+          [
+            "task/strip",
+            "task/yellow_plug"
+          ]
+        ],
+        "contact_force_status": "NOT_RECORDED",
+        "task_metrics": {
+          "lateral_error_m": 0.00012148361154706261,
+          "face_gap_m": 0.00019999952913941216,
+          "yaw_rad": 8.773770289953522e-05,
+          "tilt_rad": 0.0,
+          "seated": true,
+          "hold_seconds": 20.966666666666868,
+          "success": true
+        }
+      }
+    ],
+    "retention": {
+      "status": "NO_RETENTION_LOSS_OBSERVED",
+      "observed_carry_samples": 318,
+      "lift_reference_distance_mm": 20.69091906866587,
+      "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp"
+    },
+    "root_cause": "UNKNOWN",
+    "unknowns": [
+      "Real contact force and motor-torque mapping",
+      "Historical applied forces and direct state edits",
+      "Recorded contact pair alone does not prove active constraint or gripping force"
+    ],
+    "privileged_information_used": true
+  },
+  "cache": {
+    "key": "c222347df277bb2855fee2e6bd951ee4982c4a0d910fcdafde27ce2bceee297c",
+    "hit": false,
+    "bytes_hashed": 20404227,
+    "dependency_sha256": {
+      "analyzer": "be6a09e9af571dfbc1747f25020562ab2a9f38a0ecdc22b61829f741e99f1e07",
+      "privileged": "a9b78c1cd6072de685f5e274f6ad05b94ab58b5c24376bcfc637f0d8e9981cab",
+      "report": "8bbe46fd9c9a7a8c6d1b43713ea37e3f7b644cf11e69a722b2d2679b66e214de",
+      "retention": "bcb5aa7020c5d9a4cbbad1dfdd33f84c8b2d551b6f4316dccf491f62a0f629bd",
+      "trajectory": "cac23e52dfae3f8fff1a8ae630b4936bb58f3fe39e8617e9d7c60449250da436"
+    },
+    "wall_seconds": 0.8204067959450185
+  }
+}

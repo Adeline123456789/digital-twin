@@ -1,5 +1,5 @@
 {
-  "status": "PROPOSED_BUDGET_PENDING",
+  "status": "AUTHORIZED",
   "source_episode": "20261116T125834Z_58df2069",
   "task_sha256": "6cd236701d17f30f6e7250c4d446fc1f225795c6f3d8c80525995dd89b079e42",
   "hardware_executions": 0,
@@ -31,5 +31,16 @@
   "reserve": "Up to two extra authorized physical sim checks for independent evidence, not automatic retries",
   "outcome_rule": "Report unknown/no-plan as no physical success; preserve all infrastructure and physical failures",
   "promotion": "No automatic default policy change",
-  "approval": "External user budget required; this file does not grant authorization"
+  "approval": "Approved by user; applies to this batch only, not hardware or model training",
+  "authorization": {
+    "timestamp_utc": "2026-11-17T05:17:58.285049+00:00",
+    "source": "User explicitly approved this bounded model/simulation batch in this thread",
+    "model_calls": 16,
+    "token_stop_threshold": 250000,
+    "complete_simulation_episode_ceiling": 8,
+    "wall_seconds": 5400,
+    "real_motion": 0,
+    "human_resets": 0,
+    "previous_12_cycles_not_reset": true
+  }
 }

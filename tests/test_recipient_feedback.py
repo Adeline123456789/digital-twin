@@ -10,6 +10,30 @@ from model_compare import ModelCallError
 
 
 class RecipientStudyTests(unittest.TestCase):
+    def test_unexecuted_holdout_does_not_count_as_completed_comparison(self):
+        runs=[{'label':'heldout parent','planner':{'status':'STOPPED_UNKNOWN'}},
+              {'label':'heldout candidate','planner':{'status':'EVIDENCE_OR_REQUEST_ERROR'}}]
+        result=study.comparison_status(runs)
+        self.assertEqual(result['result'],'infrastructure_error')
+        self.assertEqual(result['validation_status'],'COMPARISON_INCOMPLETE')
+        self.assertEqual(result['incomplete_arms'],['heldout candidate'])
+
+    def test_resume_keeps_consumed_calls_tokens_simulations_and_time(self):
+        with tempfile.TemporaryDirectory() as folder:
+            prior={'calls':[{'usage':{'input_tokens':10,'output_tokens':2}}],
+                   'simulations':[{'status':'FINISHED'}],'usage_unknown':False}
+            b=study.BatchBudget(dict(seconds=5400,model_calls=16,tokens=250000,simulations=8),Path(folder)/'ledger.json',prior,'2026-11-17T00:00:00+00:00')
+            self.assertEqual(b.tokens(),12);self.assertEqual(len(b.calls),1);self.assertEqual(len(b.simulations),1)
+            self.assertEqual(b.started_at,'2026-11-17T00:00:00+00:00')
+
+    def test_model_token_limit_does_not_reset_or_spend_independent_sim_budget(self):
+        with tempfile.TemporaryDirectory() as folder:
+            b=study.BatchBudget(dict(seconds=60,model_calls=16,tokens=100,simulations=8),Path(folder)/'ledger.json')
+            b.calls=[{'usage':{'input_tokens':101,'output_tokens':0}}]
+            with self.assertRaises(RuntimeError):b.check()
+            b.check(model=False)
+            self.assertEqual(b.tokens(),101);self.assertEqual(b.simulations,[])
+
     def test_budget_counts_actual_calls_including_failure_and_stops_unknown_usage(self):
         with tempfile.TemporaryDirectory() as folder:
             b=study.BatchBudget(dict(seconds=10,model_calls=2,tokens=100,simulations=1),Path(folder)/'ledger.json')

@@ -1,0 +1,25 @@
+{
+  "version": "recipient_feedback_paired_checkpoint_v2",
+  "timestamp": "2026-11-17T05:59:06.163589+00:00",
+  "parent_commit": "eeed9fc9ab52c59bbbd4af41ffd8abf8dfbb72e4",
+  "status": "TEACHER_NOT_PROMOTED; INITIAL_SUMMARY_CANDIDATE_OFFLINE_ONLY",
+  "default_changed": false,
+  "actual_default": "llm",
+  "model_calls": 6,
+  "tokens": 255279,
+  "simulation_episodes": 3,
+  "real_episodes": 1,
+  "tests_passed": 34,
+  "rollback": "Use parent commit versions of affected scripts; active default unchanged; no native simulation/control changes",
+  "evidence": "experiments/goal_aligned_runtime/BATCH_REPORT.md",
+  "files": {
+    "scripts/agent_loop.py": "7af6a7db84cb19f57cd49f2c0996f5db6c4401b86b3afd83188480cab36164da",
+    "scripts/bounded_tools.py": "543f53fcd4d884a480c872b8ec3c68a5989d12e09e569404529f4324fe570a29",
+    "scripts/model_compare.py": "2d67dcac85b0e67f51bc6d1e7a65f623ae411e1ecbc35a0d211a4a0029672b2f",
+    "scripts/benchmark_recipient_feedback.py": "508a793ffc090796fa308b829e160bebc762b7c80714ed52aba6433a21fad259",
+    "scripts/build_current_pair_reference.py": "518f48b4587641ba7a40e4b4b608332ddd8888ebe988eb32cd4719f6073573ed",
+    "experiments/repeatability_cycle12/archive_episode.py": "19d6c41bb58de076ad60abca07ad411763b0ff16ffd03c1fadab90020cc4e00a"
+  },
+  "candidate_note": "Existing opt-in bounded_tools_v1 entry now initializes actual summary; benchmark runner default retains old design unless explicitly updated. No post-change model test.",
+  "prior_frozen_study_sources": "Source hashes retained in original study reports; later edits did not change its completed outputs"
+}

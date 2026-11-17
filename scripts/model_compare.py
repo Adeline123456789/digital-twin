@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import subprocess
 import time
+from collections import Counter
 from learn import ROOT,record,finish
 CASES=[
  {'id':'unseen_insertion_variant','task':'Evaluate a previously unobserved plug insertion variant','facts':['API returned accepted','No post-action object observation exists']},
@@ -46,7 +47,12 @@ def ask(prompt,local,include_catalog=True,profile=None,model=None,timeout=120):
     tools=[e for e in events if e.get('type')=='item.completed' and e.get('item',{}).get('type') not in ('agent_message','reasoning')]
     call=dict(prompt=prompt,answer=None,usage=usage,wall_seconds=time.monotonic()-start,
               tool_events=len(tools),include_catalog=include_catalog,planner_profile=profile,
-              requested_model=model,backend_identity_verified=False,timed_out=timed_out)
+              requested_model=model,backend_identity_verified=False,timed_out=timed_out,
+              prompt_utf8_bytes=len(prompt.encode()),
+              event_type_counts=dict(Counter(e.get('type','UNKNOWN') for e in events)),
+              completed_item_type_counts=dict(Counter(e.get('item',{}).get('type','UNKNOWN')
+                  for e in events if e.get('type')=='item.completed')),
+              process_returncode=None if timed_out else p.returncode)
     if timed_out or p.returncode or not messages:
         raise ModelCallError('Model call timed out' if timed_out else 'Model call failed; return code '+str(p.returncode),call)
     try:

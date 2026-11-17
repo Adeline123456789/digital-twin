@@ -1,0 +1,46 @@
+{
+  "status": "AUTHORIZED",
+  "source_episode": "20261116T125834Z_58df2069",
+  "task_sha256": "6cd236701d17f30f6e7250c4d446fc1f225795c6f3d8c80525995dd89b079e42",
+  "hardware_executions": 0,
+  "student": "gpt-6-luna",
+  "teacher": "gpt-6-astra",
+  "limits": {
+    "model_calls": 16,
+    "tokens": 250000,
+    "simulations": 8,
+    "seconds": 5400
+  },
+  "development": {
+    "layout_shift_mm": 0,
+    "parameters": {
+      "offset_mm": 2
+    }
+  },
+  "heldout": {
+    "layout_shift_mm": 1.0,
+    "parameters": {
+      "offset_mm": 2
+    }
+  },
+  "split": "Same-task layout generalization only; development/heldout solutions not supplied to models",
+  "intervention": "Teacher revision from actual recipient feedback; all four student runs share frozen tools and per-run empty analysis caches",
+  "baseline": "Current generic protocol with the same new bounded tools; this is not yet a comparison against the legacy default llm harness",
+  "planned_calls": 13,
+  "planned_simulations": 6,
+  "reserve": "Up to two extra authorized physical sim checks for independent evidence, not automatic retries",
+  "outcome_rule": "Report unknown/no-plan as no physical success; preserve all infrastructure and physical failures",
+  "promotion": "No automatic default policy change",
+  "approval": "Approved by user; applies to this batch only, not hardware or model training",
+  "authorization": {
+    "timestamp_utc": "2026-11-17T05:17:58.285049+00:00",
+    "source": "User explicitly approved this bounded model/simulation batch in this thread",
+    "model_calls": 16,
+    "token_stop_threshold": 250000,
+    "complete_simulation_episode_ceiling": 8,
+    "wall_seconds": 5400,
+    "real_motion": 0,
+    "human_resets": 0,
+    "previous_12_cycles_not_reset": true
+  }
+}

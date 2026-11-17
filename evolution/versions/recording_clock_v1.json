@@ -1,0 +1,19 @@
+{
+  "version": "recording_clock_v1",
+  "timestamp": "2026-11-17T06:10:34.367915+00:00",
+  "status": "ACCEPTED_SCOPED_DATA_EXPORT_FIX",
+  "parent_exporter_sha256": "9747211525cdfba93a0a4c198304925f755f6f1889ca814b3bfd4532864b49f4",
+  "actual_default_path": "Existing local export_plug_calibration.py now imports recording_clock; exercised by corrected export",
+  "planner_default_changed": false,
+  "physical_policy_changed": false,
+  "robot_success_claim": false,
+  "source_evidence": "experiments/goal_aligned_runtime/recording_clock/comparison.json",
+  "reexport_evidence": "experiments/goal_aligned_runtime/recording_clock/reexport.json",
+  "independent_evidence": "45-frame read-only capture from current session",
+  "rollback": "Local exporter backup .local/recording_clock_fix/export_plug_calibration.py and Episode revisions/timing_v1; raw recording unchanged",
+  "files": {
+    "scripts/recording_clock.py": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595",
+    "tests/test_recording_clock.py": "6c58f5b2636ab398fd798ae95441eaef0a2a2bd1e4e480298f89c45b854532a7"
+  },
+  "native_helper_matches_public": true
+}

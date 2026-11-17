@@ -1,0 +1,180 @@
+{
+  "experiment_id": "20261117_real_recipient_pair_000001",
+  "timestamp": "2026-11-17T05:49:16.434666+00:00",
+  "batch_index": 1,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "830ac2a82fa3fb5da087437fbc92a42d933aebe80361a5dc4ebcb1d2196f4f1d",
+    "archive_program_sha256": "19d6c41bb58de076ad60abca07ad411763b0ff16ffd03c1fadab90020cc4e00a"
+  },
+  "initial_state_stratum": "cold_start",
+  "task_gripper_effort_nm": 1.0,
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 1639,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Agent review of recorded RGB and unchanged native controller guard",
+    "observed_facts": [
+      "Yellow plug retained through lift and transport in reviewed wrist frames.",
+      "Insertion guard stopped at wrist frame1046: yellow top304 to321px (17px).",
+      "Final external RGB shows plug still held in fingers and target outlet empty.",
+      "Controller completed retreat/fold and exited after onsite support confirmation and DISABLE."
+    ],
+    "root_cause": "UNKNOWN",
+    "limitations": [
+      "RGB only; no measured depth or six-axis force",
+      "Slip guard identifies image displacement, not a uniquely verified physical cause"
+    ],
+    "evidence": [
+      {
+        "relative_capture_path": "external/last.png",
+        "sha256": "aa9d22650f5f8f0713d0842d6394aa63a18d74af22c0a00280779b27fd2b1d3b"
+      },
+      {
+        "relative_capture_path": "right_wrist/0619.jpg",
+        "sha256": "5b4d407a5c1d2538dcdc41f094355cbfe779322948a94f1a781d12dacbdf0631"
+      },
+      {
+        "relative_capture_path": "right_wrist/0677.jpg",
+        "sha256": "9e16e6aa77be8bfaec89ea0e22cede96f3800f428d61d132a562810e3b7fda5f"
+      },
+      {
+        "relative_capture_path": "right_wrist/0979.jpg",
+        "sha256": "fe4fa2a71385c42815e4c5c1962a671b3de30bf999797b47d8b3222019cfc2b9"
+      },
+      {
+        "relative_capture_path": "right_wrist/1046.jpg",
+        "sha256": "d0f2be714478a94b82b2c57cd9a016fa83e6f86439dd897164f90c9c96dc89d8"
+      },
+      {
+        "relative_capture_path": "execution_report.json",
+        "sha256": "ce857ea35afc89ad4bc84efd095be085f164f0b8cb42875c996e3f0a6cbc6445"
+      }
+    ],
+    "phase_end_motor_aperture_mm": {
+      "prepare_gripper": 56.1,
+      "approach": 59.5,
+      "descend": 59.5,
+      "grasp": 42.5,
+      "lift": 41.3,
+      "transport": 40.6,
+      "align": 40.6,
+      "insert": 40.6,
+      "abort_retreat": 39.9,
+      "fold": 39.9,
+      "final_hold": 39.9
+    }
+  },
+  "reference_commands": 3234,
+  "entire_reference_sent": false,
+  "reference_execution_seconds": 33.207871777936816,
+  "nominal_reference_seconds": 32.33,
+  "execution_time": 54.65667094103992,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One onsite supported shutdown after this attempt; no additional plug reset requested within this attempt.",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/videos/cam_external_rgb.mp4",
+      "sha256": "da26f870614b26e10703837b0aa94b73875df8514deb7dd0fc691153a0a0146e"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "3239a6cc76a79017e7aca347e3b55599870d26986db00745d095448788fec6e9"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/proprio_stats/proprio_stats.h5",
+      "sha256": "2a02d7d450892962c139bb2148a875e2f83a2b6c2d6750a9306606f349c7be3b"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/outcome.json",
+      "sha256": "b94afc7092e9fa8af98e20b6785d7784349c62414d552881aa22e23cc9e7740c"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/verification.json",
+      "sha256": "8173678adc13febd289287e322ea1d8b0b4185db8a767832cdfef823ba0eddf6"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/raw/task/commanded_probe.csv",
+      "sha256": "a7d38deb85f8071fce4ddb61818afbedb472140a7ef748ebbc5226b26c94117a"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/reference/manifest.json",
+      "sha256": "2114325d41e1aa0f304214a70619b78b10448520f0d883caaf1f0b674f7fa36c"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/reference/reference.npz",
+      "sha256": "830ac2a82fa3fb5da087437fbc92a42d933aebe80361a5dc4ebcb1d2196f4f1d"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/reference/validation.json",
+      "sha256": "9cc4bdb63ee4740ab99e5d6fd92d30deca8ccf871b4743c855cc1fa24c3e4332"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_recipient_pair_000001/reference/prediction.jsonl",
+      "sha256": "33865438ea7b65f00a7a00a5bee9d3a74c4617ac1271b47ce977b3fec71dcca7"
+    }
+  ],
+  "shutdown": {
+    "operator_support_confirmed": true,
+    "native_disable_completed": true,
+    "controller_exited": true
+  },
+  "simulation_episode": "20261117T053833Z_25cf43e3",
+  "failure_signature": "insertion_housing_shift_guard",
+  "execution_timestamp": "2026-11-17T05:45:33.376799+00:00",
+  "privileged_information_used_for_planning": true,
+  "real_visual_modality": "RGB only",
+  "force_sensor_present": false,
+  "validation_status": "REAL_FAILED_RECORDING_VERIFIED",
+  "actions": [
+    "Execute frozen simulation reference until unchanged slip guard",
+    "Retreat without release and fold",
+    "Supported disable"
+  ],
+  "expected_effects": [
+    "Pick plug, insert, release, remain seated"
+  ],
+  "observed_effects": [
+    "Retained in fingers during transport",
+    "Insertion image displacement exceeded unchanged guard",
+    "Plug remains in fingers after fold"
+  ],
+  "protocol_version": "50a06a030985736a4719f97e3a79698c37296f3d6cecd59e495dfe2f871ac771",
+  "next_improvement": "Disambiguate grasp-relative pose and insertion alignment using current RGB; do not repeat unchanged execution",
+  "recording_revision": 2,
+  "timing_correction": {
+    "result": "success",
+    "same_raw_capture": true,
+    "old_frames": 1615,
+    "corrected_frames": 1639,
+    "same_image_correspondences": 1615,
+    "recovered_frames": 24,
+    "max_old_new_timestamp_change_s": 0.8129783065523952,
+    "max_command_assignment_change_deg": [
+      3.82770871132486,
+      9.583676906560271,
+      7.6048093767809775,
+      0.3395554863881385,
+      5.743041599212177,
+      3.693626960417177
+    ],
+    "pre_wallstep_max_change_s": 1.3074139133095741e-05,
+    "after_wallstep_median_change_s": 0.8129773528780788,
+    "movement_commands_changed": false,
+    "task_label_changed": false,
+    "physically_new_episode": false
+  },
+  "previous_export": "revisions/timing_v1"
+}

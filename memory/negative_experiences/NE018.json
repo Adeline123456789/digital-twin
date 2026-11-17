@@ -1,16 +1,17 @@
 {
   "id": "NE018",
-  "version": 2,
-  "content": "Increasing commanded gripper effort from0.3 to1N·m alone did not establish successful insertion at16/18mm grasp heights. Reusing the same world trajectory does not fix a changed plug-to-finger pose. At20mm grasp and23mm straightening clearance, validated simulation still led to real insertion slip; higher grasp alone has not solved the contact-pose discrepancy.",
+  "version": 3,
+  "content": "Increasing commanded gripper effort from0.3 to1N·m alone did not establish successful insertion at16/18mm grasp heights. Reusing the same world trajectory does not fix a changed plug-to-finger pose. At20mm grasp and23mm straightening clearance, validated simulation still led to real insertion slip; higher grasp alone has not solved the contact-pose discrepancy. A new cold-entry paired control again failed with the same20mm grasp/23mm gap and1N·m effort;3,234 targets matched the frozen simulated reference before the unchanged slip guard.",
   "applicability": "Current right Piper, current fixture layout,RGB only,1Nm attempts at16/18/20mm; exact force/geometry mapping unknown",
   "source_episodes": [
     "20261116_real_repeatability_000004",
     "20261116_real_repeatability_000005",
-    "20261116_real_repeatability_000006"
+    "20261116_real_repeatability_000006",
+    "20261117_real_recipient_pair_000001"
   ],
   "validation_status": "REAL_OBSERVED_FAILED_REPAIR",
   "success_count": 0,
-  "failure_count": 3,
+  "failure_count": 4,
   "known_limits": [
     "Small sample; does not establish torque as sole failure cause",
     "No six-axis force sensor or identified actuator force mapping"
@@ -18,5 +19,6 @@
   "evidence": "experiments/repeatability_cycle12/contact_comparison.json",
   "signatures": [
     "grasp_pose_differs_despite_same_reference"
-  ]
+  ],
+  "additional_evidence": "experiments/goal_aligned_runtime/current_entry_pair/real/result.json"
 }

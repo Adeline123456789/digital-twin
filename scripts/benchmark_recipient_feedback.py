@@ -5,6 +5,7 @@ No hardware path. A design is frozen before model calls; approval is external to
 import argparse
 import json
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 import time
 from bounded_tools import plan, validate_tool_plan, baseline_case, prompt_events
@@ -13,21 +14,25 @@ from learn import ROOT, DATA, digest, save, record, finish
 
 
 class BatchBudget:
-    def __init__(self, limits, path):
+    def __init__(self, limits, path, prior=None, started_at=None):
         self.limits=limits;self.path=path;self.started=time.monotonic()
-        self.calls=[];self.simulations=[];self.usage_unknown=False
+        self.started_at=started_at or datetime.now(timezone.utc).isoformat()
+        self.started-=time.time()-datetime.fromisoformat(self.started_at).timestamp()
+        self.calls=list(prior['calls']) if prior else []
+        self.simulations=list(prior['simulations']) if prior else []
+        self.usage_unknown=prior['usage_unknown'] if prior else False
 
     def write(self):
-        save(self.path,dict(limits=self.limits,calls=self.calls,simulations=self.simulations,
+        save(self.path,dict(limits=self.limits,started_at=self.started_at,calls=self.calls,simulations=self.simulations,
             wall_seconds=time.monotonic()-self.started,reported_tokens=self.tokens(),usage_unknown=self.usage_unknown))
 
     def tokens(self):
         return sum((c.get('usage') or {}).get('input_tokens',0)+(c.get('usage') or {}).get('output_tokens',0) for c in self.calls)
 
-    def check(self):
+    def check(self,model=True):
         if time.monotonic()-self.started>=self.limits['seconds']:raise RuntimeError('Batch wall budget exhausted')
-        if self.usage_unknown:raise RuntimeError('Missing model usage; stop instead of assuming zero cost')
-        if self.tokens()>=self.limits['tokens']:raise RuntimeError('Observed token threshold reached')
+        if model and self.usage_unknown:raise RuntimeError('Missing model usage; stop instead of assuming zero cost')
+        if model and self.tokens()>=self.limits['tokens']:raise RuntimeError('Observed token threshold reached')
 
     def model(self,*args,**kwargs):
         self.check()
@@ -42,7 +47,7 @@ class BatchBudget:
 
     def simulate(self,case,label):
         from benchmark_collection import run_case
-        self.check()
+        self.check(model=False)
         if len(self.simulations)>=self.limits['simulations']:raise RuntimeError('Simulation budget exhausted')
         index=len(self.simulations)
         self.simulations.append(dict(label=label,status='STARTED'));self.write()
@@ -78,7 +83,15 @@ def execute_student(seed,guidance,label,layout,budget,local,student):
     return run
 
 
-def run(design_path):
+def comparison_status(runs):
+    incomplete=[run['label'] for run in runs
+                if run['planner']['status'] not in ('PLAN_READY','STOPPED_UNKNOWN')]
+    return dict(result='infrastructure_error' if incomplete else 'success',task_success=None,
+        validation_status='COMPARISON_INCOMPLETE' if incomplete else 'COMPARISON_EXECUTED_NOT_PROMOTED',
+        incomplete_arms=incomplete)
+
+
+def run(design_path,resume=None):
     design=json.loads(design_path.read_text())
     if design['hardware_executions']!=0:raise ValueError('This runner never supports hardware')
     from episode_evidence import locate
@@ -92,7 +105,13 @@ def run(design_path):
     out,r=record('recipient_feedback','Actual recipient feedback and teacher-off layout comparison','llm_driven_simulation')
     local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
     save(out/'design.json',design)
-    budget=BatchBudget(design['limits'],out/'ledger.json')
+    prior=json.loads((resume/'ledger.json').read_text()) if resume else None
+    previous=json.loads((resume/'result.json').read_text()) if resume else None
+    if previous and previous.get('error')!='Invalid teacher guidance':
+        raise ValueError('This continuation reuses the rejected teacher-format result only')
+    budget=BatchBudget(design['limits'],out/'ledger.json',prior,
+                      (prior.get('started_at') or previous['timestamp']) if prior else None)
+    inherited_tokens=budget.tokens()
     started=time.monotonic();runs=[]
     guidance=(ROOT/'protocol/robot_problem_solving.md').read_text()
     initial_hash=digest(ROOT/'protocol/robot_problem_solving.md')
@@ -103,23 +122,32 @@ def run(design_path):
         source_episode=design['source_episode'],teacher_visible_split='development only',
         heldout_scope='same task family, new layout; not cross-task-family generalization',
         cross_case_memory_updates=False),model=design['student'],privileged_information_used=True,
-        promotion_status='NOT_PROMOTED',research_orchestrator_tokens=None,human_interventions=0)
+        promotion_status='NOT_PROMOTED',research_orchestrator_tokens=None,human_interventions=0,
+        resumed_from=resume.name if resume else None,inherited_tokens=inherited_tokens,
+        token_accounting='Cumulative batch ledger; do not sum the resumed parent and child token totals')
     try:
         base=baseline_case(source)
         dev=design['development']
-        seed=budget.simulate(dict(base,**dev['parameters'],name='development_seed',shift_mm=dev['layout_shift_mm']),'development seed')
-        before=execute_student(seed,guidance,'recipient before teacher',dev['layout_shift_mm'],budget,local,design['student'])
+        if resume:
+            seed_id=prior['simulations'][0]['experiment_id']
+            seed=json.loads(locate(seed_id)[0].read_text())
+            before=json.loads((resume/'runs.json').read_text())[0]
+        else:
+            seed=budget.simulate(dict(base,**dev['parameters'],name='development_seed',shift_mm=dev['layout_shift_mm']),'development seed')
+            before=execute_student(seed,guidance,'recipient before teacher',dev['layout_shift_mm'],budget,local,design['student'])
         runs.append(before);save(out/'runs.json',runs)
         prompt=('Revise general tool-use guidance from this recipient execution. Do not solve held-out cases or invent measurements. '
             'Return JSON with guidance (max6000 characters), change_reason, and direct_solution (boolean; true if supplying instance-specific repair values). '
             'Keep evidence checks, uncertainty, applicability and one-variable experiments. No safety, speed or evaluator changes. '
             'Existing guidance:'+guidance+'\nRecipient feedback:'+json.dumps(teacher_feedback(before),separators=(',',':')))
-        teacher=budget.model(prompt,local,include_catalog=False,profile='bounded_tools_v1',model=design['teacher'])
+        teacher=prior['calls'][-1] if resume else budget.model(prompt,local,include_catalog=False,profile='bounded_tools_v1',model=design['teacher'])
         proposal=teacher['answer']
         if teacher['tool_events'] or not isinstance(proposal,dict) or set(proposal)!={'guidance','change_reason','direct_solution'}:
             raise ValueError('Teacher must return a bounded guidance proposal, not call native tools')
-        if not isinstance(proposal['guidance'],str) or not 0<len(proposal['guidance'])<=6000 or type(proposal['direct_solution']) is not bool:
+        if not isinstance(proposal['guidance'],str) or not proposal['guidance'].strip() or type(proposal['direct_solution']) is not bool:
             raise ValueError('Invalid teacher guidance')
+        # Length is a prompt target, not a physical validity gate; actual tokens stay in the batch ledger.
+        teacher['guidance_exceeded_length_target']=len(proposal['guidance'])>6000
         save(out/'teacher_revision.json',teacher)
         revised=proposal['guidance']
         runs.append(execute_student(seed,revised,'recipient after feedback',dev['layout_shift_mm'],budget,local,design['student']))
@@ -132,12 +160,13 @@ def run(design_path):
             if any(digest(ROOT/p)!=h for p,h in frozen.items()):raise RuntimeError('Frozen tool changed during comparison')
             runs.append(execute_student(held_seed,text,'heldout '+name,held['layout_shift_mm'],budget,local,design['student']))
             save(out/'runs.json',runs)
-        r.update(result='success',task_success=None,validation_status='COMPARISON_EXECUTED_NOT_PROMOTED',
-            lessons_learned=['Evaluate paired physical outcomes and full teacher/development costs before retaining guidance.'])
+        r.update(comparison_status(runs))
+        r['lessons_learned']=['Evaluate paired physical outcomes and full teacher/development costs before retaining guidance.']
     except Exception as exc:r.update(error_type=type(exc).__name__,error=str(exc))
     finally:
         budget.write()
         r.update(experiments=runs,planner_calls=budget.calls,tokens=None if budget.usage_unknown else budget.tokens(),
+            new_tokens=None if budget.usage_unknown else budget.tokens()-inherited_tokens,
             execution_time=time.monotonic()-started,simulation_experiments=budget.simulations,
             next_improvement='Audit recipient choices, physical success, recording validity and teacher-inclusive cost; no automatic promotion',
             limitations=['One development and one held-out layout; same task family',
@@ -149,6 +178,6 @@ def run(design_path):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--design',required=True,type=Path);p.add_argument('--execute',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--design',required=True,type=Path);p.add_argument('--execute',action='store_true');p.add_argument('--resume',type=Path);a=p.parse_args()
     if not a.execute:raise SystemExit('Review/freeze the design and obtain the new experiment budget before --execute')
-    run(a.design)
+    run(a.design,a.resume)

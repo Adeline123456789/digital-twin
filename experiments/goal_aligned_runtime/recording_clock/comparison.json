@@ -1,0 +1,71 @@
+{
+  "experiment_id": "20261117_recording_clock_000001",
+  "result": "success",
+  "hardware_commands": 0,
+  "new_episodes": 0,
+  "root_cause_status": "VERIFIED_FOR_EXPORT_TIME_CONVERSION_ONLY",
+  "results": [
+    {
+      "method": "first_epoch_anchor_continuous_camera_v1",
+      "max_camera_receipt_elapsed_error_s": 0.0007929159328341484,
+      "largest_wallclock_step_s": -0.812976598739624,
+      "max_change_from_per_frame_wall_mapping_s": 0.8129783065523952,
+      "initial_exposure_to_receipt_s": 0.030289173126220703,
+      "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration.",
+      "capture": "real_pair",
+      "camera": "external",
+      "source_metadata_sha256": "39f9e9da8dbcbdfac37d6ecad583b739b557f7b050ba03376d4be9f67626adf9",
+      "frames": 1658
+    },
+    {
+      "method": "first_epoch_anchor_continuous_camera_v1",
+      "max_camera_receipt_elapsed_error_s": 0.0007378966547548771,
+      "largest_wallclock_step_s": -0.8129768371582031,
+      "max_change_from_per_frame_wall_mapping_s": 0.8129770770901814,
+      "initial_exposure_to_receipt_s": 0.03299856185913086,
+      "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration.",
+      "capture": "real_pair",
+      "camera": "right_wrist",
+      "source_metadata_sha256": "fdd6f7d5af15cdad32c71dad0259c28abc4093678f90e34094ef3dd38772f472",
+      "frames": 1657
+    },
+    {
+      "method": "first_epoch_anchor_continuous_camera_v1",
+      "max_camera_receipt_elapsed_error_s": 0.00015484518371522427,
+      "largest_wallclock_step_s": 7.152557373046875e-07,
+      "max_change_from_per_frame_wall_mapping_s": 9.266659617424011e-07,
+      "initial_exposure_to_receipt_s": 0.029679059982299805,
+      "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration.",
+      "capture": "independent_readonly_capture",
+      "camera": "external",
+      "source_metadata_sha256": "d5fca54dfdb296f07204a24e52130624c90ea51a7ddda340bb4a1ca9a5340ebf",
+      "frames": 45
+    },
+    {
+      "method": "first_epoch_anchor_continuous_camera_v1",
+      "max_camera_receipt_elapsed_error_s": 0.00013217574451118708,
+      "largest_wallclock_step_s": 7.152557373046875e-07,
+      "max_change_from_per_frame_wall_mapping_s": 4.876637831330299e-07,
+      "initial_exposure_to_receipt_s": 0.03268313407897949,
+      "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration.",
+      "capture": "independent_readonly_capture",
+      "camera": "right_wrist",
+      "source_metadata_sha256": "e6613a576928393336d3d3b05755f6d3530238fb0289f8c5df5cd4604692e49f",
+      "frames": 45
+    }
+  ],
+  "limitations": [
+    "No independent physical exposure trigger",
+    "Does not explain the insertion failure: wall step occurred after insertion abort",
+    "No trajectory retiming or task label changes"
+  ],
+  "timestamp": "2026-11-17T06:10:34.367915+00:00",
+  "model": "deterministic numeric timestamp analysis; no LLM inference",
+  "task": "Repair RGB/action time correspondence after observed wall-clock step",
+  "environment": "offline_real_recording",
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "task_success": null,
+  "validation_status": "OBSERVED_CLOCK_CONVERSION_REPAIR_VERIFIED",
+  "program_version": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595"
+}

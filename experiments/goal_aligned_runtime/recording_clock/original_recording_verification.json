@@ -1,0 +1,24 @@
+{
+  "episodes": [
+    {
+      "session": "20261117_real_recipient_pair",
+      "episode": "000001",
+      "domain": "real",
+      "num_frames": 1615,
+      "purpose": "yellow_pick_insert_attempt",
+      "success": false,
+      "policy_training_eligible": false,
+      "video_frames": {
+        "cam_external": 1615,
+        "cam_right_wrist": 1615
+      },
+      "known_right_joint_action_frames": 1615,
+      "known_right_gripper_action_frames": 1615
+    }
+  ],
+  "verified_frames": 1615,
+  "full_sim_demonstrations": 0,
+  "full_real_demonstrations": 0,
+  "real_task_attempts": 1,
+  "force_sensor_directory_present": false
+}

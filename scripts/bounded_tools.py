@@ -89,10 +89,10 @@ def prompt_events(events):
 
 
 def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
-         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None):
+         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None, initial_summary=False):
     if not 1 <= max_calls <= 8 or not 0 <= max_tools <= 6 or not 1 <= seconds <= 240:
         raise ValueError('Planner budget outside supported bounds')
-    started=time.monotonic();calls=[];events=[];seen=set()
+    started=time.monotonic();calls=[];events=[];seen=set();bootstrap=None
     cache=EvidenceCache(cache_directory or ROOT/'.local/evidence_cache') if dispatcher is None else None
     dispatch=dispatcher or EpisodeTools(seed,cache)
     answer=dict(stop=True,hypotheses=[],reason='No supported plan within budget',predicted_effect='No new execution')
@@ -108,6 +108,12 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
         'A plan requests the existing complete simulation collector, never hardware. '
         'Inspect uncertainty before proposing a repair; no forced friction assumption.')
     try:
+        if initial_summary:
+            t=time.monotonic()
+            evidence=dispatch.call('episode_summary',{})
+            initial['observed_summary']=evidence['value']
+            bootstrap=dict(result=evidence,wall_seconds=time.monotonic()-t,
+                source='Deterministic initial observation; not a model tool decision')
         for _ in range(max_calls):
             remaining=seconds-(time.monotonic()-started)
             if remaining<=0: status='TIME_BUDGET_EXHAUSTED';break
@@ -144,6 +150,8 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
     return dict(answer=answer,usage=total_usage(calls),tool_events=0,planner_kind='bounded_tools_v1',
         wall_seconds=time.monotonic()-started,status=status,calls=calls,tool_trace=events,
         applicability=dispatch.context,model_calls_attempted=len(calls),
+        initial_observation=bootstrap,
         timing=dict(llm_cli_network_inference_seconds=sum(c['wall_seconds'] for c in calls),
-                    tools_seconds=sum(e.get('wall_seconds',0) for e in events)),
+                    tools_seconds=sum(e.get('wall_seconds',0) for e in events),
+                    initial_observation_seconds=bootstrap['wall_seconds'] if bootstrap else 0),
         inference_only_seconds=None, research_orchestrator_tokens=None)

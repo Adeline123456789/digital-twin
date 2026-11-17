@@ -17,14 +17,19 @@ from compare_shared_reference import compare
 from learn import DATA, SIM, digest, save
 
 
-def archive(index, review_path, reference, startup):
+def archive(index, review_path, reference, startup, *, capture=None,
+            session='20261116_real_repeatability', output=None):
     batch = DATA / 'self_evolution/repeatability_cycle12'
-    session, number = '20261116_real_repeatability', f'{index:06d}'
+    number = f'{index:06d}'
     identity = f'{session}_{number}'
-    capture = batch / 'episodes' / identity / 'raw/task'
+    if capture is None:
+        capture = batch / 'episodes' / identity / 'raw/task'
+    else:
+        capture = Path(capture)
+        batch = capture.parent
     reference = Path(reference)
-    output = ROOT / 'experiments/repeatability_cycle12' / number
-    output.mkdir(exist_ok=False)
+    output = Path(output) if output else ROOT / 'experiments/repeatability_cycle12' / number
+    output.mkdir(parents=True, exist_ok=False)
     review = json.loads(review_path.read_text())
     original = json.loads((capture / 'execution_report.json').read_text())
     commands = compare(reference, capture)
@@ -93,7 +98,7 @@ def archive(index, review_path, reference, startup):
              episode / 'verification.json', target / 'commanded_probe.csv']])
     save(output / 'result.json', result)
     (output / 'REPORT.md').write_text(
-        f"# Repeatability attempt {index}\n\n"
+        f"# {identity}\n\n"
         f"Result: **{result['result']}**. Full recording verified: {result['frames']} frames. "
         f"Reference span: {result['reference_execution_seconds']:.3f}s; total command span: {result['execution_time']:.3f}s. "
         f"Startup stratum: {result['initial_state_stratum']}.\n\n"
@@ -109,12 +114,16 @@ if __name__ == '__main__':
     parser.add_argument('--review', type=Path, required=True)
     parser.add_argument('--reference', type=Path, required=True)
     parser.add_argument('--startup', choices=['cold_start','enabled_folded_zero'], required=True)
+    parser.add_argument('--capture', type=Path)
+    parser.add_argument('--session', default='20261116_real_repeatability')
+    parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     try:
-        result = archive(args.index, args.review, args.reference, args.startup)
+        result = archive(args.index, args.review, args.reference, args.startup,
+                         capture=args.capture, session=args.session, output=args.output)
         print(json.dumps({k:result[k] for k in ['experiment_id','result','frames','execution_time']}))
     except Exception as exc:
-        output = Path(__file__).parent / f'{args.index:06d}'
+        output = args.output or Path(__file__).parent / f'{args.index:06d}'
         output.mkdir(exist_ok=True)
         save(output / 'archive_error.json', dict(result='infrastructure_error', error=str(exc)))
         (output / 'ARCHIVE_ERROR.md').write_text(f'# Archive failure\n\n{type(exc).__name__}: {exc}\n')

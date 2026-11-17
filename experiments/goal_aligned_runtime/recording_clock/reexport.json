@@ -1,0 +1,22 @@
+{
+  "result": "success",
+  "same_raw_capture": true,
+  "old_frames": 1615,
+  "corrected_frames": 1639,
+  "same_image_correspondences": 1615,
+  "recovered_frames": 24,
+  "max_old_new_timestamp_change_s": 0.8129783065523952,
+  "max_command_assignment_change_deg": [
+    3.82770871132486,
+    9.583676906560271,
+    7.6048093767809775,
+    0.3395554863881385,
+    5.743041599212177,
+    3.693626960417177
+  ],
+  "pre_wallstep_max_change_s": 1.3074139133095741e-05,
+  "after_wallstep_median_change_s": 0.8129773528780788,
+  "movement_commands_changed": false,
+  "task_label_changed": false,
+  "physically_new_episode": false
+}

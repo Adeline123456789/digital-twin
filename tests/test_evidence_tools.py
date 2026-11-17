@@ -74,6 +74,18 @@ class FakeTools:
 
 
 class RouterTests(unittest.TestCase):
+    def test_initial_summary_is_actual_observation_without_an_extra_model_call(self):
+        tools=FakeTools();prompts=[]
+        def model(prompt,*args,**kwargs):
+            prompts.append(prompt)
+            return dict(answer={'plan':{'stop':True,'hypotheses':[]}},usage={'input_tokens':3},wall_seconds=.1,tool_events=0)
+        result=plan(self.seed,Path('/tmp'),ask_fn=model,dispatcher=tools,max_calls=1,initial_summary=True)
+        self.assertEqual(tools.requests,['episode_summary'])
+        self.assertEqual(len(prompts),1)
+        self.assertIn('"observed_summary":{"retention":"UNKNOWN"}',prompts[0])
+        self.assertEqual(result['tool_trace'],[])
+        self.assertEqual(result['initial_observation']['result']['value'],{'retention':'UNKNOWN'})
+
     def test_prompt_omits_dependency_hash_manifest_but_keeps_evidence(self):
         original={'request':{'tool':'episode_summary'},'result':{'value':{'root_cause':'UNKNOWN'},
                   'cache':{'key':'abc','dependency_sha256':{'large':'manifest'}}}}
@@ -123,6 +135,7 @@ class RouterTests(unittest.TestCase):
             with patch.object(agent_loop,'ROOT',root),patch.object(agent_loop,'record',return_value=(root,{'experiment_id':'candidate'})),patch.object(agent_loop,'finish'),patch('bounded_tools.plan',return_value=call) as planner,patch.object(benchmark_collection,'run_case',return_value=trial) as collect,patch('episode_format.source_for'),patch.dict(agent_loop.os.environ,{'PIPER_ACTIVE_ARMS':'right','PIPER_SIM_PROFILE':'original','PIPER_TARGET_INDEX':'3'}):
                 result=agent_loop.run('D',0,False,'bounded_tools_v1','seed',max_executions=1)
             planner.assert_called_once();collect.assert_called_once()
+            self.assertTrue(planner.call_args.kwargs['initial_summary'])
             self.assertEqual(result['actual_planner_policy'],'bounded_tools_v1')
             self.assertEqual(collect.call_args.args[0]['grasp_height_m'],.016)
             self.assertEqual(collect.call_args.args[0]['align_gap_m'],.023)

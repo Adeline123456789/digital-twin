@@ -23,6 +23,10 @@ class PlannerContextTests(unittest.TestCase):
         self.assertEqual(calls[0][1], calls[1][1])
         self.assertEqual(baseline['usage'], candidate['usage'])
         self.assertEqual(candidate['tool_events'], 0)
+        self.assertEqual(candidate['event_type_counts'],{'item.completed':1,'turn.completed':1})
+        self.assertEqual(candidate['completed_item_type_counts'],{'agent_message':1})
+        self.assertEqual(candidate['prompt_utf8_bytes'],len('same physical evidence'.encode()))
+        self.assertEqual(candidate['process_returncode'],0)
 
     def test_tool_events_are_not_hidden_by_catalog_option(self):
         response = SimpleNamespace(returncode=0, stderr='', stdout='\n'.join(map(json.dumps, [

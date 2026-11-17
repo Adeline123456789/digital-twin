@@ -1,0 +1,1269 @@
+[
+  {
+    "label": "recipient before teacher",
+    "source_episode": "20261117T051833Z_1ddf3521",
+    "planner": {
+      "answer": {
+        "stop": true,
+        "hypotheses": [
+          "The earliest anomaly is unresolved: the sampled phases show transport retention, then alignment/insert misalignment or tilt, but do not establish when the failure began.",
+          "At release, the plug remained in contact with the strip and gripper; the solver snapshot is simulation-only and does not establish the physical cause."
+        ],
+        "predicted_effect": "No parameter change is proposed; another repair experiment is not justified by the available evidence.",
+        "reason": "The episode failed stable insertion. Recorded samples show retention during transport, then nonzero lateral error and tilt during insertion; contact-force evidence is not a real measurement. Root cause remains UNKNOWN, so stop rather than guess a repair."
+      },
+      "usage": {
+        "input_tokens": 113258,
+        "output_tokens": 599,
+        "cached_input_tokens": 63872
+      },
+      "tool_events": 0,
+      "planner_kind": "bounded_tools_v1",
+      "wall_seconds": 80.92881313606631,
+      "status": "STOPPED_UNKNOWN",
+      "calls": [
+        {
+          "prompt": "Return {\"tool\":\"name\",\"args\":{...},\"reason\":\"short reason\"} or {\"plan\":{\"offset_mm\":number OR \"grasp_tilt_deg\":screened_angle OR \"grasp_height_m\":number OR \"align_gap_m\":number OR \"stop\":true,\"hypotheses\":[],\"predicted_effect\":\"...\",\"reason\":\"...\"}}. One parameter only. Offset [-4,4]mm in socket X; height [0.010,0.025]m; align gap [0.020,0.025]m. Tilt requires diagnose_repair screening. A plan requests the existing complete simulation collector, never hardware. Inspect uncertainty before proposing a repair; no forced friction assumption.\n{\"state\":{\"episode_id\":\"20261117T051833Z_1ddf3521\",\"active_arms\":[\"right\"],\"task\":\"development seed development_seed\",\"target\":3,\"validation_status\":\"SIMULATION_FAILED\",\"task_success\":false,\"root_cause\":\"UNKNOWN\",\"source\":\"Archived simulation; privileged data available on request\"},\"tools\":{\"episode_summary\":{},\"trace_window\":{\"center\":\"nonnegative frame\",\"radius\":\"integer 0..15\"},\"inspect_contact\":{\"frame\":\"nonnegative frame\"},\"diagnose_repair\":{}},\"guidance\":\"# Robot problem solving protocol v2\\n\\nUse scripts/agent_loop.py --arm D in the existing MuJoCo Python environment for complete recorded offline collection. scripts/learn.py remains the low-level simulation adapter; headless success is not a complete Episode. Keep existing robot APIs and safety limits.\\n\\n1. Specify physical completion independently of API acceptance. Record task, version, initial state, action, expected and observed physical effects, earliest anomaly and final outcome. Missing observations remain UNKNOWN.\\n2. Retrieve at most five memory records matching task, failure signature and applicability. Read evidence references, not whole videos or chat histories.\\n3. Separate observations from hypotheses. Propose at most three causes, each with a falsifiable, low-cost experiment. A model explanation alone is not verification. Distinguish the first observed anomaly from the true onset if sampling is incomplete.\\n4. Compare the proposed repair and action fingerprint with negative experiences. Do not repeat an ineffective repair under the same conditions without new evidence. A repair after the earliest anomaly requires an explicit causal explanation.\\n5. Change one variable in the existing MuJoCo interface. Save config/source hashes, inputs, full local evidence references, metrics, failures and exceptions. Do not tune friction or delete collisions just to pass.\\n6. Replay original condition and predeclared held-out initial states. Promote only within the validated scope; record regressions and restore the previous active version on failure.\\n7. REAL_VERIFIED requires physical success evidence, simulation validation, existing safety checks and fresh human permission. SIMULATION_VERIFIED never authorizes hardware.\\n8. Persist JSON + Markdown for every attempt, including timeout and infrastructure failures. Run publish.py with explicit paths after each completed round; keep local commits on push failure.\\n\\n## UNKNOWN TASK MODE / Exploration Protocol\\n\\nState the goal and observable completion; split into subgoals; retrieve available skills with applicability; explicitly list unknown transitions. Generate <=3 candidate plans and predict each observable outcome. Prefer reversible simulator probes that separate hypotheses under equal budgets. Observe, update or reject hypotheses, and stop repeating contradicted plans. If evidence is insufficient, retain UNKNOWN and select the next discriminating observation. Promote a reusable skill only after independent initial-state validation. Never substitute a memorized unseen-task answer for this process.\\n\\n## Metrics\\n\\nReport task success, unseen-task success, repeated-failure rate, new skills, tokens, inference wall time, simulated time, actual robot time and interventions separately. Missing measurements are null, not zero. Deterministic software-policy tests are not weak-LLM capability evaluations. Calibration requires bounded parameters, real measured targets and held-out real data; otherwise defer it.\\n\\n## Simulation privileged information\\n\\nSimulator object/goal poses, contact state, velocities and task ground truth may be used in every simulation stage. Each result must disclose the fields actually used and mark conclusions Simulation-only. Model comparisons must expose the same information to each group, or explicitly separate observation access from method effects. Privileged access does not authorize changing success detectors, physical parameters or hardware safety rules. Count a successful collection Episode only after its existing-format videos, state/action arrays and physics replay are verified; headless success alone is insufficient.\\n\\n## Executable memory and current scope\\n\\nAgent D reads evolution/active.json.planner_policy. compiled_alignment_v1 may execute VS002 only when its simulator/source, socket, units, contact and initial-state checks match; otherwise use the bounded LLM path and keep unknowns explicit. Record actual_planner_kind and model_invoked. Retention loss observed during transport takes precedence over a later IK exception when selecting what to investigate; do not infer friction or measured force. The native success and safety detectors stay independent. All full collection passes the existing Episode verifier, including failures. Current evidence does not establish unknown-task-family competence, real calibration or total-cost reduction.\\n\\n## Spatial disagreement observed on 2026-11-16\\n\\nWhen matched real/sim views disagree before grasping, investigate camera mounting, physical finger/tool geometry and scene placement before changing grasp height or contact physics. Nominal FK agreeing with controller pose only checks software consistency. Use bounded, simulation-validated noncontact observation commands under the existing hardware conditions; a successful observation sequence is not a successful task Episode. Report command-array equality separately from actual execution timing.\\n\\nA scene-only calibration fit must also be checked against robot-attached geometry and withheld views. Reprojection improvement or a fitted22mm translation alone is not a measured object correction. Reject unsupported transforms without a hardware retry; retain the old configuration and record the next missing measurement. Evidence and scope: experiments/spatial_cycle6/REPORT.md and NE014. The current full-task real-transfer result remains0/2, with physical root cause UNKNOWN.\\n\",\"budget\":{\"calls_remaining\":3,\"tools_remaining\":2,\"seconds_remaining\":89.78},\"evidence\":[]}",
+          "answer": {
+            "tool": "episode_summary",
+            "args": {},
+            "reason": "Inspect the failed episode and its available observations before considering a repair."
+          },
+          "usage": {
+            "input_tokens": 79840,
+            "cached_input_tokens": 63872,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 296,
+            "reasoning_output_tokens": 124
+          },
+          "wall_seconds": 38.966151475091465,
+          "tool_events": 0,
+          "include_catalog": false,
+          "planner_profile": "bounded_tools_v1",
+          "requested_model": "gpt-6-luna",
+          "backend_identity_verified": false,
+          "timed_out": false
+        },
+        {
+          "prompt": "Return {\"tool\":\"name\",\"args\":{...},\"reason\":\"short reason\"} or {\"plan\":{\"offset_mm\":number OR \"grasp_tilt_deg\":screened_angle OR \"grasp_height_m\":number OR \"align_gap_m\":number OR \"stop\":true,\"hypotheses\":[],\"predicted_effect\":\"...\",\"reason\":\"...\"}}. One parameter only. Offset [-4,4]mm in socket X; height [0.010,0.025]m; align gap [0.020,0.025]m. Tilt requires diagnose_repair screening. A plan requests the existing complete simulation collector, never hardware. Inspect uncertainty before proposing a repair; no forced friction assumption.\n{\"state\":{\"episode_id\":\"20261117T051833Z_1ddf3521\",\"active_arms\":[\"right\"],\"task\":\"development seed development_seed\",\"target\":3,\"validation_status\":\"SIMULATION_FAILED\",\"task_success\":false,\"root_cause\":\"UNKNOWN\",\"source\":\"Archived simulation; privileged data available on request\"},\"tools\":{\"episode_summary\":{},\"trace_window\":{\"center\":\"nonnegative frame\",\"radius\":\"integer 0..15\"},\"inspect_contact\":{\"frame\":\"nonnegative frame\"},\"diagnose_repair\":{}},\"guidance\":\"# Robot problem solving protocol v2\\n\\nUse scripts/agent_loop.py --arm D in the existing MuJoCo Python environment for complete recorded offline collection. scripts/learn.py remains the low-level simulation adapter; headless success is not a complete Episode. Keep existing robot APIs and safety limits.\\n\\n1. Specify physical completion independently of API acceptance. Record task, version, initial state, action, expected and observed physical effects, earliest anomaly and final outcome. Missing observations remain UNKNOWN.\\n2. Retrieve at most five memory records matching task, failure signature and applicability. Read evidence references, not whole videos or chat histories.\\n3. Separate observations from hypotheses. Propose at most three causes, each with a falsifiable, low-cost experiment. A model explanation alone is not verification. Distinguish the first observed anomaly from the true onset if sampling is incomplete.\\n4. Compare the proposed repair and action fingerprint with negative experiences. Do not repeat an ineffective repair under the same conditions without new evidence. A repair after the earliest anomaly requires an explicit causal explanation.\\n5. Change one variable in the existing MuJoCo interface. Save config/source hashes, inputs, full local evidence references, metrics, failures and exceptions. Do not tune friction or delete collisions just to pass.\\n6. Replay original condition and predeclared held-out initial states. Promote only within the validated scope; record regressions and restore the previous active version on failure.\\n7. REAL_VERIFIED requires physical success evidence, simulation validation, existing safety checks and fresh human permission. SIMULATION_VERIFIED never authorizes hardware.\\n8. Persist JSON + Markdown for every attempt, including timeout and infrastructure failures. Run publish.py with explicit paths after each completed round; keep local commits on push failure.\\n\\n## UNKNOWN TASK MODE / Exploration Protocol\\n\\nState the goal and observable completion; split into subgoals; retrieve available skills with applicability; explicitly list unknown transitions. Generate <=3 candidate plans and predict each observable outcome. Prefer reversible simulator probes that separate hypotheses under equal budgets. Observe, update or reject hypotheses, and stop repeating contradicted plans. If evidence is insufficient, retain UNKNOWN and select the next discriminating observation. Promote a reusable skill only after independent initial-state validation. Never substitute a memorized unseen-task answer for this process.\\n\\n## Metrics\\n\\nReport task success, unseen-task success, repeated-failure rate, new skills, tokens, inference wall time, simulated time, actual robot time and interventions separately. Missing measurements are null, not zero. Deterministic software-policy tests are not weak-LLM capability evaluations. Calibration requires bounded parameters, real measured targets and held-out real data; otherwise defer it.\\n\\n## Simulation privileged information\\n\\nSimulator object/goal poses, contact state, velocities and task ground truth may be used in every simulation stage. Each result must disclose the fields actually used and mark conclusions Simulation-only. Model comparisons must expose the same information to each group, or explicitly separate observation access from method effects. Privileged access does not authorize changing success detectors, physical parameters or hardware safety rules. Count a successful collection Episode only after its existing-format videos, state/action arrays and physics replay are verified; headless success alone is insufficient.\\n\\n## Executable memory and current scope\\n\\nAgent D reads evolution/active.json.planner_policy. compiled_alignment_v1 may execute VS002 only when its simulator/source, socket, units, contact and initial-state checks match; otherwise use the bounded LLM path and keep unknowns explicit. Record actual_planner_kind and model_invoked. Retention loss observed during transport takes precedence over a later IK exception when selecting what to investigate; do not infer friction or measured force. The native success and safety detectors stay independent. All full collection passes the existing Episode verifier, including failures. Current evidence does not establish unknown-task-family competence, real calibration or total-cost reduction.\\n\\n## Spatial disagreement observed on 2026-11-16\\n\\nWhen matched real/sim views disagree before grasping, investigate camera mounting, physical finger/tool geometry and scene placement before changing grasp height or contact physics. Nominal FK agreeing with controller pose only checks software consistency. Use bounded, simulation-validated noncontact observation commands under the existing hardware conditions; a successful observation sequence is not a successful task Episode. Report command-array equality separately from actual execution timing.\\n\\nA scene-only calibration fit must also be checked against robot-attached geometry and withheld views. Reprojection improvement or a fitted22mm translation alone is not a measured object correction. Reject unsupported transforms without a hardware retry; retain the old configuration and record the next missing measurement. Evidence and scope: experiments/spatial_cycle6/REPORT.md and NE014. The current full-task real-transfer result remains0/2, with physical root cause UNKNOWN.\\n\",\"budget\":{\"calls_remaining\":2,\"tools_remaining\":1,\"seconds_remaining\":50.06},\"evidence\":[{\"request\":{\"tool\":\"episode_summary\",\"args\":{},\"reason\":\"Inspect the failed episode and its available observations before considering a repair.\"},\"value\":{\"episode_id\":\"20261117T051833Z_1ddf3521\",\"scope\":\"Simulation-only\",\"task_success\":false,\"recording_verified\":true,\"validation_status\":\"SIMULATION_FAILED\",\"active_arms\":[\"right\"],\"source_versions\":{\"scene\":\"6cd236701d17f30f6e7250c4d446fc1f225795c6f3d8c80525995dd89b079e42\",\"native_program\":\"cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750\",\"camera\":\"Not used by this state/contact analyzer\",\"controller\":\"Recorded simulation actions\"},\"actions\":[{\"script\":\"try_plug_pick_sim.py\",\"profile\":\"original\",\"grasp_height_m\":0.02,\"offset_mm\":[2,0],\"speed_deg_s\":12,\"smooth_timing\":true,\"grasp_tilt_deg\":0.0}],\"native_error\":\"Released plug did not meet stable insertion criteria\",\"last_phase\":\"fold\",\"phases\":[{\"frame\":503,\"phase\":\"approach\",\"time_s\":16.799999999989858,\"plug_gripper_separation_mm\":74.00179599735631,\"plug_position_world_m\":[0.2959138877790994,-0.36570642689872224,0.058199995781092556],\"gripper_position_world_m\":[0.29591236388316466,-0.3657055243167275,0.13220179175725402],\"recorded_contact_pairs\":[[\"task/board\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.3351037371796615,\"face_gap_m\":0.004899995781092556,\"yaw_rad\":0.10135511703050758,\"tilt_rad\":3.332000937312528e-08,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":560,\"phase\":\"descend\",\"time_s\":18.69999999998813,\"plug_gripper_separation_mm\":20.26983274601597,\"plug_position_world_m\":[0.2959138876773041,-0.36570642689569677,0.058199995708982835],\"gripper_position_world_m\":[0.29591920308796327,-0.36570741242177407,0.07846982773410355],\"recorded_contact_pairs\":[[\"task/board\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.33510373717740305,\"face_gap_m\":0.004899995708982835,\"yaw_rad\":0.10135510232062792,\"tilt_rad\":3.332000937312528e-08,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":600,\"phase\":\"grasp\",\"time_s\":20.03333333332025,\"plug_gripper_separation_mm\":20.089119259946656,\"plug_position_world_m\":[0.2959149155036529,-0.36570654319967627,0.05819999090638008],\"gripper_position_world_m\":[0.2959110411404517,-0.36570726531005343,0.07828910977974599],\"recorded_contact_pairs\":[[\"right/link7\",\"task/yellow_plug\"],[\"right/link8\",\"task/yellow_plug\"],[\"task/board\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.33510384573539576,\"face_gap_m\":0.004899990906380082,\"yaw_rad\":0.10135326664577654,\"tilt_rad\":3.6408876546831975e-07,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":657,\"phase\":\"lift\",\"time_s\":21.933333333318522,\"plug_gripper_separation_mm\":20.690920539536304,\"plug_position_world_m\":[0.29584627183154516,-0.3657008227212558,0.11108184656669966],\"gripper_position_world_m\":[0.2958846608068409,-0.3657009568012464,0.13177273149320784],\"recorded_contact_pairs\":[[\"right/link7\",\"task/yellow_plug\"],[\"right/link8\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.33509864945050943,\"face_gap_m\":0.05778184656669965,\"yaw_rad\":0.10132855679088243,\"tilt_rad\":0.0057266936466309586,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":953,\"phase\":\"transport\",\"time_s\":31.799999999976215,\"plug_gripper_separation_mm\":22.168232892271064,\"plug_position_world_m\":[0.29853150162407244,-0.03270659831178556,0.09680138281271722],\"gripper_position_world_m\":[0.2965129284037853,-0.03270818505868548,0.11887752172337238],\"recorded_contact_pairs\":[[\"right/link7\",\"task/yellow_plug\"],[\"right/link8\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.002096448759638022,\"face_gap_m\":0.043501382812717225,\"yaw_rad\":0.00011683901867112833,\"tilt_rad\":0.08992521970162232,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":974,\"phase\":\"align\",\"time_s\":32.4999999999824,\"plug_gripper_separation_mm\":22.293677680934135,\"plug_position_world_m\":[0.2983921777224981,-0.03278597044817693,0.07719305064617533],\"gripper_position_world_m\":[0.2982582624972486,-0.03276249440863145,0.09948631375702105],\"recorded_contact_pairs\":[[\"right/link7\",\"task/yellow_plug\"],[\"right/link8\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.0021742677211049797,\"face_gap_m\":0.023893050646175334,\"yaw_rad\":-4.0739524244381275e-05,\"tilt_rad\":0.00487730460959397,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":1028,\"phase\":\"insert\",\"time_s\":34.30000000000532,\"plug_gripper_separation_mm\":14.0393411676777,\"plug_position_world_m\":[0.29652508013020146,-0.030793480940388116,0.0709532076588963],\"gripper_position_world_m\":[0.29569996222856,-0.028797593667484186,0.0848254358456261],\"recorded_contact_pairs\":[[\"right/link8\",\"task/yellow_plug\"],[\"task/strip\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.0019222483617344678,\"face_gap_m\":0.017653207658896303,\"yaw_rad\":-0.00922255399763036,\"tilt_rad\":0.18298740168193273,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":1068,\"phase\":\"release\",\"time_s\":35.63333333335563,\"plug_gripper_separation_mm\":6.036540059498438,\"plug_position_world_m\":[0.29656477340986004,-0.0328881725450134,0.07003137563203414],\"gripper_position_world_m\":[0.2984082855515947,-0.032618859795417246,0.075773217628825],\"recorded_contact_pairs\":[[\"right/link8\",\"task/yellow_plug\"],[\"task/strip\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.002948198496746213,\"face_gap_m\":0.01673137563203414,\"yaw_rad\":0.0007890846617233198,\"tilt_rad\":0.29056505628005286,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":1113,\"phase\":\"retreat\",\"time_s\":37.13333333337473,\"plug_gripper_separation_mm\":48.75206357778322,\"plug_position_world_m\":[0.29566018109244435,-0.03310622532307878,0.06996164334362248],\"gripper_position_world_m\":[0.29659237840829694,-0.03258476512865433,0.11870200434476982],\"recorded_contact_pairs\":[[\"right/link8\",\"task/yellow_plug\"],[\"task/strip\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.003733719688483996,\"face_gap_m\":0.01666164334362248,\"yaw_rad\":0.007064052695882938,\"tilt_rad\":0.2847916476308137,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":1647,\"phase\":\"fold\",\"time_s\":54.933333333601375,\"plug_gripper_separation_mm\":355.98699578851523,\"plug_position_world_m\":[0.2751709352866852,-0.032272589174857993,0.05467000735348086],\"gripper_position_world_m\":[0.19142687014449,-0.3100010454096744,0.26102062480207927],\"recorded_contact_pairs\":[[\"task/strip\",\"task/yellow_plug\"],[\"task/yellow_plug\",\"world\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.02332699350564789,\"face_gap_m\":0.0013700073534808621,\"yaw_rad\":0.04010757885257611,\"tilt_rad\":1.8577717584195939,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}}],\"retention\":{\"status\":\"NO_RETENTION_LOSS_OBSERVED\",\"observed_carry_samples\":317,\"lift_reference_distance_mm\":20.690920539536304,\"limitation\":\"Does not exclude sliding/rotation while contact remains; not proof of a stable grasp\"},\"root_cause\":\"UNKNOWN\",\"unknowns\":[\"Real contact force and motor-torque mapping\",\"Historical applied forces and direct state edits\",\"Recorded contact pair alone does not prove active constraint or gripping force\"],\"privileged_information_used\":true},\"evidence_key\":\"07c10267cbda53991c64aefc8d5402fd7d44dffe9069b5e005d8222ff426a3e3\"}]}",
+          "answer": {
+            "tool": "inspect_contact",
+            "args": {
+              "frame": 1068
+            },
+            "reason": "Inspect the observed strip–plug interaction at release before selecting a one-parameter repair; contact pairs alone do not establish force."
+          },
+          "usage": {
+            "input_tokens": 15450,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 158,
+            "reasoning_output_tokens": 111
+          },
+          "wall_seconds": 12.885692024952732,
+          "tool_events": 0,
+          "include_catalog": false,
+          "planner_profile": "bounded_tools_v1",
+          "requested_model": "gpt-6-luna",
+          "backend_identity_verified": false,
+          "timed_out": false
+        },
+        {
+          "prompt": "Return {\"tool\":\"name\",\"args\":{...},\"reason\":\"short reason\"} or {\"plan\":{\"offset_mm\":number OR \"grasp_tilt_deg\":screened_angle OR \"grasp_height_m\":number OR \"align_gap_m\":number OR \"stop\":true,\"hypotheses\":[],\"predicted_effect\":\"...\",\"reason\":\"...\"}}. One parameter only. Offset [-4,4]mm in socket X; height [0.010,0.025]m; align gap [0.020,0.025]m. Tilt requires diagnose_repair screening. A plan requests the existing complete simulation collector, never hardware. Inspect uncertainty before proposing a repair; no forced friction assumption.\n{\"state\":{\"episode_id\":\"20261117T051833Z_1ddf3521\",\"active_arms\":[\"right\"],\"task\":\"development seed development_seed\",\"target\":3,\"validation_status\":\"SIMULATION_FAILED\",\"task_success\":false,\"root_cause\":\"UNKNOWN\",\"source\":\"Archived simulation; privileged data available on request\"},\"tools\":{\"episode_summary\":{},\"trace_window\":{\"center\":\"nonnegative frame\",\"radius\":\"integer 0..15\"},\"inspect_contact\":{\"frame\":\"nonnegative frame\"},\"diagnose_repair\":{}},\"guidance\":\"# Robot problem solving protocol v2\\n\\nUse scripts/agent_loop.py --arm D in the existing MuJoCo Python environment for complete recorded offline collection. scripts/learn.py remains the low-level simulation adapter; headless success is not a complete Episode. Keep existing robot APIs and safety limits.\\n\\n1. Specify physical completion independently of API acceptance. Record task, version, initial state, action, expected and observed physical effects, earliest anomaly and final outcome. Missing observations remain UNKNOWN.\\n2. Retrieve at most five memory records matching task, failure signature and applicability. Read evidence references, not whole videos or chat histories.\\n3. Separate observations from hypotheses. Propose at most three causes, each with a falsifiable, low-cost experiment. A model explanation alone is not verification. Distinguish the first observed anomaly from the true onset if sampling is incomplete.\\n4. Compare the proposed repair and action fingerprint with negative experiences. Do not repeat an ineffective repair under the same conditions without new evidence. A repair after the earliest anomaly requires an explicit causal explanation.\\n5. Change one variable in the existing MuJoCo interface. Save config/source hashes, inputs, full local evidence references, metrics, failures and exceptions. Do not tune friction or delete collisions just to pass.\\n6. Replay original condition and predeclared held-out initial states. Promote only within the validated scope; record regressions and restore the previous active version on failure.\\n7. REAL_VERIFIED requires physical success evidence, simulation validation, existing safety checks and fresh human permission. SIMULATION_VERIFIED never authorizes hardware.\\n8. Persist JSON + Markdown for every attempt, including timeout and infrastructure failures. Run publish.py with explicit paths after each completed round; keep local commits on push failure.\\n\\n## UNKNOWN TASK MODE / Exploration Protocol\\n\\nState the goal and observable completion; split into subgoals; retrieve available skills with applicability; explicitly list unknown transitions. Generate <=3 candidate plans and predict each observable outcome. Prefer reversible simulator probes that separate hypotheses under equal budgets. Observe, update or reject hypotheses, and stop repeating contradicted plans. If evidence is insufficient, retain UNKNOWN and select the next discriminating observation. Promote a reusable skill only after independent initial-state validation. Never substitute a memorized unseen-task answer for this process.\\n\\n## Metrics\\n\\nReport task success, unseen-task success, repeated-failure rate, new skills, tokens, inference wall time, simulated time, actual robot time and interventions separately. Missing measurements are null, not zero. Deterministic software-policy tests are not weak-LLM capability evaluations. Calibration requires bounded parameters, real measured targets and held-out real data; otherwise defer it.\\n\\n## Simulation privileged information\\n\\nSimulator object/goal poses, contact state, velocities and task ground truth may be used in every simulation stage. Each result must disclose the fields actually used and mark conclusions Simulation-only. Model comparisons must expose the same information to each group, or explicitly separate observation access from method effects. Privileged access does not authorize changing success detectors, physical parameters or hardware safety rules. Count a successful collection Episode only after its existing-format videos, state/action arrays and physics replay are verified; headless success alone is insufficient.\\n\\n## Executable memory and current scope\\n\\nAgent D reads evolution/active.json.planner_policy. compiled_alignment_v1 may execute VS002 only when its simulator/source, socket, units, contact and initial-state checks match; otherwise use the bounded LLM path and keep unknowns explicit. Record actual_planner_kind and model_invoked. Retention loss observed during transport takes precedence over a later IK exception when selecting what to investigate; do not infer friction or measured force. The native success and safety detectors stay independent. All full collection passes the existing Episode verifier, including failures. Current evidence does not establish unknown-task-family competence, real calibration or total-cost reduction.\\n\\n## Spatial disagreement observed on 2026-11-16\\n\\nWhen matched real/sim views disagree before grasping, investigate camera mounting, physical finger/tool geometry and scene placement before changing grasp height or contact physics. Nominal FK agreeing with controller pose only checks software consistency. Use bounded, simulation-validated noncontact observation commands under the existing hardware conditions; a successful observation sequence is not a successful task Episode. Report command-array equality separately from actual execution timing.\\n\\nA scene-only calibration fit must also be checked against robot-attached geometry and withheld views. Reprojection improvement or a fitted22mm translation alone is not a measured object correction. Reject unsupported transforms without a hardware retry; retain the old configuration and record the next missing measurement. Evidence and scope: experiments/spatial_cycle6/REPORT.md and NE014. The current full-task real-transfer result remains0/2, with physical root cause UNKNOWN.\\n\",\"budget\":{\"calls_remaining\":1,\"tools_remaining\":0,\"seconds_remaining\":21.92},\"evidence\":[{\"request\":{\"tool\":\"episode_summary\",\"args\":{},\"reason\":\"Inspect the failed episode and its available observations before considering a repair.\"},\"value\":{\"episode_id\":\"20261117T051833Z_1ddf3521\",\"scope\":\"Simulation-only\",\"task_success\":false,\"recording_verified\":true,\"validation_status\":\"SIMULATION_FAILED\",\"active_arms\":[\"right\"],\"source_versions\":{\"scene\":\"6cd236701d17f30f6e7250c4d446fc1f225795c6f3d8c80525995dd89b079e42\",\"native_program\":\"cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750\",\"camera\":\"Not used by this state/contact analyzer\",\"controller\":\"Recorded simulation actions\"},\"actions\":[{\"script\":\"try_plug_pick_sim.py\",\"profile\":\"original\",\"grasp_height_m\":0.02,\"offset_mm\":[2,0],\"speed_deg_s\":12,\"smooth_timing\":true,\"grasp_tilt_deg\":0.0}],\"native_error\":\"Released plug did not meet stable insertion criteria\",\"last_phase\":\"fold\",\"phases\":[{\"frame\":503,\"phase\":\"approach\",\"time_s\":16.799999999989858,\"plug_gripper_separation_mm\":74.00179599735631,\"plug_position_world_m\":[0.2959138877790994,-0.36570642689872224,0.058199995781092556],\"gripper_position_world_m\":[0.29591236388316466,-0.3657055243167275,0.13220179175725402],\"recorded_contact_pairs\":[[\"task/board\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.3351037371796615,\"face_gap_m\":0.004899995781092556,\"yaw_rad\":0.10135511703050758,\"tilt_rad\":3.332000937312528e-08,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":560,\"phase\":\"descend\",\"time_s\":18.69999999998813,\"plug_gripper_separation_mm\":20.26983274601597,\"plug_position_world_m\":[0.2959138876773041,-0.36570642689569677,0.058199995708982835],\"gripper_position_world_m\":[0.29591920308796327,-0.36570741242177407,0.07846982773410355],\"recorded_contact_pairs\":[[\"task/board\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.33510373717740305,\"face_gap_m\":0.004899995708982835,\"yaw_rad\":0.10135510232062792,\"tilt_rad\":3.332000937312528e-08,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":600,\"phase\":\"grasp\",\"time_s\":20.03333333332025,\"plug_gripper_separation_mm\":20.089119259946656,\"plug_position_world_m\":[0.2959149155036529,-0.36570654319967627,0.05819999090638008],\"gripper_position_world_m\":[0.2959110411404517,-0.36570726531005343,0.07828910977974599],\"recorded_contact_pairs\":[[\"right/link7\",\"task/yellow_plug\"],[\"right/link8\",\"task/yellow_plug\"],[\"task/board\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.33510384573539576,\"face_gap_m\":0.004899990906380082,\"yaw_rad\":0.10135326664577654,\"tilt_rad\":3.6408876546831975e-07,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":657,\"phase\":\"lift\",\"time_s\":21.933333333318522,\"plug_gripper_separation_mm\":20.690920539536304,\"plug_position_world_m\":[0.29584627183154516,-0.3657008227212558,0.11108184656669966],\"gripper_position_world_m\":[0.2958846608068409,-0.3657009568012464,0.13177273149320784],\"recorded_contact_pairs\":[[\"right/link7\",\"task/yellow_plug\"],[\"right/link8\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.33509864945050943,\"face_gap_m\":0.05778184656669965,\"yaw_rad\":0.10132855679088243,\"tilt_rad\":0.0057266936466309586,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":953,\"phase\":\"transport\",\"time_s\":31.799999999976215,\"plug_gripper_separation_mm\":22.168232892271064,\"plug_position_world_m\":[0.29853150162407244,-0.03270659831178556,0.09680138281271722],\"gripper_position_world_m\":[0.2965129284037853,-0.03270818505868548,0.11887752172337238],\"recorded_contact_pairs\":[[\"right/link7\",\"task/yellow_plug\"],[\"right/link8\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.002096448759638022,\"face_gap_m\":0.043501382812717225,\"yaw_rad\":0.00011683901867112833,\"tilt_rad\":0.08992521970162232,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":974,\"phase\":\"align\",\"time_s\":32.4999999999824,\"plug_gripper_separation_mm\":22.293677680934135,\"plug_position_world_m\":[0.2983921777224981,-0.03278597044817693,0.07719305064617533],\"gripper_position_world_m\":[0.2982582624972486,-0.03276249440863145,0.09948631375702105],\"recorded_contact_pairs\":[[\"right/link7\",\"task/yellow_plug\"],[\"right/link8\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.0021742677211049797,\"face_gap_m\":0.023893050646175334,\"yaw_rad\":-4.0739524244381275e-05,\"tilt_rad\":0.00487730460959397,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":1028,\"phase\":\"insert\",\"time_s\":34.30000000000532,\"plug_gripper_separation_mm\":14.0393411676777,\"plug_position_world_m\":[0.29652508013020146,-0.030793480940388116,0.0709532076588963],\"gripper_position_world_m\":[0.29569996222856,-0.028797593667484186,0.0848254358456261],\"recorded_contact_pairs\":[[\"right/link8\",\"task/yellow_plug\"],[\"task/strip\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.0019222483617344678,\"face_gap_m\":0.017653207658896303,\"yaw_rad\":-0.00922255399763036,\"tilt_rad\":0.18298740168193273,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":1068,\"phase\":\"release\",\"time_s\":35.63333333335563,\"plug_gripper_separation_mm\":6.036540059498438,\"plug_position_world_m\":[0.29656477340986004,-0.0328881725450134,0.07003137563203414],\"gripper_position_world_m\":[0.2984082855515947,-0.032618859795417246,0.075773217628825],\"recorded_contact_pairs\":[[\"right/link8\",\"task/yellow_plug\"],[\"task/strip\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.002948198496746213,\"face_gap_m\":0.01673137563203414,\"yaw_rad\":0.0007890846617233198,\"tilt_rad\":0.29056505628005286,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":1113,\"phase\":\"retreat\",\"time_s\":37.13333333337473,\"plug_gripper_separation_mm\":48.75206357778322,\"plug_position_world_m\":[0.29566018109244435,-0.03310622532307878,0.06996164334362248],\"gripper_position_world_m\":[0.29659237840829694,-0.03258476512865433,0.11870200434476982],\"recorded_contact_pairs\":[[\"right/link8\",\"task/yellow_plug\"],[\"task/strip\",\"task/yellow_plug\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.003733719688483996,\"face_gap_m\":0.01666164334362248,\"yaw_rad\":0.007064052695882938,\"tilt_rad\":0.2847916476308137,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}},{\"frame\":1647,\"phase\":\"fold\",\"time_s\":54.933333333601375,\"plug_gripper_separation_mm\":355.98699578851523,\"plug_position_world_m\":[0.2751709352866852,-0.032272589174857993,0.05467000735348086],\"gripper_position_world_m\":[0.19142687014449,-0.3100010454096744,0.26102062480207927],\"recorded_contact_pairs\":[[\"task/strip\",\"task/yellow_plug\"],[\"task/yellow_plug\",\"world\"]],\"contact_force_status\":\"NOT_RECORDED\",\"task_metrics\":{\"lateral_error_m\":0.02332699350564789,\"face_gap_m\":0.0013700073534808621,\"yaw_rad\":0.04010757885257611,\"tilt_rad\":1.8577717584195939,\"seated\":false,\"hold_seconds\":0.0,\"success\":false}}],\"retention\":{\"status\":\"NO_RETENTION_LOSS_OBSERVED\",\"observed_carry_samples\":317,\"lift_reference_distance_mm\":20.690920539536304,\"limitation\":\"Does not exclude sliding/rotation while contact remains; not proof of a stable grasp\"},\"root_cause\":\"UNKNOWN\",\"unknowns\":[\"Real contact force and motor-torque mapping\",\"Historical applied forces and direct state edits\",\"Recorded contact pair alone does not prove active constraint or gripping force\"],\"privileged_information_used\":true},\"evidence_key\":\"07c10267cbda53991c64aefc8d5402fd7d44dffe9069b5e005d8222ff426a3e3\"},{\"request\":{\"tool\":\"inspect_contact\",\"args\":{\"frame\":1068},\"reason\":\"Inspect the observed strip–plug interaction at release before selecting a one-parameter repair; contact pairs alone do not establish force.\"},\"value\":{\"contacts\":[{\"pair\":[\"gripper_right_36\",\"plug/entry_contact/4\"],\"distance_m\":-2.7025752320984678e-08,\"effective_includemargin_m\":0.0,\"solver_active\":true,\"constraint_address\":1,\"exclude\":0,\"condim\":3,\"friction\":[1.0,1.0,0.005,0.0001,0.0001],\"solved_force_contact_frame_N_Nm\":[0.011627379783075415,0.010036304458260257,0.005870992543086407,0.0,0.0,0.0]},{\"pair\":[\"gripper_right_36\",\"plug/entry_contact/23\"],\"distance_m\":-2.702354583201528e-08,\"effective_includemargin_m\":0.0,\"solver_active\":true,\"constraint_address\":4,\"exclude\":0,\"condim\":3,\"friction\":[1.0,1.0,0.005,0.0001,0.0001],\"solved_force_contact_frame_N_Nm\":[0.011627374649195544,0.010036300048072563,0.005870989914640793,0.0,0.0,0.0]},{\"pair\":[\"gripper_right_36\",\"plug/entry_contact/74\"],\"distance_m\":-2.728921354564535e-08,\"effective_includemargin_m\":0.0,\"solver_active\":true,\"constraint_address\":7,\"exclude\":0,\"condim\":3,\"friction\":[1.0,1.0,0.005,0.0001,0.0001],\"solved_force_contact_frame_N_Nm\":[0.01162795665433027,0.010036802283625346,0.00587128400559849,0.0,0.0,0.0]},{\"pair\":[\"task/yellow_plug/pin_0\",\"strip/panel_3/12\"],\"distance_m\":-1.943811162724574e-08,\"effective_includemargin_m\":0.0,\"solver_active\":true,\"constraint_address\":28,\"exclude\":0,\"condim\":3,\"friction\":[1.0,1.0,0.005,0.0001,0.0001],\"solved_force_contact_frame_N_Nm\":[0.3661774369387454,0.05166320402843735,0.03470993262156603,0.0,0.0,0.0]}],\"actuators\":[{\"name\":\"right/joint1\",\"transmission_type\":0,\"ctrl\":0.7496207440589545,\"force\":-0.005961554933037405,\"force_limited\":true,\"forcerange\":[-100.0,100.0],\"ctrl_limited\":true,\"ctrlrange\":[-2.618,2.618],\"gear\":[1.0,0.0,0.0,0.0,0.0,0.0]},{\"name\":\"right/joint2\",\"transmission_type\":0,\"ctrl\":2.0748731419147517,\"force\":-0.01374501345628687,\"force_limited\":true,\"forcerange\":[-100.0,100.0],\"ctrl_limited\":true,\"ctrlrange\":[0.0,3.14],\"gear\":[1.0,0.0,0.0,0.0,0.0,0.0]},{\"name\":\"right/joint3\",\"transmission_type\":0,\"ctrl\":-1.5556255914831891,\"force\":-0.015313522281303449,\"force_limited\":true,\"forcerange\":[-100.0,100.0],\"ctrl_limited\":true,\"ctrlrange\":[-2.967,0.0],\"gear\":[1.0,0.0,0.0,0.0,0.0,0.0]},{\"name\":\"right/joint4\",\"transmission_type\":0,\"ctrl\":-0.0014568428012249966,\"force\":-0.0019607563903990544,\"force_limited\":true,\"forcerange\":[-100.0,100.0],\"ctrl_limited\":true,\"ctrlrange\":[-1.745,1.745],\"gear\":[1.0,0.0,0.0,0.0,0.0,0.0]},{\"name\":\"right/joint5\",\"transmission_type\":0,\"ctrl\":1.1370154906050234,\"force\":-0.004921928293299516,\"force_limited\":true,\"forcerange\":[-100.0,100.0],\"ctrl_limited\":true,\"ctrlrange\":[-1.22,1.22],\"gear\":[1.0,0.0,0.0,0.0,0.0,0.0]},{\"name\":\"right/joint6\",\"transmission_type\":0,\"ctrl\":-0.8282341114592067,\"force\":9.556019017509243e-05,\"force_limited\":true,\"forcerange\":[-100.0,100.0],\"ctrl_limited\":true,\"ctrlrange\":[-2.0944,2.0944],\"gear\":[1.0,0.0,0.0,0.0,0.0,0.0]},{\"name\":\"right/gripper\",\"transmission_type\":3,\"ctrl\":0.06,\"force\":-0.0164717406618351,\"force_limited\":true,\"forcerange\":[-10.0,10.0],\"ctrl_limited\":true,\"ctrlrange\":[0.0,0.095],\"gear\":[1.0,0.0,0.0,0.0,0.0,0.0]}],\"equality_constraints\":[{\"name\":\"right/gripper_coupling\",\"type\":2,\"active\":true,\"object_ids\":[7,6]}],\"force_state\":{\"xfrc_applied_nonzero\":false,\"qfrc_applied_nonzero\":false},\"contact_override\":{\"enabled\":false,\"margin_m\":0.0,\"friction\":[1.0,1.0,0.005,0.0001,0.0001]},\"mesh_distance_limit\":\"Contact-point distance to visible mesh; not silhouette gap or full surface-to-surface distance\",\"units_limit\":\"Prismatic actuator N is not real gripper motor N.m; no identified conversion\",\"episode_id\":\"20261117T051833Z_1ddf3521\",\"frame\":1068,\"phase\":\"release\",\"time_s\":35.63333333335563,\"state_source\":\"RECORDED_INTEGRATION_STATE\",\"force_source\":\"mj_forward solver on restored state, not measured real force\",\"recorded_contact_count\":11,\"historical_external_forces_status\":\"RECORDED\",\"historical_direct_state_edits\":\"UNKNOWN; a snapshot cannot exclude earlier object teleports or callbacks\",\"geometry_provenance\":\"Archived XML and current referenced mesh hashes; original external mesh identity was not recorded\",\"reconstruction_limit\":\"Historical width-only samples assume equal finger displacement; full integration state avoids this assumption\",\"root_cause\":\"UNKNOWN\",\"privileged_information_used\":true,\"simulation_steps\":0,\"geoms\":{\"gripper_right_36\":{\"name\":\"gripper_right_36\",\"type\":7,\"margin_m\":0.0,\"gap_m\":0.0,\"friction\":[1.0,0.005,0.0001],\"group\":0,\"rgba\":[0.02500000037252903,0.02800000086426735,0.03200000151991844,1.0],\"contype\":1,\"conaffinity\":1,\"mesh_collision\":\"convex hull\",\"nearest_visible_mesh_surface\":[{\"geom\":\"gripper_right_36\",\"distance_mm\":0.7437674683161286},{\"geom\":\"gripper_right_33\",\"distance_mm\":2.7437674381496713}]},\"plug/entry_contact/4\":{\"name\":\"plug/entry_contact/4\",\"type\":7,\"margin_m\":0.0,\"gap_m\":0.0,\"friction\":[1.0,0.005,0.0001],\"group\":3,\"rgba\":[0.0,0.0,0.0,0.0],\"contype\":1,\"conaffinity\":1,\"mesh_collision\":\"convex hull\",\"nearest_visible_mesh_surface\":[{\"geom\":\"plug/entry_rim\",\"distance_mm\":1.5013302524523688},{\"geom\":\"plug/grip\",\"distance_mm\":7.0000003126316015}]},\"plug/entry_contact/23\":{\"name\":\"plug/entry_contact/23\",\"type\":7,\"margin_m\":0.0,\"gap_m\":0.0,\"friction\":[1.0,0.005,0.0001],\"group\":3,\"rgba\":[0.0,0.0,0.0,0.0],\"contype\":1,\"conaffinity\":1,\"mesh_collision\":\"convex hull\",\"nearest_visible_mesh_surface\":[{\"geom\":\"plug/entry_rim\",\"distance_mm\":1.5013302511926363},{\"geom\":\"plug/grip\",\"distance_mm\":7.000000312903148}]},\"plug/entry_contact/74\":{\"name\":\"plug/entry_contact/74\",\"type\":7,\"margin_m\":0.0,\"gap_m\":0.0,\"friction\":[1.0,0.005,0.0001],\"group\":3,\"rgba\":[0.0,0.0,0.0,0.0],\"contype\":1,\"conaffinity\":1,\"mesh_collision\":\"convex hull\",\"nearest_visible_mesh_surface\":[{\"geom\":\"plug/entry_rim\",\"distance_mm\":1.501330341876935},{\"geom\":\"plug/grip\",\"distance_mm\":7.000000280208211}]},\"task/yellow_plug/pin_0\":{\"name\":\"task/yellow_plug/pin_0\",\"type\":7,\"margin_m\":0.0,\"gap_m\":0.0,\"friction\":[0.6,0.003,0.0001],\"group\":0,\"rgba\":[0.7200000286102295,0.7200000286102295,0.6700000166893005,1.0],\"contype\":1,\"conaffinity\":1,\"mesh_collision\":\"convex hull\",\"nearest_visible_mesh_surface\":[{\"geom\":\"task/yellow_plug/pin_0\",\"distance_mm\":2.6621834527439476e-06},{\"geom\":\"task/yellow_plug/pin_1\",\"distance_mm\":11.87371092590668}]},\"strip/panel_3/12\":{\"name\":\"strip/panel_3/12\",\"type\":7,\"margin_m\":0.0,\"gap_m\":0.0,\"friction\":[1.0,0.005,0.0001],\"group\":0,\"rgba\":[0.38999998569488525,0.5099999904632568,0.7300000190734863,1.0],\"contype\":1,\"conaffinity\":1,\"mesh_collision\":\"convex hull\",\"nearest_visible_mesh_surface\":[{\"geom\":\"strip/panel_3/12\",\"distance_mm\":9.71905579952824e-06},{\"geom\":\"strip/panel_3/8\",\"distance_mm\":1.7473295714116373}]}}},\"evidence_key\":\"a26d51270dc43f89afa3fefc8fbf6f8380f7cf1f09f6e733d00788573fb39784\"}]}",
+          "answer": {
+            "plan": {
+              "stop": true,
+              "hypotheses": [
+                "The earliest anomaly is unresolved: the sampled phases show transport retention, then alignment/insert misalignment or tilt, but do not establish when the failure began.",
+                "At release, the plug remained in contact with the strip and gripper; the solver snapshot is simulation-only and does not establish the physical cause."
+              ],
+              "predicted_effect": "No parameter change is proposed; another repair experiment is not justified by the available evidence.",
+              "reason": "The episode failed stable insertion. Recorded samples show retention during transport, then nonzero lateral error and tilt during insertion; contact-force evidence is not a real measurement. Root cause remains UNKNOWN, so stop rather than guess a repair."
+            }
+          },
+          "usage": {
+            "input_tokens": 17968,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 145,
+            "reasoning_output_tokens": 0
+          },
+          "wall_seconds": 12.846034854999743,
+          "tool_events": 0,
+          "include_catalog": false,
+          "planner_profile": "bounded_tools_v1",
+          "requested_model": "gpt-6-luna",
+          "backend_identity_verified": false,
+          "timed_out": false
+        }
+      ],
+      "tool_trace": [
+        {
+          "request": {
+            "tool": "episode_summary",
+            "args": {},
+            "reason": "Inspect the failed episode and its available observations before considering a repair."
+          },
+          "result": {
+            "value": {
+              "episode_id": "20261117T051833Z_1ddf3521",
+              "scope": "Simulation-only",
+              "task_success": false,
+              "recording_verified": true,
+              "validation_status": "SIMULATION_FAILED",
+              "active_arms": [
+                "right"
+              ],
+              "source_versions": {
+                "scene": "6cd236701d17f30f6e7250c4d446fc1f225795c6f3d8c80525995dd89b079e42",
+                "native_program": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+                "camera": "Not used by this state/contact analyzer",
+                "controller": "Recorded simulation actions"
+              },
+              "actions": [
+                {
+                  "script": "try_plug_pick_sim.py",
+                  "profile": "original",
+                  "grasp_height_m": 0.02,
+                  "offset_mm": [
+                    2,
+                    0
+                  ],
+                  "speed_deg_s": 12,
+                  "smooth_timing": true,
+                  "grasp_tilt_deg": 0.0
+                }
+              ],
+              "native_error": "Released plug did not meet stable insertion criteria",
+              "last_phase": "fold",
+              "phases": [
+                {
+                  "frame": 503,
+                  "phase": "approach",
+                  "time_s": 16.799999999989858,
+                  "plug_gripper_separation_mm": 74.00179599735631,
+                  "plug_position_world_m": [
+                    0.2959138877790994,
+                    -0.36570642689872224,
+                    0.058199995781092556
+                  ],
+                  "gripper_position_world_m": [
+                    0.29591236388316466,
+                    -0.3657055243167275,
+                    0.13220179175725402
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "task/board",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.3351037371796615,
+                    "face_gap_m": 0.004899995781092556,
+                    "yaw_rad": 0.10135511703050758,
+                    "tilt_rad": 3.332000937312528e-08,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 560,
+                  "phase": "descend",
+                  "time_s": 18.69999999998813,
+                  "plug_gripper_separation_mm": 20.26983274601597,
+                  "plug_position_world_m": [
+                    0.2959138876773041,
+                    -0.36570642689569677,
+                    0.058199995708982835
+                  ],
+                  "gripper_position_world_m": [
+                    0.29591920308796327,
+                    -0.36570741242177407,
+                    0.07846982773410355
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "task/board",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.33510373717740305,
+                    "face_gap_m": 0.004899995708982835,
+                    "yaw_rad": 0.10135510232062792,
+                    "tilt_rad": 3.332000937312528e-08,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 600,
+                  "phase": "grasp",
+                  "time_s": 20.03333333332025,
+                  "plug_gripper_separation_mm": 20.089119259946656,
+                  "plug_position_world_m": [
+                    0.2959149155036529,
+                    -0.36570654319967627,
+                    0.05819999090638008
+                  ],
+                  "gripper_position_world_m": [
+                    0.2959110411404517,
+                    -0.36570726531005343,
+                    0.07828910977974599
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "right/link7",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "right/link8",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "task/board",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.33510384573539576,
+                    "face_gap_m": 0.004899990906380082,
+                    "yaw_rad": 0.10135326664577654,
+                    "tilt_rad": 3.6408876546831975e-07,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 657,
+                  "phase": "lift",
+                  "time_s": 21.933333333318522,
+                  "plug_gripper_separation_mm": 20.690920539536304,
+                  "plug_position_world_m": [
+                    0.29584627183154516,
+                    -0.3657008227212558,
+                    0.11108184656669966
+                  ],
+                  "gripper_position_world_m": [
+                    0.2958846608068409,
+                    -0.3657009568012464,
+                    0.13177273149320784
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "right/link7",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "right/link8",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.33509864945050943,
+                    "face_gap_m": 0.05778184656669965,
+                    "yaw_rad": 0.10132855679088243,
+                    "tilt_rad": 0.0057266936466309586,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 953,
+                  "phase": "transport",
+                  "time_s": 31.799999999976215,
+                  "plug_gripper_separation_mm": 22.168232892271064,
+                  "plug_position_world_m": [
+                    0.29853150162407244,
+                    -0.03270659831178556,
+                    0.09680138281271722
+                  ],
+                  "gripper_position_world_m": [
+                    0.2965129284037853,
+                    -0.03270818505868548,
+                    0.11887752172337238
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "right/link7",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "right/link8",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.002096448759638022,
+                    "face_gap_m": 0.043501382812717225,
+                    "yaw_rad": 0.00011683901867112833,
+                    "tilt_rad": 0.08992521970162232,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 974,
+                  "phase": "align",
+                  "time_s": 32.4999999999824,
+                  "plug_gripper_separation_mm": 22.293677680934135,
+                  "plug_position_world_m": [
+                    0.2983921777224981,
+                    -0.03278597044817693,
+                    0.07719305064617533
+                  ],
+                  "gripper_position_world_m": [
+                    0.2982582624972486,
+                    -0.03276249440863145,
+                    0.09948631375702105
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "right/link7",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "right/link8",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.0021742677211049797,
+                    "face_gap_m": 0.023893050646175334,
+                    "yaw_rad": -4.0739524244381275e-05,
+                    "tilt_rad": 0.00487730460959397,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 1028,
+                  "phase": "insert",
+                  "time_s": 34.30000000000532,
+                  "plug_gripper_separation_mm": 14.0393411676777,
+                  "plug_position_world_m": [
+                    0.29652508013020146,
+                    -0.030793480940388116,
+                    0.0709532076588963
+                  ],
+                  "gripper_position_world_m": [
+                    0.29569996222856,
+                    -0.028797593667484186,
+                    0.0848254358456261
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "right/link8",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "task/strip",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.0019222483617344678,
+                    "face_gap_m": 0.017653207658896303,
+                    "yaw_rad": -0.00922255399763036,
+                    "tilt_rad": 0.18298740168193273,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 1068,
+                  "phase": "release",
+                  "time_s": 35.63333333335563,
+                  "plug_gripper_separation_mm": 6.036540059498438,
+                  "plug_position_world_m": [
+                    0.29656477340986004,
+                    -0.0328881725450134,
+                    0.07003137563203414
+                  ],
+                  "gripper_position_world_m": [
+                    0.2984082855515947,
+                    -0.032618859795417246,
+                    0.075773217628825
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "right/link8",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "task/strip",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.002948198496746213,
+                    "face_gap_m": 0.01673137563203414,
+                    "yaw_rad": 0.0007890846617233198,
+                    "tilt_rad": 0.29056505628005286,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 1113,
+                  "phase": "retreat",
+                  "time_s": 37.13333333337473,
+                  "plug_gripper_separation_mm": 48.75206357778322,
+                  "plug_position_world_m": [
+                    0.29566018109244435,
+                    -0.03310622532307878,
+                    0.06996164334362248
+                  ],
+                  "gripper_position_world_m": [
+                    0.29659237840829694,
+                    -0.03258476512865433,
+                    0.11870200434476982
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "right/link8",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "task/strip",
+                      "task/yellow_plug"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.003733719688483996,
+                    "face_gap_m": 0.01666164334362248,
+                    "yaw_rad": 0.007064052695882938,
+                    "tilt_rad": 0.2847916476308137,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                },
+                {
+                  "frame": 1647,
+                  "phase": "fold",
+                  "time_s": 54.933333333601375,
+                  "plug_gripper_separation_mm": 355.98699578851523,
+                  "plug_position_world_m": [
+                    0.2751709352866852,
+                    -0.032272589174857993,
+                    0.05467000735348086
+                  ],
+                  "gripper_position_world_m": [
+                    0.19142687014449,
+                    -0.3100010454096744,
+                    0.26102062480207927
+                  ],
+                  "recorded_contact_pairs": [
+                    [
+                      "task/strip",
+                      "task/yellow_plug"
+                    ],
+                    [
+                      "task/yellow_plug",
+                      "world"
+                    ]
+                  ],
+                  "contact_force_status": "NOT_RECORDED",
+                  "task_metrics": {
+                    "lateral_error_m": 0.02332699350564789,
+                    "face_gap_m": 0.0013700073534808621,
+                    "yaw_rad": 0.04010757885257611,
+                    "tilt_rad": 1.8577717584195939,
+                    "seated": false,
+                    "hold_seconds": 0.0,
+                    "success": false
+                  }
+                }
+              ],
+              "retention": {
+                "status": "NO_RETENTION_LOSS_OBSERVED",
+                "observed_carry_samples": 317,
+                "lift_reference_distance_mm": 20.690920539536304,
+                "limitation": "Does not exclude sliding/rotation while contact remains; not proof of a stable grasp"
+              },
+              "root_cause": "UNKNOWN",
+              "unknowns": [
+                "Real contact force and motor-torque mapping",
+                "Historical applied forces and direct state edits",
+                "Recorded contact pair alone does not prove active constraint or gripping force"
+              ],
+              "privileged_information_used": true
+            },
+            "cache": {
+              "key": "07c10267cbda53991c64aefc8d5402fd7d44dffe9069b5e005d8222ff426a3e3",
+              "hit": false,
+              "bytes_hashed": 14507506,
+              "dependency_sha256": {
+                "analyzer": "be6a09e9af571dfbc1747f25020562ab2a9f38a0ecdc22b61829f741e99f1e07",
+                "privileged": "7055f7003d546315a0bddc04bb0572e3291536b379ff8e5bde9e11d774392203",
+                "report": "60f7ccc96735e911ede1b4f02c79e5a7d5d9935b54699e0847c007fba87c1e56",
+                "retention": "bcb5aa7020c5d9a4cbbad1dfdd33f84c8b2d551b6f4316dccf491f62a0f629bd",
+                "trajectory": "9bd010d0ca59ee5e3d552f07d0062cf764e42c4f9a6c897688b1478f973a3846"
+              },
+              "wall_seconds": 0.7585535009857267
+            }
+          },
+          "wall_seconds": 0.7596764559857547
+        },
+        {
+          "request": {
+            "tool": "inspect_contact",
+            "args": {
+              "frame": 1068
+            },
+            "reason": "Inspect the observed strip–plug interaction at release before selecting a one-parameter repair; contact pairs alone do not establish force."
+          },
+          "result": {
+            "value": {
+              "contacts": [
+                {
+                  "pair": [
+                    "gripper_right_36",
+                    "plug/entry_contact/4"
+                  ],
+                  "distance_m": -2.7025752320984678e-08,
+                  "effective_includemargin_m": 0.0,
+                  "solver_active": true,
+                  "constraint_address": 1,
+                  "exclude": 0,
+                  "condim": 3,
+                  "friction": [
+                    1.0,
+                    1.0,
+                    0.005,
+                    0.0001,
+                    0.0001
+                  ],
+                  "solved_force_contact_frame_N_Nm": [
+                    0.011627379783075415,
+                    0.010036304458260257,
+                    0.005870992543086407,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "geoms": [
+                    {
+                      "name": "gripper_right_36",
+                      "type": 7,
+                      "margin_m": 0.0,
+                      "gap_m": 0.0,
+                      "friction": [
+                        1.0,
+                        0.005,
+                        0.0001
+                      ],
+                      "group": 0,
+                      "rgba": [
+                        0.02500000037252903,
+                        0.02800000086426735,
+                        0.03200000151991844,
+                        1.0
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "mesh_collision": "convex hull",
+                      "nearest_visible_mesh_surface": [
+                        {
+                          "geom": "gripper_right_36",
+                          "distance_mm": 0.7437675978121311
+                        },
+                        {
+                          "geom": "gripper_right_33",
+                          "distance_mm": 2.7437675676456736
+                        }
+                      ]
+                    },
+                    {
+                      "name": "plug/entry_contact/4",
+                      "type": 7,
+                      "margin_m": 0.0,
+                      "gap_m": 0.0,
+                      "friction": [
+                        1.0,
+                        0.005,
+                        0.0001
+                      ],
+                      "group": 3,
+                      "rgba": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "mesh_collision": "convex hull",
+                      "nearest_visible_mesh_surface": [
+                        {
+                          "geom": "plug/entry_rim",
+                          "distance_mm": 1.5013302524523688
+                        },
+                        {
+                          "geom": "plug/grip",
+                          "distance_mm": 7.0000003126316015
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pair": [
+                    "gripper_right_36",
+                    "plug/entry_contact/23"
+                  ],
+                  "distance_m": -2.702354583201528e-08,
+                  "effective_includemargin_m": 0.0,
+                  "solver_active": true,
+                  "constraint_address": 4,
+                  "exclude": 0,
+                  "condim": 3,
+                  "friction": [
+                    1.0,
+                    1.0,
+                    0.005,
+                    0.0001,
+                    0.0001
+                  ],
+                  "solved_force_contact_frame_N_Nm": [
+                    0.011627374649195544,
+                    0.010036300048072563,
+                    0.005870989914640793,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "geoms": [
+                    {
+                      "name": "gripper_right_36",
+                      "type": 7,
+                      "margin_m": 0.0,
+                      "gap_m": 0.0,
+                      "friction": [
+                        1.0,
+                        0.005,
+                        0.0001
+                      ],
+                      "group": 0,
+                      "rgba": [
+                        0.02500000037252903,
+                        0.02800000086426735,
+                        0.03200000151991844,
+                        1.0
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "mesh_collision": "convex hull",
+                      "nearest_visible_mesh_surface": [
+                        {
+                          "geom": "gripper_right_36",
+                          "distance_mm": 0.7437675988519029
+                        },
+                        {
+                          "geom": "gripper_right_33",
+                          "distance_mm": 2.7437675686854464
+                        }
+                      ]
+                    },
+                    {
+                      "name": "plug/entry_contact/23",
+                      "type": 7,
+                      "margin_m": 0.0,
+                      "gap_m": 0.0,
+                      "friction": [
+                        1.0,
+                        0.005,
+                        0.0001
+                      ],
+                      "group": 3,
+                      "rgba": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "mesh_collision": "convex hull",
+                      "nearest_visible_mesh_surface": [
+                        {
+                          "geom": "plug/entry_rim",
+                          "distance_mm": 1.5013302511926363
+                        },
+                        {
+                          "geom": "plug/grip",
+                          "distance_mm": 7.000000312903148
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pair": [
+                    "gripper_right_36",
+                    "plug/entry_contact/74"
+                  ],
+                  "distance_m": -2.728921354564535e-08,
+                  "effective_includemargin_m": 0.0,
+                  "solver_active": true,
+                  "constraint_address": 7,
+                  "exclude": 0,
+                  "condim": 3,
+                  "friction": [
+                    1.0,
+                    1.0,
+                    0.005,
+                    0.0001,
+                    0.0001
+                  ],
+                  "solved_force_contact_frame_N_Nm": [
+                    0.01162795665433027,
+                    0.010036802283625346,
+                    0.00587128400559849,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "geoms": [
+                    {
+                      "name": "gripper_right_36",
+                      "type": 7,
+                      "margin_m": 0.0,
+                      "gap_m": 0.0,
+                      "friction": [
+                        1.0,
+                        0.005,
+                        0.0001
+                      ],
+                      "group": 0,
+                      "rgba": [
+                        0.02500000037252903,
+                        0.02800000086426735,
+                        0.03200000151991844,
+                        1.0
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "mesh_collision": "convex hull",
+                      "nearest_visible_mesh_surface": [
+                        {
+                          "geom": "gripper_right_36",
+                          "distance_mm": 0.7437674683161286
+                        },
+                        {
+                          "geom": "gripper_right_33",
+                          "distance_mm": 2.7437674381496713
+                        }
+                      ]
+                    },
+                    {
+                      "name": "plug/entry_contact/74",
+                      "type": 7,
+                      "margin_m": 0.0,
+                      "gap_m": 0.0,
+                      "friction": [
+                        1.0,
+                        0.005,
+                        0.0001
+                      ],
+                      "group": 3,
+                      "rgba": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "mesh_collision": "convex hull",
+                      "nearest_visible_mesh_surface": [
+                        {
+                          "geom": "plug/entry_rim",
+                          "distance_mm": 1.501330341876935
+                        },
+                        {
+                          "geom": "plug/grip",
+                          "distance_mm": 7.000000280208211
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pair": [
+                    "task/yellow_plug/pin_0",
+                    "strip/panel_3/12"
+                  ],
+                  "distance_m": -1.943811162724574e-08,
+                  "effective_includemargin_m": 0.0,
+                  "solver_active": true,
+                  "constraint_address": 28,
+                  "exclude": 0,
+                  "condim": 3,
+                  "friction": [
+                    1.0,
+                    1.0,
+                    0.005,
+                    0.0001,
+                    0.0001
+                  ],
+                  "solved_force_contact_frame_N_Nm": [
+                    0.3661774369387454,
+                    0.05166320402843735,
+                    0.03470993262156603,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "geoms": [
+                    {
+                      "name": "task/yellow_plug/pin_0",
+                      "type": 7,
+                      "margin_m": 0.0,
+                      "gap_m": 0.0,
+                      "friction": [
+                        0.6,
+                        0.003,
+                        0.0001
+                      ],
+                      "group": 0,
+                      "rgba": [
+                        0.7200000286102295,
+                        0.7200000286102295,
+                        0.6700000166893005,
+                        1.0
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "mesh_collision": "convex hull",
+                      "nearest_visible_mesh_surface": [
+                        {
+                          "geom": "task/yellow_plug/pin_0",
+                          "distance_mm": 2.6621834527439476e-06
+                        },
+                        {
+                          "geom": "task/yellow_plug/pin_1",
+                          "distance_mm": 11.87371092590668
+                        }
+                      ]
+                    },
+                    {
+                      "name": "strip/panel_3/12",
+                      "type": 7,
+                      "margin_m": 0.0,
+                      "gap_m": 0.0,
+                      "friction": [
+                        1.0,
+                        0.005,
+                        0.0001
+                      ],
+                      "group": 0,
+                      "rgba": [
+                        0.38999998569488525,
+                        0.5099999904632568,
+                        0.7300000190734863,
+                        1.0
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "mesh_collision": "convex hull",
+                      "nearest_visible_mesh_surface": [
+                        {
+                          "geom": "strip/panel_3/12",
+                          "distance_mm": 9.71905579952824e-06
+                        },
+                        {
+                          "geom": "strip/panel_3/8",
+                          "distance_mm": 1.7473295714116373
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actuators": [
+                {
+                  "name": "right/joint1",
+                  "transmission_type": 0,
+                  "ctrl": 0.7496207440589545,
+                  "force": -0.005961554933037405,
+                  "force_limited": true,
+                  "forcerange": [
+                    -100.0,
+                    100.0
+                  ],
+                  "ctrl_limited": true,
+                  "ctrlrange": [
+                    -2.618,
+                    2.618
+                  ],
+                  "gear": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "name": "right/joint2",
+                  "transmission_type": 0,
+                  "ctrl": 2.0748731419147517,
+                  "force": -0.01374501345628687,
+                  "force_limited": true,
+                  "forcerange": [
+                    -100.0,
+                    100.0
+                  ],
+                  "ctrl_limited": true,
+                  "ctrlrange": [
+                    0.0,
+                    3.14
+                  ],
+                  "gear": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "name": "right/joint3",
+                  "transmission_type": 0,
+                  "ctrl": -1.5556255914831891,
+                  "force": -0.015313522281303449,
+                  "force_limited": true,
+                  "forcerange": [
+                    -100.0,
+                    100.0
+                  ],
+                  "ctrl_limited": true,
+                  "ctrlrange": [
+                    -2.967,
+                    0.0
+                  ],
+                  "gear": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "name": "right/joint4",
+                  "transmission_type": 0,
+                  "ctrl": -0.0014568428012249966,
+                  "force": -0.0019607563903990544,
+                  "force_limited": true,
+                  "forcerange": [
+                    -100.0,
+                    100.0
+                  ],
+                  "ctrl_limited": true,
+                  "ctrlrange": [
+                    -1.745,
+                    1.745
+                  ],
+                  "gear": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "name": "right/joint5",
+                  "transmission_type": 0,
+                  "ctrl": 1.1370154906050234,
+                  "force": -0.004921928293299516,
+                  "force_limited": true,
+                  "forcerange": [
+                    -100.0,
+                    100.0
+                  ],
+                  "ctrl_limited": true,
+                  "ctrlrange": [
+                    -1.22,
+                    1.22
+                  ],
+                  "gear": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "name": "right/joint6",
+                  "transmission_type": 0,
+                  "ctrl": -0.8282341114592067,
+                  "force": 9.556019017509243e-05,
+                  "force_limited": true,
+                  "forcerange": [
+                    -100.0,
+                    100.0
+                  ],
+                  "ctrl_limited": true,
+                  "ctrlrange": [
+                    -2.0944,
+                    2.0944
+                  ],
+                  "gear": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "name": "right/gripper",
+                  "transmission_type": 3,
+                  "ctrl": 0.06,
+                  "force": -0.0164717406618351,
+                  "force_limited": true,
+                  "forcerange": [
+                    -10.0,
+                    10.0
+                  ],
+                  "ctrl_limited": true,
+                  "ctrlrange": [
+                    0.0,
+                    0.095
+                  ],
+                  "gear": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              ],
+              "equality_constraints": [
+                {
+                  "name": "right/gripper_coupling",
+                  "type": 2,
+                  "active": true,
+                  "object_ids": [
+                    7,
+                    6
+                  ]
+                }
+              ],
+              "force_state": {
+                "xfrc_applied_nonzero": false,
+                "qfrc_applied_nonzero": false
+              },
+              "contact_override": {
+                "enabled": false,
+                "margin_m": 0.0,
+                "friction": [
+                  1.0,
+                  1.0,
+                  0.005,
+                  0.0001,
+                  0.0001
+                ]
+              },
+              "mesh_distance_limit": "Contact-point distance to visible mesh; not silhouette gap or full surface-to-surface distance",
+              "units_limit": "Prismatic actuator N is not real gripper motor N.m; no identified conversion",
+              "episode_id": "20261117T051833Z_1ddf3521",
+              "frame": 1068,
+              "phase": "release",
+              "time_s": 35.63333333335563,
+              "state_source": "RECORDED_INTEGRATION_STATE",
+              "force_source": "mj_forward solver on restored state, not measured real force",
+              "recorded_contact_count": 11,
+              "historical_external_forces_status": "RECORDED",
+              "historical_direct_state_edits": "UNKNOWN; a snapshot cannot exclude earlier object teleports or callbacks",
+              "geometry_provenance": "Archived XML and current referenced mesh hashes; original external mesh identity was not recorded",
+              "reconstruction_limit": "Historical width-only samples assume equal finger displacement; full integration state avoids this assumption",
+              "root_cause": "UNKNOWN",
+              "privileged_information_used": true,
+              "simulation_steps": 0
+            },
+            "cache": {
+              "key": "a26d51270dc43f89afa3fefc8fbf6f8380f7cf1f09f6e733d00788573fb39784",
+              "hit": false,
+              "bytes_hashed": 34775643,
+              "dependency_sha256": {
+                "analyzer": "176b553ff402471a33c9d5bda6a7d356b200cdb1c1992faf357ac2e77f30ab32",
+                "initial": "30e1ecca7721a74aa8ce83cf0170da8ec48901fe69b027627598f873fd6be739",
+                "mesh:cad_left_103": "5059bde5393465a58e99a0275d706b34571f09d119d0dbdd647ca3b470ba2275",
+                "mesh:cad_left_104": "f897616868396ca005d6f201aaeac4c9703a9ea4b60a806f0a4419b7c9aa1cdc",
+                "mesh:cad_left_105": "a4d841ce2e9558db2da2c905daa2e88824d71f352d2c155aca17b2a6932d1f47",
+                "mesh:cad_left_106": "393c8ccf22f3daca06470188e369d13fafe11b75f9171c3945c9dda647b8b350",
+                "mesh:cad_left_108": "e00ff150916f601b45556d8d7e1bffc1dcaa316b2e5860e1a03d0ea86d4ec846",
+                "mesh:cad_left_109": "76811141a89cef28032d1da50a6f60f47931f56a777de3d5e6990796154dc012",
+                "mesh:cad_left_110": "05d480d88f75aa117c0502a36e09afb5ef1ae3f8f6a59018271184070b7d2328",
+                "mesh:cad_left_111": "3600a988e50fa1296bc2980928408dea1da3bc2b7e79188cdd2e51240b55566c",
+                "mesh:cad_left_112": "590310235c270fd2fea856a27f42c4c07bca5f6803b6799ce804c8bccf68b26a",
+                "mesh:cad_left_113": "49a2094b8ab7da312ebcf6bf2a409fb41d2a2461e089d19313f2ef12a33a3026",
+                "mesh:cad_right_47": "5059bde5393465a58e99a0275d706b34571f09d119d0dbdd647ca3b470ba2275",
+                "mesh:cad_right_48": "f897616868396ca005d6f201aaeac4c9703a9ea4b60a806f0a4419b7c9aa1cdc",
+                "mesh:cad_right_49": "a4d841ce2e9558db2da2c905daa2e88824d71f352d2c155aca17b2a6932d1f47",
+                "mesh:cad_right_50": "393c8ccf22f3daca06470188e369d13fafe11b75f9171c3945c9dda647b8b350",
+                "mesh:cad_right_52": "e00ff150916f601b45556d8d7e1bffc1dcaa316b2e5860e1a03d0ea86d4ec846",
+                "mesh:cad_right_53": "76811141a89cef28032d1da50a6f60f47931f56a777de3d5e6990796154dc012",
+                "mesh:cad_right_54": "05d480d88f75aa117c0502a36e09afb5ef1ae3f8f6a59018271184070b7d2328",
+                "mesh:cad_right_55": "3600a988e50fa1296bc2980928408dea1da3bc2b7e79188cdd2e51240b55566c",
+                "mesh:cad_right_56": "590310235c270fd2fea856a27f42c4c07bca5f6803b6799ce804c8bccf68b26a",
+                "mesh:cad_right_57": "49a2094b8ab7da312ebcf6bf2a409fb41d2a2461e089d19313f2ef12a33a3026",
+                "mesh:cad_static_0": "1d85cc5655cd0f9058a9a447b1e51f849bcbbf3cea951d9bf9aa6c0cab690732",
+                "mesh:cad_static_1": "aebede8198eb7dcca376912b21703f120cc53788f48e13efb782b2e464537dae",
+                "mesh:cad_static_114": "2528bbfbbaa31d85560f102d15553869a6789c192b003049fef5024e180070ef",
+                "mesh:cad_static_115": "86634d58dfb245d218b5ac60a3fc2e3c197aaa3da8b54494e725d8d140950fb6",
+                "mesh:cad_static_116": "94a2c0e43b4ec072de3d53e8e8934c27418a49cc678e30c192541de2f9454ff9",
+                "mesh:cad_static_117": "b026b3e7adf9bb94bbadd036c681f311bbb26bc619ab8f5190c8f4dcabf874c4",
+                "mesh:cad_static_118": "6796c7833307fa310949b33a1e932e0bf3b4df1225b1b265bd976bc6eed9fbd4",
+                "mesh:cad_static_119": "51a07a31669bc5f110c72baa5563af632f071d7bcae4030b315cf495aa74f44b",
+                "mesh:cad_static_120": "1a24cf101bbe0399feb753623ff4d69e6ca5ca018351f33cd9b8b4bc6a2b0688",
+                "mesh:cad_static_121": "69ba21276bf0e035a7bb34f1a4c28933a1c3587ef2f812018c57f90bc7831ccb",
+                "mesh:cad_static_123": "36cf0f86243aeade4151eff442b7698a8dda605d282e23ddddc42080deea4714",
+                "mesh:cad_static_124": "4cb87c0a98400db07a4f3c7188562c0fe8c0ae3f1285de01a3edac0ba4e94b67",
+                "mesh:cad_static_126": "dc00ccbea4543f2091f52c0c7242608a7403cfc508964ceaec41fcda75c8f4ea",
+                "mesh:cad_static_127": "fbed4db315cc6476c90cea0cfa6c764d0c20a2900762f234688dda2bc1b998f9",
+                "mesh:cad_static_128": "d39bac62265df218fd44606772a98d86b5ac36f5611a640a2273ad9051d656b4",
+                "mesh:cad_static_129": "ac1f07e4abb3619d4a5c7512c46c1433a44e3c92b357bb6a3150e2b6087b268a",
+                "mesh:cad_static_130": "b428f9db2e0776aa2475eea4f28eaebd2367d0723e62e8723ff288f096562e0a",
+                "mesh:cad_static_131": "05bf9cdf23372844f0780c3909d224f5262377bc80f17fd3e417d65742515703",
+                "mesh:cad_static_132": "a8ea8bc97e6be71fd98fd3686153ca4e82d9bf88c8c56c5e3198a4415dcebf9e",
+                "mesh:cad_static_133": "2692b9a01257a46a175c216c96c36eb86eb7fb02434ddbd1660607f80a882ed2",
+                "mesh:cad_static_134": "1a964c2a59ad744c9e60084a0bfbe534a3be2f9bac6a26480d1a0cca2ab0570d",
+                "mesh:cad_static_135": "ea81475f3d665a7318f9e53841f24a17050e58d761945f8c6b2afb15a080bf50",
+                "mesh:cad_static_136": "fd61d7ad9049fc77af9acb68238ed540d927b3c2e703a9056b5addf065c38e41",
+                "mesh:cad_static_137": "cbfdde5993f4f6fa4094acf51b9eb6983c8e143a3443251b8381d09035aebfbb",
+                "mesh:cad_static_138": "68b263e0bd60db256b219e0696187fc646ea8aa45eabda0f712edc0c294ee3d2",
+                "mesh:cad_static_139": "a7d2f943415ee11eea4b63fb6860e90171f0143693213d0c386c4f19c3db94d8",
+                "mesh:cad_static_140": "9cfc87c7aa95d37379f6efed59780e5bfe438520f05d874ffdfcd51bff7242a3",
+                "mesh:cad_static_141": "53bd33fde24d22b3e8cfc49bd956613653e50377e0a31d54be322344cd45c89a",
+                "mesh:cad_static_142": "1574974790e8ab49c21098f3ba4eadc6108f961920ee306129485e79ca64a846",
+                "mesh:cad_static_143": "999863b5dabbe649bc2d0a8094d1f19ac5b8f928b8acb77a6fd937be8c5fa592",
+                "mesh:cad_static_144": "c0caf27cd8a9350f618a364e0a85108343355dcb5b01dd458823bc05e1cd9422",
+                "mesh:cad_static_145": "2e757b70cd7537aa56c42d08fc8c0cc682d158772b8b7288aea749a904de4b94",
+                "mesh:cad_static_146": "cae38e1bc4ed8e5795df6591064f32ecee28af0cb4bdf5874214c54276e7a8f6",
+                "mesh:cad_static_147": "0d9f9e0136dc53592c02ce36b1cc0f3d889797bad4616262e8decb723869765a",
+                "mesh:cad_static_148": "2269604ecd86aaab5ecf4976386867bc49424ee075982452814d473b7d6ebd84",
+                "mesh:cad_static_149": "6510b7ad4fc0436233da7ee0b86d1bd6a42ac682ca3f322e694c1b90ca56baf9",
+                "mesh:cad_static_150": "b08c08bcdfc402ad24bffe90b1f67da7995ed8cbcdeab8333f9a817465ebc1ea",
+                "mesh:cad_static_151": "cc1faa0d7026af58ac4dc9c40abd14c77357a4e641c5fd76ef4c243d0beb8fb9",
+                "mesh:cad_static_155": "9bcb03110e03af2dfc8beeebcdc14c12df88094e887220c00dc1f058e8cdd648",
+                "mesh:cad_static_156": "c181e609b950d56ccbcb46b3bad477cb167e1e17636d66ddf2ce92c4a9056b76",
+                "mesh:cad_static_157": "18c07cbdda87aadebdab6834b1e8bc9203adeb6dfdcb4bd218ebdaaded9460c5",
+                "mesh:cad_static_158": "94ce2cf6745140f5b174aa449b80a52eb5042168a7af86281fa39589b78b9f7c",
+                "mesh:cad_static_159": "d705e297203efdaff144227f69afa6df389d409201b171bd79d30e4f71e62b15",
+                "mesh:cad_static_160": "6150beeba45cc2405c240e33cb06e8b9a78cad4851ea83be5c1068eb06beb789",
+                "mesh:cad_static_161": "b99d2c599e59c300a732c951cb6a29d0c9b3eb9cd7cff1e439275bd59027f9b8",
+                "mesh:cad_static_162": "04394e2bf7c86a86fc878cb8b28a3f42e489ac52217d088a75e1566931374444",
+                "mesh:cad_static_163": "6a5c9ad5ca0ed82b0678a6560b5b397b2b1eb94eee3d9de9bde8e30fee298771",
+                "mesh:cad_static_164": "920b2a15cf0f85ff4a9504c3b58c3c3a38830e9016385d8a45f9ff38d6c3aa2d",
+                "mesh:cad_static_165": "26a4cfac7ed2538be9b246651c4fca375935105cde87549e40cdf50d905cfc96",
+                "mesh:cad_static_166": "cbf2247a290ec46b3755650914c520e6ec1d948cb7b5a60b4c15abed00beb3bd",
+                "mesh:cad_static_167": "84a9222d93bcecee1fb2c73206c2d58494e83bb2acbd1495e1a7f6be6a3a7316",
+                "mesh:gripper_left_100": "12393a42c70a632388edc09d75fb38c6f0f46c780729285fde15cbb1ac9fe529",
+                "mesh:gripper_left_101": "f89f342b1183027b9df425ca7c20d4b1ed1a161691d56d849d73717199f7f8d4",
+                "mesh:gripper_left_102": "6dbc8a5d983b0504cb486e05e9f3e6e7f4e59ea2db21af1fa0849ed00022bea8",
+                "mesh:gripper_left_89": "4acdb58597fad065c8243ec6b7fd3bb2b29ae480e55ec1d26ad374378636a32e",
+                "mesh:gripper_left_90": "e2d8646c12994a11f967c9c89357ff65713ae3f827702da3161aa43b31080471",
+                "mesh:gripper_left_91": "c3ab7c0288784b17616b4a6d463295ca13bc9bf388757f673f298af14f97ed46",
+                "mesh:gripper_left_92": "a883a4d1fa2ce6d0885a4ef4ec61597f314bec3b11794a57d498a75d8eb6cf49",
+                "mesh:gripper_left_93": "51c22ac78301d46ec62a8cad6fbe538188d82b5051b445b93c95e73428235b13",
+                "mesh:gripper_left_94": "908183bfc6ac3e5cbe018c59c3ea13b988b14bdd39e8ceb0f0ab4835b90bec33",
+                "mesh:gripper_left_95": "783a9dba900627c55868777c45ad75b4db502de2faa7d2d6426684c517b5f440",
+                "mesh:gripper_left_96": "26989bf94ea96a75c3616c42e7645ca741bd6188399a43e2e4addee268257ba3",
+                "mesh:gripper_left_97": "2209c59ae53967422ba02cc721097a5bad2d3176683f320c0a540619f340b579",
+                "mesh:gripper_left_98": "49e886b6bed9c0ffdf90438adea468b0694f48a88181dc62d9c45f72a9a8162e",
+                "mesh:gripper_left_99": "9783a90222f404810eba22a5520152fedcf21be589f4f29ce6b9c0f2c3a0ab3d",
+                "mesh:gripper_right_33": "4acdb58597fad065c8243ec6b7fd3bb2b29ae480e55ec1d26ad374378636a32e",
+                "mesh:gripper_right_34": "e2d8646c12994a11f967c9c89357ff65713ae3f827702da3161aa43b31080471",
+                "mesh:gripper_right_35": "c3ab7c0288784b17616b4a6d463295ca13bc9bf388757f673f298af14f97ed46",
+                "mesh:gripper_right_36": "a883a4d1fa2ce6d0885a4ef4ec61597f314bec3b11794a57d498a75d8eb6cf49",
+                "mesh:gripper_right_37": "51c22ac78301d46ec62a8cad6fbe538188d82b5051b445b93c95e73428235b13",
+                "mesh:gripper_right_38": "908183bfc6ac3e5cbe018c59c3ea13b988b14bdd39e8ceb0f0ab4835b90bec33",
+                "mesh:gripper_right_39": "783a9dba900627c55868777c45ad75b4db502de2faa7d2d6426684c517b5f440",
+                "mesh:gripper_right_40": "26989bf94ea96a75c3616c42e7645ca741bd6188399a43e2e4addee268257ba3",
+                "mesh:gripper_right_41": "2209c59ae53967422ba02cc721097a5bad2d3176683f320c0a540619f340b579",
+                "mesh:gripper_right_42": "49e886b6bed9c0ffdf90438adea468b0694f48a88181dc62d9c45f72a9a8162e",
+                "mesh:gripper_right_43": "9783a90222f404810eba22a5520152fedcf21be589f4f29ce6b9c0f2c3a0ab3d",
+                "mesh:gripper_right_44": "12393a42c70a632388edc09d75fb38c6f0f46c780729285fde15cbb1ac9fe529",
+                "mesh:gripper_right_45": "f89f342b1183027b9df425ca7c20d4b1ed1a161691d56d849d73717199f7f8d4",
+                "mesh:gripper_right_46": "6dbc8a5d983b0504cb486e05e9f3e6e7f4e59ea2db21af1fa0849ed00022bea8",
+                "mesh:task/board_visual": "ca27293bd6c192086ae5ec7e79203a84ba43b5c2f240e052974646f094bdeda2",
+                "mesh:urdf_base_link": "fd4a3d6d0266205fe3f725f048645be66592c23564db22e08b0807d5569b2c64",
+                "mesh:urdf_link1": "9ee6e1d67c0241f42a0dbaf5c676d19230375ed078ee1943bb8c4c37ab303d14",
+                "mesh:urdf_link2": "0d37675b699b643f2e15348de99aed535fac10dc5f09a79b8e4b0acfaf4e0378",
+                "mesh:urdf_link3": "e8ae51f17c0c7f6d67b753922e2cc269f5e8372a65734f859231639a64fe8fad",
+                "mesh:urdf_link4": "efa33022976218f246f736a6133494b5d0e5486e8b50b52900c42f285ae85558",
+                "mesh:urdf_link5": "a1c69d1c7f6f8c60e2c82331c0f444725200ed4053d3e5ec23aa82cb5db5b29f",
+                "mesh:urdf_link6": "88374973bc3bd9e7389b5853cd6e555af9731c30b658b1ee6f85be34a126cb92",
+                "model": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+                "privileged": "7055f7003d546315a0bddc04bb0572e3291536b379ff8e5bde9e11d774392203",
+                "reader": "be6a09e9af571dfbc1747f25020562ab2a9f38a0ecdc22b61829f741e99f1e07",
+                "report": "60f7ccc96735e911ede1b4f02c79e5a7d5d9935b54699e0847c007fba87c1e56",
+                "trajectory": "9bd010d0ca59ee5e3d552f07d0062cf764e42c4f9a6c897688b1478f973a3846"
+              },
+              "wall_seconds": 15.15152243396733
+            }
+          },
+          "wall_seconds": 15.247412189026363
+        }
+      ],
+      "applicability": {
+        "baseline": {
+          "offset_mm": 2,
+          "grasp_tilt_deg": 0.0,
+          "grasp_height_m": 0.02,
+          "align_gap_m": 0.023,
+          "start_right_deg": [
+            -0.195,
+            0,
+            0,
+            0.514,
+            23.238,
+            0.512
+          ]
+        },
+        "allowed_grasp_tilt_deg": []
+      },
+      "model_calls_attempted": 3,
+      "timing": {
+        "llm_cli_network_inference_seconds": 64.69787835504394,
+        "tools_seconds": 16.007088645012118
+      },
+      "inference_only_seconds": null,
+      "research_orchestrator_tokens": null
+    },
+    "physical_result": null
+  }
+]

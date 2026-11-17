@@ -1,0 +1,46 @@
+{
+  "simulation_episode": "20261117T053833Z_25cf43e3",
+  "reference_dataset_path": "self_evolution/recipient_feedback_pairs/20261117T053833Z_25cf43e3/reference",
+  "reference_id": "830ac2a82fa3fb5da087437fbc92a42d933aebe80361a5dc4ebcb1d2196f4f1d",
+  "reference_validation": {
+    "reference_sha256": "830ac2a82fa3fb5da087437fbc92a42d933aebe80361a5dc4ebcb1d2196f4f1d",
+    "result": "success",
+    "task_success": true,
+    "all_substeps_valid": true,
+    "real_commands": 0,
+    "privileged_information_used": true,
+    "physics_parameter_changes": false,
+    "scope": "100Hz frozen target commands; original numerical integrator, contact bounds and task success detector",
+    "profile": {
+      "timestep_s": 0.00026041666666666666,
+      "task_solref": [
+        0.0006,
+        1
+      ],
+      "task_condim": 6,
+      "task_solimp_first3": [
+        0.99,
+        0.999,
+        0.0001
+      ],
+      "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+    },
+    "max_penetration_m": 3.108209486867429e-05,
+    "simulated_seconds": 53.576822916917436,
+    "observation_frames": 1607,
+    "applied_reference_steps": 5358,
+    "integrator_timestep_s": 0.00026041666666666666,
+    "wall_seconds": 116.87794991396368,
+    "prediction_sha256": "33865438ea7b65f00a7a00a5bee9d3a74c4617ac1271b47ce977b3fec71dcca7"
+  },
+  "real_status": "REAL_FAILED",
+  "real_episode": "20261117_real_recipient_pair_000001",
+  "source": "deterministic known-program control; not recipient discovery",
+  "privileged_information_used": true,
+  "real_dataset_path": "complete_real/failed/20261117_real_recipient_pair_000001",
+  "reference_prefix_verified": true,
+  "real_reference_commands": 3234,
+  "real_total_commands": 5334,
+  "real_recording_verified": true,
+  "real_reference_completed": false
+}
