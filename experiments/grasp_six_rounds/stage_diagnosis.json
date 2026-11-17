@@ -1,0 +1,17 @@
+{
+  "evidence": "Private same-camera contact sheet built from trusted phase/image clock mappings; refs in self_evolution and existing episode phase evidence",
+  "historical_successes": [
+    "20261116_real_current_socket_repair_000002",
+    "20261116_real_repeatability_000002"
+  ],
+  "new_failed_sources": [
+    "20261117_real_teacher_reliability_000001",
+    "20261117_real_teacher_reliability_000002"
+  ],
+  "grasp_observation": "Second failure visibly turns within gripper during lift; rear circular opening becomes frontal. Successes retain upright elongated body. First failure appears upright at lift end.",
+  "transport_observation": "First failure rotates during transport; both success examples retain upright pose through align. Second failure already turned before0.3->1Nm change.",
+  "insertion_observation": "New failures reach align with already different held pose; native visual stop precedes completed insertion. Do not fix downstream insertion offset while ignoring held pose.",
+  "first_candidate": "18mm center above plug face,25mm align gap,0.3Nm whole task; local geometry test, not assumed mechanical root cause",
+  "causal_status": "Grasp/transport pose mismatch observed; exact mechanical cause UNKNOWN",
+  "real_pose_units": "Qualitative RGB observations, not calibrated six-DoF angles"
+}

@@ -16,7 +16,7 @@
     "automatic_teaching_after_simulation": false
   },
   "branch": "codex/teacher-reliability-20261117",
-  "status": "BATCH_STOPPED_NO_VERIFIED_PHYSICAL_REPAIR",
+  "status": "SIX_ROUND_VALIDATION_AUTHORIZED",
   "active": {
     "planner_policy": "llm",
     "tool_planner": "bounded_tools_v1 is opt-in",
@@ -100,5 +100,13 @@
     "supported_shutdown": "User explicitly confirmed foam protection at original folded position; return/fold before automatic disable. Manual-reset5-trial acceptance remains unavailable while user is away.",
     "current_candidate": "Both physical candidates rejected; original default unchanged",
     "authorization_scope_note": "Completed authorized two-development-attempt batch; no fresh grant for additional motion. Existing acceptance allowance cannot be used without validated physical repair."
+  },
+  "active_goal": "evolution/ACTIVE_GOAL.md",
+  "six_round_continuation": {
+    "protocol": "experiments/grasp_six_rounds/protocol.json",
+    "status": "ROUND1_SIMULATION",
+    "hardware_resume_authorized": true,
+    "reset": "User confirmed restored and available for later resets",
+    "old_budget_constraints": "Superseded for new six-round work by explicit user instruction; historical accounting retained"
   }
 }

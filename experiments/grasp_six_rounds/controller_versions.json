@@ -1,0 +1,23 @@
+{
+  "status": "PRIVATE_CANDIDATE_NO_DEFAULT_PROMOTION",
+  "changes": [
+    {
+      "component": "replay_controller.py",
+      "source_sha256": "72d3a06e392bf8562ce0e0850f333c96e2fe520080474d1588aec9c55599600f",
+      "candidate_sha256": "c06a6a1ca024868ab93e042006d3609d00cbea9e0ee3255b215e9efcbdde1f14",
+      "private_candidate": "self_evolution/grasp_six_rounds_20261117/controller03/replay_controller.py",
+      "private_patch_sha256": "ef5d3408d68ad4c95d5072a49b7b871b4186940dbdd945b7f65f85ec083da71b"
+    },
+    {
+      "component": "continue_plug_task.py",
+      "source_sha256": "097f08e68143377948ed37a628f4a49d4aa07c059defedc69bafdf1d53b90e58",
+      "candidate_sha256": "61d13c7311aca541e8a26292240951e9bbd50a5e7efc434fcf7851b83addba1d",
+      "private_candidate": "self_evolution/grasp_six_rounds_20261117/controller03/continue_plug_task.py",
+      "private_patch_sha256": "b367feb3833f894a675794aff3f11d5ca425dc061da15337a515a1772b5fd31d"
+    }
+  ],
+  "scope": "0.3Nm original historical cap; no model pause; native auto-disable10s only after fold",
+  "safety": "Original speed/limits/fault/freshness/visual slip/recovery gates retained",
+  "checks": "Compile and fake-CAN effort/fault checks passed",
+  "rollback": "Use unchanged original control and entrypoint; do not load this private copy"
+}

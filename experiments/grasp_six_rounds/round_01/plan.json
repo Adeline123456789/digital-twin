@@ -1,0 +1,22 @@
+{
+  "round": 1,
+  "case": {
+    "name": "round1_grasp_height_18",
+    "offset_mm": 0,
+    "shift_mm": 0,
+    "grasp_height_m": 0.018,
+    "align_gap_m": 0.025,
+    "start_right_deg": [
+      0.0,
+      0,
+      0,
+      0.482,
+      23.425,
+      0.546
+    ]
+  },
+  "real_effort_nm": 0.3,
+  "status": "SIMULATION_RUNNING",
+  "hardware_commands": 0,
+  "reason": "Correct grasp geometry before insertion; no model wait inside motion"
+}
