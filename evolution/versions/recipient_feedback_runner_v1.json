@@ -1,0 +1,24 @@
+{
+  "version": "recipient_feedback_runner_v1",
+  "parent_commit": "dc407b2bbab10e725ae22468243683bdaa49a21e",
+  "status": "ENGINEERING_TESTED_NOT_MODEL_EVALUATED",
+  "default_changed": false,
+  "actual_default": "llm",
+  "tests_passed": 39,
+  "actual_model_calls": 0,
+  "new_physical_simulation_episodes": 0,
+  "new_real_episodes": 0,
+  "new_budget_authorized": false,
+  "files": {
+    "scripts/bounded_tools.py": "2546c2992c5148888fd2a2b0eca623982a1cbb5f47b1227d6cd5217b675a43d7",
+    "scripts/benchmark_recipient_feedback.py": "07260efbd7c4221c247036abb08a836470bdc1d4b2e8084d4e777e34eb59ea45",
+    "tests/test_recipient_feedback.py": "9e2c1919c4f09eb9dc7c688a64ec408a66cc030c8dddc352ac5f2a72b11a1a40",
+    "experiments/goal_aligned_runtime/recipient_design.json": "c2d8e5a87ef7a021981596a04a5ff460041d5b8160bae6c065e894afd69bb55b"
+  },
+  "limitations": [
+    "Teacher/recipient ordering checked with stubs only; no model capability claim",
+    "One proposed held-out layout, no cross-task-family test",
+    "Same-tool parent/candidate guidance comparison does not establish superiority to legacy default harness",
+    "Candidate must not be promoted before actual evidence"
+  ]
+}

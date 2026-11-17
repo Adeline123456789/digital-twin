@@ -89,11 +89,11 @@ def prompt_events(events):
 
 
 def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
-         guidance='', ask_fn=ask, dispatcher=None):
+         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None):
     if not 1 <= max_calls <= 8 or not 0 <= max_tools <= 6 or not 1 <= seconds <= 240:
         raise ValueError('Planner budget outside supported bounds')
     started=time.monotonic();calls=[];events=[];seen=set()
-    cache=EvidenceCache(ROOT/'.local/evidence_cache') if dispatcher is None else None
+    cache=EvidenceCache(cache_directory or ROOT/'.local/evidence_cache') if dispatcher is None else None
     dispatch=dispatcher or EpisodeTools(seed,cache)
     answer=dict(stop=True,hypotheses=[],reason='No supported plan within budget',predicted_effect='No new execution')
     status='BUDGET_EXHAUSTED'
