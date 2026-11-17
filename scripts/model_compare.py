@@ -10,29 +10,50 @@ CASES=[
  {'id':'repeat_insertion','task':'Resolve repeated insertion failure','facts':['Object moved in gripper during insert','Holding gripper during retreat was tried and insertion still failed'],'proposed_repair':'hold gripper during retreat again without new evidence'},
  {'id':'unseen_flexible_object','task':'Route an unfamiliar flexible cable','facts':['No matching skill','Only rigid-object motions verified','No contact observation']}]
 EXPECTED=['UNKNOWN','REJECT_REPEAT','UNKNOWN_TASK_MODE']
-def ask(prompt,local,include_catalog=True,profile=None):
+class ModelCallError(RuntimeError):
+    def __init__(self, message, call):
+        super().__init__(message)
+        self.call = call
+
+
+def ask(prompt,local,include_catalog=True,profile=None,model=None,timeout=120):
     start=time.monotonic()
     profile=profile or os.environ.get('ROBOT_PLANNER_PROFILE','codex_default')
-    if profile not in ('codex_default','bounded_json_v1'):
+    if profile not in ('codex_default','bounded_json_v1','bounded_tools_v1'):
         raise ValueError('Unknown planner profile')
+    model=model or os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna')
     command=['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check',
-       '--sandbox','read-only','--model',os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna'),'--json']
+       '--sandbox','read-only','--model',model,'--json']
     if not include_catalog:command+=['-c','skills.include_instructions=false']
-    if profile=='bounded_json_v1':
-        command+=['-c','model_instructions_file='+json.dumps(str(ROOT/'protocol/bounded_planner_instructions.md'))]
-    p=subprocess.run([*command,'-'],input=prompt,text=True,cwd=local,
-       stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=120)
+    if profile in ('bounded_json_v1','bounded_tools_v1'):
+        instructions='bounded_tool_instructions.md' if profile=='bounded_tools_v1' else 'bounded_planner_instructions.md'
+        command+=['-c','model_instructions_file='+json.dumps(str(ROOT/'protocol'/instructions))]
+    timed_out=False
+    try:
+        p=subprocess.run([*command,'-'],input=prompt,text=True,cwd=local,
+           stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=timeout)
+        stdout=p.stdout
+    except subprocess.TimeoutExpired as exc:
+        timed_out=True
+        stdout=exc.stdout or ''
+        if isinstance(stdout,bytes):stdout=stdout.decode(errors='replace')
     events=[]
-    for line in p.stdout.splitlines():
+    for line in stdout.splitlines():
         try:events.append(json.loads(line))
         except ValueError:pass
     messages=[e['item']['text'] for e in events if e.get('type')=='item.completed' and e.get('item',{}).get('type')=='agent_message']
     usage=next((e['usage'] for e in reversed(events) if e.get('type')=='turn.completed'),None)
     tools=[e for e in events if e.get('type')=='item.completed' and e.get('item',{}).get('type') not in ('agent_message','reasoning')]
-    if p.returncode or not messages:raise RuntimeError('Model call failed; return code '+str(p.returncode))
-    answer=json.loads(messages[-1].strip().removeprefix('```json').removesuffix('```').strip())
-    return dict(prompt=prompt,answer=answer,usage=usage,wall_seconds=time.monotonic()-start,
-                tool_events=len(tools),include_catalog=include_catalog,planner_profile=profile)
+    call=dict(prompt=prompt,answer=None,usage=usage,wall_seconds=time.monotonic()-start,
+              tool_events=len(tools),include_catalog=include_catalog,planner_profile=profile,
+              requested_model=model,backend_identity_verified=False,timed_out=timed_out)
+    if timed_out or p.returncode or not messages:
+        raise ModelCallError('Model call timed out' if timed_out else 'Model call failed; return code '+str(p.returncode),call)
+    try:
+        call['answer']=json.loads(messages[-1].strip().removeprefix('```json').removesuffix('```').strip())
+    except ValueError as exc:
+        raise ModelCallError('Model returned invalid JSON',call) from exc
+    return call
 def main():
     skills=[json.loads(p.read_text()) for p in (ROOT/'memory/verified_skills').glob('*.json')]
     if not skills:raise RuntimeError('C/D require verified skills; run simulation first')

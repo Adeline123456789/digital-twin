@@ -126,9 +126,9 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
                  if policy=='diagnose_then_repair' else
                  'Return only JSON with offset_mm (finite number [-4,4]), hypotheses (0 to 3 short hypotheses), predicted_effect, reason. Offset is XY target X correction in socket coordinates; only this variable can change.')
     prompt='Do not use tools or read files. Choose ONE next experiment using the existing simulation adapter. No shell or hardware commands. '+action_spec+f' Budget: {max_executions} simulated executions. Task facts:'+json.dumps(facts)
-    if arm in 'BCD':prompt+='\n'+(ROOT/'protocol/robot_problem_solving.md').read_text()
-    if arm in 'CD' and robot_arms=='dual':prompt+='\nApplicable verified result-checking skills:'+json.dumps([m for m in retrieve('plug_not_seated') if m['validation_status']=='SIMULATION_VERIFIED'])
-    if seed_episode:
+    if arm in 'BCD' and policy!='bounded_tools_v1':prompt+='\n'+(ROOT/'protocol/robot_problem_solving.md').read_text()
+    if arm in 'CD' and robot_arms=='dual' and policy!='bounded_tools_v1':prompt+='\nApplicable verified result-checking skills:'+json.dumps([m for m in retrieve('plug_not_seated') if m['validation_status']=='SIMULATION_VERIFIED'])
+    if seed_episode and policy!='bounded_tools_v1':
         from agent_challenge import precontact_observation,frame_contract
         prompt+='\nPrecontact observation:'+json.dumps(precontact_observation(seed['experiment_id']))
         prompt+='\nCoordinate contract:'+json.dumps(frame_contract(seed['experiment_id'],shift,seed['initial_state'].get('holder_x_shift_mm',0)))
@@ -141,14 +141,21 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
             if not seed_compatible:raise ValueError('Diagnostic policy requires a compatible recorded failure')
             context=repair_diagnosis(seed);diagnoses.append(context)
             prompt+='\nMeasured diagnostic evidence and scoped prior failures:'+json.dumps(context)
-        call=plan_with_memory(prompt,local,policy,context,include_catalog=robot_arms!='right');calls.append(call)
+        if policy=='bounded_tools_v1':
+            if not seed_compatible:raise ValueError('Tool policy requires a compatible recorded Episode')
+            from bounded_tools import plan as tool_plan, validate_tool_plan
+            call=tool_plan(seed,local);context=call['applicability'];diagnoses.append(context)
+            r['initial_state']['llm_call_budget']=4*max_executions
+            r['initial_state']['diagnostic_tool_budget']=3*max_executions
+        else:call=plan_with_memory(prompt,local,policy,context,include_catalog=robot_arms!='right')
+        calls.append(call)
         for step in range(max_executions):
             if call['tool_events']:raise ValueError('Unexpected tool use in planner; trial not executed')
-            if policy=='diagnose_then_repair':
-                case=validate_diagnostic_plan(call['answer'],context)
+            if policy in ('diagnose_then_repair','bounded_tools_v1'):
+                case=(validate_tool_plan if policy=='bounded_tools_v1' else validate_diagnostic_plan)(call['answer'],context)
                 if case is None:r['stopped_unknown']=True;break
             else:case={'offset_mm':validate_plan(call['answer'])}
-            offset=case['offset_mm'];fingerprint=(shift,offset,case.get('grasp_tilt_deg',0.))
+            offset=case['offset_mm'];fingerprint=(shift,offset,case.get('grasp_tilt_deg',0.),case.get('grasp_height_m'),case.get('align_gap_m'))
             if arm=='D' and fingerprint in seen:
                 r['repeat_prevented']=True
                 break
@@ -156,6 +163,7 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
             trial=run_case(dict(case,name=f'{r["experiment_id"]} action {step+1}',shift_mm=shift),
                 inline=os.environ.get('PIPER_SIM_PROFILE','original')=='original',label=f'Agent {arm}',kind='evaluation',publish=publish)
             trials.append({'experiment_id':trial['experiment_id'],'offset_mm':offset,'grasp_tilt_deg':case.get('grasp_tilt_deg',0.),'task_success':trial['task_success'],
+                'grasp_height_m':case.get('grasp_height_m'),'align_gap_m':case.get('align_gap_m'),
                 'result':trial['result'],'observed_effects':trial['observed_effects'],'simulation_seconds':trial.get('simulation_seconds'),
                 'execution_time':trial['execution_time'],'collection_component_seconds':trial['collection_component_seconds'],
                 'recording_verified':trial['recording_verified'],'causal_diagnosis':trial.get('causal_diagnosis')})
@@ -164,17 +172,23 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
             seen.add(fingerprint)
             if step+1<max_executions and arm=='D':
                 feedback={'actual_execution':trials[-1],'relevant_prior_failures':failure_memory(trial['observed_effects']) if robot_arms=='dual' else [],'failed_offsets':sorted(x[1] for x in seen),'instruction':'Use actual evidence to update hypotheses. Do not repeat the same failed offset without new evidence.'}
-                if seed_episode:feedback['precontact_observation']=precontact_observation(trial['experiment_id'])
+                if seed_episode and policy!='bounded_tools_v1':feedback['precontact_observation']=precontact_observation(trial['experiment_id'])
                 context=context_for(trial,shift) if policy=='compiled_alignment_v1' and seed_compatible else {}
                 if policy=='diagnose_then_repair':context=repair_diagnosis(trial);diagnoses.append(context)
-                call=plan_with_memory(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback)+'\nTyped applicability evidence:'+json.dumps(context),local,policy,context,include_catalog=robot_arms!='right');calls.append(call)
+                if policy=='bounded_tools_v1':
+                    call=tool_plan(trial,local,guidance='Prior failed parameter tuples '+json.dumps(sorted(seen))+'. Do not repeat without new evidence.')
+                    context=call['applicability'];diagnoses.append(context)
+                else:call=plan_with_memory(prompt+'\nYour previous plan:'+json.dumps(call['answer'])+'\nFeedback:'+json.dumps(feedback)+'\nTyped applicability evidence:'+json.dumps(context),local,policy,context,include_catalog=robot_arms!='right')
+                calls.append(call)
             # A/B/C remain fixed-policy after planning; retries consume the same execution ceiling.
         r.update(result='success' if any(t['task_success'] for t in trials) else 'failure',
             task_success=any(t['task_success'] for t in trials),validation_status='SIMULATION_VERIFIED' if any(t['task_success'] for t in trials) else 'SIMULATION_FAILED',
             experiments=trials,actions=[c['answer'] for c in calls],planner_calls=calls,
             hypotheses=calls[-1]['answer'].get('hypotheses',[]),
-            tokens={k:sum(c['usage'].get(k,0) for c in calls if c['usage']) for k in ['input_tokens','output_tokens','cached_input_tokens']},
-            repeated_failures=sum(t['task_success'] is False and i>0 and (t['offset_mm'],t['grasp_tilt_deg'])==(trials[i-1]['offset_mm'],trials[i-1]['grasp_tilt_deg']) for i,t in enumerate(trials)),
+            tokens=({k:sum(c['usage'].get(k,0) for c in calls) for k in ['input_tokens','output_tokens','cached_input_tokens']}
+                    if all(c.get('usage') is not None for c in calls) else None),
+            repeated_failures=sum(t['task_success'] is False and i>0 and
+                all(t.get(k)==trials[i-1].get(k) for k in ('offset_mm','grasp_tilt_deg','grasp_height_m','align_gap_m')) for i,t in enumerate(trials)),
             new_skills=0,lessons_learned=['Actual model-selected actions were physically executed; no hardware or physics parameter changes.'],
             next_improvement='Evaluate more failure types; an unseen initial state is not an unseen task family')
         r['limitations']=['Small sample of one task family; no unseen task-family capability claim',
@@ -193,6 +207,6 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
     return r
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--robot-arms',choices=['dual','right'],default='dual');p.add_argument('--seed-episode');p.add_argument('--arm',choices=list('ABCD'),required=True);p.add_argument('--shift-mm',type=float,default=.5);p.add_argument('--local-only',action='store_true');p.add_argument('--planner-policy',choices=['llm','compiled_alignment_v1','diagnose_then_repair']);p.add_argument('--max-executions',type=int,choices=[1,2],default=2);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--robot-arms',choices=['dual','right'],default='dual');p.add_argument('--seed-episode');p.add_argument('--arm',choices=list('ABCD'),required=True);p.add_argument('--shift-mm',type=float,default=.5);p.add_argument('--local-only',action='store_true');p.add_argument('--planner-policy',choices=['llm','compiled_alignment_v1','diagnose_then_repair','bounded_tools_v1']);p.add_argument('--max-executions',type=int,choices=[1,2],default=2);a=p.parse_args()
     os.environ['PIPER_ACTIVE_ARMS']=a.robot_arms
     run(a.arm,a.shift_mm,not a.local_only,a.planner_policy,a.seed_episode,a.max_executions)

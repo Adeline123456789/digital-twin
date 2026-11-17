@@ -1,0 +1,38 @@
+{
+  "version": "bounded_tools_v1_candidate",
+  "parent_commit": "63e835f767e7b5d6cd72651955fcf1fa74e7d6b1",
+  "status": "OFFLINE_VERIFIED_NOT_PROMOTED",
+  "actual_default": "llm",
+  "default_changed": false,
+  "rollback": "Omit --planner-policy bounded_tools_v1; existing llm default is unchanged",
+  "evidence": [
+    "20261117T045930Z_66f8146a",
+    "20261117T050031Z_8b21b868"
+  ],
+  "new_model_calls": 0,
+  "new_simulation_episodes": 0,
+  "new_real_episodes": 0,
+  "tests_passed": 35,
+  "new_budget_authorized": false,
+  "previous_research_cycles_consumed": 12,
+  "limitations": [
+    "No actual teacher/student calls in this continuation",
+    "No held-out task success comparison",
+    "No actual scene transfer",
+    "No accepted physical calibration"
+  ],
+  "files": {
+    "scripts/agent_loop.py": "3d08c588b05981e37fe69165a42d6674d8df72f1e5f319e33df80c6df68991a6",
+    "scripts/collect_inline.py": "db35e08ff0b955990d85c3128baa394c2528a85ca7f205eacbe6b3b4afbe27e5",
+    "scripts/model_compare.py": "c582b271620f45d0bee7b305f73d212fc5fb9733db47c56a093476d3509f2a04",
+    "scripts/bounded_tools.py": "bb571f3d0d4a8f96ecaeb60df89f224f40f49e0cdbf8c7212227c8fd200c6053",
+    "scripts/contact_evidence.py": "176b553ff402471a33c9d5bda6a7d356b200cdb1c1992faf357ac2e77f30ab32",
+    "scripts/episode_evidence.py": "be6a09e9af571dfbc1747f25020562ab2a9f38a0ecdc22b61829f741e99f1e07",
+    "scripts/evidence_cache.py": "42f8f9192026e95b3f9488c8e7ee8cc83acf34744ca170cf2575bafef714ecc8",
+    "scripts/benchmark_evidence_tools.py": "9eb281806e102c7c34a8ee36ae24cb48c53273ae62c5b4970974f152942dc45b",
+    "protocol/bounded_tool_instructions.md": "7f0b07fea18a7e3add732f5476ec8f96c921e5f7452ba66e949e21fe5a3479e3",
+    "tests/test_evidence_tools.py": "58afdc2373714d6d2ed68005f10d700c7f9029940f57e46dc8bb32ca368aa7f2",
+    "memory/exploration_rules/ER017.json": "9c9f24d00afccce5df25af6141c43ef3518109e4c8031686248ebed99fea1165"
+  },
+  "mission_sha256": "b9cd40fdf12548035e5a03fa6693983fa9726426f5e6257b7f847f5dd836dc6f"
+}

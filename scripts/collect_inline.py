@@ -10,6 +10,7 @@ import numpy as np
 import yaml
 
 from learn import SIM
+from contact_evidence import integration_snapshot
 
 sys.path.insert(0, str(SIM / 'scripts'))
 import try_plug_pick_sim as trial_program
@@ -96,7 +97,8 @@ def collect(trial, stage_root, session, arguments):
             [('cam_external', 'overhead'), *[(f'cam_{side}_wrist', f'{side}_wrist') for side in sim.arms]]},
             privileged=dict(objects=obs.extras['objects'], task_metrics=obs.extras['task']['metrics'],
                             contacts=check['contacts'], cameras=obs.extras['cameras'],
-                            appearance=obs.extras.get('appearance'), qvel=sim.data.qvel.tolist()))
+                            appearance=obs.extras.get('appearance'), qvel=sim.data.qvel.tolist(),
+                            physics_state=integration_snapshot(sim.model, sim.data)))
         return check
 
     # shortcut: this existing script has no observer hook; bind only its two imports

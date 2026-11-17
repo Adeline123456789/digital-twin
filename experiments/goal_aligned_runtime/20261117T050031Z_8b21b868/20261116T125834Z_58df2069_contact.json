@@ -1,0 +1,1574 @@
+{
+  "value": {
+    "contacts": [
+      {
+        "pair": [
+          "gripper_right_46",
+          "plug/grip_contact/1/11/0"
+        ],
+        "distance_m": -5.462092545518447e-07,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 1,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          1.0,
+          1.0,
+          0.005,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          4.4629224860209495,
+          -0.08554271413552512,
+          -1.743696058713957,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "gripper_right_46",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.02500000037252903,
+              0.02800000086426735,
+              0.03200000151991844,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "gripper_right_46",
+                "distance_mm": 0.0001013940919808861
+              },
+              {
+                "geom": "gripper_right_43",
+                "distance_mm": 1.9997465435387616
+              }
+            ]
+          },
+          {
+            "name": "plug/grip_contact/1/11/0",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.7,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "plug/grip",
+                "distance_mm": 0.00027280774316682546
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 6.387560479719536
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "gripper_right_46",
+          "plug/grip_contact/1/12/1"
+        ],
+        "distance_m": -5.461417796116362e-07,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 4,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          1.0,
+          1.0,
+          0.005,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          4.462922136173613,
+          -0.08554272447987277,
+          -1.7436961911374984,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "gripper_right_46",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.02500000037252903,
+              0.02800000086426735,
+              0.03200000151991844,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "gripper_right_46",
+                "distance_mm": 0.00010138157402389428
+              },
+              {
+                "geom": "gripper_right_43",
+                "distance_mm": 1.9997465748679628
+              }
+            ]
+          },
+          {
+            "name": "plug/grip_contact/1/12/1",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.7,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "plug/grip",
+                "distance_mm": 0.00027284148497536397
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 6.387560467196732
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "gripper_right_36",
+          "plug/grip_contact/1/35/0"
+        ],
+        "distance_m": -7.15960357803908e-07,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 7,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          1.0,
+          1.0,
+          0.005,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          4.574631427105205,
+          0.05503370920924475,
+          1.7512479352622485,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "gripper_right_36",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.02500000037252903,
+              0.02800000086426735,
+              0.03200000151991844,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "gripper_right_36",
+                "distance_mm": 0.00013299465504945703
+              },
+              {
+                "geom": "gripper_right_33",
+                "distance_mm": 1.9996676695471263
+              }
+            ]
+          },
+          {
+            "name": "plug/grip_contact/1/35/0",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.7,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "plug/grip",
+                "distance_mm": 0.00035825401888963336
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 6.3824124243888924
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "gripper_right_36",
+          "plug/grip_contact/1/36/1"
+        ],
+        "distance_m": -7.158930469229544e-07,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 10,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          1.0,
+          1.0,
+          0.005,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          4.574631077439663,
+          0.055033720151557185,
+          1.7512480708230855,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "gripper_right_36",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.02500000037252903,
+              0.02800000086426735,
+              0.03200000151991844,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "gripper_right_36",
+                "distance_mm": 0.00013298216149137384
+              },
+              {
+                "geom": "gripper_right_33",
+                "distance_mm": 1.9996677007976609
+              }
+            ]
+          },
+          {
+            "name": "plug/grip_contact/1/36/1",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.7,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "plug/grip",
+                "distance_mm": 0.00035828767155756823
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 6.3824124119000665
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_9",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -1.0528459456144897e-08,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 31,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.0591400288219635,
+          0.0036197698465083353,
+          0.020970298897039184,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_9",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 1.2225435810456597e-06
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 5.264229725052074e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.1999947307178493
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_10",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -7.616751560945901e-09,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 34,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.06723499056723996,
+          0.004114461418647905,
+          0.021024540988071213,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_10",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 5.974504801079543e-07
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 3.8083757786624203e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.1999961865717958
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_11",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -7.627418723191614e-09,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 37,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.058425412920644154,
+          0.0038239505208379865,
+          0.022982291050672895,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_11",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 3.8153478730508855e-06
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 3.8137093730683984e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.19999618123820156
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_12",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -1.0764308307304473e-08,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 40,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.04989466358907641,
+          0.0032972531682717624,
+          0.022881425243352085,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_12",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 5.383476277229027e-06
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 5.382154153209041e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.19999461279342126
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_13",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -1.0406658184743648e-08,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 43,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.056993243475277976,
+          0.0035587393635173616,
+          0.021526821781209682,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_13",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 4.4185829842765335e-08
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 5.203329088318511e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.19999479161848627
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_14",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -1.1274939157988443e-08,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 46,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.05902859004501384,
+          0.0035575268954502037,
+          0.020518439888481836,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_14",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 5.637665403579467e-06
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 5.637469581554066e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.19999435747799274
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_16",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -7.616751607487386e-09,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 49,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.06723499055999774,
+          0.004114461527951561,
+          0.021024540983483206,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_16",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 5.249661716428351e-07
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 3.808375805835248e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.1999961865717685
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_18",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -1.6188976464937e-08,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 52,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.0400892206256086,
+          0.002549108942819351,
+          0.021603777759883182,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_18",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 8.094488192142955e-06
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 8.070937473496744e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.19999190045932652
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_19",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -2.7233218627331024e-09,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 55,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.07446000959612242,
+          0.004736076758381823,
+          0.02253832856779408,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_19",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 1.517788746793768e-06
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 1.3616609297354925e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.19999863328664474
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "task/board_collision_20",
+          "task/yellow_plug/face"
+        ],
+        "distance_m": -2.7502244257490793e-09,
+        "effective_includemargin_m": 0.0,
+        "solver_active": true,
+        "constraint_address": 58,
+        "exclude": 0,
+        "condim": 3,
+        "friction": [
+          0.6,
+          0.6,
+          0.003,
+          0.0001,
+          0.0001
+        ],
+        "solved_force_contact_frame_N_Nm": [
+          0.07800917847907628,
+          0.004850667545081081,
+          0.021729673237034553,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geoms": [
+          {
+            "name": "task/board_collision_20",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "",
+                "distance_mm": 4.5077046345975746e-07
+              }
+            ]
+          },
+          {
+            "name": "task/yellow_plug/face",
+            "type": 7,
+            "margin_m": 0.0,
+            "gap_m": 0.0,
+            "friction": [
+              0.6,
+              0.003,
+              0.0001
+            ],
+            "group": 0,
+            "rgba": [
+              0.8399999737739563,
+              0.8299999833106995,
+              0.7699999809265137,
+              1.0
+            ],
+            "contype": 1,
+            "conaffinity": 1,
+            "mesh_collision": "convex hull",
+            "nearest_visible_mesh_surface": [
+              {
+                "geom": "task/yellow_plug/face",
+                "distance_mm": 1.3751122151497899e-06
+              },
+              {
+                "geom": "task/yellow_plug/rim",
+                "distance_mm": 0.19999861983535952
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "actuators": [
+      {
+        "name": "right/joint1",
+        "transmission_type": 0,
+        "ctrl": -0.18606742441459323,
+        "force": 0.0007907933381687826,
+        "force_limited": true,
+        "forcerange": [
+          -100.0,
+          100.0
+        ],
+        "ctrl_limited": true,
+        "ctrlrange": [
+          -2.618,
+          2.618
+        ],
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "right/joint2",
+        "transmission_type": 0,
+        "ctrl": 1.7325154052953973,
+        "force": 0.13314432724882863,
+        "force_limited": true,
+        "forcerange": [
+          -100.0,
+          100.0
+        ],
+        "ctrl_limited": true,
+        "ctrlrange": [
+          0.0,
+          3.14
+        ],
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "right/joint3",
+        "transmission_type": 0,
+        "ctrl": -1.0313094105605871,
+        "force": 0.012325425692495173,
+        "force_limited": true,
+        "forcerange": [
+          -100.0,
+          100.0
+        ],
+        "ctrl_limited": true,
+        "ctrlrange": [
+          -2.967,
+          0.0
+        ],
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "right/joint4",
+        "transmission_type": 0,
+        "ctrl": 4.264586861367056e-06,
+        "force": 0.0023155028192052996,
+        "force_limited": true,
+        "forcerange": [
+          -100.0,
+          100.0
+        ],
+        "ctrl_limited": true,
+        "ctrlrange": [
+          -1.745,
+          1.745
+        ],
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "right/joint5",
+        "transmission_type": 0,
+        "ctrl": 0.9567927840109375,
+        "force": -0.07147457987531425,
+        "force_limited": true,
+        "forcerange": [
+          -100.0,
+          100.0
+        ],
+        "ctrl_limited": true,
+        "ctrlrange": [
+          -1.22,
+          1.22
+        ],
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "right/joint6",
+        "transmission_type": 0,
+        "ctrl": -1.8660992140404877,
+        "force": 5.670439134064509e-05,
+        "force_limited": true,
+        "forcerange": [
+          -100.0,
+          100.0
+        ],
+        "ctrl_limited": true,
+        "ctrlrange": [
+          -2.0944,
+          2.0944
+        ],
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "right/gripper",
+        "transmission_type": 3,
+        "ctrl": 0.026999999999999996,
+        "force": -10.0,
+        "force_limited": true,
+        "forcerange": [
+          -10.0,
+          10.0
+        ],
+        "ctrl_limited": true,
+        "ctrlrange": [
+          0.0,
+          0.095
+        ],
+        "gear": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "equality_constraints": [
+      {
+        "name": "right/gripper_coupling",
+        "type": 2,
+        "active": true,
+        "object_ids": [
+          7,
+          6
+        ]
+      }
+    ],
+    "force_state": {
+      "xfrc_applied_nonzero": false,
+      "qfrc_applied_nonzero": false
+    },
+    "contact_override": {
+      "enabled": false,
+      "margin_m": 0.0,
+      "friction": [
+        1.0,
+        1.0,
+        0.005,
+        0.0001,
+        0.0001
+      ]
+    },
+    "mesh_distance_limit": "Contact-point distance to visible mesh; not silhouette gap or full surface-to-surface distance",
+    "units_limit": "Prismatic actuator N is not real gripper motor N.m; no identified conversion",
+    "episode_id": "20261116T125834Z_58df2069",
+    "frame": 600,
+    "phase": "grasp",
+    "time_s": 20.03333333332025,
+    "state_source": "RECONSTRUCTED_PARTIAL_STATE",
+    "force_source": "mj_forward solver on restored state, not measured real force",
+    "recorded_contact_count": 20,
+    "historical_external_forces_status": "UNKNOWN",
+    "historical_direct_state_edits": "UNKNOWN; a snapshot cannot exclude earlier object teleports or callbacks",
+    "geometry_provenance": "Archived XML and current referenced mesh hashes; original external mesh identity was not recorded",
+    "reconstruction_limit": "Historical width-only samples assume equal finger displacement; full integration state avoids this assumption",
+    "root_cause": "UNKNOWN",
+    "privileged_information_used": true,
+    "simulation_steps": 0
+  },
+  "cache": {
+    "key": "b4c13388e12324fa04493565e0561f12a9a47d404662155e31d60105d4ed477d",
+    "hit": false,
+    "bytes_hashed": 895787,
+    "dependency_sha256": {
+      "analyzer": "176b553ff402471a33c9d5bda6a7d356b200cdb1c1992faf357ac2e77f30ab32",
+      "initial": "30e1ecca7721a74aa8ce83cf0170da8ec48901fe69b027627598f873fd6be739",
+      "mesh:cad_left_103": "5059bde5393465a58e99a0275d706b34571f09d119d0dbdd647ca3b470ba2275",
+      "mesh:cad_left_104": "f897616868396ca005d6f201aaeac4c9703a9ea4b60a806f0a4419b7c9aa1cdc",
+      "mesh:cad_left_105": "a4d841ce2e9558db2da2c905daa2e88824d71f352d2c155aca17b2a6932d1f47",
+      "mesh:cad_left_106": "393c8ccf22f3daca06470188e369d13fafe11b75f9171c3945c9dda647b8b350",
+      "mesh:cad_left_108": "e00ff150916f601b45556d8d7e1bffc1dcaa316b2e5860e1a03d0ea86d4ec846",
+      "mesh:cad_left_109": "76811141a89cef28032d1da50a6f60f47931f56a777de3d5e6990796154dc012",
+      "mesh:cad_left_110": "05d480d88f75aa117c0502a36e09afb5ef1ae3f8f6a59018271184070b7d2328",
+      "mesh:cad_left_111": "3600a988e50fa1296bc2980928408dea1da3bc2b7e79188cdd2e51240b55566c",
+      "mesh:cad_left_112": "590310235c270fd2fea856a27f42c4c07bca5f6803b6799ce804c8bccf68b26a",
+      "mesh:cad_left_113": "49a2094b8ab7da312ebcf6bf2a409fb41d2a2461e089d19313f2ef12a33a3026",
+      "mesh:cad_right_47": "5059bde5393465a58e99a0275d706b34571f09d119d0dbdd647ca3b470ba2275",
+      "mesh:cad_right_48": "f897616868396ca005d6f201aaeac4c9703a9ea4b60a806f0a4419b7c9aa1cdc",
+      "mesh:cad_right_49": "a4d841ce2e9558db2da2c905daa2e88824d71f352d2c155aca17b2a6932d1f47",
+      "mesh:cad_right_50": "393c8ccf22f3daca06470188e369d13fafe11b75f9171c3945c9dda647b8b350",
+      "mesh:cad_right_52": "e00ff150916f601b45556d8d7e1bffc1dcaa316b2e5860e1a03d0ea86d4ec846",
+      "mesh:cad_right_53": "76811141a89cef28032d1da50a6f60f47931f56a777de3d5e6990796154dc012",
+      "mesh:cad_right_54": "05d480d88f75aa117c0502a36e09afb5ef1ae3f8f6a59018271184070b7d2328",
+      "mesh:cad_right_55": "3600a988e50fa1296bc2980928408dea1da3bc2b7e79188cdd2e51240b55566c",
+      "mesh:cad_right_56": "590310235c270fd2fea856a27f42c4c07bca5f6803b6799ce804c8bccf68b26a",
+      "mesh:cad_right_57": "49a2094b8ab7da312ebcf6bf2a409fb41d2a2461e089d19313f2ef12a33a3026",
+      "mesh:cad_static_0": "1d85cc5655cd0f9058a9a447b1e51f849bcbbf3cea951d9bf9aa6c0cab690732",
+      "mesh:cad_static_1": "aebede8198eb7dcca376912b21703f120cc53788f48e13efb782b2e464537dae",
+      "mesh:cad_static_114": "2528bbfbbaa31d85560f102d15553869a6789c192b003049fef5024e180070ef",
+      "mesh:cad_static_115": "86634d58dfb245d218b5ac60a3fc2e3c197aaa3da8b54494e725d8d140950fb6",
+      "mesh:cad_static_116": "94a2c0e43b4ec072de3d53e8e8934c27418a49cc678e30c192541de2f9454ff9",
+      "mesh:cad_static_117": "b026b3e7adf9bb94bbadd036c681f311bbb26bc619ab8f5190c8f4dcabf874c4",
+      "mesh:cad_static_118": "6796c7833307fa310949b33a1e932e0bf3b4df1225b1b265bd976bc6eed9fbd4",
+      "mesh:cad_static_119": "51a07a31669bc5f110c72baa5563af632f071d7bcae4030b315cf495aa74f44b",
+      "mesh:cad_static_120": "1a24cf101bbe0399feb753623ff4d69e6ca5ca018351f33cd9b8b4bc6a2b0688",
+      "mesh:cad_static_121": "69ba21276bf0e035a7bb34f1a4c28933a1c3587ef2f812018c57f90bc7831ccb",
+      "mesh:cad_static_123": "36cf0f86243aeade4151eff442b7698a8dda605d282e23ddddc42080deea4714",
+      "mesh:cad_static_124": "4cb87c0a98400db07a4f3c7188562c0fe8c0ae3f1285de01a3edac0ba4e94b67",
+      "mesh:cad_static_126": "dc00ccbea4543f2091f52c0c7242608a7403cfc508964ceaec41fcda75c8f4ea",
+      "mesh:cad_static_127": "fbed4db315cc6476c90cea0cfa6c764d0c20a2900762f234688dda2bc1b998f9",
+      "mesh:cad_static_128": "d39bac62265df218fd44606772a98d86b5ac36f5611a640a2273ad9051d656b4",
+      "mesh:cad_static_129": "ac1f07e4abb3619d4a5c7512c46c1433a44e3c92b357bb6a3150e2b6087b268a",
+      "mesh:cad_static_130": "b428f9db2e0776aa2475eea4f28eaebd2367d0723e62e8723ff288f096562e0a",
+      "mesh:cad_static_131": "05bf9cdf23372844f0780c3909d224f5262377bc80f17fd3e417d65742515703",
+      "mesh:cad_static_132": "a8ea8bc97e6be71fd98fd3686153ca4e82d9bf88c8c56c5e3198a4415dcebf9e",
+      "mesh:cad_static_133": "2692b9a01257a46a175c216c96c36eb86eb7fb02434ddbd1660607f80a882ed2",
+      "mesh:cad_static_134": "1a964c2a59ad744c9e60084a0bfbe534a3be2f9bac6a26480d1a0cca2ab0570d",
+      "mesh:cad_static_135": "ea81475f3d665a7318f9e53841f24a17050e58d761945f8c6b2afb15a080bf50",
+      "mesh:cad_static_136": "fd61d7ad9049fc77af9acb68238ed540d927b3c2e703a9056b5addf065c38e41",
+      "mesh:cad_static_137": "cbfdde5993f4f6fa4094acf51b9eb6983c8e143a3443251b8381d09035aebfbb",
+      "mesh:cad_static_138": "68b263e0bd60db256b219e0696187fc646ea8aa45eabda0f712edc0c294ee3d2",
+      "mesh:cad_static_139": "a7d2f943415ee11eea4b63fb6860e90171f0143693213d0c386c4f19c3db94d8",
+      "mesh:cad_static_140": "9cfc87c7aa95d37379f6efed59780e5bfe438520f05d874ffdfcd51bff7242a3",
+      "mesh:cad_static_141": "53bd33fde24d22b3e8cfc49bd956613653e50377e0a31d54be322344cd45c89a",
+      "mesh:cad_static_142": "1574974790e8ab49c21098f3ba4eadc6108f961920ee306129485e79ca64a846",
+      "mesh:cad_static_143": "999863b5dabbe649bc2d0a8094d1f19ac5b8f928b8acb77a6fd937be8c5fa592",
+      "mesh:cad_static_144": "c0caf27cd8a9350f618a364e0a85108343355dcb5b01dd458823bc05e1cd9422",
+      "mesh:cad_static_145": "2e757b70cd7537aa56c42d08fc8c0cc682d158772b8b7288aea749a904de4b94",
+      "mesh:cad_static_146": "cae38e1bc4ed8e5795df6591064f32ecee28af0cb4bdf5874214c54276e7a8f6",
+      "mesh:cad_static_147": "0d9f9e0136dc53592c02ce36b1cc0f3d889797bad4616262e8decb723869765a",
+      "mesh:cad_static_148": "2269604ecd86aaab5ecf4976386867bc49424ee075982452814d473b7d6ebd84",
+      "mesh:cad_static_149": "6510b7ad4fc0436233da7ee0b86d1bd6a42ac682ca3f322e694c1b90ca56baf9",
+      "mesh:cad_static_150": "b08c08bcdfc402ad24bffe90b1f67da7995ed8cbcdeab8333f9a817465ebc1ea",
+      "mesh:cad_static_151": "cc1faa0d7026af58ac4dc9c40abd14c77357a4e641c5fd76ef4c243d0beb8fb9",
+      "mesh:cad_static_155": "9bcb03110e03af2dfc8beeebcdc14c12df88094e887220c00dc1f058e8cdd648",
+      "mesh:cad_static_156": "c181e609b950d56ccbcb46b3bad477cb167e1e17636d66ddf2ce92c4a9056b76",
+      "mesh:cad_static_157": "18c07cbdda87aadebdab6834b1e8bc9203adeb6dfdcb4bd218ebdaaded9460c5",
+      "mesh:cad_static_158": "94ce2cf6745140f5b174aa449b80a52eb5042168a7af86281fa39589b78b9f7c",
+      "mesh:cad_static_159": "d705e297203efdaff144227f69afa6df389d409201b171bd79d30e4f71e62b15",
+      "mesh:cad_static_160": "6150beeba45cc2405c240e33cb06e8b9a78cad4851ea83be5c1068eb06beb789",
+      "mesh:cad_static_161": "b99d2c599e59c300a732c951cb6a29d0c9b3eb9cd7cff1e439275bd59027f9b8",
+      "mesh:cad_static_162": "04394e2bf7c86a86fc878cb8b28a3f42e489ac52217d088a75e1566931374444",
+      "mesh:cad_static_163": "6a5c9ad5ca0ed82b0678a6560b5b397b2b1eb94eee3d9de9bde8e30fee298771",
+      "mesh:cad_static_164": "920b2a15cf0f85ff4a9504c3b58c3c3a38830e9016385d8a45f9ff38d6c3aa2d",
+      "mesh:cad_static_165": "26a4cfac7ed2538be9b246651c4fca375935105cde87549e40cdf50d905cfc96",
+      "mesh:cad_static_166": "cbf2247a290ec46b3755650914c520e6ec1d948cb7b5a60b4c15abed00beb3bd",
+      "mesh:cad_static_167": "84a9222d93bcecee1fb2c73206c2d58494e83bb2acbd1495e1a7f6be6a3a7316",
+      "mesh:gripper_left_100": "12393a42c70a632388edc09d75fb38c6f0f46c780729285fde15cbb1ac9fe529",
+      "mesh:gripper_left_101": "f89f342b1183027b9df425ca7c20d4b1ed1a161691d56d849d73717199f7f8d4",
+      "mesh:gripper_left_102": "6dbc8a5d983b0504cb486e05e9f3e6e7f4e59ea2db21af1fa0849ed00022bea8",
+      "mesh:gripper_left_89": "4acdb58597fad065c8243ec6b7fd3bb2b29ae480e55ec1d26ad374378636a32e",
+      "mesh:gripper_left_90": "e2d8646c12994a11f967c9c89357ff65713ae3f827702da3161aa43b31080471",
+      "mesh:gripper_left_91": "c3ab7c0288784b17616b4a6d463295ca13bc9bf388757f673f298af14f97ed46",
+      "mesh:gripper_left_92": "a883a4d1fa2ce6d0885a4ef4ec61597f314bec3b11794a57d498a75d8eb6cf49",
+      "mesh:gripper_left_93": "51c22ac78301d46ec62a8cad6fbe538188d82b5051b445b93c95e73428235b13",
+      "mesh:gripper_left_94": "908183bfc6ac3e5cbe018c59c3ea13b988b14bdd39e8ceb0f0ab4835b90bec33",
+      "mesh:gripper_left_95": "783a9dba900627c55868777c45ad75b4db502de2faa7d2d6426684c517b5f440",
+      "mesh:gripper_left_96": "26989bf94ea96a75c3616c42e7645ca741bd6188399a43e2e4addee268257ba3",
+      "mesh:gripper_left_97": "2209c59ae53967422ba02cc721097a5bad2d3176683f320c0a540619f340b579",
+      "mesh:gripper_left_98": "49e886b6bed9c0ffdf90438adea468b0694f48a88181dc62d9c45f72a9a8162e",
+      "mesh:gripper_left_99": "9783a90222f404810eba22a5520152fedcf21be589f4f29ce6b9c0f2c3a0ab3d",
+      "mesh:gripper_right_33": "4acdb58597fad065c8243ec6b7fd3bb2b29ae480e55ec1d26ad374378636a32e",
+      "mesh:gripper_right_34": "e2d8646c12994a11f967c9c89357ff65713ae3f827702da3161aa43b31080471",
+      "mesh:gripper_right_35": "c3ab7c0288784b17616b4a6d463295ca13bc9bf388757f673f298af14f97ed46",
+      "mesh:gripper_right_36": "a883a4d1fa2ce6d0885a4ef4ec61597f314bec3b11794a57d498a75d8eb6cf49",
+      "mesh:gripper_right_37": "51c22ac78301d46ec62a8cad6fbe538188d82b5051b445b93c95e73428235b13",
+      "mesh:gripper_right_38": "908183bfc6ac3e5cbe018c59c3ea13b988b14bdd39e8ceb0f0ab4835b90bec33",
+      "mesh:gripper_right_39": "783a9dba900627c55868777c45ad75b4db502de2faa7d2d6426684c517b5f440",
+      "mesh:gripper_right_40": "26989bf94ea96a75c3616c42e7645ca741bd6188399a43e2e4addee268257ba3",
+      "mesh:gripper_right_41": "2209c59ae53967422ba02cc721097a5bad2d3176683f320c0a540619f340b579",
+      "mesh:gripper_right_42": "49e886b6bed9c0ffdf90438adea468b0694f48a88181dc62d9c45f72a9a8162e",
+      "mesh:gripper_right_43": "9783a90222f404810eba22a5520152fedcf21be589f4f29ce6b9c0f2c3a0ab3d",
+      "mesh:gripper_right_44": "12393a42c70a632388edc09d75fb38c6f0f46c780729285fde15cbb1ac9fe529",
+      "mesh:gripper_right_45": "f89f342b1183027b9df425ca7c20d4b1ed1a161691d56d849d73717199f7f8d4",
+      "mesh:gripper_right_46": "6dbc8a5d983b0504cb486e05e9f3e6e7f4e59ea2db21af1fa0849ed00022bea8",
+      "mesh:task/board_visual": "ca27293bd6c192086ae5ec7e79203a84ba43b5c2f240e052974646f094bdeda2",
+      "mesh:urdf_base_link": "fd4a3d6d0266205fe3f725f048645be66592c23564db22e08b0807d5569b2c64",
+      "mesh:urdf_link1": "9ee6e1d67c0241f42a0dbaf5c676d19230375ed078ee1943bb8c4c37ab303d14",
+      "mesh:urdf_link2": "0d37675b699b643f2e15348de99aed535fac10dc5f09a79b8e4b0acfaf4e0378",
+      "mesh:urdf_link3": "e8ae51f17c0c7f6d67b753922e2cc269f5e8372a65734f859231639a64fe8fad",
+      "mesh:urdf_link4": "efa33022976218f246f736a6133494b5d0e5486e8b50b52900c42f285ae85558",
+      "mesh:urdf_link5": "a1c69d1c7f6f8c60e2c82331c0f444725200ed4053d3e5ec23aa82cb5db5b29f",
+      "mesh:urdf_link6": "88374973bc3bd9e7389b5853cd6e555af9731c30b658b1ee6f85be34a126cb92",
+      "model": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+      "privileged": "270e85ab24f022ec9780b48ca437bdb2e9520d8793f2cbbf5ecb04449fe0822e",
+      "reader": "be6a09e9af571dfbc1747f25020562ab2a9f38a0ecdc22b61829f741e99f1e07",
+      "report": "51bbc356cf897df87b94240ee0e8722d9fbc96423f1b7fbec9bc837c1a85786d",
+      "trajectory": "c55dd6fc79672c36d8934b4a680918d0efce4645134411c4b9b31a5becaf35ee"
+    },
+    "wall_seconds": 0.8234242330072448
+  }
+}

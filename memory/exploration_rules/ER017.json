@@ -1,0 +1,29 @@
+{
+  "id": "ER017",
+  "content": "Inspect versioned phase evidence first, then an explicit contact frame. Cache repeated analysis by content and analyzer dependencies. Separate recorded contact pairs, active constraints and reconstructed solver forces.",
+  "applicability": "Existing right-arm Piper simulation archives with synchronized trajectory/privileged rows; real RGB-only data does not supply these privileged contact measurements.",
+  "source_episodes": [
+    "20261116T114608Z_4d3972ba",
+    "20261116T125354Z_b5546f36",
+    "20261116T125834Z_58df2069"
+  ],
+  "source_experiments": [
+    "20261117T045930Z_66f8146a",
+    "20261117T050031Z_8b21b868"
+  ],
+  "validation_status": "OFFLINE_ANALYSIS_VERIFIED_NOT_AGENT_POLICY_VERIFIED",
+  "success_count": 3,
+  "failure_count": 1,
+  "count_unit": "archived analysis equality checks; first cache serialization check failed, then three Episodes passed; not physical task counts",
+  "limitations": [
+    "Missing historical integration state and original external mesh identity",
+    "No measured real force/torque mapping",
+    "No proven collection-throughput benefit or model generalization",
+    "Cache content must be JSON-stable; tuples changed to arrays on first reload"
+  ],
+  "version": 1,
+  "signatures": [
+    "contact_evidence_missing",
+    "repeated_evidence_analysis"
+  ]
+}
