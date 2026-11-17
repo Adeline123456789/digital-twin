@@ -94,12 +94,13 @@ class RecipientStudyTests(unittest.TestCase):
                 order.append('teacher');return {'tool_events':0,'answer':{'guidance':'revised','change_reason':'feedback','direct_solution':False}}
         def student(seed,guidance,label,*args):
             order.append(label)
+            self.assertEqual(args[-1],1)
             return {'label':label,'planner':{'answer':{'stop':True},'status':'STOPPED_UNKNOWN','tool_trace':[]},'physical_result':None}
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);(root/'protocol').mkdir();(root/'protocol/robot_problem_solving.md').write_text('generic')
             out=root/'report';out.mkdir()
             source=root/'source.json';source.write_text(json.dumps({'active_arms':['right'],'initial_state':{'target_index':3},'actions':[{'offset_mm':[0,0]}],'observed_effects':[{}]}))
-            design=root/'design.json';design.write_text(json.dumps({'hardware_executions':0,'source_episode':'source','task_sha256':'fixed','limits':{},'student':'student','teacher':'teacher','development':{'parameters':{},'layout_shift_mm':0},'heldout':{'parameters':{},'layout_shift_mm':1}}))
+            design=root/'design.json';design.write_text(json.dumps({'hardware_executions':0,'recipient_executions':1,'source_episode':'source','task_sha256':'fixed','limits':{},'student':'student','teacher':'teacher','development':{'parameters':{},'layout_shift_mm':0},'heldout':{'parameters':{},'layout_shift_mm':1}}))
             with patch.object(study,'ROOT',root),patch.object(study,'digest',return_value='fixed'),patch('episode_evidence.locate',return_value=(source,root,root)),patch('episode_format.source_for'),patch.object(study,'record',return_value=(out,{'experiment_id':'test'})),patch.object(study,'finish'),patch.object(study,'BatchBudget',Budget),patch.object(study,'execute_student',side_effect=student),patch.dict(study.os.environ,{}):
                 result=study.run(design)
             self.assertEqual(result['result'],'success')

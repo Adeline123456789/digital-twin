@@ -75,9 +75,9 @@ def teacher_feedback(run):
         scope='Student decisions and actual feedback from development only; not a verified causal diagnosis')
 
 
-def execute_student(seed,guidance,label,layout,budget,local,student):
+def execute_student(seed,guidance,label,layout,budget,local,student,max_executions=2):
     exploration=explore(seed,local,lambda case:budget.simulate(dict(case,name=label,shift_mm=layout),label),
-        model=student,max_calls=3,max_tools=2,max_executions=2,seconds=600,
+        model=student,max_calls=3,max_tools=2,max_executions=max_executions,seconds=600,
         guidance=guidance,ask_fn=budget.model,cache_directory=local/label/'cache',shift_mm=layout)
     call=exploration['planners'][-1] if exploration['planners'] else dict(
         answer={'stop':True},status=exploration['status'],tool_trace=[])
@@ -104,6 +104,8 @@ def comparison_status(runs):
 
 def run(design_path,resume=None):
     design=json.loads(design_path.read_text())
+    execution_limit=design.get('recipient_executions',2)
+    if execution_limit not in (1,2):raise ValueError('Recipient execution limit must be one or two')
     if design['hardware_executions']!=0:raise ValueError('This runner never supports hardware')
     from episode_evidence import locate
     from episode_format import source_for
@@ -135,7 +137,7 @@ def run(design_path,resume=None):
     frozen_memory={str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'memory').rglob('*.json')}
     r.update(initial_state=dict(design_sha256=digest(design_path),tool_sha256=frozen,protocol_sha256=initial_hash,
         source_episode=design['source_episode'],teacher_visible_split='development only',
-        recipient_limits=dict(model_calls=3,diagnostic_tools=2,executions=2,seconds=600),
+        recipient_limits=dict(model_calls=3,diagnostic_tools=2,executions=execution_limit,seconds=600),
         execution_loop='bounded_tools.explore shared with agent_loop bounded_tools_v1; aggregate per-recipient budget',
         heldout_scope='same task family, new layout; not cross-task-family generalization',
         cross_case_memory_updates=False,memory_snapshot_sha256=frozen_memory),model=design['student'],privileged_information_used=True,
@@ -151,7 +153,7 @@ def run(design_path,resume=None):
             before=json.loads((resume/'runs.json').read_text())[0]
         else:
             seed=budget.simulate(dict(base,**dev['parameters'],name='development_seed',shift_mm=dev['layout_shift_mm']),'development seed')
-            before=execute_student(seed,guidance,'recipient before teacher',dev['layout_shift_mm'],budget,local,design['student'])
+            before=execute_student(seed,guidance,'recipient before teacher',dev['layout_shift_mm'],budget,local,design['student'],execution_limit)
         runs.append(before);save(out/'runs.json',runs)
         prompt=('Revise general tool-use guidance from this recipient execution. Do not solve held-out cases or invent measurements. '
             'Return JSON with guidance (max6000 characters), change_reason, and direct_solution (boolean; true if supplying instance-specific repair values). '
@@ -167,7 +169,7 @@ def run(design_path,resume=None):
         teacher['guidance_exceeded_length_target']=len(proposal['guidance'])>6000
         save(out/'teacher_revision.json',teacher)
         revised=proposal['guidance']
-        runs.append(execute_student(seed,revised,'recipient after feedback',dev['layout_shift_mm'],budget,local,design['student']))
+        runs.append(execute_student(seed,revised,'recipient after feedback',dev['layout_shift_mm'],budget,local,design['student'],execution_limit))
         save(out/'runs.json',runs)
         # No teacher call occurs below this line. Tools and guidance are frozen before held-out construction.
         r['heldout_guidance_sha256']=__import__('hashlib').sha256(revised.encode()).hexdigest()
@@ -177,7 +179,7 @@ def run(design_path,resume=None):
             if any(digest(ROOT/p)!=h for p,h in frozen.items()):raise RuntimeError('Frozen tool changed during comparison')
             if {str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'memory').rglob('*.json')}!=frozen_memory:
                 raise RuntimeError('Frozen memory changed during comparison')
-            runs.append(execute_student(held_seed,text,'heldout '+name,held['layout_shift_mm'],budget,local,design['student']))
+            runs.append(execute_student(held_seed,text,'heldout '+name,held['layout_shift_mm'],budget,local,design['student'],execution_limit))
             save(out/'runs.json',runs)
         r.update(comparison_status(runs))
         r['lessons_learned']=['Evaluate paired physical outcomes and full teacher/development costs before retaining guidance.']
