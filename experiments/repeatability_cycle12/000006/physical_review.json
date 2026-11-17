@@ -1,0 +1,40 @@
+{
+  "physical_task_success": false,
+  "plug_retained_in_target_after_release_and_fold": false,
+  "reviewer": "Operator-labelled failure, native guard and Agent RGB review",
+  "observed_at": "2026-11-17T01:01:00.561790+00:00",
+  "observed_facts": [
+    "Insertion stopped at wrist frame3767; yellow housing top307 to326 pixels triggered unchanged15-pixel slip guard.",
+    "The controller retreated without releasing and completed fold; native physical_task_success is false.",
+    "Final external RGB shows plug still in fingers and target outlet empty.",
+    "Operator requested saving this sixth failed trajectory."
+  ],
+  "phase_end_motor_aperture_mm": {
+    "prepare_gripper": 58.1,
+    "approach": 59.4,
+    "descend": 59.4,
+    "grasp": 43.0,
+    "lift": 41.4,
+    "transport": 41.0,
+    "align": 40.6,
+    "insert": 40.6,
+    "abort_retreat": 40.6,
+    "fold": 40.6,
+    "final_hold": 40.6
+  },
+  "scope": "Failed physical insertion. Image displacement and motor aperture are observations; exact physical root cause UNKNOWN. No six-axis force sensor or real depth.",
+  "evidence": [
+    {
+      "relative_capture_path": "external/last.png",
+      "sha256": "319367bc57f0f60b4fb4ae6ab040e5aad83c969fde392ed9c31dfda1fefbd2e3"
+    },
+    {
+      "relative_capture_path": "right_wrist/3767.jpg",
+      "sha256": "970b625c86d9cc378b4b08aad44f0853e98de1bf911a93214e74b82cc6c1f3b5"
+    },
+    {
+      "relative_capture_path": "execution_report.json",
+      "sha256": "0697eb1b9d32e4d5ec4dbfdda4266f2a1600ea1b64b7005e2617ecc5d7720f25"
+    }
+  ]
+}

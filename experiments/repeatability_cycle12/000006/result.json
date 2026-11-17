@@ -1,0 +1,141 @@
+{
+  "experiment_id": "20261116_real_repeatability_000006",
+  "timestamp": "2026-11-17T01:01:17.063503+00:00",
+  "batch_index": 6,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "760618934b50a9e762d3d62d0fe98315d0812ae5db83b2806449e4474aa32710",
+    "archive_program_sha256": "e60147075da53f0d696fe6ce5ab1e2434ed36a71b1da846b7acb607f6020cdab"
+  },
+  "initial_state_stratum": "cold_start",
+  "task_gripper_effort_nm": 1.0,
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 1686,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Operator-labelled failure, native guard and Agent RGB review",
+    "observed_at": "2026-11-17T01:01:00.561790+00:00",
+    "observed_facts": [
+      "Insertion stopped at wrist frame3767; yellow housing top307 to326 pixels triggered unchanged15-pixel slip guard.",
+      "The controller retreated without releasing and completed fold; native physical_task_success is false.",
+      "Final external RGB shows plug still in fingers and target outlet empty.",
+      "Operator requested saving this sixth failed trajectory."
+    ],
+    "phase_end_motor_aperture_mm": {
+      "prepare_gripper": 58.1,
+      "approach": 59.4,
+      "descend": 59.4,
+      "grasp": 43.0,
+      "lift": 41.4,
+      "transport": 41.0,
+      "align": 40.6,
+      "insert": 40.6,
+      "abort_retreat": 40.6,
+      "fold": 40.6,
+      "final_hold": 40.6
+    },
+    "scope": "Failed physical insertion. Image displacement and motor aperture are observations; exact physical root cause UNKNOWN. No six-axis force sensor or real depth.",
+    "evidence": [
+      {
+        "relative_capture_path": "external/last.png",
+        "sha256": "319367bc57f0f60b4fb4ae6ab040e5aad83c969fde392ed9c31dfda1fefbd2e3"
+      },
+      {
+        "relative_capture_path": "right_wrist/3767.jpg",
+        "sha256": "970b625c86d9cc378b4b08aad44f0853e98de1bf911a93214e74b82cc6c1f3b5"
+      },
+      {
+        "relative_capture_path": "execution_report.json",
+        "sha256": "0697eb1b9d32e4d5ec4dbfdda4266f2a1600ea1b64b7005e2617ecc5d7720f25"
+      }
+    ]
+  },
+  "reference_commands": 3384,
+  "entire_reference_sent": false,
+  "reference_execution_seconds": 35.245133672025986,
+  "nominal_reference_seconds": 33.83,
+  "execution_time": 56.449428380001336,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One manual plug reset before this attempt; final supported shutdown counted separately",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/videos/cam_external_rgb.mp4",
+      "sha256": "ab5ffedf969ec2870fb3d66f62759151578ca7fc0bca119d76805bffc1068550"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "274d64a584f8906fd6648f42b5fca86c89f72734ef6c604f2b98eb541e5eefe8"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/proprio_stats/proprio_stats.h5",
+      "sha256": "19b38c935c3af44edf8ba9051d1b3135c5effe54634ca577fda19bd98e2fa85f"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/outcome.json",
+      "sha256": "7d54f68ff72dd4d59ba43530b16259180baf2fc3e85698e2238a89aea40c73b2"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/verification.json",
+      "sha256": "9c4b9ee176062d914da21b6c4189080e6dc411c332954eb54bb8c8af941510c5"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/raw/task/commanded_probe.csv",
+      "sha256": "add2ae2ea18de5f872868a6985eb63cac02789c1b681def7cfaeba2c167c43df"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/reference/manifest.json",
+      "sha256": "028bc9d13d8c302cd6cac7cd27c220f8fc5087975d246afadd13013cc0d01ed4"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/reference/reference.npz",
+      "sha256": "760618934b50a9e762d3d62d0fe98315d0812ae5db83b2806449e4474aa32710"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/reference/validation.json",
+      "sha256": "a8cae54d6d9f049830be30c7149345a0bc4d4075b58ac8a049f42ca7c0f4f5a1"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/reference/prediction.jsonl",
+      "sha256": "ae88f29d404aebfee5e5ea9b0dd0f5d13bfeb6c99d4966493004929a862b0bc6"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006/raw/task/execution_report.json",
+      "sha256": "0697eb1b9d32e4d5ec4dbfdda4266f2a1600ea1b64b7005e2617ecc5d7720f25"
+    }
+  ],
+  "execution_timestamp": "2026-11-16T13:04:36.208848+00:00",
+  "failure_signature": "insertion_housing_shift_guard",
+  "candidate_parameters": {
+    "grasp_height_mm": 20,
+    "align_gap_mm": 23,
+    "gripper_effort_command_nm": 1.0,
+    "max_joint_speed_deg_s": 12,
+    "task_sdk_speed_percent": 15
+  },
+  "earliest_guard_trigger": {
+    "phase": "insert",
+    "wrist_frame": 3767,
+    "baseline_yellow_top_px": 307,
+    "observed_yellow_top_px": 326,
+    "shift_px": 19
+  },
+  "shutdown": {
+    "operator_support_confirmed": true,
+    "native_disable_completed": true,
+    "controller_exited": true
+  },
+  "research_goal_status": "paused_by_user",
+  "next_improvement": "Not executed: examine grasp-relative pose and insertion alignment; no accepted calibration"
+}
