@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-11-17T08:26:52.393879+00:00",
+  "patterns": [
+    "test_learning.py",
+    "test_agent_loop.py",
+    "test_runtime_memory.py",
+    "test_model_completion.py",
+    "test_planner_context.py",
+    "test_evidence_tools.py",
+    "test_recipient_feedback.py"
+  ],
+  "tests_run": 46,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scope": "offline regression tests; no real LLM calls, task Episodes or hardware commands"
+}

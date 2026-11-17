@@ -5,7 +5,7 @@ import time
 from pathlib import Path
 from evidence_cache import EvidenceCache
 from episode_evidence import summary, window
-from learn import ROOT
+from learn import ROOT, episode_memory
 from model_compare import ask, ModelCallError
 
 TOOLS = {
@@ -46,8 +46,9 @@ def validate_tool_plan(answer,context):
 
 
 class EpisodeTools:
-    def __init__(self, seed, cache):
+    def __init__(self, seed, cache, memories=None):
         self.seed, self.cache = seed, cache
+        self.memories=memories
         self.context = dict(baseline=baseline_case(seed), allowed_grasp_tilt_deg=[])
 
     def call(self, name, args):
@@ -61,7 +62,7 @@ class EpisodeTools:
             from contact_evidence import inspect_frame
             return inspect_frame(ident,args['frame'],self.cache)
         from agent_loop import repair_diagnosis
-        self.context = repair_diagnosis(self.seed)
+        self.context = repair_diagnosis(self.seed,self.memories)
         self.context['baseline']=baseline_case(self.seed)
         return dict(value=self.context,cache=None)
 
@@ -89,12 +90,14 @@ def prompt_events(events):
 
 
 def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
-         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None, initial_summary=False, feedback=(), scene=None):
+         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None, initial_summary=False, feedback=(), scene=None,
+         memories=None):
     if not 1 <= max_calls <= 8 or not 0 <= max_tools <= 6 or not 1 <= seconds <= 240:
         raise ValueError('Planner budget outside supported bounds')
     started=time.monotonic();calls=[];events=[];seen=set();bootstrap=None
     cache=EvidenceCache(cache_directory or ROOT/'.local/evidence_cache') if dispatcher is None else None
-    dispatch=dispatcher or EpisodeTools(seed,cache)
+    memories=episode_memory(seed) if memories is None else memories
+    dispatch=dispatcher or EpisodeTools(seed,cache,memories)
     answer=dict(stop=True,hypotheses=[],reason='No supported plan within budget',predicted_effect='No new execution')
     status='BUDGET_EXHAUSTED'
     initial=dict(episode_id=seed['experiment_id'], active_arms=seed.get('active_arms'),
@@ -102,6 +105,7 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
         validation_status=seed['validation_status'], task_success=seed['task_success'],
         current_parameters=dispatch.context['baseline'],
         requested_execution_scene=scene,
+        relevant_experience=memories,
         related_real_evidence=seed.get('related_real_evidence'),
         root_cause='UNKNOWN', source='Archived simulation; privileged data available on request')
     contract=('Return {"tool":"name","args":{...},"reason":"short reason"} or '
@@ -157,6 +161,7 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
         execution_scene=scene,
         related_real_evidence=seed.get('related_real_evidence'),
         initial_observation=bootstrap,
+        retrieved_experience=memories,
         timing=dict(llm_cli_network_inference_seconds=sum(c['wall_seconds'] for c in calls),
                     tools_seconds=sum(e.get('wall_seconds',0) for e in events),
                     initial_observation_seconds=bootstrap['wall_seconds'] if bootstrap else 0),
@@ -175,7 +180,8 @@ def experiment_feedback(result, case):
 
 
 def explore(seed, local, execute_case, *, model=None, guidance='', ask_fn=ask,
-            max_calls=4, max_tools=3, max_executions=2, seconds=600, cache_directory=None, shift_mm=None):
+            max_calls=4, max_tools=3, max_executions=2, seconds=600, cache_directory=None, shift_mm=None,
+            memories=None):
     """Shared recipient/runtime loop; the trusted collector owns physics and outcomes.
 
     Each failed execution becomes the next observation. Call/tool/time budgets span
@@ -196,7 +202,7 @@ def explore(seed, local, execute_case, *, model=None, guidance='', ask_fn=ask,
                 scene=execution_scene(seed['experiment_id'],shift_mm)
             call=plan(seed,local,model=model,guidance=guidance,ask_fn=ask_fn,
                 max_calls=calls_left,max_tools=tools_left,seconds=min(90,remaining),
-                cache_directory=cache_directory,initial_summary=True,feedback=feedback,scene=scene)
+                cache_directory=cache_directory,initial_summary=True,feedback=feedback,scene=scene,memories=memories)
             planners.append(call)
             calls_left-=call['model_calls_attempted']
             tools_left-=sum('request' in e for e in call['tool_trace'])

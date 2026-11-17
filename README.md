@@ -1,4 +1,4 @@
-> 2026-11-17 文档全范围续作：[执行反馈候选与完整验收缺口](experiments/goal_aligned_runtime/continuation/REPORT.md)。教学与可选 Agent 入口共用观察—执行—反馈循环，44 项离线检查通过；尚无新模型/真机评估，默认仍为 `llm`，总体未完成。
+> 2026-11-17 当前状态：[有界批次5条仿真、2次真机失败](experiments/goal_aligned_runtime/batch2/REPORT.md)；[失败记忆已进入默认规划边界](experiments/goal_aligned_runtime/runtime_memory/REPORT.md)，46项离线检查通过，尚未证明稳定性或成本收益。续作先读 [current_state.json](evolution/current_state.json)，总体目标仍未完成。
 
 > 2026-11-17 continuation: [actual model study and real–sim pair](experiments/goal_aligned_runtime/BATCH_REPORT.md). Three new simulations (one success, two failures); the successful simulation has a verified real failure counterpart. Teacher guidance not promoted; default remains `llm`. Model budget consumed; goal active.
 

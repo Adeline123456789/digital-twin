@@ -77,9 +77,11 @@ def teacher_feedback(run):
 
 
 def execute_student(seed,guidance,label,layout,budget,local,student,max_executions=2):
+    # Evaluation receives only its frozen guidance and design-supplied evidence,
+    # not later experiences or held-out answers from the live memory directory.
     exploration=explore(seed,local,lambda case:budget.simulate(dict(case,name=label,shift_mm=layout),label),
         model=student,max_calls=3,max_tools=2,max_executions=max_executions,seconds=600,
-        guidance=guidance,ask_fn=budget.model,cache_directory=local/label/'cache',shift_mm=layout)
+        guidance=guidance,ask_fn=budget.model,cache_directory=local/label/'cache',shift_mm=layout,memories=[])
     call=exploration['planners'][-1] if exploration['planners'] else dict(
         answer={'stop':True},status=exploration['status'],tool_trace=[])
     run=dict(label=label,source_episode=seed['experiment_id'],planner=call,

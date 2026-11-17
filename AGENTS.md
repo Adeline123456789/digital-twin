@@ -17,3 +17,7 @@ Formal episodes in `complete_sim/failed/` must match `20261111_sim_real05_failur
 ## Confirmed real observation modalities
 
 - Historical and current real-robot visual observations are RGB only, explicitly confirmed by the user on 2026-11-12. Existing depth.npz files are NOT real sensor measurements for this robot and must be excluded from real-data calibration/validation. Their actual origin remains unknown; preserve them without claiming they are simulated or deleting them. Simulated depth remains privileged simulation information.
+
+## Development continuation state
+
+On continuation, read `evolution/current_state.json` and check Git changes before reopening historical reports. Follow its evidence references for the current question; do not repeatedly ingest the whole mission, chat or report history. Update this small state after material results, preserving budget use and rejected candidates. It is a last-observed development checkpoint, not live hardware telemetry or movement permission; it is not injected into robot planning prompts.

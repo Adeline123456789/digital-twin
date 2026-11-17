@@ -1,0 +1,26 @@
+{
+  "version": "runtime_memory_v1",
+  "timestamp": "2026-11-17T08:28:16.917521+00:00",
+  "parent_git_head": "321553fc7ba9cd68019279d1424d48e1def2428d",
+  "comparison_parent": "c5708a008393446f15267a2c60f0bd3f4b27182c",
+  "status": "OFFLINE_RETRIEVAL_AND_ENTRY_BOUNDARY_VERIFIED",
+  "default_memory_delivery_changed": true,
+  "default_planner_policy": "llm",
+  "physical_policy_changed": false,
+  "evidence": "experiments/goal_aligned_runtime/runtime_memory/result.json",
+  "tests": "experiments/goal_aligned_runtime/runtime_memory/tests.json",
+  "source_sha256": {
+    "scripts/learn.py": "dd3f6140f9fbae0a7eff0a884d6068ce62ffcbb5ad95fce8eea0f6398ae0f093",
+    "scripts/agent_loop.py": "8e6151e448c1ce62f54d3fcad7821e20784c39e6f910f79f96fd07fe1251d34f",
+    "scripts/bounded_tools.py": "cce5ada496b859eb099a20efd9cdd526cf0c537958e6c8b0df3b3e3eacb76082",
+    "scripts/benchmark_recipient_feedback.py": "dbeca4507685754c2eb65c58c0f296d173d0a005ef241e31cf2daff89e16b654"
+  },
+  "later_live_model_use": "NOT_RUN_BUDGET_EXHAUSTED",
+  "task_success_gain": null,
+  "token_saving": null,
+  "rollback": "Restore the four source files from parent commit; retain NE020 failure evidence",
+  "limitations": [
+    "Default entry exercised with intercepted model call, not independent live task use",
+    "Complete self-evolution acceptance chain remains incomplete"
+  ]
+}

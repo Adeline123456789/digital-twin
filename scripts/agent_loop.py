@@ -7,7 +7,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from learn import ROOT, record, finish, simulate, retrieve, digest, save, failure_memory
+from learn import ROOT, record, finish, simulate, retrieve, digest, save, episode_memory
 from model_compare import ask
 from alignment_skill import context_for, plan_with_memory
 
@@ -35,7 +35,7 @@ def rejected_tilts(seed,memories):
             and all(value is not None and m['exact_rejection'].get(key)==value for key,value in scope.items())]
 
 
-def repair_diagnosis(seed):
+def repair_diagnosis(seed, memories=None):
     """Expose existing trace/IK tools to the planner, without promoting a repair."""
     from diagnose_retention import diagnose_episode
     native=seed['observed_effects'][0]
@@ -44,8 +44,7 @@ def repair_diagnosis(seed):
         baseline=dict(offset_mm=seed['actions'][0]['offset_mm'][0],
                       grasp_tilt_deg=native.get('grasp_tilt_deg',0.)),
         allowed_grasp_tilt_deg=[],root_cause='UNKNOWN',privileged_information_used=True,
-        prior_failure_warnings=[{k:m.get(k) for k in ('id','content','applicability','source_profile','source_episodes','validation_status','exact_rejection')}
-                               for m in failure_memory(seed['observed_effects'])],
+        prior_failure_warnings=episode_memory(seed) if memories is None else memories,
         memory_scope='Failure warnings only. Different profiles/embodiments are analogies, not current-scene facts or replayable motions.')
     context['rejected_grasp_tilt_deg']=rejected_tilts(seed,context['prior_failure_warnings'])
     if retention['status']=='GRASP_RETENTION_LOSS_OBSERVED':
@@ -122,6 +121,12 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
            'initial_state':'Existing scene with requested holder initial X position; no physical parameters changed',
            'previous_action':seed['actions'] if seed_compatible else [],'previous_observation':seed['observed_effects'] if seed_compatible else [],
            'root_cause':'UNKNOWN; this is simulation evidence, not a verified real cause'}
+    if arm in 'CD':
+        memory_seed=seed if seed_compatible else dict(active_arms=facts['active_arms'],
+            actions=[dict(profile=facts['execution_profile'])],observed_effects=[],
+            initial_state=dict(target_index=facts['target_index']))
+        facts['relevant_experience']=episode_memory(memory_seed)
+    r['retrieved_experience']=facts.get('relevant_experience',[])
     action_spec=('Return only JSON with exactly ONE of offset_mm (finite [-4,4]), grasp_tilt_deg (one screened absolute angle), or stop:true; plus hypotheses (0 to3), predicted_effect and reason. Change one existing parameter. Screened IK is only a hypothesis: actual grasp/transport/insertion must be tested. Stop if no supported low-cost next experiment exists.'
                  if policy=='diagnose_then_repair' else
                  'Return only JSON with offset_mm (finite number [-4,4]), hypotheses (0 to 3 short hypotheses), predicted_effect, reason. Offset is XY target X correction in socket coordinates; only this variable can change.')
@@ -186,7 +191,7 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
             if trial['task_success'] or trial['result']=='infrastructure_error':break
             seen.add(fingerprint)
             if step+1<max_executions and arm=='D':
-                feedback={'actual_execution':trials[-1],'relevant_prior_failures':failure_memory(trial['observed_effects']) if robot_arms=='dual' else [],'failed_offsets':sorted(x[1] for x in seen),'instruction':'Use actual evidence to update hypotheses. Do not repeat the same failed offset without new evidence.'}
+                feedback={'actual_execution':trials[-1],'relevant_prior_failures':episode_memory(trial),'failed_offsets':sorted(x[1] for x in seen),'instruction':'Use actual evidence to update hypotheses. Do not repeat the same failed offset without new evidence.'}
                 if seed_episode and policy!='bounded_tools_v1':feedback['precontact_observation']=precontact_observation(trial['experiment_id'])
                 context=context_for(trial,shift) if policy=='compiled_alignment_v1' and seed_compatible else {}
                 if policy=='diagnose_then_repair':context=repair_diagnosis(trial);diagnoses.append(context)

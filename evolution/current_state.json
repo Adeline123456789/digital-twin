@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-17T08:28:16.917521+00:00",
+  "purpose": "Development continuation checkpoint, not robot prompt or live telemetry",
+  "mission": {
+    "path": "/home/midea/下载/codex_real_sim_goal_aligned_next.md",
+    "sha256": "b9cd40fdf12548035e5a03fa6693983fa9726426f5e6257b7f847f5dd836dc6f",
+    "goal": "Stable, cheaper real-sim collection; teacher/student, independent exploration, local scene adaptation and verified default-route evolution all remain in scope"
+  },
+  "branch": "codex/goal-aligned-runtime-20261117",
+  "status": "INCOMPLETE",
+  "active": {
+    "planner_policy": "llm",
+    "tool_planner": "bounded_tools_v1 is opt-in",
+    "receiver": "completion_receiver_v1 offline verified",
+    "memory_delivery": "runtime_memory_v1 offline verified"
+  },
+  "last_hardware_observation": {
+    "state": "Right arm supported, disabled and disconnected after batch2 attempt2",
+    "source": "experiments/goal_aligned_runtime/batch2/real_000002/result.json",
+    "live_telemetry": false,
+    "plug_reset_after_attempt2": "NOT_CONFIRMED"
+  },
+  "batch": {
+    "id": "goal_aligned_batch2",
+    "deadline_utc": "2026-11-17T08:19:53+00:00",
+    "budget_status": "EXHAUSTED_DO_NOT_RESET",
+    "model_calls": 9,
+    "reported_tokens": 253720,
+    "full_sim_episodes": 5,
+    "sim_successes": 3,
+    "real_attempts": 2,
+    "real_successes": 0,
+    "manual_plug_resets": 1,
+    "source": "experiments/goal_aligned_runtime/batch2/summary.json"
+  },
+  "current_findings": [
+    "Simulation success and a complete release/fold did not establish real insertion.",
+    "Gripper aperture and contact presence do not establish stable plug-to-gripper pose.",
+    "Joint-model tracking errors were small at alignment; absolute geometry and in-hand pose remain uncertain.",
+    "NE020 had not reached the default right-arm planner; current code fixes delivery, not physical success."
+  ],
+  "rejected": [
+    "Batch2 teacher guidance: no supported recipient benefit",
+    "16mm grasp/23mm alignment: real failure",
+    "Width-only image fit: unvalidated and bound-limited",
+    "Camera-clock cadence export candidate: rejected"
+  ],
+  "next_unresolved": [
+    "Reliable grasp and held-object pose under current fixture, before another blind full insertion",
+    "One real recording rejected by native timing verifier; raw files retained",
+    "Independent live-model use and task/cost evaluation of receiver and memory changes",
+    "Durable runtime state transitions beyond bounded tool-event history; full SKILL.state not implemented"
+  ],
+  "evidence": {
+    "latest_physical": "experiments/goal_aligned_runtime/batch2/REPORT.md",
+    "memory": "experiments/goal_aligned_runtime/runtime_memory/REPORT.md",
+    "receiver": "experiments/goal_aligned_runtime/completion_receiver/REPORT.md"
+  },
+  "publication": "Use git status and git ls-remote to verify current commit; this checkpoint does not self-certify remote state"
+}

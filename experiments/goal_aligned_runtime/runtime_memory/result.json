@@ -1,0 +1,182 @@
+{
+  "experiment_id": "offline_runtime_memory_20261117",
+  "timestamp": "2026-11-17T08:24:50.780000+00:00",
+  "parent_commit": "c5708a008393446f15267a2c60f0bd3f4b27182c",
+  "validation_status": "OFFLINE_RETRIEVAL_AND_ENTRY_BOUNDARY_VERIFIED",
+  "new_model_calls": 0,
+  "new_model_tokens": 0,
+  "physics_steps": 0,
+  "hardware_commands": 0,
+  "source_sha256": {
+    "scripts/learn.py": "dd3f6140f9fbae0a7eff0a884d6068ce62ffcbb5ad95fce8eea0f6398ae0f093",
+    "scripts/agent_loop.py": "8e6151e448c1ce62f54d3fcad7821e20784c39e6f910f79f96fd07fe1251d34f",
+    "scripts/bounded_tools.py": "cce5ada496b859eb099a20efd9cdd526cf0c537958e6c8b0df3b3e3eacb76082",
+    "scripts/benchmark_recipient_feedback.py": "dbeca4507685754c2eb65c58c0f296d173d0a005ef241e31cf2daff89e16b654"
+  },
+  "rows": [
+    {
+      "episode_id": "20261117T071047Z_e43b1ad6",
+      "source": "experiments/recipient_feedback/20261117T071047Z_e43b1ad6/result.json",
+      "sha256": "a7f29d5d854644ec39c009421b0a41c6faa9054175690e28821523cdf63587fd",
+      "target": 3,
+      "parent_unscoped_ids": [
+        "ER001",
+        "ER004",
+        "FP001",
+        "NE001",
+        "NE020"
+      ],
+      "parent_default_right_ids": [],
+      "parent_default_basis": "Right-arm branch passed no failure memories",
+      "candidate_ids": [
+        "NE020"
+      ],
+      "candidate_cards": [
+        {
+          "id": "NE020",
+          "version": 2,
+          "content": "At the current right-Piper fixture,20mm grasp/23mm align and16mm grasp/23mm align both produced full simulation successes but failed their real frozen-reference executions. A complete release/fold sequence also failed physically. Do not reuse simulation success or unchanged gripper width as proof of real stable retention or insertion.",
+          "applicability": "Current right-only Piper, RGB-only, original speed and1.0N.m command, target socket3; current scene/configuration hashes in batch2 reports",
+          "retrieval_scope": {
+            "active_arms": [
+              "right"
+            ],
+            "source_profile": "original",
+            "target_index": 3
+          },
+          "source_episodes": [
+            "20261117T071047Z_e43b1ad6",
+            "20261117T073201Z_efc6139b",
+            "20261117_real_batch2_000001",
+            "20261117_real_batch2_000002"
+          ],
+          "source_experiments": [
+            "experiments/goal_aligned_runtime/batch2/REPORT.md"
+          ],
+          "validation_status": "REAL_OBSERVED_FAILURE; FIRST_RECORDING_EXPORT_UNVERIFIED",
+          "success_count": 0,
+          "failure_count": 2,
+          "count_unit": "Two distinct real executions, different grasp heights; not independent fixed-policy reliability trials",
+          "known_limits": [
+            "Root cause UNKNOWN",
+            "Static real-width substitution assumes simulated object pose and cannot identify a unique parameter",
+            "One raw capture has unresolved timing/export rejection",
+            "Historical successful grasp heights are not validated under the present grip/contact state"
+          ],
+          "next_checks": [
+            {
+              "when": "A paired real execution failed despite simulation success",
+              "check": "Read the paired outcome and existing phase/contact evidence before repeating unchanged parameters.",
+              "evidence": "experiments/goal_aligned_runtime/batch2/REPORT.md"
+            },
+            {
+              "when": "Plug is grasped but insertion differs",
+              "check": "Compare plug-to-gripper pose across lift, alignment and insertion; motor aperture alone is insufficient. Real relative pose is still UNKNOWN.",
+              "evidence": "experiments/goal_aligned_runtime/batch2/grasp_relation_comparison.json"
+            }
+          ],
+          "evidence_role": "HISTORICAL_WARNING_NOT_CURRENT_MEASUREMENT"
+        }
+      ],
+      "candidate_utf8_bytes": 1960,
+      "parent_lookup_seconds": 0.0017734910361468792,
+      "candidate_lookup_seconds": 0.0015876669203862548
+    },
+    {
+      "episode_id": "20261117T073201Z_efc6139b",
+      "source": "experiments/recipient_feedback/20261117T073201Z_efc6139b/result.json",
+      "sha256": "c2079e98d2d35a3371a9d769914fa56ef380591ea5bb178063ef7d48df49cabd",
+      "target": 3,
+      "parent_unscoped_ids": [
+        "ER001",
+        "ER004",
+        "FP001",
+        "NE001",
+        "NE020"
+      ],
+      "parent_default_right_ids": [],
+      "parent_default_basis": "Right-arm branch passed no failure memories",
+      "candidate_ids": [
+        "NE020"
+      ],
+      "candidate_cards": [
+        {
+          "id": "NE020",
+          "version": 2,
+          "content": "At the current right-Piper fixture,20mm grasp/23mm align and16mm grasp/23mm align both produced full simulation successes but failed their real frozen-reference executions. A complete release/fold sequence also failed physically. Do not reuse simulation success or unchanged gripper width as proof of real stable retention or insertion.",
+          "applicability": "Current right-only Piper, RGB-only, original speed and1.0N.m command, target socket3; current scene/configuration hashes in batch2 reports",
+          "retrieval_scope": {
+            "active_arms": [
+              "right"
+            ],
+            "source_profile": "original",
+            "target_index": 3
+          },
+          "source_episodes": [
+            "20261117T071047Z_e43b1ad6",
+            "20261117T073201Z_efc6139b",
+            "20261117_real_batch2_000001",
+            "20261117_real_batch2_000002"
+          ],
+          "source_experiments": [
+            "experiments/goal_aligned_runtime/batch2/REPORT.md"
+          ],
+          "validation_status": "REAL_OBSERVED_FAILURE; FIRST_RECORDING_EXPORT_UNVERIFIED",
+          "success_count": 0,
+          "failure_count": 2,
+          "count_unit": "Two distinct real executions, different grasp heights; not independent fixed-policy reliability trials",
+          "known_limits": [
+            "Root cause UNKNOWN",
+            "Static real-width substitution assumes simulated object pose and cannot identify a unique parameter",
+            "One raw capture has unresolved timing/export rejection",
+            "Historical successful grasp heights are not validated under the present grip/contact state"
+          ],
+          "next_checks": [
+            {
+              "when": "A paired real execution failed despite simulation success",
+              "check": "Read the paired outcome and existing phase/contact evidence before repeating unchanged parameters.",
+              "evidence": "experiments/goal_aligned_runtime/batch2/REPORT.md"
+            },
+            {
+              "when": "Plug is grasped but insertion differs",
+              "check": "Compare plug-to-gripper pose across lift, alignment and insertion; motor aperture alone is insufficient. Real relative pose is still UNKNOWN.",
+              "evidence": "experiments/goal_aligned_runtime/batch2/grasp_relation_comparison.json"
+            }
+          ],
+          "evidence_role": "HISTORICAL_WARNING_NOT_CURRENT_MEASUREMENT"
+        }
+      ],
+      "candidate_utf8_bytes": 1960,
+      "parent_lookup_seconds": 0.0015470630023628473,
+      "candidate_lookup_seconds": 0.001559438998810947
+    },
+    {
+      "episode_id": "20261117T072218Z_43239686",
+      "source": "experiments/recipient_feedback/20261117T072218Z_43239686/result.json",
+      "sha256": "c6b62247668a6b6cef3bcb58852f7db1d620957eca55fce325456bb6ebf658b1",
+      "target": 2,
+      "parent_unscoped_ids": [
+        "ER001",
+        "ER004",
+        "FP001",
+        "NE001",
+        "NE020"
+      ],
+      "parent_default_right_ids": [],
+      "parent_default_basis": "Right-arm branch passed no failure memories",
+      "candidate_ids": [],
+      "candidate_cards": [],
+      "candidate_utf8_bytes": 2,
+      "parent_lookup_seconds": 0.001505980035290122,
+      "candidate_lookup_seconds": 0.0009709640871733427
+    }
+  ],
+  "tests": "tests/test_runtime_memory.py",
+  "limitations": [
+    "One lookup per archived Episode, no latency speedup claim.",
+    "Parent lookup runs against the same current memory corpus to isolate ranking/filtering; its actual default right route supplied no memory.",
+    "Entry test intercepts the model boundary; no live model or robot outcome is attributed to this change.",
+    "Two source-linked cases are development regression cases, not independent task generalization.",
+    "No reproduction of AWM or full SKILL.state, and no physical repair accepted."
+  ]
+}

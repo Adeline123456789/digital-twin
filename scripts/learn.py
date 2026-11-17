@@ -59,21 +59,45 @@ def finish(out,r):
          'root_cause_status','execution_time','tokens','lessons_learned','next_improvement'))+'\n\nSee result.json for provenance and evidence hashes. Raw data stays in the existing dataset.\n')
     print(out.relative_to(ROOT),r['result'],flush=True)
 
-def retrieve(signature, limit=5):
+def retrieve(signature, limit=5, context=None):
     matches=[]
     for p in sorted((ROOT/'memory').rglob('*.json')):
         item=json.loads(p.read_text())
         if item.get('validation_status')=='EXCLUDED_AS_REAL_DEPTH_USER_CONFIRMED_RGB_ONLY': continue
-        if signature in item.get('signatures',[]): matches.append(item)
-    return matches[:limit]
+        exact=bool(context and context.get('episode_id') in item.get('source_episodes',[]))
+        if not exact and signature not in item.get('signatures',[]):continue
+        if context:
+            scope=item.get('retrieval_scope',{})
+            if any(context.get(k)!=v for k,v in scope.items()):continue
+            # Legacy prose does not establish applicability to the adapted right arm.
+            if context.get('active_arms')==['right'] and not scope and not exact:continue
+        phase_match=bool(context and context.get('phase') in item.get('phases',[]))
+        matches.append(((exact,phase_match),item))
+    return [item for _,item in sorted(matches,key=lambda x:x[0],reverse=True)[:limit]]
 
-def failure_memory(observed_effects):
+def failure_memory(observed_effects, seed=None):
     reports=[x for x in observed_effects if isinstance(x,dict)]
     signature='transport_ik_failure' if any(x.get('last_phase')=='transport' and 'Unreachable' in str(x.get('error')) for x in reports) else 'plug_not_seated'
-    memories=retrieve(signature)
+    context=None
+    if seed is not None:
+        context=dict(episode_id=seed.get('experiment_id'),active_arms=seed.get('active_arms'),
+            source_profile=next((a.get('profile') for a in seed.get('actions',[]) if a.get('profile')),None),
+            target_index=seed.get('initial_state',{}).get('target_index'),
+            phase=next((r.get('last_phase') for r in reports if r.get('last_phase')),None))
+    memories=retrieve(signature,context=context)
     if signature=='transport_ik_failure' and any(x.get('speed_deg_s') not in (None,12,12.0) for x in reports):
         memories=[m for m in memories if m['id']!='NE004']
     return memories
+
+
+def episode_memory(seed):
+    """Small, source-linked experience cards, never current measurements or replay authority."""
+    fields=('id','version','content','applicability','retrieval_scope','source_profile','source_episodes',
+            'source_experiments','validation_status','success_count','failure_count','count_unit',
+            'known_limits','limitations','ineffective_repairs','exact_rejection','next_checks')
+    return [dict({k:m[k] for k in fields if k in m},
+                 evidence_role='HISTORICAL_WARNING_NOT_CURRENT_MEASUREMENT')
+            for m in failure_memory(seed.get('observed_effects',[]),seed)]
 
 def decide(signature, repair, version_name=None):
     if version_name is None:
