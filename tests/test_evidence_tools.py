@@ -133,10 +133,11 @@ class RouterTests(unittest.TestCase):
                       status='PLAN_READY',model_calls_attempted=1,tool_trace=[])
             trial=dict(experiment_id='physics',task_success=False,result='failure',observed_effects=[],execution_time=1,
                        collection_component_seconds=1,recording_verified=True)
-            with patch.object(agent_loop,'ROOT',root),patch.object(agent_loop,'record',return_value=(root,{'experiment_id':'candidate'})),patch.object(agent_loop,'finish'),patch('bounded_tools.plan',return_value=call) as planner,patch.object(benchmark_collection,'run_case',return_value=trial) as collect,patch('episode_format.source_for'),patch.dict(agent_loop.os.environ,{'PIPER_ACTIVE_ARMS':'right','PIPER_SIM_PROFILE':'original','PIPER_TARGET_INDEX':'3'}):
+            with patch.object(agent_loop,'ROOT',root),patch.object(agent_loop,'record',return_value=(root,{'experiment_id':'candidate'})),patch.object(agent_loop,'finish'),patch('bounded_tools.plan',return_value=call) as planner,patch.object(benchmark_collection,'run_case',return_value=trial) as collect,patch('episode_format.source_for'),patch('agent_challenge.execution_scene',return_value={'fixture_scene':True}),patch.dict(agent_loop.os.environ,{'PIPER_ACTIVE_ARMS':'right','PIPER_SIM_PROFILE':'original','PIPER_TARGET_INDEX':'3'}):
                 result=agent_loop.run('D',0,False,'bounded_tools_v1','seed',max_executions=1)
             planner.assert_called_once();collect.assert_called_once()
             self.assertTrue(planner.call_args.kwargs['initial_summary'])
+            self.assertEqual(planner.call_args.kwargs['scene'],{'fixture_scene':True})
             self.assertEqual(result['actual_planner_policy'],'bounded_tools_v1')
             self.assertEqual(collect.call_args.args[0]['grasp_height_m'],.016)
             self.assertEqual(collect.call_args.args[0]['align_gap_m'],.023)
@@ -155,7 +156,7 @@ class RouterTests(unittest.TestCase):
                 path=root/'experiments'/rel/'result.json';path.parent.mkdir(parents=True);path.write_text(json.dumps(seed))
             call=dict(answer={'stop':True,'hypotheses':[]},applicability={},usage={'input_tokens':5},tool_events=0,
                       status='STOPPED_UNKNOWN',model_calls_attempted=1,tool_trace=[])
-            with patch.object(agent_loop,'ROOT',root),patch.object(agent_loop,'record',return_value=(root,{'experiment_id':'candidate'})),patch.object(agent_loop,'finish'),patch('bounded_tools.plan',return_value=call),patch.object(benchmark_collection,'run_case') as collect,patch('episode_format.source_for'),patch.dict(agent_loop.os.environ,{'PIPER_ACTIVE_ARMS':'right','PIPER_SIM_PROFILE':'original','PIPER_TARGET_INDEX':'3'}):
+            with patch.object(agent_loop,'ROOT',root),patch.object(agent_loop,'record',return_value=(root,{'experiment_id':'candidate'})),patch.object(agent_loop,'finish'),patch('bounded_tools.plan',return_value=call),patch.object(benchmark_collection,'run_case') as collect,patch('episode_format.source_for'),patch('agent_challenge.execution_scene',return_value={'fixture_scene':True}),patch.dict(agent_loop.os.environ,{'PIPER_ACTIVE_ARMS':'right','PIPER_SIM_PROFILE':'original','PIPER_TARGET_INDEX':'3'}):
                 result=agent_loop.run('D',0,False,'bounded_tools_v1','seed',max_executions=1)
             collect.assert_not_called()
             self.assertIsNone(result['task_success'])

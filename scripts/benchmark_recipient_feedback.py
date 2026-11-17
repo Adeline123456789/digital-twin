@@ -68,6 +68,7 @@ def teacher_feedback(run):
         tools=prompt_events(run['planner']['tool_trace']),
         execution_feedback=exploration['feedback'] if exploration else [],
         recipient_steps=[dict(plan=c['answer'],status=c['status'],tools=prompt_events(c['tool_trace']),
+                             execution_scene=c.get('execution_scene'),
                              initial_observation=(c.get('initial_observation') or {}).get('result',{}).get('value'))
                          for c in exploration['planners']] if exploration else [],
         physical_result=run.get('physical_result'),native_outcome=run.get('native_outcome'),
@@ -77,7 +78,7 @@ def teacher_feedback(run):
 def execute_student(seed,guidance,label,layout,budget,local,student):
     exploration=explore(seed,local,lambda case:budget.simulate(dict(case,name=label,shift_mm=layout),label),
         model=student,max_calls=3,max_tools=2,max_executions=2,seconds=600,
-        guidance=guidance,ask_fn=budget.model,cache_directory=local/label/'cache')
+        guidance=guidance,ask_fn=budget.model,cache_directory=local/label/'cache',shift_mm=layout)
     call=exploration['planners'][-1] if exploration['planners'] else dict(
         answer={'stop':True},status=exploration['status'],tool_trace=[])
     run=dict(label=label,source_episode=seed['experiment_id'],planner=call,
@@ -129,7 +130,7 @@ def run(design_path,resume=None):
            'scripts/benchmark_recipient_feedback.py','scripts/model_compare.py','scripts/collect_inline.py',
            'protocol/bounded_tool_instructions.md','scripts/agent_loop.py','scripts/probe_transport_ik.py',
            'scripts/diagnose_retention.py','scripts/episode_format.py','scripts/benchmark_collection.py',
-           'scripts/learn.py','scripts/evidence_cache.py']
+           'scripts/learn.py','scripts/evidence_cache.py','scripts/agent_challenge.py']
     frozen={name:digest(ROOT/name) for name in files}
     frozen_memory={str(p.relative_to(ROOT)):digest(p) for p in (ROOT/'memory').rglob('*.json')}
     r.update(initial_state=dict(design_sha256=digest(design_path),tool_sha256=frozen,protocol_sha256=initial_hash,

@@ -89,7 +89,7 @@ def prompt_events(events):
 
 
 def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
-         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None, initial_summary=False, feedback=()):
+         guidance='', ask_fn=ask, dispatcher=None, cache_directory=None, initial_summary=False, feedback=(), scene=None):
     if not 1 <= max_calls <= 8 or not 0 <= max_tools <= 6 or not 1 <= seconds <= 240:
         raise ValueError('Planner budget outside supported bounds')
     started=time.monotonic();calls=[];events=[];seen=set();bootstrap=None
@@ -101,6 +101,7 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
         task=seed['task'], target=seed['initial_state'].get('target_index'),
         validation_status=seed['validation_status'], task_success=seed['task_success'],
         current_parameters=dispatch.context['baseline'],
+        requested_execution_scene=scene,
         root_cause='UNKNOWN', source='Archived simulation; privileged data available on request')
     contract=('Return {"tool":"name","args":{...},"reason":"short reason"} or '
         '{"plan":{"offset_mm":number OR "grasp_tilt_deg":screened_angle OR "grasp_height_m":number OR "align_gap_m":number OR "stop":true,'
@@ -152,6 +153,7 @@ def plan(seed, local, *, model=None, max_calls=4, max_tools=3, seconds=90,
     return dict(answer=answer,usage=total_usage(calls),tool_events=0,planner_kind='bounded_tools_v1',
         wall_seconds=time.monotonic()-started,status=status,calls=calls,tool_trace=events,
         applicability=dispatch.context,model_calls_attempted=len(calls),
+        execution_scene=scene,
         initial_observation=bootstrap,
         timing=dict(llm_cli_network_inference_seconds=sum(c['wall_seconds'] for c in calls),
                     tools_seconds=sum(e.get('wall_seconds',0) for e in events),
@@ -171,7 +173,7 @@ def experiment_feedback(result, case):
 
 
 def explore(seed, local, execute_case, *, model=None, guidance='', ask_fn=ask,
-            max_calls=4, max_tools=3, max_executions=2, seconds=600, cache_directory=None):
+            max_calls=4, max_tools=3, max_executions=2, seconds=600, cache_directory=None, shift_mm=None):
     """Shared recipient/runtime loop; the trusted collector owns physics and outcomes.
 
     Each failed execution becomes the next observation. Call/tool/time budgets span
@@ -186,9 +188,13 @@ def explore(seed, local, execute_case, *, model=None, guidance='', ask_fn=ask,
             remaining=seconds-(time.monotonic()-started)
             if remaining<1:status='TIME_BUDGET_EXHAUSTED';break
             if calls_left<=0:status='MODEL_BUDGET_EXHAUSTED';break
+            scene=None
+            if shift_mm is not None:
+                from agent_challenge import execution_scene
+                scene=execution_scene(seed['experiment_id'],shift_mm)
             call=plan(seed,local,model=model,guidance=guidance,ask_fn=ask_fn,
                 max_calls=calls_left,max_tools=tools_left,seconds=min(90,remaining),
-                cache_directory=cache_directory,initial_summary=True,feedback=feedback)
+                cache_directory=cache_directory,initial_summary=True,feedback=feedback,scene=scene)
             planners.append(call)
             calls_left-=call['model_calls_attempted']
             tools_left-=sum('request' in e for e in call['tool_trace'])

@@ -1,0 +1,21 @@
+{
+  "version": "execution_scene_context_v1",
+  "parent_commit": "53d2bca3f8334356d058bff082d1406e910e8a69",
+  "timestamp": "2026-11-17T06:58:54.405227+00:00",
+  "status": "STATIC_SCENE_CONTRACT_VERIFIED_MODEL_UNTESTED",
+  "planner_default": "llm",
+  "planner_default_changed": false,
+  "collector_config_resolver_changed": true,
+  "evidence": "experiments/goal_aligned_runtime/scene_context/REPORT.md",
+  "files": {
+    "scripts/learn.py": "9af98aec69173a9870b68e02fb221295de8299487feb00bea6ca9c56fe7cd560",
+    "scripts/agent_challenge.py": "8df6f1a41a13a16e81f88beb43a1084a38ae1188fdda8134ec29ba33a6249ead",
+    "scripts/bounded_tools.py": "557e73f856062d8fab07b35884b2014116dfa1fe3790199149ff6c0b487d70af",
+    "scripts/agent_loop.py": "7b05055d734997dfb61660d444e5026a761552828f584c583a143f4db4c6e246",
+    "scripts/benchmark_recipient_feedback.py": "556b5eb53682f5761e5d024904ef19cff76ada3f1cde078b845fa797026be34f"
+  },
+  "rollback": "Revert this candidate commit to restore the previous task resolver and optional planner inputs; original simulator and hardware source unchanged.",
+  "new_model_calls": 0,
+  "new_complete_episodes": 0,
+  "new_real_executions": 0
+}

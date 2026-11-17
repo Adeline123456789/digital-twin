@@ -84,6 +84,26 @@ def decide(signature, repair, version_name=None):
         if repair in item.get('ineffective_repairs',[]): return 'REJECT_REPEAT_REQUIRE_NEW_EVIDENCE'
     return 'UNKNOWN_TASK_MODE' if not retrieve(signature) else 'ALLOW_SIMULATION'
 
+def execution_task(shift, record_inline):
+    """Resolve the actual native task once for both planning and collection."""
+    import yaml
+    if isinstance(shift,bool) or not math.isfinite(shift):raise ValueError('Holder shift must be finite millimetres')
+    retained=os.environ.get('PIPER_SIM_PROFILE')=='retained_final'
+    name='real_connector_final.yaml' if retained else 'real_connector_calibrated.yaml'
+    path=Path(os.environ.get('PIPER_TASK_CONFIG',SIM/'configs/tasks'/name))
+    cfg=yaml.safe_load(path.read_text())
+    target=int(os.environ.get('PIPER_TARGET_INDEX',cfg['target_index']))
+    if target not in (1,2,3):raise ValueError('Target must be an existing AC outlet 1, 2 or 3')
+    arms=os.environ.get('PIPER_ACTIVE_ARMS','dual')
+    if arms not in ('dual','right'):raise ValueError('Simulation arms must be dual or right')
+    if arms=='right':
+        if retained:raise ValueError('Right-arm adaptation uses original simulator only')
+        if not record_inline:raise ValueError('Right-arm collection requires inline recording')
+    cfg['target_index']=target
+    cfg['active_arms']=['right'] if arms=='right' else ['left','right']
+    cfg['holder_xy_m'][0]+=shift/1000
+    return cfg,path
+
 def simulate(kind, offset, shift, label, signature=None, repair=None, record_inline=False, grasp_tilt_deg=None, start_right_deg=None, grasp_height_m=None, align_gap_m=None):
     out,r=record(kind,label,'simulation')
     raw=DATA/'self_evolution'/r['experiment_id']
@@ -106,21 +126,11 @@ def simulate(kind, offset, shift, label, signature=None, repair=None, record_inl
             if isinstance(grasp_height_m, bool) or not math.isfinite(grasp_height_m) or not .010 <= grasp_height_m <= .025:
                 raise ValueError('Simulation grasp height must be finite and between 10 and 25 mm')
             grasp_height = grasp_height_m
-        config_name='real_connector_final.yaml' if retained else 'real_connector_calibrated.yaml'
-        config_path=Path(os.environ.get('PIPER_TASK_CONFIG',SIM/'configs/tasks'/config_name))
-        cfg=yaml.safe_load(config_path.read_text())
+        cfg,config_path=execution_task(shift,record_inline)
         if 'PIPER_TASK_CONFIG' in os.environ:
             r['scene_candidate']={'task_sha256':digest(config_path),'scope':'Explicit local candidate; not an accepted calibration or default change'}
-        target_index=int(os.environ.get('PIPER_TARGET_INDEX',cfg['target_index']))
-        if target_index not in (1,2,3):raise ValueError('Target must be an existing AC outlet 1, 2 or 3')
-        cfg['target_index']=target_index
-        active_arms=os.environ.get('PIPER_ACTIVE_ARMS','dual')
-        if active_arms not in ('dual','right'):raise ValueError('Simulation arms must be dual or right')
-        if active_arms=='right':
-            if retained:raise ValueError('Right-arm adaptation uses original simulator only')
-            if not record_inline:raise ValueError('Right-arm collection requires inline recording')
-            cfg['active_arms']=['right']
-        cfg['holder_xy_m'][0]+=shift/1000
+        target_index=cfg['target_index']
+        active_arms='right' if cfg['active_arms']==['right'] else 'dual'
         local=ROOT/'.local'/r['experiment_id'];local.mkdir(parents=True)
         task=local/'task.yaml';task.write_text(yaml.safe_dump(cfg))
         runtime=SIM/('.venv-mujoco/bin/python' if retained else '.venv-mujoco-hardware/bin/python')

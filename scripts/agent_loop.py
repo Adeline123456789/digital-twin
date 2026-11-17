@@ -150,7 +150,7 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
                     inline=os.environ.get('PIPER_SIM_PROFILE','original')=='original',
                     label=f'Agent {arm}',kind='evaluation',publish=publish)
             exploration=explore(seed,local,execute_case,max_calls=4*max_executions,
-                max_tools=3*max_executions,max_executions=max_executions)
+                max_tools=3*max_executions,max_executions=max_executions,shift_mm=shift)
             calls.extend(exploration['planners'])
             diagnoses.extend(c['applicability'] for c in calls)
             for trial,event in zip(exploration['experiments'],exploration['feedback']):

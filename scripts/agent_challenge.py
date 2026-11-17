@@ -64,6 +64,28 @@ def frame_contract(ident, next_shift_mm, prior_shift_mm):
         'unknown':'Residual change caused by changed grasp geometry must be measured; no one-to-one response is assumed',
         'scope':'Original simulation profile only; no real extrinsic calibration'}
 
+def execution_scene(ident, shift):
+    """Compare recorded and requested task state, without exposing device matrices."""
+    import hashlib
+    import yaml
+    from learn import execution_task
+    before_path=DATA/'self_evolution'/ident/'task.yaml'
+    before=yaml.safe_load(before_path.read_text())
+    before.setdefault('active_arms',['left','right'])
+    after,base_path=execution_task(shift,record_inline=os.environ.get('PIPER_SIM_PROFILE','original')=='original')
+    changed=sorted(k for k in before.keys()|after.keys() if before.get(k)!=after.get(k))
+    # Only task poses/identity go to the planner. Camera and physics changes remain named dependencies.
+    public={'holder_xy_m','strip_xy_m','strip_yaw_deg','target_index','active_arms'}
+    return dict(observed_episode=ident,scope='Requested simulation state; not a measured real-world change',
+        observed_task_sha256=digest(before_path),base_task_sha256=digest(base_path),
+        execution_task_sha256=hashlib.sha256(yaml.safe_dump(after).encode()).hexdigest(),
+        changed_fields=changed,changed_values={k:{'observed':before.get(k),'requested':after.get(k)} for k in changed if k in public},
+        active_arms=after['active_arms'],target_index=after['target_index'],
+        holder_translation_world_m=[a-b for a,b in zip(after['holder_xy_m'],before['holder_xy_m'])],
+        units={'holder_xy_m':'world metres','strip_xy_m':'world metres','strip_yaw_deg':'world yaw degrees'},
+        interpretation='Changed state invalidates reuse of the old joint reference and final residual as a current measurement; the native primitive recomputes object-relative targets. No offset response is assumed.',
+        validation_status='CONFIG_RESOLVED_NOT_TRAJECTORY_VERIFIED',privileged_information_used=True)
+
 def run(arm, shift, publish=True, hidden_bias=2.0):
     out,r=record('evaluation',f'Luna {arm} hidden target-frame error challenge; holder shift {shift} mm','llm_driven_simulation')
     r['model']=os.environ.get('ROBOT_LLM_MODEL','gpt-6-luna');r['runner_sha256']=digest(__file__)

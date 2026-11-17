@@ -1,0 +1,19 @@
+{
+  "suites": [
+    "test_scene_context",
+    "test_frame_contract",
+    "test_exploration_loop",
+    "test_evidence_tools",
+    "test_recipient_feedback",
+    "test_agent_loop",
+    "test_grasp_height",
+    "test_right_agent_integration",
+    "test_agent_repair_diagnosis",
+    "test_episode_publication"
+  ],
+  "tests_run": 47,
+  "failures": 0,
+  "errors": 0,
+  "wall_seconds": 0.39745700103230774,
+  "scope": "Software tests; physical execution is not mocked success evidence"
+}

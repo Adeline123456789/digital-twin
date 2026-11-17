@@ -1,0 +1,148 @@
+{
+  "timestamp": "2026-11-17T06:54:58.273458+00:00",
+  "result": "success",
+  "task_success": null,
+  "validation_status": "STATIC_SCENE_CONTRACT_ONLY",
+  "source_episode": "20261117T053833Z_25cf43e3",
+  "source_task_sha256": "1df8bb99725a383553765b87673d8e09cac59f44a3963b0dfcf328f19512331f",
+  "parent_commit": "53d2bca3f8334356d058bff082d1406e910e8a69",
+  "new_model_calls": 0,
+  "new_model_tokens": 0,
+  "new_complete_episodes": 0,
+  "real_executions": 0,
+  "simulation_steps": 0,
+  "privileged_information_used": true,
+  "research_orchestrator_tokens": null,
+  "cases": [
+    {
+      "case": "old",
+      "requested_arms": [
+        "right"
+      ],
+      "observed_arms": [
+        "right"
+      ],
+      "state_dimension": 7,
+      "actuators": 7,
+      "changed_fields": [],
+      "task_sha256": "1df8bb99725a383553765b87673d8e09cac59f44a3963b0dfcf328f19512331f",
+      "plug_delta_world_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "right_joint_limits_identical": true,
+      "left_robot_bodies": 0,
+      "model_time_seconds": 0.0,
+      "construction_seconds": 1.4453593289945275
+    },
+    {
+      "case": "new_holder",
+      "requested_arms": [
+        "right"
+      ],
+      "observed_arms": [
+        "right"
+      ],
+      "state_dimension": 7,
+      "actuators": 7,
+      "changed_fields": [
+        "holder_xy_m"
+      ],
+      "task_sha256": "3035dc037fbdf552599c26b9d1ef1d8270aa676561fa5628e21f5caf82ea3e75",
+      "plug_delta_world_mm": [
+        1.0000000000000009,
+        0.0,
+        0.0
+      ],
+      "right_joint_limits_identical": true,
+      "left_robot_bodies": 0,
+      "model_time_seconds": 0.0,
+      "construction_seconds": 0.6242581229889765
+    },
+    {
+      "case": "return_old",
+      "requested_arms": [
+        "right"
+      ],
+      "observed_arms": [
+        "right"
+      ],
+      "state_dimension": 7,
+      "actuators": 7,
+      "changed_fields": [],
+      "task_sha256": "1df8bb99725a383553765b87673d8e09cac59f44a3963b0dfcf328f19512331f",
+      "plug_delta_world_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "right_joint_limits_identical": true,
+      "left_robot_bodies": 0,
+      "model_time_seconds": 0.0,
+      "construction_seconds": 0.5786207179771736
+    },
+    {
+      "case": "dual",
+      "requested_arms": [
+        "left",
+        "right"
+      ],
+      "observed_arms": [
+        "left",
+        "right"
+      ],
+      "state_dimension": 14,
+      "actuators": 14,
+      "changed_fields": [
+        "active_arms"
+      ],
+      "task_sha256": "a9618f94fc16a75af4de051a5e316b245cf90066c5afd20bd56939d644d5af05",
+      "plug_delta_world_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "right_joint_limits_identical": true,
+      "left_robot_bodies": 12,
+      "model_time_seconds": 0.0,
+      "construction_seconds": 0.7941714170156047
+    },
+    {
+      "case": "return_right",
+      "requested_arms": [
+        "right"
+      ],
+      "observed_arms": [
+        "right"
+      ],
+      "state_dimension": 7,
+      "actuators": 7,
+      "changed_fields": [],
+      "task_sha256": "1df8bb99725a383553765b87673d8e09cac59f44a3963b0dfcf328f19512331f",
+      "plug_delta_world_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "right_joint_limits_identical": true,
+      "left_robot_bodies": 0,
+      "model_time_seconds": 0.0,
+      "construction_seconds": 0.5660579829709604
+    }
+  ],
+  "wall_seconds": 4.008685902110301,
+  "source_unmodified": true,
+  "candidate_sha256": {
+    "scripts/learn.py": "9af98aec69173a9870b68e02fb221295de8299487feb00bea6ca9c56fe7cd560",
+    "scripts/agent_challenge.py": "8df6f1a41a13a16e81f88beb43a1084a38ae1188fdda8134ec29ba33a6249ead",
+    "scripts/bounded_tools.py": "557e73f856062d8fab07b35884b2014116dfa1fe3790199149ff6c0b487d70af",
+    "scripts/agent_loop.py": "7b05055d734997dfb61660d444e5026a761552828f584c583a143f4db4c6e246",
+    "scripts/benchmark_recipient_feedback.py": "556b5eb53682f5761e5d024904ef19cff76ada3f1cde078b845fa797026be34f"
+  },
+  "limitations": [
+    "No trajectory, contact retention, task success or real-world adaptation evaluated",
+    "Model construction and privileged initial geometry only; no stepped simulation",
+    "No new model capability or overall cost claim"
+  ]
+}
