@@ -1,7 +1,8 @@
 {
-  "schema_version": 1,
-  "updated_at": "2026-11-17T10:53:43.308968+00:00",
-  "purpose": "Development continuation checkpoint, not robot prompt or live telemetry",
+  "schema_version": 2,
+  "updated_at": "2026-11-17T12:57:05.513385+00:00",
+  "purpose": "Last-observed development checkpoint; not live telemetry or robot prompt",
+  "active_goal": "evolution/ACTIVE_GOAL.md",
   "mission": {
     "path": "/home/midea/下载/codex_teacher_reliability_first.md",
     "sha256": "4420a451272731b1b9635642386e5497add4f8c578f413b03c53060312626f45",
@@ -16,111 +17,58 @@
     "automatic_teaching_after_simulation": false
   },
   "branch": "codex/teacher-reliability-20261117",
-  "status": "SIX_ROUND_VALIDATION_AUTHORIZED",
-  "active": {
-    "planner_policy": "llm",
-    "tool_planner": "bounded_tools_v1 is opt-in",
-    "receiver": "completion_receiver_v1 offline verified",
-    "memory_delivery": "runtime_memory_v1 offline verified",
-    "real_evidence_index": "real_capture_summary_v1: executed on four archived captures; opt-in offline CLI, not a live policy promotion",
-    "batch_decision_maker": "Current supervising model; no child-model calls. Existing runtime model defaults were not promoted or executed."
+  "status": "VERTICAL_TRANSPORT_SIM_RUNNING",
+  "history_checkpoint": "evolution/checkpoints/20261117_before_compact_stage_state.json",
+  "continuation": {
+    "id": "grasp_six_rounds_20261117",
+    "status": "AUTHORIZED_ACTIVE",
+    "protocol": "experiments/grasp_six_rounds/protocol.json",
+    "goal_file": "evolution/ACTIVE_GOAL.md",
+    "authorization_source": "Latest user requests six full rounds plus four extra correction rounds per phase; reset and hands clear confirmed for next run",
+    "old_budget_stop_superseded": true,
+    "new_model_subcalls": 0,
+    "outer_session_cost": null
   },
-  "last_hardware_observation": {
-    "state": "All six motors/gripper disabled, controller exited; no live claim",
-    "source": "experiments/grasp_six_rounds/round_01/cost_shutdown.json",
-    "live_telemetry": false
-  },
-  "batch": {
-    "id": "goal_aligned_batch2",
-    "deadline_utc": "2026-11-17T08:19:53+00:00",
-    "budget_status": "EXHAUSTED_DO_NOT_RESET",
-    "model_calls": 9,
-    "reported_tokens": 253720,
-    "full_sim_episodes": 5,
-    "sim_successes": 3,
-    "real_attempts": 2,
-    "real_successes": 0,
-    "manual_plug_resets": 1,
-    "source": "experiments/goal_aligned_runtime/batch2/summary.json"
+  "native_goal_api_limitation": "Existing unfinished goal remains blocked in app; create_goal refused replacement. Do not mark prior unfinished work complete to bypass this. User-authorized current work follows ACTIVE_GOAL.md.",
+  "six_round_continuation": {
+    "status": "VERTICAL_TRANSPORT_SIM_RUNNING",
+    "protocol": "experiments/grasp_six_rounds/protocol.json",
+    "main_rounds_real_completed": 2,
+    "remaining_main_rounds": 4,
+    "extra_corrections_used": {
+      "grasp": 2,
+      "transport": 2,
+      "insert": 1
+    },
+    "hardware_resume_authorized": true,
+    "reset": "Required after transport stage; prior reset consumed",
+    "active_stage_scope": "Offline vertical transport candidate; no movement",
+    "active_capture": null,
+    "runtime_sessions": {
+      "simulation": 96252
+    },
+    "current_candidate": "Preserve22mm grasp/lift prefix and1Nm lift-entry hold; cancel carry5deg tilt under original IK bounds",
+    "latest_result": "experiments/grasp_six_rounds/transport_correction_02/real_result.json"
   },
   "current_findings": [
-    "Simulation success and a complete release/fold did not establish real insertion.",
-    "Gripper aperture and contact presence do not establish stable plug-to-gripper pose.",
-    "Joint-model tracking errors were small at alignment; absolute geometry and in-hand pose remain uncertain.",
-    "NE020 had not reached the default right-arm planner; current code fixes delivery, not physical success.",
-    "Historical discovery and latest failure task YAML differ only by camera archive path; camera content hashes match. Motion/start/grasp/controller conditions still differ.",
-    "Rejected batch2 recording diverges gradually from receipts by about250ms in both cameras, crosses one frame at image997. Cause UNKNOWN; mapping unchanged.",
-    "Archived real phase/event index preserves physical labels and refuses image-command pairing when native clock validation fails. Cache equality verified on two successes and two failures."
-  ],
-  "rejected": [
-    "Batch2 teacher guidance: no supported recipient benefit",
-    "16mm grasp/23mm alignment: real failure",
-    "Width-only image fit: unvalidated and bound-limited",
-    "Camera-clock cadence export candidate: rejected",
-    "Reliability candidate1: historical16mm/25mm/0.3Nm bundle with45.8s model pause; real align abort. No default promotion.",
-    "Reliability candidate2:16mm/25mm,0.3->1Nm at transport, no model pause; native align abort. No default promotion."
-  ],
-  "next_unresolved": [
-    "Both development attempts failed; no stable collection acceptance started. No automatic new batch or third hardware attempt.",
-    "Real in-hand pose and cause of guard-triggering appearance change remain UNKNOWN; resolve observation ambiguity before a new motion proposal.",
-    "Historical batch2 first recording clock rejection unresolved; preserve raw and do not fabricate export."
+    "Earlier1Nm transition retains grasp through two independently reset stage checks, including transport; this is retention only.",
+    "User rejects tilted transport. Native planner intentionally adds5deg carry tilt; initial real in-hand tilt remains UNKNOWN.",
+    "Change-only lift screen passed in hardware but cannot validate absolute plug orientation."
   ],
   "evidence": {
-    "latest_physical": "experiments/teacher_reliability/BATCH_RESULT.md",
-    "memory": "experiments/goal_aligned_runtime/runtime_memory/REPORT.md",
-    "receiver": "experiments/goal_aligned_runtime/completion_receiver/REPORT.md",
-    "reliability_checkpoint": "experiments/teacher_reliability/BATCH_RESULT.md",
-    "historical_success": "experiments/teacher_reliability/historical_success_reference.json",
-    "current_versions": "experiments/teacher_reliability/current_versions.json",
-    "offline_real_index": "experiments/teacher_reliability/offline_verification.json"
+    "latest_physical": "experiments/grasp_six_rounds/transport_correction_02/real_result.json",
+    "latest_full_task": "experiments/grasp_six_rounds/round_02/real/result.json",
+    "selected_memory": "memory/negative_experiences/NE021.json",
+    "handoff_screen": "experiments/grasp_six_rounds/grasp_correction_02/handoff_offline.json"
   },
-  "publication": "Use git status and git ls-remote to verify current commit; this checkpoint does not self-certify remote state",
-  "continuation": {
-    "id": "teacher_reliability_20261117",
-    "status": "BLOCKED_PENDING_NEW_BUDGET",
-    "new_model_subcalls": 0,
-    "new_simulation_episodes": 2,
-    "new_real_attempts": 2,
-    "new_manual_resets": 1,
-    "prior_budget_reset": false,
-    "hardware_resume_authorized": false,
-    "outer_goal_usage_last_observed": {
-      "tokens": 343992,
-      "batch_start": 141580,
-      "batch_delta": 202412,
-      "stop_threshold": 341580,
-      "inflight_overrun_observed": 2412,
-      "scope": "Snapshot after automatic continuation and closure; no new experiment or motion. Further budget request pending, not approved."
-    },
-    "next_batch_proposal": "experiments/teacher_reliability/batch_proposal.json",
-    "authorization": "experiments/teacher_reliability/authorization.json",
-    "ledger": "experiments/teacher_reliability/batch_ledger.json",
-    "pending_user_observation": null,
-    "supported_shutdown": "User explicitly confirmed foam protection at original folded position; return/fold before automatic disable. Manual-reset5-trial acceptance remains unavailable while user is away.",
-    "current_candidate": "Both physical candidates rejected; original default unchanged",
-    "authorization_scope_note": "Completed authorized two-development-attempt batch; no fresh grant for additional motion. Existing acceptance allowance cannot be used without validated physical repair."
+  "next_unresolved": [
+    "Finish vertical-transport frozen replay; reject original limits/contact/tilt failures, do not relax gates.",
+    "Inspect real initial-grasp versus world-axis orientation separately; no full insertion until transport axis accepted."
+  ],
+  "last_hardware_observation": {
+    "state": "All six motors and gripper disabled after folded return; no live claim",
+    "source": "experiments/grasp_six_rounds/transport_correction_02/real_result.json",
+    "live_telemetry": false
   },
-  "active_goal": "evolution/ACTIVE_GOAL.md",
-  "six_round_continuation": {
-    "protocol": "experiments/grasp_six_rounds/protocol.json",
-    "status": "ROUND2_FULL_SIMULATION_RUNNING",
-    "hardware_resume_authorized": true,
-    "reset": "User confirmed restored and hands clear after hold-check",
-    "old_budget_constraints": "Superseded for new six-round work by explicit user instruction; historical accounting retained",
-    "latest_result": "experiments/grasp_six_rounds/round_01/real/result.json",
-    "remaining_main_rounds": 5,
-    "main_rounds_real_completed": 1,
-    "grasp_extra_corrections_started": 1,
-    "active_stage_scope": "Same22mm grasp/lift/fold,0.3Nm through lift then1Nm return; no insertion",
-    "active_capture": "self_evolution/grasp_six_rounds_20261117/hold_check22_real",
-    "runtime_sessions": {
-      "simulation": 95466,
-      "diagnostic_grasp_export": 15807,
-      "diagnostic_hold_export": 32154
-    },
-    "latest_source": "experiments/grasp_six_rounds/transport_correction_01",
-    "transport_extra_corrections_started": 1,
-    "stage_result": "grasp22 low-effort lifts near-upright but loses during return;0.3->1Nm return retains plug through fold, one trial only",
-    "current_candidate": "22mm/25mm/0.3Nm grasp-lift then1Nm transport onward"
-  }
+  "publication": "Check Git and remote; raw data/private controllers stay outside public Git"
 }

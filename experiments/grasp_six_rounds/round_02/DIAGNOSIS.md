@@ -1,0 +1,9 @@
+# 第二轮：先在抬升失去姿态，之后才对准报警
+
+真实插接失败。原控制器在align阶段停止，未执行insert/release；最终插头仍在折回后的夹爪内。原生数据导出/验证1598帧/相机，全部电机及夹爪下使能已独立核实。详见real/result.json和cost_shutdown.json。
+
+与上次保持住的22mm阶段试验比较，descend和grasp目标完全相同，共有lift指令最大差异约0.0000025度；不是拼接时换了一条抓取路径。失败RGB在抬升0.864–0.998秒窗口出现明显翻转，开度最终44.3→33.6mm；之前保持试验43.1→41.0mm。异常发生在进入transport和切1Nm之前。实际接触位置、落座变化及夹持余量尚未分清，不能唯一归因于摩擦或力矩。源证据和数值在prefix_comparison.json、real_review.json。
+
+下一修复只提前保持力矩切换到lift入口；22mm抓取、关节/开度参考及速度不变。grasp_correction_02真实短段保持通过一次，不能据此宣称完整插入或稳定采集。搬运阶段增加本地RGB/开度衔接筛查，发现已知异常即折回，避免再消耗后续搬运动作。筛查通过不等于抓取稳定。
+
+此轮实际入口为本地teacher_reliability_20261117/candidate2/continue_plug_task.py，0.3Nm抓取/抬升、transport才切1Nm，参考72ada521ff4e8b4289c67f3ab403f0ac67787d7e5337e1d98ba06fd8dc845e00。原默认未改；回滚是不加载私有candidate覆盖。原始视频、控制器和模型留在本地数据根，公开仓库只有结果及引用。

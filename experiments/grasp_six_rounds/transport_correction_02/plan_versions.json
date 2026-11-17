@@ -1,0 +1,16 @@
+{
+  "scope": "grasp_transport_return_diagnostic",
+  "entry": "self_evolution/grasp_six_rounds_20261117/controller_transport/continue_transport_check.py",
+  "entry_sha256": "ad851106af4c3e1943bfa2582474289b3fe47369c0f80aff9eb138268d10cee2",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "handoff_helper_sha256": "bd1703a4ea14184fcfd760ae4085b2ce65d44fc2fe028be993cfae4a3aafb684",
+  "patch_sha256": "7fcb8e20766fcb3aad4c6dc352e7c4b9ec551490b3522f5a64c2b619808f8ccc",
+  "reference_id": "044514a986fc46cf9339e139266024ee7e524950af65ab1f521fb0a3d46588c2",
+  "effort_nm": {
+    "grasp": 0.3,
+    "lift_and_transport": 1.0
+  },
+  "change": "Extend passing grasp/lift prefix to transport, conditional on local RGB/encoder handoff screen; then fold, no insertion",
+  "rollback": "Use prior controller_before_lift stage entry; original defaults unchanged",
+  "status": "PREPARED_NOT_EXECUTED"
+}

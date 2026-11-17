@@ -1,0 +1,110 @@
+{
+  "experiment_id": "20261117_real_grasp_six_rounds_000002",
+  "timestamp": "2026-11-17T12:34:43.809016+00:00",
+  "batch_index": 2,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "72ada521ff4e8b4289c67f3ab403f0ac67787d7e5337e1d98ba06fd8dc845e00",
+    "archive_program_sha256": "19d6c41bb58de076ad60abca07ad411763b0ff16ffd03c1fadab90020cc4e00a"
+  },
+  "initial_state_stratum": "cold_start",
+  "task_gripper_effort_nm": {
+    "grasp_and_lift": 0.3,
+    "transport_onward": 1.0
+  },
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 1598,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Current supervising agent, recorded RGB and command-log comparison; user also reports failure",
+    "observations": [
+      "Plug changes in-gripper posture during lift, before transport and before 1Nm command transition.",
+      "Native stop event is in align, not insert; controller did not execute insertion/release.",
+      "Final external view shows plug retained at folded gripper, not seated in target socket."
+    ],
+    "evidence": [
+      {
+        "path": "right_wrist/0647.jpg",
+        "sha256": "3abb68bf826c5bfb32b6145d0701781e719832b965eaf1f57265f9dffd96ce3d"
+      },
+      {
+        "path": "right_wrist/0685.jpg",
+        "sha256": "93795dee09e169d48c059963d6ece0306b97afd977e236d9396d02f10b411868"
+      },
+      {
+        "path": "right_wrist/0702.jpg",
+        "sha256": "7fb710c1abf3f7bb1764fbd08882918e2925ac9bcef3e968e45e8a1ff89d9600"
+      },
+      {
+        "path": "right_wrist/1011.jpg",
+        "sha256": "77c418ae35de51e360e97dd5008624f8d4be0c84dafa273298a7c33fa6c97acd"
+      },
+      {
+        "path": "external/last.png",
+        "sha256": "3ea1887ef36b2a7271b5781044302fd47eccd1f33079bc73b2de2cb1e628cb32"
+      },
+      {
+        "path": "commanded_probe.csv",
+        "sha256": "4ba6f688d8105c9d2920a52ded0558b393175d7e68543f9647b4176d55b56dc0"
+      },
+      {
+        "path": "execution_report.json",
+        "sha256": "176167da809b656cc9a6ddcf77fe6af4c6d2144b95f7ed73292dbbea7036ff0a"
+      }
+    ],
+    "root_cause": "UNKNOWN: observed lift-stage rotation; contact placement, preload/holding margin and reset variation remain candidates",
+    "limits": [
+      "Qualitative RGB posture, not calibrated real6DoF; encoder aperture is not pad force.",
+      "One prior successful stage does not establish repeatability."
+    ]
+  },
+  "reference_commands": 3207,
+  "entire_reference_sent": false,
+  "reference_execution_seconds": 32.366362484986894,
+  "nominal_reference_seconds": 32.06,
+  "execution_time": 53.29761370993219,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One manual plug reset before this attempt; final supported shutdown counted separately",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_grasp_six_rounds_000002/videos/cam_external_rgb.mp4",
+      "sha256": "906c466a4d3ced1dbfd25d3bf6aab0c9e71ddc7a387b74016208c5ad9e4d41d4"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_grasp_six_rounds_000002/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "c4fd2ba0dea67655a6e4d1c9ee00480343af7c8667c779abc3e30e194eb83edb"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_grasp_six_rounds_000002/proprio_stats/proprio_stats.h5",
+      "sha256": "7cf98dd6fd79dcc171539529fc7c979686b012b414d856765ab93671827fe426"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_grasp_six_rounds_000002/outcome.json",
+      "sha256": "03b893bebccf2c5f33060abac78515e4502fa26103ca07f2b4eac2266dc14894"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_grasp_six_rounds_000002/verification.json",
+      "sha256": "a9a4ec635b2c67771278cc45728f545bdca11899a3a42650dcc83644188b124c"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_grasp_six_rounds_000002/raw/task/commanded_probe.csv",
+      "sha256": "4ba6f688d8105c9d2920a52ded0558b393175d7e68543f9647b4176d55b56dc0"
+    }
+  ],
+  "physical_task_success": false,
+  "dataset_valid": true,
+  "training_eligible": false,
+  "manual_resets": 1
+}

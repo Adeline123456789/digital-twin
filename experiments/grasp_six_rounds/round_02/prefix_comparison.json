@@ -1,0 +1,62 @@
+{
+  "compared": [
+    "transport_correction_01 held-stage",
+    "round_02 failed full run"
+  ],
+  "phases": [
+    {
+      "phase": "descend",
+      "rows": [
+        184,
+        184
+      ],
+      "shared_prefix_max_target_difference_deg": 0.0,
+      "width_target_identical": true,
+      "end_encoder_width_mm": [
+        59.49999999999999,
+        59.49999999999999
+      ]
+    },
+    {
+      "phase": "grasp",
+      "rows": [
+        133,
+        133
+      ],
+      "shared_prefix_max_target_difference_deg": 0.0,
+      "width_target_identical": true,
+      "end_encoder_width_mm": [
+        43.1,
+        44.3
+      ]
+    },
+    {
+      "phase": "lift",
+      "rows": [
+        181,
+        183
+      ],
+      "shared_prefix_max_target_difference_deg": 2.42136354700051e-06,
+      "width_target_identical": true,
+      "end_encoder_width_mm": [
+        41.0,
+        33.6
+      ]
+    }
+  ],
+  "reviewed_rotation_window": {
+    "camera": "right_wrist",
+    "frames": [
+      673,
+      677
+    ],
+    "seconds_from_lift_start": [
+      0.864,
+      0.998
+    ],
+    "source": "RGB reviewed, mapped via accepted native camera clock; not metric6DoF"
+  },
+  "hypothesis": "Failure occurred before phase composition reached transport; holding after lift is too late in this trial",
+  "root_cause": "UNKNOWN",
+  "analysis_seconds": 0.030303822946734726
+}

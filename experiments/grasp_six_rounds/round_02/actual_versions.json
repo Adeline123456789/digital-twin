@@ -1,0 +1,11 @@
+{
+  "entry": "self_evolution/teacher_reliability_20261117/candidate2/continue_plug_task.py",
+  "entry_sha256": "f791eebd57556fbbf8ea364e3b837cc979ab8b5ac0532bb14a068ed5ab104d21",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "reference_id": "72ada521ff4e8b4289c67f3ab403f0ac67787d7e5337e1d98ba06fd8dc845e00",
+  "effort_nm": {
+    "grasp_and_lift": 0.3,
+    "transport_onward": 1.0
+  },
+  "rollback": "Do not load private candidate override; original defaults unchanged"
+}

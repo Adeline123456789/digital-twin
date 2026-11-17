@@ -1,27 +1,31 @@
 {
   "id": "NE021",
-  "version": 2,
-  "content": "Current18mm/25mm/0.3Nm full reference passed simulation but real grasp changed during lift, then native align abort and plug dropped during recovery. Do not admit full insertion solely from lifted height or original condim6 success. In matched18mm simulation, grasp-to-lift rotation0.37deg under original angular friction versus130.57deg under point-contact sensitivity; both lift. This is model sensitivity, not measured real friction.22mm point-contact diagnostic stays0.21deg; real22mm validation pending. Real22mm/0.3Nm stage check kept near-upright lift but lost plug3.9s into return; repeating same reference with1Nm holding after lift retained plug through return. Stage-only one trial, not insertion or stable validation.",
+  "version": 4,
+  "content": "Right-arm plug retention is not established by lift height, condim6 simulation success, or one successful grasp-return trial. Round2 used identical descend/grasp commands and essentially identical lift commands to a prior held trial, yet plug rotated0.9–1.0s into lift before transport. Delayed1Nm after lift cannot undo an already rotated plug. Moving1Nm transition to lift entry retained grasp and folded return in one subsequent stage trial; not stable insertion. Second independent reset with1Nm from lift retained through transport/fold, but onsite user rejected tilted carry. Native planner adds5deg preinsert tilt; absolute world/socket-axis orientation was omitted from retention-only stage criteria. An already tilted grasp can pass the change-only screen.",
   "applicability": "Current right-only original Piper task,target3,RGB-only; historical success and current failure remain distinct",
   "source_episodes": [
     "20261117_real_grasp_six_rounds_000001",
-    "20261117T113906Z_a161f852"
+    "20261117T113906Z_a161f852",
+    "20261117_real_grasp_six_rounds_000002"
   ],
   "source_experiments": [
     "experiments/grasp_six_rounds/grasp_correction1.json",
     "experiments/grasp_six_rounds/round_01/real/result.json",
     "experiments/grasp_six_rounds/grasp_correction_01/real_result.json",
-    "experiments/grasp_six_rounds/transport_correction_01/real_result.json"
+    "experiments/grasp_six_rounds/transport_correction_01/real_result.json",
+    "experiments/grasp_six_rounds/round_02/real/result.json",
+    "experiments/grasp_six_rounds/grasp_correction_02/real_result.json",
+    "experiments/grasp_six_rounds/transport_correction_02/real_result.json"
   ],
-  "validation_status": "REAL_FAILURE_OBSERVED; MODEL_SENSITIVITY_ONLY",
+  "validation_status": "REAL_LIFT_FAILURE_LOCALIZED; SINGLE_STAGE_REPAIR_OBSERVED",
   "success_count": 0,
-  "failure_count": 1,
-  "count_unit": "One new real full-task round, plus separately recorded offline diagnostics",
+  "failure_count": 2,
+  "count_unit": "Two full-task real failures in current six-round scope; stage checks counted separately",
   "known_limits": [
     "Root cause UNKNOWN",
     "No accepted friction or force calibration",
     "Qualitative real RGB posture, not metric real6DoF pose",
-    "22mm stage return retention1/1 with post-lift1Nm; full insertion and repeatability unverified."
+    "Two stage-retention observations, transport orientation rejected, full insertion unverified."
   ],
   "signatures": [
     "sim_success_real_insertion_failure",
@@ -43,9 +47,19 @@
   ],
   "next_checks": [
     {
-      "when": "Candidate lifts in simulation",
-      "check": "Inspect object-in-gripper translation and rotation through lift; keep model sensitivity separate from accepted calibration, then physically validate grasp before full task.",
-      "evidence": "experiments/grasp_six_rounds/grasp_correction1.json"
+      "when": "A grasp is retained",
+      "check": "Separately verify initial absolute plug axis and transport axis; reject carry tilt even when relative in-hand pose stays unchanged. Never treat retention-only pass as full stage acceptance.",
+      "evidence": "experiments/grasp_six_rounds/transport_correction_02/real_result.json"
+    },
+    {
+      "when": "After grasp-lift, before transport",
+      "check": "Compare current grasp/lift RGB and encoder change; reject known posture-change signature locally and fold. A pass only permits stage testing, not a physical-success label.",
+      "evidence": "experiments/grasp_six_rounds/grasp_correction_02/handoff_offline.json"
+    },
+    {
+      "when": "Failure is detected at align/insert",
+      "check": "First inspect earlier grasp/lift phase endpoints, then first failing frame window. Compare exact commanded prefix with the closest same-scene held-stage trial before changing geometry or friction.",
+      "evidence": "experiments/grasp_six_rounds/round_02/phase_evidence.json"
     }
   ]
 }

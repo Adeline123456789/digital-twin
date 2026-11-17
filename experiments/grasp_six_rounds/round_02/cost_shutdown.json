@@ -1,0 +1,24 @@
+{
+  "command_log_span_seconds": 53.29761370993219,
+  "diagnostic_pause_seconds": 0,
+  "command_effort_nm_counts": {
+    "0.3": 2177,
+    "1.0": 2971
+  },
+  "motors_enabled": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "gripper_enabled": false,
+  "err_code": 0,
+  "checked_at_utc": "2026-11-17T12:31:12.964458+00:00",
+  "check_sha256": "58a931e76a1b3b7f2a7b96b2aadaeb97c76ae2033186337b1140430aa68c9d7f",
+  "sim_collection_seconds": 169.57172032503877,
+  "frozen_validation_seconds": 132.98329918796662,
+  "child_model_calls": 0,
+  "monetary_cost": null
+}

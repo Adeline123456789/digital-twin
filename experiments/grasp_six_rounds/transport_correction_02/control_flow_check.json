@@ -1,0 +1,60 @@
+[
+  {
+    "input_width": 39.8,
+    "emitted_phases": [
+      "grasp",
+      "lift",
+      "transport",
+      "fold"
+    ],
+    "screen": {
+      "allow_transport": true,
+      "reason": "No screened change detected",
+      "encoder_width_change_mm": 3.4000000000000057,
+      "yellow_top_change_px": 5,
+      "thresholds": {
+        "encoder_width_change_mm": 5.0,
+        "yellow_top_change_px": 15.0
+      },
+      "limit": "Task-specific rejection screen, not calibrated pose/force or proof of stable grasp",
+      "grasp": {
+        "width_mm": 43.2,
+        "top_px": 306,
+        "frame": "grasp.jpg"
+      },
+      "lift": {
+        "width_mm": 39.8,
+        "top_px": 301,
+        "frame": "lift.jpg"
+      }
+    }
+  },
+  {
+    "input_width": 33.6,
+    "emitted_phases": [
+      "grasp",
+      "lift"
+    ],
+    "screen": {
+      "allow_transport": false,
+      "reason": "Grasp-to-lift observation changed",
+      "encoder_width_change_mm": 9.600000000000001,
+      "yellow_top_change_px": 47,
+      "thresholds": {
+        "encoder_width_change_mm": 5.0,
+        "yellow_top_change_px": 15.0
+      },
+      "limit": "Task-specific rejection screen, not calibrated pose/force or proof of stable grasp",
+      "grasp": {
+        "width_mm": 43.2,
+        "top_px": 306,
+        "frame": "grasp.jpg"
+      },
+      "lift": {
+        "width_mm": 33.6,
+        "top_px": 259,
+        "frame": "lift.jpg"
+      }
+    }
+  }
+]

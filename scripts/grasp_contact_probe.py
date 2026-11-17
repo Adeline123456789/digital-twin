@@ -11,7 +11,7 @@ import yaml
 
 from learn import SIM, digest, save
 from trajectory_contract import load_reference
-from contact_evidence import grasp_relation
+from contact_evidence import grasp_relation, inspect_state
 
 sys.path.insert(0, str(SIM / 'src'))
 from piper_sim.backends.mujoco import MujocoBackend
@@ -57,7 +57,17 @@ def contact_snapshot(sim):
                 any_antipodal_pair=any(p['antipodal_point_contact'] for p in pairs))
 
 
-def probe(trial, reference, output, contact_dim):
+def probe_target(target, initial_target, replay):
+    """Counterfactual actuator targets, never object state edits."""
+    q = np.r_[np.deg2rad(target[:6]), target[6] * .095]
+    if replay == 'frozen':
+        q = initial_target.copy()
+    elif replay == 'open':
+        q[-1] = .095
+    return q
+
+
+def probe(trial, reference, output, contact_dim, replay='written'):
     output.mkdir(parents=True, exist_ok=False)
     manifest = json.loads((reference / 'manifest.json').read_text())
     assert digest(trial / 'initial_state.npz') == manifest['source_initial_state_sha256']
@@ -68,7 +78,8 @@ def probe(trial, reference, output, contact_dim):
     started = time.monotonic()
     result = dict(reference_sha256=manifest['trajectory_id'], result='infrastructure_error',
                   task_success=None, diagnostic_only=True, privileged_information_used=True,
-                  real_commands=0, contact_dim=contact_dim, root_cause_status='UNKNOWN')
+                  real_commands=0, contact_dim=contact_dim, replay=replay,
+                  root_cause_status='UNKNOWN', mujoco_version=mujoco.__version__)
     history, phase_ends = [], {}
     try:
         result['base_profile'] = configure_rigid_collection(sim)
@@ -80,7 +91,10 @@ def probe(trial, reference, output, contact_dim):
             for field in ('qpos', 'qvel', 'ctrl'):
                 getattr(sim.data, field)[:] = initial[field]
         mujoco.mj_forward(sim.model, sim.data)
-        initial_z = float(sim.data.body('task/yellow_plug').xpos[2])
+        initial_xyz = sim.data.body('task/yellow_plug').xpos.copy()
+        initial_z = float(initial_xyz[2])
+        initial_target = sim.read().position.copy()
+        result['initial_physics'] = inspect_state(sim.model, sim.data, surfaces=False)
         assert sim.arms == ('right',)
         index = -1
         next_observation = 1/30
@@ -89,7 +103,7 @@ def probe(trial, reference, output, contact_dim):
             current = min(np.searchsorted(timeline, sim.sim_time, side='right') - 1, len(timeline) - 1)
             if current != index:
                 index = current
-                q = np.r_[np.deg2rad(targets[index, :6]), targets[index, 6] * .095]
+                q = probe_target(targets[index], initial_target, replay)
                 sim.apply(sim.layout.command(q, sim.sim_time, index))
             mujoco.mj_step(sim.model, sim.data)
             mujoco.mj_forward(sim.model, sim.data)
@@ -110,7 +124,9 @@ def probe(trial, reference, output, contact_dim):
             result['result'] = 'diagnostic_completed'
         result.update(lift_height_m=float(sim.data.body('task/yellow_plug').xpos[2] - initial_z),
                       simulated_seconds=sim.sim_time, max_penetration_m=worst,
-                      phase_ends=phase_ends)
+                      phase_ends=phase_ends,
+                      max_object_displacement_m=max((float(np.linalg.norm(np.array(r['plug_xyz_m'])-initial_xyz)) for r in history), default=0.),
+                      final_physics=inspect_state(sim.model, sim.data, surfaces=True))
     finally:
         sim.close()
         result['wall_seconds'] = time.monotonic() - started
@@ -126,6 +142,7 @@ if __name__ == '__main__':
     parser.add_argument('--reference', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--contact-dim', type=int, choices=[3, 6], required=True)
+    parser.add_argument('--replay', choices=['written', 'frozen', 'open'], default='written')
     args = parser.parse_args()
-    result = probe(args.trial, args.reference, args.output, args.contact_dim)
+    result = probe(args.trial, args.reference, args.output, args.contact_dim, args.replay)
     print(json.dumps(result, indent=2))

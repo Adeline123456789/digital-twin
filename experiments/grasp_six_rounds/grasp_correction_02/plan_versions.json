@@ -1,0 +1,15 @@
+{
+  "scope": "grasp_lift_return_diagnostic",
+  "change": "Move existing1Nm transition from after lift to lift entry; keep0.3Nm closure, all joint/width targets and motion timing unchanged",
+  "hypothesis": "Holding increase after lift was too late to prevent the observed in-lift rotation; mechanism is not uniquely identified",
+  "root_cause": "UNKNOWN",
+  "entry": "self_evolution/grasp_six_rounds_20261117/controller_before_lift/continue_grasp_check.py",
+  "entry_sha256": "4ada9b1500b7a1d9fdd46a0876b971c6c88271269ee0abec014fc0155fa92976",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "patch_sha256": "46e720b7e33ea5df96fa0261c39b1ffd3f4371de8a8d7ad92106ac4a71ed2279",
+  "reference_id": "088f380ed927db18c41d90375fc91e23c89db5434250521cd408cc743a5c7b83",
+  "simulation_validation_reused": "experiments/grasp_six_rounds/grasp_correction_01/simulation_validation.json",
+  "simulation_limit": "Same frozen kinematic reference and original physics bounds; motor torque-to-pad-force mapping is unknown, so simulation does not predict the effort change",
+  "rollback": "Use controller03to1/continue_grasp_check.py; original defaults unchanged",
+  "status": "PREPARED_NOT_EXECUTED"
+}

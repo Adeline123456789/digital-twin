@@ -1,0 +1,66 @@
+{
+  "task_scope": "grasp_lift_return_diagnostic",
+  "stage_success": true,
+  "insertion_attempted": false,
+  "physical_insertion_success": null,
+  "training_eligible": false,
+  "dataset_valid": true,
+  "observation": "Reviewed wrist RGB: original near-upright grasp posture retained at lift and final fold; one independent-reset trial",
+  "encoder_end_width_mm": {
+    "grasp": 43.2,
+    "lift": 39.8,
+    "fold": 38.8
+  },
+  "real_reference": "self_evolution/grasp_six_rounds_20261117/before_lift_real",
+  "command_seconds": 40.834492380032316,
+  "effort_transition": {
+    "reference_index": 1997,
+    "monotonic": 647338.351008801,
+    "effort_nm": 1.0
+  },
+  "actual_effort_command_nm_counts": {
+    "0.3": 2001,
+    "1.0": 1948
+  },
+  "independent_reset": true,
+  "model_pause_seconds": 0,
+  "child_model_calls": 0,
+  "money_cost": null,
+  "simulation_reuse": "Same frozen stage joint/width reference; no unnecessary full-sim regeneration",
+  "recording_frames_per_camera": 1225,
+  "recording_reference": "self_evolution/grasp_six_rounds_20261117/diagnostic_before_lift",
+  "recording_manifest_sha256": "44f77e352ea61750bb390061aca205e810fb5b44e5f2bd37853f2b1dbb715247",
+  "disabled_check_sha256": "9aca8a1984966bc9cd422d0176dd7c24db97b8fe47d452796f5d3823c1db0ba6",
+  "all_motors_and_gripper_disabled": true,
+  "evidence": [
+    {
+      "path": "right_wrist/0647.jpg",
+      "sha256": "235e7ab1a1ad5299025dd7b4ed28eb1be8089681cd074917ef91b7d674ee8850"
+    },
+    {
+      "path": "right_wrist/0702.jpg",
+      "sha256": "456d69b770274dd575f4b69b155d6abb0ccd6c504d3e7fd402ce890902bc0a58"
+    },
+    {
+      "path": "right_wrist/last.png",
+      "sha256": "96e2ee04f4f518b48ffd502e58acd05962767355085443182bdf01a799f85bf4"
+    },
+    {
+      "path": "commanded_probe.csv",
+      "sha256": "05c92407299bc0ed49d7801f88e4cf46051d47fa9c26b85c8366ebe1429b0f27"
+    },
+    {
+      "path": "execution_report.json",
+      "sha256": "da4d56d7f4e5849f98311c0843fbade9a3411bae2e5a3a44f3a56a98a11d7ade"
+    },
+    {
+      "path": "raw_can.jsonl",
+      "sha256": "f894e81b5c9a2eb9681870d958bf86dfc8a15cad8d2f02a1531337dfb5eea03d"
+    }
+  ],
+  "limits": [
+    "Single stage trial, not stable insertion",
+    "Torque-to-pad-force mapping and root cause UNKNOWN",
+    "Qualitative RGB pose, no real depth or6axis force"
+  ]
+}

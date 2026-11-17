@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-17T12:38:23.087885+00:00",
+  "purpose": "Development continuation checkpoint, not robot prompt or live telemetry",
+  "mission": {
+    "path": "/home/midea/下载/codex_teacher_reliability_first.md",
+    "sha256": "4420a451272731b1b9635642386e5497add4f8c578f413b03c53060312626f45",
+    "goal": "Current strong model diagnoses and validates repairs for reliable right-arm plug insertion and complete real data collection.",
+    "suspended": [
+      "teacher-student comparisons",
+      "student exploration",
+      "distillation/training",
+      "cross-task generalization",
+      "left-arm hardware"
+    ],
+    "automatic_teaching_after_simulation": false
+  },
+  "branch": "codex/teacher-reliability-20261117",
+  "status": "GRASP_CORRECTION2_RUNNING",
+  "active": {
+    "planner_policy": "llm",
+    "tool_planner": "bounded_tools_v1 is opt-in",
+    "receiver": "completion_receiver_v1 offline verified",
+    "memory_delivery": "runtime_memory_v1 offline verified",
+    "real_evidence_index": "real_capture_summary_v1: executed on four archived captures; opt-in offline CLI, not a live policy promotion",
+    "batch_decision_maker": "Current supervising model; no child-model calls. Existing runtime model defaults were not promoted or executed."
+  },
+  "last_hardware_observation": {
+    "state": "All six motors/gripper disabled, controller exited; no live claim",
+    "source": "experiments/grasp_six_rounds/round_02/cost_shutdown.json",
+    "live_telemetry": false
+  },
+  "batch": {
+    "id": "goal_aligned_batch2",
+    "deadline_utc": "2026-11-17T08:19:53+00:00",
+    "budget_status": "EXHAUSTED_DO_NOT_RESET",
+    "model_calls": 9,
+    "reported_tokens": 253720,
+    "full_sim_episodes": 5,
+    "sim_successes": 3,
+    "real_attempts": 2,
+    "real_successes": 0,
+    "manual_plug_resets": 1,
+    "source": "experiments/goal_aligned_runtime/batch2/summary.json"
+  },
+  "current_findings": [
+    "Simulation success and a complete release/fold did not establish real insertion.",
+    "Gripper aperture and contact presence do not establish stable plug-to-gripper pose.",
+    "Joint-model tracking errors were small at alignment; absolute geometry and in-hand pose remain uncertain.",
+    "NE020 had not reached the default right-arm planner; current code fixes delivery, not physical success.",
+    "Historical discovery and latest failure task YAML differ only by camera archive path; camera content hashes match. Motion/start/grasp/controller conditions still differ.",
+    "Rejected batch2 recording diverges gradually from receipts by about250ms in both cameras, crosses one frame at image997. Cause UNKNOWN; mapping unchanged.",
+    "Archived real phase/event index preserves physical labels and refuses image-command pairing when native clock validation fails. Cache equality verified on two successes and two failures."
+  ],
+  "rejected": [
+    "Batch2 teacher guidance: no supported recipient benefit",
+    "16mm grasp/23mm alignment: real failure",
+    "Width-only image fit: unvalidated and bound-limited",
+    "Camera-clock cadence export candidate: rejected",
+    "Reliability candidate1: historical16mm/25mm/0.3Nm bundle with45.8s model pause; real align abort. No default promotion.",
+    "Reliability candidate2:16mm/25mm,0.3->1Nm at transport, no model pause; native align abort. No default promotion."
+  ],
+  "next_unresolved": [
+    "Round2 rotated DURING lift before transport; exact cause still UNKNOWN. Descend/grasp commands identical to prior held-stage success, lift differences below0.000003deg over shared samples.",
+    "Validate only earlier holding-effort transition at lift entry with existing grasp-lift-fold reference; do not run full insertion until stage repeatability evidence is reviewed.",
+    "Before any next full run, connect observed grasp-lift failure to an executable stage handoff check; do not rely on saved prose only.",
+    "Remaining4 main rounds; retain stage correction counters and5 fixed-version acceptance trials separately."
+  ],
+  "evidence": {
+    "latest_physical": "experiments/grasp_six_rounds/round_02/real/result.json",
+    "memory": "experiments/goal_aligned_runtime/runtime_memory/REPORT.md",
+    "receiver": "experiments/goal_aligned_runtime/completion_receiver/REPORT.md",
+    "reliability_checkpoint": "experiments/teacher_reliability/BATCH_RESULT.md",
+    "historical_success": "experiments/teacher_reliability/historical_success_reference.json",
+    "current_versions": "experiments/teacher_reliability/current_versions.json",
+    "offline_real_index": "experiments/teacher_reliability/offline_verification.json",
+    "latest_full_task": "experiments/grasp_six_rounds/round_02/real/result.json"
+  },
+  "publication": "Use git status and git ls-remote to verify current commit; this checkpoint does not self-certify remote state",
+  "continuation": {
+    "id": "grasp_six_rounds_20261117",
+    "status": "AUTHORIZED_ACTIVE",
+    "protocol": "experiments/grasp_six_rounds/protocol.json",
+    "goal_file": "evolution/ACTIVE_GOAL.md",
+    "authorization_source": "Latest user requests six full rounds plus four extra correction rounds per phase; reset and hands clear confirmed for next run",
+    "old_budget_stop_superseded": true,
+    "new_model_subcalls": 0,
+    "outer_session_cost": null
+  },
+  "active_goal": "evolution/ACTIVE_GOAL.md",
+  "six_round_continuation": {
+    "protocol": "experiments/grasp_six_rounds/protocol.json",
+    "status": "GRASP_CORRECTION2_RUNNING",
+    "hardware_resume_authorized": true,
+    "reset": "User confirmed restored and hands clear after round2",
+    "old_budget_constraints": "Superseded for new six-round work by explicit user instruction; historical accounting retained",
+    "latest_result": "experiments/grasp_six_rounds/round_02/real/result.json",
+    "remaining_main_rounds": 4,
+    "main_rounds_real_completed": 2,
+    "grasp_extra_corrections_started": 2,
+    "active_stage_scope": "grasp_lift_return_diagnostic",
+    "active_capture": "self_evolution/grasp_six_rounds_20261117/before_lift_real",
+    "runtime_sessions": {
+      "controller": 22108,
+      "camera": 61344
+    },
+    "latest_source": "experiments/grasp_six_rounds/round_02",
+    "transport_extra_corrections_started": 1,
+    "stage_result": "grasp22 low-effort lifts near-upright but loses during return;0.3->1Nm return retains plug through fold, one trial only",
+    "current_candidate": "22mm;0.3Nm closure,1Nm from lift entry; same stage reference"
+  },
+  "prior_continuations": {
+    "teacher_reliability_20261117": {
+      "id": "teacher_reliability_20261117",
+      "status": "BLOCKED_PENDING_NEW_BUDGET",
+      "new_model_subcalls": 0,
+      "new_simulation_episodes": 2,
+      "new_real_attempts": 2,
+      "new_manual_resets": 1,
+      "prior_budget_reset": false,
+      "hardware_resume_authorized": false,
+      "outer_goal_usage_last_observed": {
+        "tokens": 343992,
+        "batch_start": 141580,
+        "batch_delta": 202412,
+        "stop_threshold": 341580,
+        "inflight_overrun_observed": 2412,
+        "scope": "Snapshot after automatic continuation and closure; no new experiment or motion. Further budget request pending, not approved."
+      },
+      "next_batch_proposal": "experiments/teacher_reliability/batch_proposal.json",
+      "authorization": "experiments/teacher_reliability/authorization.json",
+      "ledger": "experiments/teacher_reliability/batch_ledger.json",
+      "pending_user_observation": null,
+      "supported_shutdown": "User explicitly confirmed foam protection at original folded position; return/fold before automatic disable. Manual-reset5-trial acceptance remains unavailable while user is away.",
+      "current_candidate": "Both physical candidates rejected; original default unchanged",
+      "authorization_scope_note": "Completed authorized two-development-attempt batch; no fresh grant for additional motion. Existing acceptance allowance cannot be used without validated physical repair."
+    }
+  },
+  "native_goal_api_limitation": "Existing unfinished goal remains blocked in app; create_goal refused replacement. Do not mark prior unfinished work complete to bypass this. User-authorized current work follows ACTIVE_GOAL.md."
+}

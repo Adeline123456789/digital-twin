@@ -1,0 +1,166 @@
+{
+  "mujoco_version": "3.3.7",
+  "source": "https://github.com/robosimstudio/robosimstudio/blob/ba3650c4669fffabb7bd52802f4fdf6cdc66cb19/robosimstudio_real2sim_agent/physics.py",
+  "adoption": "Counterfactual actuator-target replays; native MuJoCo, no framework installation or source copy",
+  "results": [
+    {
+      "mode": "written",
+      "source": "self_evolution/grasp_six_rounds_20261117/physics_written/result.json",
+      "sha256": "12dc96ac6ca61272eb1f941dd4aaa74a8aa304af38be5cc88c633ec86196191f",
+      "result": "diagnostic_completed",
+      "lift_height_mm": 51.176739193716806,
+      "max_displacement_mm": 51.13969967434335,
+      "max_penetration_mm": 0.029099677565470116,
+      "wall_seconds": 32.38043668796308,
+      "equality_constraints": [
+        {
+          "name": "right/gripper_coupling",
+          "type": 2,
+          "active": true,
+          "object_ids": [
+            7,
+            6
+          ]
+        }
+      ],
+      "external_applied_forces": {
+        "xfrc_applied_nonzero": false,
+        "qfrc_applied_nonzero": false
+      },
+      "gripper_actuator": [
+        {
+          "name": "right/gripper",
+          "transmission_type": 3,
+          "ctrl": 0.027,
+          "force": -10.0,
+          "force_limited": true,
+          "forcerange": [
+            -10.0,
+            10.0
+          ],
+          "ctrl_limited": true,
+          "ctrlrange": [
+            0.0,
+            0.095
+          ],
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "frozen",
+      "source": "self_evolution/grasp_six_rounds_20261117/physics_frozen/result.json",
+      "sha256": "6477a8e064ec58d623dbdbb1ae70e7c485aed740a0ecc9cd1908b62fa6406707",
+      "result": "diagnostic_completed",
+      "lift_height_mm": -4.628988387045396e-06,
+      "max_displacement_mm": 4.818882645400462e-06,
+      "max_penetration_mm": 0.000665099336778774,
+      "wall_seconds": 29.322651308961213,
+      "equality_constraints": [
+        {
+          "name": "right/gripper_coupling",
+          "type": 2,
+          "active": true,
+          "object_ids": [
+            7,
+            6
+          ]
+        }
+      ],
+      "external_applied_forces": {
+        "xfrc_applied_nonzero": false,
+        "qfrc_applied_nonzero": false
+      },
+      "gripper_actuator": [
+        {
+          "name": "right/gripper",
+          "transmission_type": 3,
+          "ctrl": 0.06,
+          "force": 0.0,
+          "force_limited": true,
+          "forcerange": [
+            -10.0,
+            10.0
+          ],
+          "ctrl_limited": true,
+          "ctrlrange": [
+            0.0,
+            0.095
+          ],
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "open",
+      "source": "self_evolution/grasp_six_rounds_20261117/physics_open/result.json",
+      "sha256": "4f16b6b5e75039e0576539af709a98ee8c42c9e9e95482245fa277fb8aea1588",
+      "result": "diagnostic_completed",
+      "lift_height_mm": -4.628988387045396e-06,
+      "max_displacement_mm": 4.818882645400462e-06,
+      "max_penetration_mm": 0.000665099336778774,
+      "wall_seconds": 27.415988078922965,
+      "equality_constraints": [
+        {
+          "name": "right/gripper_coupling",
+          "type": 2,
+          "active": true,
+          "object_ids": [
+            7,
+            6
+          ]
+        }
+      ],
+      "external_applied_forces": {
+        "xfrc_applied_nonzero": false,
+        "qfrc_applied_nonzero": false
+      },
+      "gripper_actuator": [
+        {
+          "name": "right/gripper",
+          "transmission_type": 3,
+          "ctrl": 0.095,
+          "force": -4.872916292697482e-09,
+          "force_limited": true,
+          "forcerange": [
+            -10.0,
+            10.0
+          ],
+          "ctrl_limited": true,
+          "ctrlrange": [
+            0.0,
+            0.095
+          ],
+          "gear": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Snapshot equality shows only finger joint coupling, not a plug weld; not an exhaustive historical callback/teleport audit",
+    "Built/heavy/drop counterfactuals not executed",
+    "Native gripper actuator limit10N is not identified with real0.3 or1Nm",
+    "Current contact samples lie near original visible mesh surfaces; not a complete geometry calibration"
+  ]
+}

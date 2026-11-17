@@ -1,19 +1,19 @@
 {
-  "status": "ROUND2_ALIGN23_CORRECTION_SIMULATION",
+  "status": "VERTICAL_TRANSPORT_SIM_RUNNING",
   "objective": "evolution/ACTIVE_GOAL.md",
   "main_rounds_planned": 6,
   "main_rounds_started": 2,
-  "main_rounds_real_started": 1,
+  "main_rounds_real_started": 2,
   "extra_corrections_allowed_per_stage": 4,
   "extra_corrections_used": {
-    "grasp": 1,
-    "transport": 1,
+    "grasp": 2,
+    "transport": 2,
     "insert": 1
   },
   "prior_history_reset": false,
   "old_budget_stop_superseded_by_user": true,
   "teacher_student_suspended": true,
-  "onsite_reset_confirmed": true,
+  "onsite_reset_confirmed": false,
   "latest_instruction": "Still follow previous document; six complete rounds, each phase may have four extra correction rounds",
   "authorized_utc": "2026-11-17T11:39:06.609234+00:00",
   "results": [
@@ -23,10 +23,17 @@
       "dataset_valid": true,
       "root_cause": "UNKNOWN",
       "result": "experiments/grasp_six_rounds/round_01/real/result.json"
+    },
+    {
+      "round": 2,
+      "physical_success": false,
+      "dataset_valid": true,
+      "root_cause": "UNKNOWN",
+      "result": "experiments/grasp_six_rounds/round_02/real/result.json"
     }
   ],
-  "main_rounds_completed": 1,
-  "reset_source": "User: scene restored after round1; cannot grip",
+  "main_rounds_completed": 2,
+  "reset_source": "Consumed user reset after grasp correction2",
   "round2_candidates": [
     {
       "height_mm": 22,
@@ -37,8 +44,11 @@
     {
       "height_mm": 22,
       "align_gap_mm": 23,
-      "result": "simulation_running",
-      "real_started": false
+      "result": "simulation_valid_real_failed_in_lift",
+      "real_started": true
     }
-  ]
+  ],
+  "outer_session_cost": null,
+  "cost_note": "Actual simulation, command duration and child-model counts recorded per attempt. Native goal counter belongs to old blocked goal, not a reliable meter for this resumed scope. Monetary cost unknown.",
+  "vertical_transport_required": true
 }

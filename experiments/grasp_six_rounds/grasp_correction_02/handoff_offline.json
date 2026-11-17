@@ -1,0 +1,85 @@
+{
+  "cases": [
+    {
+      "case": "held_stage",
+      "grasp_top": 302,
+      "lift_top": 293,
+      "screen": {
+        "allow_transport": true,
+        "reason": "No screened change detected",
+        "encoder_width_change_mm": 2.1000000000000014,
+        "yellow_top_change_px": 9,
+        "thresholds": {
+          "encoder_width_change_mm": 5.0,
+          "yellow_top_change_px": 15.0
+        },
+        "limit": "Task-specific rejection screen, not calibrated pose/force or proof of stable grasp"
+      },
+      "evidence": [
+        {
+          "path": "self_evolution/grasp_six_rounds_20261117/hold_check22_real/right_wrist/0647.jpg",
+          "sha256": "51ba2b45b9c3fa57dbfe907f880006a70b16764e45a9e88fa7b49f08746aaece"
+        },
+        {
+          "path": "self_evolution/grasp_six_rounds_20261117/hold_check22_real/right_wrist/0702.jpg",
+          "sha256": "b290a292f2f160f2a4edecb3965ad9f3204d3d762157c8e3ccf6865b2a073574"
+        }
+      ]
+    },
+    {
+      "case": "round2_failed",
+      "grasp_top": 304,
+      "lift_top": 259,
+      "screen": {
+        "allow_transport": false,
+        "reason": "Grasp-to-lift observation changed",
+        "encoder_width_change_mm": 10.699999999999996,
+        "yellow_top_change_px": 45,
+        "thresholds": {
+          "encoder_width_change_mm": 5.0,
+          "yellow_top_change_px": 15.0
+        },
+        "limit": "Task-specific rejection screen, not calibrated pose/force or proof of stable grasp"
+      },
+      "evidence": [
+        {
+          "path": "self_evolution/grasp_six_rounds_20261117/real_000002/right_wrist/0647.jpg",
+          "sha256": "3abb68bf826c5bfb32b6145d0701781e719832b965eaf1f57265f9dffd96ce3d"
+        },
+        {
+          "path": "self_evolution/grasp_six_rounds_20261117/real_000002/right_wrist/0702.jpg",
+          "sha256": "7fb710c1abf3f7bb1764fbd08882918e2925ac9bcef3e968e45e8a1ff89d9600"
+        }
+      ]
+    },
+    {
+      "case": "before_lift",
+      "grasp_top": 306,
+      "lift_top": 301,
+      "screen": {
+        "allow_transport": true,
+        "reason": "No screened change detected",
+        "encoder_width_change_mm": 3.4000000000000057,
+        "yellow_top_change_px": 5,
+        "thresholds": {
+          "encoder_width_change_mm": 5.0,
+          "yellow_top_change_px": 15.0
+        },
+        "limit": "Task-specific rejection screen, not calibrated pose/force or proof of stable grasp"
+      },
+      "evidence": [
+        {
+          "path": "self_evolution/grasp_six_rounds_20261117/before_lift_real/right_wrist/0647.jpg",
+          "sha256": "235e7ab1a1ad5299025dd7b4ed28eb1be8089681cd074917ef91b7d674ee8850"
+        },
+        {
+          "path": "self_evolution/grasp_six_rounds_20261117/before_lift_real/right_wrist/0702.jpg",
+          "sha256": "456d69b770274dd575f4b69b155d6abb0ccd6c504d3e7fd402ce890902bc0a58"
+        }
+      ]
+    }
+  ],
+  "seconds": 0.013085855985991657,
+  "limit": "Retrospective task-specific diagnostic; these cases informed thresholds, not held-out accuracy",
+  "helper_sha256": "bd1703a4ea14184fcfd760ae4085b2ce65d44fc2fe028be993cfae4a3aafb684"
+}
