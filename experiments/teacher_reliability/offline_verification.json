@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "capture": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task",
+      "physical_task_success": true,
+      "cold_seconds": 0.8194165610475466,
+      "warm_seconds": 0.00133174704387784,
+      "same_result": true,
+      "clock_status": {
+        "external": "ACCEPTED_BY_CURRENT_MAPPING",
+        "right_wrist": "ACCEPTED_BY_CURRENT_MAPPING"
+      }
+    },
+    {
+      "capture": "complete_real/successed/20261116_real_repeatability_000002/raw/task",
+      "physical_task_success": true,
+      "cold_seconds": 0.6194964909227565,
+      "warm_seconds": 0.0006542080081999302,
+      "same_result": true,
+      "clock_status": {
+        "external": "ACCEPTED_BY_CURRENT_MAPPING",
+        "right_wrist": "ACCEPTED_BY_CURRENT_MAPPING"
+      }
+    },
+    {
+      "capture": "self_evolution/goal_aligned_batch2/real_000001",
+      "physical_task_success": false,
+      "cold_seconds": 0.5969976389314979,
+      "warm_seconds": 0.0012371019693091512,
+      "same_result": true,
+      "clock_status": {
+        "external": "REJECTED_BY_CURRENT_MAPPING",
+        "right_wrist": "REJECTED_BY_CURRENT_MAPPING"
+      }
+    },
+    {
+      "capture": "complete_real/failed/20261117_real_batch2_000002/raw/task",
+      "physical_task_success": false,
+      "cold_seconds": 0.6205511819571257,
+      "warm_seconds": 0.00225145707372576,
+      "same_result": true,
+      "clock_status": {
+        "external": "ACCEPTED_BY_CURRENT_MAPPING",
+        "right_wrist": "ACCEPTED_BY_CURRENT_MAPPING"
+      }
+    }
+  ],
+  "model_calls": 0,
+  "new_simulation_episodes": 0,
+  "new_real_attempts": 0,
+  "video_frames_decoded": 0,
+  "claim": "Cached archived diagnosis only; not new physical verification or total-pipeline speedup"
+}

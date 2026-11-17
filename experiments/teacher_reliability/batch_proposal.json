@@ -1,0 +1,56 @@
+{
+  "status": "PROPOSED_NOT_AUTHORIZED",
+  "objective": "Distinguish current grasp/measurement mismatch, validate one justified local repair, then collect a small fixed-version pilot.",
+  "budget": {
+    "wall_seconds": 5400,
+    "child_model_calls": 0,
+    "child_model_tokens": 0,
+    "full_simulation_candidates_max": 2,
+    "frozen_reference_physics_replays_max": 2,
+    "real_development_attempts_max": 2,
+    "real_acceptance_attempts_max": 5,
+    "manual_resets_max": 7,
+    "read_only_rgb_can_capture_max": 1,
+    "static_or_local_diagnostic_seconds_max": 120,
+    "total_model_monetary_cost": null,
+    "outer_development_usage": "Current chat; get_goal usage recorded, no controllable hard token cap or billing data available. No external model call authorized by this proposal.",
+    "outer_goal_token_delta_stop_threshold": 200000,
+    "outer_goal_token_reserve": 50000,
+    "outer_budget_accounting": "Snapshot get_goal tokensUsed at authorization start; do not start another analysis chunk with less than50000 remaining. No platform hard cap; record any in-flight overrun and stop. Prior usage is retained, never reset."
+  },
+  "decision_scope": [
+    "First acquire current RGB/CAN without movement and reconcile safe start and empty/loaded gripper state.",
+    "Select one low-cost discriminating observation of aperture or plug-to-finger pose using existing interfaces. Grasp/lift or gripper-only movement counts as a development attempt.",
+    "Keep original speed and safety gates; no increase in torque, no fixture modification, no unvalidated full insertion.",
+    "Any changed reference must pass current-source simulation and frozen replay before real execution. An interrupted motion needs a validated recovery, never an improvised finish.",
+    "If observation supports a local candidate, at most two development real attempts total; if no useful gain/evidence, stop early.",
+    "Only after development physical success and valid recording freeze reference/model/controller/recorder/success criteria; start five independent manual-reset acceptance attempts."
+  ],
+  "acceptance": {
+    "planned_independent_attempts": 5,
+    "required_physical_successes": 5,
+    "required_valid_success_datasets": 5,
+    "allowed_false_positive_labels": 0,
+    "allowed_unknown_or_abort_or_infrastructure_errors": 0,
+    "training_eligibility": "Keep native false unless an existing independently verified admission path applies; valid successful recording is not automatically a training demonstration.",
+    "denominator": "All started attempts; development separate; no historical successes or log rechecks added. A failure ends this pilot and leaves remaining planned attempts unstarted; do not reset counts.",
+    "confidence": "Even5/5 is only a small current-scene pilot, not99% reliability or cross-task evidence.",
+    "reset": "Onsite plug restoration to documented holder seating; fixed target3 and installation, fresh initial RGB/CAN each time.",
+    "version_freeze": "Hash actual local model/scene/reference/controller/recorder and checks before acceptance; no parameter or threshold changes within it.",
+    "cost_targets": {
+      "repeated_archived_structured_diagnosis_seconds": 2,
+      "unknown_problem_to_actionable_decision_seconds": 600,
+      "repeat_known_problem_child_calls": 0,
+      "existing_reference_task_duration": "Preserve current roughly55-second reference; no added global slowing/smoothing.",
+      "limits": "Acquisition, reset, archive and publication time measured separately; old full-path baseline incomplete so no overall speedup claim."
+    }
+  },
+  "stop_rules": [
+    "No hardware operation before explicit resume and current onsite readiness.",
+    "Unexpected obstacle/contact, loss of trustworthy holding state, invalid recording, budget end, or inability to execute existing safe recovery stops the batch.",
+    "Two costly candidates without usable improvement or distinguishing evidence stop this branch; fewer if already uninformative.",
+    "No teaching/student/generalization allocation or automatic follow-on batch."
+  ],
+  "permission_needed": "Approve this bounded batch and explicitly confirm right-arm resume, current work area clear, plug/socket electrically safe, emergency-stop access, and onsite reset/supported shutdown availability. Initial robot and plug state will be read; old readiness is not reused.",
+  "rollback": "Use private current-local snapshot only for the changed component; preserve validated recording-clock and safety fixes. Historical success references remain reference-only."
+}

@@ -1,0 +1,43 @@
+{
+  "previous_batch": "goal_aligned_batch2",
+  "model_cli_network_inference_seconds": 268.69046361988876,
+  "source": "experiments/goal_aligned_runtime/batch2/summary.json",
+  "simulation_collection_components": [
+    {
+      "id": "20261117T071047Z_e43b1ad6",
+      "collection_seconds": 181.4438657980645,
+      "total_adapter_seconds": 179.86410967598204
+    },
+    {
+      "id": "20261117T071708Z_94246e78",
+      "collection_seconds": 178.7463735131314,
+      "total_adapter_seconds": 177.17658835905604
+    },
+    {
+      "id": "20261117T072007Z_fc97119f",
+      "collection_seconds": 55.10606671101414,
+      "total_adapter_seconds": 54.4060631809989
+    },
+    {
+      "id": "20261117T072218Z_43239686",
+      "collection_seconds": 101.21484879590571,
+      "total_adapter_seconds": 100.16945638693869
+    },
+    {
+      "id": "20261117T073201Z_efc6139b",
+      "collection_seconds": 172.6967812118819,
+      "total_adapter_seconds": 171.0840485949302
+    }
+  ],
+  "real_command_seconds": [
+    33.985489993938245,
+    56.66444503108505
+  ],
+  "unknown_components": [
+    "Separate video decode/feature retrieval/context build times in old batch",
+    "Model network vs CLI vs inference split",
+    "Manual reset, startup, idle and publication elapsed time",
+    "Monetary prices/charges"
+  ],
+  "limits": "Components can overlap and have different scopes; not a sum or a complete wall-time attribution. Current index costs recorded separately; no claim that model reasoning caused the whole delay."
+}

@@ -1,0 +1,8 @@
+{
+  "task_equal_excluding_camera_archive_path": true,
+  "camera_contents_equal": true,
+  "original_task_sha256": "7614caf730f5335817d2b119aac0e7c857f6536ba7c57d9f32682d9621ed266f",
+  "current_task_sha256": "eef552f90f8ca2fd7069b9413f81f62d62aef4d1eb7fd6cbd584867e53e4cfa7",
+  "reference_scope": "Historical discovery18mm vs latest16mm failure; task YAML/camera equality does not imply equal command/start/controller/grasp settings",
+  "root_cause": "UNKNOWN"
+}

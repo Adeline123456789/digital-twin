@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-11-17T09:54:16.543366+00:00",
+  "status": "CURRENT_UNPROMOTED",
+  "public_base": "943c23696986defad61391e9ea092f321e4362aa",
+  "local_files": [
+    {
+      "component": "simulation",
+      "path": "scripts/try_plug_pick_sim.py",
+      "sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/scripts/try_plug_pick_sim.py"
+    },
+    {
+      "component": "simulation",
+      "path": "scripts/continue_plug_task.py",
+      "sha256": "097f08e68143377948ed37a628f4a49d4aa07c059defedc69bafdf1d53b90e58",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/scripts/continue_plug_task.py"
+    },
+    {
+      "component": "simulation",
+      "path": "scripts/capture_plug_calibration.py",
+      "sha256": "eb820894df901735eacd4683ad44e7f962fa519e9355d6b283235e8b5f9cc8ce",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/scripts/capture_plug_calibration.py"
+    },
+    {
+      "component": "simulation",
+      "path": "scripts/export_plug_calibration.py",
+      "sha256": "af1a1d5f6405db70cf18f30fcc062e327c0c073496b868627f9e0fb7dbf66f83",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/scripts/export_plug_calibration.py"
+    },
+    {
+      "component": "simulation",
+      "path": "scripts/recording_clock.py",
+      "sha256": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/scripts/recording_clock.py"
+    },
+    {
+      "component": "simulation",
+      "path": "scripts/trajectory_contract.py",
+      "sha256": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/scripts/trajectory_contract.py"
+    },
+    {
+      "component": "simulation",
+      "path": "src/piper_sim/tasks/connector_details.py",
+      "sha256": "cbd231704e1f12666c5fdad7b44db0e2d9169db57276ab7b26b6752aba97280c",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/src/piper_sim/tasks/connector_details.py"
+    },
+    {
+      "component": "simulation",
+      "path": "src/piper_sim/mixed_recording.py",
+      "sha256": "b5cee1dfbb6148ec7ed12e4d3a05b13d4cf792306abcae6660ad761de53107f7",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/src/piper_sim/mixed_recording.py"
+    },
+    {
+      "component": "simulation",
+      "path": "configs/tasks/real_connector_calibrated.yaml",
+      "sha256": "25fe40664fc83d5f43e65bf1ab5dfc4c8453b9c1455b02b2aed2d67d852478d7",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/simulation/configs/tasks/real_connector_calibrated.yaml"
+    },
+    {
+      "component": "controller",
+      "path": "replay_controller.py",
+      "sha256": "72d3a06e392bf8562ce0e0850f333c96e2fe520080474d1588aec9c55599600f",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/controller/replay_controller.py"
+    },
+    {
+      "component": "controller",
+      "path": "replay_connector.py",
+      "sha256": "4d9cb5afd4f149e7f52869cc654eebabaeaefeaccfd177f2c8f2cc2ef79604f0",
+      "backup": "self_evolution/teacher_reliability_20261117/current_local_snapshot/controller/replay_connector.py"
+    }
+  ],
+  "rollback": "Restore only changed component from its same-hash private snapshot. No local original component changed in this checkpoint. Do not restore whole simulator or older data exporter."
+}

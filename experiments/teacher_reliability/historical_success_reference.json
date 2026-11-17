@@ -1,0 +1,361 @@
+{
+  "status": "historical_success_reference",
+  "references": [
+    {
+      "id": "20261116_real_current_socket_repair_000002",
+      "status": "historical_success_reference",
+      "stable_verified": false,
+      "reference_id": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+      "source_simulation": "20261116T105302Z_d700416b",
+      "source_result": "experiments/evaluation/20261116T105302Z_d700416b/result.json",
+      "source_result_sha256": "10db4c24c701b64f38359845c5b8e94730f6b4dd6d43e88f6845c1374289a102",
+      "source_versions": {
+        "scripts/try_plug_pick_sim.py": "fe9064eef02aecafb12881288340574a9759b3203779dcb111889b74ce2dc3c4",
+        "scripts/continue_plug_task.py": "c06557afc1b9a6e8079b0946ec980516f3b5789cfbefbabc3b8a256e515caae8",
+        "scripts/capture_plug_calibration.py": "eb820894df901735eacd4683ad44e7f962fa519e9355d6b283235e8b5f9cc8ce",
+        "scripts/export_plug_calibration.py": "9747211525cdfba93a0a4c198304925f755f6f1889ca814b3bfd4532864b49f4",
+        "scripts/trajectory_contract.py": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+        "src/piper_sim/tasks/connector_details.py": "cbd231704e1f12666c5fdad7b44db0e2d9169db57276ab7b26b6752aba97280c"
+      },
+      "initial_state": {
+        "target_index": 3,
+        "holder_x_shift_mm": 0,
+        "task_config_sha256": "06652aa617cdd66d7ce7f4829f5f2e8e3b7178eb89356cc971be2fb2a058fd0e",
+        "start_right_joint_degrees": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actions": [
+        {
+          "script": "try_plug_pick_sim.py",
+          "profile": "original",
+          "grasp_height_m": 0.018,
+          "offset_mm": [
+            0,
+            0
+          ],
+          "speed_deg_s": 12,
+          "smooth_timing": true,
+          "grasp_tilt_deg": 0
+        }
+      ],
+      "parameters": {
+        "align_gap_m": 0.025,
+        "gripper_effort_nm": 0.3,
+        "parameter_source": "cycle11/cycle12 reports and pre-effort-change controller backups; not inferred from current controller"
+      },
+      "reference_rate_hz": 100,
+      "reference_duration_s": 55.00000000026932,
+      "physical_task_success": true,
+      "training_eligible": false,
+      "reset_protocol": "Manual plug restoration by onsite operator; exact measured seating and full reset video not recorded",
+      "missing": [
+        "Complete success-time original-source checkout is not reconstructed; source hashes alone are not a restorable binary snapshot.",
+        "No independent metric plug-in-gripper pose or physical gripper aperture calibration.",
+        "Historical fixture/current fixture equivalence requires fresh observation.",
+        "External meshes/assets referenced by archived XML were not independently frozen or audited; model XML hash is not a complete geometry snapshot."
+      ],
+      "evidence": [
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/videos/cam_external_rgb.mp4",
+          "sha256": "b0173553cea1474b42d55991d407638dd20bbf3733411f2b27b95bba3a9a0292",
+          "bytes": 10289024
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/videos/cam_right_wrist_rgb.mp4",
+          "sha256": "e829c27217d34629a3725f9f5670deff5057c4b5dec83d990c507a81b1dee815",
+          "bytes": 8442543
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/proprio_stats/proprio_stats.h5",
+          "sha256": "c665451ac0101f6afe3cfdc9fa44416767b6c7e62a67e1c421230be08aafc767",
+          "bytes": 470144
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/proprio_stats/metadata.json",
+          "sha256": "ae9cae3587e15882b9333b5f4b47908285431aab8ae3113164baca72c62e75bf",
+          "bytes": 6658
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/outcome.json",
+          "sha256": "e7ed9140476745ef7cc9826c7cc978760b5363d9433cb2b5c5bd3fd2cb09d565",
+          "bytes": 168
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/verification.json",
+          "sha256": "5fd85453d5a2f0f7825720a5e6c1a8aabc4c48938b1938a6e256796995e34064",
+          "bytes": 632
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/pair_manifest.json",
+          "sha256": "23355234462060ef7e8f94e3943a733bc80a0e8849e720ed92db6b3ca2b64359",
+          "bytes": 427
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/commanded_probe.csv",
+          "sha256": "a072c1129ef25a228aea8744c63705aea278c4811e0ba099373f8bed1b5efb60",
+          "bytes": 1242448
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/execution_report.json",
+          "sha256": "b9f60ed591702b398d28ec9df88772cb6ff9f5ead32f7b279361d5bb72c419f9",
+          "bytes": 1455
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/observed_execution_report.json",
+          "sha256": "719e5d850beb0841fb01f16e08e10e5ce3c6f4b31092a7ca96f1bd14ddc96398",
+          "bytes": 3388
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/external/camera.json",
+          "sha256": "65178f8dc1972a6cd10ca866d597282167b314520ad8665c238fc03e839bd0af",
+          "bytes": 649325
+        },
+        {
+          "path": "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/camera.json",
+          "sha256": "98459c341797d2e72202f1e62dc3f1e401046d73447618a5020073e3335bfc3f",
+          "bytes": 648975
+        },
+        {
+          "path": "self_evolution/current_scene_cycle11/reference_003/reference.npz",
+          "sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+          "bytes": 550952
+        },
+        {
+          "path": "self_evolution/current_scene_cycle11/reference_003/manifest.json",
+          "sha256": "9ec7da2e0be022b1dc3633d3d00ae256f054ef7b9d426ad754fa7c70afbefa01",
+          "bytes": 1432
+        },
+        {
+          "path": "self_evolution/current_scene_cycle11/reference_003/validation.json",
+          "sha256": "f0226239b3bf7ec817cbfdecbc5118be7dec38fc7734874114e0920fbb04e923",
+          "bytes": 1014
+        },
+        {
+          "path": "self_evolution/current_scene_cycle11/reference_003/prediction.jsonl",
+          "sha256": "7ecea12d5f6472e19d67d8af14df0ca622f6c6c16612cd67e4d9cee9560fc848",
+          "bytes": 1288237
+        },
+        {
+          "path": "self_evolution/20261116T105302Z_d700416b/task.yaml",
+          "sha256": "7614caf730f5335817d2b119aac0e7c857f6536ba7c57d9f32682d9621ed266f",
+          "bytes": 1488
+        },
+        {
+          "path": "self_evolution/20261116T105302Z_d700416b/cameras.json",
+          "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+          "bytes": 14112
+        },
+        {
+          "path": "self_evolution/20261116T105302Z_d700416b/initial_state.npz",
+          "sha256": "bd8ff2e8184dea6c634086fcee9da87e6215b206c1e213ff02ce119efdc02bad",
+          "bytes": 1134
+        },
+        {
+          "path": "self_evolution/20261116T105302Z_d700416b/trajectory.jsonl",
+          "sha256": "f142714edd1970b52ba7d9810ca2323a5efee9f837bd1870630e141373ddba1e",
+          "bytes": 1068167
+        },
+        {
+          "path": "self_evolution/20261116T105302Z_d700416b/report.json",
+          "sha256": "186ceef7824a123f8db11558616c1409853423ad6fa37fbe4ec7236282d59fc5",
+          "bytes": 1054
+        },
+        {
+          "path": "complete_sim/succeed/20261116T105302Z_d700416b/proprio_stats/model.xml",
+          "sha256": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+          "bytes": 894653
+        },
+        {
+          "path": "complete_sim/succeed/20261116T105302Z_d700416b/proprio_stats/metadata.json",
+          "sha256": "94af86553681fb1dbf7e837a0900e701e4ff4326af911442201fece637499225",
+          "bytes": 21260
+        }
+      ]
+    },
+    {
+      "id": "20261116_real_repeatability_000002",
+      "status": "historical_success_reference",
+      "stable_verified": false,
+      "reference_id": "40596ce887f8a4def382023b0b4e4ceb0232afa20094f49234db31e59aba16e2",
+      "source_simulation": "20261116T114211Z_dc56f5b3",
+      "source_result": "experiments/evaluation/20261116T114211Z_dc56f5b3/result.json",
+      "source_result_sha256": "259fa19677c39a1c74f812f49459cdb18e6e54d7a5322af8bdfaeb80255b80ec",
+      "source_versions": {
+        "scripts/try_plug_pick_sim.py": "fe9064eef02aecafb12881288340574a9759b3203779dcb111889b74ce2dc3c4",
+        "scripts/continue_plug_task.py": "c06557afc1b9a6e8079b0946ec980516f3b5789cfbefbabc3b8a256e515caae8",
+        "scripts/capture_plug_calibration.py": "eb820894df901735eacd4683ad44e7f962fa519e9355d6b283235e8b5f9cc8ce",
+        "scripts/export_plug_calibration.py": "9747211525cdfba93a0a4c198304925f755f6f1889ca814b3bfd4532864b49f4",
+        "scripts/trajectory_contract.py": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+        "src/piper_sim/tasks/connector_details.py": "cbd231704e1f12666c5fdad7b44db0e2d9169db57276ab7b26b6752aba97280c"
+      },
+      "initial_state": {
+        "target_index": 3,
+        "holder_x_shift_mm": 0,
+        "task_config_sha256": "06652aa617cdd66d7ce7f4829f5f2e8e3b7178eb89356cc971be2fb2a058fd0e",
+        "start_right_joint_degrees": [
+          0,
+          0,
+          0,
+          0.611,
+          23.697,
+          0.537
+        ]
+      },
+      "actions": [
+        {
+          "script": "try_plug_pick_sim.py",
+          "profile": "original",
+          "grasp_height_m": 0.016,
+          "offset_mm": [
+            0,
+            0
+          ],
+          "speed_deg_s": 12,
+          "smooth_timing": true,
+          "grasp_tilt_deg": 0
+        }
+      ],
+      "parameters": {
+        "align_gap_m": 0.025,
+        "gripper_effort_nm": 0.3,
+        "parameter_source": "cycle11/cycle12 reports and pre-effort-change controller backups; not inferred from current controller"
+      },
+      "reference_rate_hz": 100,
+      "reference_duration_s": 55.200000000271864,
+      "physical_task_success": true,
+      "training_eligible": false,
+      "reset_protocol": "Manual plug restoration by onsite operator; exact measured seating and full reset video not recorded",
+      "missing": [
+        "Complete success-time original-source checkout is not reconstructed; source hashes alone are not a restorable binary snapshot.",
+        "No independent metric plug-in-gripper pose or physical gripper aperture calibration.",
+        "Historical fixture/current fixture equivalence requires fresh observation.",
+        "External meshes/assets referenced by archived XML were not independently frozen or audited; model XML hash is not a complete geometry snapshot."
+      ],
+      "evidence": [
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/videos/cam_external_rgb.mp4",
+          "sha256": "2637ab6bd0be650bfc7df3521eadaf1909ba1bd0490952af26275fdeaeb014f4",
+          "bytes": 10151194
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/videos/cam_right_wrist_rgb.mp4",
+          "sha256": "8d16e49b049c9b8883c031f6e003fd8f32e8b920d3da543d505b047d98d1fcbb",
+          "bytes": 7993773
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/proprio_stats/proprio_stats.h5",
+          "sha256": "ba82c354f60aef12df32a767e338efc636d2314ebff70aa642fea6365ebac698",
+          "bytes": 464852
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/proprio_stats/metadata.json",
+          "sha256": "aca09e5178b94af5b91d939b88c74b30b44360f1eea19120b97ced3912af9da6",
+          "bytes": 6108
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/outcome.json",
+          "sha256": "ecf91229e9b4cd9259a1f467dd71e00307e4e5694810a40c9c11b55f25238ebb",
+          "bytes": 160
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/verification.json",
+          "sha256": "1d3b449158928fe53a3b83147dc7e7ea51cd0c29583f9f735358dafd3b268068",
+          "bytes": 624
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/pair_manifest.json",
+          "sha256": "6763ef4ac614e4e848683f9fa7cef3cd8c1bf4044ee4adb07a5b7bdd4dd82b96",
+          "bytes": 244
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/raw/task/commanded_probe.csv",
+          "sha256": "84a6cc324088c99c172fccab3ef29d9ecab05e0d2ca62722663119959c6955e8",
+          "bytes": 1243099
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/raw/task/execution_report.json",
+          "sha256": "0a88899f3cdfacf697df75fbff91d051b38b3cf4812edefeff98916021d9601d",
+          "bytes": 1447
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/raw/task/observed_execution_report.json",
+          "sha256": "8e366763bbfb96fd3a4b1142da81535ddd538ae9c12be258448611b6342f8c01",
+          "bytes": 2857
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/raw/task/external/camera.json",
+          "sha256": "6c27689096e56f989a945a53e67014eee62c35a5de11b5f025353133f5d57c85",
+          "bytes": 795799
+        },
+        {
+          "path": "complete_real/successed/20261116_real_repeatability_000002/raw/task/right_wrist/camera.json",
+          "sha256": "fccd1b50c9733447aa8ee75771378b87a284c05952812fb4a2adfaf32a0de895",
+          "bytes": 795917
+        },
+        {
+          "path": "self_evolution/repeatability_cycle12/grasp16_reference/reference.npz",
+          "sha256": "40596ce887f8a4def382023b0b4e4ceb0232afa20094f49234db31e59aba16e2",
+          "bytes": 552952
+        },
+        {
+          "path": "self_evolution/repeatability_cycle12/grasp16_reference/manifest.json",
+          "sha256": "a104746fd3dfc934704f9549e732eb6a2f55e60ed74b7ef0f2d5a44b4b05d78f",
+          "bytes": 1419
+        },
+        {
+          "path": "self_evolution/repeatability_cycle12/grasp16_reference/validation.json",
+          "sha256": "d35a9f45affea7a3ca71dcb175915fe96199591fed796cf0e46cc1b041bc8ece",
+          "bytes": 1014
+        },
+        {
+          "path": "self_evolution/repeatability_cycle12/grasp16_reference/prediction.jsonl",
+          "sha256": "430e99fef6f733b3af67a1e6be4bf76db3e3cc38b0aadaa983b42a39a16e3538",
+          "bytes": 1292111
+        },
+        {
+          "path": "self_evolution/20261116T114211Z_dc56f5b3/task.yaml",
+          "sha256": "8cb9d5413ef4de15ceb36394dd483c70bb16cc88a5468003d29c8b3bb785f065",
+          "bytes": 1488
+        },
+        {
+          "path": "self_evolution/20261116T114211Z_dc56f5b3/cameras.json",
+          "sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+          "bytes": 14112
+        },
+        {
+          "path": "self_evolution/20261116T114211Z_dc56f5b3/initial_state.npz",
+          "sha256": "f8f6cd84e9b00b87c863d362ad1966315936f11ff8fe1769f4023b6bac842b5f",
+          "bytes": 1134
+        },
+        {
+          "path": "self_evolution/20261116T114211Z_dc56f5b3/trajectory.jsonl",
+          "sha256": "dfa57e8b5b542f6609d60d1f5448ee0a3698ee66dcd2e4e8537a65030e78345e",
+          "bytes": 1070306
+        },
+        {
+          "path": "self_evolution/20261116T114211Z_dc56f5b3/report.json",
+          "sha256": "80777a5abb2027dc0f8f7a3a3582d0c18772c85d5fcb3f19807bb6bbb084bceb",
+          "bytes": 1061
+        },
+        {
+          "path": "complete_sim/succeed/20261116T114211Z_dc56f5b3/proprio_stats/model.xml",
+          "sha256": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+          "bytes": 894653
+        },
+        {
+          "path": "complete_sim/succeed/20261116T114211Z_dc56f5b3/proprio_stats/metadata.json",
+          "sha256": "77dc3b521f599197226e68f4890825b15e4cdacc72160c726dbaf803a696e1f6",
+          "bytes": 21267
+        }
+      ]
+    }
+  ],
+  "protection": "Hash-verified original episodes and frozen references retained in place; no raw file edited, no replay authorized.",
+  "current_private_snapshot": "self_evolution/teacher_reliability_20261117"
+}

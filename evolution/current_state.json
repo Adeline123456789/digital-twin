@@ -1,19 +1,29 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T08:28:16.917521+00:00",
+  "updated_at": "2026-11-17T09:59:51.801142+00:00",
   "purpose": "Development continuation checkpoint, not robot prompt or live telemetry",
   "mission": {
-    "path": "/home/midea/下载/codex_real_sim_goal_aligned_next.md",
-    "sha256": "b9cd40fdf12548035e5a03fa6693983fa9726426f5e6257b7f847f5dd836dc6f",
-    "goal": "Stable, cheaper real-sim collection; teacher/student, independent exploration, local scene adaptation and verified default-route evolution all remain in scope"
+    "path": "/home/midea/下载/codex_teacher_reliability_first.md",
+    "sha256": "4420a451272731b1b9635642386e5497add4f8c578f413b03c53060312626f45",
+    "goal": "Current strong model diagnoses and validates repairs for reliable right-arm plug insertion and complete real data collection.",
+    "suspended": [
+      "teacher-student comparisons",
+      "student exploration",
+      "distillation/training",
+      "cross-task generalization",
+      "left-arm hardware"
+    ],
+    "automatic_teaching_after_simulation": false
   },
-  "branch": "codex/goal-aligned-runtime-20261117",
-  "status": "INCOMPLETE",
+  "branch": "codex/teacher-reliability-20261117",
+  "status": "PARTIAL_AWAITING_NEW_BATCH_AUTHORIZATION",
   "active": {
     "planner_policy": "llm",
     "tool_planner": "bounded_tools_v1 is opt-in",
     "receiver": "completion_receiver_v1 offline verified",
-    "memory_delivery": "runtime_memory_v1 offline verified"
+    "memory_delivery": "runtime_memory_v1 offline verified",
+    "real_evidence_index": "real_capture_summary_v1: executed on four archived captures; opt-in offline CLI, not a live policy promotion",
+    "batch_decision_maker": "Current supervising model; no child-model calls. Existing runtime model defaults were not promoted or executed."
   },
   "last_hardware_observation": {
     "state": "Right arm supported, disabled and disconnected after batch2 attempt2",
@@ -38,7 +48,10 @@
     "Simulation success and a complete release/fold did not establish real insertion.",
     "Gripper aperture and contact presence do not establish stable plug-to-gripper pose.",
     "Joint-model tracking errors were small at alignment; absolute geometry and in-hand pose remain uncertain.",
-    "NE020 had not reached the default right-arm planner; current code fixes delivery, not physical success."
+    "NE020 had not reached the default right-arm planner; current code fixes delivery, not physical success.",
+    "Historical discovery and latest failure task YAML differ only by camera archive path; camera content hashes match. Motion/start/grasp/controller conditions still differ.",
+    "Rejected batch2 recording diverges gradually from receipts by about250ms in both cameras, crosses one frame at image997. Cause UNKNOWN; mapping unchanged.",
+    "Archived real phase/event index preserves physical labels and refuses image-command pairing when native clock validation fails. Cache equality verified on two successes and two failures."
   ],
   "rejected": [
     "Batch2 teacher guidance: no supported recipient benefit",
@@ -47,15 +60,34 @@
     "Camera-clock cadence export candidate: rejected"
   ],
   "next_unresolved": [
-    "Reliable grasp and held-object pose under current fixture, before another blind full insertion",
-    "One real recording rejected by native timing verifier; raw files retained",
-    "Independent live-model use and task/cost evaluation of receiver and memory changes",
-    "Durable runtime state transitions beyond bounded tool-event history; full SKILL.state not implemented"
+    "Fresh authorized empty-gripper aperture/plug-in-finger observation to distinguish mapping from actual held pose; no more blind insertion based on unchanged simulation.",
+    "Batch2 real000001 exposure-to-receipt drift remains unidentifiable from saved fields; raw capture retained, not exported.",
+    "Candidate needs independent physical verification followed by a frozen-version preregistered small batch; no new real success yet."
   ],
   "evidence": {
     "latest_physical": "experiments/goal_aligned_runtime/batch2/REPORT.md",
     "memory": "experiments/goal_aligned_runtime/runtime_memory/REPORT.md",
-    "receiver": "experiments/goal_aligned_runtime/completion_receiver/REPORT.md"
+    "receiver": "experiments/goal_aligned_runtime/completion_receiver/REPORT.md",
+    "reliability_checkpoint": "experiments/teacher_reliability/REPORT.md",
+    "historical_success": "experiments/teacher_reliability/historical_success_reference.json",
+    "current_versions": "experiments/teacher_reliability/current_versions.json",
+    "offline_real_index": "experiments/teacher_reliability/offline_verification.json"
   },
-  "publication": "Use git status and git ls-remote to verify current commit; this checkpoint does not self-certify remote state"
+  "publication": "Use git status and git ls-remote to verify current commit; this checkpoint does not self-certify remote state",
+  "continuation": {
+    "id": "teacher_reliability_20261117",
+    "status": "OFFLINE_CHECKPOINT_ONLY",
+    "new_model_subcalls": 0,
+    "new_simulation_episodes": 0,
+    "new_real_attempts": 0,
+    "new_manual_resets": 0,
+    "prior_budget_reset": false,
+    "hardware_resume_authorized": false,
+    "outer_goal_usage_last_observed": {
+      "tokens": 137169,
+      "elapsed_seconds": 687,
+      "scope": "get_goal snapshot including outer work; not child-model billed tokens, monetary cost unknown"
+    },
+    "next_batch_proposal": "experiments/teacher_reliability/batch_proposal.json"
+  }
 }

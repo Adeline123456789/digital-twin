@@ -1,0 +1,26 @@
+{
+  "new_real_evidence_regression_tests": 1,
+  "recording_clock_regression_tests": 2,
+  "public_calibration_tests": {
+    "exit_code": 0,
+    "output": "test_public_copy_preserves_evidence_and_local_original (test_public_calibration.PublicCalibrationTests) ... ok\ntest_reject_nested_device_transforms (test_public_calibration.PublicCalibrationTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+    "seconds": 0.2584244990721345
+  },
+  "initial_test_environment_failure": "Host base Python could not import cv2; reused existing simulator hardware venv, no package/environment changes.",
+  "public_json_calibration_scan": [
+    "experiments/teacher_reliability/batch_proposal.json",
+    "experiments/teacher_reliability/current_versions.json",
+    "experiments/teacher_reliability/historical_success_reference.json",
+    "experiments/teacher_reliability/offline_verification.json",
+    "experiments/teacher_reliability/prior_cost_components.json",
+    "experiments/teacher_reliability/real_evidence_1.json",
+    "experiments/teacher_reliability/real_evidence_2.json",
+    "experiments/teacher_reliability/real_evidence_3.json",
+    "experiments/teacher_reliability/real_evidence_4.json",
+    "experiments/teacher_reliability/scene_comparison.json",
+    "evolution/current_state.json"
+  ],
+  "raw_files_changed": false,
+  "local_original_source_changed": false,
+  "hardware_commands_sent": 0
+}

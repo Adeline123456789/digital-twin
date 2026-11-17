@@ -1,0 +1,362 @@
+{
+  "capture_relative_path": "complete_real/successed/20261116_real_repeatability_000002/raw/task",
+  "value": {
+    "reference_id": "40596ce887f8a4def382023b0b4e4ceb0232afa20094f49234db31e59aba16e2",
+    "physical_task_success": true,
+    "physical_label_source": "observed_execution_report.json",
+    "completed_sequence": true,
+    "phases": [
+      {
+        "phase": "prepare_gripper",
+        "command_rows": [
+          0,
+          99
+        ],
+        "elapsed_s": [
+          0.0,
+          0.9984261220088229
+        ],
+        "end_target_width_mm": 60.0,
+        "end_encoder_width_mm": 57.5,
+        "end_views": {
+          "external": {
+            "path": "external/1932.jpg",
+            "exposure_minus_command_s": -0.009726671385578811
+          },
+          "right_wrist": {
+            "path": "right_wrist/1933.jpg",
+            "exposure_minus_command_s": 0.0045606037601828575
+          }
+        }
+      },
+      {
+        "phase": "approach",
+        "command_rows": [
+          100,
+          1779
+        ],
+        "elapsed_s": [
+          1.008603765978478,
+          17.955794492037967
+        ],
+        "end_target_width_mm": 60.0,
+        "end_encoder_width_mm": 59.4,
+        "end_views": {
+          "external": {
+            "path": "external/2441.jpg",
+            "exposure_minus_command_s": 0.0075574873480945826
+          },
+          "right_wrist": {
+            "path": "right_wrist/2441.jpg",
+            "exposure_minus_command_s": -0.006628614733926952
+          }
+        }
+      },
+      {
+        "phase": "descend",
+        "command_rows": [
+          1780,
+          1983
+        ],
+        "elapsed_s": [
+          17.966072823037393,
+          20.013329065055586
+        ],
+        "end_target_width_mm": 59.99553165820132,
+        "end_encoder_width_mm": 59.4,
+        "end_views": {
+          "external": {
+            "path": "external/2502.jpg",
+            "exposure_minus_command_s": -0.015685818274505436
+          },
+          "right_wrist": {
+            "path": "right_wrist/2503.jpg",
+            "exposure_minus_command_s": 0.004082938423380256
+          }
+        }
+      },
+      {
+        "phase": "grasp",
+        "command_rows": [
+          1984,
+          2116
+        ],
+        "elapsed_s": [
+          20.023541979957372,
+          21.355902423034422
+        ],
+        "end_target_width_mm": 27.0,
+        "end_encoder_width_mm": 47.9,
+        "end_views": {
+          "external": {
+            "path": "external/2543.jpg",
+            "exposure_minus_command_s": 0.009055162430740893
+          },
+          "right_wrist": {
+            "path": "right_wrist/2543.jpg",
+            "exposure_minus_command_s": -0.0041407872922718525
+          }
+        }
+      },
+      {
+        "phase": "lift",
+        "command_rows": [
+          2117,
+          2319
+        ],
+        "elapsed_s": [
+          21.3663215279812,
+          23.402823448064737
+        ],
+        "end_target_width_mm": 27.0,
+        "end_encoder_width_mm": 39.7,
+        "end_views": {
+          "external": {
+            "path": "external/2604.jpg",
+            "exposure_minus_command_s": -0.003558859578333795
+          },
+          "right_wrist": {
+            "path": "right_wrist/2604.jpg",
+            "exposure_minus_command_s": -0.016172352712601423
+          }
+        }
+      },
+      {
+        "phase": "transport",
+        "command_rows": [
+          2320,
+          3309
+        ],
+        "elapsed_s": [
+          23.413029383053072,
+          33.39315506606363
+        ],
+        "end_target_width_mm": 27.0,
+        "end_encoder_width_mm": 39.0,
+        "end_views": {
+          "external": {
+            "path": "external/2904.jpg",
+            "exposure_minus_command_s": 0.010911749443039298
+          },
+          "right_wrist": {
+            "path": "right_wrist/2904.jpg",
+            "exposure_minus_command_s": 0.0011869358131662011
+          }
+        }
+      },
+      {
+        "phase": "align",
+        "command_rows": [
+          3310,
+          3373
+        ],
+        "elapsed_s": [
+          33.41543241101317,
+          34.11370083398651
+        ],
+        "end_target_width_mm": 27.0,
+        "end_encoder_width_mm": 39.0,
+        "end_views": {
+          "external": {
+            "path": "external/2925.jpg",
+            "exposure_minus_command_s": -0.009296131669543684
+          },
+          "right_wrist": {
+            "path": "right_wrist/2926.jpg",
+            "exposure_minus_command_s": 0.014540522824972868
+          }
+        }
+      },
+      {
+        "phase": "insert",
+        "command_rows": [
+          3374,
+          3553
+        ],
+        "elapsed_s": [
+          34.124271776061505,
+          36.1350644150516
+        ],
+        "end_target_width_mm": 27.004468341795576,
+        "end_encoder_width_mm": 39.1,
+        "end_views": {
+          "external": {
+            "path": "external/2986.jpg",
+            "exposure_minus_command_s": 0.0036706553073599935
+          },
+          "right_wrist": {
+            "path": "right_wrist/2986.jpg",
+            "exposure_minus_command_s": -0.005288357846438885
+          }
+        }
+      },
+      {
+        "phase": "release",
+        "command_rows": [
+          3554,
+          3686
+        ],
+        "elapsed_s": [
+          36.14524259301834,
+          37.47814159397967
+        ],
+        "end_target_width_mm": 60.0,
+        "end_encoder_width_mm": 59.3,
+        "end_views": {
+          "external": {
+            "path": "external/3026.jpg",
+            "exposure_minus_command_s": -0.00541499606333673
+          },
+          "right_wrist": {
+            "path": "right_wrist/3026.jpg",
+            "exposure_minus_command_s": -0.014002791489474475
+          }
+        }
+      },
+      {
+        "phase": "retreat",
+        "command_rows": [
+          3687,
+          3836
+        ],
+        "elapsed_s": [
+          37.48842807102483,
+          38.991698850062676
+        ],
+        "end_target_width_mm": 60.0,
+        "end_encoder_width_mm": 59.4,
+        "end_views": {
+          "external": {
+            "path": "external/3072.jpg",
+            "exposure_minus_command_s": 0.015116121037863195
+          },
+          "right_wrist": {
+            "path": "right_wrist/3072.jpg",
+            "exposure_minus_command_s": 0.00697702937759459
+          }
+        }
+      },
+      {
+        "phase": "fold",
+        "command_rows": [
+          3837,
+          5621
+        ],
+        "elapsed_s": [
+          39.00198915100191,
+          56.99565312103368
+        ],
+        "end_target_width_mm": 60.0,
+        "end_encoder_width_mm": 59.4,
+        "end_views": {
+          "external": {
+            "path": "external/3611.jpg",
+            "exposure_minus_command_s": -0.013518049148842692
+          },
+          "right_wrist": {
+            "path": "right_wrist/3611.jpg",
+            "exposure_minus_command_s": -0.016311796265654266
+          }
+        }
+      },
+      {
+        "phase": "final_hold",
+        "command_rows": [
+          5622,
+          5721
+        ],
+        "elapsed_s": [
+          57.00608695799019,
+          58.00579268997535
+        ],
+        "end_target_width_mm": 59.4,
+        "end_encoder_width_mm": 59.4,
+        "end_views": {
+          "external": {
+            "path": "external/3642.jpg",
+            "exposure_minus_command_s": 0.010176124051213264
+          },
+          "right_wrist": {
+            "path": "right_wrist/3642.jpg",
+            "exposure_minus_command_s": 0.007656319881789386
+          }
+        }
+      }
+    ],
+    "recorded_stop_event": null,
+    "camera_clocks": {
+      "external": {
+        "frames": 3647,
+        "max_elapsed_error_s": 0.0039017718518152833,
+        "first_outside_one_frame": null,
+        "recorded_frame_number_gaps": 0,
+        "status": "ACCEPTED_BY_CURRENT_MAPPING",
+        "mapping": {
+          "method": "first_epoch_anchor_continuous_camera_v1",
+          "max_camera_receipt_elapsed_error_s": 0.0039017718518152833,
+          "largest_wallclock_step_s": 5.7220458984375e-06,
+          "max_change_from_per_frame_wall_mapping_s": 5.279085598886013e-06,
+          "initial_exposure_to_receipt_s": 0.029498577117919922,
+          "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration."
+        }
+      },
+      "right_wrist": {
+        "frames": 3647,
+        "max_elapsed_error_s": 0.003785249893553555,
+        "first_outside_one_frame": null,
+        "recorded_frame_number_gaps": 0,
+        "status": "ACCEPTED_BY_CURRENT_MAPPING",
+        "mapping": {
+          "method": "first_epoch_anchor_continuous_camera_v1",
+          "max_camera_receipt_elapsed_error_s": 0.003785249893553555,
+          "largest_wallclock_step_s": -2.5033950805664062e-05,
+          "max_change_from_per_frame_wall_mapping_s": 2.4632783606648445e-05,
+          "initial_exposure_to_receipt_s": 0.03263044357299805,
+          "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration."
+        }
+      }
+    },
+    "root_cause": "UNKNOWN",
+    "next_observation": "Compare plug-to-finger pose from grasp through lift before selecting another insertion candidate.",
+    "timing": {
+      "input_read_seconds": 0.03667012299410999,
+      "analysis_seconds": 0.0027945039328187704
+    },
+    "limitations": [
+      "Saved RGB/encoder evidence only; no force or metric object-pose measurement.",
+      "Rejected camera mapping suppresses command-to-image pairing; original event image remains available.",
+      "Physical labels are copied from explicit prior reviews, never inferred from completion.",
+      "This index does not revalidate video/HDF5 data or grant training eligibility."
+    ]
+  },
+  "cache": {
+    "key": "808ace487f4cec7d0f05259f5e2e9e1ee79ef76c1332d9ae15c6b65d85274221",
+    "hit": false,
+    "bytes_hashed": 2839119,
+    "dependency_sha256": {
+      "analyzer": "7e792727cfe31b5c822612d0a630a2bbd9b712c190fe9881b46ae43f1fd9eed9",
+      "clock": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595",
+      "commands": "84a6cc324088c99c172fccab3ef29d9ecab05e0d2ca62722663119959c6955e8",
+      "execution": "0a88899f3cdfacf697df75fbff91d051b38b3cf4812edefeff98916021d9601d",
+      "external": "6c27689096e56f989a945a53e67014eee62c35a5de11b5f025353133f5d57c85",
+      "review": "8e366763bbfb96fd3a4b1142da81535ddd538ae9c12be258448611b6342f8c01",
+      "right_wrist": "fccd1b50c9733447aa8ee75771378b87a284c05952812fb4a2adfaf32a0de895"
+    },
+    "wall_seconds": 0.6194964909227565
+  },
+  "reuse_cache": {
+    "key": "808ace487f4cec7d0f05259f5e2e9e1ee79ef76c1332d9ae15c6b65d85274221",
+    "hit": true,
+    "bytes_hashed": 0,
+    "dependency_sha256": {
+      "analyzer": "7e792727cfe31b5c822612d0a630a2bbd9b712c190fe9881b46ae43f1fd9eed9",
+      "clock": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595",
+      "commands": "84a6cc324088c99c172fccab3ef29d9ecab05e0d2ca62722663119959c6955e8",
+      "execution": "0a88899f3cdfacf697df75fbff91d051b38b3cf4812edefeff98916021d9601d",
+      "external": "6c27689096e56f989a945a53e67014eee62c35a5de11b5f025353133f5d57c85",
+      "review": "8e366763bbfb96fd3a4b1142da81535ddd538ae9c12be258448611b6342f8c01",
+      "right_wrist": "fccd1b50c9733447aa8ee75771378b87a284c05952812fb4a2adfaf32a0de895"
+    },
+    "wall_seconds": 0.0006542080081999302
+  }
+}
