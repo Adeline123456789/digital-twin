@@ -1,0 +1,36 @@
+{
+  "json_privacy_checks": 44,
+  "tests": [
+    {
+      "file": "test_real_episode_evidence.py",
+      "exit_code": 0,
+      "output": "test_cache_preserves_unknown_and_invalidates_changed_review_and_clock (test_real_episode_evidence.RealEvidenceTests) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.044s\n\nOK\n"
+    },
+    {
+      "file": "test_recording_clock.py",
+      "exit_code": 0,
+      "output": "test_unstable_device_time_is_not_silently_repaired (test_recording_clock.RecordingClockTests) ... ok\ntest_wallclock_step_does_not_shift_camera_to_future_commands (test_recording_clock.RecordingClockTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.032s\n\nOK\n"
+    },
+    {
+      "file": "test_runtime_memory.py",
+      "exit_code": 0,
+      "output": "test_actual_recent_failure_keeps_uncertainty_and_not_transfer_to_dual (test_runtime_memory.RuntimeMemoryTests) ... ok\ntest_default_entry_passes_actual_right_failure_to_planner (test_runtime_memory.RuntimeMemoryTests) ... ok\ntest_exact_episode_precedes_file_order_and_scope_is_required_for_right (test_runtime_memory.RuntimeMemoryTests) ... ok\ntest_tool_planner_uses_cards_and_frozen_empty_memory_stays_empty (test_runtime_memory.RuntimeMemoryTests) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.006s\n\nOK\n"
+    },
+    {
+      "file": "test_public_calibration.py",
+      "exit_code": 0,
+      "output": "test_public_copy_preserves_evidence_and_local_original (test_public_calibration.PublicCalibrationTests) ... ok\ntest_reject_nested_device_transforms (test_public_calibration.PublicCalibrationTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n"
+    }
+  ],
+  "result": "passed",
+  "real_recording_validation": "Native export and verification passed both new failure datasets;1614 frames/camera second",
+  "actual_candidate_hashes_verified": true,
+  "original_motion_and_safety_source_modified": false,
+  "private_candidates_uploaded": false,
+  "remaining_limits": [
+    "Physical root cause UNKNOWN;0/2 real success;acceptance unstarted",
+    "Monetary cost unavailable",
+    "No post-disable object RGB"
+  ],
+  "closure_initial_error": "Offline summary invoked EvidenceCache with sqlite filename instead of cache directory; corrected path and reran once. No hardware re-execution."
+}

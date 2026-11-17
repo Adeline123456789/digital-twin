@@ -16,13 +16,13 @@ class RealEvidenceTests(unittest.TestCase):
             root = Path(tmp)
             (root / 'STOP').touch()
             (root / 'execution_report.json').write_text(json.dumps(dict(
-                physical_task_success=None, completed_sequence=True)))
+                physical_task_success=None, completed_sequence=True, insertion_stopped_frame='0004.jpg')))
             fields = ['monotonic', 'phase', 'target_gripper_open', 'feedback_gripper_open']
             with (root / 'commanded_probe.csv').open('w') as stream:
                 writer = csv.DictWriter(stream, fields)
                 writer.writeheader()
                 for i in range(6):
-                    writer.writerow(dict(monotonic=10+i/30, phase='lift' if i < 3 else 'insert',
+                    writer.writerow(dict(monotonic=10+i/30, phase='lift' if i < 3 else 'align',
                         target_gripper_open=.3, feedback_gripper_open=.4))
             samples = [dict(rgb_device_ms=(1000+i/30)*1000, host_monotonic=10+i/30+.02,
                 host_unix=1000+i/30+.02, rgb_frame=i, timestamp_domain='timestamp_domain.global_time')
@@ -37,6 +37,7 @@ class RealEvidenceTests(unittest.TestCase):
                 self.assertEqual(cold['value'], warm['value'])
                 self.assertTrue(warm['cache']['hit'])
                 self.assertIsNone(warm['value']['physical_task_success'])
+                self.assertEqual(warm['value']['recorded_stop_event']['phase'], 'align')
                 self.assertEqual(warm['value']['phases'][0]['end_views']['right_wrist']['path'], 'right_wrist/0002.jpg')
                 (root / 'observed_execution_report.json').write_text(json.dumps(dict(physical_task_success=False)))
                 reviewed = summarize_capture(root, cache)
@@ -47,6 +48,7 @@ class RealEvidenceTests(unittest.TestCase):
                 rejected = summarize_capture(root, cache)
                 self.assertFalse(rejected['cache']['hit'])
                 self.assertNotIn('right_wrist', rejected['value']['phases'][0]['end_views'])
+                self.assertIsNone(rejected['value']['recorded_stop_event']['phase'])
                 self.assertEqual(rejected['value']['camera_clocks']['right_wrist']['first_outside_one_frame'], 4)
             finally:
                 cache.close()

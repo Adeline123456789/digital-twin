@@ -78,7 +78,12 @@ def summarize_capture(capture, cache):
         event = None
         if execution.get('insertion_stopped_frame'):
             frame = int(Path(execution['insertion_stopped_frame']).stem)
-            event = dict(kind='NATIVE_INSERTION_STOP', phase='insert',
+            mapped = clocks['right_wrist'][0]
+            phase = None
+            if mapped is not None and times[0] <= mapped[frame] <= times[-1]:
+                phase = rows[int(np.searchsorted(times, mapped[frame], side='right') - 1)]['phase']
+            event = dict(kind='NATIVE_INSERTION_STOP', phase=phase,
+                phase_source='Trusted event-image time matched to command phase' if phase else 'UNKNOWN: no trusted command-time match',
                 image=f'right_wrist/{frame:04d}.jpg',
                 image_window=[max(0, frame - 15), min(len(cameras['right_wrist']) - 1, frame + 15)],
                 reason=execution.get('insertion_stop_reason'),

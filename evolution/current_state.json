@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T10:44:06.538036+00:00",
+  "updated_at": "2026-11-17T10:53:43.308968+00:00",
   "purpose": "Development continuation checkpoint, not robot prompt or live telemetry",
   "mission": {
     "path": "/home/midea/下载/codex_teacher_reliability_first.md",
@@ -16,7 +16,7 @@
     "automatic_teaching_after_simulation": false
   },
   "branch": "codex/teacher-reliability-20261117",
-  "status": "CANDIDATE1_REAL_FAILED_CANDIDATE2_SIMULATION_RUNNING",
+  "status": "BATCH_STOPPED_NO_VERIFIED_PHYSICAL_REPAIR",
   "active": {
     "planner_policy": "llm",
     "tool_planner": "bounded_tools_v1 is opt-in",
@@ -26,10 +26,10 @@
     "batch_decision_maker": "Current supervising model; no child-model calls. Existing runtime model defaults were not promoted or executed."
   },
   "last_hardware_observation": {
-    "state": "Independent check after candidate1: all six joint motors and gripper disabled, err_code0; controller exited",
-    "source": "experiments/teacher_reliability/real1_cost_and_shutdown.json",
+    "state": "Native fold/disable finished; independent query confirms all six motors and gripper disabled,err_code0; both controller and recorder exited",
+    "source": "experiments/teacher_reliability/real2_cost_and_shutdown.json",
     "live_telemetry": false,
-    "plug_reset": "User explicitly confirmed reset for candidate2 after this check"
+    "plug_reset": "Last recorded plug remained in folded gripper; no reset after candidate2"
   },
   "batch": {
     "id": "goal_aligned_batch2",
@@ -58,15 +58,16 @@
     "16mm grasp/23mm alignment: real failure",
     "Width-only image fit: unvalidated and bound-limited",
     "Camera-clock cadence export candidate: rejected",
-    "Reliability candidate1: historical16mm/25mm/0.3Nm bundle with45.8s model pause; real align abort. No default promotion."
+    "Reliability candidate1: historical16mm/25mm/0.3Nm bundle with45.8s model pause; real align abort. No default promotion.",
+    "Reliability candidate2:16mm/25mm,0.3->1Nm at transport, no model pause; native align abort. No default promotion."
   ],
   "next_unresolved": [
-    "Fresh authorized empty-gripper aperture/plug-in-finger observation to distinguish mapping from actual held pose; no more blind insertion based on unchanged simulation.",
-    "Batch2 real000001 exposure-to-receipt drift remains unidentifiable from saved fields; raw capture retained, not exported.",
-    "Candidate needs independent physical verification followed by a frozen-version preregistered small batch; no new real success yet."
+    "Both development attempts failed; no stable collection acceptance started. No automatic new batch or third hardware attempt.",
+    "Real in-hand pose and cause of guard-triggering appearance change remain UNKNOWN; resolve observation ambiguity before a new motion proposal.",
+    "Historical batch2 first recording clock rejection unresolved; preserve raw and do not fabricate export."
   ],
   "evidence": {
-    "latest_physical": "experiments/goal_aligned_runtime/batch2/REPORT.md",
+    "latest_physical": "experiments/teacher_reliability/BATCH_RESULT.md",
     "memory": "experiments/goal_aligned_runtime/runtime_memory/REPORT.md",
     "receiver": "experiments/goal_aligned_runtime/completion_receiver/REPORT.md",
     "reliability_checkpoint": "experiments/teacher_reliability/BATCH_RESULT.md",
@@ -77,23 +78,29 @@
   "publication": "Use git status and git ls-remote to verify current commit; this checkpoint does not self-certify remote state",
   "continuation": {
     "id": "teacher_reliability_20261117",
-    "status": "AUTHORIZED",
+    "status": "STOPPED_DEVELOPMENT_LIMIT",
     "new_model_subcalls": 0,
     "new_simulation_episodes": 2,
-    "new_real_attempts": 1,
+    "new_real_attempts": 2,
     "new_manual_resets": 1,
     "prior_budget_reset": false,
-    "hardware_resume_authorized": true,
+    "hardware_resume_authorized": false,
     "outer_goal_usage_last_observed": {
-      "tokens": 242893,
-      "elapsed_seconds": null,
-      "scope": "get_goal snapshot;101313 since batch start, monetary cost unknown"
+      "tokens": 338180,
+      "batch_start": 141580,
+      "batch_delta": 196600,
+      "stop_threshold": 341580,
+      "preflight_stop": 291580,
+      "remaining_at_snapshot": 3400,
+      "inflight_overrun_observed": 0,
+      "scope": "Final archive/tests complete; Git publication and final response still pending. No new analysis or physical experiment."
     },
     "next_batch_proposal": "experiments/teacher_reliability/batch_proposal.json",
     "authorization": "experiments/teacher_reliability/authorization.json",
     "ledger": "experiments/teacher_reliability/batch_ledger.json",
     "pending_user_observation": null,
     "supported_shutdown": "User explicitly confirmed foam protection at original folded position; return/fold before automatic disable. Manual-reset5-trial acceptance remains unavailable while user is away.",
-    "current_candidate": "candidate2: staged0.3->1Nm after lift, no model pause; full simulation/frozen validation in progress"
+    "current_candidate": "Both physical candidates rejected; original default unchanged",
+    "authorization_scope_note": "Completed authorized two-development-attempt batch; no fresh grant for additional motion. Existing acceptance allowance cannot be used without validated physical repair."
   }
 }

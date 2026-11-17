@@ -1,0 +1,101 @@
+{
+  "experiment_id": "20261117_real_teacher_reliability_000002",
+  "timestamp": "2026-11-17T10:51:41.779051+00:00",
+  "batch_index": 2,
+  "environment": "real",
+  "task": "Fixed-policy pick, insert, release and fold",
+  "model": "Deterministic frozen-reference execution; explicit Agent RGB outcome review",
+  "program_version": {
+    "reference_sha256": "a9820b3e169cd440d4cabd19fd955c754c46b62c14baeabfdeab2f382978bc76",
+    "archive_program_sha256": "19d6c41bb58de076ad60abca07ad411763b0ff16ffd03c1fadab90020cc4e00a"
+  },
+  "initial_state_stratum": "cold_start",
+  "task_gripper_effort_nm": {
+    "grasp_and_lift": 0.3,
+    "transport_onward": 1.0
+  },
+  "result": "failure",
+  "task_success": false,
+  "recording_verified": true,
+  "frames": 1614,
+  "root_cause": "UNKNOWN",
+  "root_cause_status": "unknown",
+  "physical_review": {
+    "physical_task_success": false,
+    "plug_retained_in_target_after_release_and_fold": false,
+    "reviewer": "Recorded native abort plus two-camera final-state review",
+    "observations": [
+      "Original visual slip guard triggered during alignment; insertion and release were not completed.",
+      "Final external RGB shows yellow plug at folded right gripper and target outlet empty; final wrist RGB also shows retained yellow plug.",
+      "The visual guard changed yellow top from315 to332px. This is a native stop observation, not proof of a unique mechanical root cause."
+    ],
+    "diagnostic_intervention": "None; no model pause during execution",
+    "evidence": [
+      {
+        "path": "right_wrist/1027.jpg",
+        "sha256": "0536620757d8ee9d23fff9a2eaaf7209a1ca461192fe684a80f774e241c7fdbd"
+      },
+      {
+        "path": "external/last.png",
+        "sha256": "03f0acd64d4aac09635d15747e2678f629d1150ce07b59bd85e9a9d18b4fc55f"
+      },
+      {
+        "path": "right_wrist/last.png",
+        "sha256": "c9341979fe6079b7655b42785f026080dc0d701770779ef14bbd71eb9a9ee458"
+      },
+      {
+        "path": "execution_report.json",
+        "sha256": "7fbfa8bf24fc5ae26e8b6c6a18d4f97eb85d3891f4b96797e3c07e08aed4a540"
+      }
+    ],
+    "root_cause": "UNKNOWN",
+    "limits": [
+      "Final RGB precedes automatic disable; post-disable plug pose unobserved.",
+      "No measured six-axis force/torque or metric in-hand pose."
+    ]
+  },
+  "reference_commands": 3257,
+  "entire_reference_sent": false,
+  "reference_execution_seconds": 32.864501501084305,
+  "nominal_reference_seconds": 32.56,
+  "execution_time": 53.83735671301838,
+  "execution_llm_calls": 0,
+  "tokens": 0,
+  "research_orchestration_tokens": null,
+  "human_interventions": 1,
+  "human_intervention_definition": "One manual plug reset before this attempt; final supported shutdown counted separately",
+  "native_policy_training_eligible": false,
+  "accepted_metric_calibration": false,
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000002/videos/cam_external_rgb.mp4",
+      "sha256": "185cbe621925bbb43f2109d5a26489f89879f7f2b0fd551d37171f5282c37e75"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000002/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "5d72377df73524f0f3e5f2c4c88de1fae32914e392b9b251e0275848ac002a15"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000002/proprio_stats/proprio_stats.h5",
+      "sha256": "e01db53e61f515dd280b5e739d061d73d7c3097fa28bba2d93713a7d38e1993c"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000002/outcome.json",
+      "sha256": "140e5d9a84492b5797fd7407bd29a6f1ecb875babd8af75e2048e69e5df24aa5"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000002/verification.json",
+      "sha256": "e16518dd0821baf5c85e87828e960844d3f5c15395ea192212e94f8c8d012f3c"
+    },
+    {
+      "dataset_relative_path": "complete_real/failed/20261117_real_teacher_reliability_000002/raw/task/commanded_probe.csv",
+      "sha256": "6646ac78e5dbb55ec5ad80657ceeb4f367053c88418ef9e05a8dc70926d4f7ab"
+    }
+  ],
+  "physical_task_success": false,
+  "dataset_valid": true,
+  "training_eligible": false,
+  "manual_resets": 1,
+  "shutdown_intervention": "Automatic fold and disable using operator-confirmed foam support; no onsite hand support requested during this run",
+  "supervising_model_usage": "Accounted in batch ledger, not the zero execution child-call count"
+}

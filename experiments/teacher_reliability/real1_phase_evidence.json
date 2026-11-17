@@ -238,7 +238,8 @@
     ],
     "recorded_stop_event": {
       "kind": "NATIVE_INSERTION_STOP",
-      "phase": "insert",
+      "phase": "align",
+      "phase_source": "Trusted event-image time matched to command phase",
       "image": "right_wrist/2400.jpg",
       "image_window": [
         2385,
@@ -282,8 +283,8 @@
     "root_cause": "UNKNOWN",
     "next_observation": "Compare plug-to-finger pose from grasp through lift before selecting another insertion candidate.",
     "timing": {
-      "input_read_seconds": 0.024472059099934995,
-      "analysis_seconds": 0.002496015978977084
+      "input_read_seconds": 0.017763559008017182,
+      "analysis_seconds": 0.0026657410198822618
     },
     "limitations": [
       "Saved RGB/encoder evidence only; no force or metric object-pose measurement.",
@@ -293,11 +294,11 @@
     ]
   },
   "cache": {
-    "key": "396c990e774982a39eb4989f7a2221a040b62e42b59928b1a8b9736a81eaa1c5",
+    "key": "3287d9bd16a7f34c5a9718b3f7763b6acda3ed2713644c682626e20d446db50d",
     "hit": false,
-    "bytes_hashed": 2483804,
+    "bytes_hashed": 6421,
     "dependency_sha256": {
-      "analyzer": "7e792727cfe31b5c822612d0a630a2bbd9b712c190fe9881b46ae43f1fd9eed9",
+      "analyzer": "ef3b2357056f41a61f38f20ed859ef7de553974e7000c7fccb58b9649949f074",
       "clock": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595",
       "commands": "975f960d5a9dd485421525f53878e1f1bc6f9135c6ea4b98b16372d045d34f11",
       "execution": "602590b12a519504536214813d8fccbbad20ea3ecdeda3b25d6f28bbbd5c3fc3",
@@ -305,6 +306,6 @@
       "review": "09c265eac57fc48ab5eb6e87ddaddc2a128fda1a8205226a1957753077614d81",
       "right_wrist": "e14e85f2f351a2c057438ff807e0125247b4843cf63e114dd3b28da396711429"
     },
-    "wall_seconds": 0.6124918459681794
+    "wall_seconds": 0.2726768610300496
   }
 }

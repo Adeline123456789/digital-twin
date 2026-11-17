@@ -1,5 +1,5 @@
 {
-  "status": "PRIVATE_CANDIDATE_NOT_DEFAULT",
+  "status": "REAL_FAILED_NOT_PROMOTED",
   "changes": [
     {
       "component": "replay_controller.py",
@@ -17,7 +17,8 @@
     }
   ],
   "reason": "Attempt1 aperture stayed40.2mm through pause but changed40.2->33.4mm during transport. Test restoring the previously authorized1Nm cap only after the low-effort grasp/lift; no LLM pause.",
-  "simulation_scope": "Reuse unchanged validated joint/width reference if fresh start passes original1degree gate. Simulation does not identify N-to-Nm mapping or predict this motor-effort treatment.",
+  "simulation_scope": "Fresh entry reference a9820b3e169cd440d4cabd19fd955c754c46b62c14baeabfdeab2f382978bc76 passed full simulation and frozen replay; real staged effort is not a validated simulated torque mapping",
   "validation": "Compile and fake-CAN command/gate check passed",
-  "rollback": "Original default files remain unchanged; run original entry to roll back."
+  "rollback": "Original default files remain unchanged; run original entry to roll back.",
+  "real_result": "real_000002/result.json"
 }

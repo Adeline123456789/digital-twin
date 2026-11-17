@@ -1,0 +1,178 @@
+{
+  "reference_id": "a9820b3e169cd440d4cabd19fd955c754c46b62c14baeabfdeab2f382978bc76",
+  "identical_reference_prefix": true,
+  "command_samples": 3257,
+  "reference_samples": 5538,
+  "entire_reference_sent": false,
+  "real_logged_span_s": 32.864501501084305,
+  "reference_prefix_span_s": 32.56,
+  "final_logged_time_lag_s": 0.3045015010843031,
+  "phase_trace": [
+    {
+      "phase": "approach",
+      "samples": 1697,
+      "command_tracking_rmse_deg_mm": [
+        0.07906807833698702,
+        0.2777401104382226,
+        0.19791460100860744,
+        0.10472140098465685,
+        0.145966339404117,
+        0.34113201294662276,
+        0.5104390521189667
+      ],
+      "sim_real_rmse_deg_mm": [
+        0.06253226254754125,
+        0.160135328886664,
+        0.11724399925251702,
+        0.10537397344716493,
+        0.09432758509377497,
+        0.1990072930213226,
+        0.5033162736338431
+      ],
+      "sim_real_paired_samples": 1693
+    },
+    {
+      "phase": "descend",
+      "samples": 203,
+      "command_tracking_rmse_deg_mm": [
+        0.08889327649635545,
+        0.1298355821959884,
+        0.20415005907198253,
+        0.0002328320121320543,
+        0.3334578381950465,
+        0.06759975081236397,
+        0.49997073056985225
+      ],
+      "sim_real_rmse_deg_mm": [
+        0.08889123425314799,
+        0.2720696614801508,
+        0.44015119965346716,
+        0.0002337151343726901,
+        0.7204364955082123,
+        0.06758724194590576,
+        0.490885740089606
+      ],
+      "sim_real_paired_samples": 203
+    },
+    {
+      "phase": "grasp",
+      "samples": 134,
+      "command_tracking_rmse_deg_mm": [
+        0.08887561254045809,
+        0.061695034303803964,
+        0.03809446713905876,
+        0.0002470895666823299,
+        0.14479734821689902,
+        0.06761132093780173,
+        13.220650872748564
+      ],
+      "sim_real_rmse_deg_mm": [
+        0.08891181868874762,
+        0.05778955206950413,
+        0.03673739139646091,
+        0.0001839976470634538,
+        0.14810967086062296,
+        0.06761505393178636,
+        6.333067597312384
+      ],
+      "sim_real_paired_samples": 134
+    },
+    {
+      "phase": "lift",
+      "samples": 203,
+      "command_tracking_rmse_deg_mm": [
+        0.08889426652268047,
+        0.1370677856452408,
+        0.21798328417249543,
+        0.00023188794516418152,
+        0.2548095048713733,
+        0.05158495728304818,
+        15.763784334725102
+      ],
+      "sim_real_rmse_deg_mm": [
+        0.08912029456191661,
+        0.34937839720341646,
+        0.5838596468747547,
+        0.00047436370176046213,
+        0.8527804601798756,
+        0.051554888859550306,
+        6.781244969920036
+      ],
+      "sim_real_paired_samples": 203
+    },
+    {
+      "phase": "transport",
+      "samples": 990,
+      "command_tracking_rmse_deg_mm": [
+        0.2853544516722413,
+        0.10990512553238266,
+        0.132025744626922,
+        0.08659531494902606,
+        0.04120584456336782,
+        0.34123848509344684,
+        5.907677764202867
+      ],
+      "sim_real_rmse_deg_mm": [
+        1.1755447184350294,
+        0.42729758236979976,
+        0.47847785871925413,
+        0.14570351922103558,
+        0.052356538063611215,
+        1.3485057899923085,
+        9.237512829297275
+      ],
+      "sim_real_paired_samples": 990
+    },
+    {
+      "phase": "align",
+      "samples": 30,
+      "command_tracking_rmse_deg_mm": [
+        0.19122054823107618,
+        0.32654682162027404,
+        0.18284600721105382,
+        0.2654852766110108,
+        0.2000853673985961,
+        0.27381830699225446,
+        5.899999999999997
+      ],
+      "sim_real_rmse_deg_mm": [
+        1.084559409774961,
+        2.084590106673395,
+        1.2627784056316742,
+        1.9060277050657821,
+        1.0145017568652437,
+        1.7555357750617868,
+        8.431137017323035
+      ],
+      "sim_real_paired_samples": 30
+    }
+  ],
+  "first_persistent_tracking_deviation": {
+    "sample": 1947,
+    "time_s": 19.64370836003218,
+    "phase": "grasp"
+  },
+  "diagnostic_threshold": ">2 degrees in any joint OR >3mm gripper, five samples; not a safety or task-success detector",
+  "physical_task_success": false,
+  "root_cause": "UNKNOWN",
+  "observed_joint_and_gripper_units": [
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "mm"
+  ],
+  "alignment": "Subtract first logged command/feedback receipt only. Interpolate saved prediction at real elapsed time inside its support; no time warping.",
+  "limitations": [
+    "Host logging time is not an independent actuator execution timestamp",
+    "Tracking deviation alone cannot identify collision, slip, object pose or friction",
+    "Simulation predictions use privileged state; real motor feedback is not force measurement"
+  ],
+  "evidence_hashes": {
+    "commanded_probe.csv": "6646ac78e5dbb55ec5ad80657ceeb4f367053c88418ef9e05a8dc70926d4f7ab",
+    "execution_report.json": "7fbfa8bf24fc5ae26e8b6c6a18d4f97eb85d3891f4b96797e3c07e08aed4a540",
+    "prediction.jsonl": "1e2ef06bd200ff49392898f5195534636bf2f387098f6de40bc8beedd79482bc"
+  }
+}

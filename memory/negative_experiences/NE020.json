@@ -1,7 +1,7 @@
 {
   "id": "NE020",
-  "version": 3,
-  "content": "At the current right-Piper fixture,20mm grasp/23mm align and16mm grasp/23mm align both produced full simulation successes but failed their real frozen-reference executions. A complete release/fold sequence also failed physically. Do not reuse simulation success or unchanged gripper width as proof of real stable retention or insertion. A new16mm/25mm/0.3N.m historical-bundle candidate also aborted at alignment after a45.8s lift-inspection pause; the pause and coupled settings prevent a one-factor causal claim. Do not wait for LLM image review while holding the arm.",
+  "version": 4,
+  "content": "At the current right-Piper fixture,20mm grasp/23mm align and16mm grasp/23mm align both produced full simulation successes but failed their real frozen-reference executions. A complete release/fold sequence also failed physically. Do not reuse simulation success or unchanged gripper width as proof of real stable retention or insertion. A new16mm/25mm/0.3N.m historical-bundle candidate also aborted at alignment after a45.8s lift-inspection pause; the pause and coupled settings prevent a one-factor causal claim. Do not wait for LLM image review while holding the arm. A second16mm/25mm candidate with0.3N.m grasp/lift then1.0N.m transport, without an LLM pause, also aborted at alignment. Reject both new physical-repair candidates; do not repeat or increase effort without new distinguishing evidence.",
   "applicability": "Current right-only Piper, RGB-only, original speed, target socket3; per-attempt gripper settings and diagnostic intervention must remain separate.",
   "source_episodes": [
     "20261117T071047Z_e43b1ad6",
@@ -9,7 +9,9 @@
     "20261117_real_batch2_000001",
     "20261117_real_batch2_000002",
     "20261117T102101Z_e4185e62",
-    "20261117_real_teacher_reliability_000001"
+    "20261117_real_teacher_reliability_000001",
+    "20261117T104159Z_a33bacec",
+    "20261117_real_teacher_reliability_000002"
   ],
   "source_experiments": [
     "experiments/goal_aligned_runtime/batch2/REPORT.md",
@@ -17,15 +19,15 @@
   ],
   "validation_status": "REAL_OBSERVED_FAILURE; FIRST_RECORDING_EXPORT_UNVERIFIED",
   "success_count": 0,
-  "failure_count": 3,
-  "count_unit": "Three distinct real executions under different grasp/effort/align conditions; latest includes an explicit pause. Not fixed-policy reliability trials.",
+  "failure_count": 4,
+  "count_unit": "Four distinct real executions across settings; not fixed-policy reliability trials. New two attempts both native alignment aborts.",
   "known_limits": [
     "Root cause UNKNOWN",
     "Static real-width substitution assumes simulated object pose and cannot identify a unique parameter",
     "One raw capture has unresolved timing/export rejection",
     "Historical successful grasp heights are not validated under the present grip/contact state",
     "One ordinary-ruler empty-gap observation58mm vs encoder59.5mm does not calibrate loaded aperture.",
-    "New stopped real recording is valid,2993frames/camera; original batch2 first export remains unresolved."
+    "Two new stopped real recordings valid:2993 and1614 frames/camera; original batch2 first export remains unresolved."
   ],
   "signatures": [
     "sim_success_real_insertion_failure",
@@ -61,6 +63,11 @@
       "when": "Considering the historical grasp bundle again",
       "check": "Read new failed alignment and measured45.8s diagnostic-pause cost. Keep model review outside motor execution; choose a new supported repair rather than repeat this bundle.",
       "evidence": "experiments/teacher_reliability/real1_cost_and_shutdown.json"
+    },
+    {
+      "when": "Considering another effort-only insertion attempt",
+      "check": "Both new development candidates failed. Resolve the current in-hand pose/observation ambiguity offline before proposing a separately budgeted hardware batch; do not relax the native visual stop.",
+      "evidence": "experiments/teacher_reliability/real2_cost_and_shutdown.json"
     }
   ]
 }

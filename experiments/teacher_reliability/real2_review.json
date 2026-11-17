@@ -1,0 +1,34 @@
+{
+  "physical_task_success": false,
+  "plug_retained_in_target_after_release_and_fold": false,
+  "reviewer": "Recorded native abort plus two-camera final-state review",
+  "observations": [
+    "Original visual slip guard triggered during alignment; insertion and release were not completed.",
+    "Final external RGB shows yellow plug at folded right gripper and target outlet empty; final wrist RGB also shows retained yellow plug.",
+    "The visual guard changed yellow top from315 to332px. This is a native stop observation, not proof of a unique mechanical root cause."
+  ],
+  "diagnostic_intervention": "None; no model pause during execution",
+  "evidence": [
+    {
+      "path": "right_wrist/1027.jpg",
+      "sha256": "0536620757d8ee9d23fff9a2eaaf7209a1ca461192fe684a80f774e241c7fdbd"
+    },
+    {
+      "path": "external/last.png",
+      "sha256": "03f0acd64d4aac09635d15747e2678f629d1150ce07b59bd85e9a9d18b4fc55f"
+    },
+    {
+      "path": "right_wrist/last.png",
+      "sha256": "c9341979fe6079b7655b42785f026080dc0d701770779ef14bbd71eb9a9ee458"
+    },
+    {
+      "path": "execution_report.json",
+      "sha256": "7fbfa8bf24fc5ae26e8b6c6a18d4f97eb85d3891f4b96797e3c07e08aed4a540"
+    }
+  ],
+  "root_cause": "UNKNOWN",
+  "limits": [
+    "Final RGB precedes automatic disable; post-disable plug pose unobserved.",
+    "No measured six-axis force/torque or metric in-hand pose."
+  ]
+}

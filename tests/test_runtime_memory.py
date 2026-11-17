@@ -34,7 +34,7 @@ class RuntimeMemoryTests(unittest.TestCase):
         cards=learn.episode_memory(seed)
         card=next(m for m in cards if m['id']=='NE020')
         self.assertIn('Root cause UNKNOWN',card['known_limits'])
-        self.assertEqual(card['failure_count'],3)
+        self.assertEqual(card['failure_count'],4)
         self.assertEqual(card['evidence_role'],'HISTORICAL_WARNING_NOT_CURRENT_MEASUREMENT')
         self.assertTrue(card['next_checks'])
         seed['initial_state']['target_index']=2

@@ -1,0 +1,44 @@
+{
+  "physical_task_success": false,
+  "command_log_span_seconds": 53.83735671301838,
+  "diagnostic_pause_seconds": 0,
+  "sim_collection_seconds": 168.56375950493384,
+  "frozen_validation_seconds": 133.4703293159837,
+  "disable_countdown_seconds": 10,
+  "observed_gripper_command_effort_nm_counts": {
+    "0.3": 2236,
+    "1.0": 2960
+  },
+  "observed_effort_transitions": [
+    {
+      "command_effort_nm": 0.3,
+      "elapsed_from_first_logged_command_s": 0.005090330028906465
+    },
+    {
+      "command_effort_nm": 1.0,
+      "elapsed_from_first_logged_command_s": 23.582673566997983
+    }
+  ],
+  "command_source": "Recorded CAN0x159 effort bytes4:6; motor command, not measured contact force",
+  "disabled_check": {
+    "checked_at_utc": "2026-11-17T10:51:05.091821+00:00",
+    "communication_passed": true,
+    "motors_enabled": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "gripper_driver_enabled": false,
+    "err_code": 0,
+    "arm_status": 1,
+    "status_meaning": "Native software stop after automatic disable"
+  },
+  "disabled_report_sha256": "da9abb0bb019e3841a679ae48063cb159a15dfecf2bce01b6a689e0529238a72",
+  "monetary_cost": null,
+  "root_cause": "UNKNOWN",
+  "candidate_decision": "REJECTED; no default promotion",
+  "latency_decision": "No LLM pause;53.84s total aborted/recovery command span does not prove faster successful collection"
+}
