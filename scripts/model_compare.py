@@ -45,6 +45,8 @@ def ask(prompt,local,include_catalog=True,profile=None,model=None,timeout=120):
     messages=[e['item']['text'] for e in events if e.get('type')=='item.completed' and e.get('item',{}).get('type')=='agent_message']
     usage=next((e['usage'] for e in reversed(events) if e.get('type')=='turn.completed'),None)
     tools=[e for e in events if e.get('type')=='item.completed' and e.get('item',{}).get('type') not in ('agent_message','reasoning')]
+    terminal=next((e['type'] for e in reversed(events)
+                   if e.get('type') in ('turn.started','turn.completed','turn.failed','error')),None)
     call=dict(prompt=prompt,answer=None,usage=usage,wall_seconds=time.monotonic()-start,
               tool_events=len(tools),include_catalog=include_catalog,planner_profile=profile,
               requested_model=model,backend_identity_verified=False,timed_out=timed_out,
@@ -52,8 +54,13 @@ def ask(prompt,local,include_catalog=True,profile=None,model=None,timeout=120):
               event_type_counts=dict(Counter(e.get('type','UNKNOWN') for e in events)),
               completed_item_type_counts=dict(Counter(e.get('item',{}).get('type','UNKNOWN')
                   for e in events if e.get('type')=='item.completed')),
-              process_returncode=None if timed_out else p.returncode)
-    if timed_out or p.returncode or not messages:
+              process_returncode=None if timed_out else p.returncode,
+              terminal_event=terminal,terminal_agent_message=messages[-1] if messages else None,
+              completed_turn_before_process_timeout=timed_out and terminal=='turn.completed')
+    # The CLI can linger after delivering a complete turn. Keep that result and
+    # its real timeout cost; partial/error turns still cannot drive an action.
+    if (terminal in ('turn.failed','error') or not messages
+            or (timed_out and terminal!='turn.completed') or (not timed_out and p.returncode)):
         raise ModelCallError('Model call timed out' if timed_out else 'Model call failed; return code '+str(p.returncode),call)
     try:
         call['answer']=json.loads(messages[-1].strip().removeprefix('```json').removesuffix('```').strip())

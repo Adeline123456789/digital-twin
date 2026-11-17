@@ -1,0 +1,111 @@
+{
+  "experiment_id": "offline_completion_receiver_20261117",
+  "parent_commit": "c5708a008393446f15267a2c60f0bd3f4b27182c",
+  "parent_source_sha256": "2d67dcac85b0e67f51bc6d1e7a65f623ae411e1ecbc35a0d211a4a0029672b2f",
+  "candidate_source_sha256": "76542e4ae515a330a1a5986e59621c69df5a60957c00a28536ce9be379d5a892",
+  "observed_issue": {
+    "timed_out": true,
+    "event_type_counts": {
+      "thread.started": 1,
+      "turn.started": 1,
+      "item.completed": 1,
+      "turn.completed": 1
+    },
+    "completed_item_type_counts": {
+      "agent_message": 1
+    },
+    "usage": {
+      "input_tokens": 19408,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 111,
+      "reasoning_output_tokens": 0
+    },
+    "process_returncode": null
+  },
+  "old_answer_recoverable": false,
+  "new_model_calls": 0,
+  "new_model_tokens": 0,
+  "hardware_commands": 0,
+  "physics_steps": 0,
+  "results": [
+    {
+      "case": "complete_then_lingering_process",
+      "version": "parent",
+      "status": "ERROR",
+      "answer": null,
+      "timed_out": true,
+      "fixture_usage": {
+        "input_tokens": 12,
+        "output_tokens": 5
+      },
+      "wall_seconds": 0.2024128600023687
+    },
+    {
+      "case": "complete_then_lingering_process",
+      "version": "candidate",
+      "status": "ANSWER_RETURNED",
+      "answer": {
+        "plan": {
+          "stop": true,
+          "hypotheses": [],
+          "reason": "offline fixture"
+        }
+      },
+      "timed_out": true,
+      "fixture_usage": {
+        "input_tokens": 12,
+        "output_tokens": 5
+      },
+      "wall_seconds": 0.20281498704571277
+    },
+    {
+      "case": "partial_only",
+      "version": "parent",
+      "status": "ERROR",
+      "answer": null,
+      "timed_out": true,
+      "fixture_usage": null,
+      "wall_seconds": 0.20277024595998228
+    },
+    {
+      "case": "partial_only",
+      "version": "candidate",
+      "status": "ERROR",
+      "answer": null,
+      "timed_out": true,
+      "fixture_usage": null,
+      "wall_seconds": 0.20360755699221045
+    },
+    {
+      "case": "completed_then_failed",
+      "version": "parent",
+      "status": "ERROR",
+      "answer": null,
+      "timed_out": true,
+      "fixture_usage": {
+        "input_tokens": 12,
+        "output_tokens": 5
+      },
+      "wall_seconds": 0.20374923199415207
+    },
+    {
+      "case": "completed_then_failed",
+      "version": "candidate",
+      "status": "ERROR",
+      "answer": null,
+      "timed_out": true,
+      "fixture_usage": {
+        "input_tokens": 12,
+        "output_tokens": 5
+      },
+      "wall_seconds": 0.20339656108990312
+    }
+  ],
+  "tests_passed": 29,
+  "limitations": [
+    "Actual timed-out answer was not retained; historical student outcome is not reclassified.",
+    "These are offline process fixtures, not live model capability or robot success results.",
+    "Waiting time remains bounded by existing timeout; no measured latency or total Token reduction claim."
+  ]
+}

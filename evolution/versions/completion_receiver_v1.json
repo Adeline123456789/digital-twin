@@ -1,0 +1,14 @@
+{
+  "version": "completion_receiver_v1",
+  "parent_git_head": "c5708a008393446f15267a2c60f0bd3f4b27182c",
+  "status": "OFFLINE_PROCESS_VERIFIED",
+  "change": "Retain validated completed model output when the CLI process subsequently times out",
+  "default_route": "agent_loop -> alignment_skill.plan_with_memory -> model_compare.ask; bounded_tools -> same ask",
+  "evidence": "experiments/goal_aligned_runtime/completion_receiver/result.json",
+  "tests": "tests/test_model_completion.py",
+  "live_model_validation": "NOT_RUN_BUDGET_EXHAUSTED",
+  "physical_policy_changed": false,
+  "rollback": "Restore scripts/model_compare.py from parent commit",
+  "task_success_gain": null,
+  "token_saving": null
+}
