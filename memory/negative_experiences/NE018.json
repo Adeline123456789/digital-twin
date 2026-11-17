@@ -1,15 +1,16 @@
 {
   "id": "NE018",
-  "version": 1,
-  "content": "Increasing commanded gripper effort from0.3 to1N\u00b7m alone did not establish successful insertion at16/18mm grasp heights. Reusing the same world trajectory does not fix a changed plug-to-finger pose.",
-  "applicability": "Current right Piper, current fixture layout,RGB only, frozen references at16/18mm",
+  "version": 2,
+  "content": "Increasing commanded gripper effort from0.3 to1N·m alone did not establish successful insertion at16/18mm grasp heights. Reusing the same world trajectory does not fix a changed plug-to-finger pose. At20mm grasp and23mm straightening clearance, validated simulation still led to real insertion slip; higher grasp alone has not solved the contact-pose discrepancy.",
+  "applicability": "Current right Piper, current fixture layout,RGB only,1Nm attempts at16/18/20mm; exact force/geometry mapping unknown",
   "source_episodes": [
     "20261116_real_repeatability_000004",
-    "20261116_real_repeatability_000005"
+    "20261116_real_repeatability_000005",
+    "20261116_real_repeatability_000006"
   ],
   "validation_status": "REAL_OBSERVED_FAILED_REPAIR",
   "success_count": 0,
-  "failure_count": 2,
+  "failure_count": 3,
   "known_limits": [
     "Small sample; does not establish torque as sole failure cause",
     "No six-axis force sensor or identified actuator force mapping"

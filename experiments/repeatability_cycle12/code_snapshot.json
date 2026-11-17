@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-11-17T01:15:59.562116+00:00",
+  "scope": "Publication-time snapshot; existing simulation/controller implementations remain local by project rule",
+  "new_public_code": [
+    {
+      "path": "scripts/learn.py",
+      "sha256": "cb160c668b34f9010050d25635ee01c5c973d8e7de5b27c3249df4123afadaa0"
+    },
+    {
+      "path": "scripts/benchmark_collection.py",
+      "sha256": "45e095caff72abd6270db4e83dac35d77bcfb72b156aa229b5e0486b942f32c2"
+    },
+    {
+      "path": "experiments/repeatability_cycle12/archive_episode.py",
+      "sha256": "e60147075da53f0d696fe6ce5ab1e2434ed36a71b1da846b7acb607f6020cdab"
+    },
+    {
+      "path": "experiments/repeatability_cycle12/diagnostics/check_grasp_actuation.py",
+      "sha256": "cd33aae78c79fa0110415f0290963aff9113006acf7254a7643b9d1a807cd166"
+    },
+    {
+      "path": "experiments/repeatability_cycle12/diagnostics/check_align_clearance.py",
+      "sha256": "f30e75025a754416e539c345c9376321193cf367763ee6502ac0a718d553932e"
+    }
+  ],
+  "local_existing_code": [
+    {
+      "file": "replay_controller.py",
+      "current_local_sha256": "72d3a06e392bf8562ce0e0850f333c96e2fe520080474d1588aec9c55599600f",
+      "backup_dataset_relative_path": "self_evolution/repeatability_cycle12/effort1000_user_authorized/replay_controller.original.py",
+      "backup_sha256": "c06a6a1ca024868ab93e042006d3609d00cbea9e0ee3255b215e9efcbdde1f14",
+      "source_uploaded": false
+    },
+    {
+      "file": "replay_connector.py",
+      "current_local_sha256": "4d9cb5afd4f149e7f52869cc654eebabaeaefeaccfd177f2c8f2cc2ef79604f0",
+      "backup_dataset_relative_path": "self_evolution/repeatability_cycle12/effort1000_user_authorized/replay_connector.original.py",
+      "backup_sha256": "c0d4bd9ccc23425d5e34ef6e569f021fb009f4b6cf075991b5d52378b056a45e",
+      "source_uploaded": false
+    },
+    {
+      "file": "continue_plug_task.py",
+      "current_local_sha256": "097f08e68143377948ed37a628f4a49d4aa07c059defedc69bafdf1d53b90e58",
+      "backup_dataset_relative_path": "self_evolution/repeatability_cycle12/handoff_exit_race_fix/continue_plug_task.original.py",
+      "backup_sha256": "807c7526e4a70e8fecc81559b43422e998bfe2f231cb602f023cc9b0eacdcc85",
+      "source_uploaded": false
+    },
+    {
+      "file": "try_plug_pick_sim.py",
+      "current_local_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+      "backup_dataset_relative_path": "self_evolution/repeatability_cycle12/align_clearance_parameter/try_plug_pick_sim.original.py",
+      "backup_sha256": "fe9064eef02aecafb12881288340574a9759b3203779dcb111889b74ce2dc3c4",
+      "source_uploaded": false
+    }
+  ],
+  "active_repository_planner": "llm",
+  "last_real_reference": "760618934b50a9e762d3d62d0fe98315d0812ae5db83b2806449e4474aa32710",
+  "automatic_self_evolution_service": false
+}

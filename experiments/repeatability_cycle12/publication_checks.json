@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-17T01:15:59.562116+00:00",
+  "unit_tests": {
+    "command": "PYTHONPATH=tests:scripts existing-python -m unittest test_grasp_height test_trajectory_contract test_episode_publication test_public_calibration test_shared_comparison",
+    "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.026s\n\nOK\n",
+    "passed": true
+  },
+  "real_episode_hash_audit": "All evidence paths and hashes in six result.json files matched local files",
+  "real_outcome_consistency": "Six native metadata/outcome/public labels agree; attempt4 remains corrected failure",
+  "sim_reports": 6,
+  "new_hardware_commands": 0
+}

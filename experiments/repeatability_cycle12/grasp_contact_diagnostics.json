@@ -1,0 +1,259 @@
+{
+  "timestamp": "2026-11-17T01:15:59.562116+00:00",
+  "source_episode": "20261116T114608Z_4d3972ba",
+  "source_phase": "grasp",
+  "privileged_information_used": true,
+  "observations": {
+    "reconstructed_finger_plug_contacts": [
+      {
+        "pair": [
+          "gripper_right_46",
+          "plug/grip_contact/0/11/0"
+        ],
+        "penetration_mm": 0.0005982397676130404,
+        "surfaces": [
+          {
+            "collision_geom": "gripper_right_46",
+            "geom_type": 7,
+            "geom_group": 0,
+            "rgba": [
+              0.02500000037252903,
+              0.02800000086426735,
+              0.03200000151991844,
+              1.0
+            ],
+            "nearest_visible_mesh_distance_mm": [
+              [
+                6.424305368523047e-05,
+                "gripper_right_46"
+              ],
+              [
+                1.9997079899874362,
+                "gripper_right_43"
+              ]
+            ]
+          },
+          {
+            "collision_geom": "plug/grip_contact/0/11/0",
+            "geom_type": 7,
+            "geom_group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nearest_visible_mesh_distance_mm": [
+              [
+                0.00029852177764398674,
+                "plug/grip"
+              ],
+              [
+                2.3600712905135057,
+                "task/yellow_plug/rim"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "gripper_right_46",
+          "plug/grip_contact/0/12/1"
+        ],
+        "penetration_mm": 0.0005982546915312882,
+        "surfaces": [
+          {
+            "collision_geom": "gripper_right_46",
+            "geom_type": 7,
+            "geom_group": 0,
+            "rgba": [
+              0.02500000037252903,
+              0.02800000086426735,
+              0.03200000151991844,
+              1.0
+            ],
+            "nearest_visible_mesh_distance_mm": [
+              [
+                6.424468029490293e-05,
+                "gripper_right_46"
+              ],
+              [
+                1.9997079827048523,
+                "gripper_right_43"
+              ]
+            ]
+          },
+          {
+            "collision_geom": "plug/grip_contact/0/12/1",
+            "geom_type": 7,
+            "geom_group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nearest_visible_mesh_distance_mm": [
+              [
+                0.00029851431245916417,
+                "plug/grip"
+              ],
+              [
+                2.360071292141618,
+                "task/yellow_plug/rim"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "gripper_right_36",
+          "plug/grip_contact/0/35/0"
+        ],
+        "penetration_mm": 0.0007204225960274217,
+        "surfaces": [
+          {
+            "collision_geom": "gripper_right_36",
+            "geom_type": 7,
+            "geom_group": 0,
+            "rgba": [
+              0.02500000037252903,
+              0.02800000086426735,
+              0.03200000151991844,
+              1.0
+            ],
+            "nearest_visible_mesh_distance_mm": [
+              [
+                7.742642573269897e-05,
+                "gripper_right_36"
+              ],
+              [
+                1.9996482379739722,
+                "gripper_right_33"
+              ]
+            ]
+          },
+          {
+            "collision_geom": "plug/grip_contact/0/35/0",
+            "geom_type": 7,
+            "geom_group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nearest_visible_mesh_distance_mm": [
+              [
+                0.0003605639888903422,
+                "plug/grip"
+              ],
+              [
+                2.35642315328343,
+                "task/yellow_plug/rim"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "pair": [
+          "gripper_right_36",
+          "plug/grip_contact/0/36/1"
+        ],
+        "penetration_mm": 0.0007204378256317283,
+        "surfaces": [
+          {
+            "collision_geom": "gripper_right_36",
+            "geom_type": 7,
+            "geom_group": 0,
+            "rgba": [
+              0.02500000037252903,
+              0.02800000086426735,
+              0.03200000151991844,
+              1.0
+            ],
+            "nearest_visible_mesh_distance_mm": [
+              [
+                7.74280913735716e-05,
+                "gripper_right_36"
+              ],
+              [
+                1.999648230543613,
+                "gripper_right_33"
+              ]
+            ]
+          },
+          {
+            "collision_geom": "plug/grip_contact/0/36/1",
+            "geom_type": 7,
+            "geom_group": 3,
+            "rgba": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nearest_visible_mesh_distance_mm": [
+              [
+                0.00036055637731327865,
+                "plug/grip"
+              ],
+              [
+                2.3564231549475867,
+                "task/yellow_plug/rim"
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "sim_gripper_actuator": {
+      "name": "right/gripper",
+      "force": -10.0,
+      "forcerange": [
+        -10.0,
+        10.0
+      ],
+      "forcelimited": true,
+      "gainprm": [
+        1000.0,
+        0.0,
+        0.0
+      ],
+      "ctrlrange": [
+        0.0,
+        0.095
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "conclusion": "Selected reconstructed simulated contact points lie on the visible finger/plug meshes; no hidden multi-mm surface gap at these contacts. This does not establish the contact location in the real robot.",
+  "limitations": [
+    "Single reconstructed simulation state; sampled positions do not establish real contact",
+    "Simulation prismatic forceN and real motor torqueNm have no identified conversion",
+    "No physics/camera/geometry calibration accepted"
+  ],
+  "evidence": [
+    {
+      "dataset_relative_path": "self_evolution/repeatability_cycle12/grasp_surface_check.json",
+      "sha256": "5c9141a7c78743cf8870faa922db41da3c25d15f040a3e57517d7ac9470a8f3c"
+    }
+  ],
+  "analysis_code": [
+    {
+      "path": "experiments/repeatability_cycle12/diagnostics/check_grasp_actuation.py",
+      "sha256": "cd33aae78c79fa0110415f0290963aff9113006acf7254a7643b9d1a807cd166"
+    },
+    {
+      "path": "experiments/repeatability_cycle12/diagnostics/check_align_clearance.py",
+      "sha256": "f30e75025a754416e539c345c9376321193cf367763ee6502ac0a718d553932e"
+    }
+  ]
+}

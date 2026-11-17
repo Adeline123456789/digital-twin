@@ -1,0 +1,227 @@
+{
+  "timestamp": "2026-11-17T01:15:59.562116+00:00",
+  "real": [
+    {
+      "attempt": 1,
+      "episode": "20261116_real_repeatability_000001",
+      "result": "failure",
+      "task_success": false,
+      "frames": 1618,
+      "execution_time_s": 53.96391396399122,
+      "reference_execution_seconds": 32.85330758302007,
+      "report": "experiments/repeatability_cycle12/000001/result.json",
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000001",
+      "recording_verified": true,
+      "evidence_hashes_verified": true
+    },
+    {
+      "attempt": 2,
+      "episode": "20261116_real_repeatability_000002",
+      "result": "success",
+      "task_success": true,
+      "frames": 1739,
+      "execution_time_s": 58.00579268997535,
+      "reference_execution_seconds": 55.987049355055206,
+      "report": "experiments/repeatability_cycle12/000002/result.json",
+      "dataset_relative_path": "complete_real/successed/20261116_real_repeatability_000002",
+      "recording_verified": true,
+      "evidence_hashes_verified": true
+    },
+    {
+      "attempt": 3,
+      "episode": "20261116_real_repeatability_000003",
+      "result": "failure",
+      "task_success": false,
+      "frames": 1605,
+      "execution_time_s": 54.436201330972835,
+      "reference_execution_seconds": 33.24010791699402,
+      "report": "experiments/repeatability_cycle12/000003/result.json",
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000003",
+      "recording_verified": true,
+      "evidence_hashes_verified": true
+    },
+    {
+      "attempt": 4,
+      "episode": "20261116_real_repeatability_000004",
+      "result": "failure",
+      "task_success": false,
+      "frames": 1770,
+      "execution_time_s": 59.898880678927526,
+      "reference_execution_seconds": 57.86594357597642,
+      "report": "experiments/repeatability_cycle12/000004/result.json",
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000004",
+      "recording_verified": true,
+      "evidence_hashes_verified": true
+    },
+    {
+      "attempt": 5,
+      "episode": "20261116_real_repeatability_000005",
+      "result": "failure",
+      "task_success": false,
+      "frames": 1682,
+      "execution_time_s": 56.11503955395892,
+      "reference_execution_seconds": 34.90735966793727,
+      "report": "experiments/repeatability_cycle12/000005/result.json",
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000005",
+      "recording_verified": true,
+      "evidence_hashes_verified": true
+    },
+    {
+      "attempt": 6,
+      "episode": "20261116_real_repeatability_000006",
+      "result": "failure",
+      "task_success": false,
+      "frames": 1686,
+      "execution_time_s": 56.449428380001336,
+      "reference_execution_seconds": 35.245133672025986,
+      "report": "experiments/repeatability_cycle12/000006/result.json",
+      "dataset_relative_path": "complete_real/failed/20261116_real_repeatability_000006",
+      "recording_verified": true,
+      "evidence_hashes_verified": true
+    }
+  ],
+  "simulation": [
+    {
+      "episode": "20261116T112315Z_0c9a0761",
+      "task_success": true,
+      "recording_verified": true,
+      "report": "experiments/evaluation/20261116T112315Z_0c9a0761/result.json",
+      "recording_report": "experiments/evaluation/20261116T112607Z_2ec5fb22",
+      "parameters": {
+        "name": "Same successful task candidate; measured cold-start entry",
+        "offset_mm": 0,
+        "shift_mm": 0,
+        "start_right_deg": [
+          0,
+          0,
+          0,
+          0.504,
+          23.563,
+          0.522
+        ],
+        "grasp_height_m": 0.018,
+        "grasp_tilt_deg": 0
+      },
+      "privileged_information_used": true
+    },
+    {
+      "episode": "20261116T114211Z_dc56f5b3",
+      "task_success": true,
+      "recording_verified": true,
+      "report": "experiments/evaluation/20261116T114211Z_dc56f5b3/result.json",
+      "recording_report": "experiments/evaluation/20261116T114453Z_ac6f5975",
+      "parameters": {
+        "name": "Cycle12 lowest-pose contact candidate18to16mm unchanged torque and speed",
+        "offset_mm": 0,
+        "shift_mm": 0,
+        "start_right_deg": [
+          0,
+          0,
+          0,
+          0.611,
+          23.697,
+          0.537
+        ],
+        "grasp_height_m": 0.016,
+        "grasp_tilt_deg": 0
+      },
+      "privileged_information_used": true
+    },
+    {
+      "episode": "20261116T114608Z_4d3972ba",
+      "task_success": true,
+      "recording_verified": true,
+      "report": "experiments/evaluation/20261116T114608Z_4d3972ba/result.json",
+      "recording_report": "experiments/evaluation/20261116T114856Z_0da13688",
+      "parameters": {
+        "name": "Cycle12 same16mm candidate from enabled folded-zero entry",
+        "offset_mm": 0,
+        "shift_mm": 0,
+        "start_right_deg": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grasp_height_m": 0.016,
+        "grasp_tilt_deg": 0
+      },
+      "privileged_information_used": true
+    },
+    {
+      "episode": "20261116T125027Z_dd0ddb78",
+      "task_success": false,
+      "recording_verified": true,
+      "report": "experiments/evaluation/20261116T125027Z_dd0ddb78/result.json",
+      "recording_report": "experiments/evaluation/20261116T125156Z_d29861e3",
+      "parameters": {
+        "name": "Cycle12 grasp22mm candidate from current cold entry; higher grasp inferred from successful current-scene contact images",
+        "offset_mm": 0,
+        "shift_mm": 0,
+        "start_right_deg": [
+          -0.195,
+          0,
+          0,
+          0.514,
+          23.238,
+          0.512
+        ],
+        "grasp_height_m": 0.022,
+        "grasp_tilt_deg": 0
+      },
+      "privileged_information_used": true
+    },
+    {
+      "episode": "20261116T125354Z_b5546f36",
+      "task_success": false,
+      "recording_verified": true,
+      "report": "experiments/evaluation/20261116T125354Z_b5546f36/result.json",
+      "recording_report": "experiments/evaluation/20261116T125526Z_989fd51d",
+      "parameters": {
+        "name": "Cycle12 grasp20mm candidate from current cold entry; higher grasp inferred from successful current-scene contact images",
+        "offset_mm": 0,
+        "shift_mm": 0,
+        "start_right_deg": [
+          -0.195,
+          0,
+          0,
+          0.514,
+          23.238,
+          0.512
+        ],
+        "grasp_height_m": 0.02,
+        "grasp_tilt_deg": 0
+      },
+      "privileged_information_used": true
+    },
+    {
+      "episode": "20261116T125834Z_58df2069",
+      "task_success": true,
+      "recording_verified": true,
+      "report": "experiments/evaluation/20261116T125834Z_58df2069/result.json",
+      "recording_report": "experiments/evaluation/20261116T130129Z_f0c3752f",
+      "parameters": {
+        "name": "Cycle12 grasp20_align23mm candidate from current cold entry; higher grasp inferred from successful current-scene contact images",
+        "offset_mm": 0,
+        "shift_mm": 0,
+        "start_right_deg": [
+          -0.195,
+          0,
+          0,
+          0.514,
+          23.238,
+          0.512
+        ],
+        "grasp_height_m": 0.02,
+        "grasp_tilt_deg": 0,
+        "align_gap_m": 0.023
+      },
+      "privileged_information_used": true
+    }
+  ],
+  "real_recording_count": 6,
+  "sim_recording_count": 6,
+  "scope": "Cycle12 only; simulation reference replays and dataset verifications are not additional physical collection Episodes"
+}

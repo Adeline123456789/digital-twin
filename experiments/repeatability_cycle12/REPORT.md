@@ -1,14 +1,26 @@
-# Repeatability batch in progress
+# 第12周期采集结果 — 2026-11-17归档更新
 
-Five of15 requested physical attempts are complete: **1 success,4 failures (20%)**. The earlier discovery success is excluded. Attempt4 was incorrectly labelled successful from final external RGB; the operator reports missed insertion, and insertion wrist RGB shows plug rotation. The label is corrected to failure everywhere in the formal Episode and public result, with prior labels preserved.
+**当前按用户要求暂停。** 本批计划15次，已执行6次：**1成功、5失败，成功率16.7%**。此前发现阶段成功不计入本批；不同版本的结果不能当作同一固定策略的稳定性统计。
 
-| Grasp height | Effort setting | Batch successes/attempts |
-|---|---|---|
-|18mm|0.3N·m|0/1|
-|16mm|0.3N·m|1/2|
-|16mm|1N·m|0/1|
-|18mm|1N·m|0/1|
+| 次数 | 抓取高度 | 夹爪力矩指令 | 空中摆正间距 | 结果 | 实际命令时长 |
+|---|---|---|---|---|---|
+| 1 | 18mm | 0.3N·m | 25mm | 失败 | 53.96s |
+| 2 | 16mm | 0.3N·m | 25mm | 成功 | 58.01s |
+| 3 | 16mm | 0.3N·m | 25mm | 失败 | 54.44s |
+| 4 | 16mm | 1N·m | 25mm | 失败 | 59.90s |
+| 5 | 18mm | 1N·m | 25mm | 失败 | 56.12s |
+| 6 | 20mm | 1N·m | 23mm | 失败 | 56.45s |
 
-Versions differ; pooled20% is batch yield, not reliability of one frozen policy. Two startup failures before task motion are recorded separately and remain collection costs. All five Episodes retain videos, commands, feedback, outcomes and native validation in the existing local layout. Native training eligibility stays false.
+第4条曾被Agent误判成功。用户明确纠正未插入，腕部RGB也显示插入时插头转动；已从成功目录整条移入失败目录，原标签和更正记录均保留。第6条在第3767帧触发原滑移保护，随后退回折叠，未完成插入。
 
-The explicit user-authorized1N·m command did not solve insertion. Successful lift apertures38.9/39.7mm contrast with44.5/42.6mm for attempts4/5; wrist RGB also differs before insertion. The exact contact point and metric physical cause remain UNKNOWN. A22mm grasp-height candidate is being validated, with current fixture XY,1N·m and arm speed unchanged. This is a contact-placement hypothesis, not an accepted digital-twin calibration.
+六次真实命令记录合计338.87秒，不含复位、启动失败、仿真、研究和空闲时间。记录了6次前置手动复位，人工干预总数和每条成功数据总成本尚未完整测量。执行器循环没有调用LLM；研究编排Token/推理时间未知，不宣称总Token为零或成本下降。
+
+两次任务开始前的基础设施失败单独保留。六条真机Episode均有两路RGB、状态/动作、原始执行报告和校验，原生训练资格仍为false。全部当前批仿真采集为6条，其中4成功、2失败；导出参考重放、格式校验不重复计为新Episode。详见[逐条索引](episode_inventory.json)。
+
+成功数据与失败数据的RGB/开度比较显示握持后相对位姿不同；1N·m和提高抓取位置尚未解决插入。20/22mm抓取的原25mm摆正步骤IK失败；在20mm抓取下改为23mm摆正通过原仿真和100Hz回放，但第6条真机仍失败。静态IK结果不证明全局不可达，也不替代物理验证。精确接触根因仍为UNKNOWN。
+
+仿真诊断使用接触、物体/夹爪位姿、可视网格和执行器参数等特权信息。模拟夹爪线性力与真实电机N·m尚未建立经过验证的映射；没有接受新的物理参数标定，没有证据证明稳定真机成功率或整体采集成本改善。
+
+新增学习层代码、实验结果、负面经验和版本记录公开。原MuJoCo/控制工程、本地修订源码、模型、XML、视频、轨迹和设备配置不上传；[代码索引](code_snapshot.json)记录原工程的本地版本与回滚哈希。最后确认的硬件状态是第6条结束后经用户扶稳完成下使能；这不是实时设备读数。
+
+总体研究目标未完成，第7条没有执行。本次仅补齐已有记录和发布，没有启动新的研究轮次或机器人运动。
