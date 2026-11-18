@@ -1,5 +1,8 @@
 """Supervisor-owned review of pinned local evidence. No actuator or active-file writer."""
 from dataclasses import dataclass, asdict
+import hashlib
+import re
+import subprocess
 from pathlib import Path
 from .legacy import ROOT, digest
 from .diagnosis import EventBuilder, json_file
@@ -47,19 +50,42 @@ class EvidenceGate:
             return finish('DEFER_UNKNOWN','Active baseline changed')
         if not all((p.mechanism,p.prediction,p.counterexample,p.scope,p.rollback_ref,p.implementation,p.invariants)):
             return finish('DEFER_UNKNOWN','Incomplete preregistration')
-        for path,sha in (p.implementation | p.invariants).items():
+        if not re.fullmatch('[0-9a-f]{40}',p.rollback_ref):
+            return finish('DEFER_UNKNOWN','Invalid rollback commit')
+        rollback=subprocess.run(['git','show',p.rollback_ref+':evolution/active.json'],cwd=self.root,capture_output=True)
+        if rollback.returncode or hashlib.sha256(rollback.stdout).hexdigest()!=p.previous_active_sha256:
+            return finish('DEFER_UNKNOWN','Rollback does not restore baseline')
+        for path,sha in [*p.implementation.items(),*p.invariants.items()]:
             if not self.matches(path,sha):
                 return finish('REJECT_AND_ROLLBACK','Implementation or frozen invariant changed')
-        dev={r['path'] for r in p.development}
-        held={r['path'] for r in p.heldout}
+        if p.category=='observation_adapter' and (set(p.implementation)!={'robot_agent/timeline.py','robot_agent/gate.py'}
+                or not {'scripts/learn.py','scripts/finalize_recordings.py','scripts/alignment_skill.py','scripts/diagnose_retention.py'} <= p.invariants.keys()):
+            return finish('DEFER_UNKNOWN','Unbound adapter or native invariants')
+        dev={str((self.root/r['path']).resolve()) for r in p.development}
+        held={str((self.root/r['path']).resolve()) for r in p.heldout}
         if dev & held or len(held)!=len(p.heldout):
             return finish('DEFER_UNKNOWN','Overlapping split')
+        identities=set()
+        trace_hashes=set()
         for split,records in [('development',p.development),('heldout',p.heldout)]:
             for record in records:
                 if not self.matches(record['path'],record['sha256']):
                     return finish('DEFER_UNKNOWN','Evidence missing or revised')
                 path=self.root/record['path']
                 r=json_file(path)
+                if path.resolve().parent.name!=r['experiment_id'] or r['experiment_id'] in identities:
+                    return finish('DEFER_UNKNOWN','Repeated or ambiguous episode identity')
+                identities.add(r['experiment_id'])
+                from .legacy import DATA
+                assets=record.get('assets',{})
+                stats=Path('complete_sim')/('succeed' if r.get('task_success') else 'failed')/r['experiment_id']/'proprio_stats'
+                trace=Path('self_evolution')/r['experiment_id']/'trajectory.jsonl'
+                required={str(trace),*(str(stats/name) for name in ('privileged.jsonl','proprio_stats.h5','metadata.json'))}
+                if set(assets)!=required or any(not (DATA/f).is_file() or digest(DATA/f)!=sha for f,sha in assets.items()):
+                    return finish('DEFER_UNKNOWN','Pinned raw input mismatch')
+                if assets[str(trace)] in trace_hashes:
+                    return finish('DEFER_UNKNOWN','Same physical trace occurs twice')
+                trace_hashes.add(assets[str(trace)])
                 if (r['actions'][0]['profile']!=p.scope['source_profile'] or
                     r['initial_state']['target_index']!=p.scope['target_index'] or
                     r['program_version']['source_sha256']['scripts/try_plug_pick_sim.py']!=p.scope['native_source_hash']):

@@ -60,14 +60,32 @@ class EventBuilder:
                 if len(rows)!=meta['num_frames'] or not aligned_samples(rows, extras, h5['sim_time'][:],meta['fps']):
                     return unknown('TIMESTAMP_MISMATCH')
             refs += tuple(reference(p,self.data) for p in (trace,priv,ep/f'recording_{ident}.json',stats/'metadata.json',stats/'proprio_stats.h5',ep/'outcome.json'))
+            validation_path = (ROOT/r['recording_report']/'result.json').resolve()
+            if not validation_path.is_relative_to(ROOT/'experiments'):
+                return unknown('VERSION_UNKNOWN')
+            validation = json_file(validation_path)
+            if (verified['experiment_id']!=validation['experiment_id'] or validation['result']!='success'
+                    or validation['initial_state'].get('source_experiment')!=ident or validation['task_success'] is not success):
+                return unknown('VERSION_UNKNOWN')
+            def pins(record):
+                return {Path(item['dataset_relative_path']).name:item['sha256'] for item in record['evidence']}
+            recording_pins,trial_pins=pins(validation),pins(r)
+            if trial_pins.get(trace.name)!=refs[1].sha256 or any(recording_pins.get(Path(ref.path).name)!=ref.sha256
+                    for ref in refs if Path(ref.path).name in {priv.name,'proprio_stats.h5','metadata.json'}):
+                return unknown('VERSION_UNKNOWN')
+            if any(digest(ep/'videos'/name)!=recording_pins.get(name) for name in names):
+                return unknown('SENSOR_UNAVAILABLE')
+            refs += (reference(validation_path,ROOT),)
             fact = replace(fact, evidence_refs=refs, time_alignment_quality='verified', observability='observed')
             if observer:
                 for i,(row,extra) in enumerate(zip(rows,extras)):
-                    observer(replace(fact,phase=row['phase'],action_id=str(i),timestamp_mono=row['time'],
+                    observer(meta['fps'],replace(fact,phase=row['phase'],action_id=str(i),timestamp_mono=row['time'],
                                      observed_value=dict(plug=row['plug'],grip=row['grip'],contacts=extra['contacts'])))
             result = from_trace(fact,rows,extras,r['observed_effects'][0],success)
             if not success and result.status in {'NO_DIVERGENCE_OBSERVED','NATIVE_TASK_FAILED'} and self.data == DATA:
                 from agent_challenge import precontact_observation
+                if trial_pins.get('task.yaml')!=digest(trace.parent/'task.yaml'):
+                    return unknown('VERSION_UNKNOWN')
                 residual = precontact_observation(ident).get('observed_precontact_xy_error_mm')
                 if residual and max(map(abs,residual)) >= 1.0:
                     i = max(j for j,row in enumerate(rows) if row['phase']=='align')

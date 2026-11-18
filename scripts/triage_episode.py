@@ -23,14 +23,21 @@ def replay(path, legacy=False, slow=None):
     supervisor=Supervisor(slow,max_calls=int(slow is not None))
     latency=[]
     alarm=None
-    def consume(o):
+    def consume(fps,o):
         nonlocal alarm
+        if not latency:
+            supervisor.fast.max_interval=1.5/fps
         start=time.perf_counter_ns()
         decision=supervisor.fast.update(o)
         latency.append((time.perf_counter_ns()-start)/1e6)
         if alarm is None and decision.get('event'):
             alarm=decision['event']
     report=EventBuilder().build(path,consume)
+    if alarm and (alarm.status=='UNKNOWN' or not any(
+            x.kind==alarm.kind and x.first_observed_frame==alarm.first_observed_frame for x in report.events)):
+        report.status='UNKNOWN'
+        report.events.insert(0,alarm)
+        report.first_divergence=None
     e=report.first_divergence
     context={}
     if e and e.kind=='TARGET_FRAME_RESIDUAL':
