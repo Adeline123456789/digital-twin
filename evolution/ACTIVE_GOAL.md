@@ -1,11 +1,8 @@
-# 当前批次：离线会话交接与验证
+# Fast/slow V2 offline engineering batch
 
-只修复当前项目的会话交接、历史复用和有限分工。续作先读 [current_state.json](current_state.json)。它是唯一可更新的交接状态，记录有效范围、证据入口和下一步。旧研究目标和历次修订见 [历史索引](checkpoints/20261118_session_handoff_history.md)。
-
-- 暂停新增真机动作、物理参数搜索、训练和教师学生比较。保留现有仿真、控制器、记录器、数据和经验。旧授权、复位记录与最后硬件观测均不可授权当前运动。
-- 主 Agent 负责沟通、任务选择、状态和预算。最多一个子 Agent 同时执行，仅传入相关证据，启动时不继承父会话。委托限于日志、仿真证据或代码核查，返回结论、证据、候选和限制。子 Agent 无现场授权，无权修改默认控制配置。
-- 复用现有分析器和内容缓存。按当前问题加载证据，每次得到有效结果就更新检查点。完整视频、日志和原始聊天留本地，公开提交仅包含必要代码、精简结论、引用和哈希。
-- 用新会话检验目标、停止条件及负例恢复。用同一数据和分析器验证重复问题复用。用一次受限委托检验报告可核验性与权限边界。记录实际读取量、模型调用与工具耗时。
-- 离线核查本地入口对重复请求、过时场景和未验证参考的处理。恢复会话不自动重放结果未确认的动作。
-- 若本机支持官方 PreCompact，备份配置并合并仅匹配自动压缩的项目 Hook。经 Codex 审核信任后生效，并保留手动压缩。Hook 只管理会话，现场安全由本地控制器负责。
-- 发布并核实 GitHub 提交后停在离线检查点。接触根因仍是待解问题，之前的稳定采集验收保持未达标。
+Resume from `evolution/current_state.json`. The design and thresholds are in
+`docs/CODEX_TASKBOOK_V2.md` and the frozen round schedule in
+`experiments/round_budget.json`. Use the existing simulator and stored observations.
+Keep the 5/5 real acceptance paused, the real physical cause UNKNOWN, and all real
+execution disabled. One development reviewer at a time, with no hardware or active
+configuration authority. The previous offline handoff is preserved at f3a0fe6.

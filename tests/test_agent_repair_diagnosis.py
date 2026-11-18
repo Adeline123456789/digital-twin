@@ -37,7 +37,7 @@ class DiagnosticAgentTests(unittest.TestCase):
         seed=dict(experiment_id='prior',actions=[{'offset_mm':[0,0]}],
             causal_diagnosis={'status':'GRASP_RETENTION_LOSS_OBSERVED'},
             observed_effects=[{'last_phase':'transport','error':'Unreachable pose'}])
-        with patch.object(agent_loop,'failure_memory',return_value=[]),patch('probe_transport_ik.probe') as probe:
+        with patch.object(agent_loop,'episode_memory',return_value=[]),patch('probe_transport_ik.probe') as probe:
             result=agent_loop.repair_diagnosis(seed)
         probe.assert_not_called();self.assertEqual(result['allowed_grasp_tilt_deg'],[])
         self.assertIn('Grasp loss precedes',result['next_unknown'])

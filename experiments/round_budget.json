@@ -1,0 +1,140 @@
+{
+  "engineering_round_limit": 14,
+  "full_simulation_limit": 24,
+  "hardware_limit": 0,
+  "per_round": {
+    "primary_change": 1,
+    "hypotheses": 3,
+    "slow_calls": 2
+  },
+  "stages": {
+    "B": {
+      "sim_cap": 2,
+      "round_cap": 1,
+      "used_rounds": 1,
+      "sim_used": 0
+    },
+    "P0": {
+      "sim_cap": 0,
+      "round_cap": 2,
+      "used_rounds": 0,
+      "sim_used": 0
+    },
+    "P1": {
+      "sim_cap": 0,
+      "round_cap": 2,
+      "used_rounds": 0,
+      "sim_used": 0
+    },
+    "P2": {
+      "sim_cap": 6,
+      "round_cap": 3,
+      "used_rounds": 0,
+      "sim_used": 0
+    },
+    "P3": {
+      "sim_cap": 12,
+      "round_cap": 4,
+      "used_rounds": 0,
+      "sim_used": 0
+    },
+    "P4": {
+      "sim_cap": 4,
+      "round_cap": 2,
+      "used_rounds": 0,
+      "sim_used": 0
+    }
+  },
+  "schedule": [
+    {
+      "round_id": "B1",
+      "category": "baseline harness",
+      "hypothesis": "Legacy tests use the current planner interfaces and preserve frozen files",
+      "criterion": "Reproduce original failures, pass corrected harness, hash source and reference reports"
+    },
+    {
+      "round_id": "P0.1",
+      "category": "observation contract",
+      "hypothesis": "Misaligned or unobservable measurements can be identified before interpretation",
+      "criterion": "Reject corrupt provenance, units, frame, clock and absent evidence"
+    },
+    {
+      "round_id": "P0.2",
+      "category": "event builder",
+      "hypothesis": "The frozen detector can be replayed on synchronized recordings",
+      "criterion": "17.20 before 18.30; zero alarms and zero unknowns on six frozen success controls"
+    },
+    {
+      "round_id": "P1.1",
+      "category": "capsule",
+      "hypothesis": "A bounded evidence projection can replace unscoped history for triage",
+      "criterion": "At most 3 events, 3 hypotheses, 5 evidence cards; relative hash references"
+    },
+    {
+      "round_id": "P1.2",
+      "category": "memory applicability",
+      "hypothesis": "Source-bound retrieval can reuse VS002 and veto NE011",
+      "criterion": "Reject cross-profile/target/sensor/units/frame/hash and unsupported states"
+    },
+    {
+      "round_id": "P2.1",
+      "category": "stream detection",
+      "hypothesis": "A persistent carry monitor can report loss on confirmation",
+      "criterion": "Frame-by-frame parity with offline diagnosis; measure processing and sample delay"
+    },
+    {
+      "round_id": "P2.2",
+      "category": "supervisor routing",
+      "hypothesis": "One offline owner can stop and budget diagnosis",
+      "criterion": "Five fast outcomes, bounded calls/time/tokens, no repeat on duplicate events"
+    },
+    {
+      "round_id": "P2.3",
+      "category": "policy graph",
+      "hypothesis": "Typed replay and postconditions can bound recovery",
+      "criterion": "Run offline CLI, trace transitions and stop on missing postcondition"
+    },
+    {
+      "round_id": "P3.1",
+      "category": "physical consistency",
+      "hypothesis": "Open-gripper carry and hidden attachment contradict grasp evidence",
+      "criterion": "Reject fake carry, active equality or direct pose drive; unknown on missing evidence"
+    },
+    {
+      "round_id": "P3.2",
+      "category": "retention counterfactual",
+      "hypothesis": "Independent archived controls can distinguish loss from downstream IK",
+      "criterion": "Reject tilt on frozen source; compare archived retention controls and raw native outcome"
+    },
+    {
+      "round_id": "P3.3",
+      "category": "candidate gate",
+      "hypothesis": "An incomplete or regressing comparison cannot promote a candidate",
+      "criterion": "Prebound baseline, split, source and invariants; reject or defer with active bytes identical"
+    },
+    {
+      "round_id": "P3.4",
+      "category": "promotion decisions",
+      "hypothesis": "A scoped diagnostic can pass replay regression while physics stays unknown",
+      "criterion": "Record evidence-backed scoped acceptance or no candidate, and real rejection with rollback"
+    },
+    {
+      "round_id": "P4.1",
+      "category": "contact probe",
+      "hypothesis": "Native contact constraint address distinguishes inactive margins from force-bearing contact",
+      "criterion": "Compare gap and active state on independent MuJoCo contact fixture"
+    },
+    {
+      "round_id": "P4.2",
+      "category": "paired replay",
+      "hypothesis": "Offline fastslow preserves frozen outcomes versus same-input legacy",
+      "criterion": "Paired A/B per source, portable tests, independent review, report limits"
+    }
+  ],
+  "completed": [
+    "B1"
+  ],
+  "refused": [],
+  "remaining_rounds": 13,
+  "remaining_simulations": 24
+}

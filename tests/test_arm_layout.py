@@ -2,14 +2,12 @@ import os
 import sys
 from pathlib import Path
 import unittest
-import time
 import tempfile
 import mujoco
-import json
 import numpy as np
 import yaml
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from learn import SIM, ROOT
+from learn import SIM
 sys.path.insert(0,str(SIM/'src'))
 from piper_sim.backends.mujoco import MujocoBackend
 from piper_sim.backends.arm_layout import ArmLayout, save_recorded_model
@@ -26,10 +24,9 @@ class ArmLayoutTests(unittest.TestCase):
 
     def test_right_removal_named_state_and_restore_dual(self):
         cfg=yaml.safe_load((SIM/'configs/tasks/real_connector_calibrated.yaml').read_text())
-        measurements=[]
         reference=None
         for arms in (['left','right'],['right'],['right'],['left','right']):
-            start=time.monotonic();sim=MujocoBackend(dict(load(),task_scene=dict(cfg,active_arms=arms)))
+            sim=MujocoBackend(dict(load(),task_scene=dict(cfg,active_arms=arms)))
             try:
                 obs=sim.read()
                 model=sim.model
@@ -52,10 +49,7 @@ class ArmLayoutTests(unittest.TestCase):
                     with self.assertRaises(ValueError):sim.apply(Command(np.zeros(14),0,0))
                 q=obs.position.copy();sim.set_observation_state(q)
                 np.testing.assert_array_equal(sim.read().position,q)
-                measurements.append({'arms':arms,'load_seconds':time.monotonic()-start,'nq':model.nq,'nu':model.nu})
             finally:sim.close()
-        path=ROOT/'experiments/right_arm_adaptation/cycle1/load_regression.json'
-        path.write_text(json.dumps(measurements,indent=2)+'\n')
 
 
 if __name__=='__main__':unittest.main()

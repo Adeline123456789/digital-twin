@@ -1,0 +1,172 @@
+{
+  "round_id": "B1",
+  "hypothesis": "Legacy tests use the current planner interfaces and preserve frozen files",
+  "changed_files": [
+    "experiments/fast_slow_v2/B1/benchmark.py",
+    "tests/test_arm_layout.py",
+    "tests/test_exploration_loop.py",
+    "tests/test_right_agent_integration.py",
+    "tests/test_agent_repair_diagnosis.py"
+  ],
+  "source_hash": {
+    "experiments/fast_slow_v2/B1/benchmark.py": "d0cee9c1d2c700ca5600f458d9e6155db778ac983ae7ca3856b90b53d5c45503",
+    "tests/test_arm_layout.py": "fa39ec4730bb71f4bcfd214ac27b9605724a78d49d1f35938417997c8b8e3a4f",
+    "tests/test_exploration_loop.py": "817d3834ea403f19f842587e6e3a5f702e0d3ee20b16f51bce618ecbd3250f68",
+    "tests/test_right_agent_integration.py": "c57b50064ac43143787a2a76b399eb0a3087e753cf725c3007af10890dac6404",
+    "tests/test_agent_repair_diagnosis.py": "d3f0815d9b91ddef48b4556a9ec690ec01475d0436b43fd0b0beb6818d516eda"
+  },
+  "baseline": "f3a0fe62e115930d955a5a74fc9f3629dae6565d",
+  "candidate": "baseline harness",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 131,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 72.342,
+  "decision": "ACCEPT",
+  "validation": "Original unittest 119/126; fixed stale mocks, preserved right-arm memory assertions and removed historical-file write. Full pytest 131 passed; legacy replay of eight recorded Episodes. See separate source cohorts.",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "f3a0fe62e115930d955a5a74fc9f3629dae6565d",
+  "measurements": {
+    "cases": [
+      {
+        "split": "development_episodes",
+        "report": "experiments/research_stage4/20261112T090023Z_1341a28d/result.json",
+        "sha256": "606e2b3ebd52fd0060545d66aa983549c193b72c51cddd5cad2e29f9ef0fcf4f",
+        "profile": "retained_final",
+        "native": "572dd25bb9ec964ffcf6a092874c0eb8eea3c085c7b285511882cb21615e0583",
+        "target": 1,
+        "status": "GRASP_RETENTION_LOSS_OBSERVED",
+        "diagnosis_seconds": 0.03376289503648877,
+        "task_success": false
+      },
+      {
+        "split": "development_episodes",
+        "report": "experiments/research_stage4/20261112T085922Z_30977f00/result.json",
+        "sha256": "0938a9002c2ce0a6394a2ed8e279f659f1aacbd839065890170c4106764b4e04",
+        "profile": "retained_final",
+        "native": "572dd25bb9ec964ffcf6a092874c0eb8eea3c085c7b285511882cb21615e0583",
+        "target": 1,
+        "status": "UNKNOWN",
+        "diagnosis_seconds": 0.022316538961604238,
+        "task_success": false
+      },
+      {
+        "split": "heldout_success_episodes",
+        "report": "experiments/research_stage3/20261112T073436Z_43d3e2c2/result.json",
+        "sha256": "9f462d7be3b8a8ec6b6082d15699756be5de034bb6589485d5716050b3aa78c0",
+        "profile": "original",
+        "native": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+        "target": 3,
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "diagnosis_seconds": 0.12235913902986795,
+        "task_success": true
+      },
+      {
+        "split": "heldout_success_episodes",
+        "report": "experiments/research_stage3/20261112T073851Z_908954b8/result.json",
+        "sha256": "c0cbdd6dbeef577e59cf8bdfbd6b277914227417114e392ed73312afb9390a80",
+        "profile": "original",
+        "native": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+        "target": 3,
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "diagnosis_seconds": 0.1110170780448243,
+        "task_success": true
+      },
+      {
+        "split": "heldout_success_episodes",
+        "report": "experiments/research_stage3/20261112T075628Z_ee017e71/result.json",
+        "sha256": "f628fdda3a6ee42b4257f7addce622c8377374fd9f382f98643ee759faa462ce",
+        "profile": "original",
+        "native": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+        "target": 3,
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "diagnosis_seconds": 0.11950317595619708,
+        "task_success": true
+      },
+      {
+        "split": "heldout_success_episodes",
+        "report": "experiments/research_stage3/20261112T080244Z_7a0dd62e/result.json",
+        "sha256": "f12668eb0812ccae7d0f14a29cf153399a65f3c0a0ef18134d9a24c3058650b9",
+        "profile": "original",
+        "native": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+        "target": 3,
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "diagnosis_seconds": 0.11374368099495769,
+        "task_success": true
+      },
+      {
+        "split": "heldout_success_episodes",
+        "report": "experiments/research_stage3/20261112T084117Z_37dd0986/result.json",
+        "sha256": "db61ff891a6e95cabfc724ac3113dabd07a35cb8b0f8a0f31b163d59f0678444",
+        "profile": "original",
+        "native": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+        "target": 3,
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "diagnosis_seconds": 0.10948572005145252,
+        "task_success": true
+      },
+      {
+        "split": "heldout_success_episodes",
+        "report": "experiments/research_stage3/20261112T084434Z_5cf241f9/result.json",
+        "sha256": "8a320e6267809faa5183bc119f62104f0d50fa7aa8fa68bbf3936ab3f29b6631",
+        "profile": "original",
+        "native": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+        "target": 3,
+        "status": "NO_RETENTION_LOSS_OBSERVED",
+        "diagnosis_seconds": 0.11232120601925999,
+        "task_success": true
+      }
+    ],
+    "historical_planner_report": "experiments/research_stage4/round4/result.json",
+    "historical_planner_sha256": "b9df09d59c496a24ae1c7c453448ed30647d9b17a1b419ea564eea632686e6f1",
+    "historical_metrics": {
+      "baseline": {
+        "valid_successes": 2,
+        "attempts": 2,
+        "success_rate": 1.0,
+        "model_calls": 2,
+        "reported_input_plus_output_tokens": 45464,
+        "component_seconds": 355.39257841499057,
+        "tokens_per_valid_success": 22732.0,
+        "seconds_per_valid_success": 177.69628920749528,
+        "valid_successes_per_component_hour": 20.259286314056304
+      },
+      "candidate": {
+        "valid_successes": 2,
+        "attempts": 2,
+        "success_rate": 1.0,
+        "model_calls": 0,
+        "reported_input_plus_output_tokens": 0,
+        "component_seconds": 295.9647396139917,
+        "tokens_per_valid_success": 0.0,
+        "seconds_per_valid_success": 147.98236980699585,
+        "valid_successes_per_component_hour": 24.327222254213492
+      }
+    },
+    "source_head": "2791872999bfb239805ae176f6b0eff5fe41bd19",
+    "source_tree_sha256": "4f8ddb9b2aac926d61677595ad24ad1506723c420c145850db99d27a274a2d98",
+    "current_native": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+    "retained_native": "572dd25bb9ec964ffcf6a092874c0eb8eea3c085c7b285511882cb21615e0583",
+    "source_dirty": true,
+    "source_dirty_diff_sha256": "362d14e2dd38ffc0de21182ab5f0c2c86e675aa7145a83dba79740cb96693c8e",
+    "codex_version_process_seconds": [
+      0.05299840995576233,
+      0.03738744603469968,
+      0.03576944407541305
+    ],
+    "cli_startup_median": 0.03738744603469968,
+    "turn_context_overhead": "NOT_MEASURED; version startup is only a lower-level process benchmark",
+    "fresh_generation_simulation": "NOT_RUN; comparison uses frozen histories",
+    "original_unittest": {
+      "run": 126,
+      "failed": 3,
+      "errors": 4
+    },
+    "corrected_pytest": 131,
+    "original_sha": "f3a0fe62e115930d955a5a74fc9f3629dae6565d"
+  }
+}

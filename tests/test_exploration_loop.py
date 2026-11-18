@@ -18,7 +18,7 @@ def episode(ident,offset,success=False):
 
 
 class FixtureTools:
-    def __init__(self,seed,cache):
+    def __init__(self,seed,cache,memories):
         self.seed=seed
         self.context=dict(baseline=bt.baseline_case(seed),allowed_grasp_tilt_deg=[])
     def call(self,name,args):
