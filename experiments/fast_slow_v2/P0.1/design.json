@@ -1,0 +1,10 @@
+{
+  "round_id": "P0.1",
+  "category": "observation contract",
+  "hypothesis": "Misaligned or unobservable measurements can be identified before interpretation",
+  "criterion": "Reject corrupt provenance, units, frame, clock and absent evidence",
+  "started": "2026-11-18T10:08:49.603328+00:00",
+  "rollback_ref": "61c51a6bee1633d34591b24d2702204d1b6a709f",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

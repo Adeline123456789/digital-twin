@@ -1,0 +1,32 @@
+{
+  "round_id": "P0.1",
+  "hypothesis": "Misaligned or unobservable measurements can be identified before interpretation",
+  "changed_files": [
+    "robot_agent/__init__.py",
+    "robot_agent/contracts.py",
+    "robot_agent/timeline.py",
+    "tests/test_observation_contract.py"
+  ],
+  "source_hash": {
+    "robot_agent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "robot_agent/contracts.py": "499fa98b75183915c27a8adf809c709a2101abf0f6a1428e4ed6fa667be7b9f3",
+    "robot_agent/timeline.py": "ba7af9fde8cca2fbf133219aa21badf6e14e5b87105989c238739d644cc7b6cb",
+    "tests/test_observation_contract.py": "6f6be00f069c9a2e7624bd690b835d4251709f8d6e848b8d9a397dee1545009c"
+  },
+  "baseline": "61c51a6bee1633d34591b24d2702204d1b6a709f",
+  "candidate": "observation contract",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 2,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 60.341,
+  "decision": "ACCEPT",
+  "validation": "Validated observation provenance and aligned simulation sample identity",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "61c51a6bee1633d34591b24d2702204d1b6a709f",
+  "measurements": {}
+}
