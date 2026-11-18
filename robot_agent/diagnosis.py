@@ -2,7 +2,6 @@
 import json
 from dataclasses import replace
 from pathlib import Path
-import h5py
 from .contracts import Observation, Reference
 from .first_divergence import event, report
 from .legacy import DATA, ROOT, digest
@@ -56,6 +55,7 @@ class EventBuilder:
                 return unknown('SENSOR_UNAVAILABLE')
             rows = [json.loads(line) for line in trace.read_text().splitlines()]
             extras = [json.loads(line) for line in priv.read_text().splitlines()]
+            import h5py
             with h5py.File(stats/'proprio_stats.h5') as h5:
                 if len(rows)!=meta['num_frames'] or not aligned_samples(rows, extras, h5['sim_time'][:],meta['fps']):
                     return unknown('TIMESTAMP_MISMATCH')

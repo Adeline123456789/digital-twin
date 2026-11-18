@@ -30,5 +30,6 @@
     "archived_call_kind": "compiled_alignment_v1",
     "actual_token_comparison": "NOT_MEASURED; no inference; bytes are not tokens",
     "seed": "20261112T075231Z_2a125acc"
-  }
+  },
+  "initial_validation": "Two tests failed because index generation imported h5py in the system interpreter. Moved the dependency to the dataset reader; regenerated the pins and reran all three tests successfully."
 }
