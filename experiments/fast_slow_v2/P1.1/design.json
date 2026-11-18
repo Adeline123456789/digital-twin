@@ -1,0 +1,10 @@
+{
+  "round_id": "P1.1",
+  "category": "capsule",
+  "hypothesis": "A bounded evidence projection can replace unscoped history for triage",
+  "criterion": "At most 3 events, 3 hypotheses, 5 evidence cards; relative hash references",
+  "started": "2026-11-18T10:11:42.362176+00:00",
+  "rollback_ref": "ed27ecf10703b4886cad93506482a21c434e7a0d",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

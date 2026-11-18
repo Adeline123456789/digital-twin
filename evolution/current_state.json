@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "At most 3 events, 3 hypotheses, 5 evidence cards; relative hash references",
-  "updated_at": "2026-11-18T10:11:42.323728+00:00",
+  "next_grounded_work": "Reject cross-profile/target/sensor/units/frame/hash and unsupported states",
+  "updated_at": "2026-11-18T10:11:42.586079+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -86,8 +86,8 @@
     "execution_boundary": "Same capture command log is exclusive. Current entry does not bind unique request or scene version and retains a legacy path without frozen validation.",
     "precompact": "Project hook loaded and trusted in desktop Codex; automatic-only matcher and return checked offline. No live compaction forced."
   },
-  "v2_round": "P0.2",
+  "v2_round": "P1.1",
   "v2_budget": "experiments/round_budget.json",
-  "v2_result": "experiments/fast_slow_v2/P0.2/RESULT.json",
-  "v2_rounds_used": 3
+  "v2_result": "experiments/fast_slow_v2/P1.1/RESULT.json",
+  "v2_rounds_used": 4
 }

@@ -1,0 +1,28 @@
+{
+  "round_id": "P1.1",
+  "hypothesis": "A bounded evidence projection can replace unscoped history for triage",
+  "changed_files": [
+    "robot_agent/memory_router.py",
+    "tests/test_memory_router.py"
+  ],
+  "source_hash": {
+    "robot_agent/memory_router.py": "796c2bb169c176663aac46752f21da0305d9897b91daf8bc8630f50f0df8941e",
+    "tests/test_memory_router.py": "d64ae28c87e2e28a0a1dae8a4929db5544b1c7e7a191172a08164b273b995f5a"
+  },
+  "baseline": "ed27ecf10703b4886cad93506482a21c434e7a0d",
+  "candidate": "capsule",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 1,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 0.224,
+  "decision": "ACCEPT",
+  "validation": "Five existing memory collections indexed locally, revoked records excluded, capsule caps tested",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "ed27ecf10703b4886cad93506482a21c434e7a0d",
+  "measurements": {}
+}
