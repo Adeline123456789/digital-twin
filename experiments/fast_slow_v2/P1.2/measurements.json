@@ -1,0 +1,7 @@
+{
+  "archived_prompt_bytes": 8003,
+  "capsule_bytes": 2201,
+  "archived_call_kind": "compiled_alignment_v1",
+  "actual_token_comparison": "NOT_MEASURED; no inference; bytes are not tokens",
+  "seed": "20261112T075231Z_2a125acc"
+}

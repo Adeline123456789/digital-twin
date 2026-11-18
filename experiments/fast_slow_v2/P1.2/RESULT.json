@@ -1,0 +1,34 @@
+{
+  "round_id": "P1.2",
+  "hypothesis": "Source-bound retrieval can reuse VS002 and veto NE011",
+  "changed_files": [
+    "robot_agent/memory_router.py",
+    "tests/test_memory_router.py"
+  ],
+  "source_hash": {
+    "robot_agent/memory_router.py": "61468ea08187be2c61d9e5338f3776de4a32da115f4671672ae75b9fe4e2230b",
+    "tests/test_memory_router.py": "25a0e17368d7d30a47aa1fa30effa027eca7218f88d1e1b6bdac742514cb1485"
+  },
+  "baseline": "1ba20723712375e4aa5fccb1127845c501ad4d73",
+  "candidate": "memory applicability",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 3,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 47.109,
+  "decision": "ACCEPT",
+  "validation": "Executed archived VS002, checked mismatched source and sensors, verified NE011 veto and revocation",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "1ba20723712375e4aa5fccb1127845c501ad4d73",
+  "measurements": {
+    "archived_prompt_bytes": 8003,
+    "capsule_bytes": 2201,
+    "archived_call_kind": "compiled_alignment_v1",
+    "actual_token_comparison": "NOT_MEASURED; no inference; bytes are not tokens",
+    "seed": "20261112T075231Z_2a125acc"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "round_id": "P1.2",
+  "category": "memory applicability",
+  "hypothesis": "Source-bound retrieval can reuse VS002 and veto NE011",
+  "criterion": "Reject cross-profile/target/sensor/units/frame/hash and unsupported states",
+  "started": "2026-11-18T10:11:42.640883+00:00",
+  "rollback_ref": "1ba20723712375e4aa5fccb1127845c501ad4d73",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}
