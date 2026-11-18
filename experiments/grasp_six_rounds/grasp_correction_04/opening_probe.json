@@ -1,0 +1,55 @@
+{
+  "results": [
+    {
+      "opening_mm": 60,
+      "minimum_distance_mm": {
+        "task/black_charger": -7.716624778608023
+      }
+    },
+    {
+      "opening_mm": 54,
+      "minimum_distance_mm": {
+        "task/black_charger": -5.893230134799449
+      }
+    },
+    {
+      "opening_mm": 50,
+      "minimum_distance_mm": {
+        "task/black_charger": -3.972301673513535
+      }
+    },
+    {
+      "opening_mm": 46,
+      "minimum_distance_mm": {
+        "task/black_charger": -2.051373212227574
+      }
+    },
+    {
+      "opening_mm": 44,
+      "minimum_distance_mm": {
+        "task/black_charger": -1.0909089815845905
+      }
+    },
+    {
+      "opening_mm": 42,
+      "minimum_distance_mm": {
+        "task/black_charger": -0.13044475094161423
+      }
+    },
+    {
+      "opening_mm": 40,
+      "minimum_distance_mm": {}
+    },
+    {
+      "opening_mm": 38,
+      "minimum_distance_mm": {}
+    },
+    {
+      "opening_mm": 36,
+      "minimum_distance_mm": {
+        "task/yellow_plug": -0.07581472818115678
+      }
+    }
+  ],
+  "scope": "Static geometry rejection only, not valid approach or grasp"
+}

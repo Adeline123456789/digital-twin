@@ -1,0 +1,50 @@
+{
+  "reference_sha256": "631f0e6b89fe1c809cb84cf9e253096d9b678af458987096c0d55a87a84c6c2e",
+  "result": "failure",
+  "task_success": false,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "Diagnostic grasp-angle candidate; only simulation retention, not verified real axis",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "upright_stage": {
+    "passed": true,
+    "max_tilt_deg": 0.45580563571861593,
+    "limit_deg": 1.0,
+    "phases": [
+      "lift"
+    ],
+    "scope": "Simulated absolute plug axis during lift/transport; fold excluded; not a real angle measurement"
+  },
+  "max_penetration_m": 2.1174349988268487e-05,
+  "simulated_seconds": 35.386718750019156,
+  "observation_frames": 1061,
+  "applied_reference_steps": 3539,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 73.21880042296834,
+  "prediction_sha256": "e28d26a0e6a93eb7b91b5a0e98c7383b0994993f844551284e58c46db4ce9a7b",
+  "stage_goal": "grasp_lift_return_diagnostic",
+  "stage_success": true,
+  "max_in_gripper_translation_mm": 4.645631034519528,
+  "max_in_gripper_rotation_deg": 2.2623104213955485,
+  "lift_height_m": 0.05442391289876361,
+  "simulation_axis_tilt_at_phase_ends_deg": {
+    "grasp": 3.7215130446689415e-06,
+    "preload": 6.9884384818971375e-06,
+    "lift": 0.436234246459432
+  }
+}

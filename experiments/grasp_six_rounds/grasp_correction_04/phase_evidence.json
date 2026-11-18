@@ -1,0 +1,253 @@
+{
+  "value": {
+    "reference_id": "631f0e6b89fe1c809cb84cf9e253096d9b678af458987096c0d55a87a84c6c2e",
+    "physical_task_success": null,
+    "physical_label_source": "execution_report.json",
+    "completed_sequence": false,
+    "phases": [
+      {
+        "phase": "prepare_gripper",
+        "command_rows": [
+          0,
+          99
+        ],
+        "elapsed_s": [
+          0.0,
+          1.0079217430902645
+        ],
+        "end_target_width_mm": 60.0,
+        "end_encoder_width_mm": 58.0,
+        "end_views": {
+          "external": {
+            "path": "external/0043.jpg",
+            "exposure_minus_command_s": -0.014066214906051755
+          },
+          "right_wrist": {
+            "path": "right_wrist/0043.jpg",
+            "exposure_minus_command_s": 0.004158450989052653
+          }
+        }
+      },
+      {
+        "phase": "approach",
+        "command_rows": [
+          100,
+          1583
+        ],
+        "elapsed_s": [
+          1.01824302400928,
+          16.10933022410609
+        ],
+        "end_target_width_mm": 60.0,
+        "end_encoder_width_mm": 59.49999999999999,
+        "end_views": {
+          "external": {
+            "path": "external/0496.jpg",
+            "exposure_minus_command_s": -0.008528704405762255
+          },
+          "right_wrist": {
+            "path": "right_wrist/0496.jpg",
+            "exposure_minus_command_s": 0.014023497118614614
+          }
+        }
+      },
+      {
+        "phase": "descend",
+        "command_rows": [
+          1584,
+          1779
+        ],
+        "elapsed_s": [
+          16.119823858025484,
+          18.111962035065517
+        ],
+        "end_target_width_mm": 59.99652462304535,
+        "end_encoder_width_mm": 59.49999999999999,
+        "end_views": {
+          "external": {
+            "path": "external/0556.jpg",
+            "exposure_minus_command_s": -0.01023378234822303
+          },
+          "right_wrist": {
+            "path": "right_wrist/0556.jpg",
+            "exposure_minus_command_s": 0.012850331026129425
+          }
+        }
+      },
+      {
+        "phase": "grasp",
+        "command_rows": [
+          1780,
+          1913
+        ],
+        "elapsed_s": [
+          18.138815455022268,
+          19.493232903070748
+        ],
+        "end_target_width_mm": 27.0,
+        "end_encoder_width_mm": 45.6,
+        "end_views": {
+          "external": {
+            "path": "external/0598.jpg",
+            "exposure_minus_command_s": 0.0091839978704229
+          },
+          "right_wrist": {
+            "path": "right_wrist/0597.jpg",
+            "exposure_minus_command_s": -0.0007480935892090201
+          }
+        }
+      },
+      {
+        "phase": "preload",
+        "command_rows": [
+          1914,
+          1963
+        ],
+        "elapsed_s": [
+          19.518732903059572,
+          20.015153818996623
+        ],
+        "end_target_width_mm": 27.0,
+        "end_encoder_width_mm": 43.7,
+        "end_views": {
+          "external": {
+            "path": "external/0613.jpg",
+            "exposure_minus_command_s": -0.012484671198762953
+          },
+          "right_wrist": {
+            "path": "right_wrist/0613.jpg",
+            "exposure_minus_command_s": 0.01105529849883169
+          }
+        }
+      },
+      {
+        "phase": "lift",
+        "command_rows": [
+          1964,
+          2157
+        ],
+        "elapsed_s": [
+          20.041926568024792,
+          22.005423284019344
+        ],
+        "end_target_width_mm": 27.0,
+        "end_encoder_width_mm": 35.3,
+        "end_views": {
+          "external": {
+            "path": "external/0673.jpg",
+            "exposure_minus_command_s": -0.001861973898485303
+          },
+          "right_wrist": {
+            "path": "right_wrist/0672.jpg",
+            "exposure_minus_command_s": -0.011089776875451207
+          }
+        }
+      },
+      {
+        "phase": "fold",
+        "command_rows": [
+          2158,
+          3638
+        ],
+        "elapsed_s": [
+          22.029950571013615,
+          37.09314645000268
+        ],
+        "end_target_width_mm": 27.0,
+        "end_encoder_width_mm": 35.3,
+        "end_views": {
+          "external": {
+            "path": "external/1125.jpg",
+            "exposure_minus_command_s": -0.016117169987410307
+          },
+          "right_wrist": {
+            "path": "right_wrist/1125.jpg",
+            "exposure_minus_command_s": 0.012476319912821054
+          }
+        }
+      },
+      {
+        "phase": "final_hold",
+        "command_rows": [
+          3639,
+          3738
+        ],
+        "elapsed_s": [
+          37.10390502400696,
+          38.11073166306596
+        ],
+        "end_target_width_mm": 35.3,
+        "end_encoder_width_mm": 36.0,
+        "end_views": {
+          "external": {
+            "path": "external/1156.jpg",
+            "exposure_minus_command_s": 0.00010751723311841488
+          },
+          "right_wrist": {
+            "path": "right_wrist/1155.jpg",
+            "exposure_minus_command_s": -0.004353821510449052
+          }
+        }
+      }
+    ],
+    "recorded_stop_event": null,
+    "camera_clocks": {
+      "external": {
+        "frames": 1161,
+        "max_elapsed_error_s": 0.0012177461758255959,
+        "first_outside_one_frame": null,
+        "recorded_frame_number_gaps": 0,
+        "status": "ACCEPTED_BY_CURRENT_MAPPING",
+        "mapping": {
+          "method": "first_epoch_anchor_continuous_camera_v1",
+          "max_camera_receipt_elapsed_error_s": 0.0012177461758255959,
+          "largest_wallclock_step_s": 1.9073486328125e-06,
+          "max_change_from_per_frame_wall_mapping_s": 1.3668322935700417e-06,
+          "initial_exposure_to_receipt_s": 0.029598474502563477,
+          "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration."
+        }
+      },
+      "right_wrist": {
+        "frames": 1160,
+        "max_elapsed_error_s": 0.0013796614948660135,
+        "first_outside_one_frame": null,
+        "recorded_frame_number_gaps": 0,
+        "status": "ACCEPTED_BY_CURRENT_MAPPING",
+        "mapping": {
+          "method": "first_epoch_anchor_continuous_camera_v1",
+          "max_camera_receipt_elapsed_error_s": 0.0013796614948660135,
+          "largest_wallclock_step_s": 6.67572021484375e-06,
+          "max_change_from_per_frame_wall_mapping_s": 7.277005352079868e-06,
+          "initial_exposure_to_receipt_s": 0.032610177993774414,
+          "scope": "Initial epoch alignment retained; elapsed consistency checked against host receipts. No independent exposure-clock calibration."
+        }
+      }
+    },
+    "root_cause": "UNKNOWN",
+    "next_observation": "Compare plug-to-finger pose from grasp through lift before selecting another insertion candidate.",
+    "timing": {
+      "input_read_seconds": 0.012949230032972991,
+      "analysis_seconds": 0.001409070915542543
+    },
+    "limitations": [
+      "Saved RGB/encoder evidence only; no force or metric object-pose measurement.",
+      "Rejected camera mapping suppresses command-to-image pairing; original event image remains available.",
+      "Physical labels are copied from explicit prior reviews, never inferred from completion.",
+      "This index does not revalidate video/HDF5 data or grant training eligibility."
+    ]
+  },
+  "cache": {
+    "key": "62afea3e393899601376be6b01d656f2df174be6476654feea8eeb1a2fd6bde1",
+    "hit": false,
+    "bytes_hashed": 1315768,
+    "dependency_sha256": {
+      "analyzer": "ef3b2357056f41a61f38f20ed859ef7de553974e7000c7fccb58b9649949f074",
+      "clock": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595",
+      "commands": "44dd0626690bf76dd0f11e012e66a250854ab60c4b01cde9ebdc9cb8a9c02663",
+      "execution": "031b0dbe40ed65c0d31e86b0c929f2d7f98875bd93695909a0255de196d41e89",
+      "external": "d7b7c284f7c0dc5fa95c30b730853c50c0540af0051d91b7dc98ce763dd41f72",
+      "right_wrist": "89943159d159b1bc8b45b428fe1a1c5c89116c45e0bc24c005ea515138520453"
+    },
+    "wall_seconds": 0.5294741770485416
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "task_scope": "grasp_lift_return_diagnostic",
+  "stage_success": false,
+  "stage_retention_observed": true,
+  "absolute_grasp_axis_verified": false,
+  "insertion_attempted": false,
+  "physical_insertion_success": null,
+  "training_eligible": false,
+  "dataset_valid": true,
+  "observation": "Horizontal RGB exposes a pin above the yellow housing after lift; plug retained through return, but opening changes8.4mm during lift and housing top shifts17px after removing old ROI clipping. Do not promote as stable/upright grasp.",
+  "root_cause": "UNKNOWN",
+  "observations": {
+    "before_close": {
+      "width_mm": 59.49999999999999,
+      "top_px": 263,
+      "frame": "0553.jpg"
+    },
+    "before_preload": {
+      "width_mm": 45.6,
+      "top_px": 261,
+      "frame": "0595.jpg"
+    },
+    "after_preload": {
+      "width_mm": 43.7,
+      "top_px": 261,
+      "frame": "0610.jpg"
+    },
+    "lift_handoff": {
+      "allow_transport": false,
+      "reason": "Grasp-to-lift observation changed",
+      "encoder_width_change_mm": 8.400000000000006,
+      "yellow_top_change_px": 11,
+      "thresholds": {
+        "encoder_width_change_mm": 5.0,
+        "yellow_top_change_px": 15.0
+      },
+      "limit": "Change rejection only: an already tilted grasp can pass. Not absolute pose, force or stable-grasp certification",
+      "preload": {
+        "width_mm": 43.7,
+        "top_px": 261,
+        "frame": "0610.jpg"
+      },
+      "lift": {
+        "width_mm": 35.3,
+        "top_px": 250,
+        "frame": "0670.jpg"
+      }
+    }
+  },
+  "unclipped_top_reanalysis": {
+    "preload_frame": "0610.jpg",
+    "preload_top_px": 261,
+    "lift_frame": "0670.jpg",
+    "lift_top_px": 244,
+    "change_px": 17,
+    "scope": "Image-space change, not3D tilt; old mask clipped y<250"
+  },
+  "command_seconds": 38.11073166306596,
+  "model_pause_seconds": 0,
+  "child_model_calls": 0,
+  "money_cost": null,
+  "reference_simulation_wall_seconds": 73.21880042296834,
+  "independent_reset": true,
+  "effort_transition": {
+    "reference_index": 1814,
+    "monotonic": 694855.878414681,
+    "effort_nm": 1.0
+  },
+  "actual_effort_command_nm_counts": {
+    "0.3": 1674,
+    "1.0": 1633
+  },
+  "recording_frames_per_camera": 1142,
+  "recording_reference": "self_evolution/grasp_six_rounds_20261117/diagnostic_horizontal_h18",
+  "recording_manifest_sha256": "427d5d95da7a616ffc59edf31c6e40e2a1822be5263c532e5623fe2fae12971b",
+  "raw_reference": "self_evolution/grasp_six_rounds_20261117/horizontal_h18_real",
+  "disabled": {
+    "all_six_motors": true,
+    "gripper": true,
+    "observed_utc": "2026-11-18T01:51:54.723996+00:00",
+    "check_sha256": "6e39bf37e89455930024e4bce5480581371febf58d5b22eb93168424db691c89"
+  },
+  "evidence": [
+    {
+      "path": "right_wrist/0553.jpg",
+      "sha256": "ecfecfcd5780ec5bbd66f665c7aaecd4bfa56c2a975fd305c70b154dfb044b12"
+    },
+    {
+      "path": "right_wrist/0595.jpg",
+      "sha256": "4af1c7a649cafb06f9a7032dd11016fdbb82c3f6988bec26efdfeb752a874b83"
+    },
+    {
+      "path": "right_wrist/0610.jpg",
+      "sha256": "a6d057c78a2329845070f1b6a24d6ceb64867c4ba0ea8d221a6591751a8afa56"
+    },
+    {
+      "path": "right_wrist/0670.jpg",
+      "sha256": "285e300cb1c0a7f6eddc30ce5ec97a17dc47a990887fc72f0da79e8ac4a8f80a"
+    },
+    {
+      "path": "right_wrist/last.png",
+      "sha256": "afb7913baa2815c2a7e74f6039e368a75f52f314802e9a8451e44466f9e30975"
+    },
+    {
+      "path": "external/last.png",
+      "sha256": "fd1dae5db3663f95fa1628194b0c1a19b80513bdd9ffd7a8ff1ac79dd4ce036b"
+    },
+    {
+      "path": "commanded_probe.csv",
+      "sha256": "44dd0626690bf76dd0f11e012e66a250854ab60c4b01cde9ebdc9cb8a9c02663"
+    },
+    {
+      "path": "execution_report.json",
+      "sha256": "031b0dbe40ed65c0d31e86b0c929f2d7f98875bd93695909a0255de196d41e89"
+    },
+    {
+      "path": "raw_can.jsonl",
+      "sha256": "24ac3364d36a8135815ded575015196008df02b9910d7f0f86400c914db7e50e"
+    }
+  ],
+  "limits": [
+    "Native simulation <=0.456deg lift tilt does not validate real axis",
+    "Real1Nm motor command is not a measured contact force",
+    "Stage recording valid; no complete insertion or collection success",
+    "Current black-obstacle restoration invalidates parked-obstacle reference"
+  ],
+  "rollback": "Original scenes and preload_reference remain preserved; any real reuse requires matching live scene, current entry and simulation/safety validation"
+}

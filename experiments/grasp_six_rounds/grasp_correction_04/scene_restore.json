@@ -1,0 +1,8 @@
+{
+  "confirmed_by_user": true,
+  "observed_camera": "external",
+  "image_reference": "self_evolution/grasp_six_rounds_20261117/scene_black_restored/external/last.png",
+  "image_sha256": "087e3b88aa2ac8305b028232b1d265549c861a42f5548d4cff7d1a93e39227b8",
+  "model_pose": "Original black-object pose retained; RGB confirms presence, not metric6DoF alignment",
+  "invalidated_reference": "631f0e6b89fe1c809cb84cf9e253096d9b678af458987096c0d55a87a84c6c2e"
+}

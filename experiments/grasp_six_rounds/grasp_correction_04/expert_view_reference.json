@@ -1,0 +1,28 @@
+{
+  "source_videos": [
+    {
+      "video": "/media/midea/F496AC8096AC4548/act_td3/connector_plugin/observations/20260908/000001/videos/cam_external_rgb.mp4",
+      "frames": 446,
+      "fps": 30.0,
+      "duration_s": 14.866666666666667,
+      "sha256": "d0f8e3a4dce5225547b9fb37ede70704a7430ac4b8d8ce93dd41f43ae7e29ac5"
+    },
+    {
+      "video": "/media/midea/F496AC8096AC4548/act_td3/connector_plugin/observations/20260908/000001/videos/cam_right_wrist_rgb.mp4",
+      "frames": 446,
+      "fps": 30.0,
+      "duration_s": 14.866666666666667,
+      "sha256": "903d2dcd212227f6e48fd466f79db1f29ebc9a56af326b8d07afdee73825a37f"
+    }
+  ],
+  "reviewed_frames": [
+    195,
+    290,
+    330
+  ],
+  "observation": "Expert horizontal grasp exposes a pin above the yellow housing and socket slots in the same wrist RGB view. Current yaw90 view hides these correspondences.",
+  "reuse": "Grasp/view orientation only, rebuild targets using current right-arm IK and scene",
+  "excluded": "No copied expert joint trajectory, camera calibration, real depth or force",
+  "current_scene_change": "Operator confirmed black object moved outside arm work area, other fixtures unchanged",
+  "real_started": false
+}

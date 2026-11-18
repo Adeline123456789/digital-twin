@@ -1,0 +1,399 @@
+{
+  "results": [
+    {
+      "holder_relative_yaw_deg": 90,
+      "hardware_commands": 0,
+      "passed_ik": true,
+      "approach_deg": [
+        -10.660912014257068,
+        94.76640916743976,
+        -66.65578186713748,
+        0.00021714483637643537,
+        66.88570511560084,
+        -106.9195874746838
+      ],
+      "grasp_deg": [
+        -10.660879357765193,
+        99.05985709631116,
+        -59.33063784277633,
+        0.0002430141635525394,
+        55.26711319027643,
+        -106.91960803201961
+      ],
+      "open_grasp_robot_scene_contacts": []
+    },
+    {
+      "holder_relative_yaw_deg": 0,
+      "hardware_commands": 0,
+      "passed_ik": true,
+      "approach_deg": [
+        -10.661033917494096,
+        94.76663966438811,
+        -66.65607193291888,
+        0.00039308609176156483,
+        66.88606798103152,
+        -16.9197784450076
+      ],
+      "grasp_deg": [
+        -10.66100127379137,
+        99.06007214232156,
+        -59.330934028338476,
+        0.0004399153707844149,
+        55.26749763856131,
+        -16.919842131050736
+      ],
+      "open_grasp_robot_scene_contacts": [
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.661025515140501
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -5.92784350321561
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.263939056838136
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.708163667431037
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -5.261958060669707
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -4.261288283482365
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.358899320590931
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -3.349144092089205
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -2.455976324882077
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -4.933498515372602
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.263939072138395
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.233123072430053
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -5.744121905160414
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -2.809282963063311
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.24216171540249
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -4.868315712876188
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.358899322201358
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -4.051435223055114
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.708163717485249
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -3.3491441184634114
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.263939088073437
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -3.349144109596615
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.854331948279146
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -2.8092829803522625
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.854331956545957
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -2.4559763085423274
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.133809500605945
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -2.2414481959767074
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -5.323145513597256
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -1.3501823313587689
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -4.9334982692512135
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.03636912546135
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.266586449621679
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.602209462714513
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -5.6541498399690795
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -4.778343664504096
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -3.2591720936779365
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -2.7193109457987816
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.716624778608023
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -4.3556410186959535
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.716624727841799
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.616867941370357
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -5.654149816144991
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -3.073775969356896
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.716624738093911
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -6.811868066227431
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -2.40894534418357
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -7.716624554181007
+        },
+        {
+          "bodies": [
+            "right/link7",
+            "task/black_charger"
+          ],
+          "distance_mm": -4.355641251970882
+        }
+      ]
+    },
+    {
+      "holder_relative_yaw_deg": 180,
+      "hardware_commands": 0,
+      "passed_ik": false,
+      "error": "Unreachable pose [ 0.29591389 -0.36570643  0.1322    ]: residual [-0.04432975 -0.07204055 -0.04752727 -0.23787209  0.30443498 -0.2065093 ]"
+    }
+  ],
+  "scope": "Original IK/bounds and static open-grasp geometry only; no physical grasp success"
+}

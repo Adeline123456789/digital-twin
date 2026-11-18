@@ -1,0 +1,13 @@
+{
+  "user_observation": "Residual leftward tilt after removing native5deg carry tilt; perhaps initial grasp is not vertical.1–2deg is an onsite estimate.",
+  "established": "Current automated screen detects gross relative changes, not absolute real plug axis. Actual grasp joint residuals below0.13deg in both recent traces do not support large unfinished joint motion as the explanation.",
+  "not_established": [
+    "Exact3D tilt angle",
+    "Which jaw/contact induces it",
+    "Whether visual small rotation is pose, occlusion or perspective"
+  ],
+  "selected_test": "Use last grasp correction to test+1deg socketY gripper orientation before contact; upper axis towards socket right. Same22mm center height and effort schedule. No transport or insertion.",
+  "rejected_action": "Do not treat late carry compensation or same-arm successful2D appearance as proof initial grasp is correct.",
+  "real_started": false,
+  "stage_success": null
+}

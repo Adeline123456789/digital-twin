@@ -2,6 +2,20 @@
 import math
 
 
+def yellow_top(image):
+    import cv2
+    import numpy as np
+    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    mask = cv2.inRange(hsv, np.array([15, 90, 60]), np.array([45, 255, 255]))
+    # shortcut: central wrist ROI for this plug; revise if the camera mount changes.
+    mask[:, :180] = 0
+    mask[:, 470:] = 0
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not contours or cv2.contourArea(max(contours, key=cv2.contourArea)) < 300:
+        return None
+    return cv2.boundingRect(max(contours, key=cv2.contourArea))[1]
+
+
 def screen_lift(grasp_width_mm, lift_width_mm, grasp_yellow_top_px, lift_yellow_top_px):
     # shortcut: this fixed wrist mount/plug only; recalibrate thresholds if either changes.
     values = (grasp_width_mm, lift_width_mm, grasp_yellow_top_px, lift_yellow_top_px)

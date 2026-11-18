@@ -1,0 +1,245 @@
+{
+  "results": [
+    {
+      "capture": "preload_real",
+      "camera": "right_wrist",
+      "region": "holder_mark",
+      "phase": "closed",
+      "points": 60,
+      "median_shift_px": [
+        -23.288330078125,
+        -1.985382080078125
+      ],
+      "rotation_2d_deg": -0.3653859614677811
+    },
+    {
+      "capture": "preload_real",
+      "camera": "right_wrist",
+      "region": "holder_mark",
+      "phase": "preloaded",
+      "points": 60,
+      "median_shift_px": [
+        -28.230209350585938,
+        -2.2020492553710938
+      ],
+      "rotation_2d_deg": -0.3815638589686818
+    },
+    {
+      "capture": "preload_real",
+      "camera": "right_wrist",
+      "region": "plug_face",
+      "phase": "closed",
+      "points": 12,
+      "median_shift_px": [
+        -26.0118408203125,
+        -4.8946685791015625
+      ],
+      "rotation_2d_deg": 2.5785816921309337
+    },
+    {
+      "capture": "preload_real",
+      "camera": "right_wrist",
+      "region": "plug_face",
+      "phase": "preloaded",
+      "points": 5,
+      "median_shift_px": [
+        -31.47576904296875,
+        -6.444976806640625
+      ],
+      "rotation_2d_deg": 2.1931297921783854
+    },
+    {
+      "capture": "preload_real",
+      "camera": "external",
+      "region": "holder_mark",
+      "phase": "closed",
+      "points": 2,
+      "median_shift_px": [
+        0.0218048095703125,
+        0.0231170654296875
+      ],
+      "rotation_2d_deg": 0.07797926423737953
+    },
+    {
+      "capture": "preload_real",
+      "camera": "external",
+      "region": "holder_mark",
+      "phase": "preloaded",
+      "points": 2,
+      "median_shift_px": [
+        -0.0093536376953125,
+        0.035125732421875
+      ],
+      "rotation_2d_deg": 0.08510356985037258
+    },
+    {
+      "capture": "preload_real",
+      "camera": "external",
+      "region": "camera_bracket",
+      "phase": "closed",
+      "points": 8,
+      "median_shift_px": [
+        0.154510498046875,
+        -1.81707763671875
+      ],
+      "rotation_2d_deg": 0.29752222121724586
+    },
+    {
+      "capture": "preload_real",
+      "camera": "external",
+      "region": "camera_bracket",
+      "phase": "preloaded",
+      "points": 8,
+      "median_shift_px": [
+        0.20458984375,
+        -2.3102951049804688
+      ],
+      "rotation_2d_deg": 0.2814689455653622
+    },
+    {
+      "capture": "preload_real",
+      "camera": "external",
+      "region": "robot_body",
+      "phase": "closed",
+      "points": 6,
+      "median_shift_px": [
+        -0.084503173828125,
+        -0.8701171875
+      ],
+      "rotation_2d_deg": 1.5279404632719116
+    },
+    {
+      "capture": "preload_real",
+      "camera": "external",
+      "region": "robot_body",
+      "phase": "preloaded",
+      "points": 6,
+      "median_shift_px": [
+        -0.043426513671875,
+        -1.126434326171875
+      ],
+      "rotation_2d_deg": 1.8566106002735474
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "right_wrist",
+      "region": "holder_mark",
+      "phase": "closed",
+      "points": 52,
+      "median_shift_px": [
+        -21.217864990234375,
+        1.5562057495117188
+      ],
+      "rotation_2d_deg": -0.15717101028382469
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "right_wrist",
+      "region": "holder_mark",
+      "phase": "preloaded",
+      "points": 53,
+      "median_shift_px": [
+        -27.636260986328125,
+        1.4395294189453125
+      ],
+      "rotation_2d_deg": -0.1644189098290094
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "right_wrist",
+      "region": "plug_face",
+      "phase": "closed",
+      "points": 18,
+      "median_shift_px": [
+        -32.166595458984375,
+        1.5902557373046875
+      ],
+      "rotation_2d_deg": 1.5473859930580423
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "right_wrist",
+      "region": "plug_face",
+      "phase": "preloaded",
+      "points": 8,
+      "median_shift_px": [
+        -39.640594482421875,
+        0.5116424560546875
+      ],
+      "rotation_2d_deg": 0.17050166147824986
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "external",
+      "region": "holder_mark",
+      "phase": "closed",
+      "points": 2,
+      "median_shift_px": [
+        0.0339202880859375,
+        0.011138916015625
+      ],
+      "rotation_2d_deg": 0.08830879200294478
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "external",
+      "region": "holder_mark",
+      "phase": "preloaded",
+      "points": 2,
+      "median_shift_px": [
+        0.01361083984375,
+        -0.0665435791015625
+      ],
+      "rotation_2d_deg": 0.009409459040620445
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "external",
+      "region": "camera_bracket",
+      "phase": "closed",
+      "points": 9,
+      "median_shift_px": [
+        -0.02520751953125,
+        -1.6656951904296875
+      ],
+      "rotation_2d_deg": 0.22902884442158453
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "external",
+      "region": "camera_bracket",
+      "phase": "preloaded",
+      "points": 9,
+      "median_shift_px": [
+        -0.01824951171875,
+        -2.301666259765625
+      ],
+      "rotation_2d_deg": 0.2952069893160573
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "external",
+      "region": "robot_body",
+      "phase": "closed",
+      "points": 9,
+      "median_shift_px": [
+        -0.1297607421875,
+        -0.775909423828125
+      ],
+      "rotation_2d_deg": 1.078115514423228
+    },
+    {
+      "capture": "preload_transport_real",
+      "camera": "external",
+      "region": "robot_body",
+      "phase": "preloaded",
+      "points": 9,
+      "median_shift_px": [
+        -0.16668701171875,
+        -1.1952056884765625
+      ],
+      "rotation_2d_deg": 1.5332589711714257
+    }
+  ],
+  "limits": "Optical flow in visible image regions; region motion is not calibrated physical pose or proof of camera mount."
+}

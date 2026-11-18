@@ -1,0 +1,7 @@
+# Horizontal grasp correction4
+
+18mm horizontal grasp passed frozen simulation (maximum lift-axis tilt0.456deg) and was executed once with the black obstacle removed. The real plug remained held and a pin became visible, but lift changed encoder width43.7→35.3mm. The existing transport screen rejected it. The old image mask clipped the yellow top at row250; unclipped review shows261→244px. This remains a change/retention observation, not a metric real-axis measurement or stable grasp.
+
+38.11s commanded motion, no model pause; folded and independently confirmed all six motors plus gripper disabled. Native export/verification passed1142frames per camera. The stage remains diagnostic, not full insertion or training data. Actual source/controller/reference hashes, raw references, cost limits and rollback are in the JSON records; source assets/calibration/raw recordings stay local.
+
+The user then reset the plug and restored the black object. At the original obstacle pose, the horizontal18mm/60mm opening statically overlaps it by8.83mm.40mm opening still overlaps the obstacle and plug. Small yaw offsets were checked separately; static collision-free states are not full-path certification. The executed parked-obstacle reference is invalid for the restored scene. Main rounds remain2/6; grasp extras4/4. Four is an upper bound, not a required sequence: proceed directly to full collection once grasp and scene conditions qualify.

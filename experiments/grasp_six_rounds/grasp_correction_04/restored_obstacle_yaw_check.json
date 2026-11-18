@@ -1,0 +1,145 @@
+{
+  "scope": "Static original black-obstacle pose, horizontal-near yaw search; no real pose measurement, path clearance or grasp certification",
+  "hardware_commands": 0,
+  "results": [
+    {
+      "yaw_deg": -30,
+      "height_mm": 18,
+      "opening_mm": 60,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -5.123203035941733
+      }
+    },
+    {
+      "yaw_deg": -30,
+      "height_mm": 18,
+      "opening_mm": 50,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -5.086605934897642
+      }
+    },
+    {
+      "yaw_deg": -30,
+      "height_mm": 18,
+      "opening_mm": 46,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -4.81093457340521
+      }
+    },
+    {
+      "yaw_deg": -15,
+      "height_mm": 18,
+      "opening_mm": 60,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -11.149158983070565
+      }
+    },
+    {
+      "yaw_deg": -15,
+      "height_mm": 18,
+      "opening_mm": 50,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -7.619448162987037
+      }
+    },
+    {
+      "yaw_deg": -15,
+      "height_mm": 18,
+      "opening_mm": 46,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -5.783853148078523
+      }
+    },
+    {
+      "yaw_deg": 15,
+      "height_mm": 18,
+      "opening_mm": 60,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -10.594195884887682
+      }
+    },
+    {
+      "yaw_deg": 15,
+      "height_mm": 18,
+      "opening_mm": 50,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -6.905472169540058
+      }
+    },
+    {
+      "yaw_deg": 15,
+      "height_mm": 18,
+      "opening_mm": 46,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -4.984543720702211
+      }
+    },
+    {
+      "yaw_deg": 30,
+      "height_mm": 18,
+      "opening_mm": 60,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -10.629587601855397
+      }
+    },
+    {
+      "yaw_deg": 30,
+      "height_mm": 18,
+      "opening_mm": 50,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -7.616518866913672
+      }
+    },
+    {
+      "yaw_deg": 30,
+      "height_mm": 18,
+      "opening_mm": 46,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -5.987519855024007
+      }
+    },
+    {
+      "yaw_deg": 45,
+      "height_mm": 18,
+      "opening_mm": 60,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -4.517690415478689
+      }
+    },
+    {
+      "yaw_deg": 45,
+      "height_mm": 18,
+      "opening_mm": 50,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -4.11971036346345
+      }
+    },
+    {
+      "yaw_deg": 45,
+      "height_mm": 18,
+      "opening_mm": 46,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -3.4977737616112887
+      }
+    },
+    {
+      "yaw_deg": 60,
+      "height_mm": 18,
+      "opening_mm": 60,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "yaw_deg": 60,
+      "height_mm": 18,
+      "opening_mm": 50,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "yaw_deg": 60,
+      "height_mm": 18,
+      "opening_mm": 46,
+      "min_contact_distance_mm_by_pair": {}
+    }
+  ],
+  "selection": "Yaw60 static clearance does not solve pin occlusion; not promoted for real collection"
+}

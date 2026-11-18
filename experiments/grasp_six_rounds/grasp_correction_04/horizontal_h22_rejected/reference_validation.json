@@ -1,0 +1,45 @@
+{
+  "reference_sha256": "0c028163f649dbf4ae83e8a89b1512f7a4b85697a88fa78828e50561ec57fa96",
+  "result": "failure",
+  "task_success": false,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "Diagnostic grasp-angle candidate; only simulation retention, not verified real axis",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "max_penetration_m": 1.974060048724395e-05,
+  "simulated_seconds": 35.120052083349094,
+  "observation_frames": 1053,
+  "applied_reference_steps": 3512,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 81.59381902997848,
+  "prediction_sha256": "77eca4a91d277ba1552487a65cbbfdf37fecc03d1b738b0868abb08a2e4f5f12",
+  "stage_goal": "grasp_lift_return_diagnostic",
+  "stage_success": false,
+  "max_in_gripper_translation_mm": 3.5838908013640047,
+  "max_in_gripper_rotation_deg": 3.206307378314663,
+  "lift_height_m": 0.048898278827236075,
+  "simulation_axis_tilt_at_phase_ends_deg": {
+    "grasp": 8.038177994792194e-05,
+    "preload": 6.724788650779929e-05,
+    "lift": 2.963419383682386
+  },
+  "retention_criterion_passed": true,
+  "axis_requirement_deg": 1.0,
+  "axis_requirement_passed": false,
+  "rejection_reason": "Lift axis tilted2.963deg; retention-only criterion cannot certify vertical grasp"
+}

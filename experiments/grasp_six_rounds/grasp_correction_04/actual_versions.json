@@ -1,0 +1,15 @@
+{
+  "entry": "self_evolution/grasp_six_rounds_20261117/controller_preload/continue_preload_check.py",
+  "entry_sha256": "d809aae7f43e97bef88e33e70f4a78e03b384ffcf1c7c64b2b0ba8e6cdb7a92b",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "helper_sha256": "57e88436acb1702abfd0cfbcb0a3f5fe6e727f45cd5f15876203b4eab1d43e96",
+  "reference_id": "631f0e6b89fe1c809cb84cf9e253096d9b678af458987096c0d55a87a84c6c2e",
+  "status": "EXECUTED_GRASP4_REJECTED_FOR_TRANSPORT",
+  "effort_nm": {
+    "grasp": 0.3,
+    "preload_onward": 1.0
+  },
+  "rollback": "Use preserved preload_reference; no shared controller code changed",
+  "capture": "self_evolution/grasp_six_rounds_20261117/horizontal_h18_real",
+  "scene_when_executed": "Black obstacle removed by operator; subsequently restored, reference no longer applies to live scene"
+}

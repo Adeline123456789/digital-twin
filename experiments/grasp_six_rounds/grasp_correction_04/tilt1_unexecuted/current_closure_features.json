@@ -1,0 +1,29 @@
+[
+  {
+    "phase": "before_close",
+    "frame": 3430,
+    "head_center_px": [
+      385.5,
+      348.5
+    ],
+    "template_score": 0.9744304418563843
+  },
+  {
+    "phase": "closed",
+    "frame": 3471,
+    "head_center_px": [
+      353.5,
+      350.5
+    ],
+    "template_score": 0.9856585264205933
+  },
+  {
+    "phase": "preloaded",
+    "frame": 3487,
+    "head_center_px": [
+      346.5,
+      349.5
+    ],
+    "template_score": 0.9854495525360107
+  }
+]

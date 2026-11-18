@@ -1,0 +1,103 @@
+{
+  "method": "Masked2D affine ECC of visible housing against prior same-arm successful RGB",
+  "results": [
+    {
+      "reference": "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/1913.jpg",
+      "phase": "lift",
+      "label": "success18",
+      "correlation": 0.8322818584198416,
+      "image_plane_rotation_deg": -1.8396073579788208,
+      "affine_singular_scales": [
+        1.1376407146453857,
+        0.9523612856864929
+      ],
+      "affine": [
+        [
+          1.1040884256362915,
+          -0.03735402971506119,
+          -9.290438652038574
+        ],
+        [
+          -0.1044466495513916,
+          0.9848363995552063,
+          18.972312927246094
+        ]
+      ]
+    },
+    {
+      "reference": "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/2240.jpg",
+      "phase": "align",
+      "label": "success18",
+      "correlation": 0.9231134592737626,
+      "image_plane_rotation_deg": -0.19397248327732086,
+      "affine_singular_scales": [
+        1.0838358402252197,
+        0.9795547723770142
+      ],
+      "affine": [
+        [
+          1.0817421674728394,
+          -0.011114122346043587,
+          -9.453808784484863
+        ],
+        [
+          -0.01809963956475258,
+          0.9816367030143738,
+          10.554681777954102
+        ]
+      ]
+    },
+    {
+      "reference": "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/complete_real/successed/20261116_real_repeatability_000002/raw/task/right_wrist/2604.jpg",
+      "phase": "lift",
+      "label": "success16",
+      "correlation": 0.8955249187670407,
+      "image_plane_rotation_deg": -1.0769075155258179,
+      "affine_singular_scales": [
+        1.0517263412475586,
+        1.014686107635498
+      ],
+      "affine": [
+        [
+          1.0509957075119019,
+          0.01494623627513647,
+          -7.7694268226623535
+        ],
+        [
+          -0.023890942335128784,
+          1.0150517225265503,
+          -3.7179527282714844
+        ]
+      ]
+    },
+    {
+      "reference": "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/complete_real/successed/20261116_real_repeatability_000002/raw/task/right_wrist/2926.jpg",
+      "phase": "align",
+      "label": "success16",
+      "correlation": 0.927574159672422,
+      "image_plane_rotation_deg": -0.08574306219816208,
+      "affine_singular_scales": [
+        1.1173992156982422,
+        1.0333229303359985
+      ],
+      "affine": [
+        [
+          1.062374472618103,
+          -0.03837298974394798,
+          -5.28064489364624
+        ],
+        [
+          -0.04159153997898102,
+          1.0883452892303467,
+          -6.419960021972656
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "Image-plane appearance only, not3D plug-axis angle or correction command",
+    "Different grasp height, occlusion and camera-relative translation confound affine fit",
+    "Do not use fitted angle as real rotation ground truth"
+  ],
+  "decision": "Prior same-arm successful endpoint appearance is similar;2D fit does not identify3D residual tilt. Run existing authorized main3 candidate as a development validation, no inferred angle compensation and no axis-success claim before actual outcome."
+}

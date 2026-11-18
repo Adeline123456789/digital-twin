@@ -1,0 +1,12 @@
+{
+  "status": "SIMULATION_RUNNING",
+  "change": "Grasp yaw90\u21920deg in holder frame to expose pin and socket;60mm open,22mm grasp height;0.3Nm close then1Nm stationary preload retained",
+  "expert_source": "connector_plugin/observations/20260908/000001/videos",
+  "transfer_scope": "Relative grasp/view orientation only; no expert joint replay or imported extrinsics",
+  "scene": "User removed black object from active work area; model keeps it collidable at representative parked table position",
+  "source_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+  "private_solver_sha256": "66253037db9617c4a7ddff61f9c204b7edaab7e7efebc72baecfb70f2cadc8d6",
+  "hardware_commands": 0,
+  "previous_candidate": "tilt1_unexecuted: simulated but never executed; no extra grasp count spent",
+  "rollback": "Original scene/source and prior controller preserved"
+}

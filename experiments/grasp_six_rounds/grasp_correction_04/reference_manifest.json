@@ -1,0 +1,48 @@
+{
+  "trajectory_id": "631f0e6b89fe1c809cb84cf9e253096d9b678af458987096c0d55a87a84c6c2e",
+  "source_episode": null,
+  "source_trajectory_sha256": "4641f06fc391f9d0f0fb689d53b126bf79bee3e32a4d3d97771dcefd6cf375c7",
+  "source_initial_state_sha256": "60615d434765a26ceda0305109e46e4a106161eda40ae186017c5c9685d94350",
+  "feature_names": [
+    "right.joint1",
+    "right.joint2",
+    "right.joint3",
+    "right.joint4",
+    "right.joint5",
+    "right.joint6",
+    "right.gripper_width"
+  ],
+  "units": [
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "width_mm / 95"
+  ],
+  "task_scope": "grasp_lift_return_diagnostic",
+  "adaptation": "Native grasp solver with holder-relative yaw0 instead of90; black object removed from active area by operator;60mm open and18mm grasp height;0.5s preload and original bounded fold",
+  "duration_s": 35.37666666665352,
+  "steps": 3539,
+  "first_target": [
+    -1.2057415461041979e-06,
+    1.0717916809226021e-05,
+    -7.5386679989590925e-06,
+    0.5009999433823624,
+    23.032004959807104,
+    0.5489980243162068,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.28421052631578947
+  ],
+  "source_time_origin_s": 0.03333333333333329,
+  "command_provenance": "Simulated grasp prefix + numerically validated existing fold interpolation; no insertion task claim"
+}

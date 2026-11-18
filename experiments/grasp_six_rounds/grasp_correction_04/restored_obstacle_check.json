@@ -1,0 +1,93 @@
+{
+  "scope": "Static original black-obstacle pose, horizontal yaw0; no real pose measurement, path clearance or grasp certification",
+  "hardware_commands": 0,
+  "results": [
+    {
+      "height_mm": 74.0,
+      "opening_mm": 60,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "height_mm": 74.0,
+      "opening_mm": 50,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "height_mm": 74.0,
+      "opening_mm": 46,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "height_mm": 74.0,
+      "opening_mm": 44,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "height_mm": 74.0,
+      "opening_mm": 42,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "height_mm": 74.0,
+      "opening_mm": 40,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "height_mm": 74.0,
+      "opening_mm": 38,
+      "min_contact_distance_mm_by_pair": {}
+    },
+    {
+      "height_mm": 18.0,
+      "opening_mm": 60,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -8.83022189043885
+      }
+    },
+    {
+      "height_mm": 18.0,
+      "opening_mm": 50,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -5.085898785262536
+      }
+    },
+    {
+      "height_mm": 18.0,
+      "opening_mm": 46,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -3.164970323976559
+      }
+    },
+    {
+      "height_mm": 18.0,
+      "opening_mm": 44,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -2.2045060933336162
+      }
+    },
+    {
+      "height_mm": 18.0,
+      "opening_mm": 42,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -1.2440418626906273
+      }
+    },
+    {
+      "height_mm": 18.0,
+      "opening_mm": 40,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/black_charger": -0.28357763204764375,
+        "right/link7 / task/yellow_plug": -0.44225801115296665,
+        "right/link8 / task/yellow_plug": -0.44534589105891775
+      }
+    },
+    {
+      "height_mm": 18.0,
+      "opening_mm": 38,
+      "min_contact_distance_mm_by_pair": {
+        "right/link7 / task/yellow_plug": -1.289114847562451,
+        "right/link8 / task/yellow_plug": -1.2922027207298987
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "status": "SIM_VALIDATED_REAL_WITHHELD_RESIDUAL_AXIS",
+  "status": "WITHDRAWN_BEFORE_ENABLE_DIAGNOSE_INITIAL_GRASP",
   "round": 3,
   "source_trial": "self_evolution/grasp_six_rounds_20261117/preload_transport_current_trial",
   "reference_id": "84de38b053e03737e69a1272f660d4db2c6e30554da81b347e8758da34bdcdd6",
@@ -15,5 +15,7 @@
   "rollback": "Prior private controller and refs unchanged",
   "new_child_model_calls": 0,
   "real_commands": 0,
-  "unresolved": "User-reported1\u20132deg residual tilt; current RGB does not identify3D direction/sign. No assumed angle correction."
+  "unresolved": "User-reported1–2deg residual tilt; current RGB does not identify3D direction/sign. No assumed angle correction.",
+  "decision": "No sign-supported correction; same-arm prior success comparison supports testing current physically simulated full candidate under unchanged slip gates. Residual axis remains UNKNOWN.",
+  "user_axis_observation": "Leans towards socket left;1–2deg user estimate, not measured"
 }

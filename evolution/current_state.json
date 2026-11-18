@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-18T01:13:17.891827+00:00",
+  "updated_at": "2026-11-18T02:01:57.230170+00:00",
   "purpose": "Last-observed development checkpoint; not live telemetry or robot prompt",
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "mission": {
@@ -17,7 +17,7 @@
     "automatic_teaching_after_simulation": false
   },
   "branch": "codex/teacher-reliability-20261117",
-  "status": "RESIDUAL_TRANSPORT_AXIS_REVIEW",
+  "status": "HORIZONTAL_FULL3_SIMULATION_WAIT_BLACK_REMOVAL",
   "history_checkpoint": "evolution/checkpoints/20261117_before_compact_stage_state.json",
   "continuation": {
     "id": "grasp_six_rounds_20261117",
@@ -31,43 +31,45 @@
   },
   "native_goal_api_limitation": "RESOLVED: user cleared old goal and explicitly requested recreation; new goal created without resetting experiment counts",
   "six_round_continuation": {
-    "status": "RESIDUAL_TRANSPORT_AXIS_REVIEW",
+    "status": "HORIZONTAL_FULL3_SIMULATION_WAIT_BLACK_REMOVAL",
     "protocol": "experiments/grasp_six_rounds/protocol.json",
     "main_rounds_real_completed": 2,
     "remaining_main_rounds": 4,
     "extra_corrections_used": {
-      "grasp": 3,
+      "grasp": 4,
       "transport": 4,
       "insert": 1
     },
     "hardware_resume_authorized": true,
-    "reset": "User reset/hands clear confirmed after transport4 recovery; residual tilt1–2deg reported",
-    "active_stage_scope": "Offline residual-axis diagnosis before main3",
-    "active_capture": "self_evolution/grasp_six_rounds_20261117/preload_transport_real",
-    "runtime_sessions": {},
-    "current_candidate": "Main3 exact preload/vertical prefix plus original insertion tail, simulation only; not approved as real axis repair",
-    "latest_result": "experiments/grasp_six_rounds/transport_correction_04/real_result.json"
+    "reset": "User reset and restored black object; camera observed presence",
+    "active_stage_scope": "Prepare horizontal grasp/preload/lift/fold; no insertion",
+    "active_capture": "self_evolution/grasp_six_rounds_20261117/horizontal_h18_real",
+    "runtime_sessions": {
+      "offline_full_sim": 23769
+    },
+    "current_candidate": "Horizontal yaw0,18mm,1.5s preload,vertical23mm preinsert; full simulation pending; requires black removed again",
+    "latest_result": "experiments/grasp_six_rounds/grasp_correction_04/real_result.json"
   },
   "current_findings": [
-    "Preload/lift retained on two independent resets; same-effort changes0.4mm and0.2mm.",
-    "Vertical transport executed to endpoint, plug still held; user reports residual1–2deg tilt, not accepted.",
-    "Recorder exhausted before transport end; evidence gap retained, exact validated fold recovered and disabled.",
-    "No additional transport extras remain; main3 not executed."
+    "Horizontal grasp4 retained plug and exposed pin, but rejected for8.4mm lift closure; absolute real axis unverified.",
+    "Restored black collides with horizontal grasp; yaw60 avoids obstacle but occludes pin, so not selected. User asked to remove black again; reply pending.",
+    "Old yellow_top mask clipped at250px; corrected shared helper gives17px shift vs old11px. Actual executed helper hash preserved.",
+    "No mandatory independent stage sequence. After acceptable grasp and scene validation, directly run full main3."
   ],
   "evidence": {
-    "latest_physical": "experiments/grasp_six_rounds/transport_correction_04/real_result.json",
+    "latest_physical": "experiments/grasp_six_rounds/grasp_correction_04/real_result.json",
     "latest_full_task": "experiments/grasp_six_rounds/round_02/real/result.json",
     "selected_memory": "memory/negative_experiences/NE021.json",
     "handoff_screen": "experiments/grasp_six_rounds/grasp_correction_02/handoff_offline.json"
   },
   "next_unresolved": [
-    "Compare real held endpoint with modeled axis before choosing insertion candidate.",
-    "Current reset confirmed; no new permission required within scope.",
-    "Use triggered recording with18000frames; preserve partial raw capture."
+    "Finish horizontal full simulation and frozen reference; black removal confirmation pending before real execution.",
+    "Real grasp posture remains unaccepted; retain unchanged change/physics gates.",
+    "Main rounds2/6, extra grasp4/4,transport4/4,insert1/4; no new model calls."
   ],
   "last_hardware_observation": {
     "state": "Folded, all six motors and gripper disabled",
-    "source": "experiments/grasp_six_rounds/transport_correction_04/real_result.json",
+    "source": "experiments/grasp_six_rounds/grasp_correction_04/real_result.json",
     "live_telemetry": false
   },
   "publication": "Check Git and remote; raw data/private controllers stay outside public Git"

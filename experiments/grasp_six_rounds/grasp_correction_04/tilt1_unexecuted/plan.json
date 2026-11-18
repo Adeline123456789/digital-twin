@@ -1,0 +1,19 @@
+{
+  "change": "1deg gripper orientation about socket local+Y before closing, plug upper axis towards socket right;22mm height,0.3Nm close and1Nm stationary preload unchanged",
+  "hypothesis": "Initial pad orientation/contact contributes to leftward tilt; not established by image or model",
+  "scope": "Grasp/preload/lift/fold only; last additional grasp correction if executed",
+  "native_source_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+  "private_solver_sha256": "09cabd058f9a60cfea6c23629da09d7f2a62612ecd7b7ef16223bf4a17b74e50",
+  "root_cause": "UNKNOWN",
+  "start_joints_deg": [
+    0.0,
+    0,
+    0,
+    0.501,
+    23.032,
+    0.549
+  ],
+  "hardware_commands": 0,
+  "source_status": "RUNNING",
+  "rollback": "Unchanged original solver and prior preload reference; no default promotion"
+}

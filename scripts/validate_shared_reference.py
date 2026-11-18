@@ -16,6 +16,15 @@ from piper_sim.config import load
 from piper_sim.mixed_recording import configure_rigid_collection,collision_snapshot
 
 
+def upright_stage_check(history, limit_deg=1.0):
+    rows = [r for r in history if r['phase'] in ('lift', 'transport')]
+    angles = [float(np.rad2deg(r['task_metrics']['tilt_rad'])) for r in rows]
+    return dict(passed=bool(angles) and all(np.isfinite(a) and a <= limit_deg for a in angles),
+                max_tilt_deg=max(angles) if angles else None, limit_deg=limit_deg,
+                phases=sorted({r['phase'] for r in rows}),
+                scope='Simulated absolute plug axis during lift/transport; fold excluded; not a real angle measurement')
+
+
 def validate(trial,reference):
     trial,reference=Path(trial),Path(reference)
     manifest=json.loads((reference/'manifest.json').read_text())
@@ -61,7 +70,8 @@ def validate(trial,reference):
         else:
             success=bool(sim.read().extras['task']['metrics']['success'])
             result.update(result='success' if success else 'failure',task_success=success,all_substeps_valid=True)
-        result.update(max_penetration_m=worst,simulated_seconds=sim.sim_time,observation_frames=len(history),
+        result.update(upright_stage=upright_stage_check(history),
+            max_penetration_m=worst,simulated_seconds=sim.sim_time,observation_frames=len(history),
             applied_reference_steps=int(index+1),integrator_timestep_s=float(sim.model.opt.timestep))
     except Exception as exc:result['error']=str(exc)
     finally:
