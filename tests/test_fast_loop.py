@@ -55,3 +55,40 @@ def test_graph_emits_one_versioned_request_then_waits():
     assert g['request']['offset_mm']==c['previous_offset_mm']-c['residual'][0]
     assert g['task_success'] is None
     assert replay_graph(replace(e,target_index=1),c,f.router)['request'] is None
+
+
+def test_recorded_15hz_and_missing_contact_payload():
+    f=FastLoop(fps=15)
+    for i in range(4):
+        d=f.update(replace(sample(i,'lift' if i==0 else 'transport'),timestamp_mono=i/15))
+    assert d['event'].confirmation_time==3/15 and d['event'].first_observed_time==1/15
+    assert FastLoop().update(replace(sample(0),observed_value={}))['decision']=='UNKNOWN'
+
+
+def test_loopback_slow_reserves_prompt_and_bounds_completion(monkeypatch):
+    import json
+    from robot_agent import local_slow
+    requests=[]
+    class Client:
+        def __init__(self,host,port,timeout):
+            assert host=='127.0.0.1' and timeout>0
+        def request(self,verb,path,body,headers):
+            requests.append((path,json.loads(body)))
+        def getresponse(self):
+            from types import SimpleNamespace
+            result={'tokens':[3,4]} if requests[-1][0]=='/tokenize' else {'tokens_predicted':2,'content':'{"category":"UNKNOWN","checks":[]}'}
+            return SimpleNamespace(status=200,read=lambda limit:json.dumps(result).encode())
+        def close(self):pass
+    monkeypatch.setattr(local_slow.http.client,'HTTPConnection',Client)
+    value=local_slow.local_diagnosis({},5,2)
+    assert value['input_tokens']==2 and requests[-1][1]['n_predict']==3
+
+
+def test_single_owner_does_not_reissue_skill_request():
+    from robot_agent.supervisor import Supervisor
+    from robot_agent.first_divergence import report
+    e,c=skill_case()
+    r=report(e.experiment_id,[e],False,e.evidence_refs)
+    owner=Supervisor()
+    assert owner.diagnose(r,c)['decision']=='APPLY_VERIFIED_SIM_SKILL'
+    assert owner.diagnose(r,c)['decision']=='UNKNOWN'

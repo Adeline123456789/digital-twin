@@ -30,3 +30,13 @@ def test_reviewer_adversarial_cases():
     assert gate.review(replace(p,implementation=impl)).decision=='REJECT_AND_ROLLBACK'
     record=dict(p.development[0],assets={})
     assert gate.review(replace(p,development=[record])).decision=='DEFER_UNKNOWN'
+
+
+def test_physical_gate_rejects_known_safety_and_attachment_contradictions(monkeypatch):
+    r=dict(experiment_id='fixture',observed_effects=[dict(max_penetration_m=.001)])
+    assert EvidenceGate.physical_check(r)=='REJECT_AND_ROLLBACK'
+    r['observed_effects'][0]['max_penetration_m']=.00001
+    monkeypatch.setattr('robot_agent.contact_probe.archived_probe',lambda *a:{'attachment_flags':['active object attachment']})
+    assert EvidenceGate.physical_check(r)=='REJECT_AND_ROLLBACK'
+    monkeypatch.setattr('robot_agent.contact_probe.archived_probe',lambda *a:{'attachment_flags':[]})
+    assert EvidenceGate.physical_check(r)=='DEFER_UNKNOWN'

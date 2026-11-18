@@ -1,5 +1,4 @@
 """Single owner of replay state. Slow responses can select offline investigations only."""
-import json
 import time
 from .fast_loop import FastLoop
 from .memory_router import capsule
@@ -17,6 +16,7 @@ class Supervisor:
         self.max_calls,self.tokens,self.deadline=max_calls,token_limit,time.monotonic()+seconds
         self.calls=self.input_tokens=self.output_tokens=0
         self.planner_seconds=0.
+        self.usage_complete=True
         self.trace=['IDLE','PLAN','EXECUTE_FAST']
         self.seen=set()
 
@@ -29,6 +29,10 @@ class Supervisor:
             self.trace+=['HALT_OR_HOLD','TRIAGE_FAST']
             return dict(decision='UNKNOWN',capsule=capsule(report))
         self.trace+=['HALT_OR_HOLD','TRIAGE_FAST']
+        key=(e.experiment_id,e.kind,e.action_id)
+        if key in self.seen:
+            return dict(decision='UNKNOWN',diagnosis='UNKNOWN',reason='already reviewed this event')
+        self.seen.add(key)
         decision=self.fast.decide(e,context)
         memory=decision.get('retrieval',{})
         packet=capsule(report,memory.get('matches',()),counterexamples=memory.get('veto',()))
@@ -39,11 +43,9 @@ class Supervisor:
         if answer['decision']!='ESCALATE_SLOW':
             return answer
         self.trace.append('ESCALATE_SLOW')
-        key=(e.experiment_id,e.kind,e.action_id)
         remaining=self.deadline-time.monotonic()
-        if key in self.seen or self.calls>=self.max_calls or not self.slow or self.tokens<=0 or remaining<=0:
+        if self.calls>=self.max_calls or not self.slow or self.tokens<=0 or remaining<=0:
             return dict(answer,diagnosis='UNKNOWN',checks=[CHECKS[0]],reason='unavailable, duplicate or budget exhausted')
-        self.seen.add(key)
         self.calls+=1
         start=time.monotonic()
         try:
@@ -62,6 +64,14 @@ class Supervisor:
             return dict(answer,diagnosis=reply['category'],checks=sorted(set(checks),key=CHECKS.index),root_cause_status='UNKNOWN')
         except (KeyError,TypeError,ValueError,TimeoutError,OSError):
             self.tokens=0
+            self.usage_complete=False
             return dict(answer,diagnosis='UNKNOWN',checks=[],reason='incomplete slow response')
         finally:
             self.planner_seconds+=time.monotonic()-start
+
+    def review(self,proposal):
+        from .gate import EvidenceGate
+        self.trace.append('OFFLINE_VALIDATE')
+        decision=EvidenceGate().review(proposal)
+        self.trace.append('READY_FOR_APPROVAL' if decision.decision=='ACCEPT' else 'HALT_OR_HOLD')
+        return decision

@@ -97,6 +97,10 @@ class EvidenceGate:
                     return finish('DEFER_UNKNOWN','Insufficient observations')
                 if p.category in ('policy','sim_world','skill') and d.task_success is False:
                     return finish('REJECT_AND_ROLLBACK','Native complete task failed')
+                if p.category in ('policy','sim_world','skill'):
+                    safety=self.physical_check(r)
+                    if safety!='NO_TESTED_CONTRADICTION':
+                        return finish(safety,'Physical consistency evidence insufficient or contradicted')
                 if p.category=='observation_adapter' and d.task_success and d.status!='NO_DIVERGENCE_OBSERVED':
                     return finish('REJECT_AND_ROLLBACK','Valid recorded success regressed')
         if not held or not dev:
@@ -128,3 +132,19 @@ class EvidenceGate:
     def matches(self,path,sha):
         path=(self.root/path).resolve()
         return path.is_relative_to(self.root) and path.is_file() and digest(path)==sha
+
+    @staticmethod
+    def physical_check(r):
+        from .contact_probe import archived_probe
+        from .fake_grasp import check_grasp
+        native=r['observed_effects'][0]
+        if native.get('max_penetration_m') is None:
+            return 'DEFER_UNKNOWN'
+        if native['max_penetration_m']>.0002:
+            return 'REJECT_AND_ROLLBACK'
+        # A snapshot can disprove free motion; it cannot certify the entire carry.
+        try:
+            probe=archived_probe(r['experiment_id'],0)
+        except (OSError,ValueError,KeyError):
+            return 'DEFER_UNKNOWN'
+        return check_grasp(probe['attachment_flags'],[])
