@@ -1,0 +1,10 @@
+{
+  "round_id": "P2.2",
+  "category": "supervisor routing",
+  "hypothesis": "One offline owner can stop and budget diagnosis",
+  "criterion": "Five fast outcomes, bounded calls/time/tokens, no repeat on duplicate events",
+  "started": "2026-11-18T10:14:37.499469+00:00",
+  "rollback_ref": "1be00deb184ef87d7d5b7feb28b7dd1082704d2a",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

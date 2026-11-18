@@ -28,3 +28,20 @@ def test_fast_outcomes():
     assert f.decide(replace(e,severity='danger'))['decision']=='HALT_REQUEST'
     assert f.decide(replace(e,target_index=1),c)['decision']=='ESCALATE_SLOW'
     assert f.decide(replace(e,units='unknown'))['decision']=='UNKNOWN'
+
+
+def test_slow_budget_and_deduplication():
+    from robot_agent.supervisor import Supervisor
+    from robot_agent.first_divergence import report
+    e,c=skill_case()
+    r=report('episode',[replace(e,target_index=1)],False,e.evidence_refs)
+    def slow(packet,tokens,seconds):
+        assert tokens==20 and seconds>0 and len(packet['events'])==1
+        return dict(category='WORLD_MODEL_ERROR',checks=['compare_geometry'],input_tokens=11,output_tokens=2)
+    s=Supervisor(slow,max_calls=2,token_limit=20)
+    assert s.diagnose(r,c)['diagnosis']=='WORLD_MODEL_ERROR'
+    assert s.diagnose(r,c)['diagnosis']=='UNKNOWN' and s.calls==1
+    assert Supervisor().diagnose(r,c)['diagnosis']=='UNKNOWN'
+    s=Supervisor(slow,max_calls=1,token_limit=20)
+    s.deadline=0
+    assert s.diagnose(r,c)['diagnosis']=='UNKNOWN' and s.calls==0

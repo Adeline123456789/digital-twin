@@ -62,7 +62,7 @@ class EventBuilder:
             refs += tuple(reference(p,self.data) for p in (trace,priv,ep/f'recording_{ident}.json',stats/'metadata.json',stats/'proprio_stats.h5',ep/'outcome.json'))
             fact = replace(fact, evidence_refs=refs, time_alignment_quality='verified', observability='observed')
             result = from_trace(fact,rows,extras,r['observed_effects'][0],success)
-            if not success and result.status == 'NO_DIVERGENCE_OBSERVED' and self.data == DATA:
+            if not success and result.status in {'NO_DIVERGENCE_OBSERVED','NATIVE_TASK_FAILED'} and self.data == DATA:
                 from agent_challenge import precontact_observation
                 residual = precontact_observation(ident).get('observed_precontact_xy_error_mm')
                 if residual and max(map(abs,residual)) >= 1.0:
@@ -72,7 +72,7 @@ class EventBuilder:
                                 frame_id='socket',units='mm',sensor_provenance='sim.socket_residual',
                                 observed_value=residual,predicted_value=[0.,0.],residual=residual,evidence_refs=refs)
                     return report(ident,[event(o,'TARGET_FRAME_RESIDUAL',first_observed_frame=i,
-                                  first_observed_time=o.timestamp_mono,confirmation_time=o.timestamp_mono,status='OBSERVED')],success,refs)
+                                  first_observed_time=o.timestamp_mono,confirmation_time=o.timestamp_mono,status='OBSERVED'),*result.events],success,refs)
             return result
         except (OSError, KeyError, ValueError, TypeError, IndexError):
             return unknown('SENSOR_UNAVAILABLE')
@@ -97,6 +97,6 @@ def from_trace(fact,rows,extras,native,success):
     if o.issue():
         events.append(event(o,o.issue()))
     elif native.get('error'):
-        kind = 'IK_UNREACHABLE' if 'unreachable' in str(native['error']).lower() else 'INFRA_ERROR'
+        kind = 'IK_UNREACHABLE' if 'unreachable' in str(native['error']).lower() else 'NATIVE_TASK_FAILED'
         events.append(event(o,kind,status='TERMINAL_AFTER_LAST_SAMPLE'))
     return report(fact.experiment_id,events,success,fact.evidence_refs)

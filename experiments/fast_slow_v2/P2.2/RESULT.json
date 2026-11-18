@@ -1,0 +1,30 @@
+{
+  "round_id": "P2.2",
+  "hypothesis": "One offline owner can stop and budget diagnosis",
+  "changed_files": [
+    "robot_agent/supervisor.py",
+    "robot_agent/diagnosis.py",
+    "tests/test_fast_loop.py"
+  ],
+  "source_hash": {
+    "robot_agent/supervisor.py": "acb7563cef30812dbf55c42b3f0eb1508cc042a5a2a4ffae5fbfb7a83a0ef582",
+    "robot_agent/diagnosis.py": "1f90b0deaaaf155f5839304c86338171b7a4af8e56cb1c9f77304af28ae09f64",
+    "tests/test_fast_loop.py": "5d5754abc03cce6bda8e25b3845942036d205e4176d5763725d97d5ef3683db3"
+  },
+  "baseline": "1be00deb184ef87d7d5b7feb28b7dd1082704d2a",
+  "candidate": "supervisor routing",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 5,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 1.112,
+  "decision": "ACCEPT",
+  "validation": "Single owner routes compact evidence; shared calls, token and time budget and duplicate suppression tested offline",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "1be00deb184ef87d7d5b7feb28b7dd1082704d2a",
+  "measurements": {}
+}
