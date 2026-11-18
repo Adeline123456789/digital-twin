@@ -1,0 +1,32 @@
+{
+  "round_id": "P0.2",
+  "hypothesis": "The frozen detector can be replayed on synchronized recordings",
+  "changed_files": [
+    "robot_agent/diagnosis.py",
+    "robot_agent/legacy.py",
+    "robot_agent/first_divergence.py",
+    "tests/test_first_divergence.py"
+  ],
+  "source_hash": {
+    "robot_agent/diagnosis.py": "8e842b5e7db991e0369e85418f3eeaf2b63da2503376abf0161608e5207d147d",
+    "robot_agent/legacy.py": "61f61d478ecf52190010574ad36b5a62263665d855ef532da079defda19a77f1",
+    "robot_agent/first_divergence.py": "79105274ae2c4488e31fb6893116b7c010dafcf9ab946ae597eac30ee6f0aa4c",
+    "tests/test_first_divergence.py": "02037a15f4f0f8db417e9cdf54eb4153f8381a8f5db1604ddc89a5fc5ae3cd65"
+  },
+  "baseline": "b50d80eae34c678236fc0ae92efbaf7e4cafdb98",
+  "candidate": "event builder",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 4,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 112.329,
+  "decision": "ACCEPT",
+  "validation": "Eight archived episodes, 17.200 s onset observation and 17.267 s confirmation before terminal IK; six successes with zero alarms and zero unknowns",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "b50d80eae34c678236fc0ae92efbaf7e4cafdb98",
+  "measurements": {}
+}

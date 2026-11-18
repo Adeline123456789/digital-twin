@@ -1,0 +1,10 @@
+{
+  "round_id": "P0.2",
+  "category": "event builder",
+  "hypothesis": "The frozen detector can be replayed on synchronized recordings",
+  "criterion": "17.20 before 18.30; zero alarms and zero unknowns on six frozen success controls",
+  "started": "2026-11-18T10:09:49.994922+00:00",
+  "rollback_ref": "b50d80eae34c678236fc0ae92efbaf7e4cafdb98",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

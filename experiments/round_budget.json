@@ -17,7 +17,7 @@
     "P0": {
       "sim_cap": 0,
       "round_cap": 2,
-      "used_rounds": 1,
+      "used_rounds": 2,
       "sim_used": 0
     },
     "P1": {
@@ -133,9 +133,10 @@
   ],
   "completed": [
     "B1",
-    "P0.1"
+    "P0.1",
+    "P0.2"
   ],
   "refused": [],
-  "remaining_rounds": 12,
+  "remaining_rounds": 11,
   "remaining_simulations": 24
 }
