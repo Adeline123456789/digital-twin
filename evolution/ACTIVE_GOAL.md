@@ -1,8 +1,3 @@
-# Fast/slow V2 offline engineering batch
+# V2.1 right-arm reintegration decision
 
-Resume from `evolution/current_state.json`. The design and thresholds are in
-`docs/CODEX_TASKBOOK_V2.md` and the frozen round schedule in
-`experiments/round_budget.json`. Use the existing simulator and stored observations.
-Keep the 5/5 real acceptance paused, the real physical cause UNKNOWN, and all real
-execution disabled. One development reviewer at a time, with no hardware or active
-configuration authority. The previous offline handoff is preserved at f3a0fe6.
+Follow the [V2.1 taskbook](../docs/CODEX_TASKBOOK_V21.md), [Gate A design](../experiments/v21/design.json) and current_state.json. Compare Legacy and V2 on the same stopped right-arm recordings. Only a supported gain justifies the existing right-arm simulator integration. Stop at a failed gate. Real authorization is closed. The original 5/5 requirement and UNKNOWN physical cause stand. The prior V2 handoff is preserved at 87bd881.

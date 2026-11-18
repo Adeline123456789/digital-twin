@@ -1,0 +1,426 @@
+{
+  "frozen_utc": "2026-11-18T11:41:11.924083+00:00",
+  "versions": {
+    "research": "63e835f767e7b5d6cd72651955fcf1fa74e7d6b1",
+    "legacy_handoff": "f3a0fe62e115930d955a5a74fc9f3629dae6565d",
+    "v2": "87bd88181836bed5c4723bc7a79a2586060d032f",
+    "current_native": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+    "collector_default_right_scene": "01c3a8ebea424ae5968a1c54ad40da2ac492b69b0a7fd313e6074b053159955c",
+    "runbook_sha256": "2244709a5e4b41b7f0df40bbf4e07f30fe31f1cf81bb9138df08e348b1292e4b"
+  },
+  "readable_path_roles": [
+    "SIM_ROOT",
+    "RIGHT_ARM_CONTROL_ROOT",
+    "REFERENCE_DATA",
+    "DATA_ROOT",
+    "REAL_FAILED",
+    "REAL_SUCCEEDED",
+    "SIM_FAILED",
+    "SIM_SUCCEEDED",
+    "RIGHT_ARM_RUNBOOK"
+  ],
+  "bounds": {
+    "A": "One cold and one hot offline diagnosis per engine and Episode; no inference or new motion for already adjudicated evidence. No saved requests.",
+    "B_if_A_passes": "At most one execution per mode for each of three distinct frozen right-arm conditions and one dual-arm compatibility replay. Stop at missing prerequisites or no benefit.",
+    "hardware_boundary_if_B_passes": "One mock refusal per specified condition; first unsafe send stops preparation.",
+    "C": "Zero real trials authorized."
+  },
+  "comparison": "Alternate engine order by case, fresh process and empty private application cache per cold run, same process/cache for hot. OS cache uncontrolled. Both get the same archive, shared recorded feedback and reviewer-selected real RGB. Separate automated output from prior physical review. Cold includes startup/imports; hot includes request/response. No time or token equivalence to a new planner-to-motion cycle.",
+  "decision": "Compare reviewed event coverage, false alarms on controls, actionable next checks and new candidate vetoes. Require a useful incremental decision or noninferior decision quality with a measured end-to-end benefit. Stop on no improvement; no extra simulation/model quota.",
+  "cases": [
+    {
+      "id": "20261116_real_current_socket_repair_000002",
+      "domain": "real",
+      "stratum": "same_arm_observed",
+      "episode": "complete_real/successed/20261116_real_current_socket_repair_000002",
+      "success": true,
+      "reference_sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+      "trajectory_sha256": "a072c1129ef25a228aea8744c63705aea278c4811e0ba099373f8bed1b5efb60",
+      "feedback": "experiments/current_scene_cycle11/real_attempt002_outcome.json",
+      "images": [
+        "right_wrist/2308.jpg",
+        "right_wrist/2349.jpg"
+      ],
+      "data_pins": {
+        "complete_real/successed/20261116_real_current_socket_repair_000002/outcome.json": "e7ed9140476745ef7cc9826c7cc978760b5363d9433cb2b5c5bd3fd2cb09d565",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/verification.json": "5fd85453d5a2f0f7825720a5e6c1a8aabc4c48938b1938a6e256796995e34064",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/pair_manifest.json": "23355234462060ef7e8f94e3943a733bc80a0e8849e720ed92db6b3ca2b64359",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/proprio_stats/metadata.json": "ae9cae3587e15882b9333b5f4b47908285431aab8ae3113164baca72c62e75bf",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/proprio_stats/proprio_stats.h5": "c665451ac0101f6afe3cfdc9fa44416767b6c7e62a67e1c421230be08aafc767",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/videos/cam_external_rgb.mp4": "b0173553cea1474b42d55991d407638dd20bbf3733411f2b27b95bba3a9a0292",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/videos/cam_right_wrist_rgb.mp4": "e829c27217d34629a3725f9f5670deff5057c4b5dec83d990c507a81b1dee815",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/commanded_probe.csv": "a072c1129ef25a228aea8744c63705aea278c4811e0ba099373f8bed1b5efb60",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/execution_report.json": "b9f60ed591702b398d28ec9df88772cb6ff9f5ead32f7b279361d5bb72c419f9",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/observed_execution_report.json": "719e5d850beb0841fb01f16e08e10e5ce3c6f4b31092a7ca96f1bd14ddc96398",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/external/camera.json": "65178f8dc1972a6cd10ca866d597282167b314520ad8665c238fc03e839bd0af",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/camera.json": "98459c341797d2e72202f1e62dc3f1e401046d73447618a5020073e3335bfc3f",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/2308.jpg": "aa1a7bb932cd459370bdb39e78403b5662c733c48b1dd339cef57f053024c205",
+        "complete_real/successed/20261116_real_current_socket_repair_000002/raw/task/right_wrist/2349.jpg": "91abd85b74f39eabc57116856392c42b03706713492d9dda038bbff30cec54ee"
+      },
+      "repo_pins": {
+        "experiments/current_scene_cycle11/real_attempt002_outcome.json": "cf24e7dcefe8dfe6e5d526205ff7a1177d59386c466ec13fd4c8294b06de61c7"
+      }
+    },
+    {
+      "id": "20261116_real_repeatability_000002",
+      "domain": "real",
+      "stratum": "same_arm_observed",
+      "episode": "complete_real/successed/20261116_real_repeatability_000002",
+      "success": true,
+      "reference_sha256": "40596ce887f8a4def382023b0b4e4ceb0232afa20094f49234db31e59aba16e2",
+      "trajectory_sha256": "84a6cc324088c99c172fccab3ef29d9ecab05e0d2ca62722663119959c6955e8",
+      "feedback": "experiments/repeatability_cycle12/000002/physical_review.json",
+      "images": [
+        "external/last.png",
+        "right_wrist/last.png"
+      ],
+      "data_pins": {
+        "complete_real/successed/20261116_real_repeatability_000002/outcome.json": "ecf91229e9b4cd9259a1f467dd71e00307e4e5694810a40c9c11b55f25238ebb",
+        "complete_real/successed/20261116_real_repeatability_000002/verification.json": "1d3b449158928fe53a3b83147dc7e7ea51cd0c29583f9f735358dafd3b268068",
+        "complete_real/successed/20261116_real_repeatability_000002/pair_manifest.json": "6763ef4ac614e4e848683f9fa7cef3cd8c1bf4044ee4adb07a5b7bdd4dd82b96",
+        "complete_real/successed/20261116_real_repeatability_000002/proprio_stats/metadata.json": "aca09e5178b94af5b91d939b88c74b30b44360f1eea19120b97ced3912af9da6",
+        "complete_real/successed/20261116_real_repeatability_000002/proprio_stats/proprio_stats.h5": "ba82c354f60aef12df32a767e338efc636d2314ebff70aa642fea6365ebac698",
+        "complete_real/successed/20261116_real_repeatability_000002/videos/cam_external_rgb.mp4": "2637ab6bd0be650bfc7df3521eadaf1909ba1bd0490952af26275fdeaeb014f4",
+        "complete_real/successed/20261116_real_repeatability_000002/videos/cam_right_wrist_rgb.mp4": "8d16e49b049c9b8883c031f6e003fd8f32e8b920d3da543d505b047d98d1fcbb",
+        "complete_real/successed/20261116_real_repeatability_000002/raw/task/commanded_probe.csv": "84a6cc324088c99c172fccab3ef29d9ecab05e0d2ca62722663119959c6955e8",
+        "complete_real/successed/20261116_real_repeatability_000002/raw/task/execution_report.json": "0a88899f3cdfacf697df75fbff91d051b38b3cf4812edefeff98916021d9601d",
+        "complete_real/successed/20261116_real_repeatability_000002/raw/task/observed_execution_report.json": "8e366763bbfb96fd3a4b1142da81535ddd538ae9c12be258448611b6342f8c01",
+        "complete_real/successed/20261116_real_repeatability_000002/raw/task/external/camera.json": "6c27689096e56f989a945a53e67014eee62c35a5de11b5f025353133f5d57c85",
+        "complete_real/successed/20261116_real_repeatability_000002/raw/task/right_wrist/camera.json": "fccd1b50c9733447aa8ee75771378b87a284c05952812fb4a2adfaf32a0de895",
+        "complete_real/successed/20261116_real_repeatability_000002/raw/task/external/last.png": "68fb49d7ab857ecb43d51f675f5c4f51cb711c877072d14f706c083946ce9a74",
+        "complete_real/successed/20261116_real_repeatability_000002/raw/task/right_wrist/last.png": "ca3638039fc1246059085d3ade78d59f40a2719d40e45bcc270c9e1c34e79e7b"
+      },
+      "repo_pins": {
+        "experiments/repeatability_cycle12/000002/physical_review.json": "d03ca87aa51a5b2095c0b79a52a7e234a305b4d2f6917b5f1e75e9647ee2e156"
+      }
+    },
+    {
+      "id": "20261116_real_repeatability_000004",
+      "domain": "real",
+      "stratum": "same_arm_observed",
+      "episode": "complete_real/failed/20261116_real_repeatability_000004",
+      "success": false,
+      "reference_sha256": "40596ce887f8a4def382023b0b4e4ceb0232afa20094f49234db31e59aba16e2",
+      "trajectory_sha256": "8dfe9dc2bf6f6cdcf8964233c32b75f4f94ae2df8b1d5fb7f91555951c99f2a0",
+      "feedback": "experiments/repeatability_cycle12/000004/physical_review.json",
+      "images": [
+        "right_wrist/9653.jpg",
+        "right_wrist/9742.jpg"
+      ],
+      "data_pins": {
+        "complete_real/failed/20261116_real_repeatability_000004/outcome.json": "49ef0b57a70ad23a3b1b857baa874eeb2e53df02493b16d1d3ed578238918b06",
+        "complete_real/failed/20261116_real_repeatability_000004/verification.json": "a61d2e96eed9a69f66189ff8d34b34dcd99ffcb08b9988c92c91551f5da45c0b",
+        "complete_real/failed/20261116_real_repeatability_000004/pair_manifest.json": "6763ef4ac614e4e848683f9fa7cef3cd8c1bf4044ee4adb07a5b7bdd4dd82b96",
+        "complete_real/failed/20261116_real_repeatability_000004/proprio_stats/metadata.json": "72ecf1f154868406de4f84151b41ebcc2fe2f22837e10a7646f688f797bbfb58",
+        "complete_real/failed/20261116_real_repeatability_000004/proprio_stats/proprio_stats.h5": "17808efa1f2a96c82ae09190b45a0f1a8d3d0b9ba2803b6ec5790a01b7961088",
+        "complete_real/failed/20261116_real_repeatability_000004/videos/cam_external_rgb.mp4": "68ad0d453b88dd90db8f1954f5d94cbdbbd4f5109be4c14660f4695e35ecd466",
+        "complete_real/failed/20261116_real_repeatability_000004/videos/cam_right_wrist_rgb.mp4": "5fef5a0e2a4761e46490a7e72747ea149acb2ea3b2ecab5ef090ee968376b000",
+        "complete_real/failed/20261116_real_repeatability_000004/raw/task/commanded_probe.csv": "8dfe9dc2bf6f6cdcf8964233c32b75f4f94ae2df8b1d5fb7f91555951c99f2a0",
+        "complete_real/failed/20261116_real_repeatability_000004/raw/task/execution_report.json": "8d01ecf1af7e35a90aa02a56fb48a3fd87f0cafed9ddbadfe43fc8f8b98ac4ec",
+        "complete_real/failed/20261116_real_repeatability_000004/raw/task/observed_execution_report.json": "45f9e5db46e93ad0b9e88ddfe49fed67846880baaed76c41d1c7ca2e3b4af4ff",
+        "complete_real/failed/20261116_real_repeatability_000004/raw/task/external/camera.json": "7bc004745a329ce4787f3969f1edb02fad9f8c385c06375d5ff6d443b4b1eca8",
+        "complete_real/failed/20261116_real_repeatability_000004/raw/task/right_wrist/camera.json": "e9708ecb85fc461c3bf22476cd8a872af437db03bf99e79ab3e02312c5708616",
+        "complete_real/failed/20261116_real_repeatability_000004/raw/task/right_wrist/9653.jpg": "dac8c40fa2e97f3d60f632c565099a207ce9bb34ca83fdd47ea2b11e1ea7063c",
+        "complete_real/failed/20261116_real_repeatability_000004/raw/task/right_wrist/9742.jpg": "a6a13eb68ca67771c88910d8489410a6c0964dda8967e894c10488e70345a670"
+      },
+      "repo_pins": {
+        "experiments/repeatability_cycle12/000004/physical_review.json": "0212bfb33c515edd7a13a95f034dffbd8f5987eb868ba7c8b31db69fcb5bfb0b"
+      }
+    },
+    {
+      "id": "20261116_real_repeatability_000005",
+      "domain": "real",
+      "stratum": "same_arm_observed",
+      "episode": "complete_real/failed/20261116_real_repeatability_000005",
+      "success": false,
+      "reference_sha256": "cd14917be73f4299439cbaf516bb9ca8ac06eec4ba63ccd885f1b68622b6816f",
+      "trajectory_sha256": "ace9c3453e20b3f83213e563a927fa4666d309295bc5e6446ee046d4c55e0890",
+      "feedback": "experiments/repeatability_cycle12/000005/physical_review.json",
+      "images": [
+        "right_wrist/1647.jpg"
+      ],
+      "data_pins": {
+        "complete_real/failed/20261116_real_repeatability_000005/outcome.json": "ea30875c2b594aeeb81ebfbfff3c32a9af78ab7228317434947384c04cdc68a5",
+        "complete_real/failed/20261116_real_repeatability_000005/verification.json": "696d04f4f203374e22d858598aab9898061f93685cc8cb6c1e63bd116daa03d1",
+        "complete_real/failed/20261116_real_repeatability_000005/pair_manifest.json": "f0c930af848591fe3ad007d97667eafca53def182b69c830620c6c55f640497d",
+        "complete_real/failed/20261116_real_repeatability_000005/proprio_stats/metadata.json": "7f07ed3bd64ac4b212883c7ea082d3985fc97d5fb656357bc33899a40766ced1",
+        "complete_real/failed/20261116_real_repeatability_000005/proprio_stats/proprio_stats.h5": "06f67ede966b51c8a7ece4d9a6d528c202c565df3ad878cc2bc428617d9c8a24",
+        "complete_real/failed/20261116_real_repeatability_000005/videos/cam_external_rgb.mp4": "11cd5326efc664798075f4b6424286079edbfc39f69a5bef6acbc53933490c79",
+        "complete_real/failed/20261116_real_repeatability_000005/videos/cam_right_wrist_rgb.mp4": "3e318ebc56e31b9bb9093cef99655330617e1f747bc9c112a46d22aa90ae0438",
+        "complete_real/failed/20261116_real_repeatability_000005/raw/task/commanded_probe.csv": "ace9c3453e20b3f83213e563a927fa4666d309295bc5e6446ee046d4c55e0890",
+        "complete_real/failed/20261116_real_repeatability_000005/raw/task/execution_report.json": "adb9d106bb9d310289093b435261f0caea9a33311ba0c13c6a29a8b7803fb41b",
+        "complete_real/failed/20261116_real_repeatability_000005/raw/task/observed_execution_report.json": "9cf4d79d7b2b4ca02e981321a2117e5454c005288653012865ea1cbeab57c150",
+        "complete_real/failed/20261116_real_repeatability_000005/raw/task/external/camera.json": "203139d233ce1e8fe69d491b1759387612020339babf51c4c25eb0fc47940606",
+        "complete_real/failed/20261116_real_repeatability_000005/raw/task/right_wrist/camera.json": "a53beeae6ecaf9359aed90f80ed73eb639b47e24c49c5c2edbd7a7c125d723dd",
+        "complete_real/failed/20261116_real_repeatability_000005/raw/task/right_wrist/1647.jpg": "9e9182f048ce202071b11c0cb8c86b9dbf5dcc208508c18668f779b2dd692387"
+      },
+      "repo_pins": {
+        "experiments/repeatability_cycle12/000005/physical_review.json": "9f4df31e3de539dd01f8030ddf8662f92230c80382eaee2a4cc085fa0dca8a1c"
+      }
+    },
+    {
+      "id": "20261118_real_grasp_six_rounds_000003",
+      "domain": "real",
+      "stratum": "same_arm_observed",
+      "episode": "complete_real/failed/20261118_real_grasp_six_rounds_000003",
+      "success": false,
+      "reference_sha256": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
+      "trajectory_sha256": "010b02a7caa0dd44b4cd726b971a1b1c7b67b3ebb5620ce1a488fafad9c0db5a",
+      "feedback": "experiments/grasp_six_rounds/round_03/real_review.json",
+      "images": [
+        "right_wrist/1038.jpg",
+        "right_wrist/1104.jpg"
+      ],
+      "data_pins": {
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/outcome.json": "91323c8da71fb97fd9b4ae53aa63ee7ab4d2ed7eb7d25fa89880b137f1909e59",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/verification.json": "461b1b25d478e2c3c4e02e5620828bad505bde476d9c233130c4db0ba9f37d61",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/pair_manifest.json": "141bcd5898ef9a56b03562016bcc1b44b55cfd89be34b452ebd21e29e99df116",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/proprio_stats/metadata.json": "b6327d82af2fcec9fa254c58f36562f4f5b067a5c36fb2802f24fff8423f98a1",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/proprio_stats/proprio_stats.h5": "24cfedb7028c1d291668b2c7a4c5b87b6d7cbacca35d045ca18067f009ad8193",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/videos/cam_external_rgb.mp4": "92af6a1461e4c11dd0f13c2f36d9a83c97aa50b49d651b2fde3d2725c575b835",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/videos/cam_right_wrist_rgb.mp4": "2ed2ef27200bea76724c2c25131581845d2a071a888508cfda3b99704887807f",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task/commanded_probe.csv": "010b02a7caa0dd44b4cd726b971a1b1c7b67b3ebb5620ce1a488fafad9c0db5a",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task/execution_report.json": "9a71e660000c14e77e09081e3ca3d16590790e4d0741a20e2a9300f6ee14c98c",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task/observed_execution_report.json": "a488e4b10a405d13cd10bc753f555f08dd58fc5b566cad398abd67d94f35df79",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task/external/camera.json": "848ceda3ba4900eedcbb83de3e0e518da3c8fe375310ac31231b6f275a24f93d",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task/right_wrist/camera.json": "a483d7de4b207b9344713298ddc6af46c3055240113e8a36e45aa8b490398df8",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task/right_wrist/1038.jpg": "e46adc1f2864030aea7283d4d271b8da1f5ff896b0abc7c8d27b18a9edde4ba0",
+        "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task/right_wrist/1104.jpg": "a1de5a36089c329e7b28f4624ff9d4641bae821afc86775675198598e89d5eb6"
+      },
+      "repo_pins": {
+        "experiments/grasp_six_rounds/round_03/real_review.json": "a995904827b4f49f95a82daf00cc386600a2a2b0e2590d1da389f1a27089519c"
+      }
+    },
+    {
+      "id": "20261117T102101Z_e4185e62",
+      "domain": "sim",
+      "stratum": "research_scene",
+      "episode": "complete_sim/succeed/20261117T102101Z_e4185e62",
+      "result": "experiments/teacher_reliability_candidates/20261117T102101Z_e4185e62/result.json",
+      "success": true,
+      "task_config_sha256": "7614caf730f5335817d2b119aac0e7c857f6536ba7c57d9f32682d9621ed266f",
+      "native_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+      "trajectory_sha256": "14fa6e3574dc03f73824214faeb53e1720994734b5f795196afd491368bbdfcd",
+      "feedback": "experiments/teacher_reliability/candidate1_simulation.json",
+      "images": [],
+      "data_pins": {
+        "self_evolution/20261117T102101Z_e4185e62/trajectory.jsonl": "14fa6e3574dc03f73824214faeb53e1720994734b5f795196afd491368bbdfcd",
+        "self_evolution/20261117T102101Z_e4185e62/task.yaml": "dabafda48cf52dd3efc36c0d4e6ffb1f81eb21bc83e5171960e04b73d84d2bfc",
+        "self_evolution/20261117T102101Z_e4185e62/report.json": "a2eeaf7524cc265eb5c0be82f7c561b42b05fe034a63cf4f337bba7358a90600",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/proprio_stats/proprio_stats.h5": "13f36f5a26b8b76188a92db4c0f5e03f0f3d31dedb3699f227c6a947660d2655",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/proprio_stats/metadata.json": "489c62ebce3d925c1339ecf6629a6fd3b3316f70f105a92d7da69b5784283a9a",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/proprio_stats/privileged.jsonl": "9a9da4c8672713964f34a99d514e531500a04e2f07a17fcb9c35f27dc2f563c2",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/proprio_stats/model.xml": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/proprio_stats/initial_state.npz": "aebf770f79bfe634b8ab6f5eb28cc1ea6fb59cc48cc0fb716c7b9885e117f8d7",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/proprio_stats/recorded_commands.csv": "d9697d87b654153c42a51b392a68c7a8fcc19a0ae1dac2cd85f1880c686db3d0",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/videos/cam_external_rgb.mp4": "e6236946795087a3ae8e8fee9e7f36f7b47c1d6477c6e70c489d2a0dc5523694",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/videos/cam_right_wrist_rgb.mp4": "baec06640f6e505b62c5fcae16d72e1508aa2de527a47b2b020b1600a0a6ba1a",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/outcome.json": "4b549f2f13c1c8046bbfbc7d4604609a8a0a75b5ec296c4d500d5bd61836983b",
+        "complete_sim/succeed/20261117T102101Z_e4185e62/recording_20261117T102101Z_e4185e62.json": "9cf03218817dab9a901a524df9194b4e15b012fe9e098e55848bde1b84f3fc04"
+      },
+      "repo_pins": {
+        "experiments/teacher_reliability_candidates/20261117T102101Z_e4185e62/result.json": "6d291fd7dffcdd0039faff6cd4fbabfacbac1330d4decd647bb96a534ad39922",
+        "experiments/evaluation/20261117T102345Z_a7a7c505/result.json": "01e5b4dd702f9ee56b04a8ca740754c301efe2dd945ebcf6aed04ef17dbee2ba",
+        "experiments/teacher_reliability/candidate1_simulation.json": "1002e1d3e9013357d1919395a99b1fd6860e219ea0ee397b911eb0748c4c7704"
+      }
+    },
+    {
+      "id": "20261117T104159Z_a33bacec",
+      "domain": "sim",
+      "stratum": "research_scene",
+      "episode": "complete_sim/succeed/20261117T104159Z_a33bacec",
+      "result": "experiments/teacher_reliability_candidates/20261117T104159Z_a33bacec/result.json",
+      "success": true,
+      "task_config_sha256": "7614caf730f5335817d2b119aac0e7c857f6536ba7c57d9f32682d9621ed266f",
+      "native_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+      "trajectory_sha256": "6ac7cd33743c0463169e4068c46fd6fabeb5670000675f1f6d5af372f0784f5e",
+      "feedback": "experiments/teacher_reliability/candidate2_simulation.json",
+      "images": [],
+      "data_pins": {
+        "self_evolution/20261117T104159Z_a33bacec/trajectory.jsonl": "6ac7cd33743c0463169e4068c46fd6fabeb5670000675f1f6d5af372f0784f5e",
+        "self_evolution/20261117T104159Z_a33bacec/task.yaml": "23e60f4abcae7643d236ff46051da16a017df03920d752f0d23debadadc28a11",
+        "self_evolution/20261117T104159Z_a33bacec/report.json": "a8e320816e2b5a8ae30f01cd25f452caec17b90747142127fcc03e345db2e453",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/proprio_stats/proprio_stats.h5": "4c4fd782db9bff60ce5fc89511f5f83818728cf537546f38f4711ca579e5c132",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/proprio_stats/metadata.json": "0666552e560aeb23869ab646a093458cb43a427e30c05dc4266909dfde0766b3",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/proprio_stats/privileged.jsonl": "8591acbd13cd47b501fd9a45e2c63150b563c084f8c48becdc58d9b99b33d700",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/proprio_stats/model.xml": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/proprio_stats/initial_state.npz": "449137e2799f316a4c98d226f060e7c459fe063b6a30d37f5138a341914bd7c4",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/proprio_stats/recorded_commands.csv": "59492edc2ae24073512ad4cc1a2285195ad18ad9f18c0909ba3bcd65244007a3",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/videos/cam_external_rgb.mp4": "55945a6c6bc245d210d7bcc5672ed917c691dedc8982b5fcce51e5e13dae6472",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/videos/cam_right_wrist_rgb.mp4": "05574a27bda257de1ac80ab7633998ac2d040a1d077390d14ca2d23e62f7ee77",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/outcome.json": "7abaff27c0cbe16f2f7148e019afb16d24724ee3403be344c35c1f2d9b84cd11",
+        "complete_sim/succeed/20261117T104159Z_a33bacec/recording_20261117T104159Z_a33bacec.json": "973ec1396e22c9d2b3caff5f2053791017d26086d1aafa9c262398481a7ad2c2"
+      },
+      "repo_pins": {
+        "experiments/teacher_reliability_candidates/20261117T104159Z_a33bacec/result.json": "fe8b1b2af552c92c11ac2c44b963e633b9650b3bf918f61eae450d281c74a1b4",
+        "experiments/evaluation/20261117T104446Z_235a07f4/result.json": "79b672d4194584c0d3b72082f35a15810e7b38e155d4fa5fd55c7cd0c75f3a09",
+        "experiments/teacher_reliability/candidate2_simulation.json": "3de96150b15066a0800b3bf4ce12709c887baade4d03491483fd4bb001010a3d"
+      }
+    },
+    {
+      "id": "20261117T113906Z_a161f852",
+      "domain": "sim",
+      "stratum": "research_scene",
+      "episode": "complete_sim/succeed/20261117T113906Z_a161f852",
+      "result": "experiments/grasp_six_rounds_candidates/20261117T113906Z_a161f852/result.json",
+      "success": true,
+      "task_config_sha256": "7614caf730f5335817d2b119aac0e7c857f6536ba7c57d9f32682d9621ed266f",
+      "native_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+      "trajectory_sha256": "2d48ae1a699872f9ca3158e73a189278cbc951e250564fa5c029ec2cd4b0aa59",
+      "feedback": "experiments/grasp_six_rounds/round_01/simulation.json",
+      "images": [],
+      "data_pins": {
+        "self_evolution/20261117T113906Z_a161f852/trajectory.jsonl": "2d48ae1a699872f9ca3158e73a189278cbc951e250564fa5c029ec2cd4b0aa59",
+        "self_evolution/20261117T113906Z_a161f852/task.yaml": "ea97d09a983bcb9d47fc478d077c261e742f7dadf0644fa74e4c8bc7dca4d1a4",
+        "self_evolution/20261117T113906Z_a161f852/report.json": "9fa87fc90a6730e41d9bdff08ee8850e448b2eeaccdc5d456cb26309502c11f0",
+        "complete_sim/succeed/20261117T113906Z_a161f852/proprio_stats/proprio_stats.h5": "7fae9b9b239b984a5ecd5278347dbd02e6e7dcb91446e85f462f3c40a1d6e05f",
+        "complete_sim/succeed/20261117T113906Z_a161f852/proprio_stats/metadata.json": "82a22e116163393e8b3bafcd1a6147fc39021de19c7220df70b3fbe411c8b4cb",
+        "complete_sim/succeed/20261117T113906Z_a161f852/proprio_stats/privileged.jsonl": "b54ab2e81899e22338039aa0d7195df9d357e1ee723663402f2eef385f050785",
+        "complete_sim/succeed/20261117T113906Z_a161f852/proprio_stats/model.xml": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+        "complete_sim/succeed/20261117T113906Z_a161f852/proprio_stats/initial_state.npz": "6d8b6523f782e6865dde4416c193ccb16ac39cf74b979214faad79e28bcb51ca",
+        "complete_sim/succeed/20261117T113906Z_a161f852/proprio_stats/recorded_commands.csv": "0c091bd360df45bb352319a75e6733ee1f62dfd5aa301077f33e22fcaeb9d7f0",
+        "complete_sim/succeed/20261117T113906Z_a161f852/videos/cam_external_rgb.mp4": "5b7cbab4fbef9dbd373743e7e5cc05c6fafa2a58c317fbfcd7de2d28c3c9906e",
+        "complete_sim/succeed/20261117T113906Z_a161f852/videos/cam_right_wrist_rgb.mp4": "42c90fc2da216b65d391f2f2ee77dcbc93485f60278987375d9a5f9183deaa6a",
+        "complete_sim/succeed/20261117T113906Z_a161f852/outcome.json": "299fe6939536c0cc2d9425d13d4e726a27324f57d77db38ea86557f26ed5aa59",
+        "complete_sim/succeed/20261117T113906Z_a161f852/recording_20261117T113906Z_a161f852.json": "e8c0650968e80858bb5959eda4df951bc01c90856826eb0a1dd618bf97288f20"
+      },
+      "repo_pins": {
+        "experiments/grasp_six_rounds_candidates/20261117T113906Z_a161f852/result.json": "71dfd40f6946fab696873c2421d990317ffb0cc631c04beeb49c83ee6e905d0d",
+        "experiments/evaluation/20261117T114155Z_a8a4aef9/result.json": "b5e36c2ce1c942676096e051d23c50ad44d2648f0936e96e6fdb2ffe609ea429",
+        "experiments/grasp_six_rounds/round_01/simulation.json": "4e7605df0bb90a8a5275fbe11fa486242cb67d2cf1e0ae4297cfc17c7c6876bc"
+      }
+    },
+    {
+      "id": "20261117T120935Z_745e0917",
+      "domain": "sim",
+      "stratum": "research_scene",
+      "episode": "complete_sim/failed/20261117T120935Z_745e0917",
+      "result": "experiments/grasp_six_rounds_candidates/20261117T120935Z_745e0917/result.json",
+      "success": false,
+      "task_config_sha256": "7614caf730f5335817d2b119aac0e7c857f6536ba7c57d9f32682d9621ed266f",
+      "native_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+      "trajectory_sha256": "bc99395feab1a551e7b2b9e5cbd4b8993ff21a20048416f495419b05cae6ba6a",
+      "feedback": "experiments/grasp_six_rounds/round_02/align_ik_probe.json",
+      "images": [],
+      "data_pins": {
+        "self_evolution/20261117T120935Z_745e0917/trajectory.jsonl": "bc99395feab1a551e7b2b9e5cbd4b8993ff21a20048416f495419b05cae6ba6a",
+        "self_evolution/20261117T120935Z_745e0917/task.yaml": "feb5c88c3be7a475aca1eb90fd26bdd36fec85a0b7a36e29f073807a16e43000",
+        "self_evolution/20261117T120935Z_745e0917/report.json": "92ea15bc323cd06bbaad3dbccb0274e83e7af69f8d434fcecb417343fb5330e4",
+        "complete_sim/failed/20261117T120935Z_745e0917/proprio_stats/proprio_stats.h5": "8bebe90798638d821d4e22db38c556462cf77080e08db6a953b41e9dedb5bc92",
+        "complete_sim/failed/20261117T120935Z_745e0917/proprio_stats/metadata.json": "1f38b29d2e0551f4db3b568115957ecf0deef10111e92b0bce50c9a084ffb23d",
+        "complete_sim/failed/20261117T120935Z_745e0917/proprio_stats/privileged.jsonl": "32676b8477f44b1592dad0b87ab3a0579a6f0f66bf79943e9167f77486f04000",
+        "complete_sim/failed/20261117T120935Z_745e0917/proprio_stats/model.xml": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+        "complete_sim/failed/20261117T120935Z_745e0917/proprio_stats/initial_state.npz": "ce6238eeebbaf1f974249cb46f222b57901acd9a1f8c4b822df73031684db6c1",
+        "complete_sim/failed/20261117T120935Z_745e0917/proprio_stats/recorded_commands.csv": "db16e13f1db81fff4321e3ad71f69ff87a993d87acb183acca3064552f2c1619",
+        "complete_sim/failed/20261117T120935Z_745e0917/videos/cam_external_rgb.mp4": "bd1357fe70fdb95cdf3a22b031dd2a4bb6f2e66c53fee6ec3647f657099db350",
+        "complete_sim/failed/20261117T120935Z_745e0917/videos/cam_right_wrist_rgb.mp4": "9eb46cd53f45083f64841bc71f0275eca5cc7e132de572366e66922d3f661aab",
+        "complete_sim/failed/20261117T120935Z_745e0917/outcome.json": "c41c1f3310552f62aca92fd2527d53d76765c942ed4781ed6a19c20c2aa2bbbd",
+        "complete_sim/failed/20261117T120935Z_745e0917/recording_20261117T120935Z_745e0917.json": "2a31c68f22bd1757ba04b576f82a2bc0a5053db19b285a84265271c3fd8bb132"
+      },
+      "repo_pins": {
+        "experiments/grasp_six_rounds_candidates/20261117T120935Z_745e0917/result.json": "86947293c566f48474a6a8a36420e0c7ef204d9a4289fcf0795b136e57e997c1",
+        "experiments/evaluation/20261117T121108Z_a80d0a67/result.json": "96f7b59a5da412b60013550c7aa1f14dc84667d86c01e3716cab68f37f0fc6de",
+        "experiments/grasp_six_rounds/round_02/align_ik_probe.json": "614f6fd15da7374a8a2081b4a0e3d63c4f7e5c2a590cfed56e61d4645ec8646a"
+      }
+    },
+    {
+      "id": "20261117T121435Z_bf6333a2",
+      "domain": "sim",
+      "stratum": "research_scene",
+      "episode": "complete_sim/succeed/20261117T121435Z_bf6333a2",
+      "result": "experiments/grasp_six_rounds_candidates/20261117T121435Z_bf6333a2/result.json",
+      "success": true,
+      "task_config_sha256": "7614caf730f5335817d2b119aac0e7c857f6536ba7c57d9f32682d9621ed266f",
+      "native_sha256": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+      "trajectory_sha256": "667db9d158a7b0cbc414af9b425ae5389a8855216bb74c1324143704384c85c2",
+      "feedback": "experiments/grasp_six_rounds/round_02/simulation.json",
+      "images": [],
+      "data_pins": {
+        "self_evolution/20261117T121435Z_bf6333a2/trajectory.jsonl": "667db9d158a7b0cbc414af9b425ae5389a8855216bb74c1324143704384c85c2",
+        "self_evolution/20261117T121435Z_bf6333a2/task.yaml": "84e469899b5fa4546144b5debe4e967a2dc852ec61fe28899ba1a39c5e5ed4f9",
+        "self_evolution/20261117T121435Z_bf6333a2/report.json": "ca328503d7f2a161f62240ed433f567c5a5b97bea657e4b2fe2460eff9cd69e5",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/proprio_stats/proprio_stats.h5": "8f9fbe9dbf0ebeb438d2806c29d9017456568edfbf77d80d21d63a5d6c480b1b",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/proprio_stats/metadata.json": "f4abbe9e97d64077bcc059dc73778539c6f1061b0643e8afc6ec9756e4e595e0",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/proprio_stats/privileged.jsonl": "0af0e03cc4dfa2f67250168d4b12802445dab008446f0ff70678b6e940577e29",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/proprio_stats/model.xml": "05c01e21c3c004c445c36a88ad76dd8f1d9d17ab3baafc88f3b33b609ee5165c",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/proprio_stats/initial_state.npz": "ce6238eeebbaf1f974249cb46f222b57901acd9a1f8c4b822df73031684db6c1",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/proprio_stats/recorded_commands.csv": "af6ec3df336ebba272136e4dab5663df671d03da3abb187451905719d42dcb1f",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/videos/cam_external_rgb.mp4": "079fa74c09138b786a7f62fb6cac11340be2b85b1aa6c1d711749b4706eab366",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/videos/cam_right_wrist_rgb.mp4": "952ccd316bb997c0c15d5263a2c6b085276c569424419e8efec98f6a3dba58ea",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/outcome.json": "87547adfdb1329af14bf2e06cde8f2b49345450b7595a3e21ffed76d44f6a8f4",
+        "complete_sim/succeed/20261117T121435Z_bf6333a2/recording_20261117T121435Z_bf6333a2.json": "f5ef92167a5c8d915fc04565688c8f798ec14249be4389553c8bab49c8cbd972"
+      },
+      "repo_pins": {
+        "experiments/grasp_six_rounds_candidates/20261117T121435Z_bf6333a2/result.json": "7238c267a1cb8b7b4df3008dec01641a1e3f85a73379cd0c84d9150134228e67",
+        "experiments/evaluation/20261117T121723Z_60fd2d28/result.json": "cf38c7a087bba1089a19170c906cc7ab44ecdfb17fecd2a471aa05b224882ab6",
+        "experiments/grasp_six_rounds/round_02/simulation.json": "e6c554bc85aa730078ca1c6e2187ab3f4650e7a56e809cbe690a32314b8f523a"
+      }
+    },
+    {
+      "id": "20261116T050715Z_a6d1c3df",
+      "domain": "sim",
+      "stratum": "collector_default_scene_historical_solver",
+      "episode": "complete_sim/failed/20261116T050715Z_a6d1c3df",
+      "result": "experiments/planner_cost_cycle4/20261116T050715Z_a6d1c3df/result.json",
+      "success": false,
+      "task_config_sha256": "01c3a8ebea424ae5968a1c54ad40da2ac492b69b0a7fd313e6074b053159955c",
+      "native_sha256": "82735205df93aa02d9308e4ca4f40b2492382bf44d481f60e7e01cacfa00c362",
+      "trajectory_sha256": "0a216eb324dda604eef31c8ee2357387ef9016ab7d4515d8d2850e38d0d9bc1b",
+      "feedback": "experiments/planner_cost_cycle4/result.json",
+      "images": [],
+      "data_pins": {
+        "self_evolution/20261116T050715Z_a6d1c3df/trajectory.jsonl": "0a216eb324dda604eef31c8ee2357387ef9016ab7d4515d8d2850e38d0d9bc1b",
+        "self_evolution/20261116T050715Z_a6d1c3df/task.yaml": "fd168b948f35faddd6f50a8e9bab5fd055baa709daa644f5817242b37068b2d9",
+        "self_evolution/20261116T050715Z_a6d1c3df/report.json": "841a6b94b112f8cda59d8f0c6d1fed7b241be551eacbf1e6dceb800bdc343003",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/proprio_stats/proprio_stats.h5": "1f07f015fe02abc2bd179d8e2afd349e7e36cbf6a240bc8f2e5c296954bc5dda",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/proprio_stats/metadata.json": "a53d886675cad6a93fa71f6561df517e5ff6ff47f9b2ee1fdeb507355173b9c1",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/proprio_stats/privileged.jsonl": "f14d17f0e56329181c06ac32f3aee882a9d9e331c843cf3374de67fa0f6b4335",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/proprio_stats/model.xml": "41caa7b6b4913e89319ddb72870ac67b54470373ef5fa41919ef7409ccd4994c",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/proprio_stats/initial_state.npz": "1d53f2f68d78fdd1e3b6ec40ab8b3a380db5034995b2f352bd086f96a2175d1d",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/proprio_stats/recorded_commands.csv": "2c01a9d66c3f3aaa4e9f9b3caffa752891f041a972c8f9300e90914106bddc2d",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/videos/cam_external_rgb.mp4": "ff89576f2e56c82e16849bdfc6a810a1386123342a516c20a02b9ac84d46fdab",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/videos/cam_right_wrist_rgb.mp4": "7fb98495e9727db0475e0a959531021e2c791d229606e58f4aba931ff9aef4ae",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/outcome.json": "5f72ee80cde0d58e7148f4ec0d7fe728a2a417af60a5a4e39fd4ba6fece9d87f",
+        "complete_sim/failed/20261116T050715Z_a6d1c3df/recording_20261116T050715Z_a6d1c3df.json": "6d39e154f63ebe26b30f71553733e1c59560a06e5a363f8be78d2a7a8f5297b1"
+      },
+      "repo_pins": {
+        "experiments/planner_cost_cycle4/20261116T050715Z_a6d1c3df/result.json": "4f59ce2a5886803fa46fe77c3678ae5dc6c0e9839c3baf2fa23ce3dacda95165",
+        "experiments/evaluation/20261116T050916Z_70686f2c/result.json": "ea0f5f593663164b57daf23087bd760735f2fdf40d03d3af9787f2ef496fd03c",
+        "experiments/planner_cost_cycle4/result.json": "44dacb7deb716fc0563c02da9b03461f5cca366102a7710e3edbc841912f7ece"
+      }
+    },
+    {
+      "id": "20261116T050950Z_a48bf34e",
+      "domain": "sim",
+      "stratum": "collector_default_scene_historical_solver",
+      "episode": "complete_sim/succeed/20261116T050950Z_a48bf34e",
+      "result": "experiments/planner_cost_cycle4/20261116T050950Z_a48bf34e/result.json",
+      "success": true,
+      "task_config_sha256": "01c3a8ebea424ae5968a1c54ad40da2ac492b69b0a7fd313e6074b053159955c",
+      "native_sha256": "82735205df93aa02d9308e4ca4f40b2492382bf44d481f60e7e01cacfa00c362",
+      "trajectory_sha256": "d32677ae5d8d3e7cd64e445b731319c07fafd29f877cd2a95ab431918bf8691e",
+      "feedback": "experiments/planner_cost_cycle4/result.json",
+      "images": [],
+      "data_pins": {
+        "self_evolution/20261116T050950Z_a48bf34e/trajectory.jsonl": "d32677ae5d8d3e7cd64e445b731319c07fafd29f877cd2a95ab431918bf8691e",
+        "self_evolution/20261116T050950Z_a48bf34e/task.yaml": "bc236ee0d42ca673e00c05869dcb26ad1076d73ad634ee52d94de83e2325e72e",
+        "self_evolution/20261116T050950Z_a48bf34e/report.json": "90b49f8c1d98b71b0e6ac4b12836a147d96c3c8edecb635485a89d3e6d5474a7",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/proprio_stats/proprio_stats.h5": "e2dc419ef18032a1a3d415c10b5bb6910d9bc4a4bcb3100d9f0e2a661684f572",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/proprio_stats/metadata.json": "dd4f54a41f8059969dfa6f49b0e2b4d6d4b88ba6af7894b6f685c35ec668876a",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/proprio_stats/privileged.jsonl": "ab0de7ab653e7cabcadab1f321654c7324b4e65d0286884857d5be534b956898",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/proprio_stats/model.xml": "41caa7b6b4913e89319ddb72870ac67b54470373ef5fa41919ef7409ccd4994c",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/proprio_stats/initial_state.npz": "1d53f2f68d78fdd1e3b6ec40ab8b3a380db5034995b2f352bd086f96a2175d1d",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/proprio_stats/recorded_commands.csv": "a33ac5ea8cee24fce6b0b683ec875a53161ebe72acc8de8ce97b53f4080d5b3b",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/videos/cam_external_rgb.mp4": "a4adb8211a8bde35e2fef729b28bc225b1b620cda9edc6ae2bef1f2ef3682848",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/videos/cam_right_wrist_rgb.mp4": "f36ed89a3fa651779dba12b20c83c95b71b5b59cd529aeeb36916c9b384e056c",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/outcome.json": "1c96e44475247970567409b23d3af68b18f78369be038653b79b1628c984a231",
+        "complete_sim/succeed/20261116T050950Z_a48bf34e/recording_20261116T050950Z_a48bf34e.json": "6bf66a0e8813a10e948c21ad9d43d024fea624de855fbfe29d8fd690e37f8321"
+      },
+      "repo_pins": {
+        "experiments/planner_cost_cycle4/20261116T050950Z_a48bf34e/result.json": "ee31cd27da35a7a1949c143d13ce82ff83b7a3ca6f25caa4bc8728f49694d5df",
+        "experiments/evaluation/20261116T051240Z_d7cd5a72/result.json": "9ea4e255b7ad9c6b3331ca2c00752f4f60d70c5e476f86c99a86b1fb1f4bc72d",
+        "experiments/planner_cost_cycle4/result.json": "44dacb7deb716fc0563c02da9b03461f5cca366102a7710e3edbc841912f7ece"
+      }
+    }
+  ]
+}

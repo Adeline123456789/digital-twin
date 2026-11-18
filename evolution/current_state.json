@@ -1,17 +1,17 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Offline Fast/Slow V2; original real goal paused",
-  "status": "V2_BATCH_CLOSED",
+  "scope": "V2.1 paired historical right-arm diagnosis",
+  "status": "V21_GATE_A_PREREGISTERED",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
     "training and teacher/student comparisons"
   ],
-  "stop_condition": "Stop at V2 gate or 14 engineering rounds; zero hardware executions",
+  "stop_condition": "Stop at A or B on no demonstrated gain. Hardware requires fresh authorization.",
   "software": {
-    "branch": "feat/fast-slow-diagnosis",
+    "branch": "codex/v21-right-arm-gate-a",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
     "live_candidate": null,
     "last_executed_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Batch closed. No hardware, parameter search or saved request to resume.",
-  "updated_at": "2026-11-18T10:32:16.832875+00:00",
+  "next_grounded_work": "Measure the frozen Gate A pairs. Checkpoint is not replay authority.",
+  "updated_at": "2026-11-18T11:40:12.484650+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -101,5 +101,12 @@
     "independent_stability": "NOT_RUN",
     "real_root_cause": "UNKNOWN",
     "report": "IMPLEMENTATION_REPORT.md"
+  },
+  "v21": {
+    "design": "experiments/v21/design.json",
+    "rollback": "87bd88181836bed5c4723bc7a79a2586060d032f",
+    "prior_audit": "One existing read-only Gate A child reviewed five real and five simulation Episodes; handoff recovered.",
+    "new_full_simulations": 0,
+    "new_real_attempts": 0
   }
 }
