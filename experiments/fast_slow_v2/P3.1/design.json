@@ -1,0 +1,10 @@
+{
+  "round_id": "P3.1",
+  "category": "physical consistency",
+  "hypothesis": "Open-gripper carry and hidden attachment contradict grasp evidence",
+  "criterion": "Reject fake carry, active equality or direct pose drive; unknown on missing evidence",
+  "started": "2026-11-18T10:16:15.537963+00:00",
+  "rollback_ref": "76d6c55994a9680caccb693bc365aab94c94f863",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

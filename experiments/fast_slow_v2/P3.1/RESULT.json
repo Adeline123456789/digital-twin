@@ -1,0 +1,28 @@
+{
+  "round_id": "P3.1",
+  "hypothesis": "Open-gripper carry and hidden attachment contradict grasp evidence",
+  "changed_files": [
+    "robot_agent/fake_grasp.py",
+    "tests/test_fake_grasp.py"
+  ],
+  "source_hash": {
+    "robot_agent/fake_grasp.py": "3caf023dfd9ac3449ff9bc09fd4666c751d47a4212c4ec1e67c9797e66fdb6be",
+    "tests/test_fake_grasp.py": "ac5ffd5d069159ff3152c0abf614f6abcc31cf41fe024c696234a7e15b857c3f"
+  },
+  "baseline": "76d6c55994a9680caccb693bc365aab94c94f863",
+  "candidate": "physical consistency",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 2,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 81.971,
+  "decision": "ACCEPT",
+  "validation": "MuJoCo weld and mocap fixtures plus detached-follow and direct-write counterexamples rejected",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "76d6c55994a9680caccb693bc365aab94c94f863",
+  "measurements": {}
+}
