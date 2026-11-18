@@ -1,0 +1,28 @@
+{
+  "round_id": "P2.1",
+  "hypothesis": "A persistent carry monitor can report loss on confirmation",
+  "changed_files": [
+    "robot_agent/fast_loop.py",
+    "tests/test_fast_loop.py"
+  ],
+  "source_hash": {
+    "robot_agent/fast_loop.py": "8cb540ba6db9860ffbf7fb48c4b6eeaaa4a387bf0f19d3040318cf5b1c825f54",
+    "tests/test_fast_loop.py": "00b462c7247c032ae2c50ab8603e20d87efe63571e862fa1dc2b945e4ca9bfc8"
+  },
+  "baseline": "c581e5236fd986109a69d4c4939e4ade0ceb6e95",
+  "candidate": "stream detection",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 5,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 127.662,
+  "decision": "ACCEPT",
+  "validation": "Persistent four-sample window reuses frozen predicate, reports confirmation and rejects discontinuities",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "c581e5236fd986109a69d4c4939e4ade0ceb6e95",
+  "measurements": {}
+}

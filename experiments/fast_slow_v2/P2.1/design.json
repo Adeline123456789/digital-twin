@@ -1,0 +1,10 @@
+{
+  "round_id": "P2.1",
+  "category": "stream detection",
+  "hypothesis": "A persistent carry monitor can report loss on confirmation",
+  "criterion": "Frame-by-frame parity with offline diagnosis; measure processing and sample delay",
+  "started": "2026-11-18T10:12:29.796185+00:00",
+  "rollback_ref": "c581e5236fd986109a69d4c4939e4ade0ceb6e95",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

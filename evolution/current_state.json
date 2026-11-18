@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Frame-by-frame parity with offline diagnosis; measure processing and sample delay",
-  "updated_at": "2026-11-18T10:12:29.750141+00:00",
+  "next_grounded_work": "Five fast outcomes, bounded calls/time/tokens, no repeat on duplicate events",
+  "updated_at": "2026-11-18T10:14:37.458734+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -86,8 +86,8 @@
     "execution_boundary": "Same capture command log is exclusive. Current entry does not bind unique request or scene version and retains a legacy path without frozen validation.",
     "precompact": "Project hook loaded and trusted in desktop Codex; automatic-only matcher and return checked offline. No live compaction forced."
   },
-  "v2_round": "P1.2",
+  "v2_round": "P2.1",
   "v2_budget": "experiments/round_budget.json",
-  "v2_result": "experiments/fast_slow_v2/P1.2/RESULT.json",
-  "v2_rounds_used": 5
+  "v2_result": "experiments/fast_slow_v2/P2.1/RESULT.json",
+  "v2_rounds_used": 6
 }
