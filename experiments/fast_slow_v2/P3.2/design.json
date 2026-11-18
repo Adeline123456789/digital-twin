@@ -1,0 +1,10 @@
+{
+  "round_id": "P3.2",
+  "category": "retention counterfactual",
+  "hypothesis": "Independent archived controls can distinguish loss from downstream IK",
+  "criterion": "Reject tilt on frozen source; compare archived retention controls and raw native outcome",
+  "started": "2026-11-18T10:17:37.552232+00:00",
+  "rollback_ref": "0e3f1b4059888db436e038003ec63dcc832757d9",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}
