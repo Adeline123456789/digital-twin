@@ -1,6 +1,4 @@
-> 2026-11-17 当前状态：[有界批次5条仿真、2次真机失败](experiments/goal_aligned_runtime/batch2/REPORT.md)；[失败记忆已进入默认规划边界](experiments/goal_aligned_runtime/runtime_memory/REPORT.md)，46项离线检查通过，尚未证明稳定性或成本收益。续作先读 [current_state.json](evolution/current_state.json)，总体目标仍未完成。
-
-> 2026-11-17 continuation: [actual model study and real–sim pair](experiments/goal_aligned_runtime/BATCH_REPORT.md). Three new simulations (one success, two failures); the successful simulation has a verified real failure counterpart. Teacher guidance not promoted; default remains `llm`. Model budget consumed; goal active.
+> 当前工作仅限离线会话交接。续作先读 [检查点](evolution/current_state.json)。真机尝试、物理参数搜索和原研究目标已暂停。历史目标与进展见[归档索引](evolution/checkpoints/20261118_session_handoff_history.md)。
 
 > **2026-11-17历史归档：** 当时用户暂停研究。本批真机6/15条已执行，1成功、5失败（16.7%）；第4条误判已更正，第6条完整失败轨迹已归档。总体目标未完成，未接受物理校准或宣称成本下降。此状态覆盖下文历史进度，详见[当前采集报告](experiments/repeatability_cycle12/REPORT.md)和[逐条结果](experiments/repeatability_cycle12/episode_inventory.json)。本次只归档和发布，没有新增真机运动。
 

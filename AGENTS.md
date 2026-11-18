@@ -20,4 +20,10 @@ Formal episodes in `complete_sim/failed/` must match `20261111_sim_real05_failur
 
 ## Development continuation state
 
-On continuation, read `evolution/current_state.json` and check Git changes before reopening historical reports. Follow its evidence references for the current question; do not repeatedly ingest the whole mission, chat or report history. Update this small state after material results, preserving budget use and rejected candidates. It is a last-observed development checkpoint, not live hardware telemetry or movement permission; it is not injected into robot planning prompts.
+Start with Git status and `evolution/current_state.json`. Follow its active goal and the one relevant evidence pointer for the question. Archived checkpoints and prior protocol records retain historical facts and authorizations. The current checkpoint is the sole mutable handoff and is neither live telemetry nor permission to execute. Keep it out of robot planning prompts.
+
+Update the checkpoint after each effective result, including failures, tool evidence, and budget use. Keep raw capture files and logs at their existing locations. Use `scripts/real_episode_evidence.py` with the local cache path in the checkpoint for repeated queries on a stopped real capture. Read phase summaries and inspect only the frames needed to answer a question.
+
+For a bounded delegation, the main agent keeps ownership of scope, budget and state. Use one fresh child without inherited turns and give it only the relevant evidence and a bounded output request. The child has no hardware authorization or permission to change control configuration. Record the conclusion and its limits, then verify it against the cited files.
+
+The offline batch cannot issue real robot commands or search physical parameters. A later explicit approval and fresh onsite check would be required to resume hardware. Never automatically retry a saved request or a real action with an unconfirmed outcome. The project PreCompact hook concerns only conversation lifecycle. Review its exact definition in Codex before enabling it.

@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PreCompact": [
+      {
+        "matcher": "^auto$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '%s\\n' '{\"continue\":false,\"stopReason\":\"Automatic compaction stopped. Use manual compaction or continue from the project checkpoint in a fresh chat.\"}'",
+            "timeout": 5,
+            "statusMessage": "Stopping before automatic context compaction"
+          }
+        ]
+      }
+    ]
+  }
+}

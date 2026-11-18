@@ -1,73 +1,89 @@
 {
-  "schema_version": 2,
-  "updated_at": "2026-11-18T02:16:36.979852+00:00",
-  "purpose": "Last-observed development checkpoint; not live telemetry or robot prompt",
+  "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "mission": {
-    "path": "/home/midea/下载/codex_teacher_reliability_first.md",
-    "sha256": "4420a451272731b1b9635642386e5497add4f8c578f413b03c53060312626f45",
-    "goal": "Current strong model diagnoses and validates repairs for reliable right-arm plug insertion and complete real data collection.",
-    "suspended": [
-      "teacher-student comparisons",
-      "student exploration",
-      "distillation/training",
-      "cross-task generalization",
-      "left-arm hardware"
-    ],
-    "automatic_teaching_after_simulation": false
+  "scope": "Offline session handoff, evidence reuse, and one bounded delegation",
+  "status": "OFFLINE_HANDOFF_CHECKED",
+  "paused": [
+    "real robot attempts",
+    "physical parameter search",
+    "original robot goal",
+    "training and teacher/student comparisons"
+  ],
+  "stop_condition": "Stop at this checkpoint after the three offline checks and remote verification. An unfinished action or saved request never resumes automatically.",
+  "software": {
+    "branch": "codex/teacher-reliability-20261117",
+    "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
+    "live_candidate": null,
+    "last_executed_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
+    "last_executed_versions": "experiments/grasp_six_rounds/round_03/vertical_pick_socket_reorient/actual_versions.json"
   },
-  "branch": "codex/teacher-reliability-20261117",
-  "status": "TASK_NOT_ACHIEVED_HARDWARE_STOPPED",
-  "history_checkpoint": "evolution/checkpoints/20261117_before_compact_stage_state.json",
-  "continuation": {
-    "id": "grasp_six_rounds_20261117",
-    "status": "AUTHORIZED_ACTIVE",
-    "protocol": "experiments/grasp_six_rounds/protocol.json",
-    "goal_file": "evolution/ACTIVE_GOAL.md",
-    "authorization_source": "Latest user requests six full rounds plus four extra correction rounds per phase; reset and hands clear confirmed for next run",
-    "old_budget_stop_superseded": true,
-    "new_model_subcalls": 0,
-    "outer_session_cost": null
+  "hardware": {
+    "execution_allowed": false,
+    "live_telemetry": false,
+    "last_observed_utc": "2026-11-18T02:12:35.703071+00:00",
+    "last_observation": "Recorded shutdown check found the six right arm motors and gripper disabled. User later reported reset.",
+    "last_observation_source": "experiments/grasp_six_rounds/round_03/cost_shutdown.json",
+    "historical_authorization": "evolution/checkpoints/20261118_session_handoff_history.md",
+    "resume_requires": "A new explicit user authorization, fresh onsite confirmation and the existing safety and reference checks"
   },
-  "native_goal_api_limitation": "RESOLVED: user cleared old goal and explicitly requested recreation; new goal created without resetting experiment counts",
-  "six_round_continuation": {
-    "status": "TASK_NOT_ACHIEVED_HARDWARE_STOPPED",
-    "protocol": "experiments/grasp_six_rounds/protocol.json",
-    "main_rounds_real_completed": 3,
-    "remaining_main_rounds": 3,
-    "extra_corrections_used": {
+  "confirmed": [
+    "Three full-task real trials in this batch failed. Two historical successes are comparison references.",
+    "Round 3 passed frozen simulation, retained the plug during lift and carry, then stopped during insertion with no release. The archived failure capture has 1717 frames per camera.",
+    "The real gripper encoder read 40.2 mm across lift, and the yellow feature moved from 307 to 324 pixels during insertion. These observations cannot establish 3D alignment."
+  ],
+  "root_cause": {
+    "status": "UNKNOWN",
+    "unresolved": "The available evidence does not resolve initial in-hand plug angle versus socket contact or positional error. No verified real repair."
+  },
+  "historical_references": {
+    "same_arm_success_comparisons": "experiments/grasp_six_rounds/round_03/prior_success_comparison.json",
+    "withdrawn_before_enable": "experiments/grasp_six_rounds/round_03/withdrawn_vertical_candidate_plan.json"
+  },
+  "do_not_retry_without_new_evidence": [
+    {
+      "candidate": "Round 3 frozen vertical pickup, reorientation and insertion",
+      "reason": "Real insertion aborted",
+      "evidence": "experiments/grasp_six_rounds/round_03/real/result.json"
+    },
+    {
+      "candidate": "18 mm horizontal grasp with object removed",
+      "reason": "Real lift changed closure by 8.4 mm. The restored black object also intersects that approach in the model.",
+      "evidence": "experiments/grasp_six_rounds/grasp_correction_04/REPORT.md"
+    }
+  ],
+  "evidence": {
+    "latest_result": "experiments/grasp_six_rounds/round_03/real/result.json",
+    "phase_summary": "experiments/grasp_six_rounds/round_03/phase_evidence.json",
+    "failure_memory": "memory/negative_experiences/NE021.json",
+    "raw_capture_relative_to_dataset": "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task",
+    "local_cache": ".local/grasp_six_rounds/cache",
+    "historical_protocol": "experiments/grasp_six_rounds/protocol.json",
+    "offline_check_results": "experiments/session_handoff/results.json"
+  },
+  "budget": {
+    "historical_main_rounds_used": 3,
+    "historical_main_rounds_planned": 6,
+    "historical_extra_rounds_used": {
       "grasp": 4,
       "transport": 4,
       "insert": 1
     },
-    "hardware_resume_authorized": true,
-    "reset": "User reset after main3; black remains in scene",
-    "active_stage_scope": "Archive failure only; no further hardware attempt planned",
-    "active_capture": "self_evolution/grasp_six_rounds_20261117/real_000003_vertical_reorient",
-    "runtime_sessions": {},
-    "current_candidate": null,
-    "latest_result": "experiments/grasp_six_rounds/round_03/real/result.json"
+    "historical_extra_rounds_limit_each": 4,
+    "frozen_real_acceptance": "5/5 was never reached. The earlier goal and its trial slots remain paused.",
+    "this_batch_real_attempts": 0,
+    "this_batch_physical_parameter_searches": 0,
+    "this_batch_subagent_limit": 1,
+    "this_batch_subagents_used": 1,
+    "monetary_cost": null,
+    "additional_experiment_models": 0
   },
-  "current_findings": [
-    "Task not achieved: three current full-task attempts failed; two historical successes are not a stable collection procedure.",
-    "Main3 held through lift/transport; first observed failure during insertion. Exact pose/contact cause remains unknown, no verified repair.",
-    "Black object retained;90deg wrist turn does not remove in-hand camera occlusion; executed air turn only aligned socket yaw (~6deg).",
-    "Native failure Episode valid:1717frames per camera; commanded57.26seconds; independent disabled check passed."
-  ],
-  "evidence": {
-    "latest_physical": "experiments/grasp_six_rounds/round_03/real/result.json",
-    "latest_full_task": "experiments/grasp_six_rounds/round_03/real/result.json",
-    "selected_memory": "memory/negative_experiences/NE021.json",
-    "handoff_screen": "experiments/grasp_six_rounds/grasp_correction_02/handoff_offline.json"
-  },
-  "next_unresolved": [
-    "No further live trial scheduled. A materially supported alignment/grasp correction is missing; do not repeat the same unresolved approach.",
-    "Stable5/5 real collection, remaining three main rounds, and task acceptance are not achieved."
-  ],
-  "last_hardware_observation": {
-    "state": "All six motors and gripper disabled; controller/capture exited; user subsequently reset plug",
-    "source": "experiments/grasp_six_rounds/round_03/cost_shutdown.json",
-    "live_telemetry": false
-  },
-  "publication": "Publish this completed failure node and verify remote; goal remains unmet, not marked complete"
+  "next_grounded_work": "After this offline batch, leave the robot goal paused. Any later diagnostic request can start from the cached round 3 insert window and same-arm success references. Before any new execution proposal, require a reviewed request identity, current scene binding and exact validated reference.",
+  "updated_at": "2026-11-18T03:36:06.866819+00:00",
+  "offline_checks": {
+    "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
+    "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
+    "delegation": "PASS: one read-only child and parent-verified frame hash",
+    "execution_boundary": "Same capture command log is exclusive. Current entry does not bind unique request or scene version and retains a legacy path without frozen validation.",
+    "precompact": "Project hook loaded and trusted in desktop Codex; automatic-only matcher and return checked offline. No live compaction forced."
+  }
 }

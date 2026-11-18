@@ -1,0 +1,251 @@
+{
+  "batch": "20261118_offline_session_handoff",
+  "based_on": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
+  "fresh_session": {
+    "status": "PASS",
+    "mode": "Native child session with fork_turns=none; same call used for the bounded delegation check",
+    "bytes_by_file": {
+      "evolution/current_state.json": 4103,
+      "evolution/ACTIVE_GOAL.md": 1845,
+      "memory/negative_experiences/NE021.json": 5963,
+      "experiments/grasp_six_rounds/round_03/real/result.json": 4508
+    },
+    "bytes_read": 16419,
+    "file_read_seconds": 5.3e-05,
+    "command_internal_seconds": 0.02602,
+    "checkpoint_sha256_at_read": "be908e0962588fa84aa8ef173dc82899cbcebc1573f10303e166955a11b940c9",
+    "recovered_offline_scope": true,
+    "recovered_no_automatic_replay": true,
+    "recovered_failing_candidates": true,
+    "root_cause_unknown": true
+  },
+  "same_question_cache": {
+    "status": "PASS",
+    "query": "What happened during round 3 insertion?",
+    "data_relative_path": "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task",
+    "read_sizes_bytes": {
+      "commanded_probe.csv": 1145086,
+      "execution_report.json": 2904,
+      "observed_execution_report.json": 4731,
+      "external/camera.json": 379682,
+      "right_wrist/camera.json": 379198
+    },
+    "cold_raw_metadata_parsed_bytes": 1911601,
+    "cold_cache": {
+      "key": "2bec5695fee667903989a5acda66996e5cb600d4eca22856d895873be2ba2232",
+      "hit": false,
+      "bytes_hashed": 1919705,
+      "wall_seconds": 0.03033088007941842
+    },
+    "warm_cache": {
+      "key": "2bec5695fee667903989a5acda66996e5cb600d4eca22856d895873be2ba2232",
+      "hit": true,
+      "bytes_hashed": 0,
+      "wall_seconds": 0.0005929700564593077
+    },
+    "identical_value": true,
+    "wall_seconds": {
+      "cold": 0.16,
+      "warm": 0.09
+    },
+    "cold_compute_timing_seconds": {
+      "input_read_seconds": 0.016200806014239788,
+      "analysis_seconds": 0.0018775730859488249
+    },
+    "warm_raw_metadata_parsed_bytes": 0,
+    "raw_image_or_video_bytes_read": 0,
+    "model_calls": 0,
+    "model_seconds": 0,
+    "recorded_stop": {
+      "kind": "NATIVE_INSERTION_STOP",
+      "phase": "insert",
+      "phase_source": "Trusted event-image time matched to command phase",
+      "image": "right_wrist/1104.jpg",
+      "image_window": [
+        1089,
+        1119
+      ],
+      "reason": "yellow housing moved in gripper or disappeared",
+      "source": "Original controller event; not an inferred earliest physical onset"
+    },
+    "persistent_cache": {
+      "relative_path": ".local/grasp_six_rounds/cache",
+      "first_hit": false,
+      "repeated_hit": true,
+      "bytes_hashed": [
+        1911601,
+        0
+      ],
+      "cache_seconds": [
+        0.7819819059222937,
+        0.0003593919100239873
+      ],
+      "cli_wall_seconds": [
+        0.86,
+        0.12
+      ],
+      "same_result": true
+    },
+    "input_and_analyzer_sha256": {
+      "analyzer": "ef3b2357056f41a61f38f20ed859ef7de553974e7000c7fccb58b9649949f074",
+      "clock": "9ee13fc8c28d934217a55a82192bd650b8304c0bbdb25437ec3a0a6e6a53e595",
+      "commands": "010b02a7caa0dd44b4cd726b971a1b1c7b67b3ebb5620ce1a488fafad9c0db5a",
+      "execution": "9a71e660000c14e77e09081e3ca3d16590790e4d0741a20e2a9300f6ee14c98c",
+      "external": "848ceda3ba4900eedcbb83de3e0e518da3c8fe375310ac31231b6f275a24f93d",
+      "review": "a488e4b10a405d13cd10bc753f555f08dd58fc5b566cad398abd67d94f35df79",
+      "right_wrist": "a483d7de4b207b9344713298ddc6af46c3055240113e8a36e45aa8b490398df8"
+    },
+    "replayed_analyzer_invocations": 4
+  },
+  "bounded_delegation": {
+    "status": "PASS",
+    "child_tasks_dispatched": 1,
+    "inherited_parent_turns": 0,
+    "task_limit": "One read-only evidence task; no hardware authorization, default configuration changes, redelegation or other model use",
+    "returned_claim": "Round3 frozen sim passed; real insertion stopped at wrist frame1104 without releasing;1717 frames per camera; unknown root cause.",
+    "evidence_source": "experiments/grasp_six_rounds/round_03/real/result.json",
+    "verified_frame": {
+      "path": "right_wrist/1104.jpg",
+      "sha256": "a1de5a36089c329e7b28f4624ff9d4641bae821afc86775675198598e89d5eb6"
+    },
+    "parent_frame_hash_read_bytes": 41868,
+    "parent_frame_hash_seconds": 4.709803033620119e-05,
+    "permission_limit": "Delegation scope and current session sandbox. No separate tool ACL was implemented."
+  },
+  "execution_boundary": {
+    "scope": "Original archived entrypoint executed in-process with stub replay_connector.Hardware; mock connect raises before enabling, stub cv2, CAN and Piper imports blocked. Only temporary capture files were written.",
+    "archived_entry": "self_evolution/grasp_six_rounds_20261117/controller_vertical_reorient/continue_plug_task.py",
+    "entry_sha256": "4c6e4d8d322d3e1a6570ee15c15e4b1a212b197cd57773aef033f648efc16c5d",
+    "cases": [
+      {
+        "case": "dry_run",
+        "wall_seconds": 0.03654608305078,
+        "mock_calls": [],
+        "connect_reached": false,
+        "reported_hardware_commands": 0
+      },
+      {
+        "case": "same_capture",
+        "wall_seconds": 0.013503276975825429,
+        "mock_calls": [
+          "mock_constructor"
+        ],
+        "connect_reached": false,
+        "error_type": "FileExistsError",
+        "error": "Existing exclusive command log"
+      },
+      {
+        "case": "repeat_same_reference_fresh_capture",
+        "wall_seconds": 0.1621339829871431,
+        "mock_calls": [
+          "mock_constructor",
+          "mock_connect",
+          "mock_shutdown"
+        ],
+        "connect_reached": true,
+        "error_type": "MockBoundary",
+        "error": "Reached simulated hardware boundary"
+      },
+      {
+        "case": "new_capture_with_previous_start_marker",
+        "wall_seconds": 0.16443321201950312,
+        "mock_calls": [
+          "mock_constructor",
+          "mock_connect",
+          "mock_shutdown"
+        ],
+        "connect_reached": true,
+        "error_type": "MockBoundary",
+        "error": "Reached simulated hardware boundary"
+      },
+      {
+        "case": "stale_scene_file",
+        "wall_seconds": 0.16349017806351185,
+        "mock_calls": [
+          "mock_constructor",
+          "mock_connect",
+          "mock_shutdown"
+        ],
+        "connect_reached": true,
+        "error_type": "MockBoundary",
+        "error": "Reached simulated hardware boundary"
+      },
+      {
+        "case": "explicit_failed_validation",
+        "wall_seconds": 0.014552361913956702,
+        "mock_calls": [],
+        "connect_reached": false,
+        "error_type": "ValueError",
+        "error": "Adapted reference has not passed physical simulation"
+      },
+      {
+        "case": "legacy_without_validated_reference",
+        "wall_seconds": 0.170122712966986,
+        "mock_calls": [
+          "mock_constructor",
+          "mock_connect",
+          "mock_shutdown"
+        ],
+        "connect_reached": true,
+        "error_type": "MockBoundary",
+        "error": "Reached simulated hardware boundary"
+      }
+    ],
+    "new_hardware_commands": 0,
+    "model_calls": 0,
+    "changes_to_controller": 0
+  },
+  "precompact": {
+    "config_sha256": "6ed8181c18feb2a923d4e41fec3537871a67656d51022f2958d4cadd022857dc",
+    "auto_matches": true,
+    "manual_matches": false,
+    "command_returns_continue_false": true,
+    "command_stdout_only": true,
+    "wall_seconds": 0.0017722219927236438,
+    "model_calls": 0,
+    "scope": "Exact installed command and regex tested offline. Trust and production trigger are separate.",
+    "desktop_version": "0.166.0-alpha.5.1",
+    "cli_version": "0.162.1",
+    "desktop_metadata": {
+      "eventName": "preCompact",
+      "matcher": "^auto$",
+      "enabled": true,
+      "trustStatus": "trusted",
+      "source": "project",
+      "currentHash": "sha256:fca52ec6ce828d5eabfebee5adad658d138b154763ac2defce1d99d6fa7d6a27"
+    },
+    "desktop_hook_errors": 0,
+    "desktop_hook_warnings": 0,
+    "existing_user_hook_event_counts": {
+      "preToolUse": 1,
+      "sessionStart": 1,
+      "subagentStart": 1
+    },
+    "effective_compaction_overrides": {
+      "model_context_window": null,
+      "model_auto_compact_token_limit": null,
+      "model_auto_compact_token_limit_scope": null,
+      "model_post_turn_compact_threshold_percent": null
+    },
+    "test_forced_live_compaction": false
+  },
+  "costs": {
+    "new_robot_commands": 0,
+    "new_real_attempts": 0,
+    "new_simulation_steps": 0,
+    "physical_parameter_searches": 0,
+    "deterministic_test_model_requests": 0,
+    "delegated_agent_tasks": 1,
+    "parent_model_provider_requests": null,
+    "child_model_provider_requests": null,
+    "parent_model_inference_seconds": null,
+    "child_model_inference_seconds": null,
+    "monetary_cost": null,
+    "accounting_limit": "No per-request provider/inference timing was exposed by the collaboration tool. Tool timing is recorded separately and does not estimate model compute."
+  },
+  "regressions": {
+    "trajectory_contract_passed": 3,
+    "real_episode_evidence_passed": 1
+  },
+  "conclusion": "Offline session acceptance passed. Original physical insertion result remains failed and acceptance has not been reached."
+}
