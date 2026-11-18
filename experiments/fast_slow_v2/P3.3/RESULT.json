@@ -1,0 +1,32 @@
+{
+  "round_id": "P3.3",
+  "hypothesis": "An incomplete or regressing comparison cannot promote a candidate",
+  "changed_files": [
+    "robot_agent/gate.py",
+    "tests/test_candidate_gate.py",
+    "experiments/fast_slow_v2/P3.3/clock.json",
+    "experiments/fast_slow_v2/P3.3/tilt.json"
+  ],
+  "source_hash": {
+    "robot_agent/gate.py": "33b4a2a3fccd7b397190e17920d86ade535b613e85ac55130348546be4a97665",
+    "tests/test_candidate_gate.py": "be4caeecf6e8eb3b46eaa6d15bc493a2966b81bd327141baede6f8427f565b0b",
+    "experiments/fast_slow_v2/P3.3/clock.json": "148ceb5f6eb7f3a52a91bd6cc7164b54d99c13230342defb81dd5269112a4b3b",
+    "experiments/fast_slow_v2/P3.3/tilt.json": "d1f94332240d113fd4edf4f126cf830d30b5ec4bc6254558626fd29eddbf5676"
+  },
+  "baseline": "83f51a39b350e7575f18541f5c81897f2b4c823a",
+  "candidate": "candidate gate",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 1,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 86.045,
+  "decision": "ACCEPT",
+  "validation": "Bound two proposals to source, previous active bytes, implementation, validation code and preset held-out reports; stale and mixed cohorts refused",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "83f51a39b350e7575f18541f5c81897f2b4c823a",
+  "measurements": {}
+}

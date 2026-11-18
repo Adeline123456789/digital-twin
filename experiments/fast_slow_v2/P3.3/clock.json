@@ -1,0 +1,40 @@
+{
+  "category": "observation_adapter",
+  "mechanism": "Receipt and simulation clocks differ",
+  "prediction": "Detect 200 ms single-channel offset; preserve valid inputs",
+  "counterexample": "unmodified same-source trajectory",
+  "scope": {
+    "source_profile": "original",
+    "target_index": 3,
+    "native_source_hash": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+    "purpose": "detect_time_mismatch_in_archived_simulation"
+  },
+  "previous_active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a",
+  "implementation": {
+    "robot_agent/timeline.py": "ba7af9fde8cca2fbf133219aa21badf6e14e5b87105989c238739d644cc7b6cb",
+    "robot_agent/gate.py": "33b4a2a3fccd7b397190e17920d86ade535b613e85ac55130348546be4a97665"
+  },
+  "development": [
+    {
+      "path": "experiments/research_stage3/20261112T073436Z_43d3e2c2/result.json",
+      "sha256": "9f462d7be3b8a8ec6b6082d15699756be5de034bb6589485d5716050b3aa78c0"
+    }
+  ],
+  "heldout": [
+    {
+      "path": "experiments/research_stage4/20261112T092311Z_901189c4/result.json",
+      "sha256": "a46d8426306c33c9b0038751b6246365362a90b5974c067af3c6b57c501c75b6"
+    },
+    {
+      "path": "experiments/research_stage4/20261112T093157Z_13f12a06/result.json",
+      "sha256": "b52ea7b11d8a31a4944356b4a9e7c2076856c987b8d2e88bdc2986d455348af3"
+    }
+  ],
+  "rollback_ref": "83f51a39b350e7575f18541f5c81897f2b4c823a",
+  "invariants": {
+    "scripts/learn.py": "dd3f6140f9fbae0a7eff0a884d6068ce62ffcbb5ad95fce8eea0f6398ae0f093",
+    "scripts/finalize_recordings.py": "917eff68c8bfcf3c19aec23bba136192f6433c887c0dc1807dedce60bb05737a",
+    "scripts/alignment_skill.py": "468bb02a736993f3e0d36be8e25514d04e606f38a84fb01f722feec843314a77",
+    "scripts/diagnose_retention.py": "bcb5aa7020c5d9a4cbbad1dfdd33f84c8b2d551b6f4316dccf491f62a0f629bd"
+  }
+}

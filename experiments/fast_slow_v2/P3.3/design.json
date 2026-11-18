@@ -1,0 +1,10 @@
+{
+  "round_id": "P3.3",
+  "category": "candidate gate",
+  "hypothesis": "An incomplete or regressing comparison cannot promote a candidate",
+  "criterion": "Prebound baseline, split, source and invariants; reject or defer with active bytes identical",
+  "started": "2026-11-18T10:17:39.668791+00:00",
+  "rollback_ref": "83f51a39b350e7575f18541f5c81897f2b4c823a",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}
