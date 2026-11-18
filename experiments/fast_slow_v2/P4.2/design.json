@@ -1,0 +1,10 @@
+{
+  "round_id": "P4.2",
+  "category": "paired replay",
+  "hypothesis": "Offline fastslow preserves frozen outcomes versus same-input legacy",
+  "criterion": "Paired A/B per source, portable tests, independent review, report limits",
+  "started": "2026-11-18T10:21:11.267414+00:00",
+  "rollback_ref": "fa53dd8c5ae5ac265237695a697704c3b071894b",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

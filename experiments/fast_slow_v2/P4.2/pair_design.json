@@ -1,0 +1,15 @@
+{
+  "order": [
+    "legacy",
+    "fastslow"
+  ],
+  "current_native": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+  "target": 3,
+  "source": "original dual",
+  "holder_shift_mm": 0,
+  "offset_mm": 0,
+  "physical_settings": "native defaults, existing complete Episode checks",
+  "factor": "diagnostic consumer on independently collected matching inputs",
+  "limit": 2,
+  "stop": "Stop on recording or infrastructure failure; no retry; keep each native outcome. N=1 per arm cannot establish stability."
+}
