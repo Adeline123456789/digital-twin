@@ -1,0 +1,42 @@
+{
+  "round_id": "P4.1",
+  "hypothesis": "Native contact constraint address distinguishes inactive margins from force-bearing contact",
+  "changed_files": [
+    "robot_agent/contact_probe.py",
+    "scripts/triage_episode.py",
+    "tests/test_fake_grasp.py"
+  ],
+  "source_hash": {
+    "robot_agent/contact_probe.py": "914584a42f23f59086314e32a4b287f5a34dbff4ab603c101263297781813a1b",
+    "scripts/triage_episode.py": "637802916d4d01fb060c2078efdc4820b3ab7eefd49721e47161d5aec4dba357",
+    "tests/test_fake_grasp.py": "81344eb3093df42e23685072bb23853ec7d4a1eec23e351051cedbc6f84db707"
+  },
+  "baseline": "2b0871fb89c373bd3c69407f9c482314a08fb4b7",
+  "candidate": "contact probe",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 3,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 124.1,
+  "decision": "ACCEPT_FIXTURE_ONLY",
+  "validation": "Native fixture separated active from inactive contacts; frame 515 archived XML failed inertia validation, returned DEFER_UNKNOWN without changing model",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "2b0871fb89c373bd3c69407f9c482314a08fb4b7",
+  "measurements": {
+    "frame": 515,
+    "state_source": "UNAVAILABLE",
+    "events": [],
+    "attachment_flags": null,
+    "consistency": "DEFER_UNKNOWN",
+    "reason": "Error: inertia must satisfy A + B >= C; use 'balanceinertia' to fix",
+    "model_ref": {
+      "root": "dataset",
+      "path": "complete_sim/failed/20261112T090023Z_1341a28d/proprio_stats/model.xml",
+      "sha256": "cea74af9cee12973d00516309f3347ee4d9c113488dda28653d76f4215bf6420"
+    }
+  }
+}

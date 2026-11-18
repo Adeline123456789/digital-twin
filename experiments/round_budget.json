@@ -41,7 +41,7 @@
     "P4": {
       "sim_cap": 4,
       "round_cap": 2,
-      "used_rounds": 0,
+      "used_rounds": 1,
       "sim_used": 0
     }
   },
@@ -143,11 +143,12 @@
     "P3.1",
     "P3.2",
     "P3.3",
-    "P3.4"
+    "P3.4",
+    "P4.1"
   ],
   "refused": [
     "P3.2"
   ],
-  "remaining_rounds": 2,
+  "remaining_rounds": 1,
   "remaining_simulations": 24
 }

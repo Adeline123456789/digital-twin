@@ -18,3 +18,22 @@ def test_disconnected_follow_and_direct_pose_edits_reject():
     assert check_grasp([],samples)=='REJECT_AND_ROLLBACK'
     assert check_grasp([],[],direct_pose_write=True)=='REJECT_AND_ROLLBACK'
     assert check_grasp([],samples[:1])=='DEFER_UNKNOWN'
+
+
+def test_native_active_inactive_gap_adapter():
+    import mujoco
+    from dataclasses import replace
+    from robot_agent.contact_probe import contact_events,inspect_state
+    from test_observation_contract import OBS
+    model=mujoco.MjModel.from_xml_string('<mujoco><worldbody><geom name="floor" type="plane" size="1 1 .1" margin=".02" gap=".02"/><body name="task/yellow_plug" pos="0 0 .11"><freejoint/><geom name="plug" size=".1" margin=".02" gap=".02"/></body></worldbody></mujoco>')
+    data=mujoco.MjData(model)
+    o=replace(OBS,frame_id='world',units='m',sensor_provenance='sim.privileged_contact')
+    for height,expected in [(.11,False),(.099,True)]:
+        data.qpos[2]=height
+        mujoco.mj_forward(model,data)
+        state=inspect_state(model,data,surfaces=False)
+        assert state['contacts'][0]['solver_active'] is expected
+        events=contact_events(o,state)
+        assert any(e.kind=='CONTACT_INACTIVE' for e in events) is (not expected)
+        assert any(e.kind=='COLLISION_GAP' for e in events)
+        assert all(e.severity=='info' for e in events)

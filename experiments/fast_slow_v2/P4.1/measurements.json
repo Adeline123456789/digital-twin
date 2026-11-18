@@ -1,0 +1,13 @@
+{
+  "frame": 515,
+  "state_source": "UNAVAILABLE",
+  "events": [],
+  "attachment_flags": null,
+  "consistency": "DEFER_UNKNOWN",
+  "reason": "Error: inertia must satisfy A + B >= C; use 'balanceinertia' to fix",
+  "model_ref": {
+    "root": "dataset",
+    "path": "complete_sim/failed/20261112T090023Z_1341a28d/proprio_stats/model.xml",
+    "sha256": "cea74af9cee12973d00516309f3347ee4d9c113488dda28653d76f4215bf6420"
+  }
+}

@@ -59,14 +59,18 @@ def replay(path, legacy=False, slow=None):
                 diagnostic_wall_seconds=time.perf_counter()-started,evidence_gate='REPLAY_ONLY')
 
 
-def entry(episode,legacy=False,use_local_llm=False):
+def entry(episode,legacy=False,use_local_llm=False,contact_frame=None):
     path=Path(episode)
     if not path.is_file():
         if path.name!=episode:
             raise ValueError('Expected a repository result or an episode ID')
         path,=(ROOT/'experiments').glob('*/'+episode+'/result.json')
     from robot_agent.local_slow import local_diagnosis
-    print(json.dumps(replay(path,legacy,local_diagnosis if use_local_llm else None),indent=2,allow_nan=False))
+    result=replay(path,legacy,local_diagnosis if use_local_llm else None)
+    if contact_frame is not None:
+        from robot_agent.contact_probe import archived_probe
+        result['contact_probe']=archived_probe(result['episode'],contact_frame)
+    print(json.dumps(result,indent=2,allow_nan=False))
 
 
 if __name__=='__main__':
@@ -74,9 +78,10 @@ if __name__=='__main__':
     p.add_argument('episode')
     p.add_argument('--offline',action='store_true',help='Explicitly select recorded data (the only mode)')
     p.add_argument('--local-only',action='store_true',help='Results are always printed locally')
+    p.add_argument('--contact-frame',type=int,help='Inspect one saved simulation contact frame')
     p.add_argument('--local-llm',action='store_true',help='Allow one bounded diagnosis via localhost:8080')
     mode=p.add_mutually_exclusive_group()
     mode.add_argument('--legacy',action='store_true')
     mode.add_argument('--fastslow',action='store_true')
     a=p.parse_args()
-    entry(a.episode,a.legacy,a.local_llm)
+    entry(a.episode,a.legacy,a.local_llm,a.contact_frame)

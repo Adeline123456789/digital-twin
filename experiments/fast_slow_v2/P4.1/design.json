@@ -1,0 +1,10 @@
+{
+  "round_id": "P4.1",
+  "category": "contact probe",
+  "hypothesis": "Native contact constraint address distinguishes inactive margins from force-bearing contact",
+  "criterion": "Compare gap and active state on independent MuJoCo contact fixture",
+  "started": "2026-11-18T10:19:07.094603+00:00",
+  "rollback_ref": "2b0871fb89c373bd3c69407f9c482314a08fb4b7",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}
