@@ -1,0 +1,42 @@
+{
+  "reference_sha256": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
+  "result": "success",
+  "task_success": true,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "100Hz frozen target commands; original numerical integrator, contact bounds and task success detector",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "upright_stage": {
+    "passed": true,
+    "max_tilt_deg": 0.2057212945200548,
+    "limit_deg": 1.0,
+    "phases": [
+      "lift",
+      "reorient",
+      "transport"
+    ],
+    "scope": "Simulated absolute plug axis during lift/reorient/transport; fold excluded; not a real angle measurement"
+  },
+  "max_penetration_m": 2.928176188616483e-05,
+  "simulated_seconds": 56.143489583616784,
+  "observation_frames": 1684,
+  "applied_reference_steps": 5615,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 121.94017565494869,
+  "prediction_sha256": "f8cd64e92a12112719c5ccece12139dc08f94c0335a85ea5d5b5ffdefda7f26a"
+}

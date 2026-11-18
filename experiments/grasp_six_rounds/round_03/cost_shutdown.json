@@ -1,0 +1,25 @@
+{
+  "command_log_span_seconds": 57.25994464207906,
+  "diagnostic_pause_seconds": 0,
+  "command_effort_nm_counts": {
+    "0.3": 1866,
+    "1.0": 3172
+  },
+  "motors_enabled": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "gripper_enabled": false,
+  "err_code": 0,
+  "checked_at_utc": "2026-11-18T02:12:35.703071+00:00",
+  "check_sha256": "fe2a6a7d014bf6e211d01537fc8a4d52f501c7025dc07c587857cb38769053fa",
+  "frozen_validation_seconds": 121.94017565494869,
+  "source_simulation_wall_seconds": null,
+  "child_model_calls": 0,
+  "monetary_cost": null,
+  "orchestration_tokens": null
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "Kinematic rendering of fixed in-hand transform before/after world-Z90deg turn; not physical grasp verification",
+  "source_state_sha256": "814bc71b49af14b126315f150553c83cefb16af0faecde435d7462e839c1d4cc",
+  "camera_attached_to": "right link6",
+  "object_and_gripper_rotate_together": true,
+  "hardware_commands": 0,
+  "turn_deg": -90,
+  "observation": "Gray holder rotates in wrist image; occluded in-hand housing view remains essentially unchanged",
+  "socket_required_yaw_change_deg": -5.80722770521054,
+  "images": [
+    {
+      "local_reference": ".local/grasp_six_rounds/held_turn_view/before.png",
+      "sha256": "bf6bf2b634d2b0fea63e2988dac57bbb1ce1f6b791a2fc71dad95170da0902af"
+    },
+    {
+      "local_reference": ".local/grasp_six_rounds/held_turn_view/after_minus90deg.png",
+      "sha256": "fad27d703d904584c9db8b1427dfd7abab357ef82a63f1ac49296b9255f2c0b3"
+    },
+    {
+      "local_reference": ".local/grasp_six_rounds/held_turn_view/comparison.jpg",
+      "sha256": "4510d33888c03b43a5b4a5f1c4893ea323772566ddd03258b78dcaf605ed1696"
+    }
+  ]
+}

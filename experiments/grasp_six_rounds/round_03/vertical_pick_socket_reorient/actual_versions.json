@@ -1,0 +1,19 @@
+{
+  "status": "EXECUTED_REAL_FAILURE",
+  "entry": "self_evolution/grasp_six_rounds_20261117/controller_vertical_reorient/continue_plug_task.py",
+  "entry_sha256": "4c6e4d8d322d3e1a6570ee15c15e4b1a212b197cd57773aef033f648efc16c5d",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "helper_sha256": "0478327ba03ccbf7715fbafd19e1c4d2ce554b7e6a162793b434b1f2a8618b6f",
+  "solver": "self_evolution/grasp_six_rounds_20261117/vertical_reorient_solver/try_plug_pick_sim.py",
+  "solver_sha256": "146934520588d4529e595a746e75a334c7394b6e5d00c3b4ab31cf178fa371ec",
+  "source_trajectory_sha256": "524e6d41676f779c57e8c24312b18fdc9447efb3d8f0a24a0390b07b61c4aec3",
+  "validation_code_sha256": "c51854edd265eb425f732c46ecd6541526e83e5d5c4cad28bf8c9c33949565b9",
+  "effort_command_nm": {
+    "grasp": 0.3,
+    "preload_onward": 1.0
+  },
+  "rollback": "Previous source and controllers untouched; no default-hardware entry replaced. Match live scene and validate reference before any reuse.",
+  "reference_id": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
+  "raw_reference": "self_evolution/grasp_six_rounds_20261117/real_000003_vertical_reorient",
+  "real_result": "experiments/grasp_six_rounds/round_03/real/result.json"
+}

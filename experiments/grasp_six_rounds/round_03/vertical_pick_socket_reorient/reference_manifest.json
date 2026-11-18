@@ -1,0 +1,50 @@
+{
+  "trajectory_id": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
+  "source_episode": null,
+  "source_trajectory_sha256": "524e6d41676f779c57e8c24312b18fdc9447efb3d8f0a24a0390b07b61c4aec3",
+  "source_initial_state_sha256": "4572be2cb52b2278fb457af20c727d21c2c5433bdf95a5d3e20c1a6b6cabfd5c",
+  "adapter_sha256": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+  "feature_names": [
+    "right.joint1",
+    "right.joint2",
+    "right.joint3",
+    "right.joint4",
+    "right.joint5",
+    "right.joint6",
+    "right.gripper_width"
+  ],
+  "units": [
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "width_mm / 95"
+  ],
+  "command_provenance": "Frozen simulation actions, not measured simulated q",
+  "adaptation": "Original black-present scene; yaw90 vertical grasp,height22mm,1.5s stationary preload; air turn to socket-required orientation (~6deg, not90deg);vertical carry at23mm gap;full insertion/release/retreat/fold",
+  "source_time_origin_s": 0.03333333333333329,
+  "duration_s": 56.13333333361708,
+  "steps": 5615,
+  "first_target": [
+    -0.2800008084449626,
+    7.38022112206748e-06,
+    -5.191020885624012e-06,
+    0.3829999701896259,
+    23.477003380584378,
+    0.5499916304803947,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.631578947368421
+  ],
+  "task_scope": "full_pick_insert",
+  "real_execution": "NOT_EXECUTED"
+}

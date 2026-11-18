@@ -1,0 +1,12 @@
+{
+  "status": "REAL_INSERTION_FAILURE",
+  "scope": "Direct main round3 full task, no additional independent stage round",
+  "scene": "Original black-present scene; user reset confirmed",
+  "grasp": "Known yaw90 vertical approach,22mm height;1.5s stationary preload before lifting",
+  "reorient": "Above holder, align plug to socket-required orientation (~-6deg). Not an unconditional90deg turn.",
+  "view_limit": "Wrist camera moves with held object; rotating wrist does not change in-hand occlusion",
+  "change_reason": "Avoid black obstacle during pickup; settle commanded holding effort before lift; retain upright transport and original physical checks",
+  "real_started": true,
+  "previous_horizontal_attempt": "experiments/grasp_six_rounds/grasp_correction_04/real_result.json",
+  "hardware_continuation": "Stopped; no further live attempts planned from this failure"
+}

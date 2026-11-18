@@ -1,0 +1,227 @@
+{
+  "candidates": [
+    {
+      "source": "self_evolution/grasp_six_rounds_20261117/black_restored_yaw60_trial",
+      "report": {
+        "profile": {
+          "timestep_s": 0.00026041666666666666,
+          "task_solref": [
+            0.0006,
+            1
+          ],
+          "task_condim": 6,
+          "task_solimp_first3": [
+            0.99,
+            0.999,
+            0.0001
+          ],
+          "parameter_status": "numerical rigid-contact profile, not experimentally identified",
+          "robot_gravity_compensation": true
+        },
+        "diagnostic_only": false,
+        "grasp_lift_success": true,
+        "complete_pick_insert": false,
+        "error": "Unreachable pose [ 0.29837828 -0.03058606  0.10229446]: residual [-3.62975510e-04 -3.43479781e-04 -7.14265135e-04 -4.00521318e-09\n -3.05932210e-03 -9.49110565e-04]",
+        "last_phase": "transport",
+        "max_penetration_m": 3.286254545918322e-05,
+        "frames": 648,
+        "hardware_commands": 0,
+        "initial_robot_pose": "explicit right-joint entry; physical approach included",
+        "initial_right_joint_deg": [
+          -0.28,
+          0.0,
+          0.0,
+          0.383,
+          23.477,
+          0.55
+        ],
+        "speed_deg_s": 12.0,
+        "contact_joint_speed_deg_s": 12.0,
+        "gripper_target_speed_m_s": 0.0475,
+        "timing_profile": "quintic shorter-dwell simulation",
+        "deliberate_insertion_offset_mm": [
+          0.0,
+          0.0
+        ],
+        "grasp_tilt_deg": 0.0,
+        "grasp_height_m": 0.018,
+        "align_gap_m": 0.023,
+        "preinsert_gap_m": 0.03,
+        "preinsert_tilt_deg": 0.0
+      },
+      "report_sha256": "d3e3060d434df69f1cc2a3b6c9ac40b8115bf06e14df0602641e84fffc39dc67",
+      "trajectory_sha256": "3256fbd6aabb1adeb51bced2a956a0fd8b6bf446988b08790fa0159071dbef1a",
+      "simulated_seconds": 21.599999999985492,
+      "selection": "Original30mm carry goal unreachable; not executed",
+      "real_executed": false
+    },
+    {
+      "source": "self_evolution/grasp_six_rounds_20261117/black_restored_yaw60_gap23_trial",
+      "report": {
+        "profile": {
+          "timestep_s": 0.00026041666666666666,
+          "task_solref": [
+            0.0006,
+            1
+          ],
+          "task_condim": 6,
+          "task_solimp_first3": [
+            0.99,
+            0.999,
+            0.0001
+          ],
+          "parameter_status": "numerical rigid-contact profile, not experimentally identified",
+          "robot_gravity_compensation": true
+        },
+        "diagnostic_only": false,
+        "grasp_lift_success": true,
+        "complete_pick_insert": true,
+        "error": null,
+        "last_phase": "fold",
+        "max_penetration_m": 3.286254545918322e-05,
+        "frames": 1623,
+        "hardware_commands": 0,
+        "initial_robot_pose": "explicit right-joint entry; physical approach included",
+        "initial_right_joint_deg": [
+          -0.28,
+          0.0,
+          0.0,
+          0.383,
+          23.477,
+          0.55
+        ],
+        "speed_deg_s": 12.0,
+        "contact_joint_speed_deg_s": 12.0,
+        "gripper_target_speed_m_s": 0.0475,
+        "timing_profile": "quintic shorter-dwell simulation",
+        "deliberate_insertion_offset_mm": [
+          0.0,
+          0.0
+        ],
+        "grasp_tilt_deg": 0.0,
+        "grasp_height_m": 0.018,
+        "align_gap_m": 0.023,
+        "preinsert_gap_m": 0.023,
+        "preinsert_tilt_deg": 0.0
+      },
+      "report_sha256": "980355c0bf9422ccdc88ed8b64e94f384c00ba3df5e5b15125ea960c66d517f3",
+      "trajectory_sha256": "e045de2d4cb1497fc4bcb1352728b63c766b763ec0418e6bd77f3e292c20486b",
+      "simulated_seconds": 54.10000000025743,
+      "selection": "Native full task passed, but grasp view occludes pin; not selected or executed",
+      "real_executed": false
+    },
+    {
+      "source": "self_evolution/grasp_six_rounds_20261117/horizontal_full_gap23_trial",
+      "report": {
+        "profile": {
+          "timestep_s": 0.00026041666666666666,
+          "task_solref": [
+            0.0006,
+            1
+          ],
+          "task_condim": 6,
+          "task_solimp_first3": [
+            0.99,
+            0.999,
+            0.0001
+          ],
+          "parameter_status": "numerical rigid-contact profile, not experimentally identified",
+          "robot_gravity_compensation": true
+        },
+        "diagnostic_only": false,
+        "grasp_lift_success": true,
+        "complete_pick_insert": false,
+        "error": "Released plug did not meet stable insertion criteria",
+        "last_phase": "fold",
+        "max_penetration_m": 2.606089867030836e-05,
+        "frames": 1634,
+        "hardware_commands": 0,
+        "initial_robot_pose": "explicit right-joint entry; physical approach included",
+        "initial_right_joint_deg": [
+          -0.28,
+          0.0,
+          0.0,
+          0.383,
+          23.477,
+          0.55
+        ],
+        "speed_deg_s": 12.0,
+        "contact_joint_speed_deg_s": 12.0,
+        "gripper_target_speed_m_s": 0.0475,
+        "timing_profile": "quintic shorter-dwell simulation",
+        "deliberate_insertion_offset_mm": [
+          0.0,
+          0.0
+        ],
+        "grasp_tilt_deg": 0.0,
+        "grasp_height_m": 0.018,
+        "align_gap_m": 0.023,
+        "preinsert_gap_m": 0.023,
+        "preinsert_tilt_deg": 0.0
+      },
+      "report_sha256": "0707013141b5cee3084ea9502975daf067b45ce06664a8f7503408cff26010d1",
+      "trajectory_sha256": "c53a5a147055c335a461aedcb9d846a9c6aa2afb5c7b889f6b3a38103267d95c",
+      "simulated_seconds": 54.46666666692877,
+      "selection": "Native stable-insertion criterion failed; additionally requires black removed; not executed",
+      "real_executed": false
+    },
+    {
+      "source": "self_evolution/grasp_six_rounds_20261117/vertical_reorient_full_trial",
+      "report": {
+        "profile": {
+          "timestep_s": 0.00026041666666666666,
+          "task_solref": [
+            0.0006,
+            1
+          ],
+          "task_condim": 6,
+          "task_solimp_first3": [
+            0.99,
+            0.999,
+            0.0001
+          ],
+          "parameter_status": "numerical rigid-contact profile, not experimentally identified",
+          "robot_gravity_compensation": true
+        },
+        "diagnostic_only": false,
+        "grasp_lift_success": true,
+        "complete_pick_insert": true,
+        "error": null,
+        "last_phase": "fold",
+        "max_penetration_m": 2.9079143757206782e-05,
+        "frames": 1685,
+        "hardware_commands": 0,
+        "initial_robot_pose": "explicit right-joint entry; physical approach included",
+        "initial_right_joint_deg": [
+          -0.28,
+          0.0,
+          0.0,
+          0.383,
+          23.477,
+          0.55
+        ],
+        "speed_deg_s": 12.0,
+        "contact_joint_speed_deg_s": 12.0,
+        "gripper_target_speed_m_s": 0.0475,
+        "timing_profile": "quintic shorter-dwell simulation",
+        "deliberate_insertion_offset_mm": [
+          0.0,
+          0.0
+        ],
+        "grasp_tilt_deg": 0.0,
+        "grasp_height_m": 0.022,
+        "align_gap_m": 0.023,
+        "preinsert_gap_m": 0.023,
+        "preinsert_tilt_deg": 0.0
+      },
+      "report_sha256": "ce093e46025d1535b45b3246ab481896d26a7befe89c2fb47041d15425b7464d",
+      "trajectory_sha256": "524e6d41676f779c57e8c24312b18fdc9447efb3d8f0a24a0390b07b61c4aec3",
+      "simulated_seconds": 56.16666666695041,
+      "selection": "Native full success; selected for frozen validation",
+      "real_executed": false
+    }
+  ],
+  "child_model_calls": 0,
+  "money_cost": null,
+  "source_only": true
+}

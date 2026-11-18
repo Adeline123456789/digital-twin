@@ -1,0 +1,43 @@
+{
+  "physical_task_success": false,
+  "plug_retained_in_target_after_release_and_fold": false,
+  "reviewer": "Current agent RGB and controller event review",
+  "reason": "Insertion screen stopped near end of insertion; no release; final folded wrist RGB still shows held plug",
+  "stage_findings": {
+    "grasp_lift": "Same-effort width40.2→40.2mm and top308→305px; no screened change",
+    "transport": "width39.9mm,top307px at end; no gross flip observed",
+    "insert": "top307→324px at frame1104; visible in-hand change, exact collision/alignment cause unknown"
+  },
+  "absolute_real_axis_verified": false,
+  "root_cause": "UNKNOWN",
+  "evidence": [
+    {
+      "path": "right_wrist/0696.jpg",
+      "sha256": "9d41b497bed165c83e18940d097f2a1ab62d36500f29ef2e470062f1a5971756"
+    },
+    {
+      "path": "right_wrist/0752.jpg",
+      "sha256": "b4d71f62b1e70cd4c5336296c49faeeb3e1ce2a02b00d84dcd679fb1f1019d5a"
+    },
+    {
+      "path": "right_wrist/1038.jpg",
+      "sha256": "e46adc1f2864030aea7283d4d271b8da1f5ff896b0abc7c8d27b18a9edde4ba0"
+    },
+    {
+      "path": "right_wrist/1104.jpg",
+      "sha256": "a1de5a36089c329e7b28f4624ff9d4641bae821afc86775675198598e89d5eb6"
+    },
+    {
+      "path": "right_wrist/last.png",
+      "sha256": "e2c7f786b62c7c82762488de6d9db2d5b8b6ecff13ff451e2a7c0eb9ed9d2880"
+    },
+    {
+      "path": "external/last.png",
+      "sha256": "2cf157ffe50667886b59be196845daaa6cd14ad0d330d4515d57d8bdfa2af411"
+    },
+    {
+      "path": "execution_report.json",
+      "sha256": "9a71e660000c14e77e09081e3ca3d16590790e4d0741a20e2a9300f6ee14c98c"
+    }
+  ]
+}

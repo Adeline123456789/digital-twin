@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-18T02:01:57.230170+00:00",
+  "updated_at": "2026-11-18T02:16:36.979852+00:00",
   "purpose": "Last-observed development checkpoint; not live telemetry or robot prompt",
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "mission": {
@@ -17,7 +17,7 @@
     "automatic_teaching_after_simulation": false
   },
   "branch": "codex/teacher-reliability-20261117",
-  "status": "HORIZONTAL_FULL3_SIMULATION_WAIT_BLACK_REMOVAL",
+  "status": "TASK_NOT_ACHIEVED_HARDWARE_STOPPED",
   "history_checkpoint": "evolution/checkpoints/20261117_before_compact_stage_state.json",
   "continuation": {
     "id": "grasp_six_rounds_20261117",
@@ -31,46 +31,43 @@
   },
   "native_goal_api_limitation": "RESOLVED: user cleared old goal and explicitly requested recreation; new goal created without resetting experiment counts",
   "six_round_continuation": {
-    "status": "HORIZONTAL_FULL3_SIMULATION_WAIT_BLACK_REMOVAL",
+    "status": "TASK_NOT_ACHIEVED_HARDWARE_STOPPED",
     "protocol": "experiments/grasp_six_rounds/protocol.json",
-    "main_rounds_real_completed": 2,
-    "remaining_main_rounds": 4,
+    "main_rounds_real_completed": 3,
+    "remaining_main_rounds": 3,
     "extra_corrections_used": {
       "grasp": 4,
       "transport": 4,
       "insert": 1
     },
     "hardware_resume_authorized": true,
-    "reset": "User reset and restored black object; camera observed presence",
-    "active_stage_scope": "Prepare horizontal grasp/preload/lift/fold; no insertion",
-    "active_capture": "self_evolution/grasp_six_rounds_20261117/horizontal_h18_real",
-    "runtime_sessions": {
-      "offline_full_sim": 23769
-    },
-    "current_candidate": "Horizontal yaw0,18mm,1.5s preload,vertical23mm preinsert; full simulation pending; requires black removed again",
-    "latest_result": "experiments/grasp_six_rounds/grasp_correction_04/real_result.json"
+    "reset": "User reset after main3; black remains in scene",
+    "active_stage_scope": "Archive failure only; no further hardware attempt planned",
+    "active_capture": "self_evolution/grasp_six_rounds_20261117/real_000003_vertical_reorient",
+    "runtime_sessions": {},
+    "current_candidate": null,
+    "latest_result": "experiments/grasp_six_rounds/round_03/real/result.json"
   },
   "current_findings": [
-    "Horizontal grasp4 retained plug and exposed pin, but rejected for8.4mm lift closure; absolute real axis unverified.",
-    "Restored black collides with horizontal grasp; yaw60 avoids obstacle but occludes pin, so not selected. User asked to remove black again; reply pending.",
-    "Old yellow_top mask clipped at250px; corrected shared helper gives17px shift vs old11px. Actual executed helper hash preserved.",
-    "No mandatory independent stage sequence. After acceptable grasp and scene validation, directly run full main3."
+    "Task not achieved: three current full-task attempts failed; two historical successes are not a stable collection procedure.",
+    "Main3 held through lift/transport; first observed failure during insertion. Exact pose/contact cause remains unknown, no verified repair.",
+    "Black object retained;90deg wrist turn does not remove in-hand camera occlusion; executed air turn only aligned socket yaw (~6deg).",
+    "Native failure Episode valid:1717frames per camera; commanded57.26seconds; independent disabled check passed."
   ],
   "evidence": {
-    "latest_physical": "experiments/grasp_six_rounds/grasp_correction_04/real_result.json",
-    "latest_full_task": "experiments/grasp_six_rounds/round_02/real/result.json",
+    "latest_physical": "experiments/grasp_six_rounds/round_03/real/result.json",
+    "latest_full_task": "experiments/grasp_six_rounds/round_03/real/result.json",
     "selected_memory": "memory/negative_experiences/NE021.json",
     "handoff_screen": "experiments/grasp_six_rounds/grasp_correction_02/handoff_offline.json"
   },
   "next_unresolved": [
-    "Finish horizontal full simulation and frozen reference; black removal confirmation pending before real execution.",
-    "Real grasp posture remains unaccepted; retain unchanged change/physics gates.",
-    "Main rounds2/6, extra grasp4/4,transport4/4,insert1/4; no new model calls."
+    "No further live trial scheduled. A materially supported alignment/grasp correction is missing; do not repeat the same unresolved approach.",
+    "Stable5/5 real collection, remaining three main rounds, and task acceptance are not achieved."
   ],
   "last_hardware_observation": {
-    "state": "Folded, all six motors and gripper disabled",
-    "source": "experiments/grasp_six_rounds/grasp_correction_04/real_result.json",
+    "state": "All six motors and gripper disabled; controller/capture exited; user subsequently reset plug",
+    "source": "experiments/grasp_six_rounds/round_03/cost_shutdown.json",
     "live_telemetry": false
   },
-  "publication": "Check Git and remote; raw data/private controllers stay outside public Git"
+  "publication": "Publish this completed failure node and verify remote; goal remains unmet, not marked complete"
 }

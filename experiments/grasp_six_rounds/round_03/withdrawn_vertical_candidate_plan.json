@@ -1,0 +1,21 @@
+{
+  "status": "WITHDRAWN_BEFORE_ENABLE_DIAGNOSE_INITIAL_GRASP",
+  "round": 3,
+  "source_trial": "self_evolution/grasp_six_rounds_20261117/preload_transport_current_trial",
+  "reference_id": "84de38b053e03737e69a1272f660d4db2c6e30554da81b347e8758da34bdcdd6",
+  "change": "Exact real vertical attempt prefix through transport,0.5s align join(max0.106deg),then prior frozen insertion/release/retreat/fold targets. Motor effort1Nm from stationary preload.",
+  "hardware_commands": 0,
+  "stage_evidence": "transport_correction_04: observed retention at endpoint; transport recording incomplete, no accepted stage success",
+  "recording": {
+    "wait_trigger": true,
+    "max_frames": 18000,
+    "arms": "right",
+    "stop": "controller STOP after task/fold"
+  },
+  "rollback": "Prior private controller and refs unchanged",
+  "new_child_model_calls": 0,
+  "real_commands": 0,
+  "unresolved": "User-reported1–2deg residual tilt; current RGB does not identify3D direction/sign. No assumed angle correction.",
+  "decision": "No sign-supported correction; same-arm prior success comparison supports testing current physically simulated full candidate under unchanged slip gates. Residual axis remains UNKNOWN.",
+  "user_axis_observation": "Leans towards socket left;1–2deg user estimate, not measured"
+}

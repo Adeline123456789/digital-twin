@@ -1,6 +1,6 @@
 {
   "id": "NE021",
-  "version": 9,
+  "version": 10,
   "content": "Right-arm plug retention is not established by lift height, condim6 simulation success, or one successful grasp-return trial. Round2 used identical descend/grasp commands and essentially identical lift commands to a prior held trial, yet plug rotated0.9–1.0s into lift before transport. Delayed1Nm after lift cannot undo an already rotated plug. Moving1Nm transition to lift entry retained grasp and folded return in one subsequent stage trial; not stable insertion. Second independent reset with1Nm from lift retained through transport/fold, but onsite user rejected tilted carry. Native planner adds5deg preinsert tilt; absolute world/socket-axis orientation was omitted from retention-only stage criteria. An already tilted grasp can pass the change-only screen. Vertical-transport candidate was never sent: change-only screen rejected5.2mm closing while RGB changed3px with no observed gross flip. Treat as guard ambiguity, not confirmed physical slip. Compare preload-to-lift under the same holding effort; separately inspect closure/preload posture. Stationary1Nm preload then lift retained the plug once: effort-change closing4.5mm, subsequent lift0.4mm/4px. Apparent feature shift30px versus fixed-base28px is mainly common view shift; do not infer object displacement from pixel shift alone. Absolute grasp axis remains unverified. Vertical transport completed with endpoint retention and width39.8mm, but user reports residual1–2deg tilt; axis remains unaccepted. Frame-limit exhaustion lost the final transport RGB; exact validated fold recovery was recorded separately. Use trigger-based capture and enough frames, never merge over missing video.",
   "applicability": "Current right-only original Piper task,target3,RGB-only; historical success and current failure remain distinct",
   "source_episodes": [
@@ -19,12 +19,13 @@
     "experiments/grasp_six_rounds/transport_correction_03/real_result.json",
     "experiments/grasp_six_rounds/grasp_correction_03/real_result.json",
     "experiments/grasp_six_rounds/transport_correction_04/real_result.json",
-    "experiments/grasp_six_rounds/grasp_correction_04/real_result.json"
+    "experiments/grasp_six_rounds/grasp_correction_04/real_result.json",
+    "experiments/grasp_six_rounds/round_03/real/result.json"
   ],
   "validation_status": "REAL_LIFT_FAILURE_LOCALIZED; SINGLE_STAGE_REPAIR_OBSERVED",
   "success_count": 0,
-  "failure_count": 2,
-  "count_unit": "Two full-task real failures in current six-round scope; stage checks counted separately",
+  "failure_count": 3,
+  "count_unit": "Three full-task real failures in current six-round scope; stage checks separate",
   "known_limits": [
     "Root cause UNKNOWN",
     "No accepted friction or force calibration",
@@ -77,9 +78,9 @@
     }
   ],
   "latest_scoped_observation": {
-    "grasp": "holder yaw0,height18mm",
-    "scene": "black removed during trial, restored afterward",
-    "result": "Held but rejected for8.4mm lift closure; pin exposed; real absolute axis unverified",
-    "reuse": "Current restored black scene invalidates parked reference; check scene before reuse; unclipped visual ROI required"
+    "grasp": "yaw90,height22mm,1.5s stationary preload",
+    "scene": "black present",
+    "result": "Lift40.2→40.2mm;transport39.9mm; insert top307→324px, aborted, no release; failure",
+    "reuse": "Grasp retention does not establish pin alignment. Do not rerun unchanged full path or claim repaired; archived phase window is the entry point for any later diagnosis."
   }
 }
