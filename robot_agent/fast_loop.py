@@ -41,8 +41,13 @@ class FastLoop:
         if o.sensor_provenance!='sim.privileged_contact':
             return dict(decision='CONTINUE')
         value=o.observed_value
+        if (not isinstance(value,dict) or not isinstance(value.get('contacts'),list)
+                or any(not isinstance(c,dict) or not {'body1','body2'}<=c.keys() for c in value['contacts'])
+                or any(not isinstance(value.get(k),(list,tuple)) for k in ('plug','grip'))):
+            self.latched=dict(decision='UNKNOWN',event=event(o,'SENSOR_UNAVAILABLE'))
+            return self.latched
         row=dict(phase=o.phase,time=o.timestamp_mono,plug=value['plug'],grip=value['grip'])
-        if not all(len(v)==3 and all(isfinite(x) for x in v) for v in (row['plug'],row['grip'])):
+        if not all(len(v)==3 and all(type(x) in (int,float) and isfinite(x) for x in v) for v in (row['plug'],row['grip'])):
             self.latched=dict(decision='UNKNOWN',event=event(o,'SENSOR_UNAVAILABLE'))
             return self.latched
         sample=(o,row,dict(contacts=value['contacts']))

@@ -1,0 +1,26 @@
+{
+  "experiment_id": "20261118T102343Z_b4b26192",
+  "result": "success",
+  "task_success": true,
+  "recording_verified": true,
+  "recording_report": "experiments/evaluation/20261118T102613Z_ae370ac4",
+  "execution_time": 149.7292623539688,
+  "simulation_seconds": 37.766666666666666,
+  "collection_component_seconds": 151.24548978894018,
+  "recording_error": null,
+  "error": null,
+  "source_hash": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+  "task_sha256": "d96bb7fd81c6928213b32ec780985b6f6ab668c23172de6416176027e911ef95",
+  "triage_status": "NO_DIVERGENCE_OBSERVED",
+  "triage_metrics": {
+    "diagnostic_wall_seconds": 0.1939831329509616,
+    "model_invoked": false,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "processing_ms": {
+      "p50": 0.002711,
+      "p95": 0.00798,
+      "p99": 0.008692
+    }
+  }
+}

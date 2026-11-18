@@ -41,8 +41,8 @@
     "P4": {
       "sim_cap": 4,
       "round_cap": 2,
-      "used_rounds": 1,
-      "sim_used": 0
+      "used_rounds": 2,
+      "sim_used": 2
     }
   },
   "schedule": [
@@ -144,11 +144,23 @@
     "P3.2",
     "P3.3",
     "P3.4",
-    "P4.1"
+    "P4.1",
+    "P4.2"
   ],
   "refused": [
     "P3.2"
   ],
-  "remaining_rounds": 1,
-  "remaining_simulations": 24
+  "remaining_rounds": 0,
+  "remaining_simulations": 22,
+  "simulations_started": 2,
+  "real_attempts": 0,
+  "final_accounting": "experiments/fast_slow_v2/P4.2/budget_verified.json",
+  "rejected_candidates": [
+    "retained_final socket1 -10deg grasp tilt"
+  ],
+  "deferred_measurements": [
+    "historical frame 515 XML reconstruction",
+    "independent physical stability",
+    "real physical cause"
+  ]
 }

@@ -64,3 +64,18 @@ See ROUND2_REPORT.md for executed model-feedback results and COMPLETION_AUDIT.md
 Dataset-format correction: failed episodes are now recorded through the existing three-camera collector and checked against the user's reference schema before being placed in `complete_sim/failed/`. This can take several minutes. Headless `source_trial` directories alone are not published as dataset episodes. If recording or validation fails, the formal episode is not created; diagnostic evidence remains outside that directory. The user-requested deletion of the 14 earlier incomplete folders is documented under `experiments/format_migration/`.
 
 Stage 3 collection result: an opt-in `learn.simulate(..., record_inline=True)` records through the native writer during the original physics run; use `finalize_recordings.py <ID> --stage self_evolution/stage3_recording_<ID>` to verify/install it. Default collection remains unchanged. See [round2](experiments/research_stage3/round2/REPORT.md) for paired motion/format verification, timing, failed pixel gate and transparent measurement correction. This uses simulator privileged information and does not establish real calibration or model capability gains.
+
+## Offline Fast/Slow V2
+
+Use the existing MuJoCo Python environment. The following commands replay local recordings and print JSON.
+
+```sh
+python scripts/agent_loop.py --offline --fastslow --local-only --seed-episode 20261112T090023Z_1341a28d
+python scripts/triage_episode.py 20261112T075231Z_2a125acc --fastslow
+python scripts/triage_episode.py 20261112T090023Z_1341a28d --legacy
+python experiments/fast_slow_v2/audit_budget.py
+```
+
+`agent_loop.py` without a mode flag retains legacy collection behavior. `--offline` selects recorded data; adding `--fastslow` runs the V2 supervisor. The standalone triage entry defaults to V2 and always stays local. Legacy collection's existing `--local-only` controls publication. The optional `triage_episode.py --local-llm` permits one bounded diagnosis using an existing loopback llama.cpp server. `--contact-frame FRAME` reads a saved simulation frame. For recorded real data use `--stopped-real-capture PATH --cache DIR`; only stopped captures can be summarized.
+
+[Architecture](docs/FAST_SLOW_ARCHITECTURE.md) · [Evidence schema](docs/EVIDENCE_SCHEMA.md) · [Batch results](IMPLEMENTATION_REPORT.md)

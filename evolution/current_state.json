@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Offline Fast/Slow V2; original real goal paused",
-  "status": "V2_IN_PROGRESS",
+  "status": "V2_BATCH_CLOSED",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Paired A/B per source, portable tests, independent review, report limits",
-  "updated_at": "2026-11-18T10:21:11.194823+00:00",
+  "next_grounded_work": "Batch closed. No hardware, parameter search or saved request to resume.",
+  "updated_at": "2026-11-18T10:32:16.832875+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -86,8 +86,20 @@
     "execution_boundary": "Same capture command log is exclusive. Current entry does not bind unique request or scene version and retains a legacy path without frozen validation.",
     "precompact": "Project hook loaded and trusted in desktop Codex; automatic-only matcher and return checked offline. No live compaction forced."
   },
-  "v2_round": "P4.1",
+  "v2_round": "P4.2",
   "v2_budget": "experiments/round_budget.json",
-  "v2_result": "experiments/fast_slow_v2/P4.1/RESULT.json",
-  "v2_rounds_used": 13
+  "v2_result": "experiments/fast_slow_v2/P4.2/RESULT.json",
+  "v2_rounds_used": 14,
+  "v2_simulations_started": 2,
+  "v2_latest_validation": "experiments/fast_slow_v2/P4.2/checks.json",
+  "v2_summary": {
+    "engineering_rounds": 14,
+    "complete_new_simulations": 2,
+    "real_attempts": 0,
+    "runtime_slow_calls": 0,
+    "pytest_passed": 153,
+    "independent_stability": "NOT_RUN",
+    "real_root_cause": "UNKNOWN",
+    "report": "IMPLEMENTATION_REPORT.md"
+  }
 }

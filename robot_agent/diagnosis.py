@@ -1,5 +1,6 @@
 """Read completed simulation episodes. All timestamps for simulated motion use sim_time."""
 import json
+import hashlib
 from dataclasses import replace
 from pathlib import Path
 from .contracts import Observation, Reference
@@ -9,8 +10,8 @@ from .timeline import aligned_samples
 from diagnose_retention import analyze_retention
 
 
-def reference(path, root):
-    return Reference('repository' if root == ROOT else 'dataset', str(path.relative_to(root)), digest(path))
+def reference(path, root, repository=False):
+    return Reference('repository' if repository or root == ROOT else 'dataset', str(path.relative_to(root)), digest(path))
 
 
 def json_file(path):
@@ -18,23 +19,28 @@ def json_file(path):
 
 
 class EventBuilder:
-    def __init__(self, data=DATA):
+    def __init__(self, data=DATA, repository=ROOT):
         self.data = data
+        self.repository = repository
 
     def build(self, path, observer=None):
         path = Path(path).resolve()
         r = json_file(path)
         ident = r['experiment_id']
-        refs = (reference(path, ROOT),)
+        refs = (reference(path, self.repository, repository=True),)
         success = r.get('task_success')
         action = next(iter(r.get('actions') or []), {})
+        adapter=r.get('program_version',{}).get('adapter_sha256')
+        policy=hashlib.sha256(json.dumps([adapter,action],sort_keys=True).encode()).hexdigest() if adapter else None
         fact = Observation(ident, action.get('profile','unknown') if isinstance(action,dict) else 'unknown',
                            r.get('program_version',{}).get('source_sha256',{}).get('scripts/try_plug_pick_sim.py',''),
-                           r.get('initial_state',{}).get('task_config_sha256'), r.get('collection_adapter_sha256') or r.get('protocol_version'),
+                           r.get('initial_state',{}).get('task_config_sha256'), policy,
                            'plug_insertion',r.get('initial_state',{}).get('target_index'), 'unknown','unknown',None,
                            'sim_time','unverified','world','m','sim.privileged_contact','unavailable',None,refs)
         def unknown(kind):
             return report(ident,[event(fact,kind)],success,refs)
+        if r.get('result')=='infrastructure_error':
+            return unknown('INFRA_ERROR')
         if path.parent.name != ident or not isinstance(success,bool) or not r.get('recording_verified'):
             return unknown('SENSOR_UNAVAILABLE')
         try:
@@ -48,6 +54,8 @@ class EventBuilder:
             if (meta['domain']!='sim' or outcome['domain']!='sim' or outcome['success'] is not success or meta['success'] is not success
                     or meta['source_trial'] != str(trace.parent.relative_to(self.data)) or verified['source'] != ident):
                 return unknown('VERSION_UNKNOWN')
+            if meta['fps']<=0 or meta['units'].get('gripper_width_m')!='metre' or meta['units'].get('end_effector_pos')!='mm':
+                return unknown('FRAME_OR_UNITS_MISMATCH')
             names = {'cam_external_rgb.mp4','cam_right_wrist_rgb.mp4'}
             if r.get('active_arms') != ['right']:
                 names.add('cam_left_wrist_rgb.mp4')
@@ -60,8 +68,8 @@ class EventBuilder:
                 if len(rows)!=meta['num_frames'] or not aligned_samples(rows, extras, h5['sim_time'][:],meta['fps']):
                     return unknown('TIMESTAMP_MISMATCH')
             refs += tuple(reference(p,self.data) for p in (trace,priv,ep/f'recording_{ident}.json',stats/'metadata.json',stats/'proprio_stats.h5',ep/'outcome.json'))
-            validation_path = (ROOT/r['recording_report']/'result.json').resolve()
-            if not validation_path.is_relative_to(ROOT/'experiments'):
+            validation_path = (self.repository/r['recording_report']/'result.json').resolve()
+            if not validation_path.is_relative_to(self.repository/'experiments'):
                 return unknown('VERSION_UNKNOWN')
             validation = json_file(validation_path)
             if (verified['experiment_id']!=validation['experiment_id'] or validation['result']!='success'
@@ -75,7 +83,7 @@ class EventBuilder:
                 return unknown('VERSION_UNKNOWN')
             if any(digest(ep/'videos'/name)!=recording_pins.get(name) for name in names):
                 return unknown('SENSOR_UNAVAILABLE')
-            refs += (reference(validation_path,ROOT),)
+            refs += (reference(validation_path,self.repository,repository=True),)
             fact = replace(fact, evidence_refs=refs, time_alignment_quality='verified', observability='observed')
             if observer:
                 for i,(row,extra) in enumerate(zip(rows,extras)):

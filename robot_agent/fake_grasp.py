@@ -41,6 +41,8 @@ def check_grasp(flags,samples,*,direct_pose_write=None):
             plug=[v-u for u,v in zip(a['plug'],b['plug'])]
             if dist(grip,[0,0,0])>.010 and dist(grip,plug)<.001:
                 return 'REJECT_AND_ROLLBACK'
-    if flags is None or not samples or direct_pose_write is not False:
+    if flags is None or len(samples)<3 or direct_pose_write is not False:
+        return 'DEFER_UNKNOWN'
+    if any(s['open'] is None or s['unsupported'] is None for s in samples):
         return 'DEFER_UNKNOWN'
     return 'NO_TESTED_CONTRADICTION'

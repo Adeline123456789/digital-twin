@@ -1,0 +1,47 @@
+{
+  "mode": "stopped_real_capture",
+  "scope": "RGB and encoder history",
+  "native_success": false,
+  "physical_label_source": "observed_execution_report.json",
+  "recorded_stop": {
+    "kind": "NATIVE_INSERTION_STOP",
+    "phase": "insert",
+    "phase_source": "Trusted event-image time matched to command phase",
+    "image": "right_wrist/1104.jpg",
+    "image_window": [
+      1089,
+      1119
+    ],
+    "reason": "yellow housing moved in gripper or disappeared",
+    "source": "Original controller event; not an inferred earliest physical onset"
+  },
+  "phase_end_width_mm": {
+    "prepare_gripper": 57.79999999999999,
+    "approach": 59.49999999999999,
+    "descend": 59.49999999999999,
+    "grasp": 43.5,
+    "preload": 40.2,
+    "lift": 40.2,
+    "reorient": 40.1,
+    "transport": 39.9,
+    "align": 39.9,
+    "insert": 39.9,
+    "abort_retreat": 39.9,
+    "fold": 39.9,
+    "final_hold": 39.9
+  },
+  "source": {
+    "root": "dataset",
+    "path": "complete_real/failed/20261118_real_grasp_six_rounds_000003/raw/task/execution_report.json",
+    "sha256": "9a71e660000c14e77e09081e3ca3d16590790e4d0741a20e2a9300f6ee14c98c"
+  },
+  "event_alignment": "recorded camera mapping",
+  "missing": [],
+  "force_torque": null,
+  "depth": null,
+  "first_physical_divergence": null,
+  "root_cause_status": "UNKNOWN",
+  "decision": "UNKNOWN",
+  "hardware_commands": 0,
+  "cache_hit": true
+}

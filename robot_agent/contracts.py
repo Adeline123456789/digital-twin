@@ -1,5 +1,5 @@
 """Facts in a single clock/frame. Null means not measured."""
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 from math import isfinite
 from pathlib import PurePath
 import re
@@ -44,7 +44,7 @@ class Observation:
     uncertainty: float | None = None
 
     def issue(self):
-        if not self.experiment_id or not self.task_id or not self.policy_version or not self.world_model_version or not re.fullmatch('[0-9a-f]{64}', self.native_source_hash):
+        if not self.experiment_id or not self.task_id or not self.policy_version or not self.world_model_version or not isinstance(self.native_source_hash,str) or not re.fullmatch('[0-9a-f]{64}', self.native_source_hash):
             return 'VERSION_UNKNOWN'
         real = self.source_profile == 'real'
         if self.source_profile not in {'real', 'original', 'retained_final'}:
@@ -62,6 +62,9 @@ class Observation:
         if (self.frame_id, self.units) != sensors[self.sensor_provenance]:
             return 'FRAME_OR_UNITS_MISMATCH'
         if not self.evidence_refs or self.observed_value is None or self.observability not in {'observed','estimated'}:
+            return 'SENSOR_UNAVAILABLE'
+        if self.sensor_provenance=='sim.socket_residual' and (not isinstance(self.observed_value,(tuple,list))
+                or len(self.observed_value)!=2 or not all(type(v) in (float,int) and isfinite(v) for v in self.observed_value)):
             return 'SENSOR_UNAVAILABLE'
         if self.sensor_provenance == 'real.rgb' and (self.observability != 'estimated' or self.uncertainty is None or not isfinite(self.uncertainty) or self.uncertainty < 0):
             return 'SENSOR_UNAVAILABLE'

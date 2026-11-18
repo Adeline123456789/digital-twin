@@ -1,7 +1,7 @@
 """Small local index of existing records; only references leave the retrieval stage."""
 from dataclasses import asdict
 from .legacy import ROOT, digest
-from .diagnosis import json_file, reference
+from .diagnosis import json_file
 
 
 def index_memory(root=ROOT):
@@ -70,7 +70,7 @@ class MemoryRouter:
                 if (e.source_profile=='retained_final' and e.target_index==1 and e.sensor_provenance=='sim.privileged_contact'
                         and e.native_source_hash==seed['program_version']['source_sha256']['scripts/try_plug_pick_sim.py']
                         and e.world_model_version==seed['initial_state']['task_config_sha256']
-                        and e.kind=='GRASP_RETENTION_LOSS_OBSERVED' and e.phase in ('align','transport') and exact):
+                        and e.kind=='GRASP_RETENTION_LOSS_OBSERVED' and e.phase in ('align','transport')):
                     veto=card['ineffective_repairs']
                     found.append((4,ident,ref,'veto'))
                     continue

@@ -8,8 +8,19 @@ from dataclasses import asdict
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from robot_agent.diagnosis import EventBuilder, ROOT, DATA, json_file
 from robot_agent.policy_graph import replay_graph
+from robot_agent.first_divergence import event
 from robot_agent.supervisor import Supervisor
 from diagnose_retention import diagnose_episode
+
+
+def reconcile_stream(report,alarm):
+    loss=next((e for e in report.events if e.kind=='GRASP_RETENTION_LOSS_OBSERVED'),None)
+    def identity(e):
+        return (e.kind,e.first_observed_frame,e.first_observed_time,e.confirmation_time) if e else None
+    if identity(alarm)!=identity(loss):
+        report.status='UNKNOWN'
+        report.events.insert(0,event(alarm or loss,'STREAM_BATCH_DISAGREEMENT'))
+        report.first_divergence=None
 
 
 def replay(path, legacy=False, slow=None):
@@ -33,11 +44,7 @@ def replay(path, legacy=False, slow=None):
         if alarm is None and decision.get('event'):
             alarm=decision['event']
     report=EventBuilder().build(path,consume)
-    if alarm and (alarm.status=='UNKNOWN' or not any(
-            x.kind==alarm.kind and x.first_observed_frame==alarm.first_observed_frame for x in report.events)):
-        report.status='UNKNOWN'
-        report.events.insert(0,alarm)
-        report.first_divergence=None
+    reconcile_stream(report,alarm)
     e=report.first_divergence
     context={}
     if e and e.kind=='TARGET_FRAME_RESIDUAL':
@@ -61,7 +68,8 @@ def replay(path, legacy=False, slow=None):
                 measured_frames=len(latency),processing_ms={f'p{p}':ordered[ceil(len(ordered)*p/100)-1] if ordered else None for p in (50,95,99)},
                 detection_delay_s=alarm.confirmation_time-alarm.first_observed_time if alarm and alarm.confirmation_time is not None else None,
                 actual_planner_kind='local_slow' if supervisor.calls else 'compiled_alignment_v1' if graph else 'deterministic_triage',
-                model_invoked=bool(supervisor.calls),input_tokens=supervisor.input_tokens,output_tokens=supervisor.output_tokens,
+                model_invoked=bool(supervisor.calls),input_tokens=supervisor.input_tokens if supervisor.usage_complete else None,
+                output_tokens=supervisor.output_tokens if supervisor.usage_complete else None,
                 planner_wall_seconds=supervisor.planner_seconds,simulation_wall_seconds=0,
                 diagnostic_wall_seconds=time.perf_counter()-started,evidence_gate='REPLAY_ONLY')
 
@@ -82,7 +90,9 @@ def entry(episode,legacy=False,use_local_llm=False,contact_frame=None):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('episode')
+    p.add_argument('episode',nargs='?')
+    p.add_argument('--stopped-real-capture',type=Path,help='Read a stopped real capture using the existing evidence cache')
+    p.add_argument('--cache',type=Path,default=ROOT/'.local/grasp_six_rounds/cache')
     p.add_argument('--offline',action='store_true',help='Explicitly select recorded data (the only mode)')
     p.add_argument('--local-only',action='store_true',help='Results are always printed locally')
     p.add_argument('--contact-frame',type=int,help='Inspect one saved simulation contact frame')
@@ -91,4 +101,10 @@ if __name__=='__main__':
     mode.add_argument('--legacy',action='store_true')
     mode.add_argument('--fastslow',action='store_true')
     a=p.parse_args()
-    entry(a.episode,a.legacy,a.local_llm,a.contact_frame)
+    if bool(a.episode)==bool(a.stopped_real_capture):
+        p.error('Choose a recorded simulation episode or --stopped-real-capture')
+    if a.stopped_real_capture:
+        from robot_agent.real_replay import real_replay
+        print(json.dumps(real_replay(a.stopped_real_capture,a.cache),indent=2))
+    else:
+        entry(a.episode,a.legacy,a.local_llm,a.contact_frame)

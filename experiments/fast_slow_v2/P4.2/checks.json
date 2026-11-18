@@ -1,0 +1,21 @@
+{
+  "full_pytest_passed": 153,
+  "baseline_pytest_passed": 131,
+  "baseline_unittest_original_failures": 7,
+  "simulator_source_hash_manifest_unchanged": true,
+  "active_policy_byte_identical": true,
+  "historical_load_regression_byte_identical": true,
+  "local_model_port_8080_listening": false,
+  "models_called_in_batch": 0,
+  "development_agents": [
+    "evidence_auditor",
+    "validation_reviewer"
+  ],
+  "development_usage_tokens": null,
+  "episode_format_verified_for": [
+    "20261118T102343Z_b4b26192",
+    "20261118T102111Z_077f456b"
+  ],
+  "fresh_heldout_physical_stability": "NOT_RUN",
+  "real_acceptance": "REAL_NOT_TESTED"
+}

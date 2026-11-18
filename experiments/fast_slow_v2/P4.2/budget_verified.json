@@ -1,0 +1,50 @@
+{
+  "B": {
+    "rounds": 1,
+    "simulation_starts": 0,
+    "complete_recordings": 0,
+    "slow_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "P0": {
+    "rounds": 2,
+    "simulation_starts": 0,
+    "complete_recordings": 0,
+    "slow_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "P1": {
+    "rounds": 2,
+    "simulation_starts": 0,
+    "complete_recordings": 0,
+    "slow_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "P2": {
+    "rounds": 3,
+    "simulation_starts": 0,
+    "complete_recordings": 0,
+    "slow_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "P3": {
+    "rounds": 4,
+    "simulation_starts": 0,
+    "complete_recordings": 0,
+    "slow_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "P4": {
+    "rounds": 2,
+    "simulation_starts": 2,
+    "complete_recordings": 2,
+    "slow_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  }
+}

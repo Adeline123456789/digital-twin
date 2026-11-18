@@ -92,3 +92,15 @@ def test_single_owner_does_not_reissue_skill_request():
     owner=Supervisor()
     assert owner.diagnose(r,c)['decision']=='APPLY_VERIFIED_SIM_SKILL'
     assert owner.diagnose(r,c)['decision']=='UNKNOWN'
+
+
+def test_stream_batch_disagreement_in_either_direction():
+    from robot_agent.first_divergence import report,event
+    from triage_episode import reconcile_stream
+    o=sample(1)
+    loss=event(o,'GRASP_RETENTION_LOSS_OBSERVED',status='OBSERVED',first_observed_frame=1,
+               first_observed_time=o.timestamp_mono,confirmation_time=.1)
+    for batch,stream in [([loss],None),([],loss),([loss],replace(loss,confirmation_time=.2))]:
+        r=report('episode',batch,True,())
+        reconcile_stream(r,stream)
+        assert r.status=='UNKNOWN' and r.first_divergence is None

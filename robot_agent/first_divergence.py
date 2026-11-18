@@ -16,7 +16,7 @@ def first_divergence(events):
     if len(identity) != 1 or any(e.issue() or e.status == 'UNKNOWN' for e in relevant):
         return None
     # Terminal exceptions can have only a lower time bound, after all sampled events.
-    return min(relevant, key=lambda e: (e.first_observed_time is None, e.timestamp_mono))
+    return min(relevant, key=lambda e: (e.first_observed_time is None, e.first_observed_time if e.first_observed_time is not None else e.timestamp_mono))
 
 
 def report(ident, events, native_success, refs):
