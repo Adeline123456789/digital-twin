@@ -1,0 +1,1186 @@
+{
+  "gate_a": "NO-GO",
+  "design": "experiments/v21/design.json",
+  "freeze_commit": "5a7746b",
+  "design_sha256": "b1b8e9bd2472bbffce5736b2b958923970d6ab571c7c3ee5d618880e242aa318",
+  "runner_sha256": "4aa724d69be34e978b27c53d927945217de2328e6f131ff6a51b04f4876ea8ba",
+  "input_profiler_sha256": "ff2d7156ca8f6b144787f53c68867fbd181484e9643fac0787b232b3ba1551fd",
+  "sources": {
+    "research": "63e835f767e7b5d6cd72651955fcf1fa74e7d6b1",
+    "legacy_handoff": "f3a0fe62e115930d955a5a74fc9f3629dae6565d",
+    "v2": "87bd88181836bed5c4723bc7a79a2586060d032f",
+    "current_native": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+    "collector_default_right_scene": "01c3a8ebea424ae5968a1c54ad40da2ac492b69b0a7fd313e6074b053159955c",
+    "runbook_sha256": "2244709a5e4b41b7f0df40bbf4e07f30fe31f1cf81bb9138df08e348b1292e4b"
+  },
+  "branch_difference": {
+    "legacy_to_handoff": 23,
+    "handoff_to_v2": 18,
+    "diverging_commits_on_older_branch": 0,
+    "changed_files": 503
+  },
+  "scope": "Paired stopped-data diagnostic work and access to identical archived feedback. No prospective planner, robot, or hardware safety comparison. Physical labels are inputs.",
+  "sampling": {
+    "real_captures": 5,
+    "real_unique_logged_csv": 5,
+    "real_unique_target_streams": 5,
+    "real_unique_frozen_references": 3,
+    "sim_episodes": 7,
+    "sim_unique_trajectories": 7,
+    "independent_heldout_physical_root_causes": 0
+  },
+  "current_default_scene_formal_inventory_by_native_sha": {
+    "82735205df93aa02d9308e4ca4f40b2492382bf44d481f60e7e01cacfa00c362": {
+      "succeed": 6,
+      "failed": 2
+    },
+    "fe9064eef02aecafb12881288340574a9759b3203779dcb111889b74ce2dc3c4": {
+      "succeed": 2,
+      "failed": 0
+    }
+  },
+  "events": {
+    "real_reviewed_failure_events": 3,
+    "legacy_real_localized": 2,
+    "v2_real_localized": 2,
+    "legacy_real_missed_reviewed_window": 1,
+    "v2_real_missed_reviewed_window": 1,
+    "alarm_on_two_real_successes": {
+      "legacy": 0,
+      "v2": 0
+    },
+    "alarm_on_five_sim_successes": {
+      "legacy": 0,
+      "v2": 0
+    },
+    "v2_root_unknown_on_real": 5,
+    "v2_new_actionable_candidate_or_veto_on_five_failures": 0,
+    "actual_avoided_trials": null,
+    "physical_root_cause_accuracy": null
+  },
+  "latency": {
+    "real": {
+      "legacy": {
+        "cold": {
+          "total_s": 0.7697776551358402,
+          "median_s": 0.1553027150221169,
+          "episodes": 5
+        },
+        "hot": {
+          "total_s": 0.018050010898150504,
+          "median_s": 0.0022070619743317366,
+          "episodes": 5
+        }
+      },
+      "v2": {
+        "cold": {
+          "total_s": 0.8179426360875368,
+          "median_s": 0.16134542599320412,
+          "episodes": 5
+        },
+        "hot": {
+          "total_s": 0.019464161014184356,
+          "median_s": 0.002664008061401546,
+          "episodes": 5
+        }
+      }
+    },
+    "sim": {
+      "legacy": {
+        "cold": {
+          "total_s": 1.3988804249092937,
+          "median_s": 0.22193384100683033,
+          "episodes": 7
+        },
+        "hot": {
+          "total_s": 1.0973814700264484,
+          "median_s": 0.18781195499468595,
+          "episodes": 7
+        }
+      },
+      "v2": {
+        "cold": {
+          "total_s": 2.2727927699452266,
+          "median_s": 0.3502042799955234,
+          "episodes": 7
+        },
+        "hot": {
+          "total_s": 1.4948191599687561,
+          "median_s": 0.24704030703287572,
+          "episodes": 7
+        }
+      }
+    },
+    "research_scene": {
+      "legacy": {
+        "cold": {
+          "total_s": 1.0686235328903422,
+          "median_s": 0.2229480060050264,
+          "episodes": 5
+        },
+        "hot": {
+          "total_s": 0.863949327962473,
+          "median_s": 0.18886526895221323,
+          "episodes": 5
+        }
+      },
+      "v2": {
+        "cold": {
+          "total_s": 1.6438598739914596,
+          "median_s": 0.352383979014121,
+          "episodes": 5
+        },
+        "hot": {
+          "total_s": 1.1024325620383024,
+          "median_s": 0.24950250203255564,
+          "episodes": 5
+        }
+      }
+    },
+    "collector_default_scene_historical_solver": {
+      "legacy": {
+        "cold": {
+          "total_s": 0.3302568920189515,
+          "median_s": 0.16512844600947574,
+          "episodes": 2
+        },
+        "hot": {
+          "total_s": 0.23343214206397533,
+          "median_s": 0.11671607103198767,
+          "episodes": 2
+        }
+      },
+      "v2": {
+        "cold": {
+          "total_s": 0.628932895953767,
+          "median_s": 0.3144664479768835,
+          "episodes": 2
+        },
+        "hot": {
+          "total_s": 0.3923865979304537,
+          "median_s": 0.19619329896522686,
+          "episodes": 2
+        }
+      }
+    },
+    "all": {
+      "legacy": {
+        "cold": {
+          "total_s": 2.168658080045134,
+          "median_s": 0.16568329004803672,
+          "episodes": 12
+        },
+        "hot": {
+          "total_s": 1.1154314809245989,
+          "median_s": 0.09904133150121197,
+          "episodes": 12
+        }
+      },
+      "v2": {
+        "cold": {
+          "total_s": 3.0907354060327634,
+          "median_s": 0.25094425096176565,
+          "episodes": 12
+        },
+        "hot": {
+          "total_s": 1.5142833209829405,
+          "median_s": 0.13690597447566688,
+          "episodes": 12
+        }
+      }
+    }
+  },
+  "costs": {
+    "unit": "seconds; per-record raw timings below",
+    "replay_by_engine": {
+      "legacy": {
+        "episodes": 12,
+        "cold": 12,
+        "hot": 12,
+        "model_calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "model_wall_s": 0,
+        "new_simulation_checks": 0,
+        "new_simulation_wall_s": 0,
+        "real_executions": 0
+      },
+      "v2": {
+        "episodes": 12,
+        "cold": 12,
+        "hot": 12,
+        "model_calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "model_wall_s": 0,
+        "new_simulation_checks": 0,
+        "new_simulation_wall_s": 0,
+        "real_executions": 0
+      }
+    },
+    "physical_disk_cold_start": null,
+    "physical_disk_wait_s": null,
+    "sim_video_decode": "No video decode in diagnostic path; V2 checks video bytes/hashes.",
+    "real_decode": "Reviewer-selected RGB files, equally decoded on both sides. Real diagnostic functions consume cached metadata/CSV.",
+    "io_profile": "Independent warm filesystem read/parse of shared primary JSON(L)/CSV inputs. Excludes hashes, HDF5, MP4, Python startup; do not add it to the end-to-end times.",
+    "legacy_match_history": [
+      {
+        "physical_episode": "20261116T050715Z_a6d1c3df",
+        "experiment_id": "20261116T050651Z_720ad477",
+        "input_tokens": 13338,
+        "output_tokens": 152,
+        "cached_input_tokens": 7168,
+        "llm_call_seconds": 24.144027814967558,
+        "planning_plus_collection_seconds": 146.40980688203126
+      },
+      {
+        "physical_episode": "20261116T050950Z_a48bf34e",
+        "experiment_id": "20261116T050925Z_d107a1b9",
+        "input_tokens": 13344,
+        "output_tokens": 194,
+        "cached_input_tokens": 7168,
+        "llm_call_seconds": 24.4797282689251,
+        "planning_plus_collection_seconds": 195.57214067794848
+      }
+    ],
+    "historical_online_v2_comparison": null,
+    "development_goal_counter_snapshot": {
+      "tokens": 106505,
+      "elapsed_s": 387,
+      "source": "Goal meter after diagnostics; interim, includes conversation/tool context; billing and split by agent UNKNOWN"
+    },
+    "developer_main_only_tokens": null,
+    "developer_child_only_tokens": null,
+    "development_human_seconds": null,
+    "monetary_cost": null
+  },
+  "gate_b": "NOT_RUN_GATE_A_NO_GO",
+  "mock_execution_boundary": "NOT_RUN_GATE_A_NO_GO",
+  "gate_c": "NOT_ELIGIBLE_NO_AUTHORIZATION",
+  "real_physical_cause": "UNKNOWN",
+  "real_5_of_5": "NOT_ACHIEVED",
+  "default": "Legacy",
+  "rollback": "87bd88181836bed5c4723bc7a79a2586060d032f",
+  "measurements": [
+    {
+      "id": "20261116_real_current_socket_repair_000002",
+      "stratum": "same_arm_observed",
+      "domain": "real",
+      "legacy": {
+        "output": {
+          "label": true,
+          "event": null,
+          "root": "UNKNOWN",
+          "next_check": "Compare plug-to-finger pose from grasp through lift before selecting another insertion candidate.",
+          "decision": null
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.00013115897309035063,
+          "rgb_decode_s": 0.016416880069300532,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.09756365092471242,
+          "worker_s": 0.12367237394209951,
+          "end_to_end_s": 0.15926680795382708
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.00011752999853342772,
+          "rgb_decode_s": 0.0014191700611263514,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.0005568049382418394,
+          "worker_s": 0.00210289703682065,
+          "end_to_end_s": 0.002184365992434323
+        }
+      },
+      "v2": {
+        "output": {
+          "label": true,
+          "event": null,
+          "root": "UNKNOWN",
+          "next_check": null,
+          "decision": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.000146517064422369,
+          "rgb_decode_s": 0.00625927303917706,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.09349202900193632,
+          "worker_s": 0.10935351997613907,
+          "end_to_end_s": 0.1386459789937362
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.00012363388668745756,
+          "rgb_decode_s": 0.0016693220240995288,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.000597054953686893,
+          "worker_s": 0.002399898017756641,
+          "end_to_end_s": 0.0025465430226176977
+        }
+      },
+      "review": "Historical success, operator and native/RGB review. No recorded guard event.",
+      "review_sources": {
+        "experiments/current_scene_cycle11/real_attempt002_outcome.json": "cf24e7dcefe8dfe6e5d526205ff7a1177d59386c466ec13fd4c8294b06de61c7",
+        "experiments/teacher_reliability/historical_success_reference.json": "28b8eb99c96c791c2a2984d9f69fff79d3cb0a711c6560640e21a7ce31bc233f"
+      },
+      "common_structured_input_cost": {
+        "id": "20261116_real_current_socket_repair_000002",
+        "bytes": 2545591,
+        "file_read_s": 0.0006418880075216293,
+        "structured_decode_s": 0.020016589085571468
+      },
+      "actual_command_targets_sha256": "21c2737b6d4deccf4a39ad8d01aacaa581952623e065b6abc08eb70fdcd0d614"
+    },
+    {
+      "id": "20261116_real_repeatability_000002",
+      "stratum": "same_arm_observed",
+      "domain": "real",
+      "v2": {
+        "output": {
+          "label": true,
+          "event": null,
+          "root": "UNKNOWN",
+          "next_check": null,
+          "decision": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.0003278630319982767,
+          "rgb_decode_s": 0.013233909965492785,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.10652753501199186,
+          "worker_s": 0.12959420203696936,
+          "end_to_end_s": 0.16134542599320412
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.00027980213053524494,
+          "rgb_decode_s": 0.008866326999850571,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.0007236539386212826,
+          "worker_s": 0.009885495062917471,
+          "end_to_end_s": 0.00999766297172755
+        }
+      },
+      "legacy": {
+        "output": {
+          "label": true,
+          "event": null,
+          "root": "UNKNOWN",
+          "next_check": "Compare plug-to-finger pose from grasp through lift before selecting another insertion candidate.",
+          "decision": null
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.0003469019429758191,
+          "rgb_decode_s": 0.013390192994847894,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.10448439489118755,
+          "worker_s": 0.1276449830038473,
+          "end_to_end_s": 0.1553027150221169
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.00019049702677875757,
+          "rgb_decode_s": 0.008736051036976278,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.00061552703846246,
+          "worker_s": 0.009552962961606681,
+          "end_to_end_s": 0.00964644702617079
+        }
+      },
+      "review": "Historical success, release and empty gripper after fold. No recorded guard event.",
+      "review_sources": {
+        "experiments/repeatability_cycle12/000002/physical_review.json": "d03ca87aa51a5b2095c0b79a52a7e234a305b4d2f6917b5f1e75e9647ee2e156",
+        "experiments/repeatability_cycle12/000002/result.json": "19f3bc4109420a008f98b88e64fa07ed33391cb54038cee061c04cdefd48ca2b"
+      },
+      "common_structured_input_cost": {
+        "id": "20261116_real_repeatability_000002",
+        "bytes": 2839119,
+        "file_read_s": 0.00033808103762567043,
+        "structured_decode_s": 0.018755741766653955
+      },
+      "actual_command_targets_sha256": "2be64b918c75e75d91eef0b955ea0574a2a9ae3fb638b5b091386496c66f4a00"
+    },
+    {
+      "id": "20261116_real_repeatability_000004",
+      "stratum": "same_arm_observed",
+      "domain": "real",
+      "legacy": {
+        "output": {
+          "label": false,
+          "event": null,
+          "root": "UNKNOWN",
+          "next_check": "Compare plug-to-finger pose from grasp through lift before selecting another insertion candidate.",
+          "decision": null
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.0001287419581785798,
+          "rgb_decode_s": 0.00607587699778378,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.1178055569762364,
+          "worker_s": 0.1337721539894119,
+          "end_to_end_s": 0.16378364409320056
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.00012191280256956816,
+          "rgb_decode_s": 0.0016562810633331537,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.0005589430220425129,
+          "worker_s": 0.0023469339357689023,
+          "end_to_end_s": 0.0024293019669130445
+        }
+      },
+      "v2": {
+        "output": {
+          "label": false,
+          "event": null,
+          "root": "UNKNOWN",
+          "next_check": null,
+          "decision": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.0001325129996985197,
+          "rgb_decode_s": 0.0064217670587822795,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.1319797020405531,
+          "worker_s": 0.14799928397405893,
+          "end_to_end_s": 0.1795029720524326
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.0001275308895856142,
+          "rgb_decode_s": 0.0018086350755766034,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.0006336210062727332,
+          "worker_s": 0.002581381006166339,
+          "end_to_end_s": 0.002667892025783658
+        }
+      },
+      "review": "Reviewed failure. Wrist 9653 to 9742 shows rotation; original success interpretation corrected by operator. Neither automated reader localizes it.",
+      "review_sources": {
+        "experiments/repeatability_cycle12/000004/physical_review.json": "0212bfb33c515edd7a13a95f034dffbd8f5987eb868ba7c8b31db69fcb5bfb0b",
+        "experiments/repeatability_cycle12/000004/label_correction.json": "b78c41780e73047f7c0419daa0a7dd916cdc3aafeb095a4d660833c31d438ba8",
+        "experiments/repeatability_cycle12/000004/result.json": "ef54307731abe0952f7d6e5cdf1f5e8937629ea842dc9eaa8235a7e949051ec6"
+      },
+      "common_structured_input_cost": {
+        "id": "20261116_real_repeatability_000004",
+        "bytes": 5730998,
+        "file_read_s": 0.0006521961186081171,
+        "structured_decode_s": 0.028022408834658563
+      },
+      "actual_command_targets_sha256": "1adb3ad4791930bf0343ad995129a94d136f4f5d2ff52eda4e63484070940836"
+    },
+    {
+      "id": "20261116_real_repeatability_000005",
+      "stratum": "same_arm_observed",
+      "domain": "real",
+      "v2": {
+        "output": {
+          "label": false,
+          "event": {
+            "kind": "NATIVE_INSERTION_STOP",
+            "phase": "insert",
+            "phase_source": "Trusted event-image time matched to command phase",
+            "image": "right_wrist/1647.jpg",
+            "image_window": [
+              1632,
+              1662
+            ],
+            "reason": "yellow housing moved in gripper or disappeared",
+            "source": "Original controller event; not an inferred earliest physical onset"
+          },
+          "root": "UNKNOWN",
+          "next_check": null,
+          "decision": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.00017735001165419817,
+          "rgb_decode_s": 0.009121570969000459,
+          "decoded_rgb_frames": 1,
+          "engine_s": 0.11672244197688997,
+          "worker_s": 0.13799146795645356,
+          "end_to_end_s": 0.1847281060181558
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 6.33409945294261e-05,
+          "rgb_decode_s": 0.0007336960406973958,
+          "decoded_rgb_frames": 1,
+          "engine_s": 0.0006344090215861797,
+          "worker_s": 0.0014384409878402948,
+          "end_to_end_s": 0.001588054932653904
+        }
+      },
+      "legacy": {
+        "output": {
+          "label": false,
+          "event": {
+            "kind": "NATIVE_INSERTION_STOP",
+            "phase": "insert",
+            "phase_source": "Trusted event-image time matched to command phase",
+            "image": "right_wrist/1647.jpg",
+            "image_window": [
+              1632,
+              1662
+            ],
+            "reason": "yellow housing moved in gripper or disappeared",
+            "source": "Original controller event; not an inferred earliest physical onset"
+          },
+          "root": "UNKNOWN",
+          "next_check": "Compare plug-to-finger pose from grasp through lift before selecting another insertion candidate.",
+          "decision": null
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 8.657702710479498e-05,
+          "rgb_decode_s": 0.0051203250186517835,
+          "decoded_rgb_frames": 1,
+          "engine_s": 0.10693260096013546,
+          "worker_s": 0.12170678691472858,
+          "end_to_end_s": 0.14932244503870606
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 7.957988418638706e-05,
+          "rgb_decode_s": 0.0007161779794842005,
+          "decoded_rgb_frames": 1,
+          "engine_s": 0.0006277160719037056,
+          "worker_s": 0.001430504024028778,
+          "end_to_end_s": 0.0015828339383006096
+        }
+      },
+      "review": "Native insertion guard at wrist 1647. Neither reader identifies physical onset. Existing controller retreated without release.",
+      "review_sources": {
+        "experiments/repeatability_cycle12/000005/physical_review.json": "9f4df31e3de539dd01f8030ddf8662f92230c80382eaee2a4cc085fa0dca8a1c",
+        "experiments/repeatability_cycle12/000005/result.json": "e0d1172bcf2c64903b72373330d28fa8d666a2e8a4029714b781bafe688ff72d"
+      },
+      "common_structured_input_cost": {
+        "id": "20261116_real_repeatability_000005",
+        "bytes": 2184250,
+        "file_read_s": 0.00028557307086884975,
+        "structured_decode_s": 0.014235535985790193
+      },
+      "actual_command_targets_sha256": "0c152f9a0bb3c2561bfbb697187d12107051f20f4818af1c476cc34f431fa92e"
+    },
+    {
+      "id": "20261118_real_grasp_six_rounds_000003",
+      "stratum": "same_arm_observed",
+      "domain": "real",
+      "legacy": {
+        "output": {
+          "label": false,
+          "event": {
+            "kind": "NATIVE_INSERTION_STOP",
+            "phase": "insert",
+            "phase_source": "Trusted event-image time matched to command phase",
+            "image": "right_wrist/1104.jpg",
+            "image_window": [
+              1089,
+              1119
+            ],
+            "reason": "yellow housing moved in gripper or disappeared",
+            "source": "Original controller event; not an inferred earliest physical onset"
+          },
+          "root": "UNKNOWN",
+          "next_check": "Compare plug-to-finger pose from grasp through lift before selecting another insertion candidate.",
+          "decision": null
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.00012680701911449432,
+          "rgb_decode_s": 0.0060242979088798165,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.09505275404080749,
+          "worker_s": 0.11061999097000808,
+          "end_to_end_s": 0.14210204302798957
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.0001170990290120244,
+          "rgb_decode_s": 0.00141143798828125,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.0005829039728268981,
+          "worker_s": 0.0021208380348980427,
+          "end_to_end_s": 0.0022070619743317366
+        }
+      },
+      "v2": {
+        "output": {
+          "label": false,
+          "event": {
+            "kind": "NATIVE_INSERTION_STOP",
+            "phase": "insert",
+            "phase_source": "Trusted event-image time matched to command phase",
+            "image": "right_wrist/1104.jpg",
+            "image_window": [
+              1089,
+              1119
+            ],
+            "reason": "yellow housing moved in gripper or disappeared",
+            "source": "Original controller event; not an inferred earliest physical onset"
+          },
+          "root": "UNKNOWN",
+          "next_check": null,
+          "decision": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 0.0001309120561927557,
+          "rgb_decode_s": 0.00595069897826761,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.10634725110139698,
+          "worker_s": 0.12229458405636251,
+          "end_to_end_s": 0.15372015303000808
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.00011929590255022049,
+          "rgb_decode_s": 0.0016550039872527122,
+          "decoded_rgb_frames": 2,
+          "engine_s": 0.000638804049231112,
+          "worker_s": 0.0024232619907706976,
+          "end_to_end_s": 0.002664008061401546
+        }
+      },
+      "review": "Native insertion guard at wrist 1104. Historical comparison of grasp/lift and prior successful endpoints did not distinguish contact versus initial in-hand angle.",
+      "review_sources": {
+        "experiments/grasp_six_rounds/round_03/real_review.json": "a995904827b4f49f95a82daf00cc386600a2a2b0e2590d1da389f1a27089519c",
+        "experiments/grasp_six_rounds/round_03/prior_success_comparison.json": "91a34267fe1204d26ed18aeb31f55feb8b39dbca38f2d9155f7c6b4f96de0a57",
+        "experiments/grasp_six_rounds/round_03/real/result.json": "dfded41f1d200286e2ca5744f42d32929c44a1b3e934577f3b63a4242fb8c581",
+        "experiments/grasp_six_rounds/round_03/vertical_pick_socket_reorient/actual_versions.json": "c9621a2ef286e2b2dc424cfba3bae84a24f4165c4f4ac9e6db687b37da89d1e0"
+      },
+      "common_structured_input_cost": {
+        "id": "20261118_real_grasp_six_rounds_000003",
+        "bytes": 1911601,
+        "file_read_s": 0.00030308414716273546,
+        "structured_decode_s": 0.014129012008197606
+      },
+      "actual_command_targets_sha256": "46c8a6b21c92b387bdc6995168c0b278433a96cc1bd50d63c0551612f8ec26af"
+    },
+    {
+      "id": "20261117T102101Z_e4185e62",
+      "stratum": "research_scene",
+      "domain": "sim",
+      "v2": {
+        "output": {
+          "label": true,
+          "status": "NO_DIVERGENCE_OBSERVED",
+          "event": null,
+          "source": null,
+          "phase": null,
+          "frame": null,
+          "root": "UNKNOWN",
+          "decision": "CONTINUE",
+          "next_check": null,
+          "vetoes": [],
+          "frame_count": 1657,
+          "candidate": false
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.432005178183317e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.33570682303979993,
+          "worker_s": 0.3357430739561096,
+          "end_to_end_s": 0.3691751949954778
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 6.319209933280945e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.2505023959092796,
+          "worker_s": 0.2505677939625457,
+          "end_to_end_s": 0.250818166998215
+        }
+      },
+      "legacy": {
+        "output": {
+          "label": true,
+          "status": "NO_RETENTION_LOSS_OBSERVED",
+          "phase": "fold",
+          "native_error": null,
+          "frame": null,
+          "root": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.173795994371176e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.19502764602657408,
+          "worker_s": 0.19506158295553178,
+          "end_to_end_s": 0.2229480060050264
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 6.295100320130587e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.18861386994831264,
+          "worker_s": 0.1886788159608841,
+          "end_to_end_s": 0.18886526895221323
+        }
+      },
+      "review": "Original successful simulation, subsequent frozen-reference real development trial failed.",
+      "review_sources": {
+        "experiments/teacher_reliability/candidate1_simulation.json": "1002e1d3e9013357d1919395a99b1fd6860e219ea0ee397b911eb0748c4c7704",
+        "experiments/teacher_reliability/BATCH_RESULT.md": "a2879a9ef4a174280a27e477983c1d1edd0aa3eb2f316287a8295a7db5f9a9de"
+      },
+      "common_structured_input_cost": {
+        "id": "20261117T102101Z_e4185e62",
+        "bytes": 20692336,
+        "file_read_s": 0.006752287968993187,
+        "structured_decode_s": 0.1804110169177875
+      }
+    },
+    {
+      "id": "20261117T104159Z_a33bacec",
+      "stratum": "research_scene",
+      "domain": "sim",
+      "legacy": {
+        "output": {
+          "label": true,
+          "status": "NO_RETENTION_LOSS_OBSERVED",
+          "phase": "fold",
+          "native_error": null,
+          "frame": null,
+          "root": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.3920048736035824e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.19595216098241508,
+          "worker_s": 0.19598834495991468,
+          "end_to_end_s": 0.22852714790496975
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 6.073899567127228e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.18964892998337746,
+          "worker_s": 0.18971171299926937,
+          "end_to_end_s": 0.18990381201729178
+        }
+      },
+      "v2": {
+        "output": {
+          "label": true,
+          "status": "NO_DIVERGENCE_OBSERVED",
+          "event": null,
+          "source": null,
+          "phase": null,
+          "frame": null,
+          "root": "UNKNOWN",
+          "decision": "CONTINUE",
+          "next_check": null,
+          "vetoes": [],
+          "frame_count": 1662,
+          "candidate": false
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.13599593937397e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.3277727699605748,
+          "worker_s": 0.32780557696241885,
+          "end_to_end_s": 0.356336532975547
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 6.528303492814302e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.25271287001669407,
+          "worker_s": 0.25277964398264885,
+          "end_to_end_s": 0.2529159099794924
+        }
+      },
+      "review": "Original successful simulation, subsequent frozen-reference real development trial failed.",
+      "review_sources": {
+        "experiments/teacher_reliability/candidate2_simulation.json": "3de96150b15066a0800b3bf4ce12709c887baade4d03491483fd4bb001010a3d",
+        "experiments/teacher_reliability/BATCH_RESULT.md": "a2879a9ef4a174280a27e477983c1d1edd0aa3eb2f316287a8295a7db5f9a9de"
+      },
+      "common_structured_input_cost": {
+        "id": "20261117T104159Z_a33bacec",
+        "bytes": 20738803,
+        "file_read_s": 0.0064156349981203675,
+        "structured_decode_s": 0.1804818520322442
+      }
+    },
+    {
+      "id": "20261117T113906Z_a161f852",
+      "stratum": "research_scene",
+      "domain": "sim",
+      "v2": {
+        "output": {
+          "label": true,
+          "status": "NO_DIVERGENCE_OBSERVED",
+          "event": null,
+          "source": null,
+          "phase": null,
+          "frame": null,
+          "root": "UNKNOWN",
+          "decision": "CONTINUE",
+          "next_check": null,
+          "vetoes": [],
+          "frame_count": 1653,
+          "candidate": false
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.179209306836128e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.3233685790328309,
+          "worker_s": 0.3234019229421392,
+          "end_to_end_s": 0.352383979014121
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 8.019991219043732e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.24914170801639557,
+          "worker_s": 0.24922402400989085,
+          "end_to_end_s": 0.24950250203255564
+        }
+      },
+      "legacy": {
+        "output": {
+          "label": true,
+          "status": "NO_RETENTION_LOSS_OBSERVED",
+          "phase": "fold",
+          "native_error": null,
+          "frame": null,
+          "root": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.0379043892025948e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.19660002295859158,
+          "worker_s": 0.19663274590857327,
+          "end_to_end_s": 0.22477554494980723
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 6.0910009779036045e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.19373930396977812,
+          "worker_s": 0.19380212994292378,
+          "end_to_end_s": 0.19391047803219408
+        }
+      },
+      "review": "Original successful simulation, subsequent frozen-reference real development trial failed.",
+      "review_sources": {
+        "experiments/grasp_six_rounds/round_01/simulation.json": "4e7605df0bb90a8a5275fbe11fa486242cb67d2cf1e0ae4297cfc17c7c6876bc",
+        "experiments/grasp_six_rounds/round_01/REPORT.md": "66b45586f0d40d883dd476c9d1672c76caa2619b0d9d170afc1ae91b74abf038"
+      },
+      "common_structured_input_cost": {
+        "id": "20261117T113906Z_a161f852",
+        "bytes": 20667336,
+        "file_read_s": 0.006397476070560515,
+        "structured_decode_s": 0.18055492697749287
+      }
+    },
+    {
+      "id": "20261117T120935Z_745e0917",
+      "stratum": "research_scene",
+      "domain": "sim",
+      "legacy": {
+        "output": {
+          "label": false,
+          "status": "NO_RETENTION_LOSS_OBSERVED",
+          "phase": "align",
+          "native_error": "Unreachable pose",
+          "frame": null,
+          "root": "UNKNOWN",
+          "precontact_xy_mm": null,
+          "memory_ids": [
+            "NE020",
+            "NE021"
+          ],
+          "next_check": null,
+          "rejected_tilts": []
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.255298361182213e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.14172061497811228,
+          "worker_s": 0.14175492094364017,
+          "end_to_end_s": 0.17043899302370846
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 4.714902024716139e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.10323171596974134,
+          "worker_s": 0.1032808639574796,
+          "end_to_end_s": 0.103457813966088
+        }
+      },
+      "v2": {
+        "output": {
+          "label": false,
+          "status": "IK_UNREACHABLE",
+          "event": "IK_UNREACHABLE",
+          "source": "sim.native_report",
+          "phase": "align",
+          "frame": null,
+          "root": "UNKNOWN",
+          "decision": "ESCALATE_SLOW",
+          "next_check": [
+            "verify_observation_and_frame"
+          ],
+          "vetoes": [],
+          "frame_count": 950,
+          "candidate": false
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.44900181517005e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.1832728460431099,
+          "worker_s": 0.18330899497959763,
+          "end_to_end_s": 0.2157598870107904
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 6.744998972862959e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.10189799894578755,
+          "worker_s": 0.10196769598405808,
+          "end_to_end_s": 0.10215567599516362
+        }
+      },
+      "review": "Align IK event after final transport sample; exact onset/frame unknown. Archived IK screen rejected 25/24 mm, admitted 23 mm; bf6333a2 then passed the native simulator.",
+      "review_sources": {
+        "experiments/grasp_six_rounds/round_02/align_ik_probe.json": "614f6fd15da7374a8a2081b4a0e3d63c4f7e5c2a590cfed56e61d4645ec8646a",
+        "experiments/grasp_six_rounds/round_02/simulation.json": "e6c554bc85aa730078ca1c6e2187ab3f4650e7a56e809cbe690a32314b8f523a"
+      },
+      "common_structured_input_cost": {
+        "id": "20261117T120935Z_745e0917",
+        "bytes": 8856936,
+        "file_read_s": 0.0012653579469770193,
+        "structured_decode_s": 0.07179199403617531
+      }
+    },
+    {
+      "id": "20261117T121435Z_bf6333a2",
+      "stratum": "research_scene",
+      "domain": "sim",
+      "v2": {
+        "output": {
+          "label": true,
+          "status": "NO_DIVERGENCE_OBSERVED",
+          "event": null,
+          "source": null,
+          "phase": null,
+          "frame": null,
+          "root": "UNKNOWN",
+          "decision": "CONTINUE",
+          "next_check": null,
+          "vetoes": [],
+          "frame_count": 1644,
+          "candidate": false
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.4412951208651066e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.32182506506796926,
+          "worker_s": 0.32186119607649744,
+          "end_to_end_s": 0.3502042799955234
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 6.154598668217659e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.24679256102535874,
+          "worker_s": 0.24685654905624688,
+          "end_to_end_s": 0.24704030703287572
+        }
+      },
+      "legacy": {
+        "output": {
+          "label": true,
+          "status": "NO_RETENTION_LOSS_OBSERVED",
+          "phase": "fold",
+          "native_error": null,
+          "frame": null,
+          "root": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 3.3547054044902325e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.19368405803106725,
+          "worker_s": 0.19371951092034578,
+          "end_to_end_s": 0.22193384100683033
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 5.439994856715202e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.18755667901132256,
+          "worker_s": 0.1876130870077759,
+          "end_to_end_s": 0.18781195499468595
+        }
+      },
+      "review": "Already validated successor to 745e0917, later real development trial failed.",
+      "review_sources": {
+        "experiments/grasp_six_rounds/round_02/simulation.json": "e6c554bc85aa730078ca1c6e2187ab3f4650e7a56e809cbe690a32314b8f523a",
+        "experiments/grasp_six_rounds/round_02/DIAGNOSIS.md": "1c8359a76eda6cbb973f7dd9e4a831a2a5382b0c681738d037bc6d6ed231595d"
+      },
+      "common_structured_input_cost": {
+        "id": "20261117T121435Z_bf6333a2",
+        "bytes": 20672518,
+        "file_read_s": 0.003186622867360711,
+        "structured_decode_s": 0.1745970689225942
+      }
+    },
+    {
+      "id": "20261116T050715Z_a6d1c3df",
+      "stratum": "collector_default_scene_historical_solver",
+      "domain": "sim",
+      "legacy": {
+        "output": {
+          "label": false,
+          "status": "NO_RETENTION_LOSS_OBSERVED",
+          "phase": "fold",
+          "native_error": "Penetration exceeds collection tolerance",
+          "frame": null,
+          "root": "UNKNOWN",
+          "precontact_xy_mm": [
+            2.1785543912055045,
+            -0.057731138273318244
+          ],
+          "memory_ids": [
+            "NE020",
+            "NE021"
+          ],
+          "next_check": null,
+          "rejected_tilts": []
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 5.532405339181423e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.13385535194538534,
+          "worker_s": 0.13391247997060418,
+          "end_to_end_s": 0.1626739560160786
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 8.731789421290159e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.09435721102636307,
+          "worker_s": 0.09444638306740671,
+          "end_to_end_s": 0.09462484903633595
+        }
+      },
+      "v2": {
+        "output": {
+          "label": false,
+          "status": "TARGET_FRAME_RESIDUAL",
+          "event": "TARGET_FRAME_RESIDUAL",
+          "source": "sim.socket_residual",
+          "phase": "align",
+          "frame": 959,
+          "root": "UNKNOWN",
+          "decision": "ESCALATE_SLOW",
+          "next_check": [
+            "verify_observation_and_frame"
+          ],
+          "vetoes": [],
+          "frame_count": 1246,
+          "candidate": false
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 5.863106343895197e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.31153068598359823,
+          "worker_s": 0.3115912979701534,
+          "end_to_end_s": 0.3428042810410261
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 8.256395813077688e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.2205102660227567,
+          "worker_s": 0.22059435897972435,
+          "end_to_end_s": 0.22073032497428358
+        }
+      },
+      "review": "Legacy sees precontact residual and native penetration termination, and had rejected the actual +2 mm candidate. V2 names the sampled align residual at frame 959 without selecting a different candidate.",
+      "review_sources": {
+        "experiments/planner_cost_cycle4/result.json": "44dacb7deb716fc0563c02da9b03461f5cca366102a7710e3edbc841912f7ece",
+        "experiments/planner_cost_cycle4/REPORT.md": "cb8b86e32f6e16c876ade35b577a8818782d09463efb0ff54d58e7ff74838c2a"
+      },
+      "common_structured_input_cost": {
+        "id": "20261116T050715Z_a6d1c3df",
+        "bytes": 7640706,
+        "file_read_s": 0.0012119699968025088,
+        "structured_decode_s": 0.06268704507965595
+      }
+    },
+    {
+      "id": "20261116T050950Z_a48bf34e",
+      "stratum": "collector_default_scene_historical_solver",
+      "domain": "sim",
+      "v2": {
+        "output": {
+          "label": true,
+          "status": "NO_DIVERGENCE_OBSERVED",
+          "event": null,
+          "source": null,
+          "phase": null,
+          "frame": null,
+          "root": "UNKNOWN",
+          "decision": "CONTINUE",
+          "next_check": null,
+          "vetoes": [],
+          "frame_count": 1632,
+          "candidate": false
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 5.726492963731289e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.25615996692795306,
+          "worker_s": 0.25621881196275353,
+          "end_to_end_s": 0.2861286149127409
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 8.61920416355133e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.17137381003703922,
+          "worker_s": 0.17146195704117417,
+          "end_to_end_s": 0.17165627295617014
+        }
+      },
+      "legacy": {
+        "output": {
+          "label": true,
+          "status": "NO_RETENTION_LOSS_OBSERVED",
+          "phase": "fold",
+          "native_error": null,
+          "frame": null,
+          "root": "UNKNOWN"
+        },
+        "cold": {
+          "shared_file_read_and_json_s": 5.41080953553319e-05,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.14020703197456896,
+          "worker_s": 0.14026419504079968,
+          "end_to_end_s": 0.16758293600287288
+        },
+        "hot": {
+          "shared_file_read_and_json_s": 0.00013926706742495298,
+          "rgb_decode_s": 0.0,
+          "decoded_rgb_frames": 0,
+          "engine_s": 0.13851062499452382,
+          "worker_s": 0.1386530240997672,
+          "end_to_end_s": 0.1388072930276394
+        }
+      },
+      "review": "Successful historical collector-default-scene control under archived solver, distinct trace.",
+      "review_sources": {
+        "experiments/planner_cost_cycle4/result.json": "44dacb7deb716fc0563c02da9b03461f5cca366102a7710e3edbc841912f7ece"
+      },
+      "common_structured_input_cost": {
+        "id": "20261116T050950Z_a48bf34e",
+        "bytes": 15877806,
+        "file_read_s": 0.0020863640820607543,
+        "structured_decode_s": 0.13514466502238065
+      }
+    }
+  ]
+}

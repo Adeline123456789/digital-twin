@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "V2.1 paired historical right-arm diagnosis",
-  "status": "V21_GATE_A_PREREGISTERED",
+  "status": "V21_GATE_A_NO_GO",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Measure the frozen Gate A pairs. Checkpoint is not replay authority.",
-  "updated_at": "2026-11-18T11:40:12.484650+00:00",
+  "next_grounded_work": "Gate A stopped this objective. Retain offline diagnostic sidecar and Legacy default; no pending candidate or hardware action.",
+  "updated_at": "2026-11-18T11:45:09.545285+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -107,6 +107,25 @@
     "rollback": "87bd88181836bed5c4723bc7a79a2586060d032f",
     "prior_audit": "One existing read-only Gate A child reviewed five real and five simulation Episodes; handoff recovered.",
     "new_full_simulations": 0,
-    "new_real_attempts": 0
+    "new_real_attempts": 0,
+    "result": "experiments/v21/result.json",
+    "report": "V21_REINTEGRATION_REPORT.md",
+    "decision": "NO-GO",
+    "evidence": "Both readers localized the same two native real stops; both missed the reviewed wrist rotation window. V2 named an existing simulation residual at frame 959, without a distinct candidate or veto.",
+    "prediction_checked": "Better decisions or a lower end-to-end cost with preserved quality",
+    "paired_records": 12,
+    "cold_totals_s": {
+      "legacy": 2.168658080045134,
+      "v2": 3.0907354060327634
+    },
+    "hot_totals_s": {
+      "legacy": 1.1154314809245989,
+      "v2": 1.5142833209829405
+    },
+    "runtime_model_calls": 0,
+    "gate_b": "NOT_RUN_GATE_A_NO_GO",
+    "mock_hardware": "NOT_RUN_GATE_A_NO_GO",
+    "gate_c": "NOT_ELIGIBLE_NO_AUTHORIZATION",
+    "reuse": "Frozen cases and hashes reusable for offline comparison only. Last frozen vertical reference has a real insertion failure and no repeat authority."
   }
 }
