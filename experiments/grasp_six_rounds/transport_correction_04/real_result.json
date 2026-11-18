@@ -1,0 +1,131 @@
+{
+  "task_scope": "grasp_transport_return_diagnostic",
+  "stage_success": false,
+  "physical_transport_axis_accepted": false,
+  "physical_retention_observed_at_endpoint": true,
+  "insertion_attempted": false,
+  "physical_insertion_success": null,
+  "dataset_valid": false,
+  "training_eligible": false,
+  "failure_kind": "RECORDER_FRAME_LIMIT_EXHAUSTED",
+  "error": "Wrist RGB is stale; stop task",
+  "observations": {
+    "before_close": {
+      "width_mm": 59.49999999999999,
+      "top_px": 303,
+      "frame": "3430.jpg"
+    },
+    "before_preload": {
+      "width_mm": 45.5,
+      "top_px": 306,
+      "frame": "3471.jpg"
+    },
+    "after_preload": {
+      "width_mm": 40.2,
+      "top_px": 306,
+      "frame": "3487.jpg"
+    },
+    "lift_handoff": {
+      "allow_transport": true,
+      "reason": "No screened change detected",
+      "encoder_width_change_mm": 0.20000000000000284,
+      "yellow_top_change_px": 4,
+      "thresholds": {
+        "encoder_width_change_mm": 5.0,
+        "yellow_top_change_px": 15.0
+      },
+      "limit": "Change rejection only: an already tilted grasp can pass. Not absolute pose, force or stable-grasp certification",
+      "grasp": {
+        "width_mm": 40.2,
+        "top_px": 306,
+        "frame": "3487.jpg"
+      },
+      "lift": {
+        "width_mm": 40.0,
+        "top_px": 302,
+        "frame": "3543.jpg"
+      }
+    }
+  },
+  "user_observation": "After reset user reports residual tilt, apparently reduced to1–2deg; qualitative estimate, not metric measurement",
+  "root_cause": "Residual real plug-axis error UNKNOWN; recorder failure confirmed",
+  "coverage": {
+    "external": {
+      "frames": 3600,
+      "command_end_after_last_rgb_host_receipt_s": 8.481939109042287,
+      "complete_command_video_coverage": false
+    },
+    "right_wrist": {
+      "frames": 3600,
+      "command_end_after_last_rgb_host_receipt_s": 8.479867535992526,
+      "complete_command_video_coverage": false
+    }
+  },
+  "command_seconds": 35.0793616870651,
+  "recovery_command_seconds": 20.697453746106476,
+  "hold_between_command_logs_s": 130.48044441093225,
+  "actual_effort_command_nm_counts": {
+    "0.3": 1932,
+    "1.0": 375
+  },
+  "child_model_calls": 0,
+  "money_cost": null,
+  "model_pause_in_normal_motion_s": 0,
+  "raw_reference": "self_evolution/grasp_six_rounds_20261117/preload_transport_real",
+  "recovery_reference": "self_evolution/grasp_six_rounds_20261117/preload_transport_recovery",
+  "evidence": [
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_real/execution_report.json",
+      "sha256": "b0f446119584834ebae9f3b17398f01649ebe568733e1b51a000bfcdddbb858f"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_real/commanded_probe.csv",
+      "sha256": "5f6804e194cbbcee8cd6d61f33124d42e0830392ec8116fc869f1fc3dccdbf4a"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_real/raw_can.jsonl",
+      "sha256": "027970abd93b10ea2af53a6299c6cd3bd736b3c998a55a8dd5aa37830f4d899a"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_real/right_wrist/3487.jpg",
+      "sha256": "50de328f9365b9f5e8fb9102e4e5f6141d60fb86883a333e88e1729f3add8a9f"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_real/right_wrist/3543.jpg",
+      "sha256": "10f9b1c3863bae266b4521edec758ebab9058430c3a08cb0a507fb4d973d1c5e"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_recovery/right_wrist/0020.jpg",
+      "sha256": "4b56ba170fe4a547b67f198d041ec3ca58e9c59b7639bbab53d0becb19d08169"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_recovery/external/0020.jpg",
+      "sha256": "f7d139e44548c9b0763c7ff2416ae502f7ce946400aef6e96afd31583d607d60"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_recovery/commanded_probe.csv",
+      "sha256": "95d4497011a6f91021802e444942c385f148ac8f4a0a8999a19779c1d239c7b1"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_recovery/execution_report.json",
+      "sha256": "8d2933733b60b3c8a6a76443e19441e8d9258ab32648692d327ff1fa6b569771"
+    },
+    {
+      "path": "self_evolution/grasp_six_rounds_20261117/preload_transport_recovery/right_wrist/last.png",
+      "sha256": "6099f87a72cf95d0522a9d4ddccebbf685a49ea1cb7e8bcff8a1b0c71132d0ac"
+    }
+  ],
+  "recovery": {
+    "exact_validated_fold_suffix": true,
+    "completed": true,
+    "all_motors_and_gripper_disabled": true,
+    "disabled_check_sha256": "e92156f19eed1587978c3160b8d2ff3befe416b490d9d319f186c677399559ed",
+    "observed_utc": "2026-11-18T01:08:45.292311+00:00",
+    "dataset_valid": true,
+    "manifest_sha256": "40d3e12eeed78b29c91766edcccd271a8c5e078ec9703854c8777ac886e459e8",
+    "frames": 621
+  },
+  "next": "No further extra transport rounds:4/4 consumed. Main3 simulation prepared but real execution withheld pending residual-axis diagnosis.",
+  "recording_fix": "Use existing --wait-trigger with18000frames; native STOP ends recording. Never count pre-trigger waiting against frame capacity.",
+  "provenance_note": "Executed current-entry manifest inherited original source_initial_state_sha256; actual validation used current trial initial_state. Correct hash is in plan_versions.json; preserve executed manifest and this correction, no effect on trajectory hash."
+}

@@ -1,0 +1,8 @@
+{
+  "prefix_exact": true,
+  "source": "preload_reference",
+  "rows": 2228,
+  "tail_source": "vertical_transport_reference",
+  "join_max_joint_delta_deg": 8.364480511602324e-05,
+  "rejected_builder": "Prior assertion caught approach entry mismatch0.623deg and lift prefix length difference2rows; no simulation or hardware ran. Splice exact real-tested prefix instead."
+}

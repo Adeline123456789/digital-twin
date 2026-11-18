@@ -1,0 +1,51 @@
+{
+  "trajectory_id": "84de38b053e03737e69a1272f660d4db2c6e30554da81b347e8758da34bdcdd6",
+  "source_episode": "20261117T121435Z_bf6333a2",
+  "source_trajectory_sha256": "667db9d158a7b0cbc414af9b425ae5389a8855216bb74c1324143704384c85c2",
+  "source_initial_state_sha256": "e5bbca363900d760f62be7f771c7d61c1879e4620d23f36e78732c831d7a381d",
+  "adapter_sha256": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+  "feature_names": [
+    "right.joint1",
+    "right.joint2",
+    "right.joint3",
+    "right.joint4",
+    "right.joint5",
+    "right.joint6",
+    "right.gripper_width"
+  ],
+  "units": [
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "degree",
+    "width_mm / 95"
+  ],
+  "command_provenance": "simulation reference action, NOT simulated measured q",
+  "adaptation": "Exact real vertical attempt prefix through transport,0.5s align join(max0.106deg),then prior frozen insertion/release/retreat/fold targets. Motor effort1Nm from stationary preload.",
+  "source_time_origin_s": 0.03333333333333329,
+  "duration_s": 56.32333333358498,
+  "steps": 5634,
+  "first_target": [
+    -0.668,
+    0.0,
+    0.0,
+    0.367,
+    22.53,
+    0.551,
+    0.631578947368421
+  ],
+  "last_target": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.631578947368421
+  ],
+  "simulation_validation": "PENDING adapted-reference physics replay",
+  "real_execution": "NOT_EXECUTED",
+  "task_scope": "full_pick_insert"
+}

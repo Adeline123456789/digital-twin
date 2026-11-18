@@ -1,0 +1,11 @@
+{
+  "entry_sha256": "b44c62416fb924b4a872af4aa69d3975086b53d370fa64825abf5d81fbf368f2",
+  "source_entry_sha256": "1ce606e251484eed689b5eb1f7bca42e8140da8e5dc8b1ba6be08320c25b58c2",
+  "reference_id": "0ad033f02704025408720250858d31da4652f6f7325a18a35b1185f49a32fddf",
+  "fold_suffix_exact": true,
+  "recovery_only": true,
+  "reason": "Original recorder exhausted3600frames before transport endpoint; retain safety stop, use existing ownership handoff and exact validated fold suffix with restored RGB",
+  "owner_pid": 1663520,
+  "source_pid_validation": "Exact expected private controller path; original CAN lock, stationary feedback,limits and process-exit checks retained",
+  "holding_effort_nm": 1.0
+}

@@ -1,0 +1,14 @@
+{
+  "entry": "self_evolution/grasp_six_rounds_20261117/controller_round3/continue_plug_task.py",
+  "entry_sha256": "3aad89f3f4ec69b586151e49242818fa16b462e8555792956043f659d8fd4781",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "helper_sha256": "57e88436acb1702abfd0cfbcb0a3f5fe6e727f45cd5f15876203b4eab1d43e96",
+  "reference_id": "84de38b053e03737e69a1272f660d4db2c6e30554da81b347e8758da34bdcdd6",
+  "source_initial_state_sha256": "e5bbca363900d760f62be7f771c7d61c1879e4620d23f36e78732c831d7a381d",
+  "effort_nm": {
+    "grasp": 0.3,
+    "preload_onward": 1.0
+  },
+  "status": "PREPARED_NOT_EXECUTED",
+  "rollback": "Use unchanged prior private entry/reference; no default promotion"
+}

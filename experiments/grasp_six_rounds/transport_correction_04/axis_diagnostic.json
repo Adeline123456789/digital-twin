@@ -1,0 +1,24 @@
+{
+  "scope": "Static RGB diagnostic, directly placed object snapshots; NOT physics replay, success evidence, or measured real plug pose",
+  "model_axis_tilt_deg": {
+    "predicted_grasp": 0.075411880453363,
+    "socket_normal": 0.0
+  },
+  "real_joints_deg": [
+    43.118,
+    117.626,
+    -92.49,
+    0.0,
+    69.75,
+    -47.276
+  ],
+  "real_encoder_width_mm": 39.800000000000004,
+  "real_capture": "preload_transport_recovery/*/0020.jpg",
+  "limits": [
+    "Existing camera calibration and shape accuracy limit1-2deg inference",
+    "Object orientation in snapshots comes from simulation, not real measurement",
+    "No depth or force data used"
+  ],
+  "observation": "Rendered predicted-held and socket-normal snapshots are nearly identical; real/model plug shape and projection differ. Existing endpoint view does not identify residual1\u20132deg axis or correction sign.",
+  "input_image_sha256": "4b56ba170fe4a547b67f198d041ec3ca58e9c59b7639bbab53d0becb19d08169"
+}

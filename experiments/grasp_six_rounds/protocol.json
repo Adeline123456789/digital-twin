@@ -1,5 +1,5 @@
 {
-  "status": "PRELOAD_TRANSPORT_SIMULATION",
+  "status": "RESIDUAL_TRANSPORT_AXIS_REVIEW",
   "objective": "evolution/ACTIVE_GOAL.md",
   "main_rounds_planned": 6,
   "main_rounds_started": 2,
@@ -7,7 +7,7 @@
   "extra_corrections_allowed_per_stage": 4,
   "extra_corrections_used": {
     "grasp": 3,
-    "transport": 3,
+    "transport": 4,
     "insert": 1
   },
   "prior_history_reset": false,
@@ -33,7 +33,7 @@
     }
   ],
   "main_rounds_completed": 2,
-  "reset_source": "Latest user reset/hands-clear following preload, followed by resume",
+  "reset_source": "User reset after transport4; residual1–2deg tilt reported",
   "round2_candidates": [
     {
       "height_mm": 22,
@@ -52,5 +52,10 @@
   "cost_note": "Actual simulation, command duration and child-model counts recorded per attempt. Native goal counter belongs to old blocked goal, not a reliable meter for this resumed scope. Monetary cost unknown.",
   "vertical_transport_required": true,
   "native_goal_recreated_utc": "2026-11-17T13:09:57.154554+00:00",
-  "native_goal_recreation_resets_counts": false
+  "native_goal_recreation_resets_counts": false,
+  "recording": {
+    "wait_trigger": true,
+    "frames": 18000,
+    "stop_file": true
+  }
 }

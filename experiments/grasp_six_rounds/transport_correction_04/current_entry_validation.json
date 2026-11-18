@@ -1,0 +1,37 @@
+{
+  "reference_sha256": "0ad033f02704025408720250858d31da4652f6f7325a18a35b1185f49a32fddf",
+  "result": "failure",
+  "task_success": false,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "Stage-only; current initial robot joints, original scene/contact rules; no insertion success",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "max_penetration_m": 2.9201244775846785e-05,
+  "simulated_seconds": 51.786718750227976,
+  "observation_frames": 1553,
+  "applied_reference_steps": 5179,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 119.17968172801193,
+  "prediction_sha256": "3dd3f5298962384b5494892b5acc573485f1bda7aac81a715d5200860e4fe588",
+  "stage_goal": "grasp_transport_return_diagnostic",
+  "stage_success": true,
+  "max_in_gripper_translation_mm": 3.4201829727225173,
+  "max_in_gripper_rotation_deg": 1.236982608913404,
+  "lift_height_m": 0.051097419546946805,
+  "transport_max_socket_normal_tilt_deg": 0.17683667991438864
+}

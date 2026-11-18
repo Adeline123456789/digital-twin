@@ -1,0 +1,37 @@
+{
+  "reference_sha256": "17e2927ed182e53dd7826d33e56cf966b47b74dd8c8963a299fd4ba4746c1026",
+  "result": "failure",
+  "task_success": false,
+  "all_substeps_valid": true,
+  "real_commands": 0,
+  "privileged_information_used": true,
+  "physics_parameter_changes": false,
+  "scope": "Preload then vertical transport diagnostic only; no insertion or calibrated real force claim",
+  "profile": {
+    "timestep_s": 0.00026041666666666666,
+    "task_solref": [
+      0.0006,
+      1
+    ],
+    "task_condim": 6,
+    "task_solimp_first3": [
+      0.99,
+      0.999,
+      0.0001
+    ],
+    "parameter_status": "numerical rigid-contact profile, not experimentally identified"
+  },
+  "max_penetration_m": 2.9201248861710008e-05,
+  "simulated_seconds": 50.78671875021524,
+  "observation_frames": 1523,
+  "applied_reference_steps": 5079,
+  "integrator_timestep_s": 0.00026041666666666666,
+  "wall_seconds": 122.79940983897541,
+  "prediction_sha256": "9e933334a25e5048373513fac043facb620fcdd2122eab003f4b3e952cf147f9",
+  "stage_goal": "grasp_transport_return_diagnostic",
+  "stage_success": true,
+  "max_in_gripper_translation_mm": 3.4201893350463632,
+  "max_in_gripper_rotation_deg": 1.236996276749391,
+  "lift_height_m": 0.05109742435032165,
+  "transport_max_socket_normal_tilt_deg": 0.17683658082427045
+}

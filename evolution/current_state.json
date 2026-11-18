@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-18T00:57:51.187125+00:00",
+  "updated_at": "2026-11-18T01:13:17.891827+00:00",
   "purpose": "Last-observed development checkpoint; not live telemetry or robot prompt",
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "mission": {
@@ -17,7 +17,7 @@
     "automatic_teaching_after_simulation": false
   },
   "branch": "codex/teacher-reliability-20261117",
-  "status": "PRELOAD_TRANSPORT_SIMULATION",
+  "status": "RESIDUAL_TRANSPORT_AXIS_REVIEW",
   "history_checkpoint": "evolution/checkpoints/20261117_before_compact_stage_state.json",
   "continuation": {
     "id": "grasp_six_rounds_20261117",
@@ -31,42 +31,43 @@
   },
   "native_goal_api_limitation": "RESOLVED: user cleared old goal and explicitly requested recreation; new goal created without resetting experiment counts",
   "six_round_continuation": {
-    "status": "PRELOAD_TRANSPORT_SIMULATION",
+    "status": "RESIDUAL_TRANSPORT_AXIS_REVIEW",
     "protocol": "experiments/grasp_six_rounds/protocol.json",
     "main_rounds_real_completed": 2,
     "remaining_main_rounds": 4,
     "extra_corrections_used": {
       "grasp": 3,
-      "transport": 3,
+      "transport": 4,
       "insert": 1
     },
     "hardware_resume_authorized": true,
-    "reset": "User confirmed reset and hands clear after preload; subsequent resume received",
-    "active_stage_scope": "Preparing exact preload prefix plus vertical transport, no insertion",
-    "active_capture": "self_evolution/grasp_six_rounds_20261117/preload_real",
+    "reset": "User reset/hands clear confirmed after transport4 recovery; residual tilt1–2deg reported",
+    "active_stage_scope": "Offline residual-axis diagnosis before main3",
+    "active_capture": "self_evolution/grasp_six_rounds_20261117/preload_transport_real",
     "runtime_sessions": {},
-    "current_candidate": "Exact real-tested preload grasp/lift prefix; vertical transport tail; new simulation pending",
-    "latest_result": "experiments/grasp_six_rounds/grasp_correction_03/real_result.json"
+    "current_candidate": "Main3 exact preload/vertical prefix plus original insertion tail, simulation only; not approved as real axis repair",
+    "latest_result": "experiments/grasp_six_rounds/transport_correction_04/real_result.json"
   },
   "current_findings": [
-    "Round2 flip began in lift, before transport; original later1Nm was too late.",
-    "Stationary preload narrowed4.5mm; subsequent same-effort lift changed0.4mm/4px, retained once. Absolute grasp axis unverified.",
-    "Apparent closure feature motion mostly shared with fixed board; not evidence of object push.",
-    "Original5deg carry replaced in simulation; real vertical transport still not executed."
+    "Preload/lift retained on two independent resets; same-effort changes0.4mm and0.2mm.",
+    "Vertical transport executed to endpoint, plug still held; user reports residual1–2deg tilt, not accepted.",
+    "Recorder exhausted before transport end; evidence gap retained, exact validated fold recovered and disabled.",
+    "No additional transport extras remain; main3 not executed."
   ],
   "evidence": {
-    "latest_physical": "experiments/grasp_six_rounds/grasp_correction_03/real_result.json",
+    "latest_physical": "experiments/grasp_six_rounds/transport_correction_04/real_result.json",
     "latest_full_task": "experiments/grasp_six_rounds/round_02/real/result.json",
     "selected_memory": "memory/negative_experiences/NE021.json",
     "handoff_screen": "experiments/grasp_six_rounds/grasp_correction_02/handoff_offline.json"
   },
   "next_unresolved": [
-    "Finish validating exact preload prefix joined to vertical transport; compare actual axis and in-hand posture.",
-    "Counts preserved main2/6, extra grasp3/4 transport3/4 insert1/4."
+    "Compare real held endpoint with modeled axis before choosing insertion candidate.",
+    "Current reset confirmed; no new permission required within scope.",
+    "Use triggered recording with18000frames; preserve partial raw capture."
   ],
   "last_hardware_observation": {
-    "state": "All six motors and gripper disabled after folded return",
-    "source": "experiments/grasp_six_rounds/grasp_correction_03/real_result.json",
+    "state": "Folded, all six motors and gripper disabled",
+    "source": "experiments/grasp_six_rounds/transport_correction_04/real_result.json",
     "live_telemetry": false
   },
   "publication": "Check Git and remote; raw data/private controllers stay outside public Git"

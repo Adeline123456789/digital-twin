@@ -1,0 +1,13 @@
+{
+  "entry": "self_evolution/grasp_six_rounds_20261117/controller_preload_transport/continue_transport_check.py",
+  "entry_sha256": "1ce606e251484eed689b5eb1f7bca42e8140da8e5dc8b1ba6be08320c25b58c2",
+  "controller_sha256": "9664d1875b358886114e1f0618d2746e64b790215f1123471c2c856cce5b72b1",
+  "helper_sha256": "57e88436acb1702abfd0cfbcb0a3f5fe6e727f45cd5f15876203b4eab1d43e96",
+  "reference_id": "0ad033f02704025408720250858d31da4652f6f7325a18a35b1185f49a32fddf",
+  "change": "Keep exact latest preload grasp/lift commands; extend to vertical transport only. Compare preload and lift under same1Nm command; unchanged5mm/15px rejection thresholds.",
+  "rollback": "Prior preload-only grasp check; source controller and original defaults untouched",
+  "status": "REAL_TRANSPORT_ENDED_RECORDER_FAILED_RECOVERY_FOLDED",
+  "source_trial": "self_evolution/grasp_six_rounds_20261117/preload_transport_current_trial",
+  "initial_state_sha256": "e5bbca363900d760f62be7f771c7d61c1879e4620d23f36e78732c831d7a381d",
+  "entry_connection": "1s approach prefix from fresh folded feedback; downstream commands bitwise unchanged"
+}
