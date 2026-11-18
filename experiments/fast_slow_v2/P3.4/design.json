@@ -1,0 +1,10 @@
+{
+  "round_id": "P3.4",
+  "category": "promotion decisions",
+  "hypothesis": "A scoped diagnostic can pass replay regression while physics stays unknown",
+  "criterion": "Record evidence-backed scoped acceptance or no candidate, and real rejection with rollback",
+  "started": "2026-11-18T10:19:05.757363+00:00",
+  "rollback_ref": "0e8e57bc0101ef17f45af846ecddf6664af29feb",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

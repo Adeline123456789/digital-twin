@@ -1,0 +1,99 @@
+{
+  "round_id": "P3.4",
+  "hypothesis": "A scoped diagnostic can pass replay regression while physics stays unknown",
+  "changed_files": [
+    "experiments/fast_slow_v2/P3.4/review.py",
+    "experiments/fast_slow_v2/P3.4/decisions.jsonl"
+  ],
+  "source_hash": {
+    "experiments/fast_slow_v2/P3.4/review.py": "4a4a288de59f242882cefbbb4dc9974c292469ed36210d424e58129435abcdbb",
+    "experiments/fast_slow_v2/P3.4/decisions.jsonl": "9183a820cbf843241f7cffb5e4211e36a9650bf95e1ef7f74b3c20270a0f4aef"
+  },
+  "baseline": "0e8e57bc0101ef17f45af846ecddf6664af29feb",
+  "candidate": "promotion decisions",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 3,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 1.288,
+  "decision": "ACCEPT",
+  "validation": "Source-bound replay gate rejected physical tilt and accepted clock validation only on two held-out original trajectories; active bytes identical",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "0e8e57bc0101ef17f45af846ecddf6664af29feb",
+  "measurements": [
+    {
+      "decision": "REJECT_AND_ROLLBACK",
+      "reason": "Native complete task failed",
+      "rows": [
+        {
+          "split": "development",
+          "episode": "20261112T090023Z_1341a28d",
+          "success": false,
+          "diagnosis": "GRASP_RETENTION_LOSS_OBSERVED",
+          "config": "0e4b745f609f93575bc540e601465a1f5d6ed09f93ca4e62df65a09e1b238c32"
+        }
+      ],
+      "rollback_ref": "83f51a39b350e7575f18541f5c81897f2b4c823a",
+      "scope": {
+        "source_profile": "retained_final",
+        "target_index": 1,
+        "native_source_hash": "572dd25bb9ec964ffcf6a092874c0eb8eea3c085c7b285511882cb21615e0583",
+        "purpose": "repair_transport"
+      },
+      "proposal": "experiments/fast_slow_v2/P3.3/tilt.json",
+      "proposal_sha256": "d1f94332240d113fd4edf4f126cf830d30b5ec4bc6254558626fd29eddbf5676",
+      "active_before": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a",
+      "active_after": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a",
+      "runtime_model_calls": 0
+    },
+    {
+      "decision": "ACCEPT",
+      "reason": "Offline timeline check only; native policy and physical labels unchanged",
+      "rows": [
+        {
+          "split": "development",
+          "episode": "20261112T073436Z_43d3e2c2",
+          "success": true,
+          "diagnosis": "NO_DIVERGENCE_OBSERVED",
+          "config": "e52c77b0091b1925b4ccdb3bbbccf4bb673fedc0e3fda33f28f9574a79ec76cd",
+          "original_aligned": true,
+          "injected_mismatch_detected": true
+        },
+        {
+          "split": "heldout",
+          "episode": "20261112T092311Z_901189c4",
+          "success": true,
+          "diagnosis": "NO_DIVERGENCE_OBSERVED",
+          "config": "baf12368f7aab60b2596b2e86afb99cdca9f4fd85005f714f832c7ba49f183bb",
+          "original_aligned": true,
+          "injected_mismatch_detected": true
+        },
+        {
+          "split": "heldout",
+          "episode": "20261112T093157Z_13f12a06",
+          "success": true,
+          "diagnosis": "NO_DIVERGENCE_OBSERVED",
+          "config": "cc1a80b1ace4269b1819b8a3b9bd70404e3d6fe1d52cbd3903e855addcd31e1d",
+          "original_aligned": true,
+          "injected_mismatch_detected": true
+        }
+      ],
+      "rollback_ref": "83f51a39b350e7575f18541f5c81897f2b4c823a",
+      "scope": {
+        "source_profile": "original",
+        "target_index": 3,
+        "native_source_hash": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+        "purpose": "detect_time_mismatch_in_archived_simulation"
+      },
+      "proposal": "experiments/fast_slow_v2/P3.3/clock.json",
+      "proposal_sha256": "148ceb5f6eb7f3a52a91bd6cc7164b54d99c13230342defb81dd5269112a4b3b",
+      "active_before": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a",
+      "active_after": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a",
+      "runtime_model_calls": 0
+    }
+  ]
+}

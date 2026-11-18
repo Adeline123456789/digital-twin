@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Record evidence-backed scoped acceptance or no candidate, and real rejection with rollback",
-  "updated_at": "2026-11-18T10:19:05.713553+00:00",
+  "next_grounded_work": "Compare gap and active state on independent MuJoCo contact fixture",
+  "updated_at": "2026-11-18T10:19:07.045809+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -86,8 +86,8 @@
     "execution_boundary": "Same capture command log is exclusive. Current entry does not bind unique request or scene version and retains a legacy path without frozen validation.",
     "precompact": "Project hook loaded and trusted in desktop Codex; automatic-only matcher and return checked offline. No live compaction forced."
   },
-  "v2_round": "P3.3",
+  "v2_round": "P3.4",
   "v2_budget": "experiments/round_budget.json",
-  "v2_result": "experiments/fast_slow_v2/P3.3/RESULT.json",
-  "v2_rounds_used": 11
+  "v2_result": "experiments/fast_slow_v2/P3.4/RESULT.json",
+  "v2_rounds_used": 12
 }
