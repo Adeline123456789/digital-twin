@@ -45,3 +45,13 @@ def test_slow_budget_and_deduplication():
     s=Supervisor(slow,max_calls=1,token_limit=20)
     s.deadline=0
     assert s.diagnose(r,c)['diagnosis']=='UNKNOWN' and s.calls==0
+
+
+def test_graph_emits_one_versioned_request_then_waits():
+    from robot_agent.policy_graph import replay_graph
+    e,c=skill_case();f=FastLoop()
+    g=replay_graph(e,c,f.router)
+    assert [n['passed'] for n in g['steps']]==[True,True,False]
+    assert g['request']['offset_mm']==c['previous_offset_mm']-c['residual'][0]
+    assert g['task_success'] is None
+    assert replay_graph(replace(e,target_index=1),c,f.router)['request'] is None

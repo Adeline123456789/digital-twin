@@ -1,0 +1,10 @@
+{
+  "round_id": "P2.3",
+  "category": "policy graph",
+  "hypothesis": "Typed replay and postconditions can bound recovery",
+  "criterion": "Run offline CLI, trace transitions and stop on missing postcondition",
+  "started": "2026-11-18T10:14:38.654698+00:00",
+  "rollback_ref": "b54ecf0b10ecf2d28b581cad082bcd66311d6a00",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "active_sha256": "37699c8622116000e58eb25b260cb55f56951eba07f3aa4696b6c72b863ba88a"
+}

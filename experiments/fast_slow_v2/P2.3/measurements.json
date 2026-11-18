@@ -1,0 +1,49 @@
+{
+  "episode": "20261112T075231Z_2a125acc",
+  "graph": {
+    "version": "vs002-replay-v1",
+    "steps": [
+      {
+        "action": "check_scope",
+        "requires": "MATCH",
+        "passed": true
+      },
+      {
+        "action": "emit_sim_request",
+        "requires": "VS002",
+        "passed": true
+      },
+      {
+        "action": "verify_new_episode",
+        "requires": "native_success_and_recording",
+        "passed": false
+      }
+    ],
+    "request": {
+      "adapter": "simulation_replay_only",
+      "offset_mm": -0.17855465358821032,
+      "native_source_hash": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+      "task_version": "e52c77b0091b1925b4ccdb3bbbccf4bb673fedc0e3fda33f28f9574a79ec76cd"
+    },
+    "task_success": null
+  },
+  "measured_frames": 1130,
+  "processing_ms": {
+    "p50": 0.003943,
+    "p95": 0.011894,
+    "p99": 0.012345
+  },
+  "actual_planner_kind": "compiled_alignment_v1",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "model_invoked": false,
+  "state_trace": [
+    "IDLE",
+    "PLAN",
+    "EXECUTE_FAST",
+    "HALT_OR_HOLD",
+    "TRIAGE_FAST",
+    "EXECUTE_FAST",
+    "VERIFY"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "round_id": "P2.3",
+  "hypothesis": "Typed replay and postconditions can bound recovery",
+  "changed_files": [
+    "scripts/agent_loop.py",
+    "scripts/triage_episode.py",
+    "robot_agent/diagnosis.py",
+    "robot_agent/local_slow.py",
+    "robot_agent/policy_graph.py",
+    "robot_agent/policy_graph.json",
+    "tests/test_fast_loop.py"
+  ],
+  "source_hash": {
+    "scripts/agent_loop.py": "c15b2d89fb6363b1e8637cb0bc20ad9f70cf87afd27f9363a135e37fac6df327",
+    "scripts/triage_episode.py": "14216e4f997a975a667dfeccf9fe2459ba2a21c3503442288ba4fc36ecae5abf",
+    "robot_agent/diagnosis.py": "e18051ffd0fdc8a9e0fe27e8f27c36b11043e956ca5aae8001b02d63fb793b0b",
+    "robot_agent/local_slow.py": "611a66f127d15333dfe283f36b1590591f8bf3a5e15f8fb5d923d62ab7b3d612",
+    "robot_agent/policy_graph.py": "b1135e76b8e013f9cc307be222849b3616153d1132671d82daf314fb699e8a28",
+    "robot_agent/policy_graph.json": "d9ed3ca992f05c3b917793814dbee9fc0c8740b6792658e57d6541dc820fe869",
+    "tests/test_fast_loop.py": "e8b14c77311ddb564635c0274465baa8d987f34fee80e82592475a37126ef47d"
+  },
+  "baseline": "b54ecf0b10ecf2d28b581cad082bcd66311d6a00",
+  "candidate": "policy graph",
+  "heldout": "experiments/research_stage4/round3/design.json",
+  "test_count": 10,
+  "sim_episode_count": 0,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "wall_seconds": 96.835,
+  "decision": "ACCEPT",
+  "validation": "Opt-in agent_loop replay reached historical VS002, emitted one bounded simulation request and stopped at fresh-episode postcondition",
+  "unknowns": [
+    "Real physical cause UNKNOWN; real stability untested"
+  ],
+  "rollback_ref": "b54ecf0b10ecf2d28b581cad082bcd66311d6a00",
+  "measurements": {
+    "episode": "20261112T075231Z_2a125acc",
+    "graph": {
+      "version": "vs002-replay-v1",
+      "steps": [
+        {
+          "action": "check_scope",
+          "requires": "MATCH",
+          "passed": true
+        },
+        {
+          "action": "emit_sim_request",
+          "requires": "VS002",
+          "passed": true
+        },
+        {
+          "action": "verify_new_episode",
+          "requires": "native_success_and_recording",
+          "passed": false
+        }
+      ],
+      "request": {
+        "adapter": "simulation_replay_only",
+        "offset_mm": -0.17855465358821032,
+        "native_source_hash": "f6d1f144f11118f9ac965fec0819ce3c7327ceb2af67fd9db09d9d7465137f06",
+        "task_version": "e52c77b0091b1925b4ccdb3bbbccf4bb673fedc0e3fda33f28f9574a79ec76cd"
+      },
+      "task_success": null
+    },
+    "measured_frames": 1130,
+    "processing_ms": {
+      "p50": 0.003943,
+      "p95": 0.011894,
+      "p99": 0.012345
+    },
+    "actual_planner_kind": "compiled_alignment_v1",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "model_invoked": false,
+    "state_trace": [
+      "IDLE",
+      "PLAN",
+      "EXECUTE_FAST",
+      "HALT_OR_HOLD",
+      "TRIAGE_FAST",
+      "EXECUTE_FAST",
+      "VERIFY"
+    ]
+  }
+}

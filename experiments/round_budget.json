@@ -29,7 +29,7 @@
     "P2": {
       "sim_cap": 6,
       "round_cap": 3,
-      "used_rounds": 2,
+      "used_rounds": 3,
       "sim_used": 0
     },
     "P3": {
@@ -138,9 +138,10 @@
     "P1.1",
     "P1.2",
     "P2.1",
-    "P2.2"
+    "P2.2",
+    "P2.3"
   ],
   "refused": [],
-  "remaining_rounds": 7,
+  "remaining_rounds": 6,
   "remaining_simulations": 24
 }

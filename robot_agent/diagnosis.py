@@ -21,7 +21,7 @@ class EventBuilder:
     def __init__(self, data=DATA):
         self.data = data
 
-    def build(self, path):
+    def build(self, path, observer=None):
         path = Path(path).resolve()
         r = json_file(path)
         ident = r['experiment_id']
@@ -61,6 +61,10 @@ class EventBuilder:
                     return unknown('TIMESTAMP_MISMATCH')
             refs += tuple(reference(p,self.data) for p in (trace,priv,ep/f'recording_{ident}.json',stats/'metadata.json',stats/'proprio_stats.h5',ep/'outcome.json'))
             fact = replace(fact, evidence_refs=refs, time_alignment_quality='verified', observability='observed')
+            if observer:
+                for i,(row,extra) in enumerate(zip(rows,extras)):
+                    observer(replace(fact,phase=row['phase'],action_id=str(i),timestamp_mono=row['time'],
+                                     observed_value=dict(plug=row['plug'],grip=row['grip'],contacts=extra['contacts'])))
             result = from_trace(fact,rows,extras,r['observed_effects'][0],success)
             if not success and result.status in {'NO_DIVERGENCE_OBSERVED','NATIVE_TASK_FAILED'} and self.data == DATA:
                 from agent_challenge import precontact_observation

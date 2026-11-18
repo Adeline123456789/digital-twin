@@ -1,0 +1,8 @@
+{
+  "version": "vs002-replay-v1",
+  "nodes": [
+    {"action": "check_scope", "requires": "MATCH"},
+    {"action": "emit_sim_request", "requires": "VS002"},
+    {"action": "verify_new_episode", "requires": "native_success_and_recording"}
+  ]
+}
