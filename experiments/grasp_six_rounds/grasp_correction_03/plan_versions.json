@@ -7,7 +7,7 @@
   "change": "Separate intentional0.3→1Nm tightening on stationary supported plug from subsequent lift observation; same5mm/15px thresholds, no transport commands",
   "hypothesis": "Preload may change aperture without the observed flip; baseline under same holding effort avoids conflating effort change with slip. Stable grasp not yet established.",
   "rollback": "Use prior controller_before_lift stage; defaults unchanged",
-  "status": "SIM_VALIDATED_PENDING_REAL",
+  "status": "REAL_STAGE_COMPLETED_RETENTION_OBSERVED",
   "observation_contract": [
     "before_close",
     "before_preload",

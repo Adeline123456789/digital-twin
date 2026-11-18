@@ -1,7 +1,7 @@
 {
   "id": "NE021",
-  "version": 5,
-  "content": "Right-arm plug retention is not established by lift height, condim6 simulation success, or one successful grasp-return trial. Round2 used identical descend/grasp commands and essentially identical lift commands to a prior held trial, yet plug rotated0.9–1.0s into lift before transport. Delayed1Nm after lift cannot undo an already rotated plug. Moving1Nm transition to lift entry retained grasp and folded return in one subsequent stage trial; not stable insertion. Second independent reset with1Nm from lift retained through transport/fold, but onsite user rejected tilted carry. Native planner adds5deg preinsert tilt; absolute world/socket-axis orientation was omitted from retention-only stage criteria. An already tilted grasp can pass the change-only screen. Vertical-transport candidate was never sent: change-only screen rejected5.2mm closing while RGB changed3px with no observed gross flip. Treat as guard ambiguity, not confirmed physical slip. Compare preload-to-lift under the same holding effort; separately inspect closure/preload posture.",
+  "version": 6,
+  "content": "Right-arm plug retention is not established by lift height, condim6 simulation success, or one successful grasp-return trial. Round2 used identical descend/grasp commands and essentially identical lift commands to a prior held trial, yet plug rotated0.9–1.0s into lift before transport. Delayed1Nm after lift cannot undo an already rotated plug. Moving1Nm transition to lift entry retained grasp and folded return in one subsequent stage trial; not stable insertion. Second independent reset with1Nm from lift retained through transport/fold, but onsite user rejected tilted carry. Native planner adds5deg preinsert tilt; absolute world/socket-axis orientation was omitted from retention-only stage criteria. An already tilted grasp can pass the change-only screen. Vertical-transport candidate was never sent: change-only screen rejected5.2mm closing while RGB changed3px with no observed gross flip. Treat as guard ambiguity, not confirmed physical slip. Compare preload-to-lift under the same holding effort; separately inspect closure/preload posture. Stationary1Nm preload then lift retained the plug once: effort-change closing4.5mm, subsequent lift0.4mm/4px. Apparent feature shift30px versus fixed-base28px is mainly common view shift; do not infer object displacement from pixel shift alone. Absolute grasp axis remains unverified.",
   "applicability": "Current right-only original Piper task,target3,RGB-only; historical success and current failure remain distinct",
   "source_episodes": [
     "20261117_real_grasp_six_rounds_000001",
@@ -16,7 +16,8 @@
     "experiments/grasp_six_rounds/round_02/real/result.json",
     "experiments/grasp_six_rounds/grasp_correction_02/real_result.json",
     "experiments/grasp_six_rounds/transport_correction_02/real_result.json",
-    "experiments/grasp_six_rounds/transport_correction_03/real_result.json"
+    "experiments/grasp_six_rounds/transport_correction_03/real_result.json",
+    "experiments/grasp_six_rounds/grasp_correction_03/real_result.json"
   ],
   "validation_status": "REAL_LIFT_FAILURE_LOCALIZED; SINGLE_STAGE_REPAIR_OBSERVED",
   "success_count": 0,
@@ -50,7 +51,7 @@
     {
       "when": "Interpreting gripper-width change across stages",
       "check": "Separate commanded effort change from motion-induced changes; width alone is not slip evidence. Read observed RGB and actuator phase before diagnosis.",
-      "evidence": "experiments/grasp_six_rounds/transport_correction_03/grasp_settling.json"
+      "evidence": "experiments/grasp_six_rounds/grasp_correction_03/real_result.json"
     },
     {
       "when": "A grasp is retained",

@@ -1,0 +1,120 @@
+{
+  "task_scope": "grasp_lift_return_diagnostic",
+  "stage_success": null,
+  "stage_retention_observed": true,
+  "absolute_grasp_axis_verified": false,
+  "insertion_attempted": false,
+  "physical_insertion_success": null,
+  "training_eligible": false,
+  "dataset_valid": true,
+  "observation": "Reviewed RGB retains initial visible housing shape through preload/lift/return without gross flip. Absolute insertion axis remains unmeasured; retention-only result.",
+  "observations": {
+    "before_close": {
+      "width_mm": 59.49999999999999,
+      "top_px": 306,
+      "frame": "0605.jpg"
+    },
+    "before_preload": {
+      "width_mm": 44.8,
+      "top_px": 303,
+      "frame": "0645.jpg"
+    },
+    "after_preload": {
+      "width_mm": 40.3,
+      "top_px": 303,
+      "frame": "0660.jpg"
+    },
+    "lift_handoff": {
+      "allow_transport": true,
+      "reason": "No screened change detected",
+      "encoder_width_change_mm": 0.3999999999999986,
+      "yellow_top_change_px": 4,
+      "thresholds": {
+        "encoder_width_change_mm": 5.0,
+        "yellow_top_change_px": 15.0
+      },
+      "limit": "Change rejection only: an already tilted grasp can pass. Not absolute pose, force or stable-grasp certification",
+      "preload": {
+        "width_mm": 40.3,
+        "top_px": 303,
+        "frame": "0660.jpg"
+      },
+      "lift": {
+        "width_mm": 39.9,
+        "top_px": 299,
+        "frame": "0715.jpg"
+      }
+    }
+  },
+  "encoder_end_width_mm": {
+    "grasp": 44.8,
+    "preload": 40.3,
+    "lift": 39.9,
+    "fold": 39.1
+  },
+  "command_seconds": 41.357543651014566,
+  "effort_transition": {
+    "reference_index": 1997,
+    "monotonic": 649407.085398383,
+    "effort_nm": 1.0
+  },
+  "actual_effort_command_nm_counts": {
+    "0.3": 2013,
+    "1.0": 1955
+  },
+  "independent_reset": true,
+  "model_pause_seconds": 0,
+  "child_model_calls": 0,
+  "money_cost": null,
+  "simulation_seconds": 89.16188368294388,
+  "recording_frames_per_camera": 1240,
+  "recording_reference": "self_evolution/grasp_six_rounds_20261117/diagnostic_preload",
+  "recording_manifest_sha256": "5b53c227987bfdf00c74dcea2a108a8fb52351aa4ca0837801a2f8c93ae5f2cf",
+  "raw_reference": "self_evolution/grasp_six_rounds_20261117/preload_real",
+  "disabled": {
+    "all_six_motors": true,
+    "gripper": true,
+    "observed_utc": "2026-11-17T13:15:29.915892+00:00",
+    "check_sha256": "4e3191a70e9e4a3fd31e5fd73dd33a19eef7eab0373361aad620452914d8fb7d"
+  },
+  "evidence": [
+    {
+      "path": "right_wrist/0605.jpg",
+      "sha256": "66e37f8f8908687814c4f3c7a57805944ff89a1cf4433e4df10b5d8b64dbf7b5"
+    },
+    {
+      "path": "right_wrist/0645.jpg",
+      "sha256": "524c4486a982557ffc63571d37c249d1979dc7a9d4bc621e75a6cdcb63b85861"
+    },
+    {
+      "path": "right_wrist/0660.jpg",
+      "sha256": "52060b64fea29097cd3d6309eb6050751311e1956c0d9e05e60d7687dc61619f"
+    },
+    {
+      "path": "right_wrist/0715.jpg",
+      "sha256": "97f8234caa4ff5162baa40f9f3b805c3724d7ae5e80bd816fe0c7bc4e8ab54f5"
+    },
+    {
+      "path": "right_wrist/last.png",
+      "sha256": "49dfa53b38b736cfe07f550c0a0a525bfe4b43eeaa9969a3db32d668cb18e6eb"
+    },
+    {
+      "path": "commanded_probe.csv",
+      "sha256": "b6d80a100fb6d69dc6ac776b9c3c097c2fb034296ac9d351487b3fe055206165"
+    },
+    {
+      "path": "execution_report.json",
+      "sha256": "246669698f0b1b97361fe6372789092c1ffe9732d9c9834fec787b32d1514a33"
+    },
+    {
+      "path": "raw_can.jsonl",
+      "sha256": "329a7c36413813f10b0d3275d2d7d7cd1f4a7f94d1586b9d0745ce4d3f7ebdd3"
+    }
+  ],
+  "limits": [
+    "One retention check, no verified real absolute axis or stable insertion",
+    "Intentional effort change narrowed encoder opening4.5mm before lift; same-effort lift changed0.4mm",
+    "Feature moved30px while fixed base moved28px; cannot call apparent global shift object push",
+    "Initial camera-not-ready launch stopped before hardware connection; one physical attempt only"
+  ]
+}

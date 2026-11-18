@@ -1,0 +1,65 @@
+{
+  "observations": [
+    {
+      "phase": "before_close",
+      "frame": "0605.jpg",
+      "feature_center_px": [
+        374,
+        351
+      ],
+      "template_correlation": 1.0,
+      "board_marker_center_px": [
+        408.0,
+        139.0
+      ],
+      "head_minus_board_px": [
+        -34.0,
+        212.0
+      ],
+      "board_marker_area_px": 3316.5
+    },
+    {
+      "phase": "closed03",
+      "frame": "0645.jpg",
+      "feature_center_px": [
+        349,
+        345
+      ],
+      "template_correlation": 0.9810188412666321,
+      "board_marker_center_px": [
+        384.0,
+        136.5
+      ],
+      "head_minus_board_px": [
+        -35.0,
+        208.5
+      ],
+      "board_marker_area_px": 3222.0
+    },
+    {
+      "phase": "preload1",
+      "frame": "0660.jpg",
+      "feature_center_px": [
+        344,
+        344
+      ],
+      "template_correlation": 0.9796324968338013,
+      "board_marker_center_px": [
+        380.0,
+        136.5
+      ],
+      "head_minus_board_px": [
+        -36.0,
+        207.5
+      ],
+      "board_marker_area_px": 3199.0
+    }
+  ],
+  "scope": "Same-pose RGB feature displacement only; not metric pose/angle or force",
+  "reference_template": "before-close screw feature29x31px",
+  "interpretation": "Subtract fixed board marker to distinguish camera motion from head movement",
+  "limitations": [
+    "A point displacement does not establish object rotation",
+    "Single-view hand/object pose and lateral metric remain uncertain"
+  ]
+}

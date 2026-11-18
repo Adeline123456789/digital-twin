@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-17T13:09:57.154554+00:00",
+  "updated_at": "2026-11-18T00:57:51.187125+00:00",
   "purpose": "Last-observed development checkpoint; not live telemetry or robot prompt",
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "mission": {
@@ -17,7 +17,7 @@
     "automatic_teaching_after_simulation": false
   },
   "branch": "codex/teacher-reliability-20261117",
-  "status": "PRELOAD_SIM_VALIDATED_PENDING_RESET",
+  "status": "PRELOAD_TRANSPORT_SIMULATION",
   "history_checkpoint": "evolution/checkpoints/20261117_before_compact_stage_state.json",
   "continuation": {
     "id": "grasp_six_rounds_20261117",
@@ -31,43 +31,42 @@
   },
   "native_goal_api_limitation": "RESOLVED: user cleared old goal and explicitly requested recreation; new goal created without resetting experiment counts",
   "six_round_continuation": {
-    "status": "PRELOAD_SIM_VALIDATED_PENDING_RESET",
+    "status": "PRELOAD_TRANSPORT_SIMULATION",
     "protocol": "experiments/grasp_six_rounds/protocol.json",
     "main_rounds_real_completed": 2,
     "remaining_main_rounds": 4,
     "extra_corrections_used": {
-      "grasp": 2,
+      "grasp": 3,
       "transport": 3,
       "insert": 1
     },
     "hardware_resume_authorized": true,
-    "reset": "Previous reset consumed by vertical candidate; new reset confirmation required",
-    "active_stage_scope": "Prepared stationary-preload grasp/lift/return diagnostic; not executed",
-    "active_capture": null,
+    "reset": "User confirmed reset and hands clear after preload; subsequent resume received",
+    "active_stage_scope": "Preparing exact preload prefix plus vertical transport, no insertion",
+    "active_capture": "self_evolution/grasp_six_rounds_20261117/preload_real",
     "runtime_sessions": {},
-    "current_candidate": "Preserve22mm grasp/lift prefix and1Nm lift-entry hold; cancel carry5deg tilt under original IK bounds",
-    "latest_result": "experiments/grasp_six_rounds/transport_correction_03/real_result.json"
+    "current_candidate": "Exact real-tested preload grasp/lift prefix; vertical transport tail; new simulation pending",
+    "latest_result": "experiments/grasp_six_rounds/grasp_correction_03/real_result.json"
   },
   "current_findings": [
-    "Round2 flipped during lift before transport. Earlier1Nm at lift entry improved retention in stage checks, not full success.",
-    "Native carry intentionally tilted5deg; replacement vertical reference passes original simulation limits, max tilt0.173deg. Real transport was not executed due to handoff screen.",
-    "Latest screen rejects5.2mm tightening although RGB shifts3px without observed gross flip. Cannot count it as confirmed physical slip or avoided failure.",
-    "Next isolated test establishes1Nm while stationary for0.5s, then compares preload→lift under same command effort; absolute initial grasp axis remains unresolved."
+    "Round2 flip began in lift, before transport; original later1Nm was too late.",
+    "Stationary preload narrowed4.5mm; subsequent same-effort lift changed0.4mm/4px, retained once. Absolute grasp axis unverified.",
+    "Apparent closure feature motion mostly shared with fixed board; not evidence of object push.",
+    "Original5deg carry replaced in simulation; real vertical transport still not executed."
   ],
   "evidence": {
-    "latest_physical": "experiments/grasp_six_rounds/transport_correction_03/real_result.json",
+    "latest_physical": "experiments/grasp_six_rounds/grasp_correction_03/real_result.json",
     "latest_full_task": "experiments/grasp_six_rounds/round_02/real/result.json",
     "selected_memory": "memory/negative_experiences/NE021.json",
     "handoff_screen": "experiments/grasp_six_rounds/grasp_correction_02/handoff_offline.json"
   },
   "next_unresolved": [
-    "New goal is active and preserves main2/6; extras used grasp2,transport3,insert1.",
-    "After reset/hands-clear confirmation, execute only prepared preload/grasp/lift/fold check; record before-close, before/after preload and lift RGB.",
-    "Preserve vertical transport candidate; do not proceed to insertion on retention-only evidence."
+    "Finish validating exact preload prefix joined to vertical transport; compare actual axis and in-hand posture.",
+    "Counts preserved main2/6, extra grasp3/4 transport3/4 insert1/4."
   ],
   "last_hardware_observation": {
-    "state": "All six motors and gripper disabled after folded return; no live claim",
-    "source": "experiments/grasp_six_rounds/transport_correction_03/real_result.json",
+    "state": "All six motors and gripper disabled after folded return",
+    "source": "experiments/grasp_six_rounds/grasp_correction_03/real_result.json",
     "live_telemetry": false
   },
   "publication": "Check Git and remote; raw data/private controllers stay outside public Git"
