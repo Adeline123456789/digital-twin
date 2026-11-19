@@ -1,17 +1,17 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "V2.1 paired historical right-arm diagnosis",
-  "status": "V21_GATE_A_NO_GO",
+  "scope": "Stopped right-arm RGB observation study",
+  "status": "RIGHT_WRIST_RGB_RULE_FROZEN",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
     "training and teacher/student comparisons"
   ],
-  "stop_condition": "Stop at A or B on no demonstrated gain. Hardware requires fresh authorization.",
+  "stop_condition": "Evaluate the frozen image measurement once on existing controls and reviewed failures. Stop with evidence only if reliability is insufficient.",
   "software": {
-    "branch": "codex/v21-right-arm-gate-a",
+    "branch": "codex/right-wrist-relative-rgb",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
     "live_candidate": null,
     "last_executed_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Gate A stopped this objective. Retain offline diagnostic sidecar and Legacy default; no pending candidate or hardware action.",
-  "updated_at": "2026-11-18T11:45:09.545285+00:00",
+  "next_grounded_work": "Read-only evaluation on reserved recordings; no hardware execution.",
+  "updated_at": "2026-11-19T03:08:17.378156+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -127,5 +127,27 @@
     "mock_hardware": "NOT_RUN_GATE_A_NO_GO",
     "gate_c": "NOT_ELIGIBLE_NO_AUTHORIZATION",
     "reuse": "Frozen cases and hashes reusable for offline comparison only. Last frozen vertical reference has a real insertion failure and no repeat authority."
+  },
+  "wrist_rgb": {
+    "baseline": "1f67d7b7944e5d8307774a17d56a88df3b7a82f0",
+    "development": "20261116_real_repeatability_000004",
+    "frozen_private_analysis_sha256": {
+      "geometry.py": "066fd57c8742908c965a014781fdc3a46df2129332dc119b9acaf53943d3c8aa",
+      "check.py": "2662e38e6ce7757a86d8a0010ddec2fb007c06fb3126700350feb40c248a57b5"
+    },
+    "reserved": [
+      "20261116_real_repeatability_000002",
+      "20261116_real_current_socket_repair_000002",
+      "20261118_real_grasp_six_rounds_000003",
+      "20261117_real_grasp_six_rounds_000001",
+      "20261117_real_grasp_six_rounds_000002",
+      "20261116_real_repeatability_000005"
+    ],
+    "development_result": "Grasp-relative screw recess and crown moved in opposite directions during insertion. Valid landmarks on frames 9695 and 9703 bound the change; confirmed at 9705.",
+    "decision_rule": "Three consecutive exposures; opposing vertical motion of recess >=8 px and crown >=6 px, spacing change >=12 px; or same-sign displacement >=16 px in both with spacing change <=7 px. Require both tips, two yellow thresholds and two recess thresholds. A physical success alone does not label earlier seating motion. Score against phase-specific archived RGB review; abstentions on confirmed events count as misses.",
+    "test_roles": "Both same-arm successes as task controls; round 1 and 2 annotated lift changes as independent positives; latest round 3 and repeatability 5 as guarded insertion challenges. No adjustment on these records.",
+    "new_simulations": 0,
+    "hardware_attempts": 0,
+    "runtime_llm_calls": 0
   }
 }
