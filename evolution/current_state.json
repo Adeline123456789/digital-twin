@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Stopped right-arm RGB observation study",
-  "status": "RIGHT_WRIST_RGB_RULE_FROZEN",
+  "status": "RIGHT_WRIST_RGB_EVIDENCE_ONLY",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Read-only evaluation on reserved recordings; no hardware execution.",
-  "updated_at": "2026-11-19T03:08:17.378156+00:00",
+  "next_grounded_work": "No pending motion. The proposed additional observation is a synchronized fixed side RGB view showing fingertips, plug pins and socket lip across first contact; physical cause UNKNOWN.",
+  "updated_at": "2026-11-19T03:15:45.963690+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -148,6 +148,14 @@
     "test_roles": "Both same-arm successes as task controls; round 1 and 2 annotated lift changes as independent positives; latest round 3 and repeatability 5 as guarded insertion challenges. No adjustment on these records.",
     "new_simulations": 0,
     "hardware_attempts": 0,
-    "runtime_llm_calls": 0
+    "runtime_llm_calls": 0,
+    "decision": "EVIDENCE_ONLY",
+    "report": "experiments/right_wrist_rgb/REPORT.md",
+    "evidence": "experiments/right_wrist_rgb/evidence.json",
+    "outcome": "Development insertion localized between frames 9695 and 9703; current legacy absolute yellow-edge change peaked at 14 px. One of two reviewed held-out lift events detected. One of two successes also had measurable displacement; the other abstained. Both held-out insertion guards lacked continuous relative confirmation. No runtime module promoted.",
+    "measured_frames": 3065,
+    "analysis_wall_seconds": 7.560346081969328,
+    "legacy_default": "unchanged",
+    "root_cause": "UNKNOWN"
   }
 }
