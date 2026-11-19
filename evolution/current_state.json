@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Stopped right-arm RGB observation study",
-  "status": "RIGHT_WRIST_RGB_EVIDENCE_ONLY",
+  "scope": "Right-arm task-relative pose integration, simulation and stopped RGB only",
+  "status": "RELATIVE_POSE_INTEGRATION",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
     "training and teacher/student comparisons"
   ],
-  "stop_condition": "Evaluate the frozen image measurement once on existing controls and reviewed failures. Stop with evidence only if reliability is insufficient.",
+  "stop_condition": "Use M0–M2 gates and simulation budget in experiments/right_relative_pose/design.json. Hardware paused.",
   "software": {
     "branch": "codex/right-wrist-relative-rgb",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
@@ -78,7 +78,7 @@
     "additional_experiment_models": 0
   },
   "next_grounded_work": "No pending motion. The proposed additional observation is a synchronized fixed side RGB view showing fingertips, plug pins and socket lip across first contact; physical cause UNKNOWN.",
-  "updated_at": "2026-11-19T03:15:45.963690+00:00",
+  "updated_at": "2026-11-19T06:24:04.044731+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -157,5 +157,13 @@
     "analysis_wall_seconds": 7.560346081969328,
     "legacy_default": "unchanged",
     "root_cause": "UNKNOWN"
+  },
+  "relative_pose": {
+    "design": "experiments/right_relative_pose/design.json",
+    "base": "6f6a45e",
+    "expert": "20260908/000210, 212 frames at 30 Hz per reviewed camera",
+    "real_attempts": 0,
+    "sim_trials": 0,
+    "development_delegates": 1
   }
 }

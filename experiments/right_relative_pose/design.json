@@ -1,0 +1,47 @@
+{
+  "baseline": "6f6a45e9b4834ca4f0593a0963ad91c072bb9ee0",
+  "expert_episode": "20260908/000210",
+  "expert_sha256": {
+    "cam_external_rgb.mp4": "af11bd7fa9f25edd6a61ffb6a68f2eaff183571c937709321e3a84f031580764",
+    "cam_left_wrist_rgb.mp4": "8d748885f3968c2f74853099d2a81abd16e44ae1c9e62385e87de778f9539b97",
+    "cam_right_wrist_rgb.mp4": "5cf97f2b9c3897bd5f9c299d82395a5bdbf6ffda13b5370d65e75f0f9caec733",
+    "proprio_stats.h5": "e3ef18ec7fc05e6c5cdac708c3b17462b10750a7ff93edc215b568534546a84f"
+  },
+  "expert_scope": "Horizontal pickup and wrist view of socket. No expert joints or extrinsics used.",
+  "reviewed_frames": [
+    0,
+    30,
+    60,
+    90,
+    103,
+    113,
+    120,
+    130,
+    150,
+    180,
+    211
+  ],
+  "horizontal_setup": {
+    "open_width_m": 0.04,
+    "grasp_yaw_holder_deg": 0,
+    "grasp_height_m": 0.022,
+    "scene": "last black-present original scene; no parked-object solver"
+  },
+  "budget": {
+    "real": 0,
+    "physical_parameter_search": 0,
+    "full_horizontal_prefixes": 1,
+    "sim_precontact_conditions_max": 8,
+    "corrections_per_condition_max": 3,
+    "slow_calls_per_task_max": 1,
+    "slow_wall_s_max": 45,
+    "physical_M2": 0
+  },
+  "gates": {
+    "M0": "Independent measured pin endpoint and insertion-axis errors including reinstall, over nominal/X/Y/yaw/reseat against assembly allowance; synthetic checks separate.",
+    "M1": "Held condition: native whole-step penetration <=0.2mm; no pin/socket contact; native slot clearance bounds worst pin-corner lateral AND approach gap error. Replay same scoped 100Hz reference. At least 7/8 measured conditions for GO. Count refusals.",
+    "M2": "Only qualified M0/M1 and fresh onsite permission. Two nominal, two socket changes, two regrasp. Native physical seating after release, recording qualification and independent confirmation."
+  },
+  "sim_held_control": "If horizontal pickup stops, a version-bound archived simulated held state may independently exercise the joint-reference path at safe gap; never count it as a horizontal pickup.",
+  "legacy_rollback": "Current default entry without relative mode; old V2 NO-GO retained."
+}
