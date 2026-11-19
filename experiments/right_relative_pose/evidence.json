@@ -1,0 +1,577 @@
+{
+  "scope": "Current right arm only, yellow plug to outlet 3, black charger present",
+  "validation_frames": "T_WS maps outlet-pattern origin on socket face into W; P is the native plug pin-pattern frame. T_GP maps P into right/gripper_center. All matrices, calibration and images remain local.",
+  "versions": {
+    "native_program": "self_evolution/right_relative_pose/round3_hook/try_plug_pick_sim.py",
+    "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+    "native_patch": "self_evolution/right_relative_pose/round3_hook/integration.patch",
+    "private_patch_sha256": "c331fa1e9780f23a7eacba810dcc4679e3fe9f14afa70063c950a2815e0c363e",
+    "native_base": "self_evolution/grasp_six_rounds_20261117/vertical_reorient_solver/try_plug_pick_sim.py",
+    "base_sha256": "146934520588d4529e595a746e75a334c7394b6e5d00c3b4ab31cf178fa371ec",
+    "round3_scene_sha256": "3b6205e8919c0445285725950d0328ad29e7b532694e0c0b78a3c70c314426ad",
+    "last_same_round_sim_and_real_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
+    "held_source": "20261117T121435Z_bf6333a2",
+    "corresponding_saved_100hz_reference": "72ada521ff4e8b4289c67f3ab403f0ac67787d7e5337e1d98ba06fd8dc845e00",
+    "second_held_source": "20261117T071708Z_94246e78",
+    "precontact_source_hashes": {
+      "20261117T121435Z_bf6333a2": "667db9d158a7b0cbc414af9b425ae5389a8855216bb74c1324143704384c85c2",
+      "20261117T071708Z_94246e78": "de07773e356118b37515b14792e0fa96ab21b12bbe1dbdc9aedc4baa3ea14d4d"
+    }
+  },
+  "stopped_rgb": {
+    "episode": "20261118_real_grasp_six_rounds_000003",
+    "frame": "external/1055.jpg",
+    "frame_sha256": "55d304875455d9046be4e237392f1f6aff965527345180060fdcd404a075af56",
+    "matched_by": "existing cached real_episode_evidence alignment end",
+    "cache_key": "2bec5695fee667903989a5acda66996e5cb600d4eca22856d895873be2ba2232",
+    "cache_hit": true,
+    "frame_minus_phase_end_s": 0.009256661986000836,
+    "real_m0": "STOP_MISSING_M0",
+    "native_intrinsics": "RGB K and inverse Brown coefficients recorded; qualified OpenCV projection and metric external registration missing",
+    "missing": [
+      "calibration_version",
+      "geometry_ref",
+      "distortion",
+      "T_WC",
+      "dictionary",
+      "markers",
+      "max_reprojection_px",
+      "pin_tips_P_m",
+      "insertion_axis_P",
+      "task_tolerance",
+      "m0",
+      "T_WG"
+    ],
+    "task_id": "20261119T064428Z_c308ce96"
+  },
+  "horizontal": {
+    "task_id": "20261119T062958Z_f5ad81d4",
+    "opening_command_mm": 40,
+    "grasp_height_mm": 22,
+    "yaw_in_holder_deg": 0,
+    "preload_s": 1.5,
+    "frames": 585,
+    "sampled_finger_black_contacts": 0,
+    "first_rejection": {
+      "reason": "Existing upright gate",
+      "phase": "lift",
+      "tilt_deg": 1.0809522305819534,
+      "limit_deg": 1.0,
+      "sim_time": 19.499999999987402
+    },
+    "full_task": false,
+    "view_check": "Wrist and external frames 0,460,555,584; black remains adjacent to yellow; usable pre-insertion pin visibility was not reached"
+  },
+  "held_conditions": [
+    {
+      "condition": "nominal",
+      "task_id": "20261119T063600Z_771fbfd9",
+      "precontact_frames": 11,
+      "before_mm": {
+        "lateral": 0.18985,
+        "axial": 0.96451
+      },
+      "outcome": "PRECONTACT_VALIDATED",
+      "reference_sha256": "aedc61921de400b3ca4822d26b0ee591b73059747e4ab27251bb7ff8bce41187",
+      "precontact_corrections": 1,
+      "native_result": "reached scoped native precontact postcondition",
+      "after_replay_mm": {
+        "lateral": 0.11545,
+        "axial": 0.26874
+      },
+      "replay_grasp_check": {
+        "task_id": "20261119T063600Z_771fbfd9",
+        "decision": "PRECONTACT_VALIDATED",
+        "grasp_drift_mm": 0.03862209419632106,
+        "validation_sha256": "cc23081ed4d3aa8d5d318e9f9417ccf1f088471c21d89ee3b8a18eda64faee48",
+        "wall_s": 1.178729866980575
+      },
+      "recording_frames": {
+        "cam_external_rgb.mp4": 11,
+        "cam_right_wrist_rgb.mp4": 11
+      },
+      "model_calls": 0
+    },
+    {
+      "condition": "X +1 mm",
+      "task_id": "20261119T063722Z_eea05a0f",
+      "precontact_frames": 0,
+      "before_mm": {
+        "lateral": 1.08017,
+        "axial": 0.96451
+      },
+      "outcome": "STOP_REJECTED",
+      "reference_sha256": null,
+      "precontact_corrections": 0,
+      "native_result": "IK unreachable, zero motion intervals"
+    },
+    {
+      "condition": "X -1 mm",
+      "task_id": "20261119T063033Z_20368055",
+      "precontact_frames": 11,
+      "before_mm": {
+        "lateral": 1.05315,
+        "axial": 0.96451
+      },
+      "outcome": "PRECONTACT_VALIDATED",
+      "reference_sha256": "b5e88ef63e9b39266ad8f7339de55900f9cf116b3c43e677e369d2c710ff66bd",
+      "precontact_corrections": 1,
+      "native_result": "reached scoped native precontact postcondition",
+      "after_replay_mm": {
+        "lateral": 0.14785,
+        "axial": 0.25872
+      },
+      "replay_grasp_check": {
+        "task_id": "20261119T063033Z_20368055",
+        "decision": "PRECONTACT_VALIDATED",
+        "grasp_drift_mm": 0.038624036544696656,
+        "validation_sha256": "e5410f90bd6bdaf1f7b30b9b90a160ba733eb08512d9f9c646290987bbb4ca6f",
+        "wall_s": 1.1700398030225188
+      },
+      "recording_frames": {
+        "cam_external_rgb.mp4": 11,
+        "cam_right_wrist_rgb.mp4": 11
+      },
+      "model_calls": 0
+    },
+    {
+      "condition": "Y +1 mm",
+      "task_id": "20261119T063241Z_caf26b66",
+      "precontact_frames": 0,
+      "before_mm": {
+        "lateral": 1.18687,
+        "axial": 0.96451
+      },
+      "outcome": "STOP_REJECTED",
+      "reference_sha256": null,
+      "precontact_corrections": 0,
+      "native_result": "IK unreachable, zero motion intervals"
+    },
+    {
+      "condition": "Y -1 mm",
+      "task_id": "20261119T063511Z_58735756",
+      "precontact_frames": 11,
+      "before_mm": {
+        "lateral": 0.8292,
+        "axial": 0.96451
+      },
+      "outcome": "PRECONTACT_VALIDATED",
+      "reference_sha256": "49f4dcbcaa152ce19c956bbca0f0469a8c28e7ea1dd6b6c031e7ff4906cd31b4",
+      "precontact_corrections": 1,
+      "native_result": "reached scoped native precontact postcondition",
+      "after_replay_mm": {
+        "lateral": 0.13611,
+        "axial": 0.25896
+      },
+      "replay_grasp_check": {
+        "task_id": "20261119T063511Z_58735756",
+        "decision": "PRECONTACT_VALIDATED",
+        "grasp_drift_mm": 0.03867246796207577,
+        "validation_sha256": "724cc97001bee01b78a1957dad4901917d114b5827b1e43f01b18bf617fdf721",
+        "wall_s": 1.167885179980658
+      },
+      "recording_frames": {
+        "cam_external_rgb.mp4": 11,
+        "cam_right_wrist_rgb.mp4": 11
+      },
+      "model_calls": 0
+    },
+    {
+      "condition": "yaw +1 deg",
+      "task_id": "20261119T063607Z_2582569f",
+      "precontact_frames": 11,
+      "before_mm": {
+        "lateral": 1.13047,
+        "axial": 0.96451
+      },
+      "outcome": "PRECONTACT_VALIDATED",
+      "reference_sha256": "466eb5f328c12908339b5f7684ec55dfa90b3e0de2e97d54e47ea298475b3781",
+      "precontact_corrections": 1,
+      "native_result": "reached scoped native precontact postcondition",
+      "after_replay_mm": {
+        "lateral": 0.28716,
+        "axial": 0.2824
+      },
+      "replay_grasp_check": {
+        "task_id": "20261119T063607Z_2582569f",
+        "decision": "PRECONTACT_VALIDATED",
+        "grasp_drift_mm": 0.03890311885497892,
+        "validation_sha256": "1d82b6edda93480a49d338ba8bf032654f6ffd7ecf81361df14bd1cadade5fc4",
+        "wall_s": 1.170753145008348
+      },
+      "recording_frames": {
+        "cam_external_rgb.mp4": 11,
+        "cam_right_wrist_rgb.mp4": 11
+      },
+      "model_calls": 0
+    },
+    {
+      "condition": "yaw -1 deg",
+      "task_id": "20261119T063615Z_c0bdd6fd",
+      "precontact_frames": 11,
+      "before_mm": {
+        "lateral": 1.19166,
+        "axial": 0.96451
+      },
+      "outcome": "PRECONTACT_VALIDATED",
+      "reference_sha256": "1275450468f6db0032823437ac5eed2a407e3148c247747196dc7a4aeaed899d",
+      "precontact_corrections": 1,
+      "native_result": "reached scoped native precontact postcondition",
+      "after_replay_mm": {
+        "lateral": 0.2107,
+        "axial": 0.2614
+      },
+      "replay_grasp_check": {
+        "task_id": "20261119T063615Z_c0bdd6fd",
+        "decision": "PRECONTACT_VALIDATED",
+        "grasp_drift_mm": 0.038342078098778286,
+        "validation_sha256": "82cd0cbde2dc54f38ccd24e0ef3a4ad5a82d49766bcab1e2fa23353e3e05d374",
+        "wall_s": 1.1785210879752412
+      },
+      "recording_frames": {
+        "cam_external_rgb.mp4": 11,
+        "cam_right_wrist_rgb.mp4": 11
+      },
+      "model_calls": 0
+    },
+    {
+      "condition": "second native grasp (20 mm vs 22 mm)",
+      "task_id": "20261119T063623Z_86597861",
+      "precontact_frames": 11,
+      "before_mm": {
+        "lateral": 0.19816,
+        "axial": 0.76833
+      },
+      "outcome": "PRECONTACT_VALIDATED",
+      "reference_sha256": "ca8dab31d99f0d078cdeab88f52810e6289caa280fc0f2112d30161eb1261012",
+      "precontact_corrections": 1,
+      "native_result": "reached scoped native precontact postcondition",
+      "after_replay_mm": {
+        "lateral": 0.12814,
+        "axial": 0.26726
+      },
+      "replay_grasp_check": {
+        "task_id": "20261119T063623Z_86597861",
+        "decision": "PRECONTACT_VALIDATED",
+        "grasp_drift_mm": 0.03274725168667446,
+        "validation_sha256": "ebffff4aa5805d6bc012e602e8e1a165ae25a92f84becc7db0d297035289f3c3",
+        "wall_s": 1.1439280699705705
+      },
+      "recording_frames": {
+        "cam_external_rgb.mp4": 11,
+        "cam_right_wrist_rgb.mp4": 11
+      },
+      "model_calls": 0
+    }
+  ],
+  "slow_calls": [
+    {
+      "task_id": "20261119T062830Z_dde65d99",
+      "model": "deepseek-v4-pro",
+      "terminal": "completed",
+      "s": 19.38703381503001,
+      "input_tokens": 727,
+      "output_tokens": 514,
+      "selected_by_model": true,
+      "check": "compare_geometry",
+      "next": "STOP"
+    },
+    {
+      "task_id": "20261119T062958Z_f5ad81d4",
+      "model": "gpt-6.2-sol",
+      "terminal": "turn.failed",
+      "s": 15.101488261017948,
+      "input_tokens": null,
+      "output_tokens": null,
+      "selected_by_model": false,
+      "check": "verify_observation_and_frame",
+      "next": "STOP"
+    },
+    {
+      "task_id": "20261119T063722Z_eea05a0f",
+      "model": "installed deepseek-review",
+      "terminal": "TimeoutExpired",
+      "s": 45.006726634921506,
+      "input_tokens": null,
+      "output_tokens": null,
+      "selected_by_model": false,
+      "check": "verify_observation_and_frame",
+      "next": "STOP"
+    },
+    {
+      "task_id": "20261119T063241Z_caf26b66",
+      "model": "gpt-6.2-sol",
+      "terminal": "turn.completed",
+      "s": 28.961689096991904,
+      "input_tokens": 58269,
+      "output_tokens": 24,
+      "selected_by_model": false,
+      "check": "verify_observation_and_frame",
+      "next": "STOP"
+    }
+  ],
+  "costs": {
+    "simulation_entry_calls": 13,
+    "unique_held_conditions": 8,
+    "development_and_repeat_calls_included": true,
+    "new_complete_inserts": 0,
+    "formal_episodes": 0,
+    "physical_actions": 0,
+    "total_native_process_wall_s": 137.217,
+    "selected_final_fast_task": "20261119T064250Z_ca0f0532",
+    "last_fast_complete_wall_s": 6.864993778057396,
+    "additional_frozen_grasp_checks": 6,
+    "additional_frozen_grasp_check_wall_s": 7.0098571529379115,
+    "runtime_model_attempts": 4,
+    "completed_with_known_usage": 2,
+    "known_tokens": 59534,
+    "all_model_usage_known": false,
+    "model_reported_wall_s": 108.45693780796137,
+    "monetary_cost": null
+  },
+  "task_ledger": [
+    {
+      "task_id": "20261119T062717Z_e3cad95b",
+      "raw": "self_evolution/20261119T062717Z_e3cad95b",
+      "native_sha256": "ba233bcfcf182696a674da3a90d2b7590e311ffa4bfd700a0260ea7a3844a95c",
+      "native_report_sha256": "290bc323c15540b69a4baf52892883a5c1fc1066b443ca47cbfbd9f1a1bac41c",
+      "relative_result_sha256": "d4f68fba527ada3652392ba0d76e03e570aac883bd1fec9f1335ab3ef8f66945",
+      "trajectory_sha256": "99b0d69c564bb4dbd7708e4ad9eefd684d9316589b21dfbe37acb58c4549bbbe",
+      "native_wall_s": 43.68334206799045,
+      "frames": 540,
+      "decision": "DEVELOPMENT_CONSUMER_IMPORT_ERROR",
+      "model_calls": 0,
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T062717Z_e3cad95b"
+    },
+    {
+      "task_id": "20261119T062830Z_dde65d99",
+      "raw": "self_evolution/20261119T062830Z_dde65d99",
+      "native_sha256": "ba233bcfcf182696a674da3a90d2b7590e311ffa4bfd700a0260ea7a3844a95c",
+      "native_report_sha256": "6a392af138ecbd2ac05c0cafd6b153c6256c7c140beb7de3e5f91f4fe211bf67",
+      "relative_result_sha256": "9515038876ed05ef655baa7a4c3d58cb816bc829624bdb84f2b0dc0ea1f2398b",
+      "trajectory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_wall_s": 2.975890333065763,
+      "frames": 0,
+      "decision": "STOP_REJECTED",
+      "model_calls": 1,
+      "decision_sha256": "d208e46e91dab8c6dec780476a955feb623496bfdd8078d207362e491d48d9d9",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T062830Z_dde65d99"
+    },
+    {
+      "task_id": "20261119T062958Z_f5ad81d4",
+      "raw": "self_evolution/20261119T062958Z_f5ad81d4",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "c253ca97a976bceb5360b3139d4f2664439c387d764846912b090f7643733a33",
+      "relative_result_sha256": "e8dbcb36700107e09db2e07872441fb07b12c595779684b53a5da40fd1a816c5",
+      "trajectory_sha256": "7538e1af39625997345f6b016610048532a097665e3441f95fe1182c174f04eb",
+      "native_wall_s": 50.3458029020112,
+      "frames": 585,
+      "decision": "STOP_REJECTED",
+      "model_calls": 1,
+      "decision_sha256": "393e2efda4a87428bd125aa3772d3623f72706a90176272737f75d83b98b2ac6",
+      "staged_recording": "self_evolution/stage3_recording_20261119T062958Z_f5ad81d4/complete_sim/failed/learning_20261119T062958Z_f5ad81d4_000001",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T062958Z_f5ad81d4"
+    },
+    {
+      "task_id": "20261119T063600Z_771fbfd9",
+      "raw": "self_evolution/20261119T063600Z_771fbfd9",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "e96b390809aee8f899e7a4adc4ba75927b92209cf129e2752a3195167e1bb25a",
+      "relative_result_sha256": "0bcb750f1d557a2ba1e85ce01ab4cd5fc94c9ed1397141ddd67af74e6119176c",
+      "trajectory_sha256": "844d043d4d1e551ac3bafe17cef9449e1f3dd3e2263e5b66948950eac492fc8f",
+      "native_wall_s": 4.027837721980177,
+      "frames": 11,
+      "decision": "PRECONTACT_VALIDATED",
+      "model_calls": 0,
+      "decision_sha256": "5b23257d4f654041c2474547a7f035e77697573e5ea416acc099d4b998d41b9d",
+      "staged_recording": "self_evolution/stage3_recording_20261119T063600Z_771fbfd9/complete_sim/failed/learning_20261119T063600Z_771fbfd9_000001",
+      "reference_sha256": "aedc61921de400b3ca4822d26b0ee591b73059747e4ab27251bb7ff8bce41187",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063600Z_771fbfd9"
+    },
+    {
+      "task_id": "20261119T063722Z_eea05a0f",
+      "raw": "self_evolution/20261119T063722Z_eea05a0f",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "6a392af138ecbd2ac05c0cafd6b153c6256c7c140beb7de3e5f91f4fe211bf67",
+      "relative_result_sha256": "c30b836452fee8f0fb6205d62108d3388b1065f1a12fb1afa7108cb183a89c83",
+      "trajectory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_wall_s": 2.228971838951111,
+      "frames": 0,
+      "decision": "STOP_REJECTED",
+      "model_calls": 1,
+      "decision_sha256": "921e410b929864df13fd9092be961e52e99195ffbcfc4d005b98adad21428c8d",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063722Z_eea05a0f"
+    },
+    {
+      "task_id": "20261119T063033Z_20368055",
+      "raw": "self_evolution/20261119T063033Z_20368055",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "19089c7a3163e76697fdc646cf3263c2a6eda98ecf511cc2fdafe8218c5e4837",
+      "relative_result_sha256": "734638b2423b92e603d84d8ea273d5d0bee8b16b07ec3bdbbdd208bb8fcd5a37",
+      "trajectory_sha256": "9953d6571edb912f6284f7b8b1f1dcac82abe2bfd35e20013ea1f6bcdf23ecfb",
+      "native_wall_s": 4.733740592957474,
+      "frames": 11,
+      "decision": "PRECONTACT_VALIDATED",
+      "model_calls": 0,
+      "decision_sha256": "dfd778393fc762e5c8d06c2c48457ef1b25bd14b5bdb2e19dd612dc2f471a652",
+      "staged_recording": "self_evolution/stage3_recording_20261119T063033Z_20368055/complete_sim/failed/learning_20261119T063033Z_20368055_000001",
+      "reference_sha256": "b5e88ef63e9b39266ad8f7339de55900f9cf116b3c43e677e369d2c710ff66bd",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063033Z_20368055"
+    },
+    {
+      "task_id": "20261119T063241Z_caf26b66",
+      "raw": "self_evolution/20261119T063241Z_caf26b66",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "54ed2db19512a5949702a4401e4d26a9e4b3ec24c1f56b3974b6795ee9b10fd0",
+      "relative_result_sha256": "742c04d45f0ca3d79f7006f62a90eff565f50cb9c7c8a78b63c933b41045aa89",
+      "trajectory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_wall_s": 2.9758306150324643,
+      "frames": 0,
+      "decision": "STOP_REJECTED",
+      "model_calls": 1,
+      "decision_sha256": "c6ab88178605ec1995c7fe7b76f8e3d8201ca502cc15058b2ac8d91986b016d5",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063241Z_caf26b66"
+    },
+    {
+      "task_id": "20261119T063511Z_58735756",
+      "raw": "self_evolution/20261119T063511Z_58735756",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "f0b4bf968cc351f31e369df7316ea691ae9030532e0ce8502d199f007dc2f1af",
+      "relative_result_sha256": "12e7981c9cc8078ba88ffa9bb4ee47e161d2d0cfe920b5039362ee876942662c",
+      "trajectory_sha256": "b5bffe63a7539d6846cc35cae13334f6d92fd42fc7c3f89698146b09f042554f",
+      "native_wall_s": 4.6828497119713575,
+      "frames": 11,
+      "decision": "PRECONTACT_VALIDATED",
+      "model_calls": 0,
+      "decision_sha256": "8591a62ca1c70aceec839c07745a48509d852aaff7718fc8e767905df4f53bbf",
+      "staged_recording": "self_evolution/stage3_recording_20261119T063511Z_58735756/complete_sim/failed/learning_20261119T063511Z_58735756_000001",
+      "reference_sha256": "49f4dcbcaa152ce19c956bbca0f0469a8c28e7ea1dd6b6c031e7ff4906cd31b4",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063511Z_58735756"
+    },
+    {
+      "task_id": "20261119T063607Z_2582569f",
+      "raw": "self_evolution/20261119T063607Z_2582569f",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "c348e782b191348e8ce4b2f0119ecd5963ff7c6282debfaf3bf76add74e32125",
+      "relative_result_sha256": "3a29218f8e1dc848fe0c67dd6016869ad833cf76b9a2db506559565d41892576",
+      "trajectory_sha256": "8af6421f5c4027527680febd289e8d6783e7994a66ad3836acf48043eb3dd4c7",
+      "native_wall_s": 4.735366501030512,
+      "frames": 11,
+      "decision": "PRECONTACT_VALIDATED",
+      "model_calls": 0,
+      "decision_sha256": "56bf5d5feebd307bc2975eddb6b9b6e7700cede6e68a538afd42f06489ca807d",
+      "staged_recording": "self_evolution/stage3_recording_20261119T063607Z_2582569f/complete_sim/failed/learning_20261119T063607Z_2582569f_000001",
+      "reference_sha256": "466eb5f328c12908339b5f7684ec55dfa90b3e0de2e97d54e47ea298475b3781",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063607Z_2582569f"
+    },
+    {
+      "task_id": "20261119T063615Z_c0bdd6fd",
+      "raw": "self_evolution/20261119T063615Z_c0bdd6fd",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "e8da7357de4e985b7f5490f7bb6999b1f1053e89ef9244b049f9a2f7d55e4051",
+      "relative_result_sha256": "4af3fd91537cad22acd9329f5469fc48601ec8550cd3c3ecd67bee2cab9d4b77",
+      "trajectory_sha256": "6640e36d2f36a395c05d7578225f7e55f3529852a356a24661c16984e6be600c",
+      "native_wall_s": 4.7802231051027775,
+      "frames": 11,
+      "decision": "PRECONTACT_VALIDATED",
+      "model_calls": 0,
+      "decision_sha256": "be2b7de9161c81edb5b4edc1e792adf7f1bed8ec0d9958278a7ef370c4f4c774",
+      "staged_recording": "self_evolution/stage3_recording_20261119T063615Z_c0bdd6fd/complete_sim/failed/learning_20261119T063615Z_c0bdd6fd_000001",
+      "reference_sha256": "1275450468f6db0032823437ac5eed2a407e3148c247747196dc7a4aeaed899d",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063615Z_c0bdd6fd"
+    },
+    {
+      "task_id": "20261119T063623Z_86597861",
+      "raw": "self_evolution/20261119T063623Z_86597861",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "a79c6282608b64049b4fdc3386afe0ee74604f63c7a6cbda582fa8b195ce7a9c",
+      "relative_result_sha256": "bc231ec84a9d95fbeee1f4f6587532661d04613a9a267b7ba4f62d9dfc3de647",
+      "trajectory_sha256": "a25ecaae8c6e0736b1e49e40e5b3c78ea594e1cbf58d058f3ef70a231f573e49",
+      "native_wall_s": 3.982165760011412,
+      "frames": 11,
+      "decision": "PRECONTACT_VALIDATED",
+      "model_calls": 0,
+      "decision_sha256": "4e127244a672c07be1018332c4462e5bd437fca65059b6652150408a5c64d2ef",
+      "staged_recording": "self_evolution/stage3_recording_20261119T063623Z_86597861/complete_sim/failed/learning_20261119T063623Z_86597861_000001",
+      "reference_sha256": "ca8dab31d99f0d078cdeab88f52810e6289caa280fc0f2112d30161eb1261012",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063623Z_86597861"
+    },
+    {
+      "task_id": "20261119T064154Z_ae607585",
+      "raw": "self_evolution/20261119T064154Z_ae607585",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "19089c7a3163e76697fdc646cf3263c2a6eda98ecf511cc2fdafe8218c5e4837",
+      "relative_result_sha256": "f8912097beccaa80d4423b88410966d84f671cbd7f2ebba9268afe89ed0f51d6",
+      "trajectory_sha256": "9953d6571edb912f6284f7b8b1f1dcac82abe2bfd35e20013ea1f6bcdf23ecfb",
+      "native_wall_s": 3.982866878970526,
+      "frames": 11,
+      "decision": "PRECONTACT_VALIDATED",
+      "model_calls": 0,
+      "decision_sha256": "1d9545a9b0bfb4c2221de6b0caa95ef1b4f522fd9026db1b267d3e2e879e05b5",
+      "staged_recording": "self_evolution/stage3_recording_20261119T064154Z_ae607585/complete_sim/failed/learning_20261119T064154Z_ae607585_000001",
+      "reference_sha256": "b5e88ef63e9b39266ad8f7339de55900f9cf116b3c43e677e369d2c710ff66bd",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T064154Z_ae607585"
+    },
+    {
+      "task_id": "20261119T064250Z_ca0f0532",
+      "raw": "self_evolution/20261119T064250Z_ca0f0532",
+      "native_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+      "native_report_sha256": "19089c7a3163e76697fdc646cf3263c2a6eda98ecf511cc2fdafe8218c5e4837",
+      "relative_result_sha256": "ba57b5ca57d9b693c47d6cef0d3ae5dd66262b90ebf12771ecf7fb9f4fbf56f6",
+      "trajectory_sha256": "9953d6571edb912f6284f7b8b1f1dcac82abe2bfd35e20013ea1f6bcdf23ecfb",
+      "native_wall_s": 4.081967553007416,
+      "frames": 11,
+      "decision": "PRECONTACT_VALIDATED",
+      "model_calls": 0,
+      "decision_sha256": "c1889eeb937d1c23ffa019db871ac8776837fc2960b9e0214b6c594c701891d3",
+      "staged_recording": "self_evolution/stage3_recording_20261119T064250Z_ca0f0532/complete_sim/failed/learning_20261119T064250Z_ca0f0532_000001",
+      "reference_sha256": "b5e88ef63e9b39266ad8f7339de55900f9cf116b3c43e677e369d2c710ff66bd",
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T064250Z_ca0f0532"
+    },
+    {
+      "task_id": "20261119T063241Z_cefec26f",
+      "decision": "STOP_MISSING_M0",
+      "decision_sha256": "51696f7c5e070ca7d732f16f18738c3c948608da1230b165304e57ce5ab5c0e6",
+      "model_calls": 0,
+      "simulation_started": false,
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T063241Z_cefec26f"
+    },
+    {
+      "task_id": "20261119T064428Z_c308ce96",
+      "decision": "STOP_MISSING_M0",
+      "decision_sha256": "52878664a8755480d7ddf0c22f9db41c8abd36fb4d28ccbde9faaa3f6e71271b",
+      "model_calls": 0,
+      "simulation_started": false,
+      "entry_report_directory": "self_evolution/right_relative_pose/entry_reports/20261119T064428Z_c308ce96"
+    }
+  ],
+  "native_full_reference_guard": {
+    "result": "REJECT",
+    "loader_sha256": "6eb1956315fa43125a9c3c13ca93f0e3710e390dd3409c182f3b409017034540",
+    "error": "Adapted reference has not passed physical simulation",
+    "reference_sha256": "b5e88ef63e9b39266ad8f7339de55900f9cf116b3c43e677e369d2c710ff66bd"
+  },
+  "regression": {
+    "passed": 164,
+    "disabled_hardware": true,
+    "frozen_legacy_learn_sha256": "dd3f6140f9fbae0a7eff0a884d6068ce62ffcbb5ad95fce8eea0f6398ae0f093",
+    "raw_run_log_private": ".local/relative_pose/final_tests.log"
+  },
+  "expert_review_frames": [
+    60,
+    90,
+    94,
+    98,
+    102,
+    106,
+    110,
+    114,
+    118,
+    135,
+    155,
+    170,
+    188
+  ],
+  "raw_root": "DATA_ROOT in AGENTS.md; all trial paths are relative to that dataset root",
+  "fast_slow_v21_architecture_decision": "NO-GO retained"
+}

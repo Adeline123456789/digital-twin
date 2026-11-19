@@ -42,6 +42,11 @@ class Supervisor:
             return answer
         if answer['decision']!='ESCALATE_SLOW':
             return answer
+        if context and 'stopped_reason' in context:
+            packet['stopped_reason'] = context['stopped_reason']
+        return self.investigate(packet, answer)
+
+    def investigate(self, packet, answer):
         self.trace.append('ESCALATE_SLOW')
         remaining=self.deadline-time.monotonic()
         if self.calls>=self.max_calls or not self.slow or self.tokens<=0 or remaining<=0:

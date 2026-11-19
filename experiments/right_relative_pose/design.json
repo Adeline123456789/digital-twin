@@ -43,5 +43,20 @@
     "M2": "Only qualified M0/M1 and fresh onsite permission. Two nominal, two socket changes, two regrasp. Native physical seating after release, recording qualification and independent confirmation."
   },
   "sim_held_control": "If horizontal pickup stops, a version-bound archived simulated held state may independently exercise the joint-reference path at safe gap; never count it as a horizontal pickup.",
-  "legacy_rollback": "Current default entry without relative mode; old V2 NO-GO retained."
+  "legacy_rollback": "Current default entry without relative mode; old V2 NO-GO retained.",
+  "revision_before_round3_runs": {
+    "native_sha256": "146934520588d4529e595a746e75a334c7394b6e5d00c3b4ab31cf178fa371ec",
+    "one_corrected_prefix": true,
+    "held_control_cases": [
+      "nominal",
+      "world X +1mm (development IK stop)",
+      "world X -1mm",
+      "world Y +1mm",
+      "world Y -1mm",
+      "yaw +1deg",
+      "yaw -1deg"
+    ],
+    "scope": "Independent held-geometry controls, single archived grasp; no simulated regrasp denominator. Frame 969 of latest formal successful single-arm sim. Keep earlier results and count version changes.",
+    "additional_held_case": "Independent single-arm grasp at 20mm instead of 22mm from 20261117T071708Z_94246e78, same target and align gap; select before running. Eighth distinct geometry control."
+  }
 }

@@ -21,9 +21,15 @@ from piper_sim.mixed_recording import MixedEpisodeWriter
 from piper_sim.task_archive import archive_episode
 
 
-def collect(trial, stage_root, session, arguments):
-    backend = trial_program.MujocoBackend
-    physics_step = trial_program.checked_physics_step
+def collect(trial, stage_root, session, arguments, relative=None):
+    program = trial_program
+    if relative:
+        from task_relative import RelativeTask, native_program
+        program = native_program()
+        task = RelativeTask(trial, relative)
+    phases = [*PHASES,'preload','reorient'] if relative else PHASES
+    backend = program.MujocoBackend
+    physics_step = program.checked_physics_step
     origin = time.time()
     writer = None
     checks = []
@@ -41,7 +47,7 @@ def collect(trial, stage_root, session, arguments):
                 assert len(writer.rows) == len(history), 'Recording must cover every physics interval'
                 error = 0.
                 for row, reference in zip(writer.rows, history):
-                    row['phase_index'] = np.asarray(PHASES.index(reference['phase']))
+                    row['phase_index'] = np.asarray(phases.index(reference['phase']))
                     for i, side in enumerate(self.arms):
                         start = 7*i
                         q = np.r_[np.deg2rad(row[f'state/{side}_arm/joint_positions']),
@@ -63,8 +69,8 @@ def collect(trial, stage_root, session, arguments):
                 writer.close(success=success, policy_training_eligible=success,
                              complete_pick_insert=success, all_substeps_valid=valid,
                              max_penetration_m=max(check['max_penetration_m'] for check in checks),
-                             same_run_max_state_error=error, phase_names=PHASES)
-                # Phase labels come from the unmodified program's completed trace.
+                             same_run_max_state_error=error, phase_names=phases)
+                # Bind recording labels to the native run that produced these frames.
                 path = writer.path / 'privileged.jsonl'
                 privileged = [json.loads(line) for line in path.read_text().splitlines()]
                 for row, reference in zip(privileged, history):
@@ -104,15 +110,18 @@ def collect(trial, stage_root, session, arguments):
     # shortcut: this existing script has no observer hook; bind only its two imports
     # in this isolated invocation. Replace with a native hook if one becomes available.
     previous_argv = sys.argv
-    trial_program.MujocoBackend = RecordingBackend
-    trial_program.checked_physics_step = record_step
+    program.MujocoBackend = RecordingBackend
+    program.checked_physics_step = record_step
     sys.argv = [str(SIM / 'scripts/try_plug_pick_sim.py'), '--output', str(trial), *arguments]
     try:
-        trial_program.main()
+        if relative:
+            program.main(task)
+        else:
+            program.main()
     finally:
         sys.argv = previous_argv
-        trial_program.MujocoBackend = backend
-        trial_program.checked_physics_step = physics_step
+        program.MujocoBackend = backend
+        program.checked_physics_step = physics_step
 
 
 if __name__ == '__main__':
@@ -121,4 +130,8 @@ if __name__ == '__main__':
     parser.add_argument('--stage-root', type=Path, required=True)
     parser.add_argument('--session', required=True)
     args, remaining = parser.parse_known_args()
-    collect(args.trial, args.stage_root, args.session, remaining)
+    task_path = Path(remaining[remaining.index('--task')+1]) if '--task' in remaining else None
+    relative = yaml.safe_load(task_path.read_text()).get('right_precontact') if task_path else None
+    if relative:
+        remaining += ['--preinsert-gap', str(relative['gap_m'])]
+    collect(args.trial,args.stage_root,args.session,remaining,relative)

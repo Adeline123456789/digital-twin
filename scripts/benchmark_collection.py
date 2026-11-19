@@ -26,6 +26,9 @@ def run_case(case, inline, label='Stage3 round2', kind='research_stage3', publis
     stage = DATA / 'self_evolution' / ('stage3_recording_' + ident)
     runtime = SIM / ('.venv-mujoco/bin/python' if os.environ.get('PIPER_SIM_PROFILE')=='retained_final' else '.venv-mujoco-hardware/bin/python')
     env = dict(os.environ, MUJOCO_GL='egl', OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1')
+    if case.get('relative_pose'):
+        from task_relative import consume_trial
+        return consume_trial(out, result, case, stage)
     replay_seconds = 0.
     verification_seconds = None
     result.update(privileged_information_used=True,

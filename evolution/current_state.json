@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Right-arm task-relative pose integration, simulation and stopped RGB only",
-  "status": "RELATIVE_POSE_INTEGRATION",
+  "scope": "Current right-only outlet 3 precontact simulation and stopped external RGB",
+  "status": "RIGHT_RELATIVE_PRECONTACT_PARTIAL_NO_GO",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
     "training and teacher/student comparisons"
   ],
-  "stop_condition": "Use M0–M2 gates and simulation budget in experiments/right_relative_pose/design.json. Hardware paused.",
+  "stop_condition": "Real M0 lacks qualified geometry. Held control passed 6/8; horizontal grasp stopped on lift. No M2, no real execution.",
   "software": {
     "branch": "codex/right-wrist-relative-rgb",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
@@ -49,6 +49,11 @@
       "candidate": "18 mm horizontal grasp with object removed",
       "reason": "Real lift changed closure by 8.4 mm. The restored black object also intersects that approach in the model.",
       "evidence": "experiments/grasp_six_rounds/grasp_correction_04/REPORT.md"
+    },
+    {
+      "candidate": "Black-present, horizontal 40 mm opening / 22 mm grasp / 1.5 s preload",
+      "reason": "Round 3 native simulation crossed the existing upright bound on lift at 1.081 degrees. Does not qualify for transport, insertion or hardware.",
+      "evidence": "experiments/right_relative_pose/evidence.json"
     }
   ],
   "evidence": {
@@ -77,8 +82,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "No pending motion. The proposed additional observation is a synchronized fixed side RGB view showing fingertips, plug pins and socket lip across first contact; physical cause UNKNOWN.",
-  "updated_at": "2026-11-19T06:24:04.044731+00:00",
+  "next_grounded_work": "Obtain independently qualified fixed RGB geometry and synchronized stopped tool/plug/socket views across lift; investigate the observed horizontal grasp tilt before another full task. No saved real action is pending or authorized.",
+  "updated_at": "2026-11-19T06:48:31.150030+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -163,7 +168,157 @@
     "base": "6f6a45e",
     "expert": "20260908/000210, 212 frames at 30 Hz per reviewed camera",
     "real_attempts": 0,
-    "sim_trials": 0,
-    "development_delegates": 1
+    "sim_trials": 13,
+    "development_delegates": 1,
+    "identity_check": {
+      "latest_formal_right_sim_success": "20261117T121435Z_bf6333a2",
+      "latest_formal_right_sim_failure": "20261117T120935Z_745e0917",
+      "latest_right_real_failure": "20261118_real_grasp_six_rounds_000003",
+      "same_round_native_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
+      "later_two_formal_simulations": "dual; excluded",
+      "source": "metadata.active_arms and existing phase_evidence.json",
+      "right_only_scene": "vertical_reorient_full_trial/task.yaml",
+      "scope": "Latest real reference failed at insert; no retry. Archived right-only sim used for independent held-state geometry control."
+    },
+    "development_stops": {
+      "20261119T062717Z_e3cad95b": "Native generic baseline missed round 3 preload. Horizontal yaw0 40mm reached grasp; upright gate stopped lift 1.142deg. Result consumer not loaded in development process.",
+      "20261119T062830Z_dde65d99": "First held +X 1mm IK rejection before any motion frame; initial collector incorrectly reported missing recording instead of native IK rejection."
+    },
+    "correction": "Version the optional hooks directly on the last round 3 solver; retain native 1.5s preload, reorient, align, controller and Legacy. Count one corrected horizontal prefix separately; no change to pose, opening, material, gates or hardware budget.",
+    "measured_control": {
+      "task": "20261119T063033Z_20368055",
+      "decision": "PRECONTACT_VALIDATED",
+      "shadow_pin_lateral_mm": 1.0532,
+      "replayed_pin_lateral_mm": 0.14785,
+      "wall_s_replay": 1.3243,
+      "model_calls": 0
+    },
+    "latest_horizontal_id": "20261119T062958Z_f5ad81d4",
+    "round3_horizontal": {
+      "task_id": "20261119T062958Z_f5ad81d4",
+      "decision": "STOP_REJECTED",
+      "start_open_mm": 40,
+      "preload_s": 1.5,
+      "frames": 585,
+      "phase": "lift",
+      "first_rejected_axis_deg": 1.0809522305819534,
+      "limit_deg": 1,
+      "model_attempts": 1,
+      "model_completed": 0,
+      "diagnostic_tool": "verify_observation_and_frame"
+    },
+    "decisions": {
+      "20261119T062717Z_e3cad95b": {
+        "decision": "DEVELOPMENT_CONSUMER_IMPORT_ERROR",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T062830Z_dde65d99": {
+        "decision": "STOP_REJECTED",
+        "model_calls": 1,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T062958Z_f5ad81d4": {
+        "decision": "STOP_REJECTED",
+        "model_calls": 1,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063600Z_771fbfd9": {
+        "decision": "PRECONTACT_VALIDATED",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063722Z_eea05a0f": {
+        "decision": "STOP_REJECTED",
+        "model_calls": 1,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063033Z_20368055": {
+        "decision": "PRECONTACT_VALIDATED",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063241Z_caf26b66": {
+        "decision": "STOP_REJECTED",
+        "model_calls": 1,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063511Z_58735756": {
+        "decision": "PRECONTACT_VALIDATED",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063607Z_2582569f": {
+        "decision": "PRECONTACT_VALIDATED",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063615Z_c0bdd6fd": {
+        "decision": "PRECONTACT_VALIDATED",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063623Z_86597861": {
+        "decision": "PRECONTACT_VALIDATED",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T064154Z_ae607585": {
+        "decision": "PRECONTACT_VALIDATED",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T064250Z_ca0f0532": {
+        "decision": "PRECONTACT_VALIDATED",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T063241Z_cefec26f": {
+        "decision": "STOP_MISSING_M0",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      },
+      "20261119T064428Z_c308ce96": {
+        "decision": "STOP_MISSING_M0",
+        "model_calls": 0,
+        "evidence": "experiments/right_relative_pose/evidence.json"
+      }
+    },
+    "evidence": "experiments/right_relative_pose/evidence.json",
+    "report": "experiments/right_relative_pose/REPORT.md",
+    "native_hook": "self_evolution/right_relative_pose/round3_hook/try_plug_pick_sim.py",
+    "legacy_rollback": "Omit --relative-precontact; legacy native files and hardware controller untouched.",
+    "scoped_final_held_cases": 8,
+    "scoped_held_pass": 6,
+    "scoped_held_ik_reject": 2,
+    "m0_real": "STOP_MISSING_M0",
+    "real_m1": 0,
+    "real_m2": 0,
+    "formal_new_episodes": 0,
+    "runtime_model_attempts": 4,
+    "budget_use": {
+      "simulation_entry_calls": 13,
+      "unique_held_conditions": 8,
+      "development_and_repeat_calls_included": true,
+      "new_complete_inserts": 0,
+      "formal_episodes": 0,
+      "physical_actions": 0,
+      "total_native_process_wall_s": 137.217,
+      "selected_final_fast_task": "20261119T064250Z_ca0f0532",
+      "last_fast_complete_wall_s": 6.864993778057396,
+      "additional_frozen_grasp_checks": 6,
+      "additional_frozen_grasp_check_wall_s": 7.0098571529379115,
+      "runtime_model_attempts": 4,
+      "completed_with_known_usage": 2,
+      "known_tokens": 59534,
+      "all_model_usage_known": false,
+      "model_reported_wall_s": 108.45693780796137,
+      "monetary_cost": null
+    },
+    "last_fast_task": "20261119T064250Z_ca0f0532",
+    "current_native_hook_sha256": "ebd74f3074f92083ebbae1c793239ab6550aeb73f399749bf3a2ef48baf4ba42",
+    "current_controller_hashes_source": "experiments/grasp_six_rounds/round_03/vertical_pick_socket_reorient/actual_versions.json",
+    "public_baseline": "6f6a45e",
+    "raw_reports_dir": "self_evolution/right_relative_pose/entry_reports"
   }
 }

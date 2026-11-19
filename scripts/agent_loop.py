@@ -229,8 +229,13 @@ def run(arm, shift, publish=True, planner_policy=None, seed_episode=None, max_ex
     return r
 
 if __name__=='__main__':
+    if '--relative-precontact' in sys.argv[1:]:
+        from collect_current_scene import main
+        main([arg for arg in sys.argv[1:] if arg != '--fastslow'])
+        sys.exit(0)
     p=argparse.ArgumentParser();p.add_argument('--robot-arms',choices=['dual','right'],default='dual');p.add_argument('--seed-episode');p.add_argument('--arm',choices=list('ABCD'));p.add_argument('--shift-mm',type=float,default=.5);p.add_argument('--local-only',action='store_true');p.add_argument('--planner-policy',choices=['llm','compiled_alignment_v1','diagnose_then_repair','bounded_tools_v1']);p.add_argument('--max-executions',type=int,choices=[1,2],default=2)
     mode=p.add_mutually_exclusive_group()
+    mode.add_argument('--relative-precontact',action='store_true',help='Right-only task-relative MuJoCo alignment; use --relative-precontact --help for inputs')
     mode.add_argument('--legacy',action='store_true')
     mode.add_argument('--fastslow',action='store_true')
     p.add_argument('--offline',action='store_true',help='Replay a recorded Episode without collection or publication')
