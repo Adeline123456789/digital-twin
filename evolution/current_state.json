@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Simulation-only dual-arm model, native right-arm plug task; no dual-arm coordination",
-  "status": "STAGE_1_PASS",
+  "status": "STAGE_2_CONTRACT_PASS_OBSERVATION_AUDIT",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -78,7 +78,7 @@
     "additional_experiment_models": 0
   },
   "next_grounded_work": "Validate event contract and deployable RGB observation. Stop if required visual landmarks remain unavailable.",
-  "updated_at": "2026-11-23T09:14:04.957713+00:00",
+  "updated_at": "2026-11-23T09:17:11.231539+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -116,7 +116,7 @@
       "native_wall_s": 151.27486639702693,
       "replay_wall_s": 159.3968861529138
     },
-    "status": "STAGE_1_PASS",
+    "status": "STAGE_2_CONTRACT_PASS_OBSERVATION_AUDIT",
     "baseline": {
       "episode": "20261123T090549Z_a35ab76b",
       "task_success": true,
@@ -126,10 +126,10 @@
     },
     "reference": "experiments/event_residual_mvp/nominal_manifest.json",
     "tests": {
-      "passed": 155,
-      "deselected": 1,
-      "reason": "Denied control-root import"
+      "passed": 165,
+      "deselected": 1
     },
-    "replay": "experiments/event_residual_mvp/stage1_replay.json"
+    "replay": "experiments/event_residual_mvp/stage1_replay.json",
+    "contract_results": "experiments/event_residual_mvp/stage2_contract_results.json"
   }
 }

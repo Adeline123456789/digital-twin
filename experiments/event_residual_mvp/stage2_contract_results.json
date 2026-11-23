@@ -1,0 +1,27 @@
+{
+  "status": "PASS_UNIT_CONTRACT_ONLY",
+  "full_suite": {
+    "passed": 165,
+    "deselected": 1,
+    "subtests": 27
+  },
+  "contract_tests": 10,
+  "comparison_states": [
+    "MATCHED",
+    "PENDING",
+    "CONTRADICTED",
+    "UNRESOLVED",
+    "UNEXPECTED"
+  ],
+  "covered": [
+    "all nine Strong Kleene AND/OR input pairs and three NOT cases",
+    "inclusive deadline",
+    "missing observations and low confidence",
+    "invalid event order",
+    "unregistered unexpected events",
+    "window coverage loss and clock discontinuity",
+    "UNRESOLVED -> NO_ACTION/HOLD even when recovery/structural flags are set"
+  ],
+  "scope": "Synthetic unit fixtures; event detection precision and runtime gate benefit not measured",
+  "source_commit_before_stage2": "5d38d4e"
+}
