@@ -1,17 +1,17 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Simulation-only dual-arm model, right-arm task; no dual-arm collaboration and no real-verified result",
-  "status": "EVENT_RESIDUAL_MVP_NO_GO_OBSERVATION_CONTRACT",
+  "scope": "Two independent simulation MVPs: deployable RGB perception and proprioceptive residual RL; dual model/right-arm task",
+  "status": "EVENT_RESIDUAL_V2_DYNAMICS_AND_INTERFACE_AUDIT",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
-    "training and teacher/student comparisons"
+    "real training and real transfer"
   ],
-  "stop_condition": "Stage 3 NO-GO. Stop expansion; no residual/pilot/OOD/hardware actions pending.",
+  "stop_condition": "Perception outcome must not block Residual experiment. Residual NO-GO stops real-transfer consideration; hardware remains denied.",
   "software": {
-    "branch": "research/event-residual-dual-20261123",
+    "branch": "research/event-residual-dual-v2-20261123",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
     "live_candidate": null,
     "last_executed_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "A future task must qualify an RGB-only target identity / temporal landmark method before new residual experiments. Preserve original frozen reference and separate 40 mm candidate.",
-  "updated_at": "2026-11-23T09:27:50.559437+00:00",
+  "next_grounded_work": "Complete synchronized grasp dynamics audit; repair score/semantic contract; construct unchanged frozen-reference local residual training environment.",
+  "updated_at": "2026-11-23T11:55:11.031960+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -171,5 +171,23 @@
     "decision": "NO-GO",
     "report": "experiments/event_residual_mvp/MVP_REPORT.md",
     "results": "experiments/event_residual_mvp/results.json"
+  },
+  "event_residual_mvp_v2": {
+    "taskbook": "docs/EVENT_RESIDUAL_MVP_V2_TASKBOOK.md",
+    "status": "EVENT_RESIDUAL_V2_DYNAMICS_AND_INTERFACE_AUDIT",
+    "source_manifest": "experiments/event_residual_mvp_v2/source_manifest.json",
+    "budget": {
+      "training_steps": 0,
+      "physics_rollouts": 0,
+      "subagents": 0,
+      "hardware": 0,
+      "runtime_llm": 0
+    },
+    "grasp_dynamics_audit": "experiments/event_residual_mvp_v2/grasp_dynamics_audit.json",
+    "stage": "DYNAMICS_AUDIT_COMPLETE",
+    "smoothness_requirement": {
+      "source": "2026-11-23 user: complete quickly and smoothly without jitter",
+      "implementation_plan": "Retain frozen nominal timing; bound residual position, per-step velocity and acceleration; penalize correction variation; record completion time and action variation"
+    }
   }
 }

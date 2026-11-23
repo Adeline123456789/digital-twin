@@ -1,0 +1,131 @@
+{
+  "scope": "Archived simulation only; no new physics rollout and no parameter tuning",
+  "thresholds": {
+    "command_mm": 0.05,
+    "aperture_mm": 0.2,
+    "pose_mm": 0.2,
+    "rotation_deg": 0.5,
+    "penetration_mm": 0.2
+  },
+  "episodes": [
+    {
+      "episode": "20261123T090549Z_a35ab76b",
+      "frames": 1133,
+      "windows": {
+        "fastest_narrowing": {
+          "frame_start": 63,
+          "frame_end": 93,
+          "time_start_s": 2.1333333333333457,
+          "time_end_s": 3.1333333333341415,
+          "classification": "CONTROL_COMMAND_CHANGE",
+          "commanded_range_mm": 31.83932812500001,
+          "actual_range_mm": 19.25002801931346,
+          "relative_translation_mm": 0.032968218573566674,
+          "relative_rotation_deg": 0.008512828163078153,
+          "contact_topology_changed": true,
+          "finger_presence_changed": true,
+          "max_penetration_mm": 0.002573531921501679,
+          "privileged_event": null,
+          "event_role": "PRIVILEGED_EVALUATION_ONLY",
+          "visual_change_measured": false
+        },
+        "constant_command_carry": {
+          "frame_start": 120,
+          "frame_end": 150,
+          "time_start_s": 4.0333333333348005,
+          "time_end_s": 5.033333333333891,
+          "classification": "UNRESOLVED_DYNAMICS",
+          "commanded_range_mm": 0.0,
+          "actual_range_mm": 0.36505686300115914,
+          "relative_translation_mm": 0.4584419583474277,
+          "relative_rotation_deg": 0.32040874644182754,
+          "contact_topology_changed": false,
+          "finger_presence_changed": false,
+          "max_penetration_mm": 0.0314633920053186,
+          "privileged_event": "IN_HAND_POSE_DRIFT",
+          "event_role": "PRIVILEGED_EVALUATION_ONLY",
+          "visual_change_measured": false
+        }
+      },
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/grasp_dynamics/20261123T090549Z_a35ab76b/synchronized_trace.json",
+        "sha256": "0749b9b8dd71e3badfc05cd3c2521f044a3726f665a3d0b69892442f53e96e10"
+      },
+      "evidence": [
+        {
+          "dataset_relative_path": "self_evolution/20261123T090549Z_a35ab76b/trajectory.jsonl",
+          "sha256": "6158090f3cd54770fb9b1dda6e8ea1f85cf3f4486feef4e81b528c301d8c5cb1"
+        },
+        {
+          "dataset_relative_path": "complete_sim/succeed/20261123T090549Z_a35ab76b/proprio_stats/privileged.jsonl",
+          "sha256": "37357ce00ef7b97792abf066204329bf9e014b0c5661f09712ff4d5da5138708"
+        },
+        {
+          "dataset_relative_path": "complete_sim/succeed/20261123T090549Z_a35ab76b/proprio_stats/model.xml",
+          "sha256": "b66d55dc9ad2493181a1fdacdbc0029abbdfc9d1c970785011a108869baff9a0"
+        }
+      ]
+    },
+    {
+      "episode": "20261123T092135Z_48f4ff46",
+      "frames": 1139,
+      "windows": {
+        "fastest_narrowing": {
+          "frame_start": 228,
+          "frame_end": 258,
+          "time_start_s": 7.633333333331526,
+          "time_end_s": 8.633333333330617,
+          "classification": "POSSIBLE_SLIP_OR_RESEATING",
+          "commanded_range_mm": 0.0,
+          "actual_range_mm": 1.9988402966865313,
+          "relative_translation_mm": 1.5651481003056258,
+          "relative_rotation_deg": 4.161002155227142,
+          "contact_topology_changed": true,
+          "finger_presence_changed": false,
+          "max_penetration_mm": 0.022690341908815585,
+          "privileged_event": "IN_HAND_POSE_DRIFT",
+          "event_role": "PRIVILEGED_EVALUATION_ONLY",
+          "visual_change_measured": false
+        },
+        "constant_command_carry": {
+          "frame_start": 214,
+          "frame_end": 244,
+          "time_start_s": 7.166666666665284,
+          "time_end_s": 8.166666666664375,
+          "classification": "POSSIBLE_SLIP_OR_RESEATING",
+          "commanded_range_mm": 0.0,
+          "actual_range_mm": 2.063480812280999,
+          "relative_translation_mm": 1.6078274425890016,
+          "relative_rotation_deg": 4.0983075969484055,
+          "contact_topology_changed": true,
+          "finger_presence_changed": false,
+          "max_penetration_mm": 0.022690341908815585,
+          "privileged_event": "IN_HAND_POSE_DRIFT",
+          "event_role": "PRIVILEGED_EVALUATION_ONLY",
+          "visual_change_measured": false
+        }
+      },
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/grasp_dynamics/20261123T092135Z_48f4ff46/synchronized_trace.json",
+        "sha256": "bbca544a4970c826a92365321d8076d1c840b0e9310f3bd5a78c9f3b8e1844f8"
+      },
+      "evidence": [
+        {
+          "dataset_relative_path": "self_evolution/20261123T092135Z_48f4ff46/trajectory.jsonl",
+          "sha256": "8ba4d5d50c55df4341363ee620075295cb34754a3148a33ef9435efcb57d16a4"
+        },
+        {
+          "dataset_relative_path": "complete_sim/succeed/20261123T092135Z_48f4ff46/proprio_stats/privileged.jsonl",
+          "sha256": "02b2877165e83701d9d2091000b2ea7ad3bf24fd736fb6bea746d9d1a0a43302"
+        },
+        {
+          "dataset_relative_path": "complete_sim/succeed/20261123T092135Z_48f4ff46/proprio_stats/model.xml",
+          "sha256": "b66d55dc9ad2493181a1fdacdbc0029abbdfc9d1c970785011a108869baff9a0"
+        }
+      ]
+    }
+  ],
+  "classification_limit": "30 Hz synchronized records; no real detector claim and no solver-causality intervention",
+  "real_force_observations": false,
+  "friction_changes": 0
+}

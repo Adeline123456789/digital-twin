@@ -1,5 +1,3 @@
-# Event residual MVP — stopped at observation contract
+# Event Residual MVP V2
 
-The batch ended with NO-GO at Stage 3. The original native dual-model/right-arm task and its frozen physical replay passed. The user-authorized 40 mm video-posture candidate also completed simulation; its grasp prefix had no black-charger contact at any checked integrator endpoint. OpenCV V0 did not qualify target socket identity, so residual and paired trials did not start.
-
-See experiments/event_residual_mvp/MVP_REPORT.md and results.json. No hardware, real-data training, runtime model, legacy Skill or Twin modification is pending. Only the explicitly authorized expert 000210 RGB videos were read; no expert H5 or joint/extrinsic transfer. Original frozen reference remains unchanged.
+Follow docs/EVENT_RESIDUAL_MVP_V2_TASKBOOK.md. Preserve V1 NO-GO at 46160b6. Audit gripper dynamics before training, repair observation confidence/target persistence, then run perception and proprioceptive residual RL independently. All training and execution are simulation-only. No real execution, real training, runtime LLM control or automatic Twin mutation. Current checkpoint contains the live work state, not robot permission.

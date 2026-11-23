@@ -1,0 +1,32 @@
+{
+  "base_commit": "46160b6200dff7add154d7b672f46d4bc0d1ea14",
+  "branch": "research/event-residual-dual-v2-20261123",
+  "v1_frozen_report_sha256": "0efa1426d8443892a1bc8bb5eda4cdf96a181c6fafa23309cfa94bc40a15b8cf",
+  "nominal_manifest_sha256": "6c938fa608554e91439feda632db491c645184dff799ba0027b3b9e936e40c5c",
+  "initial_audit": {
+    "classification": "OBSERVATION_CONFIDENCE_CONTRACT_DEADLOCK",
+    "detector_max_confidence": 0.5,
+    "event_min_confidence": 0.9,
+    "consequence": "No visual candidate can ever become TRUE/FALSE, even if feature extraction succeeds. V1 physical replay results remain valid; perception NO-GO included this implementation defect."
+  },
+  "graph_evidence": {
+    "tools": "unavailable",
+    "codegraph_directory": false,
+    "tier": "Verify source fallback",
+    "inspected": [
+      "robot_agent/observation_adapter.py",
+      "robot_agent/interaction_observer.py",
+      "robot_agent/recovery_router.py",
+      "robot_agent/nominal_reference.py",
+      "scripts/audit_event_grasp_contacts.py"
+    ]
+  },
+  "runtime_invariants": {
+    "hardware": 0,
+    "runtime_llm": 0,
+    "automatic_twin_updates": 0,
+    "real_training": 0,
+    "left_wrist_role": "SIMULATION_AUXILIARY_EVALUATOR_ONLY"
+  },
+  "grasp_dynamics_audit_sha256": "eb63e3e78ea5cf7e02c88745343c9bb690e6c9939b589e51fbd8e24090ebb579"
+}
