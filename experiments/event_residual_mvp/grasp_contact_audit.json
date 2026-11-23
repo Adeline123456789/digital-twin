@@ -1,0 +1,30 @@
+{
+  "scope": "Simulation replay of the recorded prefix; no expert joints or real contact measurements",
+  "source_trial": "self_evolution/event_residual_mvp/video_grasp_40mm_20261123",
+  "frames": 146,
+  "integrator_steps": 18688,
+  "black_right_arm_contact_steps": 0,
+  "max_black_robot_penetration_m": 0.0,
+  "first_black_robot_contact": null,
+  "max_state_error_vs_recording": 0.0,
+  "checked_time_semantics": "Every refreshed integrator endpoint; not a continuous-time mathematical guarantee",
+  "physical_steps": 18688,
+  "planner_calls": 0,
+  "hardware_executions": 0,
+  "wall_s": 15.126947256037965,
+  "evidence": [
+    {
+      "dataset_relative_path": "self_evolution/event_residual_mvp/video_grasp_40mm_20261123/trajectory.jsonl",
+      "sha256": "b237f35cabec12784d84e28966d75cefc121fd62f998677345bddf2ec5f4352f"
+    },
+    {
+      "dataset_relative_path": "self_evolution/event_residual_mvp/video_grasp_40mm_20261123/initial_state.npz",
+      "sha256": "1ed4f045ab835db26cc6c0cdd8f452f00a160836dfa82ff9d3b4d696af077f23"
+    },
+    {
+      "dataset_relative_path": "self_evolution/event_residual_mvp/video_grasp_40mm_20261123/task.yaml",
+      "sha256": "cd34731c4b06949255fcc54650a0fe460edb413b8bf3f608c7bfb23a9bf7f54b"
+    }
+  ],
+  "decision": "NO_BLACK_CONTACT_OBSERVED"
+}

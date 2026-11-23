@@ -1,0 +1,51 @@
+{
+  "episode": "20261123T092135Z_48f4ff46",
+  "role": "PRIVILEGED_EVALUATOR_ONLY_NOT_STUDENT_INPUT",
+  "method": "Archived integration-state restoration and rendered visible geom-ID pixel counts; no physics steps",
+  "scope": "Native outlet 3; transport endpoint and every align/insert frame in this one Episode",
+  "cameras": [
+    "overhead",
+    "left_wrist",
+    "right_wrist"
+  ],
+  "samples": 273,
+  "pin_visible_samples": 182,
+  "pin_visible_frames": 91,
+  "tested_frames": 91,
+  "per_camera": {
+    "overhead": {
+      "pin_visible_samples": 91,
+      "max_pin_pixels": 13,
+      "frames_with_visible_tip_corners": 4
+    },
+    "left_wrist": {
+      "pin_visible_samples": 0,
+      "max_pin_pixels": 0,
+      "frames_with_visible_tip_corners": 0
+    },
+    "right_wrist": {
+      "pin_visible_samples": 91,
+      "max_pin_pixels": 145,
+      "frames_with_visible_tip_corners": 3
+    }
+  },
+  "limitation": "Evaluator-only mesh/depth projection at pin end corners (1 mm, 3x3 raster tolerance); not Student input or semantic detector accuracy. Does not rule out a separately calibrated housing-to-tip estimator.",
+  "evidence": [
+    {
+      "dataset_relative_path": "complete_sim/succeed/20261123T092135Z_48f4ff46/proprio_stats/model.xml",
+      "sha256": "b66d55dc9ad2493181a1fdacdbc0029abbdfc9d1c970785011a108869baff9a0"
+    },
+    {
+      "dataset_relative_path": "complete_sim/succeed/20261123T092135Z_48f4ff46/proprio_stats/privileged.jsonl",
+      "sha256": "02b2877165e83701d9d2091000b2ea7ad3bf24fd736fb6bea746d9d1a0a43302"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261123T092135Z_48f4ff46/trajectory.jsonl",
+      "sha256": "8ba4d5d50c55df4341363ee620075295cb34754a3148a33ef9435efcb57d16a4"
+    }
+  ],
+  "detail": {
+    "dataset_relative_path": "self_evolution/event_residual_mvp/20261123T092135Z_48f4ff46/visibility_evaluator.json",
+    "sha256": "ddc35c39dff851cef138d98c0bdefe2f50b37fb76e93d14963fef7a2ce1a1507"
+  }
+}

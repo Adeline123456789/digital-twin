@@ -1,0 +1,17 @@
+{
+  "status": "V0_FROZEN_BEFORE_VIDEO_GRASP_CANDIDATE_EVALUATION",
+  "baseline_episode": "20261123T090549Z_a35ab76b",
+  "additional_scene_candidate": "20261123T092135Z_48f4ff46",
+  "detector": "HSV yellow housing, blue panels with dark slots, elongated low-saturation metal candidates",
+  "socket_identity_rule": "Require visible 1 USB + 3 AC row; target outlet 3 is farthest AC from USB",
+  "confidence": "Unvalidated candidates <=0.5; no empirical confidence claimed",
+  "minimum_event_confidence": 0.9,
+  "missing_required_features": "UNKNOWN -> UNRESOLVED after deadline -> NO_ACTION; critical event HOLD",
+  "scope": "Transport endpoint plus all align/insert frames, all three cameras; observations within each Episode are correlated, not independent trials",
+  "stop_rule": "No usable relative feature stream => observation contract failure / NO-GO; no residual or paired trials",
+  "sources": {
+    "robot_agent/observation_adapter.py": "ea215907141acad6020458367e3a748b499754055591795da5b302762d2df908",
+    "robot_agent/interaction_observer.py": "d876db5e9888972a5facf5844a9e836b87a2f076ef421d71d208fd4268822145",
+    "scripts/run_event_residual_mvp.py": "8483fcf0dc8f68346210863523aec5bcd2653b5a086615c56db1ef9027083807"
+  }
+}

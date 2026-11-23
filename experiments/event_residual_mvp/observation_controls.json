@@ -1,0 +1,117 @@
+{
+  "scope": "Same fixed V0 on extra RGB frames; no detector retuning",
+  "rows": [
+    {
+      "camera": "external",
+      "frame": 0,
+      "ac": 0,
+      "usb": 3,
+      "socket": null,
+      "pins": 0
+    },
+    {
+      "camera": "external",
+      "frame": 155,
+      "ac": 0,
+      "usb": 3,
+      "socket": null,
+      "pins": 0
+    },
+    {
+      "camera": "external",
+      "frame": 300,
+      "ac": 0,
+      "usb": 3,
+      "socket": null,
+      "pins": 0
+    },
+    {
+      "camera": "external",
+      "frame": 441,
+      "ac": 0,
+      "usb": 3,
+      "socket": null,
+      "pins": 0
+    },
+    {
+      "camera": "external",
+      "frame": 461,
+      "ac": 0,
+      "usb": 2,
+      "socket": null,
+      "pins": 0
+    },
+    {
+      "camera": "external",
+      "frame": 515,
+      "ac": 0,
+      "usb": 3,
+      "socket": null,
+      "pins": 0
+    },
+    {
+      "camera": "external",
+      "frame": 1132,
+      "ac": 0,
+      "usb": 3,
+      "socket": null,
+      "pins": 0
+    },
+    {
+      "camera": "right_wrist",
+      "frame": 0,
+      "ac": 0,
+      "usb": 0,
+      "socket": null,
+      "pins": 2
+    },
+    {
+      "camera": "right_wrist",
+      "frame": 155,
+      "ac": 0,
+      "usb": 0,
+      "socket": null,
+      "pins": 1
+    },
+    {
+      "camera": "right_wrist",
+      "frame": 300,
+      "ac": 0,
+      "usb": 0,
+      "socket": null,
+      "pins": 2
+    },
+    {
+      "camera": "right_wrist",
+      "frame": 441,
+      "ac": 1,
+      "usb": 0,
+      "socket": null,
+      "pins": 2
+    },
+    {
+      "camera": "right_wrist",
+      "frame": 461,
+      "ac": 1,
+      "usb": 1,
+      "socket": null,
+      "pins": 3
+    },
+    {
+      "camera": "right_wrist",
+      "frame": 515,
+      "ac": 0,
+      "usb": 0,
+      "socket": null,
+      "pins": 2
+    },
+    {
+      "camera": "right_wrist",
+      "frame": 1132,
+      "ac": 0,
+      "usb": 0,
+      "socket": null,
+      "pins": 0
+    }
+  ]
+}

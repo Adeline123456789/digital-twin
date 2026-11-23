@@ -1,0 +1,85 @@
+{
+  "user_authorization": "2026-11-23: read only expert 000210 RGB videos; no H5 or joint/extrinsic transfer",
+  "source_root": "REFERENCE_DATA",
+  "source_relative_path": "observations/20260908/000210/videos",
+  "videos": [
+    {
+      "video": "cam_external_rgb.mp4",
+      "frames": 212,
+      "fps": "30",
+      "width": 640,
+      "height": 480,
+      "sha256": "af11bd7fa9f25edd6a61ffb6a68f2eaff183571c937709321e3a84f031580764",
+      "reviewed_frames": [
+        0,
+        42,
+        84,
+        127,
+        169,
+        211
+      ]
+    },
+    {
+      "video": "cam_left_wrist_rgb.mp4",
+      "frames": 212,
+      "fps": "30",
+      "width": 640,
+      "height": 480,
+      "sha256": "8d748885f3968c2f74853099d2a81abd16e44ae1c9e62385e87de778f9539b97",
+      "reviewed_frames": [
+        0,
+        42,
+        84,
+        127,
+        169,
+        211
+      ]
+    },
+    {
+      "video": "cam_right_wrist_rgb.mp4",
+      "frames": 212,
+      "fps": "30",
+      "width": 640,
+      "height": 480,
+      "sha256": "5cf97f2b9c3897bd5f9c299d82395a5bdbf6ffda13b5370d65e75f0f9caec733",
+      "reviewed_frames": [
+        0,
+        42,
+        84,
+        127,
+        169,
+        211
+      ]
+    }
+  ],
+  "qualitative_observation": "Fingers bracket the yellow housing along the holder plug row; black charger remains beside the yellow plug. Image pose is not a 6DoF calibration.",
+  "pilot": {
+    "initial_right_opening_m": 0.04,
+    "grasp_target_width_m": 0.027,
+    "grasp_height_m": 0.02,
+    "orientation": "native board-relative jaw direction rotated by -90 degrees versus original; own MuJoCo IK only",
+    "stop_after": "lift",
+    "collision_tolerance_m": 0.0002,
+    "physical_parameter_changes": 0,
+    "attempts": 1,
+    "acceptance": "Native lift >40 mm and all substeps within original penetration tolerance; not full task success",
+    "raw_relative_path": "self_evolution/event_residual_mvp/video_grasp_40mm_20261123"
+  },
+  "frozen_baseline": "Unchanged; this candidate is not used for the four-policy comparison",
+  "prefix_result": {
+    "grasp_lift_success": true,
+    "complete_pick_insert": false,
+    "diagnostic_only": true,
+    "frames": 146,
+    "max_penetration_m": 2.2316106773728467e-05,
+    "error": null,
+    "scope": "146-frame diagnostic prefix only; no formal Episode and no complete insertion claim",
+    "report_sha256": "a8f344cc7a2af2a7351b59e9e4986a4b805db8407f06ccda6b1941c77c13bfa9"
+  },
+  "complete_candidate": {
+    "attempts": 1,
+    "status": "STARTING",
+    "changes": "same 40 mm / board-relative posture as successful prefix; unchanged native complete program",
+    "acceptance": "Original full-task success and complete Episode validation; no parameter/threshold changes"
+  }
+}

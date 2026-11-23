@@ -185,20 +185,84 @@ def replay(manifest_path):
     return result
 
 
+def observation_audit(ident):
+    """Evaluate only decoded RGB and SI proprioception; no privileged labels enter the adapter."""
+    import av
+    import numpy as np
+    from dataclasses import asdict
+    from robot_agent.contracts import Reference
+    from robot_agent.observation_adapter import adapt
+    from robot_agent.interaction_observer import alignment_event
+    from robot_agent.interaction_events import EventSpec, Comparison
+    from robot_agent.event_comparator import compare_event
+    from robot_agent.recovery_router import route, safety_decision
+    raw = DATA / 'self_evolution' / ident
+    episode = DATA / 'complete_sim/succeed' / ident
+    rows = [{key: row[key] for key in ('time', 'phase', 'q', 'action')}
+            for row in map(json.loads, (raw / 'trajectory.jsonl').read_text().splitlines())]
+    selected = {i for i, row in enumerate(rows) if row['phase'] in ('align', 'insert')}
+    selected.add(max(i for i, row in enumerate(rows) if row['phase'] == 'transport'))
+    earliest = rows[min(selected)]['time']
+    spec = EventSpec('ALIGNMENT_OK', 'ALIGNMENT_OK', 'align', True, earliest, earliest + .1,
+                     observation_requirements=('rgb', 'plug_tip', 'socket_identity'))
+    measured, evidence = [], []
+    for camera in ('external', 'left_wrist', 'right_wrist'):
+        video = episode / 'videos' / f'cam_{camera}_rgb.mp4'
+        reference = Reference('dataset', str(video.relative_to(DATA)), digest(video))
+        evidence.append(asdict(reference))
+        with av.open(str(video)) as stream:
+            for index, frame in enumerate(stream.decode(video=0)):
+                if index not in selected:
+                    continue
+                row = rows[index]
+                velocity = (np.array(row['q']) - rows[index - 1]['q']) / (row['time'] - rows[index - 1]['time'])
+                obs = adapt(rgb=frame.to_ndarray(format='rgb24'), joint_position=row['q'], joint_velocity=velocity,
+                            nominal_action=row['action'], phase=row['phase'], timestamp=row['time'])
+                event = alignment_event(obs, reference)
+                comparison = compare_event(spec, event, row['time'])
+                measured.append(dict(frame=index, camera=camera, phase=row['phase'], visual=asdict(obs.visual),
+                                     event=event.status.value, comparison=comparison.status.value,
+                                     route=route(comparison).value, safety=safety_decision(comparison, critical=True)))
+    detail = DATA / 'self_evolution/event_residual_mvp' / ident / 'rgb_observation_audit.json'
+    save(detail, measured)
+    summary = dict(episode=ident, scope='Frozen OpenCV V0 candidate extraction; transport endpoint and all align/insert RGB',
+                   role='DEPLOYABLE_INPUT_ONLY', samples=len(measured), tested_frames=len(selected),
+                   qvel_provenance='finite difference of joint-position feedback and simulation sample time',
+                   per_camera={camera: dict(samples=sum(r['camera'] == camera for r in measured),
+                       housing_detected=sum(r['camera'] == camera and r['visual']['plug_housing_center'] is not None for r in measured),
+                       tip_candidates=sum(r['camera'] == camera and r['visual']['plug_tip_pixel'] is not None for r in measured),
+                       socket_identified=sum(r['camera'] == camera and r['visual']['socket_center'] is not None for r in measured),
+                       joint_feature_candidates=sum(r['camera'] == camera and r['visual']['relative_image_residual'] is not None for r in measured))
+                       for camera in ('external', 'left_wrist', 'right_wrist')},
+                   unresolved=sum(r['comparison'] == Comparison.UNRESOLVED.value for r in measured),
+                   residual_routes=sum(r['route'] == 'RESIDUAL' for r in measured),
+                   structural_routes=sum(r['route'] == 'STRUCTURAL_CANDIDATE' for r in measured),
+                   detection_precision=None, precision_reason='No held-out semantic validation; do not assign calibrated confidence to candidates',
+                   evidence=evidence, detail=dict(dataset_relative_path=str(detail.relative_to(DATA)), sha256=digest(detail)))
+    save(RESULTS / ('observation_' + ident + '.json'), summary)
+    print(json.dumps(summary, indent=2))
+    return summary
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage', choices=['freeze', 'replay'], required=True)
+    parser.add_argument('--stage', choices=['freeze', 'replay', 'observe'], required=True)
     parser.add_argument('--source-report', type=Path)
+    parser.add_argument('--episode')
     args = parser.parse_args()
     os.environ['MUJOCO_GL'] = 'egl'
     if args.stage == 'freeze':
         if args.source_report is None:
             parser.error('--source-report is required for freeze')
         freeze(args.source_report.resolve())
-    else:
+    elif args.stage == 'replay':
         result = replay(RESULTS / 'nominal_manifest.json')
         if result['decision'] != 'PASS':
             raise SystemExit(2)
+    else:
+        if not args.episode:
+            parser.error('--episode required for observe')
+        observation_audit(args.episode)
 
 
 if __name__ == '__main__':

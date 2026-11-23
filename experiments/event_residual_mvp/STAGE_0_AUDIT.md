@@ -29,7 +29,7 @@ The inspected modules are `contracts`, `diagnosis`, `first_divergence`, `fast_lo
 
 ## Regression scope
 
-The old controller-import test `RightAgentTests.test_connection_rejects_absent_arm_before_controller_import` is excluded because it reads `RIGHT_ARM_CONTROL_ROOT`, explicitly forbidden for this MVP. The exclusion is a validation limitation, not a pass. Other old tests use local/synthetic evidence or simulation; runtime model calls in unit tests are mocked. Test tooling is installed only under ignored `.local/event_residual_mvp/testdeps`, leaving the MuJoCo environment unchanged.
+The old controller-import test `RightAgentTests.test_connection_rejects_absent_arm_before_controller_import` is excluded because it reads `RIGHT_ARM_CONTROL_ROOT`, explicitly forbidden for this MVP. The exclusion is a validation limitation, not a pass. Other old tests use local/synthetic evidence or simulation; runtime model calls in unit tests are mocked. Test tooling is installed only under ignored `.local/event_residual_mvp/pytest_runtime`, leaving the MuJoCo environment unchanged. The first install through configured mirrors failed; the isolated PyPI install succeeded.
 
 ## Stage decision
 

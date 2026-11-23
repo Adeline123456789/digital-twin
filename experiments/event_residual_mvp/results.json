@@ -1,0 +1,111 @@
+{
+  "decision": "NO-GO",
+  "failure_category": "observation contract failure",
+  "scope": "Simulation-only dual-arm model, right-arm task; no dual-arm collaboration and no real-verified result",
+  "reason": "Fixed OpenCV V0 did not identify target outlet in any audited key frame; no reliable joint plug-tip/socket residual. Candidate extraction has not passed semantic validation.",
+  "stages": {
+    "0_native_audit": "PASS",
+    "1_frozen_nominal": "PASS for original baseline only",
+    "2_event_contract": "PASS_UNIT_CONTRACT_ONLY",
+    "3_deployable_observation": "NO-GO",
+    "4_static_retarget": "NOT_RUN_STAGE_3_STOP",
+    "5_transient_four_policy": "NOT_RUN_STAGE_3_STOP",
+    "6_ood_legacy_drift": "NOT_RUN_STAGE_3_STOP"
+  },
+  "native_baseline": {
+    "episode": "20261123T090549Z_a35ab76b",
+    "frames": 1133,
+    "task_success": true,
+    "recording_verified": true
+  },
+  "frozen_replay": {
+    "episode": "20261123T091030Z_9c2fbd70",
+    "task_success": true,
+    "recording_verified": true,
+    "max_state_error_vs_generator": 0.0,
+    "nominal_action_hash": "7849872c6fca43eb9194dc75b75cd71237b4b14539818e9a572397d23f61ceb3",
+    "executed_action_hash": "7849872c6fca43eb9194dc75b75cd71237b4b14539818e9a572397d23f61ceb3",
+    "planner_calls": 0,
+    "privileged_policy_reads": 0,
+    "audit_scope": "Native PoseIK/main spy plus policy interface/code inspection; not an OS sandbox"
+  },
+  "user_video_grasp_candidate": {
+    "episode": "20261123T092135Z_48f4ff46",
+    "task_success": true,
+    "recording_verified": true,
+    "frames": 1139,
+    "max_penetration_m": 2.2690341908815585e-05,
+    "initial_right_opening_m": 0.04,
+    "black_contact_steps_prefix": 0,
+    "prefix_integrator_steps": 18688,
+    "full_frozen_replay": "NOT_RUN; original reference unchanged",
+    "evidence_scope": "Separate task-conditioned grasp candidate; no causal attribution to width alone because orientation also changed"
+  },
+  "observation_summary": {
+    "total_rgb_samples": 498,
+    "episode_key_frames": [
+      75,
+      91
+    ],
+    "valid_joint_feature_candidates": 0,
+    "after_deadline_unresolved": 474,
+    "residual_routes": 0,
+    "structural_routes": 0,
+    "interpretation": "Frames are correlated. Do not treat 498 camera samples as independent paired trials. This is failure of tested V0, not proof that RGB localization is impossible."
+  },
+  "metrics": {
+    "task_success_rate": null,
+    "nominal_only_failure_rate": null,
+    "event_gated_recovery_rate": null,
+    "phase_gated_recovery_rate": null,
+    "residual_action_norm": null,
+    "unnecessary_residual_activation": null,
+    "false_trigger_rate": null,
+    "event_detection_precision": null,
+    "event_detection_delay": null,
+    "unresolved_rate_audited_camera_samples": 0.9518072289156626,
+    "privileged_policy_reads_frozen_replay": 0,
+    "planner_calls_frozen_replay": 0,
+    "generator_ik_calls": "NOT_INSTRUMENTED; native generator does replan",
+    "runtime_llm_calls": 0,
+    "runtime_legacy_skill_executions": 0,
+    "twin_modifications": 0,
+    "hardware_executions": 0
+  },
+  "statistics": {
+    "paired_conditions": 0,
+    "bootstrap_ci": null,
+    "reason": "Prerequisite NO-GO before paired experiment; no success-rate or gating-benefit claim"
+  },
+  "tests": {
+    "passed": 169,
+    "old_tests_passed": 152,
+    "new_tests_passed": 17,
+    "deselected": 1,
+    "excluded": "tests/test_right_agent_integration.py::RightAgentTests::test_connection_rejects_absent_arm_before_controller_import",
+    "reason": "Imports explicitly prohibited RIGHT_ARM_CONTROL_ROOT"
+  },
+  "budget": {
+    "full_native_generator_trials": 2,
+    "full_frozen_replays": 1,
+    "grasp_prefix_generator_trials": 1,
+    "grasp_prefix_contact_replays": 1,
+    "transient_rollouts": 0,
+    "static_rollouts": 0,
+    "paired_conditions": 0,
+    "subagents": 0,
+    "known_wall_s": 487.8748372278642,
+    "prefix_generator_wall_s": null,
+    "full_simulation_episode_count": 3,
+    "hardware": 0,
+    "runtime_llm": 0
+  },
+  "limitations": [
+    "One original nominal and one independent physical replay, not repeatability statistics",
+    "One video-inspired candidate, no seed sweep",
+    "RGB V0 misses target identity even in extra unobscured external-view controls: resolution and component-rule limitations accompany occlusion",
+    "No trained residual, Cartesian injection, paired policy benefit, OOD routing, runtime Skill drift suspension or legacy isolation experiment",
+    "Test exclusion prevents all-old-tests-pass claim",
+    "Expert RGB read only under latest user amendment; no H5, expert joint state or extrinsic transfer"
+  ]
+}

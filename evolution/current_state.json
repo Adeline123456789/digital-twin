@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Simulation-only dual-arm model, native right-arm plug task; no dual-arm coordination",
-  "status": "STAGE_2_CONTRACT_PASS_OBSERVATION_AUDIT",
+  "scope": "Simulation-only dual-arm model, right-arm task; no dual-arm collaboration and no real-verified result",
+  "status": "EVENT_RESIDUAL_MVP_NO_GO_OBSERVATION_CONTRACT",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
     "training and teacher/student comparisons"
   ],
-  "stop_condition": "Any prerequisite failure -> NO-GO and stop experimental expansion. Wide confidence intervals -> INCONCLUSIVE.",
+  "stop_condition": "Stage 3 NO-GO. Stop expansion; no residual/pilot/OOD/hardware actions pending.",
   "software": {
     "branch": "research/event-residual-dual-20261123",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Validate event contract and deployable RGB observation. Stop if required visual landmarks remain unavailable.",
-  "updated_at": "2026-11-23T09:17:11.231539+00:00",
+  "next_grounded_work": "A future task must qualify an RGB-only target identity / temporal landmark method before new residual experiments. Preserve original frozen reference and separate 40 mm candidate.",
+  "updated_at": "2026-11-23T09:27:50.559437+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -106,17 +106,21 @@
     "design": "experiments/event_residual_mvp/design.json",
     "source_manifest": "experiments/event_residual_mvp/source_manifest.json",
     "budget": {
-      "native_baselines_started": 1,
-      "frozen_replays_started": 1,
-      "pilot_rollouts": 0,
-      "confirmation_rollouts": 0,
+      "full_native_generator_trials": 2,
+      "full_frozen_replays": 1,
+      "grasp_prefix_generator_trials": 1,
+      "grasp_prefix_contact_replays": 1,
+      "transient_rollouts": 0,
+      "static_rollouts": 0,
+      "paired_conditions": 0,
       "subagents": 0,
+      "known_wall_s": 487.8748372278642,
+      "prefix_generator_wall_s": null,
+      "full_simulation_episode_count": 3,
       "hardware": 0,
-      "runtime_llm": 0,
-      "native_wall_s": 151.27486639702693,
-      "replay_wall_s": 159.3968861529138
+      "runtime_llm": 0
     },
-    "status": "STAGE_2_CONTRACT_PASS_OBSERVATION_AUDIT",
+    "status": "EVENT_RESIDUAL_MVP_NO_GO_OBSERVATION_CONTRACT",
     "baseline": {
       "episode": "20261123T090549Z_a35ab76b",
       "task_success": true,
@@ -126,10 +130,46 @@
     },
     "reference": "experiments/event_residual_mvp/nominal_manifest.json",
     "tests": {
-      "passed": 165,
-      "deselected": 1
+      "passed": 169,
+      "old_tests_passed": 152,
+      "new_tests_passed": 17,
+      "deselected": 1,
+      "excluded": "tests/test_right_agent_integration.py::RightAgentTests::test_connection_rejects_absent_arm_before_controller_import",
+      "reason": "Imports explicitly prohibited RIGHT_ARM_CONTROL_ROOT"
     },
     "replay": "experiments/event_residual_mvp/stage1_replay.json",
-    "contract_results": "experiments/event_residual_mvp/stage2_contract_results.json"
+    "contract_results": "experiments/event_residual_mvp/stage2_contract_results.json",
+    "user_amendment": {
+      "date": "2026-11-23",
+      "allowed_read": "REFERENCE_DATA/observations/20260908/000210/videos only",
+      "purpose": "RGB grasp posture reference; assess approximately 40 mm initial gripper opening in separate simulation candidate",
+      "prohibited": [
+        "H5/joint trajectory from other robot",
+        "reuse expert camera extrinsics",
+        "hardware execution"
+      ],
+      "prior_frozen_reference": "unchanged; separate candidate must requalify nominal replay if adopted"
+    },
+    "grasp_amendment": "experiments/event_residual_mvp/grasp_amendment.json",
+    "grasp_prefix_result": {
+      "grasp_lift_success": true,
+      "complete_pick_insert": false,
+      "diagnostic_only": true,
+      "frames": 146,
+      "max_penetration_m": 2.2316106773728467e-05,
+      "error": null,
+      "scope": "146-frame diagnostic prefix only; no formal Episode and no complete insertion claim",
+      "report_sha256": "a8f344cc7a2af2a7351b59e9e4986a4b805db8407f06ccda6b1941c77c13bfa9"
+    },
+    "grasp_complete": {
+      "report": "experiments/event_residual_mvp/video_grasp_complete.json",
+      "episode": "20261123T092135Z_48f4ff46",
+      "decision": "PASS",
+      "recording_verified": true
+    },
+    "grasp_contact_audit": "experiments/event_residual_mvp/grasp_contact_audit.json",
+    "decision": "NO-GO",
+    "report": "experiments/event_residual_mvp/MVP_REPORT.md",
+    "results": "experiments/event_residual_mvp/results.json"
   }
 }

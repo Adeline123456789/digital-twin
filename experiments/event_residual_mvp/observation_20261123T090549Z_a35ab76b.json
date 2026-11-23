@@ -1,0 +1,57 @@
+{
+  "episode": "20261123T090549Z_a35ab76b",
+  "scope": "Frozen OpenCV V0 candidate extraction; transport endpoint and all align/insert RGB",
+  "role": "DEPLOYABLE_INPUT_ONLY",
+  "samples": 225,
+  "tested_frames": 75,
+  "qvel_provenance": "finite difference of joint-position feedback and simulation sample time",
+  "per_camera": {
+    "external": {
+      "samples": 75,
+      "housing_detected": 75,
+      "tip_candidates": 0,
+      "socket_identified": 0,
+      "joint_feature_candidates": 0
+    },
+    "left_wrist": {
+      "samples": 75,
+      "housing_detected": 0,
+      "tip_candidates": 0,
+      "socket_identified": 0,
+      "joint_feature_candidates": 0
+    },
+    "right_wrist": {
+      "samples": 75,
+      "housing_detected": 75,
+      "tip_candidates": 70,
+      "socket_identified": 0,
+      "joint_feature_candidates": 0
+    }
+  },
+  "unresolved": 213,
+  "residual_routes": 0,
+  "structural_routes": 0,
+  "detection_precision": null,
+  "precision_reason": "No held-out semantic validation; do not assign calibrated confidence to candidates",
+  "evidence": [
+    {
+      "root": "dataset",
+      "path": "complete_sim/succeed/20261123T090549Z_a35ab76b/videos/cam_external_rgb.mp4",
+      "sha256": "8ba9f9c5ddd5bfc03b5b28c30a494a1ba8a359542f56a312e00789826c05ca28"
+    },
+    {
+      "root": "dataset",
+      "path": "complete_sim/succeed/20261123T090549Z_a35ab76b/videos/cam_left_wrist_rgb.mp4",
+      "sha256": "9dec0f950d6359cece2218c5bcb0f9622c0886c406427cea67c97a1cdf83931f"
+    },
+    {
+      "root": "dataset",
+      "path": "complete_sim/succeed/20261123T090549Z_a35ab76b/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "550039af5415ddb30a329e4e5753ff3492f0bc5042280646face80578f859dc3"
+    }
+  ],
+  "detail": {
+    "dataset_relative_path": "self_evolution/event_residual_mvp/20261123T090549Z_a35ab76b/rgb_observation_audit.json",
+    "sha256": "e6339e24227b5d1fb1973cd3cff575fef5cbf13ceb4b16f319301a3fe223dcda"
+  }
+}

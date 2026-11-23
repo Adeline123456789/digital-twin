@@ -11,3 +11,9 @@ This is a simulation-only plan for a dual-arm model executing the existing right
 7. GO requires every taskbook gate, including supported paired benefit, event precision, false-trigger bound and zero forbidden execution. Unsupported intervals are INCONCLUSIVE. A prerequisite/interface/detection failure is NO-GO and ends this batch. No PPO, new agents, memory expansion, contact tuning or Twin rebuilding follows a NO-GO.
 
 The hardware-control import regression cannot run under this taskbook's `real_data_read`/control-root prohibition; report that limitation explicitly. Raw data, simulator sources/assets, XML and videos stay outside Git. Publish only new code, reviewed reports, relative evidence paths and hashes on `research/event-residual-dual-20261123`.
+
+## Batch outcome and user amendment
+
+The 2026-11-23 batch stopped at Stage 3 with **NO-GO: observation contract failure**; see `experiments/event_residual_mvp/MVP_REPORT.md`. The original frozen physical replay passed, but OpenCV V0 did not qualify target socket identity. Steps 4–7 above remain unexecuted future work, not automatic continuation instructions.
+
+The user subsequently authorized only the expert `000210` RGB videos as posture reference and suggested about 40 mm initial opening. A separate own-IK simulation candidate completed the task, and its 146-frame grasp prefix had zero black-charger/right-arm contacts over 18,688 checked integrator endpoints. No expert H5, joints or camera extrinsics were used. This candidate did not replace the frozen reference and did not resolve the V0 observation failure.

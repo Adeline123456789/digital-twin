@@ -1,0 +1,17 @@
+{
+  "json_and_implementation_hashes": "PASS",
+  "all_113_original_generator_source_hashes_unchanged": true,
+  "python_tests": {
+    "passed": 169,
+    "deselected": 1,
+    "subtests": 27
+  },
+  "pytest_output_sha256": "317f9d8dd22659b887414c461d91beaaec25d0f59d18031e6a658db87aa4da7f",
+  "publication": "Only source, reviewed JSON/Markdown, tests; raw evidence remains outside Git",
+  "untracked_user_file_preserved": "pelican-bicycle.html",
+  "engineering_issues_resolved": [
+    "pytest absent in native environment; local-only dependency target used",
+    "new isolated grasp test initially missed scripts import path; fixed before pilot; no simulation ran on failed test command"
+  ],
+  "source_boundary": "No reference H5, real failure/success raw data or right-arm control root read; expert RGB-only exception recorded"
+}
