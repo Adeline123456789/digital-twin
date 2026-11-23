@@ -1,0 +1,135 @@
+{
+  "runs": {
+    "B2_structured": {
+      "variant": "B2_structured",
+      "config": {
+        "steps": 16384,
+        "history_frames": 1,
+        "visual_features": false,
+        "reward": "structured",
+        "seed": 20261123
+      },
+      "actual_steps": 16384,
+      "episodes": 200,
+      "wall_s": 928.5571497560013,
+      "source_hashes": {
+        "scripts/train_residual_v2.py": "7f22f74375fafd261835c37f5eda45f4f7345e385f4981be26f57411aa64128d",
+        "robot_agent/residual_env.py": "1c2160325c64ec1fa166a33fd572afe4f24e1d0aae1737b155598bcf23102ba0",
+        "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+        "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+        "robot_agent/observation_adapter.py": "44c650df559d7249fa24b72a4f9aab2ad644037495ba87ea5ce20c58fcda5591"
+      },
+      "policy": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/training/B2_structured/policy.zip",
+        "sha256": "106f1eca67e536bb4983920b225b43e4d28a06c9d504cb9008cdc9b020e8b412"
+      },
+      "observation_scope": "right motor/command history; optional RGB candidates with dropout, no privileged channels",
+      "scope": "Simulation-only; single training seed per ablation; no real transfer inference",
+      "source_reconstruction": {
+        "base_commit": "1921b752741e7889b6d31fe56d1f950912d1c4a0",
+        "patch": "experiments/event_residual_mvp_v2/B2_source_delta.patch",
+        "verification": "all five reconstructed source SHA256 values equal launch-captured values",
+        "reason": "Perception-only branch changed during independent nonvisual B2 training; its exact source version is preserved."
+      }
+    },
+    "B3_structured": {
+      "variant": "B3_structured",
+      "config": {
+        "steps": 16384,
+        "history_frames": 15,
+        "visual_features": true,
+        "reward": "structured",
+        "seed": 20261124
+      },
+      "actual_steps": 16384,
+      "episodes": 200,
+      "wall_s": 1182.1178560261615,
+      "source_hashes": {
+        "scripts/train_residual_v2.py": "7f22f74375fafd261835c37f5eda45f4f7345e385f4981be26f57411aa64128d",
+        "robot_agent/residual_env.py": "bf5a7a22e3e0965eb1222931a6dfc268729af2babd7fce46c9a6fa8228de1a6c",
+        "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+        "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+        "robot_agent/observation_adapter.py": "f67a9eb273f2657ddb9561bdf8f0ed476b6b31ff655966451fd3ee84d3964ca3"
+      },
+      "policy": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/training/B3_structured/policy.zip",
+        "sha256": "e9de20ec7a4aec0376716fd7fafd145773aaa233bdba66cfc90a539bc5bf1ad9"
+      },
+      "observation_scope": "right motor/command history; optional RGB candidates with dropout, no privileged channels",
+      "scope": "Simulation-only; single training seed per ablation; no real transfer inference"
+    },
+    "B3_sparse": {
+      "variant": "B3_sparse",
+      "config": {
+        "steps": 16384,
+        "history_frames": 15,
+        "visual_features": true,
+        "reward": "sparse",
+        "seed": 20261124
+      },
+      "actual_steps": 16384,
+      "episodes": 200,
+      "wall_s": 1192.011308164103,
+      "source_hashes": {
+        "scripts/train_residual_v2.py": "dd0ad97605ffc290672383ed0349138f116bc1e50024c3d102cbc6e572b8bb43",
+        "robot_agent/residual_env.py": "bf5a7a22e3e0965eb1222931a6dfc268729af2babd7fce46c9a6fa8228de1a6c",
+        "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+        "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+        "robot_agent/observation_adapter.py": "5e363445f46a8193f70d33f81cf8b6615a19817f5be05db608258996bcc7ca32"
+      },
+      "policy": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/training/B3_sparse/policy.zip",
+        "sha256": "8e7c5b0bf3764ea4798ce8a5cc65ffa43704df9b116bf2b524218d175f34dc17"
+      },
+      "observation_scope": "right motor/command history; optional RGB candidates with dropout, no privileged channels",
+      "scope": "Simulation-only; single training seed per ablation; no real transfer inference"
+    },
+    "B3_actuator": {
+      "variant": "B3_actuator",
+      "config": {
+        "steps": 8192,
+        "history_frames": 15,
+        "visual_features": true,
+        "reward": "structured",
+        "seed": 20261125,
+        "stage": "actuator"
+      },
+      "actual_steps": 8192,
+      "episodes": 96,
+      "wall_s": 525.6816348240245,
+      "source_hashes": {
+        "scripts/train_residual_v2.py": "eb2ebb66489a183d0971831d97f03ca5310725be45b5bf82e5973f6ae3b2f899",
+        "robot_agent/residual_env.py": "daac324d9de8a92b70bd58d1305d38a608d838e9a80b2474efeb6f6f999191b9",
+        "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+        "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+        "robot_agent/observation_adapter.py": "5e363445f46a8193f70d33f81cf8b6615a19817f5be05db608258996bcc7ca32"
+      },
+      "policy": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/training/B3_actuator/policy.zip",
+        "sha256": "7461282a08b14675c14de8e0a0b092df558ecf5ceb514ddba42870785d93a813"
+      },
+      "observation_scope": "right motor/command history; optional RGB candidates with dropout, no privileged channels",
+      "scope": "Simulation-only; single training seed per ablation; no real transfer inference"
+    }
+  },
+  "total_steps": 57344,
+  "train_range": {
+    "socket_xy_mm": [
+      -1,
+      1
+    ],
+    "hand_xy_mm": [
+      -0.1,
+      0.1
+    ],
+    "hand_yaw_deg": [
+      -0.5,
+      0.5
+    ],
+    "controller_delay_s": 0,
+    "gripper_variation_m": 0
+  },
+  "nominal_updated": false,
+  "reward_ablation": "structured vs sparse with matched B3 architecture/seed/step budget",
+  "phase2": "Additional residual-only curriculum: 0\u20131 frame actuator delay, +/-0.05 mm initial aperture; separate 2-frame/+/-0.075 mm heldout conditions"
+}

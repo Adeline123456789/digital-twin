@@ -1,0 +1,5 @@
+{
+  "pytest_exit_code": 0,
+  "prohibited_open_attempts": 0,
+  "scope": "All selected old/new tests under explicit forbidden-path Python open audit hook"
+}

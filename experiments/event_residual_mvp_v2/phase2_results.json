@@ -1,0 +1,64 @@
+{
+  "statistics": {
+    "B0": {
+      "n": 32,
+      "successes": 6,
+      "collisions": 1,
+      "improvement_pp": 0.0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ],
+      "recovered": 0,
+      "spoiled": 0,
+      "recovery_rate": 0.0
+    },
+    "B3_structured": {
+      "n": 32,
+      "successes": 13,
+      "collisions": 1,
+      "improvement_pp": 21.875,
+      "ci95_pp": [
+        3.125,
+        40.625
+      ],
+      "recovered": 9,
+      "spoiled": 2,
+      "recovery_rate": 0.34615384615384615
+    },
+    "B3_actuator": {
+      "n": 32,
+      "successes": 7,
+      "collisions": 1,
+      "improvement_pp": 3.125,
+      "ci95_pp": [
+        -15.625,
+        21.875
+      ],
+      "recovered": 5,
+      "spoiled": 4,
+      "recovery_rate": 0.19230769230769232
+    }
+  },
+  "nominal_regression": {
+    "n": 20,
+    "successes": 20,
+    "improvement_pp": 0.0,
+    "ci95_pp": [
+      0.0,
+      0.0
+    ],
+    "recovered": 0,
+    "spoiled": 0,
+    "recovery_rate": 0.0
+  },
+  "scope": "Separate sequential actuator curriculum and new heldout seeds; original geometry-only conclusion retained",
+  "decision": "INCONCLUSIVE",
+  "real_transfer_allowed": false,
+  "action_audit": {
+    "samples": 116,
+    "all_bounds_and_left_arm_invariance": true,
+    "max_residual_axis_m": 0.0006295458251389551,
+    "max_residual_axis_speed_m_s": 0.0004899006677926331
+  }
+}

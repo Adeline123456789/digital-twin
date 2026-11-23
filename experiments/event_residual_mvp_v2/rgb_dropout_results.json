@@ -1,0 +1,42 @@
+{
+  "dropout_0": {
+    "n": 32,
+    "successes": 16,
+    "success_rate": 0.5,
+    "collisions": 0,
+    "mean_correction_integral_m_s": 0.0023892123000849013,
+    "mean_correction_variation_m": 0.0011527865300412143,
+    "mean_duration_s": 5.2999999999951815,
+    "improvement_pp": 37.5,
+    "ci95_pp": [
+      21.875,
+      53.125
+    ],
+    "recovered": 12,
+    "spoiled": 0,
+    "recovery_rate": 0.42857142857142855
+  },
+  "dropout_1": {
+    "n": 32,
+    "successes": 16,
+    "success_rate": 0.5,
+    "collisions": 0,
+    "mean_correction_integral_m_s": 0.0023892123000849013,
+    "mean_correction_variation_m": 0.0011527865300412143,
+    "mean_duration_s": 5.2999999999951815,
+    "improvement_pp": 37.5,
+    "ci95_pp": [
+      21.875,
+      53.125
+    ],
+    "recovered": 12,
+    "spoiled": 0,
+    "recovery_rate": 0.42857142857142855
+  },
+  "identical_action_sequences": 32,
+  "paired_conditions": 32,
+  "qualified_vision_available": false,
+  "limitation": "Optional visual branch uses unqualified RGB candidates. If absent, dropout equivalence demonstrates proprioceptive execution, not useful visual fusion.",
+  "raw_visual_available_samples": 0,
+  "raw_visual_samples": 1404
+}

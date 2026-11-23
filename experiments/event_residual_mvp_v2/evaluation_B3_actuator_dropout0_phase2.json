@@ -1,0 +1,1425 @@
+{
+  "variant": "B3_actuator",
+  "visual_dropout": 0.0,
+  "design_sha256": "05a9c2aae94568bb7549ea955cb3ddfe7098f0e3f13d86a7c9b6557031c1394f",
+  "source_hashes": {
+    "scripts/evaluate_residual_v2.py": "0a4c785a3c00b4b883531a024cc7bada2c23a9254d1cc57d849b7c1d3b01c87b",
+    "robot_agent/residual_env.py": "daac324d9de8a92b70bd58d1305d38a608d838e9a80b2474efeb6f6f999191b9",
+    "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+    "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+    "robot_agent/observation_adapter.py": "5e363445f46a8193f70d33f81cf8b6615a19817f5be05db608258996bcc7ca32",
+    "robot_agent/nominal_reference.py": "1d39d8988933022c8cde6c7b641f6adfced102a5c686c5da4db7ab704ff012f9",
+    "scripts/pilot_residual_v2.py": "4c5965e6deebb0a73a4aeaa4a3bcb40f9c529be756495908ee44b739a5c6ba9f"
+  },
+  "source_capture": "before rollout workers; exact new-source snapshots retained in DATA_ROOT",
+  "cases": [
+    {
+      "case_id": "heldout_9401",
+      "seed": 9401,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 25.569686400005594,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.381058594233845e-05,
+      "correction_integral_m_s": 0.0007330548169763417,
+      "correction_variation_m": 0.0005907022555031186,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.15,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.13424694460314043,
+          0.10523813846697513
+        ],
+        "yaw_deg": -0.12795764820405864,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007823160846949242,
+        "face_gap_m": 0.00019999950873291622,
+        "yaw_rad": -0.0073840692849173415,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9401.json",
+        "sha256": "802e1bcc34d32dde98d3274c99eee9bf1797229240d8981b10b343b24fe50f95"
+      }
+    },
+    {
+      "case_id": "heldout_9402",
+      "seed": 9402,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 28.901783819077536,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 9.519599001594238e-05,
+      "correction_integral_m_s": 0.0007290259806738152,
+      "correction_variation_m": 0.0006288044052354056,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645296,
+          0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.09690795950080525,
+          -0.03465252428789106
+        ],
+        "yaw_deg": 0.11450958462218686,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.000736211487384554,
+        "face_gap_m": 0.000199999481728802,
+        "yaw_rad": -0.004728797644051219,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1000000000000023,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9402.json",
+        "sha256": "250ab521fffc6ac5387f645805f3914d9e864bc7f33303c56dec7955765fb15a"
+      }
+    },
+    {
+      "case_id": "heldout_9403",
+      "seed": 9403,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 26.170847774948925,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 5.9688002772827264e-05,
+      "correction_integral_m_s": 0.0007428376686780909,
+      "correction_variation_m": 0.0005871275491616373,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.04171909509728e-17,
+          1.15
+        ],
+        "hand_xy_mm": [
+          0.025425242316250818,
+          0.07934176963199144
+        ],
+        "yaw_deg": 0.18115536520068853,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007278037234030004,
+        "face_gap_m": 0.0001999995123023457,
+        "yaw_rad": 0.003120324743757127,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1000000000000023,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9403.json",
+        "sha256": "ae0de60b449b150cd007cb3364639ac7e48089ced92a85629c9b75a85c4f1c0b"
+      }
+    },
+    {
+      "case_id": "heldout_9404",
+      "seed": 9404,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 25.165164758916944,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 5.5968047668968284e-05,
+      "correction_integral_m_s": 0.0007679827085609291,
+      "correction_variation_m": 0.0006476207026669116,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645295,
+          0.8131727983645296
+        ],
+        "hand_xy_mm": [
+          0.12296914436001269,
+          0.026947500674110975
+        ],
+        "yaw_deg": -0.21963750129142912,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0036640414516414294,
+        "face_gap_m": 0.01661332154489241,
+        "yaw_rad": 0.02367061344285113,
+        "tilt_rad": 0.26350789786977746,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9404.json",
+        "sha256": "e45b1348d38faae04eb8b7aaab247035ef3d4184c98a0e8431d6880aa9fdba66"
+      }
+    },
+    {
+      "case_id": "heldout_9405",
+      "seed": 9405,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 28.318771661957726,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 2.9129598220231305e-05,
+      "correction_integral_m_s": 0.0007184593276126535,
+      "correction_variation_m": 0.0006830326450830203,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.15,
+          1.408343819019456e-16
+        ],
+        "hand_xy_mm": [
+          0.13963849003836395,
+          -0.09787244365278723
+        ],
+        "yaw_deg": -0.6337619734293262,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003383254987204355,
+        "face_gap_m": 0.016649124516530042,
+        "yaw_rad": -0.006879437744096374,
+        "tilt_rad": 0.2612457994227885,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9405.json",
+        "sha256": "0703b6609c9aaecffaa2cd0652de4373af86f137a529b26d9b3ad684078e8c1b"
+      }
+    },
+    {
+      "case_id": "heldout_9406",
+      "seed": 9406,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 24.98630643612705,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 2.9479081285256666e-05,
+      "correction_integral_m_s": 0.000771939147447555,
+      "correction_variation_m": 0.0006817408039327569,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645298,
+          -0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.09534891522692518,
+          -0.08201191318428892
+        ],
+        "yaw_deg": -0.20434878827230363,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0012908490407182152,
+        "face_gap_m": 0.01699998178770283,
+        "yaw_rad": -0.04470437843785386,
+        "tilt_rad": 9.01735739136206e-07,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9406.json",
+        "sha256": "356749ca8886707e5edde31a18e500406f1bb0b6a2dc408e161b524b422469b2"
+      }
+    },
+    {
+      "case_id": "heldout_9407",
+      "seed": 9407,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 0.0068418411538004875,
+      "is_success": false,
+      "collision": true,
+      "max_penetration_m": 0.00021995465607247718,
+      "correction_integral_m_s": 2.0049620521129572e-08,
+      "correction_variation_m": 1.1772331118444667e-06,
+      "duration_s": 0.0002604166666664298,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.112515728529184e-16,
+          -1.15
+        ],
+        "hand_xy_mm": [
+          -0.019568938999915547,
+          0.1006989436570431
+        ],
+        "yaw_deg": -0.7317714153648158,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0010536696852255245,
+        "face_gap_m": 0.04356434032564815,
+        "yaw_rad": 0.00012580285470751207,
+        "tilt_rad": 0.10315524804583051,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 1,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9407.json",
+        "sha256": "26fce83e252c103c882a780a0619f5493d3ee80f00f877942dc0ebfa1f72a399"
+      }
+    },
+    {
+      "case_id": "heldout_9408",
+      "seed": 9408,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 28.536357288016006,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 5.091796984146208e-05,
+      "correction_integral_m_s": 0.0007575497771066093,
+      "correction_variation_m": 0.0006864561434943627,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645294,
+          -0.8131727983645298
+        ],
+        "hand_xy_mm": [
+          0.06588816293398617,
+          0.10425833284719435
+        ],
+        "yaw_deg": 0.5906584611607257,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0037578830129577643,
+        "face_gap_m": 0.016068652260111296,
+        "yaw_rad": -0.010249448895912358,
+        "tilt_rad": 0.27548333079797105,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9408.json",
+        "sha256": "a3ffb4f4ab3c6586da6ad8c915aad3eaf52582d12a0806c90c44c4ab08eeca79"
+      }
+    },
+    {
+      "case_id": "heldout_9409",
+      "seed": 9409,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 25.943022343097255,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.535014663176704e-05,
+      "correction_integral_m_s": 0.0007224126944358035,
+      "correction_variation_m": 0.000589664436278049,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.3,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.0982039250220763,
+          -0.13569669205368073
+        ],
+        "yaw_deg": -0.46037948065379225,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007743949886307499,
+        "face_gap_m": 0.0001999995400611826,
+        "yaw_rad": -0.012998938036006732,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9409.json",
+        "sha256": "ac9634877e198fe00e6c890665acec6c5856ee62d96ac477596a3e5933f5c879"
+      }
+    },
+    {
+      "case_id": "heldout_9410",
+      "seed": 9410,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 18.546169272158295,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00016109118070793606,
+      "correction_integral_m_s": 0.0007623047384712425,
+      "correction_variation_m": 0.0006736609562836198,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425119,
+          0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.0029050137950893395,
+          -0.11733355976902046
+        ],
+        "yaw_deg": 0.674256503037542,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00021680338513791345,
+        "face_gap_m": 0.0001999994701683619,
+        "yaw_rad": 0.0033300732007653855,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.8333333333333357,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9410.json",
+        "sha256": "3d47483377e2776d076ae3ac83581126858c6c6e120684bcd45df5d3e1a5a035"
+      }
+    },
+    {
+      "case_id": "heldout_9411",
+      "seed": 9411,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 19.500001535983756,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.72752537222623e-05,
+      "correction_integral_m_s": 0.000762997046294094,
+      "correction_variation_m": 0.000659307002155058,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.960204194457797e-17,
+          1.3
+        ],
+        "hand_xy_mm": [
+          0.12396862587382826,
+          -0.061869800129452604
+        ],
+        "yaw_deg": 0.1453403616090312,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0037103190299478677,
+        "face_gap_m": 0.015544838393709778,
+        "yaw_rad": 0.01956055712249203,
+        "tilt_rad": 0.25781149653302093,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9411.json",
+        "sha256": "9c77f645f06f02695d8315b4d07e1847438bf4cd79e9cd6b2013fe4e694c68b9"
+      }
+    },
+    {
+      "case_id": "heldout_9412",
+      "seed": 9412,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 18.522709117969498,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00014265782911891854,
+      "correction_integral_m_s": 0.0007444814862433282,
+      "correction_variation_m": 0.0006193975415157163,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.9192388155425117,
+          0.9192388155425119
+        ],
+        "hand_xy_mm": [
+          0.04603157818742151,
+          0.14744458706307742
+        ],
+        "yaw_deg": -0.046200844748652825,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00359301174551806,
+        "face_gap_m": 0.01662325402644249,
+        "yaw_rad": 0.02123261519288002,
+        "tilt_rad": 0.26273519548088775,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9412.json",
+        "sha256": "de6cdb258a4bc03c853aa5ebabd08f15add3f7dd73773b1389753d8232c1a840"
+      }
+    },
+    {
+      "case_id": "heldout_9413",
+      "seed": 9413,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 18.439450546866283,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.3411957569100106e-05,
+      "correction_integral_m_s": 0.0007433756830135386,
+      "correction_variation_m": 0.0006461715980295538,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.3,
+          1.5920408388915593e-16
+        ],
+        "hand_xy_mm": [
+          0.10861129884834439,
+          0.05391246238428474
+        ],
+        "yaw_deg": 0.1885292149375919,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0032447447831426535,
+        "face_gap_m": 0.016675086344513187,
+        "yaw_rad": -0.005507098841481318,
+        "tilt_rad": 0.2625824759041783,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9413.json",
+        "sha256": "77bd2e512a4e9f9f89249ef5a7a4c356bfddeaddb950393e040e424ad6499516"
+      }
+    },
+    {
+      "case_id": "heldout_9414",
+      "seed": 9414,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 18.55307474709116,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00012127343796755018,
+      "correction_integral_m_s": 0.0007723261723315721,
+      "correction_variation_m": 0.0006817882240844245,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.919238815542512,
+          -0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          -0.028763133856628764,
+          -0.08722906425412742
+        ],
+        "yaw_deg": 0.12093041240067615,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003154631941504171,
+        "face_gap_m": 0.016727854271647455,
+        "yaw_rad": -0.0005508779820237198,
+        "tilt_rad": 0.2778355454403615,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9414.json",
+        "sha256": "45d546906316cb01dedd4369043b0a98ee7b255315e482847f6fd756bef2f9fa"
+      }
+    },
+    {
+      "case_id": "heldout_9415",
+      "seed": 9415,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 18.211641781032085,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 9.091804583062106e-05,
+      "correction_integral_m_s": 0.0007408980798700417,
+      "correction_variation_m": 0.0006622793090775599,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.3880612583373386e-16,
+          -1.3
+        ],
+        "hand_xy_mm": [
+          -0.026428744034635715,
+          -0.08863399342711668
+        ],
+        "yaw_deg": 0.31773316787002215,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0035063530408978613,
+        "face_gap_m": 0.01662592166330279,
+        "yaw_rad": -0.005212611502108836,
+        "tilt_rad": 0.2847970382517806,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9415.json",
+        "sha256": "b6c3a547f076ba7fb59ef87655d80ce42ad4d98f5bbcb09504555a18aad22552"
+      }
+    },
+    {
+      "case_id": "heldout_9416",
+      "seed": 9416,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 18.119529213989154,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.16391193685917e-05,
+      "correction_integral_m_s": 0.0007500060476317872,
+      "correction_variation_m": 0.0006739002458661159,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425116,
+          -0.919238815542512
+        ],
+        "hand_xy_mm": [
+          0.06314435272660185,
+          -0.07105907377051636
+        ],
+        "yaw_deg": -0.47380120645500917,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00472571654730479,
+        "face_gap_m": 0.016539574583497474,
+        "yaw_rad": -0.005261707081177071,
+        "tilt_rad": 0.2818164493534511,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9416.json",
+        "sha256": "967935033cbacc67ea127dffb284c44d460cb1a1070b08a72a3ec74f7e0ab64a"
+      }
+    },
+    {
+      "case_id": "heldout_9417",
+      "seed": 9417,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 19.965324944118038,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 7.442515866035479e-05,
+      "correction_integral_m_s": 0.0007375369774678332,
+      "correction_variation_m": 0.0005792723862154082,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.15,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.033959448060542546,
+          -0.005049359761210154
+        ],
+        "yaw_deg": -0.7036748440381602,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007443971037895218,
+        "face_gap_m": 0.00019999951799696408,
+        "yaw_rad": 0.006355919652199609,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.2666666666666684,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9417.json",
+        "sha256": "15e285aa7b3f2bae51128fe0a1d505f44f7ede63884362782e00cc8dcc69c7b5"
+      }
+    },
+    {
+      "case_id": "heldout_9418",
+      "seed": 9418,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 19.183151880977675,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.000148715835940628,
+      "correction_integral_m_s": 0.0007488725909396023,
+      "correction_variation_m": 0.0005730083951415323,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645296,
+          0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.03292825528052851,
+          0.09528273483581007
+        ],
+        "yaw_deg": -0.6674569825295433,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0008215434378017102,
+        "face_gap_m": 0.0001999994090982199,
+        "yaw_rad": -0.0034333618573410595,
+        "tilt_rad": 2.9802322387695312e-08,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9418.json",
+        "sha256": "35dbe1379b9ecd5700ab07ee9c5505b372913de5a164daab44bd4eed6e7f3779"
+      }
+    },
+    {
+      "case_id": "heldout_9419",
+      "seed": 9419,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 19.21978704119101,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 4.556924493174274e-05,
+      "correction_integral_m_s": 0.0007086091591546593,
+      "correction_variation_m": 0.0005959488671515414,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.04171909509728e-17,
+          1.15
+        ],
+        "hand_xy_mm": [
+          -0.027891734584022415,
+          0.09743200167255334
+        ],
+        "yaw_deg": 0.4819461734772299,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006241009029073566,
+        "face_gap_m": 0.00019999946729946233,
+        "yaw_rad": -0.0017502051277204617,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.3000000000000016,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9419.json",
+        "sha256": "234d410189b4bc3e0d0a9c430cb9957588c0cfedd58c14594ceccac2d6ce2904"
+      }
+    },
+    {
+      "case_id": "heldout_9420",
+      "seed": 9420,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 19.424072335939854,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00012747971559184604,
+      "correction_integral_m_s": 0.0007186492489772952,
+      "correction_variation_m": 0.0006480632202491477,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645295,
+          0.8131727983645296
+        ],
+        "hand_xy_mm": [
+          -0.11388104715070527,
+          0.13920831466583125
+        ],
+        "yaw_deg": 0.2481499935661713,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0004235933701845573,
+        "face_gap_m": 0.00019999947502655907,
+        "yaw_rad": -0.011723291766937144,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.200000000000002,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9420.json",
+        "sha256": "336df4fbebfb0d85857d11643e13e3d5779601fc4762c8dca1a3db2a29bcc9d9"
+      }
+    },
+    {
+      "case_id": "heldout_9421",
+      "seed": 9421,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 20.69880116195418,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.3487116482145855e-05,
+      "correction_integral_m_s": 0.0007284727444724013,
+      "correction_variation_m": 0.0006499925974728037,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.15,
+          1.408343819019456e-16
+        ],
+        "hand_xy_mm": [
+          -0.045280808399380645,
+          -0.037272772474082935
+        ],
+        "yaw_deg": -0.13340939751285208,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003270193007056466,
+        "face_gap_m": 0.016667064782725546,
+        "yaw_rad": -0.003535074080156577,
+        "tilt_rad": 0.2648153434662471,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9421.json",
+        "sha256": "d827f15f8ee58a237394f0333dfa90a9c03949e573b5669100a2ff5a2c7e0e7a"
+      }
+    },
+    {
+      "case_id": "heldout_9422",
+      "seed": 9422,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 16.164755502948537,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.0001816209240797786,
+      "correction_integral_m_s": 0.0007513899286201929,
+      "correction_variation_m": 0.0006840404213850003,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645298,
+          -0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.11802411222474748,
+          0.11962758330832393
+        ],
+        "yaw_deg": -0.23153640975322687,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0013067162133324382,
+        "face_gap_m": 0.016999990110460467,
+        "yaw_rad": -0.043407307191148305,
+        "tilt_rad": 3.582513113623656e-06,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9422.json",
+        "sha256": "d7e475f27acb4eaec4eab03cdbf8bb58522d5b5d95e9938c2cb4b46f38401a68"
+      }
+    },
+    {
+      "case_id": "heldout_9423",
+      "seed": 9423,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 18.67793323402293,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 2.9203234700455876e-05,
+      "correction_integral_m_s": 0.0007647603943978154,
+      "correction_variation_m": 0.0006918095086201045,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.112515728529184e-16,
+          -1.15
+        ],
+        "hand_xy_mm": [
+          0.07269422903846973,
+          -0.10530613767028787
+        ],
+        "yaw_deg": -0.2736114308642908,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0039726116790272485,
+        "face_gap_m": 0.01660262634927552,
+        "yaw_rad": -0.010746780055150226,
+        "tilt_rad": 0.27594727161009497,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9423.json",
+        "sha256": "41337428e86c49f4b126891b4baac181b658105ffcc0cbdbd0c474f3930857ed"
+      }
+    },
+    {
+      "case_id": "heldout_9424",
+      "seed": 9424,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 18.058346041012555,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.927929829227449e-05,
+      "correction_integral_m_s": 0.0007537992471759582,
+      "correction_variation_m": 0.0006693275074435945,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645294,
+          -0.8131727983645298
+        ],
+        "hand_xy_mm": [
+          0.1237297619802438,
+          0.07378391009923391
+        ],
+        "yaw_deg": 0.27162489290179637,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004000318178541079,
+        "face_gap_m": 0.016513183864829556,
+        "yaw_rad": -0.007312749758758784,
+        "tilt_rad": 0.2880186953511311,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9424.json",
+        "sha256": "e492e4dae9d707dce4d51b45e57f0bd2fbc988996322b688d2f3120a5f6c39b6"
+      }
+    },
+    {
+      "case_id": "heldout_9425",
+      "seed": 9425,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 21.67434960906394,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 9.767200089979963e-05,
+      "correction_integral_m_s": 0.0007765333605659728,
+      "correction_variation_m": 0.0006965113934819078,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.3,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.09938990357420673,
+          -0.04933830494414701
+        ],
+        "yaw_deg": 0.47727477724467526,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00045163605449304815,
+        "face_gap_m": 0.0001999994720568929,
+        "yaw_rad": 0.01872781922936952,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.6000000000000016,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9425.json",
+        "sha256": "f6e80dbb1507a47ff1e7fc83b39f17a406e334f54624f6751f906eecc74d6060"
+      }
+    },
+    {
+      "case_id": "heldout_9426",
+      "seed": 9426,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 37.22498454689048,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 9.914485168327134e-05,
+      "correction_integral_m_s": 0.0007061572851738142,
+      "correction_variation_m": 0.0005927949572946244,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425119,
+          0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.0909050535850374,
+          0.05514810885858451
+        ],
+        "yaw_deg": -0.7171089338431206,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006675159432610302,
+        "face_gap_m": 0.00019999950430057978,
+        "yaw_rad": -0.014533384856641691,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9426.json",
+        "sha256": "5b15e1bb2213eae50c9dd9fb1c62b649d895f7b15d0388092e72503353f2c195"
+      }
+    },
+    {
+      "case_id": "heldout_9427",
+      "seed": 9427,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 34.662573122186586,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.000164728902847633,
+      "correction_integral_m_s": 0.0007595781550324918,
+      "correction_variation_m": 0.000667673183320739,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.960204194457797e-17,
+          1.3
+        ],
+        "hand_xy_mm": [
+          0.10347960420923077,
+          -0.10563634999822356
+        ],
+        "yaw_deg": 0.4941350548212795,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003701834483804305,
+        "face_gap_m": 0.015475759499511466,
+        "yaw_rad": 0.020044679198265355,
+        "tilt_rad": 0.2585608877254805,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9427.json",
+        "sha256": "9fe85715234d412f666ef7bbe17871f557e149321f3cbc84682a2f46e2c356cd"
+      }
+    },
+    {
+      "case_id": "heldout_9428",
+      "seed": 9428,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 34.36610159603879,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.916915111258298e-05,
+      "correction_integral_m_s": 0.0007378188989478828,
+      "correction_variation_m": 0.0006959841308331349,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.9192388155425117,
+          0.9192388155425119
+        ],
+        "hand_xy_mm": [
+          0.02160054357463645,
+          -0.11785139958202401
+        ],
+        "yaw_deg": -0.25727947816652175,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003488124699361893,
+        "face_gap_m": 0.01663544921125329,
+        "yaw_rad": 0.011238166026106453,
+        "tilt_rad": 0.26436293984615206,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9428.json",
+        "sha256": "a9deefdd80579f2e3543d8711524715fab5d15b93c611912df46a50dcb9a8f80"
+      }
+    },
+    {
+      "case_id": "heldout_9429",
+      "seed": 9429,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 36.74642065889202,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00013948159513061544,
+      "correction_integral_m_s": 0.0007520449182436392,
+      "correction_variation_m": 0.000682338707601937,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.3,
+          1.5920408388915593e-16
+        ],
+        "hand_xy_mm": [
+          0.1351026958629122,
+          0.05835973609815123
+        ],
+        "yaw_deg": -0.6281178756531616,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003256095971248252,
+        "face_gap_m": 0.016672977489859214,
+        "yaw_rad": -0.001638172624960313,
+        "tilt_rad": 0.2618765862181678,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9429.json",
+        "sha256": "a758d9d6982e3025b55a3c24dd2cb8cac19e223873de72eafc70127770d5f882"
+      }
+    },
+    {
+      "case_id": "heldout_9430",
+      "seed": 9430,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 37.1416142701637,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.141085634080381e-05,
+      "correction_integral_m_s": 0.0007683467473776005,
+      "correction_variation_m": 0.0006386088720953931,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.919238815542512,
+          -0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.10067608674506348,
+          0.0058212494710196405
+        ],
+        "yaw_deg": -0.0070075243027099,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0031730077281161505,
+        "face_gap_m": 0.016715082011096047,
+        "yaw_rad": -0.002536736195068225,
+        "tilt_rad": 0.2765180106263982,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9430.json",
+        "sha256": "47f005a9ff32d42c8cc31967dca627a31eba5a390f92ec576bc516284c603f73"
+      }
+    },
+    {
+      "case_id": "heldout_9431",
+      "seed": 9431,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 38.497655797051266,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.873997369000557e-05,
+      "correction_integral_m_s": 0.000753206119274112,
+      "correction_variation_m": 0.000645741679532196,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.3880612583373386e-16,
+          -1.3
+        ],
+        "hand_xy_mm": [
+          0.08875410201520714,
+          0.0969953040538011
+        ],
+        "yaw_deg": -0.28512748532991944,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004031832595812209,
+        "face_gap_m": 0.016635852054124434,
+        "yaw_rad": -0.006921515201179915,
+        "tilt_rad": 0.2786521458131164,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9431.json",
+        "sha256": "57d79d23927a760f249e739d19e189e81e7e1bc1ce130aed66f8eaf467577672"
+      }
+    },
+    {
+      "case_id": "heldout_9432",
+      "seed": 9432,
+      "group": "heldout",
+      "variant": "B3_actuator",
+      "visual_dropout": 0.0,
+      "wall_s": 37.28239797218703,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.235484772167017e-05,
+      "correction_integral_m_s": 0.0007457428552270813,
+      "correction_variation_m": 0.0006634639803274502,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425116,
+          -0.919238815542512
+        ],
+        "hand_xy_mm": [
+          -0.007550596025395706,
+          0.13675148737530465
+        ],
+        "yaw_deg": 0.2533486716811493,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004667735175773656,
+        "face_gap_m": 0.016547161842025787,
+        "yaw_rad": 6.419548889786953e-05,
+        "tilt_rad": 0.2831250740621631,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_actuator_dropout0/heldout_9432.json",
+        "sha256": "f33e55bcb0c040e99df502507473efd0640ae81b5da7b36ef1ec7ceabc61ebc5"
+      }
+    }
+  ]
+}

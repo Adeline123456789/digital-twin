@@ -1,0 +1,11 @@
+{
+  "failed_rollouts": 131,
+  "slow_calls": 0,
+  "legacy_skill_invocations": 0,
+  "root_cause": "UNKNOWN",
+  "evidence": {
+    "dataset_relative_path": "self_evolution/event_residual_mvp_v2/offline_capsules.json",
+    "sha256": "931b2b3e81a07aec4caf52e3c5484ef39c19b53a3064e56f3033d9e2235daf3f"
+  },
+  "stage": "Stopped-only EventBuilder/FailureReport/Supervisor capsules, isolated memory; no structural proposal or Twin edit"
+}

@@ -7,6 +7,7 @@ def alignment_event(observation, evidence_ref, tolerance_px=3., calibration=None
     status = T.UNKNOWN
     qualified = (calibration and calibration['accepted'] and visual.semantic_validation_status == 'VALIDATED'
                  and visual.feature_score >= calibration['feature_score_threshold']
+                 and visual.tracking_uncertainty is not None
                  and visual.tracking_uncertainty <= tolerance_px)
     confidence = calibration['precision_lower_bound'] if qualified else 0.
     if qualified and visual.relative_image_residual is not None:

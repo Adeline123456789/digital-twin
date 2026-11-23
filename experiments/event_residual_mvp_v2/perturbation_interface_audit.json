@@ -1,0 +1,20 @@
+{
+  "collision_geom": "strip/panel_3/0",
+  "displacement_m": [
+    0.0010000000000000009,
+    0.0,
+    0.0
+  ],
+  "changed_rgb_pixels": 910,
+  "mass_friction_solver_parameters_unchanged": true,
+  "parameter_hashes": {
+    "body_mass": "c4def281037c4b13c84040be3a44bc6fd5f259dd96172e160baa602e14883ef3",
+    "geom_friction": "4aa446a099d642d2f5393876a95c1954f8c0ec938ff0f2a9753899229f2020c7",
+    "geom_solref": "7423c8d25ba79d86f26fdb4d0dd6772863d5630cddef94c30f0998b83ed64aad",
+    "geom_solimp": "0315952250694d64bbfcea194f5d2ee9db5203056a44e0bd0f1ad9801a3daad4",
+    "geom_condim": "4ff8212b0cfdd20924c40645a63d7cc67330adbfb4ae607eed7a594c18f76f2f"
+  },
+  "success_thresholds_unchanged": true,
+  "physics_steps": 0,
+  "scope": "Runtime reset perturbation changes physical geometry and rendered RGB; source/assets untouched, no adaptive Twin update"
+}

@@ -1,0 +1,1420 @@
+{
+  "variant": "B3_structured",
+  "visual_dropout": 0.0,
+  "design_sha256": "05a9c2aae94568bb7549ea955cb3ddfe7098f0e3f13d86a7c9b6557031c1394f",
+  "source_hashes": {
+    "scripts/evaluate_residual_v2.py": "c0d8ab5fe62bd715d3cb8728d162f0b3ca31cc5a308ecbf65b889ae00adde39d",
+    "robot_agent/residual_env.py": "daac324d9de8a92b70bd58d1305d38a608d838e9a80b2474efeb6f6f999191b9",
+    "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36"
+  },
+  "cases": [
+    {
+      "case_id": "heldout_9401",
+      "seed": 9401,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 21.256164115853608,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 4.314908669752703e-05,
+      "correction_integral_m_s": 0.002328720077449222,
+      "correction_variation_m": 0.0011375082647061727,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.15,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.13424694460314043,
+          0.10523813846697513
+        ],
+        "yaw_deg": -0.12795764820405864,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00036786525533099966,
+        "face_gap_m": 0.0001999995066747015,
+        "yaw_rad": -0.039825783614826776,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.5333333333333348,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9401.json",
+        "sha256": "8cfd428a2855d4479d35361b3207a9b56e65ca04c1479dffc7184d847a4d932f"
+      }
+    },
+    {
+      "case_id": "heldout_9402",
+      "seed": 9402,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 27.590567477978766,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 9.519599001594238e-05,
+      "correction_integral_m_s": 0.0023345607516224794,
+      "correction_variation_m": 0.0011360355628966545,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645296,
+          0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.09690795950080525,
+          -0.03465252428789106
+        ],
+        "yaw_deg": 0.11450958462218686,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007505090403487727,
+        "face_gap_m": 0.00019999950027372454,
+        "yaw_rad": -0.005538592240567663,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9402.json",
+        "sha256": "2e8f69fa697c64be2233eccdd0cc473d8e1f18275f5428050dc26f3433045e05"
+      }
+    },
+    {
+      "case_id": "heldout_9403",
+      "seed": 9403,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 30.097126461798325,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 5.9688002772827264e-05,
+      "correction_integral_m_s": 0.002370291725729433,
+      "correction_variation_m": 0.00115688648394102,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.04171909509728e-17,
+          1.15
+        ],
+        "hand_xy_mm": [
+          0.025425242316250818,
+          0.07934176963199144
+        ],
+        "yaw_deg": 0.18115536520068853,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006299772998883821,
+        "face_gap_m": 0.0001999995129464069,
+        "yaw_rad": -0.0061910801434001015,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1666666666666687,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9403.json",
+        "sha256": "9434b4a161537e43e992c323c26004e6bebf6ec1aec44c33ee3ef392412bd45d"
+      }
+    },
+    {
+      "case_id": "heldout_9404",
+      "seed": 9404,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 24.377028688089922,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 5.5968047668968284e-05,
+      "correction_integral_m_s": 0.0023179870238964075,
+      "correction_variation_m": 0.001126811751016977,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645295,
+          0.8131727983645296
+        ],
+        "hand_xy_mm": [
+          0.12296914436001269,
+          0.026947500674110975
+        ],
+        "yaw_deg": -0.21963750129142912,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0004261195396679492,
+        "face_gap_m": 0.0001999995009219352,
+        "yaw_rad": 0.017161413650439446,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.333333333333335,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9404.json",
+        "sha256": "c034cf367be81fb09a46d96beca259d1b444812e1c3f9249bd3dd676661cdcd8"
+      }
+    },
+    {
+      "case_id": "heldout_9405",
+      "seed": 9405,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.56723198806867,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 2.912852414034407e-05,
+      "correction_integral_m_s": 0.002341977112217806,
+      "correction_variation_m": 0.0011299448494559358,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.15,
+          1.408343819019456e-16
+        ],
+        "hand_xy_mm": [
+          0.13963849003836395,
+          -0.09787244365278723
+        ],
+        "yaw_deg": -0.6337619734293262,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003405042371567775,
+        "face_gap_m": 0.016644175603861666,
+        "yaw_rad": -0.007394128535681409,
+        "tilt_rad": 0.2642015217133778,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9405.json",
+        "sha256": "970d74262064b6d6370ff291557f28d61e8ba6ca0ad37c7f78c0bedbd3cac549"
+      }
+    },
+    {
+      "case_id": "heldout_9406",
+      "seed": 9406,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 24.23750127805397,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.784651483601241e-05,
+      "correction_integral_m_s": 0.0023588270935235535,
+      "correction_variation_m": 0.0011478109062619485,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645298,
+          -0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.09534891522692518,
+          -0.08201191318428892
+        ],
+        "yaw_deg": -0.20434878827230363,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0032964759848270624,
+        "face_gap_m": 0.016684761121830177,
+        "yaw_rad": -0.004882359112956187,
+        "tilt_rad": 0.27765818861893754,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9406.json",
+        "sha256": "faf70ecd4a4d6800edcbba3e878c9d37da4d4a01e6076aa269d58805d1da554f"
+      }
+    },
+    {
+      "case_id": "heldout_9407",
+      "seed": 9407,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 0.004198991926386952,
+      "is_success": false,
+      "collision": true,
+      "max_penetration_m": 0.00021995465607247718,
+      "correction_integral_m_s": 4.665159521170857e-08,
+      "correction_variation_m": 2.7391941181984636e-06,
+      "duration_s": 0.0002604166666664298,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.112515728529184e-16,
+          -1.15
+        ],
+        "hand_xy_mm": [
+          -0.019568938999915547,
+          0.1006989436570431
+        ],
+        "yaw_deg": -0.7317714153648158,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0010536696852255245,
+        "face_gap_m": 0.04356434032564815,
+        "yaw_rad": 0.00012580285470751207,
+        "tilt_rad": 0.10315524804583051,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 1,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9407.json",
+        "sha256": "2e69c03babe6bb1382295de6ae2351d2faaf478ac7fe11730c06306351fad081"
+      }
+    },
+    {
+      "case_id": "heldout_9408",
+      "seed": 9408,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 22.344267559004948,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 5.091796984146208e-05,
+      "correction_integral_m_s": 0.0023595739231837363,
+      "correction_variation_m": 0.0011582371875624344,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645294,
+          -0.8131727983645298
+        ],
+        "hand_xy_mm": [
+          0.06588816293398617,
+          0.10425833284719435
+        ],
+        "yaw_deg": 0.5906584611607257,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004647288268542189,
+        "face_gap_m": 0.017148925537961893,
+        "yaw_rad": -0.0024047172122208397,
+        "tilt_rad": 0.2622659677534502,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9408.json",
+        "sha256": "d4440d209bc0c2d9e67191c0e6b9f60af768dadd423f37c4498fd05538d5d80b"
+      }
+    },
+    {
+      "case_id": "heldout_9409",
+      "seed": 9409,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 26.66856870916672,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 5.13850180005916e-05,
+      "correction_integral_m_s": 0.0023381150070882675,
+      "correction_variation_m": 0.0011432343125603703,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.3,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.0982039250220763,
+          -0.13569669205368073
+        ],
+        "yaw_deg": -0.46037948065379225,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0003827654761568451,
+        "face_gap_m": 0.00019999946771891847,
+        "yaw_rad": -0.02470592449781198,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.7666666666666688,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9409.json",
+        "sha256": "3c65f01de26a4aed25322086df76d82b95bfe6bcfe08b6e3b0773399d81de5ed"
+      }
+    },
+    {
+      "case_id": "heldout_9410",
+      "seed": 9410,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 22.731874245917425,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00016109118070793606,
+      "correction_integral_m_s": 0.0023726616911737847,
+      "correction_variation_m": 0.0011682970493805624,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425119,
+          0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.0029050137950893395,
+          -0.11733355976902046
+        ],
+        "yaw_deg": 0.674256503037542,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005174312436226555,
+        "face_gap_m": 0.00019999947628730058,
+        "yaw_rad": 0.04304035079362383,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.466666666666668,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9410.json",
+        "sha256": "4219d187c2eedd4c7c9f8a4cdca7eaf3ed00c9a43e51a350fd99863111e24e19"
+      }
+    },
+    {
+      "case_id": "heldout_9411",
+      "seed": 9411,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.257156620034948,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 6.72752537222623e-05,
+      "correction_integral_m_s": 0.0023599877255378004,
+      "correction_variation_m": 0.0011423265664699171,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.960204194457797e-17,
+          1.3
+        ],
+        "hand_xy_mm": [
+          0.12396862587382826,
+          -0.061869800129452604
+        ],
+        "yaw_deg": 0.1453403616090312,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007561743386112119,
+        "face_gap_m": 0.00019999955263521468,
+        "yaw_rad": -0.0010319187947079541,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.0000000000000027,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9411.json",
+        "sha256": "77f29f48f728ba46037977088c97d3d7e455f3df1d3a688536fc6190b103d3bd"
+      }
+    },
+    {
+      "case_id": "heldout_9412",
+      "seed": 9412,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 35.105975977145135,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00014265782911891854,
+      "correction_integral_m_s": 0.0022953269066648923,
+      "correction_variation_m": 0.0011215928344897794,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.9192388155425117,
+          0.9192388155425119
+        ],
+        "hand_xy_mm": [
+          0.04603157818742151,
+          0.14744458706307742
+        ],
+        "yaw_deg": -0.046200844748652825,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005436159986959042,
+        "face_gap_m": 0.00019999949653844162,
+        "yaw_rad": -0.0036602175323196037,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.233333333333335,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9412.json",
+        "sha256": "3ef8071c4b74041de3b7a4a0b268cebc34343c648d747edabdd13e5a3fddc324"
+      }
+    },
+    {
+      "case_id": "heldout_9413",
+      "seed": 9413,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.45645251404494,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.909770898176884e-05,
+      "correction_integral_m_s": 0.0023860483380345365,
+      "correction_variation_m": 0.0011614489101288295,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.3,
+          1.5920408388915593e-16
+        ],
+        "hand_xy_mm": [
+          0.10861129884834439,
+          0.05391246238428474
+        ],
+        "yaw_deg": 0.1885292149375919,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006436297180860522,
+        "face_gap_m": 0.0001999994665932911,
+        "yaw_rad": -0.0001844633988033096,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.0666666666666655,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9413.json",
+        "sha256": "964da7441177e516ac02af0471c62c834f9bd17c60d68a1266218f13c439d31a"
+      }
+    },
+    {
+      "case_id": "heldout_9414",
+      "seed": 9414,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.618464990053326,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00012127343796755018,
+      "correction_integral_m_s": 0.00235295504495734,
+      "correction_variation_m": 0.001147560798795446,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.919238815542512,
+          -0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          -0.028763133856628764,
+          -0.08722906425412742
+        ],
+        "yaw_deg": 0.12093041240067615,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003419409371783474,
+        "face_gap_m": 0.01668951003185816,
+        "yaw_rad": -0.006759385556466441,
+        "tilt_rad": 0.2738879503563881,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9414.json",
+        "sha256": "697d0b4d88ec65da8e04fdb54c52262361c7c5cff8e7634077a5cd6bc1e177f8"
+      }
+    },
+    {
+      "case_id": "heldout_9415",
+      "seed": 9415,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 21.489569158060476,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 9.091804583062106e-05,
+      "correction_integral_m_s": 0.0023631469922329503,
+      "correction_variation_m": 0.001165572057437059,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.3880612583373386e-16,
+          -1.3
+        ],
+        "hand_xy_mm": [
+          -0.026428744034635715,
+          -0.08863399342711668
+        ],
+        "yaw_deg": 0.31773316787002215,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004139825914454138,
+        "face_gap_m": 0.01721497228181061,
+        "yaw_rad": 0.000506136159159805,
+        "tilt_rad": 0.2631173238405267,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9415.json",
+        "sha256": "641f3acbc6c5570ba61c33d3f9a0ae5d29b3ac165a033055d91ba28b0102fb66"
+      }
+    },
+    {
+      "case_id": "heldout_9416",
+      "seed": 9416,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 26.00784592400305,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.16391193685917e-05,
+      "correction_integral_m_s": 0.002303631512826466,
+      "correction_variation_m": 0.0011319397751610484,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425116,
+          -0.919238815542512
+        ],
+        "hand_xy_mm": [
+          0.06314435272660185,
+          -0.07105907377051636
+        ],
+        "yaw_deg": -0.47380120645500917,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00504676269989539,
+        "face_gap_m": 0.01622496126063719,
+        "yaw_rad": -0.0003509018821985975,
+        "tilt_rad": 0.2965974109109665,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9416.json",
+        "sha256": "857ac9c5bec6cbd78df0a7f526032dde125388b9b2152dd03dbf196e4c5f9ac5"
+      }
+    },
+    {
+      "case_id": "heldout_9417",
+      "seed": 9417,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 24.51587132900022,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 7.442515866035479e-05,
+      "correction_integral_m_s": 0.002370952764538475,
+      "correction_variation_m": 0.001150786945592091,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.15,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.033959448060542546,
+          -0.005049359761210154
+        ],
+        "yaw_deg": -0.7036748440381602,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0008105549274005652,
+        "face_gap_m": 0.0001999995359938736,
+        "yaw_rad": -0.003940576930870655,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9417.json",
+        "sha256": "8deb62d1fadb8ba8bdd779771d2cb0142bf08942721f6e42459bd831cd171e85"
+      }
+    },
+    {
+      "case_id": "heldout_9418",
+      "seed": 9418,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 25.806495883036405,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.000148715835940628,
+      "correction_integral_m_s": 0.002360920092898954,
+      "correction_variation_m": 0.0011430010103350833,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645296,
+          0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.03292825528052851,
+          0.09528273483581007
+        ],
+        "yaw_deg": -0.6674569825295433,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0008444939439623014,
+        "face_gap_m": 0.00019999952448552377,
+        "yaw_rad": -0.008665603553690799,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9418.json",
+        "sha256": "bfb01ad3ad0a6e78e45c60d79ca55723bd471e0c258984efdf04211b5eaf37b4"
+      }
+    },
+    {
+      "case_id": "heldout_9419",
+      "seed": 9419,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 26.73067958909087,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 4.556924493174274e-05,
+      "correction_integral_m_s": 0.0023623464227832164,
+      "correction_variation_m": 0.0011455243582820323,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.04171909509728e-17,
+          1.15
+        ],
+        "hand_xy_mm": [
+          -0.027891734584022415,
+          0.09743200167255334
+        ],
+        "yaw_deg": 0.4819461734772299,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007651724683800268,
+        "face_gap_m": 0.00019999957376195393,
+        "yaw_rad": 0.0011693701075980436,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1000000000000023,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9419.json",
+        "sha256": "9774a39c990df014d29c1d84e17779498a62d8afa2d02d5c2917487da76dba21"
+      }
+    },
+    {
+      "case_id": "heldout_9420",
+      "seed": 9420,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 24.221406729891896,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00012747971559184604,
+      "correction_integral_m_s": 0.002386765190896386,
+      "correction_variation_m": 0.0011616308547801528,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645295,
+          0.8131727983645296
+        ],
+        "hand_xy_mm": [
+          -0.11388104715070527,
+          0.13920831466583125
+        ],
+        "yaw_deg": 0.2481499935661713,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007562037186335155,
+        "face_gap_m": 0.00019999949181748883,
+        "yaw_rad": -6.296425484392625e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.0666666666666655,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9420.json",
+        "sha256": "ffd6f668f09850af7c6febcb8fd22491fd83cde8e1e87c105ff204d0eeb7adfe"
+      }
+    },
+    {
+      "case_id": "heldout_9421",
+      "seed": 9421,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.424143086886033,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.375910492355606e-05,
+      "correction_integral_m_s": 0.00235481858325167,
+      "correction_variation_m": 0.0011514177690882797,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.15,
+          1.408343819019456e-16
+        ],
+        "hand_xy_mm": [
+          -0.045280808399380645,
+          -0.037272772474082935
+        ],
+        "yaw_deg": -0.13340939751285208,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003335917420566436,
+        "face_gap_m": 0.01665699994604984,
+        "yaw_rad": -0.0062240065846743435,
+        "tilt_rad": 0.26649533586865487,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9421.json",
+        "sha256": "624231ddbc3c40be0a14f977f7ce8d7edcd0134381964a8324dbce89a43e1472"
+      }
+    },
+    {
+      "case_id": "heldout_9422",
+      "seed": 9422,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.025060480926186,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.0001816209240797786,
+      "correction_integral_m_s": 0.002350669634971201,
+      "correction_variation_m": 0.0011501285214086116,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645298,
+          -0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.11802411222474748,
+          0.11962758330832393
+        ],
+        "yaw_deg": -0.23153640975322687,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0032823821831903487,
+        "face_gap_m": 0.016686820486970247,
+        "yaw_rad": -0.002517179527311479,
+        "tilt_rad": 0.2778653487674683,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9422.json",
+        "sha256": "fc9b817b969300f63257d8cd49986bbf2376e8b7ce4a163e28e4bf50a48547c2"
+      }
+    },
+    {
+      "case_id": "heldout_9423",
+      "seed": 9423,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 22.217512550996616,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 2.9202142284929233e-05,
+      "correction_integral_m_s": 0.002356382827552124,
+      "correction_variation_m": 0.0011539555647157242,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.112515728529184e-16,
+          -1.15
+        ],
+        "hand_xy_mm": [
+          0.07269422903846973,
+          -0.10530613767028787
+        ],
+        "yaw_deg": -0.2736114308642908,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004326468768558467,
+        "face_gap_m": 0.016640374144826983,
+        "yaw_rad": -0.0029199753275288916,
+        "tilt_rad": 0.27837758295381326,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9423.json",
+        "sha256": "fa7898bdc3e85feac3960d4dc4b8c2ae100a4c8d941d0b34640da7ae0cc05f4a"
+      }
+    },
+    {
+      "case_id": "heldout_9424",
+      "seed": 9424,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 22.65540557890199,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.50663993891001e-05,
+      "correction_integral_m_s": 0.0023304503718971073,
+      "correction_variation_m": 0.0011316460117915094,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645294,
+          -0.8131727983645298
+        ],
+        "hand_xy_mm": [
+          0.1237297619802438,
+          0.07378391009923391
+        ],
+        "yaw_deg": 0.27162489290179637,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.006387814161176497,
+        "face_gap_m": 0.01245029657376362,
+        "yaw_rad": -0.03351096486323982,
+        "tilt_rad": 0.4911026916534109,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9424.json",
+        "sha256": "e6c5ca2a488ab8020574a1354d797e81df54e60eabd8b43eb134ff2c280e4a1d"
+      }
+    },
+    {
+      "case_id": "heldout_9425",
+      "seed": 9425,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 35.62020394485444,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 9.767200089979963e-05,
+      "correction_integral_m_s": 0.0023558949367514714,
+      "correction_variation_m": 0.001160171130291313,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.3,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.09938990357420673,
+          -0.04933830494414701
+        ],
+        "yaw_deg": 0.47727477724467526,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00040881929463511626,
+        "face_gap_m": 0.00019999950289445456,
+        "yaw_rad": -0.011216083949836878,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.066666666666669,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9425.json",
+        "sha256": "3d6e0e5bde7a81e8e0b37298bc7d7ae02d48c42a3b568a478bb3c360cfb34ce0"
+      }
+    },
+    {
+      "case_id": "heldout_9426",
+      "seed": 9426,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 25.81511806184426,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 9.914485168327134e-05,
+      "correction_integral_m_s": 0.002355116002456243,
+      "correction_variation_m": 0.0011379143149909906,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425119,
+          0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.0909050535850374,
+          0.05514810885858451
+        ],
+        "yaw_deg": -0.7171089338431206,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0008570950866995035,
+        "face_gap_m": 0.00019999953365411327,
+        "yaw_rad": -0.010393067496820901,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9426.json",
+        "sha256": "c8d04bd2ff2a1fe6cc962f63ef3b0aaa8eaa07916b4b9e1eb4609d108dc0eb41"
+      }
+    },
+    {
+      "case_id": "heldout_9427",
+      "seed": 9427,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 24.302207906963304,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.000164728902847633,
+      "correction_integral_m_s": 0.0023514345322150775,
+      "correction_variation_m": 0.0011363836078717997,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.960204194457797e-17,
+          1.3
+        ],
+        "hand_xy_mm": [
+          0.10347960420923077,
+          -0.10563634999822356
+        ],
+        "yaw_deg": 0.4941350548212795,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006258061922910244,
+        "face_gap_m": 0.0001999994966805363,
+        "yaw_rad": -0.007205528471852316,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.033333333333336,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9427.json",
+        "sha256": "daf7146dda8d548b33fbf4fdbc007df44fa9805b7e55c3121a12b8c1ebca08a7"
+      }
+    },
+    {
+      "case_id": "heldout_9428",
+      "seed": 9428,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.974264269927517,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 3.916915111258298e-05,
+      "correction_integral_m_s": 0.002321726127000627,
+      "correction_variation_m": 0.0011295967194887675,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.9192388155425117,
+          0.9192388155425119
+        ],
+        "hand_xy_mm": [
+          0.02160054357463645,
+          -0.11785139958202401
+        ],
+        "yaw_deg": -0.25727947816652175,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005056465082430785,
+        "face_gap_m": 0.00019999944699446853,
+        "yaw_rad": -0.017390030778871236,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1333333333333355,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9428.json",
+        "sha256": "f82a0a604d96a86b2826b1b19f7c39913ccead60919e22966a3990aaf1a5f82c"
+      }
+    },
+    {
+      "case_id": "heldout_9429",
+      "seed": 9429,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.80385733116418,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00013948159513061544,
+      "correction_integral_m_s": 0.0023479197395510007,
+      "correction_variation_m": 0.001151152750825166,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.3,
+          1.5920408388915593e-16
+        ],
+        "hand_xy_mm": [
+          0.1351026958629122,
+          0.05835973609815123
+        ],
+        "yaw_deg": -0.6281178756531616,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": -0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003335483968943709,
+        "face_gap_m": 0.01665503173111775,
+        "yaw_rad": -0.00446508487240443,
+        "tilt_rad": 0.2625868731837464,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9429.json",
+        "sha256": "76201dbf0679b9b303e3c6b5de64888b78e4fc0a63a527b3b938f9bad635f90e"
+      }
+    },
+    {
+      "case_id": "heldout_9430",
+      "seed": 9430,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 21.412798187928274,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.141085634080381e-05,
+      "correction_integral_m_s": 0.002354493235714697,
+      "correction_variation_m": 0.0011488890477804295,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.919238815542512,
+          -0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.10067608674506348,
+          0.0058212494710196405
+        ],
+        "yaw_deg": -0.0070075243027099,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003319046360906672,
+        "face_gap_m": 0.016689312711379467,
+        "yaw_rad": -0.006502711459466492,
+        "tilt_rad": 0.27523020273966936,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9430.json",
+        "sha256": "b3080d88a201ab8d44c2b83049e4f0edf6dd38d0022fed45803db9c463e56b57"
+      }
+    },
+    {
+      "case_id": "heldout_9431",
+      "seed": 9431,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 23.244151494000107,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.873997369000557e-05,
+      "correction_integral_m_s": 0.002304592452477446,
+      "correction_variation_m": 0.0011272439373661682,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.3880612583373386e-16,
+          -1.3
+        ],
+        "hand_xy_mm": [
+          0.08875410201520714,
+          0.0969953040538011
+        ],
+        "yaw_deg": -0.28512748532991944,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0043577018912932105,
+        "face_gap_m": 0.016631690624684697,
+        "yaw_rad": -0.004427599420305484,
+        "tilt_rad": 0.2768372922453045,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9431.json",
+        "sha256": "fa7b5c6c5bb44209ce7ff386de23e16921cc3c0b848bea4281ab15f86b91dcfb"
+      }
+    },
+    {
+      "case_id": "heldout_9432",
+      "seed": 9432,
+      "group": "heldout",
+      "variant": "B3_structured",
+      "visual_dropout": 0.0,
+      "wall_s": 20.84215546795167,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.235484772167017e-05,
+      "correction_integral_m_s": 0.0023346102721447655,
+      "correction_variation_m": 0.001143996348599423,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425116,
+          -0.919238815542512
+        ],
+        "hand_xy_mm": [
+          -0.007550596025395706,
+          0.13675148737530465
+        ],
+        "yaw_deg": 0.2533486716811493,
+        "controller_delay_frames": 2,
+        "gripper_delta_mm": 0.075
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004700037591242067,
+        "face_gap_m": 0.017147402162326575,
+        "yaw_rad": -0.0018974567378429756,
+        "tilt_rad": 0.26330878478387926,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 27,
+      "trace": {
+        "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9432.json",
+        "sha256": "4602de9cc10f8b394420322ea15912326b458bbe016968df3604160da0462b3a"
+      }
+    }
+  ]
+}

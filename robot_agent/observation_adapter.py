@@ -13,7 +13,7 @@ class VisualFeatures:
     feature_score: float
     semantic_validation_status: str
     visibility: str
-    tracking_uncertainty: float
+    tracking_uncertainty: float | None
     plug_housing_center: tuple | None
     visible_ac_panels: int
     visible_usb_panels: int
@@ -96,7 +96,7 @@ def extract_rgb(rgb, target_hint=None):
     return VisualFeatures(tip, socket, keypoints,
                           tuple(np.array(socket) - tip) if available else None,
                           min(1., len(pins) / 3) if available else 0., 'UNVALIDATED',
-                          'VISIBLE_CANDIDATE' if available else 'UNKNOWN_OCCLUDED_OR_AMBIGUOUS', 0. if available else float('inf'),
+                          'VISIBLE_CANDIDATE' if available else 'UNKNOWN_OCCLUDED_OR_AMBIGUOUS', 0. if available else None,
                           tuple(map(float, housing[2])) if housing is not None else None,
                           len(ac), len(usb), len(pins))
 
@@ -162,7 +162,8 @@ class VisualTracker:
             relative_image_residual=tuple(np.asarray(hole) - tip) if available else None,
             feature_score=score, semantic_validation_status='VALIDATED' if validated else 'UNVALIDATED',
             visibility='VISIBLE_CANDIDATE' if available else 'UNKNOWN_OCCLUDED_OR_AMBIGUOUS',
-            tracking_uncertainty=self.uncertainty, target_id=self.target_id, state=state,
+            tracking_uncertainty=float(self.uncertainty) if np.isfinite(self.uncertainty) else None,
+            target_id=self.target_id, state=state,
             direct_keypoints=tuple(tuple(p) if seen else None for p, seen in zip(direct, visible)),
             tracked_keypoints=tracked, last_valid_timestamp=self.last_valid_timestamp)
 

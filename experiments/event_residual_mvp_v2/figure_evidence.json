@@ -1,0 +1,8 @@
+{
+  "illustrative_case": "heldout_9003",
+  "selection": "First predeclared heldout condition recovered by B3 and failed by B0; illustrative, not an independent trial",
+  "trace": {
+    "dataset_relative_path": "self_evolution/event_residual_mvp_v2/evaluation/B3_structured_dropout0/heldout_9003.json",
+    "sha256": "2ae9621bd448431363e2d24637c42476265692b68538ebeb05ff8b66d38156f9"
+  }
+}

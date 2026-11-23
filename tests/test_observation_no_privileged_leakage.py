@@ -1,4 +1,5 @@
-from dataclasses import fields
+from dataclasses import fields, asdict
+import json
 import numpy as np
 import pytest
 from robot_agent.observation_adapter import adapt, DeployableObservation, extract_rgb
@@ -10,6 +11,7 @@ def test_adapter_accepts_only_explicit_deployable_inputs_and_unknown_propagates(
     values = dict(rgb=np.zeros((480, 640, 3), np.uint8), joint_position=[0.] * 14,
                   joint_velocity=[0.] * 14, nominal_action=[0.] * 14, phase='align', timestamp=1.)
     observation = adapt(**values)
+    json.dumps(asdict(observation), allow_nan=False)
     assert observation.visual.relative_image_residual is None
     assert alignment_event(observation, None).status is Truth.UNKNOWN
     with pytest.raises(TypeError):

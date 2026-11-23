@@ -1,0 +1,217 @@
+{
+  "decision": "GO",
+  "statistics": {
+    "B0": {
+      "heldout": {
+        "n": 32,
+        "successes": 4,
+        "success_rate": 0.125,
+        "collisions": 1,
+        "mean_correction_integral_m_s": 0.0,
+        "mean_correction_variation_m": 0.0,
+        "mean_duration_s": 5.183007812495288,
+        "improvement_pp": 0.0,
+        "ci95_pp": [
+          0.0,
+          0.0
+        ],
+        "recovered": 0,
+        "spoiled": 0,
+        "recovery_rate": 0.0
+      },
+      "nominal": {
+        "n": 20,
+        "successes": 20,
+        "success_rate": 1.0,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.0,
+        "mean_correction_variation_m": 0.0,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 0.0,
+        "ci95_pp": [
+          0.0,
+          0.0
+        ],
+        "recovered": 0,
+        "spoiled": 0,
+        "recovery_rate": 0.0
+      }
+    },
+    "B1": {
+      "heldout": {
+        "n": 32,
+        "successes": 11,
+        "success_rate": 0.34375,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.0027341791823909485,
+        "mean_correction_variation_m": 0.003784820975782342,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 21.875,
+        "ci95_pp": [
+          6.25,
+          37.5
+        ],
+        "recovered": 8,
+        "spoiled": 1,
+        "recovery_rate": 0.2857142857142857
+      },
+      "nominal": {
+        "n": 20,
+        "successes": 20,
+        "success_rate": 1.0,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.002734179182390948,
+        "mean_correction_variation_m": 0.0037848209757823416,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 0.0,
+        "ci95_pp": [
+          0.0,
+          0.0
+        ],
+        "recovered": 0,
+        "spoiled": 0,
+        "recovery_rate": 0.0
+      }
+    },
+    "B2_structured": {
+      "heldout": {
+        "n": 32,
+        "successes": 8,
+        "success_rate": 0.25,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.0016418946025334544,
+        "mean_correction_variation_m": 0.0007931920320646104,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 12.5,
+        "ci95_pp": [
+          -6.25,
+          31.25
+        ],
+        "recovered": 7,
+        "spoiled": 3,
+        "recovery_rate": 0.25
+      },
+      "nominal": {
+        "n": 20,
+        "successes": 20,
+        "success_rate": 1.0,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.0016891894425777373,
+        "mean_correction_variation_m": 0.0008170960408282163,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 0.0,
+        "ci95_pp": [
+          0.0,
+          0.0
+        ],
+        "recovered": 0,
+        "spoiled": 0,
+        "recovery_rate": 0.0
+      }
+    },
+    "B3_structured": {
+      "heldout": {
+        "n": 32,
+        "successes": 16,
+        "success_rate": 0.5,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.0023892123000849013,
+        "mean_correction_variation_m": 0.0011527865300412143,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 37.5,
+        "ci95_pp": [
+          21.875,
+          53.125
+        ],
+        "recovered": 12,
+        "spoiled": 0,
+        "recovery_rate": 0.42857142857142855
+      },
+      "nominal": {
+        "n": 20,
+        "successes": 20,
+        "success_rate": 1.0,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.002434595308192163,
+        "mean_correction_variation_m": 0.0011649349049243339,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 0.0,
+        "ci95_pp": [
+          0.0,
+          0.0
+        ],
+        "recovered": 0,
+        "spoiled": 0,
+        "recovery_rate": 0.0
+      }
+    },
+    "B3_sparse": {
+      "heldout": {
+        "n": 32,
+        "successes": 6,
+        "success_rate": 0.1875,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.0014257053251724413,
+        "mean_correction_variation_m": 0.0007559928949808421,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 6.25,
+        "ci95_pp": [
+          -9.375,
+          25.0
+        ],
+        "recovered": 5,
+        "spoiled": 3,
+        "recovery_rate": 0.17857142857142858
+      },
+      "nominal": {
+        "n": 20,
+        "successes": 20,
+        "success_rate": 1.0,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.0016308874351763324,
+        "mean_correction_variation_m": 0.0008514974267876332,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 0.0,
+        "ci95_pp": [
+          0.0,
+          0.0
+        ],
+        "recovered": 0,
+        "spoiled": 0,
+        "recovery_rate": 0.0
+      }
+    },
+    "B3_dropout": {
+      "heldout": {
+        "n": 32,
+        "successes": 16,
+        "success_rate": 0.5,
+        "collisions": 0,
+        "mean_correction_integral_m_s": 0.0023892123000849013,
+        "mean_correction_variation_m": 0.0011527865300412143,
+        "mean_duration_s": 5.2999999999951815,
+        "improvement_pp": 37.5,
+        "ci95_pp": [
+          21.875,
+          53.125
+        ],
+        "recovered": 12,
+        "spoiled": 0,
+        "recovery_rate": 0.42857142857142855
+      }
+    }
+  },
+  "action_audit": {
+    "samples": 292,
+    "all_bounds_and_left_arm_invariance": true,
+    "max_residual_axis_m": 0.0011038286878464695,
+    "max_residual_axis_speed_m_s": 0.0012788480110695107,
+    "scope": "15 Hz recorded actions; 30 Hz filter speed/acceleration bound independently covered by unit tests"
+  },
+  "inference_scope": "32 paired heldout conditions, single trained seed per architecture; bootstrap conditions, not training seeds",
+  "no_runtime_llm": true,
+  "no_hardware": true,
+  "no_real_training": true,
+  "no_automatic_twin_adaptation": true,
+  "runtime_fixture_perturbations": "predeclared physical geometry reset perturbations; not adaptive Twin changes"
+}

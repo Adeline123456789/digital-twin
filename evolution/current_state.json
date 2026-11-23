@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Two independent simulation MVPs: deployable RGB perception and proprioceptive residual RL; dual model/right-arm task",
-  "status": "EVENT_RESIDUAL_V2_TRAINING_AND_PERCEPTION",
+  "status": "EVENT_RESIDUAL_V2_COMPLETE_OVERALL_NO_GO",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Complete predeclared PPO runs and RGB synthetic-keypoint track independently, then paired heldout evaluation.",
-  "updated_at": "2026-11-23T12:32:34.082179+00:00",
+  "next_grounded_work": "No further automatic experiments. V2 evidence complete: geometry-only residual GO, perception NO-GO, actuator curriculum INCONCLUSIVE; real execution remains denied.",
+  "updated_at": "2026-11-23T13:17:04.449245+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -174,18 +174,29 @@
   },
   "event_residual_mvp_v2": {
     "taskbook": "docs/EVENT_RESIDUAL_MVP_V2_TASKBOOK.md",
-    "status": "EVENT_RESIDUAL_V2_TRAINING_AND_PERCEPTION",
+    "status": "EVENT_RESIDUAL_V2_COMPLETE_OVERALL_NO_GO",
     "source_manifest": "experiments/event_residual_mvp_v2/source_manifest.json",
     "budget": {
-      "training_steps": 16384,
-      "physics_rollouts": 285,
+      "training_policy_steps": 57344,
+      "completed_training_rollouts": 696,
+      "partial_training_rollouts_at_fixed_budget": 32,
+      "pilot_rollouts": 30,
+      "canonical_evaluation_rollouts": 408,
+      "retained_earlier_evaluation_rollouts": 148,
+      "total_evaluation_rollouts": 556,
+      "local_replay_engineering_witnesses": 6,
+      "two_frame_interface_audits": 2,
+      "reset_only_pairing_conditions": 84,
+      "reset_only_pairing_modes": 3,
       "subagents": 1,
       "hardware": 0,
       "runtime_llm": 0,
-      "counts_note": "33 initial/pilot + 200 completed B2 training + 52 B0 formal; concurrent B3 and further evaluation not yet included"
+      "real_training": 0,
+      "ppo_models": 4,
+      "keypoint_models": 1
     },
     "grasp_dynamics_audit": "experiments/event_residual_mvp_v2/grasp_dynamics_audit.json",
-    "stage": "PERCEPTION_NO_GO_RESIDUAL_CONTINUING",
+    "stage": "EXPERIMENTS_COMPLETE",
     "smoothness_requirement": {
       "source": "2026-11-23 user: complete quickly and smoothly without jitter",
       "implementation_plan": "Retain frozen nominal timing; bound residual position, per-step velocity and acceleration; penalize correction variation; record completion time and action variation"
@@ -198,22 +209,41 @@
       "fresh_environment_witness": "PASS"
     },
     "perception_report": "experiments/event_residual_mvp_v2/PERCEPTION_REPORT.md",
-    "training_processes": [
-      {
-        "variant": "B3_structured",
-        "pid": 2688206
-      },
-      {
-        "variant": "B3_sparse",
-        "pid": 2689786
-      }
-    ],
     "formal_baseline": {
       "heldout_success": 4,
       "heldout_n": 32,
       "heldout_collisions": 1,
       "nominal_success": 20,
       "nominal_n": 20
-    }
+    },
+    "decisions": {
+      "overall": "NO-GO",
+      "perception": "NO-GO",
+      "geometry_residual": "GO",
+      "actuator_curriculum": "INCONCLUSIVE"
+    },
+    "final_report": "experiments/event_residual_mvp_v2/FINAL_V2_REPORT.md",
+    "tests": {
+      "passed": 180,
+      "subtests_passed": 27,
+      "deselected": 1,
+      "excluded": "tests/test_right_agent_integration.py::RightAgentTests::test_connection_rejects_absent_arm_before_controller_import",
+      "reason": "would import prohibited RIGHT_ARM_CONTROL_ROOT",
+      "log_sha256": "27ed46220ca7e36f5f5198ae16b113521da8981e8954bce40b19610e68fb0717",
+      "guarded_test_audit": "experiments/event_residual_mvp_v2/guarded_test_audit.json",
+      "guarded_log_sha256": "621489cb4ed223a8eca541968b819c624a56a061bd30bd1046edcedf2754520d",
+      "final_serialization_targeted_tests": 7
+    },
+    "known_resolved_engineering_failures": [
+      {
+        "kind": "ZERO_YAW_QUATERNION_RENORMALIZATION",
+        "evidence": "First local strict integration comparison failed; removed unnecessary identity quaternion normalization; replay error returned to 0."
+      },
+      {
+        "kind": "HOLE_DEPTH_VISIBILITY_LABEL_ERROR",
+        "evidence": "Empty opening was incorrectly treated as a surface; rejected generated labels retained, corrected before training."
+      }
+    ],
+    "completion_audit": "experiments/event_residual_mvp_v2/COMPLETION_AUDIT.md"
   }
 }

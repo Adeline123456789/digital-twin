@@ -26,10 +26,31 @@ def paired_bootstrap(base, candidate, seed=7721, resamples=10000):
                 recovery_rate=float(np.sum((base == 0) & (candidate == 1)) / max(1, np.sum(base == 0))))
 
 
+def audit_actions(row, frozen_frames):
+    path = DATA / row['trace']['dataset_relative_path']
+    if digest(path) != row['trace']['sha256']: raise ValueError('Evaluation trace changed')
+    raw = json.loads(path.read_text())
+    trace = raw['trace']
+    command = np.array([r['final_action'] for r in trace])
+    reference = np.array([frozen_frames[r['frame']]['nominal_action'] for r in trace])
+    xy = np.array([r['residual_xy_m'] for r in trace])
+    velocity = np.array([r['residual_velocity_m_s'] for r in trace])
+    valid = (np.array_equal([r['nominal_action'] for r in trace], reference)
+             and np.array_equal(command[:, :7], reference[:, :7]) and np.array_equal(command[:, 13], reference[:, 13])
+             and np.max(abs(xy)) <= .002 + 1e-12 and np.max(abs(velocity)) <= .003 + 1e-12
+             and np.max(abs(command[:, 7:13] - reference[:, 7:13])) <= .03 + 1e-12)
+    return dict(variant=row['variant'], case_id=row['case_id'], valid=bool(valid),
+        max_residual_axis_m=float(np.max(abs(xy))), max_residual_axis_speed_m_s=float(np.max(abs(velocity))),
+        max_joint_correction_rad=float(np.max(abs(command[:, 7:13]-reference[:, 7:13]))))
+
+
 def main():
     folder = ROOT / 'experiments/event_residual_mvp_v2'
     design = json.loads((folder / 'design.json').read_text())
     nominal = json.loads((ROOT / 'experiments/event_residual_mvp/nominal_manifest.json').read_text())
+    frozen_path = DATA / nominal['dataset_relative_path']
+    if digest(frozen_path) != nominal['sha256']: raise ValueError('Nominal bytes changed')
+    frozen_frames = json.loads(frozen_path.read_text())['frames']
     variants = design['heldout']['policies']
     evaluations = {v: json.loads((folder / f"evaluation_{v}_dropout0{'_recheck' if v == 'B0' else ''}.json").read_text()) for v in variants}
     dropout = json.loads((folder / 'evaluation_B3_structured_dropout1_recheck.json').read_text())
@@ -57,17 +78,7 @@ def main():
         stats[variant] = groups
         for row in evaluation['cases']:
             path = DATA / row['trace']['dataset_relative_path']
-            if digest(path) != row['trace']['sha256']: raise ValueError('Evaluation trace changed')
-            raw = json.loads(path.read_text())
-            trace = raw['trace']
-            command, reference = np.array([r['final_action'] for r in trace]), np.array([r['nominal_action'] for r in trace])
-            xy = np.array([r['residual_xy_m'] for r in trace]); velocity = np.array([r['residual_velocity_m_s'] for r in trace])
-            valid = (np.array_equal(command[:, :7], reference[:, :7]) and np.array_equal(command[:, 13], reference[:, 13])
-                     and np.max(abs(xy)) <= .002 + 1e-12 and np.max(abs(velocity)) <= .003 + 1e-12
-                     and np.max(abs(command[:, 7:13] - reference[:, 7:13])) <= .03 + 1e-12)
-            audits.append(dict(variant=variant, case_id=row['case_id'], valid=bool(valid),
-                max_residual_axis_m=float(np.max(abs(xy))), max_residual_axis_speed_m_s=float(np.max(abs(velocity))),
-                max_joint_correction_rad=float(np.max(abs(command[:, 7:13]-reference[:, 7:13])))))
+            audits.append(audit_actions(row, frozen_frames))
             if not row['is_success']:
                 policy_hash = (training[row['variant']]['policy']['sha256'] if row['variant'] in training
                                else nominal['policy_hash'])
@@ -108,7 +119,7 @@ def main():
     (folder / 'offline_diagnosis.json').write_text(json.dumps(dict(failed_rollouts=len(capsules), slow_calls=sum(c['slow_calls'] for c in capsules),
         legacy_skill_invocations=0, root_cause='UNKNOWN', evidence=dict(dataset_relative_path=str(raw.relative_to(DATA)), sha256=digest(raw)),
         stage='Stopped-only EventBuilder/FailureReport/Supervisor capsules, isolated memory; no structural proposal or Twin edit'), indent=2) + '\n')
-    phase2 = {v: json.loads((folder / f'evaluation_{v}_dropout0_phase2.json').read_text()) for v in ('B0', 'B3_structured', 'B3_actuator')}
+    phase2 = {v: json.loads((folder / f"evaluation_{v}_dropout0_phase2{'_recheck' if v != 'B3_actuator' else ''}.json").read_text()) for v in ('B0', 'B3_structured', 'B3_actuator')}
     phase2_stats = {}
     baseline_rows = sorted(phase2['B0']['cases'], key=lambda r: r['seed'])
     for variant, value in phase2.items():
@@ -124,7 +135,15 @@ def main():
     regression2 = paired_bootstrap([r['is_success'] for r in nominal_base], [r['is_success'] for r in nominal2])
     phase2_result = dict(statistics=phase2_stats, nominal_regression=dict(n=len(nominal2), successes=sum(r['is_success'] for r in nominal2), **regression2),
         scope='Separate sequential actuator curriculum and new heldout seeds; original geometry-only conclusion retained',
-        decision='GO' if phase2_stats['B3_actuator']['ci95_pp'][0] > 0 and regression2['improvement_pp'] >= -5 else 'NO-GO')
+        decision=('GO' if phase2_stats['B3_actuator']['ci95_pp'][0] > 0 else 'INCONCLUSIVE')
+                 if regression2['improvement_pp'] >= -5 else 'NO-GO', real_transfer_allowed=False)
+    phase2_audits = [audit_actions(row, frozen_frames) for evaluation in phase2.values() for row in evaluation['cases']]
+    phase2_audits += [audit_actions(row, frozen_frames) for row in nominal2]
+    phase2_result['action_audit'] = dict(samples=len(phase2_audits), all_bounds_and_left_arm_invariance=all(r['valid'] for r in phase2_audits),
+        max_residual_axis_m=max(r['max_residual_axis_m'] for r in phase2_audits),
+        max_residual_axis_speed_m_s=max(r['max_residual_axis_speed_m_s'] for r in phase2_audits))
+    if not phase2_result['action_audit']['all_bounds_and_left_arm_invariance']:
+        phase2_result['decision'] = 'NO-GO'
     (folder / 'phase2_results.json').write_text(json.dumps(phase2_result, indent=2) + '\n')
     training['B3_actuator'] = json.loads((folder / 'training_B3_actuator.json').read_text())
     (folder / 'residual_training.json').write_text(json.dumps(dict(runs=training, total_steps=sum(r['actual_steps'] for r in training.values()),
