@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "status": "STAGE_0_AUDITED_STAGE_1_PENDING",
+  "base_commit": "87bd88181836bed5c4723bc7a79a2586060d032f",
+  "branch": "research/event-residual-dual-20261123",
+  "scope": "Simulation-only dual-arm model, native right-arm plug task; no dual-arm coordination",
+  "permissions": {
+    "hardware_execution": "deny",
+    "real_data_read": "deny",
+    "real_data_training": "deny",
+    "llm_execution": "deny",
+    "twin_mutation": "deny",
+    "legacy_skill_execution": "deny",
+    "legacy_memory_access": "warning_only"
+  },
+  "policies": {
+    "nominal": "frozen_reference",
+    "residual": "deterministic_v0",
+    "event_observer": "rule_based_v0",
+    "recovery_router": "contract_guarded_v0"
+  },
+  "baseline": {
+    "offset_mm": 0,
+    "shift_mm": 0,
+    "arms": "dual",
+    "profile": "original",
+    "attempts": 1,
+    "stop_on_failure": true
+  },
+  "static_x_mm": [
+    -2,
+    -1,
+    0,
+    1,
+    2
+  ],
+  "transient_y": {
+    "amplitudes": "NOT_FROZEN; derive from actual collision slot clearance after baseline passes",
+    "timing": "After PREINSERT_REACHED; onset and duration freeze before pilot",
+    "requires_collision_and_rgb_change": true
+  },
+  "confirmation": {
+    "paired_conditions_min": 30,
+    "extended_conditions_min": 50,
+    "independent_heldout_seeds": true,
+    "same_initial_state_per_policy": true,
+    "bootstrap": "paired condition resampling; 95% interval",
+    "event_precision_min": 0.9,
+    "no_perturbation_false_trigger_max": 0.05,
+    "unnecessary_correction_reduction_min": 0.25
+  },
+  "stop_rule": "Any prerequisite failure -> NO-GO and stop experimental expansion. Wide confidence intervals -> INCONCLUSIVE.",
+  "test_boundary": {
+    "excluded": [
+      "tests/test_right_agent_integration.py::RightAgentTests::test_connection_rejects_absent_arm_before_controller_import"
+    ],
+    "reason": "This test imports RIGHT_ARM_CONTROL_ROOT, explicitly denied by taskbook. Cannot claim all old tests ran."
+  },
+  "budget": {
+    "native_baselines_started": 0,
+    "frozen_replays_started": 0,
+    "pilot_rollouts": 0,
+    "confirmation_rollouts": 0,
+    "subagents": 0,
+    "hardware": 0,
+    "runtime_llm": 0
+  }
+}

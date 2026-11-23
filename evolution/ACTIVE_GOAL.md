@@ -1,8 +1,3 @@
-# Fast/slow V2 offline engineering batch
+# Event residual MVP
 
-Resume from `evolution/current_state.json`. The design and thresholds are in
-`docs/CODEX_TASKBOOK_V2.md` and the frozen round schedule in
-`experiments/round_budget.json`. Use the existing simulator and stored observations.
-Keep the 5/5 real acceptance paused, the real physical cause UNKNOWN, and all real
-execution disabled. One development reviewer at a time, with no hardware or active
-configuration authority. The previous offline handoff is preserved at f3a0fe6.
+Follow docs/EVENT_RESIDUAL_MVP_TASKBOOK.md and experiments/event_residual_mvp/design.json. Simulation only: dual-arm model, native right-arm task. Begin with Stage 1 native baseline, then frozen physical replay. A prerequisite failure stops the batch with NO-GO. Real data, hardware, runtime LLM, old Skill execution and Twin mutation are denied. Historical goals are not resumed.

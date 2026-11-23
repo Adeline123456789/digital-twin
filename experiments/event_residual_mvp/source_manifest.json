@@ -1,0 +1,36 @@
+{
+  "base_commit": "87bd88181836bed5c4723bc7a79a2586060d032f",
+  "repository": {
+    "scripts/collect_current_scene.py": "e47854c3c6d90c881b9f2ee1e7df292e8ba1571b8b90318a74931566e83413f1",
+    "scripts/benchmark_collection.py": "45e095caff72abd6270db4e83dac35d77bcfb72b156aa229b5e0486b942f32c2",
+    "scripts/learn.py": "dd3f6140f9fbae0a7eff0a884d6068ce62ffcbb5ad95fce8eea0f6398ae0f093",
+    "scripts/collect_inline.py": "db35e08ff0b955990d85c3128baa394c2528a85ca7f205eacbe6b3b4afbe27e5",
+    "scripts/episode_format.py": "e944e7f99ce75fdf4dfa002f163f7e880a03b73b61230d1b7de571f43a9eec5e",
+    "scripts/finalize_recordings.py": "917eff68c8bfcf3c19aec23bba136192f6433c887c0dc1807dedce60bb05737a",
+    "robot_agent/contracts.py": "928bd83af18f124076979c46865e2f9ee9408f38d5659d882cad1e159925bafe",
+    "robot_agent/diagnosis.py": "1d48214711776238664ff9e3e9be0d7fd929c51e0bfee481e2e54c761147e846",
+    "robot_agent/fast_loop.py": "83d02d211c135a89b5ca657de2032a2f0a79809961dea0767dec9f1b1499c425",
+    "robot_agent/first_divergence.py": "057f8ed09e823a41c8affeae3a577f6ef0a3006d77ffb82b4c6dc91fb7f5b853",
+    "robot_agent/supervisor.py": "8d68b342edce51032201f217f34461c56cde48ce44bf0e22710c3c571031861a",
+    "robot_agent/memory_router.py": "fd0846827fd2e615a2480db4a77e16949f1666c19b0c7f127917267fe66d2582",
+    "robot_agent/local_slow.py": "611a66f127d15333dfe283f36b1590591f8bf3a5e15f8fb5d923d62ab7b3d612",
+    "robot_agent/gate.py": "9c8f9c9109716106a15258652007717827171b8d5c9a95a60f6a0645b4269e0f"
+  },
+  "sim_root": {
+    "scripts/try_plug_pick_sim.py": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+    "src/piper_sim/backends/mujoco.py": "0c0e68eab7a86ca358ee4c340b9861fd12bae05781ce5f15bfc3e6c430265d3d",
+    "src/piper_sim/backends/arm_layout.py": "a9cb4c07530f42e7a72ad29af8dec8489a2e03ed33461c165731389db1432285",
+    "src/piper_sim/tasks/recorded_mujoco.py": "a15dd5abe005b25291547472571e341d348d3118ab87d0e1939124f01c9373b2",
+    "src/piper_sim/tasks/recorded_scenes.py": "f4273558f379f7c83510cfec94397515474ffd3a09318a93b252c7757b51b8f7",
+    "src/piper_sim/tasks/connector_details.py": "cbd231704e1f12666c5fdad7b44db0e2d9169db57276ab7b26b6752aba97280c",
+    "src/piper_sim/mixed_recording.py": "b5cee1dfbb6148ec7ed12e4d3a05b13d4cf792306abcae6660ad761de53107f7",
+    "configs/tasks/real_connector_calibrated.yaml": "25fe40664fc83d5f43e65bf1ab5dfc4c8453b9c1455b02b2aed2d67d852478d7"
+  },
+  "coverage": {
+    "tier": "Verify/source fallback",
+    "graph_tools": "unavailable",
+    "codegraph_directory": false,
+    "coverage_tool": "unavailable; named files and dependencies directly inspected",
+    "negative_claim_scope": "only inspected MVP entry and listed imports"
+  }
+}
