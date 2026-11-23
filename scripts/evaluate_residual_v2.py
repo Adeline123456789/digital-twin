@@ -35,9 +35,10 @@ def cases(design):
     return result
 
 
-def initialize(variant, dropout):
-    global ENV, POLICY, VARIANT
+def initialize(variant, dropout, run_tag):
+    global ENV, POLICY, VARIANT, RUN_TAG
     VARIANT = variant
+    RUN_TAG = run_tag
     learned = variant not in ('B0', 'B1')
     history = 1 if variant.startswith('B2') else 15
     visual = variant.startswith('B3')
@@ -67,7 +68,7 @@ def rollout(case):
         if done:
             result = dict(case_id=case['id'], seed=case['seed'], group=case['group'], variant=VARIANT,
                           visual_dropout=ENV.visual_dropout, wall_s=time.monotonic()-start, **info)
-            destination = DATA / 'self_evolution/event_residual_mvp_v2/evaluation' / f'{VARIANT}_dropout{ENV.visual_dropout:g}'
+            destination = DATA / 'self_evolution/event_residual_mvp_v2/evaluation' / f'{VARIANT}_dropout{ENV.visual_dropout:g}{RUN_TAG}'
             destination.mkdir(parents=True, exist_ok=True)
             path = destination / (case['id'] + '.json')
             if path.exists():
@@ -84,21 +85,35 @@ def main():
     parser.add_argument('--dropout', type=float, default=0.)
     parser.add_argument('--workers', type=int, default=8)
     parser.add_argument('--phase2', action='store_true')
+    parser.add_argument('--nominal-only', action='store_true')
+    parser.add_argument('--run-tag', default='')
     args = parser.parse_args()
+    source_hashes = {str(p.relative_to(ROOT)): digest(p) for p in [Path(__file__), ROOT/'robot_agent/residual_env.py',
+        ROOT/'robot_agent/residual_controller.py', ROOT/'robot_agent/proprio_history.py', ROOT/'robot_agent/observation_adapter.py',
+        ROOT/'robot_agent/nominal_reference.py', ROOT/'scripts/pilot_residual_v2.py']}
+    snapshots = DATA / 'self_evolution/event_residual_mvp_v2/evaluation_sources' / f'{args.variant}_{args.dropout:g}_{args.phase2}_{args.nominal_only}{args.run_tag}'
+    for relative in source_hashes:
+        copy = snapshots / relative
+        copy.parent.mkdir(parents=True, exist_ok=True)
+        copy.write_bytes((ROOT / relative).read_bytes())
     design_path = ROOT / 'experiments/event_residual_mvp_v2' / ('phase2_design.json' if args.phase2 else 'design.json')
     design = json.loads(design_path.read_text())
     jobs = cases(design)
+    if args.nominal_only:
+        jobs = [case for case in jobs if case['group'] == 'nominal']
     if args.dropout == 1.:
         jobs = [case for case in jobs if case['group'] == 'heldout']
     rows = []
     with concurrent.futures.ProcessPoolExecutor(max_workers=args.workers, initializer=initialize,
-            initargs=(args.variant, args.dropout), mp_context=multiprocessing.get_context('spawn')) as pool:
+            initargs=(args.variant, args.dropout, args.run_tag), mp_context=multiprocessing.get_context('spawn')) as pool:
         for row in pool.map(rollout, jobs):
             rows.append(row)
             print('HELDOUT', row['case_id'], row['variant'], row['is_success'], row['collision'], flush=True)
     result = dict(variant=args.variant, visual_dropout=args.dropout, design_sha256=digest(design_path),
-        source_hashes={str(p.relative_to(ROOT)):digest(p) for p in [Path(__file__), ROOT/'robot_agent/residual_env.py', ROOT/'robot_agent/residual_controller.py']}, cases=rows)
+        source_hashes=source_hashes, source_capture='before rollout workers; exact new-source snapshots retained in DATA_ROOT', cases=rows)
     suffix = '_phase2' if args.phase2 else ''
+    if args.nominal_only: suffix += '_nominal'
+    suffix += args.run_tag
     path = ROOT / f'experiments/event_residual_mvp_v2/evaluation_{args.variant}_dropout{args.dropout:g}{suffix}.json'
     path.write_text(json.dumps(result, indent=2) + '\n')
 

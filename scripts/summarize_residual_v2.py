@@ -31,8 +31,8 @@ def main():
     design = json.loads((folder / 'design.json').read_text())
     nominal = json.loads((ROOT / 'experiments/event_residual_mvp/nominal_manifest.json').read_text())
     variants = design['heldout']['policies']
-    evaluations = {v: json.loads((folder / f'evaluation_{v}_dropout0.json').read_text()) for v in variants}
-    dropout = json.loads((folder / 'evaluation_B3_structured_dropout1.json').read_text())
+    evaluations = {v: json.loads((folder / f"evaluation_{v}_dropout0{'_recheck' if v == 'B0' else ''}.json").read_text()) for v in variants}
+    dropout = json.loads((folder / 'evaluation_B3_structured_dropout1_recheck.json').read_text())
     training = {v: json.loads((folder / f'training_{v}.json').read_text()) for v in variants if v not in ('B0', 'B1')}
     stats, audits, capsules = {}, [], []
     builder = EventBuilder()
@@ -108,6 +108,28 @@ def main():
     (folder / 'offline_diagnosis.json').write_text(json.dumps(dict(failed_rollouts=len(capsules), slow_calls=sum(c['slow_calls'] for c in capsules),
         legacy_skill_invocations=0, root_cause='UNKNOWN', evidence=dict(dataset_relative_path=str(raw.relative_to(DATA)), sha256=digest(raw)),
         stage='Stopped-only EventBuilder/FailureReport/Supervisor capsules, isolated memory; no structural proposal or Twin edit'), indent=2) + '\n')
+    phase2 = {v: json.loads((folder / f'evaluation_{v}_dropout0_phase2.json').read_text()) for v in ('B0', 'B3_structured', 'B3_actuator')}
+    phase2_stats = {}
+    baseline_rows = sorted(phase2['B0']['cases'], key=lambda r: r['seed'])
+    for variant, value in phase2.items():
+        rows = sorted(value['cases'], key=lambda r: r['seed'])
+        if value['design_sha256'] != digest(folder / 'phase2_design.json') or [r['perturbation'] for r in rows] != [r['perturbation'] for r in baseline_rows]:
+            raise ValueError('Unpaired phase2 design or conditions')
+        phase2_stats[variant] = dict(n=len(rows), successes=sum(r['is_success'] for r in rows), collisions=sum(r['collision'] for r in rows),
+            **paired_bootstrap([r['is_success'] for r in baseline_rows], [r['is_success'] for r in rows]))
+    nominal2 = json.loads((folder / 'evaluation_B3_actuator_dropout0_nominal.json').read_text())['cases']
+    nominal_base = sorted([r for r in evaluations['B0']['cases'] if r['group']=='nominal'], key=lambda r:r['seed'])
+    nominal2 = sorted(nominal2, key=lambda r:r['seed'])
+    if [r['perturbation'] for r in nominal2] != [r['perturbation'] for r in nominal_base]: raise ValueError('Unpaired actuator nominal regression')
+    regression2 = paired_bootstrap([r['is_success'] for r in nominal_base], [r['is_success'] for r in nominal2])
+    phase2_result = dict(statistics=phase2_stats, nominal_regression=dict(n=len(nominal2), successes=sum(r['is_success'] for r in nominal2), **regression2),
+        scope='Separate sequential actuator curriculum and new heldout seeds; original geometry-only conclusion retained',
+        decision='GO' if phase2_stats['B3_actuator']['ci95_pp'][0] > 0 and regression2['improvement_pp'] >= -5 else 'NO-GO')
+    (folder / 'phase2_results.json').write_text(json.dumps(phase2_result, indent=2) + '\n')
+    training['B3_actuator'] = json.loads((folder / 'training_B3_actuator.json').read_text())
+    (folder / 'residual_training.json').write_text(json.dumps(dict(runs=training, total_steps=sum(r['actual_steps'] for r in training.values()),
+        train_range=design['training_range'], nominal_updated=False, reward_ablation='structured vs sparse with matched B3 architecture/seed/step budget',
+        phase2='Additional residual-only curriculum: 0–1 frame actuator delay, +/-0.05 mm initial aperture; separate 2-frame/+/-0.075 mm heldout conditions'), indent=2) + '\n')
     print(json.dumps(output, indent=2))
 
 
