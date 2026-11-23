@@ -25,4 +25,5 @@ def test_rgb_color_features_are_candidates_not_privileged_labels():
     features = extract_rgb(image)
     assert features.plug_housing_center == (299.5, 349.5)
     assert features.plug_tip_pixel is None
-    assert features.confidence == 0
+    assert features.feature_score == 0
+    assert features.semantic_validation_status == 'UNVALIDATED'

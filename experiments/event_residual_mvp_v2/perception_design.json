@@ -1,0 +1,80 @@
+{
+  "sources": [
+    "20261123T090549Z_a35ab76b",
+    "20261123T092135Z_48f4ff46"
+  ],
+  "sequence_seeds": [
+    [
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312
+    ],
+    [
+      401,
+      402,
+      403,
+      404,
+      405,
+      406
+    ]
+  ],
+  "splits": {
+    "301": "train",
+    "302": "train",
+    "303": "train",
+    "304": "train",
+    "305": "train",
+    "306": "train",
+    "307": "train",
+    "308": "train",
+    "309": "validation",
+    "310": "validation",
+    "311": "validation",
+    "312": "validation",
+    "401": "heldout",
+    "402": "heldout",
+    "403": "heldout",
+    "404": "heldout",
+    "405": "heldout",
+    "406": "heldout"
+  },
+  "training": {
+    "epochs": 30,
+    "seed": 77,
+    "batch_size": 32,
+    "architecture": "compact RGB convolutional two-keypoint heatmap and visibility head"
+  },
+  "calibration": {
+    "keypoint_tolerance_px_640": 6,
+    "relative_tolerance_px_640": 8,
+    "precision_lower_bound_min": 0.9,
+    "feature_score_grid": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ],
+    "bootstrap_unit": "synthetic sequence; physical source episode count separately reported"
+  },
+  "limitation": "Two independent physical source episodes only. Appearance/viewpoint replicas are synthetic sequences, not new physical trials. No real accuracy or broad physical generalization claim.",
+  "randomization": [
+    "brightness",
+    "contrast",
+    "image texture noise and per-geom color",
+    "camera position +/-2 mm and orientation +/-1 degree",
+    "rectangular occlusion",
+    "Gaussian blur"
+  ],
+  "left_wrist": "SIMULATION_AUXILIARY_EVALUATOR_ONLY; unused here"
+}

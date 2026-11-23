@@ -2,10 +2,14 @@
 from .interaction_events import ObservedEvent, Truth as T
 
 
-def alignment_event(observation, evidence_ref, tolerance_px=3.):
+def alignment_event(observation, evidence_ref, tolerance_px=3., calibration=None):
     visual = observation.visual
     status = T.UNKNOWN
-    if visual.confidence >= .9 and visual.relative_image_residual is not None:
+    qualified = (calibration and calibration['accepted'] and visual.semantic_validation_status == 'VALIDATED'
+                 and visual.feature_score >= calibration['feature_score_threshold']
+                 and visual.tracking_uncertainty <= tolerance_px)
+    confidence = calibration['precision_lower_bound'] if qualified else 0.
+    if qualified and visual.relative_image_residual is not None:
         status = T.TRUE if sum(value ** 2 for value in visual.relative_image_residual) <= tolerance_px ** 2 else T.FALSE
-    return ObservedEvent('ALIGNMENT_OK', status, visual.confidence, observation.timestamp, evidence_ref,
+    return ObservedEvent('ALIGNMENT_OK', status, confidence, observation.timestamp, evidence_ref,
                          ('rgb', 'plug_tip', 'socket_identity') if status is not T.UNKNOWN else ('rgb',))

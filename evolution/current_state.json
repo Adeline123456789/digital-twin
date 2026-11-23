@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Two independent simulation MVPs: deployable RGB perception and proprioceptive residual RL; dual model/right-arm task",
-  "status": "EVENT_RESIDUAL_V2_DYNAMICS_AND_INTERFACE_AUDIT",
+  "status": "EVENT_RESIDUAL_V2_TRAINING_AND_PERCEPTION",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Complete synchronized grasp dynamics audit; repair score/semantic contract; construct unchanged frozen-reference local residual training environment.",
-  "updated_at": "2026-11-23T11:55:11.031960+00:00",
+  "next_grounded_work": "Complete predeclared PPO runs and RGB synthetic-keypoint track independently, then paired heldout evaluation.",
+  "updated_at": "2026-11-23T12:15:43.906417+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -174,20 +174,33 @@
   },
   "event_residual_mvp_v2": {
     "taskbook": "docs/EVENT_RESIDUAL_MVP_V2_TASKBOOK.md",
-    "status": "EVENT_RESIDUAL_V2_DYNAMICS_AND_INTERFACE_AUDIT",
+    "status": "EVENT_RESIDUAL_V2_TRAINING_AND_PERCEPTION",
     "source_manifest": "experiments/event_residual_mvp_v2/source_manifest.json",
     "budget": {
       "training_steps": 0,
-      "physics_rollouts": 0,
-      "subagents": 0,
+      "physics_rollouts": 33,
+      "subagents": 1,
       "hardware": 0,
       "runtime_llm": 0
     },
     "grasp_dynamics_audit": "experiments/event_residual_mvp_v2/grasp_dynamics_audit.json",
-    "stage": "DYNAMICS_AUDIT_COMPLETE",
+    "stage": "B2_TRAINING_ACTIVE",
     "smoothness_requirement": {
       "source": "2026-11-23 user: complete quickly and smoothly without jitter",
       "implementation_plan": "Retain frozen nominal timing; bound residual position, per-step velocity and acceleration; penalize correction variation; record completion time and action variation"
+    },
+    "pilot": "experiments/event_residual_mvp_v2/pilot_results.json",
+    "runtime_witness": "experiments/event_residual_mvp_v2/runtime_witness.json",
+    "training_process": {
+      "pid": 2687887,
+      "variant": "B2_structured",
+      "steps_budget": 16384,
+      "local_log": ".local/event_residual_mvp_v2/training_B2_structured.log"
+    },
+    "last_validation": {
+      "new_focused_tests": 9,
+      "exact_local_state_error": 0,
+      "fresh_environment_witness": "PASS"
     }
   }
 }

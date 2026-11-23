@@ -1,0 +1,34 @@
+{
+  "is_success": true,
+  "collision": false,
+  "max_penetration_m": 2.932611666937321e-05,
+  "correction_integral_m_s": 0.0,
+  "correction_variation_m": 0.0,
+  "duration_s": 5.2999999999951815,
+  "perturbation": {
+    "socket_xy_mm": [
+      0.0,
+      0.0
+    ],
+    "hand_xy_mm": [
+      0.0,
+      0.0
+    ],
+    "yaw_deg": 0.0
+  },
+  "final_metrics": {
+    "lateral_error_m": 0.00012175167744957523,
+    "face_gap_m": 0.00019999952390323955,
+    "yaw_rad": 8.469905839942479e-05,
+    "tilt_rad": 0.0,
+    "seated": true,
+    "hold_seconds": 3.133333333333332,
+    "success": true
+  },
+  "privileged_student_inputs": 0,
+  "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+  "max_integration_state_error": 0.0,
+  "wall_s": 17.76854445086792,
+  "sample_scope": "every 2 native frames (15 Hz policy); original full replay separately validated",
+  "independent_agent_follows_doc": "PASS; /root/runtime_doc_witness; verbatim command; exit 0; witnessed same hash and error 0"
+}

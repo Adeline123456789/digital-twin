@@ -1,0 +1,405 @@
+{
+  "stage": "TRAINING_AND_FORMAL_EVALUATION_PREREGISTERED",
+  "pilot_cases": [
+    {
+      "id": "nominal",
+      "seed": 101,
+      "perturbation": {
+        "socket_xy_mm": [
+          0,
+          0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "socket_0_-1",
+      "seed": 102,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "socket_0_-0.5",
+      "seed": 103,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.5,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "socket_0_+0.5",
+      "seed": 104,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.5,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "socket_0_+1",
+      "seed": 105,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "socket_1_-1",
+      "seed": 106,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          -1.0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "socket_1_-0.5",
+      "seed": 107,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          -0.5
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "socket_1_+0.5",
+      "seed": 108,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.5
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "socket_1_+1",
+      "seed": 109,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          1.0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "hand_0_-0.1",
+      "seed": 110,
+      "perturbation": {
+        "socket_xy_mm": [
+          0,
+          0
+        ],
+        "hand_xy_mm": [
+          -0.1,
+          0.0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "hand_0_+0.1",
+      "seed": 111,
+      "perturbation": {
+        "socket_xy_mm": [
+          0,
+          0
+        ],
+        "hand_xy_mm": [
+          0.1,
+          0.0
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "hand_1_-0.1",
+      "seed": 112,
+      "perturbation": {
+        "socket_xy_mm": [
+          0,
+          0
+        ],
+        "hand_xy_mm": [
+          0.0,
+          -0.1
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "hand_1_+0.1",
+      "seed": 113,
+      "perturbation": {
+        "socket_xy_mm": [
+          0,
+          0
+        ],
+        "hand_xy_mm": [
+          0.0,
+          0.1
+        ],
+        "yaw_deg": 0
+      }
+    },
+    {
+      "id": "hand_yaw_-0.5",
+      "seed": 114,
+      "perturbation": {
+        "socket_xy_mm": [
+          0,
+          0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": -0.5
+      }
+    },
+    {
+      "id": "hand_yaw_+0.5",
+      "seed": 115,
+      "perturbation": {
+        "socket_xy_mm": [
+          0,
+          0
+        ],
+        "hand_xy_mm": [
+          0,
+          0
+        ],
+        "yaw_deg": 0.5
+      }
+    }
+  ],
+  "paired_policies": [
+    "B0",
+    "B1"
+  ],
+  "baseline": "unchanged V1 frozen nominal; local last-transport state through final retreat",
+  "experimental_fixture": "Socket body XY and plug-in-gripper local XY/yaw at reset only; no source/physics/success parameter adaptation",
+  "smoothness": {
+    "filter": "exact critically damped second-order",
+    "xy_bound_m": 0.002,
+    "axis_speed_bound_m_s": 0.003,
+    "axis_acceleration_bound_m_s2": 0.03,
+    "native_hz": 30,
+    "policy_hz": 15
+  },
+  "reward_ablation": [
+    "structured",
+    "sparse"
+  ],
+  "proposed_train_steps_per_model": 16384,
+  "pilot_rule": "Freeze train and heldout amplitudes after pilot; choose a meaningful nominal failure fraction, not residual advantage. No formal result used for tuning.",
+  "formal_gate": {
+    "paired_conditions_min": 30,
+    "margin_pp": 20,
+    "bootstrap_resamples": 10000,
+    "alternative": "paired improvement 95% CI > 0",
+    "nominal_degradation_max_pp": 5
+  },
+  "perception_independent": true,
+  "hardware": 0,
+  "runtime_llm": 0,
+  "automatic_twin_adaptation": 0,
+  "pilot_conclusion": {
+    "B0": "13/15 success; socket -1 mm in X or Y failed",
+    "B1": "12/15; fixed spiral did not recover the two nominal failures and spoiled one -0.5 mm case",
+    "decision": "Train continuous +/-1 mm socket offsets plus small hand pose; hold out 1.15 and 1.3 mm amplitudes. No friction/controller/success parameter tuning."
+  },
+  "training_range": {
+    "socket_xy_mm": [
+      -1,
+      1
+    ],
+    "hand_xy_mm": [
+      -0.1,
+      0.1
+    ],
+    "hand_yaw_deg": [
+      -0.5,
+      0.5
+    ],
+    "controller_delay_s": 0,
+    "gripper_variation_m": 0
+  },
+  "training": {
+    "B2_structured": {
+      "steps": 16384,
+      "history_frames": 1,
+      "visual_features": false,
+      "reward": "structured",
+      "seed": 20261123
+    },
+    "B3_structured": {
+      "steps": 16384,
+      "history_frames": 15,
+      "visual_features": true,
+      "reward": "structured",
+      "seed": 20261124
+    },
+    "B3_sparse": {
+      "steps": 16384,
+      "history_frames": 15,
+      "visual_features": true,
+      "reward": "sparse",
+      "seed": 20261124
+    }
+  },
+  "heldout": {
+    "seeds": [
+      9001,
+      9002,
+      9003,
+      9004,
+      9005,
+      9006,
+      9007,
+      9008,
+      9009,
+      9010,
+      9011,
+      9012,
+      9013,
+      9014,
+      9015,
+      9016,
+      9017,
+      9018,
+      9019,
+      9020,
+      9021,
+      9022,
+      9023,
+      9024,
+      9025,
+      9026,
+      9027,
+      9028,
+      9029,
+      9030,
+      9031,
+      9032
+    ],
+    "socket_amplitude_mm": [
+      1.15,
+      1.3
+    ],
+    "direction_count": 8,
+    "repeats_per_amplitude_direction": 2,
+    "hand_xy_mm": [
+      -0.15,
+      0.15
+    ],
+    "yaw_deg": [
+      -0.75,
+      0.75
+    ],
+    "bootstrap_seed": 7721,
+    "policies": [
+      "B0",
+      "B1",
+      "B2_structured",
+      "B3_structured",
+      "B3_sparse"
+    ],
+    "rgb_dropout": [
+      0.0,
+      1.0
+    ]
+  },
+  "nominal_regression": {
+    "seeds": [
+      10001,
+      10002,
+      10003,
+      10004,
+      10005,
+      10006,
+      10007,
+      10008,
+      10009,
+      10010,
+      10011,
+      10012,
+      10013,
+      10014,
+      10015,
+      10016,
+      10017,
+      10018,
+      10019,
+      10020
+    ],
+    "socket_xy_mm": [
+      0,
+      0
+    ],
+    "hand_xy_mm": [
+      -0.02,
+      0.02
+    ],
+    "yaw_deg": [
+      -0.1,
+      0.1
+    ],
+    "reason": "small seed-dependent in-hand states; avoid pretending identical deterministic repeats are independent conditions"
+  },
+  "policy_selection": "Final fixed-budget checkpoint only. No selection against heldout cases."
+}
