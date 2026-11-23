@@ -1,0 +1,7 @@
+{
+  "initial_gripper_delta_m": 7.499999999999868e-05,
+  "right_joint_delay_frames": 2,
+  "applied_right_equals_preinsert": true,
+  "left_equals_current_nominal": true,
+  "physical_frames": 2
+}

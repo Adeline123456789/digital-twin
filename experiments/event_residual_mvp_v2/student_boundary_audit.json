@@ -1,0 +1,16 @@
+{
+  "student_observation_equal_under_privileged_only_intervention": true,
+  "student_action_equal": true,
+  "physics_steps": 0,
+  "intervention": [
+    "plug position",
+    "socket position",
+    "native success hold counter"
+  ],
+  "observation_shape": [
+    32
+  ],
+  "policy_input": "flat deployable proprioception array; no backend/MjData reference",
+  "limit": "No-vision B2 test. RGB can legitimately change with object state, but policy receives pixels/features only; reset, reward, native safety and stopped evaluator use privileged data.",
+  "kinematic_map_without_live_object_state_max_difference": 2.042810365310288e-14
+}

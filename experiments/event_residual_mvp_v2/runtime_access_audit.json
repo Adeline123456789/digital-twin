@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "forbidden_file_access_attempts": 0,
+  "hardware_driver_import_attempts": 0,
+  "student_shape": [
+    484
+  ],
+  "rgb_dropout": 1.0,
+  "native_control_frames": 2,
+  "policy_variant": "B3_structured",
+  "scope": "Representative live simulation step under Python audit hook; full training path source audited separately; not an OS sandbox",
+  "forbidden_scopes": [
+    "complete_real",
+    "REFERENCE_DATA",
+    "RIGHT_ARM_CONTROL_ROOT"
+  ]
+}

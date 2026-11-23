@@ -17,8 +17,9 @@ from robot_agent.residual_env import LocalResidualEnv, DATA, ROOT
 from learn import digest
 
 
-def make_env(history, visual, reward):
-    return Monitor(LocalResidualEnv(history_frames=history, visual_features=visual, reward_kind=reward))
+def make_env(history, visual, reward, stage):
+    return Monitor(LocalResidualEnv(history_frames=history, visual_features=visual, reward_kind=reward,
+                                    perturbation_stage=stage))
 
 
 class Progress(BaseCallback):
@@ -45,9 +46,10 @@ class Progress(BaseCallback):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--variant', choices=['B2_structured', 'B3_structured', 'B3_sparse'], required=True)
+    parser.add_argument('--variant', choices=['B2_structured', 'B3_structured', 'B3_sparse', 'B3_actuator'], required=True)
     args = parser.parse_args()
-    design = json.loads((ROOT / 'experiments/event_residual_mvp_v2/design.json').read_text())
+    design_name = 'phase2_design.json' if args.variant == 'B3_actuator' else 'design.json'
+    design = json.loads((ROOT / 'experiments/event_residual_mvp_v2' / design_name).read_text())
     config = design['training'][args.variant]
     torch.set_num_threads(1)
     output = DATA / 'self_evolution/event_residual_mvp_v2/training' / args.variant
@@ -61,12 +63,19 @@ def main():
         copy.parent.mkdir(parents=True, exist_ok=True)
         copy.write_bytes((ROOT / relative).read_bytes())
     (output / 'launch.json').write_text(json.dumps(dict(config=config, source_hashes=source_hashes), indent=2) + '\n')
-    factory = partial(make_env, config['history_frames'], config['visual_features'], config['reward'])
+    factory = partial(make_env, config['history_frames'], config['visual_features'], config['reward'],
+                      config.get('stage', 'geometry'))
     env = SubprocVecEnv([factory] * 8, start_method='spawn')
     env.seed(config['seed'])
-    policy = PPO('MlpPolicy', env, seed=config['seed'], device='cpu', n_steps=128, batch_size=256,
-        n_epochs=5, learning_rate=.0003, gamma=.99, gae_lambda=.95, ent_coef=.001,
-        policy_kwargs=dict(net_arch=dict(pi=[64, 64], vf=[64, 64])), verbose=0)
+    if args.variant == 'B3_actuator':
+        parent = json.loads((ROOT / 'experiments/event_residual_mvp_v2/training_B3_structured.json').read_text())
+        if digest(DATA / parent['policy']['dataset_relative_path']) != parent['policy']['sha256']:
+            raise ValueError('Parent residual checkpoint changed')
+        policy = PPO.load(DATA / parent['policy']['dataset_relative_path'], env=env, device='cpu', seed=config['seed'])
+    else:
+        policy = PPO('MlpPolicy', env, seed=config['seed'], device='cpu', n_steps=128, batch_size=256,
+            n_epochs=5, learning_rate=.0003, gamma=.99, gae_lambda=.95, ent_coef=.001,
+            policy_kwargs=dict(net_arch=dict(pi=[64, 64], vf=[64, 64])), verbose=0)
     callback = Progress(output / 'progress.json')
     start = time.monotonic()
     policy.learn(total_timesteps=config['steps'], callback=callback)

@@ -1,5 +1,6 @@
 """Local frozen-reference MuJoCo task. Privileged state stays in reset/reward/evaluation."""
 import json
+from collections import deque
 from pathlib import Path
 import sys
 
@@ -26,7 +27,7 @@ class LocalResidualEnv(gym.Env):
     metadata = {'render_modes': []}
 
     def __init__(self, history_frames=15, reward_kind='structured', training=True,
-                 visual_features=False, visual_dropout=.5):
+                 visual_features=False, visual_dropout=.5, perturbation_stage='geometry'):
         manifest = json.loads((ROOT / 'experiments/event_residual_mvp/nominal_manifest.json').read_text())
         reference = DATA / manifest['dataset_relative_path']
         if digest(reference) != manifest['sha256']:
@@ -49,6 +50,7 @@ class LocalResidualEnv(gym.Env):
         self.history_frames = history_frames
         self.reward_kind, self.training = reward_kind, training
         self.visual_features, self.visual_dropout = visual_features, visual_dropout
+        self.perturbation_stage = perturbation_stage
         self.action_space = gym.spaces.Box(-1., 1., shape=(2,), dtype=np.float32)
         self.observation_space = gym.spaces.Box(-np.inf, np.inf,
                                                shape=(FEATURES_PER_FRAME * history_frames + 4 * visual_features,), dtype=np.float32)
@@ -133,6 +135,9 @@ class LocalResidualEnv(gym.Env):
                 hand_xy_mm=self.np_random.uniform(-.1, .1, 2).tolist(), yaw_deg=float(self.np_random.uniform(-.5, .5)))
                 if self.training else dict(socket_xy_mm=[0., 0.], hand_xy_mm=[0., 0.], yaw_deg=0.))
         p = self.perturbation
+        if self.training and self.perturbation_stage == 'actuator':
+            p.update(controller_delay_frames=int(self.np_random.integers(0, 2)),
+                     gripper_delta_mm=float(self.np_random.uniform(-.05, .05)))
         self.sim.model.body_pos[self.strip_id, :2] += np.asarray(p['socket_xy_mm']) / 1000
         grip_rotation = self.sim.data.body('right/gripper_center').xmat.reshape(3, 3)
         self.sim.data.qpos[self.plug_qadr:self.plug_qadr + 3] += grip_rotation @ np.r_[np.asarray(p['hand_xy_mm']) / 1000, 0.]
@@ -142,11 +147,14 @@ class LocalResidualEnv(gym.Env):
             rotated = (hand_frame * Rotation.from_euler('z', p['yaw_deg'], degrees=True)
                        * hand_frame.inv() * Rotation.from_quat(quat, scalar_first=True))
             quat[:] = rotated.as_quat(scalar_first=True)
+        gripper_delta = p.get('gripper_delta_mm', 0.) / 1000
+        self.sim.data.qpos[self.sim.indices['right']['qpos'][6:]] += gripper_delta / 2
         mujoco.mj_forward(self.sim.model, self.sim.data)
         self.index = self.start
         self.history = ProprioHistory(self.history_frames)
         self.smoother = SmoothResidual()
         self.last_action = np.asarray(self.player.frames[self.index].nominal_action).copy()
+        self.delayed_targets = deque([self.last_action.copy() for _ in range(p.get('controller_delay_frames', 0))])
         self.previous_metrics = self._metrics()
         self.previous_target = np.zeros(2)
         self.correction_energy = self.variation = self.max_penetration = 0.
@@ -175,7 +183,11 @@ class LocalResidualEnv(gym.Env):
             xy = self.smoother.update(target)
             self.last_action = inject_xy(frame.nominal_action, xy, self.joint_maps[self.index],
                                          self.sim.layout.lower, self.sim.layout.upper)
-            self.sim.apply(self.sim.layout.command(self.last_action, self.sim.sim_time, self.index))
+            self.delayed_targets.append(self.last_action.copy())
+            delayed = self.delayed_targets.popleft()
+            applied = self.last_action.copy()
+            applied[7:13] = delayed[7:13]
+            self.sim.apply(self.sim.layout.command(applied, self.sim.sim_time, self.index))
             check = checked_physics_step(self.sim, .0002)
             self.physics_steps += 1
             self.max_penetration = max(self.max_penetration, check['max_penetration_m'])

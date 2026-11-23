@@ -33,9 +33,11 @@ class EventBuilder:
             raise ValueError('Missing terminal outcome or trace')
         refs = (reference(path, self.data),)
         last = result['trace'][-1]
+        frozen = json_file(self.data / nominal_manifest['dataset_relative_path'])
+        start_time = max(f['timestep'] for f in frozen['frames'] if f['phase'] == 'transport')
         ident = result['case_id'] + '_' + result['variant']
         fact = Observation(ident, 'original', nominal_manifest['source_hash'], nominal_manifest['task_config_hash'],
-            policy_hash, 'plug_insertion', 3, last['phase'], str(last['frame']), (last['frame'] + 1) / 30,
+            policy_hash, 'plug_insertion', 3, last['phase'], str(last['frame']), start_time + result['duration_s'],
             'sim_time', 'verified', 'simulator', 'status', 'sim.native_report', 'observed',
             dict(success=result['is_success'], collision=result['collision']), refs)
         if fact.issue():

@@ -25,6 +25,9 @@ def cases(design):
         result.append(dict(id=f'heldout_{seed}', seed=seed, group='heldout', perturbation=dict(
             socket_xy_mm=(amplitude * np.array([np.cos(angle), np.sin(angle)])).tolist(),
             hand_xy_mm=rng.uniform(-.15, .15, 2).tolist(), yaw_deg=float(rng.uniform(-.75, .75)))))
+        if design.get('actuator_stage'):
+            result[-1]['perturbation'].update(controller_delay_frames=2,
+                gripper_delta_mm=float(rng.choice([-.075, .075])))
     for seed in design['nominal_regression']['seeds']:
         rng = np.random.default_rng(seed)
         result.append(dict(id=f'nominal_{seed}', seed=seed, group='nominal', perturbation=dict(
@@ -77,11 +80,13 @@ def rollout(case):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--variant', required=True, choices=['B0', 'B1', 'B2_structured', 'B3_structured', 'B3_sparse'])
+    parser.add_argument('--variant', required=True, choices=['B0', 'B1', 'B2_structured', 'B3_structured', 'B3_sparse', 'B3_actuator'])
     parser.add_argument('--dropout', type=float, default=0.)
     parser.add_argument('--workers', type=int, default=8)
+    parser.add_argument('--phase2', action='store_true')
     args = parser.parse_args()
-    design = json.loads((ROOT / 'experiments/event_residual_mvp_v2/design.json').read_text())
+    design_path = ROOT / 'experiments/event_residual_mvp_v2' / ('phase2_design.json' if args.phase2 else 'design.json')
+    design = json.loads(design_path.read_text())
     jobs = cases(design)
     if args.dropout == 1.:
         jobs = [case for case in jobs if case['group'] == 'heldout']
@@ -91,9 +96,10 @@ def main():
         for row in pool.map(rollout, jobs):
             rows.append(row)
             print('HELDOUT', row['case_id'], row['variant'], row['is_success'], row['collision'], flush=True)
-    result = dict(variant=args.variant, visual_dropout=args.dropout, design_sha256=digest(ROOT/'experiments/event_residual_mvp_v2/design.json'),
+    result = dict(variant=args.variant, visual_dropout=args.dropout, design_sha256=digest(design_path),
         source_hashes={str(p.relative_to(ROOT)):digest(p) for p in [Path(__file__), ROOT/'robot_agent/residual_env.py', ROOT/'robot_agent/residual_controller.py']}, cases=rows)
-    path = ROOT / f'experiments/event_residual_mvp_v2/evaluation_{args.variant}_dropout{args.dropout:g}.json'
+    suffix = '_phase2' if args.phase2 else ''
+    path = ROOT / f'experiments/event_residual_mvp_v2/evaluation_{args.variant}_dropout{args.dropout:g}{suffix}.json'
     path.write_text(json.dumps(result, indent=2) + '\n')
 
 

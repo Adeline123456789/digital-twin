@@ -1,0 +1,117 @@
+{
+  "heldout": {
+    "seeds": [
+      9401,
+      9402,
+      9403,
+      9404,
+      9405,
+      9406,
+      9407,
+      9408,
+      9409,
+      9410,
+      9411,
+      9412,
+      9413,
+      9414,
+      9415,
+      9416,
+      9417,
+      9418,
+      9419,
+      9420,
+      9421,
+      9422,
+      9423,
+      9424,
+      9425,
+      9426,
+      9427,
+      9428,
+      9429,
+      9430,
+      9431,
+      9432
+    ],
+    "socket_amplitude_mm": [
+      1.15,
+      1.3
+    ],
+    "direction_count": 8,
+    "repeats_per_amplitude_direction": 2,
+    "hand_xy_mm": [
+      -0.15,
+      0.15
+    ],
+    "yaw_deg": [
+      -0.75,
+      0.75
+    ],
+    "bootstrap_seed": 7721,
+    "policies": [
+      "B0",
+      "B3_structured",
+      "B3_actuator"
+    ],
+    "rgb_dropout": [
+      0.0,
+      1.0
+    ]
+  },
+  "nominal_regression": {
+    "seeds": [],
+    "socket_xy_mm": [
+      0,
+      0
+    ],
+    "hand_xy_mm": [
+      -0.02,
+      0.02
+    ],
+    "yaw_deg": [
+      -0.1,
+      0.1
+    ],
+    "reason": "small seed-dependent in-hand states; avoid pretending identical deterministic repeats are independent conditions"
+  },
+  "formal_gate": {
+    "paired_conditions_min": 30,
+    "margin_pp": 20,
+    "bootstrap_resamples": 10000,
+    "alternative": "paired improvement 95% CI > 0",
+    "nominal_degradation_max_pp": 5
+  },
+  "stage": "SECOND_STAGE_PREREGISTERED_AFTER_GEOMETRY_TRAINING_BEFORE_ACTUATOR_TESTING",
+  "actuator_stage": true,
+  "training": {
+    "B3_actuator": {
+      "steps": 8192,
+      "history_frames": 15,
+      "visual_features": true,
+      "reward": "structured",
+      "seed": 20261125,
+      "stage": "actuator"
+    }
+  },
+  "training_range": {
+    "geometry": "unchanged first stage +/-1 mm socket, +/-0.1 mm hand, +/-0.5 degree hand yaw",
+    "controller_delay_frames": [
+      0,
+      1
+    ],
+    "gripper_delta_mm": [
+      -0.05,
+      0.05
+    ]
+  },
+  "heldout_actuator": {
+    "controller_delay_frames": 2,
+    "gripper_delta_mm": [
+      -0.075,
+      0.075
+    ]
+  },
+  "control_semantics": "Delay right-arm six joint targets in the actuator environment; leave left-arm and gripper command timing unchanged. Gripper variation changes only initial finger state. Frozen nominal actions and residual XY bounds unchanged.",
+  "protocol": "Warm-start only residual from frozen B3 structured checkpoint; 8192 additional steps, no heldout tuning. Separate seeds and results; do not replace first-stage primary test."
+}
