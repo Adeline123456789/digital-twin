@@ -1,0 +1,75 @@
+{
+  "reference_episode_id": "20261123T090549Z_a35ab76b",
+  "source_hash": "cc155b52d5e8b3696a7fa18ef719e49f4364ae9791adf64e8fe1801848640750",
+  "task_config_hash": "95568ff7fede9723ad4d00113944ae3c1dc90fcf2b33da69eecff0b54db04381",
+  "policy_hash": "ed889400a0243db2d0f557c43d9cfee0550053883d0e0e7d47e5b8f6da344f27",
+  "initial_state_hash": "9dc36383b0e9c20d390e4db66a5aa558bdfa5ed1fed892af8f4761e90a7f7f2c",
+  "reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+  "nominal_action_hash": "7849872c6fca43eb9194dc75b75cd71237b4b14539818e9a572397d23f61ceb3",
+  "dataset_relative_path": "self_evolution/event_residual_mvp/20261123T090549Z_a35ab76b/reference.json",
+  "sha256": "4121fa279c0a4b6f6031c726f20103c9c1fa8ae19b2e03735032daaf2aeb6eb2",
+  "source_report": "experiments/right_arm_adaptation/20261123T090549Z_a35ab76b/result.json",
+  "source_report_hash": "b779b5b2ef6e5048a9ec369e391c3e70b1beb0b7357c4cb94ee36db7586fe913",
+  "frames": 1133,
+  "validation": {
+    "active_arms": [
+      "left",
+      "right"
+    ],
+    "schema": "connector_mixed.v1",
+    "video_frames": {
+      "cam_external_rgb.mp4": 1133,
+      "cam_left_wrist_rgb.mp4": 1133,
+      "cam_right_wrist_rgb.mp4": 1133
+    },
+    "quality": {
+      "complete_pick_insert": true,
+      "all_substeps_valid": true,
+      "max_penetration_m": 3.14633920053186e-05,
+      "same_run_max_state_error": 2.220446049250313e-16,
+      "phase_names": [
+        "settle",
+        "descend",
+        "grasp",
+        "lift",
+        "transport",
+        "insert",
+        "release",
+        "approach",
+        "retreat",
+        "align",
+        "fold",
+        "prepare_gripper",
+        "abort_retreat",
+        "final_hold"
+      ]
+    },
+    "duration_s": 37.766666666666666,
+    "object_replay_max_error_m": 0.0,
+    "success": true,
+    "collection_mode": "inline_native_physics",
+    "status": "Format and recorded trajectory verified; native physical task outcome preserved"
+  },
+  "evidence": [
+    {
+      "dataset_relative_path": "self_evolution/20261123T090549Z_a35ab76b/trajectory.jsonl",
+      "sha256": "6158090f3cd54770fb9b1dda6e8ea1f85cf3f4486feef4e81b528c301d8c5cb1"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261123T090549Z_a35ab76b/task.yaml",
+      "sha256": "95568ff7fede9723ad4d00113944ae3c1dc90fcf2b33da69eecff0b54db04381"
+    },
+    {
+      "dataset_relative_path": "self_evolution/20261123T090549Z_a35ab76b/initial_state.npz",
+      "sha256": "9dc36383b0e9c20d390e4db66a5aa558bdfa5ed1fed892af8f4761e90a7f7f2c"
+    },
+    {
+      "dataset_relative_path": "complete_sim/succeed/20261123T090549Z_a35ab76b/outcome.json",
+      "sha256": "a1261d30ec09ebb1de15cfece174ac619b60236a3e304964fd0712df42ef3190"
+    },
+    {
+      "dataset_relative_path": "complete_sim/succeed/20261123T090549Z_a35ab76b/proprio_stats/model.xml",
+      "sha256": "b66d55dc9ad2493181a1fdacdbc0029abbdfc9d1c970785011a108869baff9a0"
+    }
+  ]
+}

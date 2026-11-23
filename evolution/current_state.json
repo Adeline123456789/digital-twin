@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Simulation-only dual-arm model, native right-arm plug task; no dual-arm coordination",
-  "status": "STAGE_1_NATIVE_RUNNING",
+  "status": "STAGE_1_PASS",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "Run specified dual-model baseline once; freeze and replay only after success and complete Episode verification.",
-  "updated_at": "2026-11-23T09:05:50.492240+00:00",
+  "next_grounded_work": "Validate event contract and deployable RGB observation. Stop if required visual landmarks remain unavailable.",
+  "updated_at": "2026-11-23T09:14:04.957713+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -107,13 +107,29 @@
     "source_manifest": "experiments/event_residual_mvp/source_manifest.json",
     "budget": {
       "native_baselines_started": 1,
-      "frozen_replays_started": 0,
+      "frozen_replays_started": 1,
       "pilot_rollouts": 0,
       "confirmation_rollouts": 0,
       "subagents": 0,
       "hardware": 0,
-      "runtime_llm": 0
+      "runtime_llm": 0,
+      "native_wall_s": 151.27486639702693,
+      "replay_wall_s": 159.3968861529138
     },
-    "status": "STAGE_1_NATIVE_RUNNING"
+    "status": "STAGE_1_PASS",
+    "baseline": {
+      "episode": "20261123T090549Z_a35ab76b",
+      "task_success": true,
+      "recording_verified": true,
+      "video_frames_each": 1133,
+      "max_penetration_m": 3.14633920053186e-05
+    },
+    "reference": "experiments/event_residual_mvp/nominal_manifest.json",
+    "tests": {
+      "passed": 155,
+      "deselected": 1,
+      "reason": "Denied control-root import"
+    },
+    "replay": "experiments/event_residual_mvp/stage1_replay.json"
   }
 }
