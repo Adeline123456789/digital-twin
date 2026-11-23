@@ -55,6 +55,12 @@ def main():
     source_hashes = {str(p.relative_to(ROOT)): digest(p) for p in
         [Path(__file__), ROOT / 'robot_agent/residual_env.py', ROOT / 'robot_agent/residual_controller.py',
          ROOT / 'robot_agent/proprio_history.py', ROOT / 'robot_agent/observation_adapter.py']}
+    snapshots = output / 'sources'
+    for relative in source_hashes:
+        copy = snapshots / relative
+        copy.parent.mkdir(parents=True, exist_ok=True)
+        copy.write_bytes((ROOT / relative).read_bytes())
+    (output / 'launch.json').write_text(json.dumps(dict(config=config, source_hashes=source_hashes), indent=2) + '\n')
     factory = partial(make_env, config['history_frames'], config['visual_features'], config['reward'])
     env = SubprocVecEnv([factory] * 8, start_method='spawn')
     env.seed(config['seed'])

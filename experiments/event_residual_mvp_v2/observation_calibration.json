@@ -1,0 +1,47 @@
+{
+  "accepted": false,
+  "feature_score_threshold": 0.95,
+  "precision_lower_bound": 0.0,
+  "sweep": [
+    {
+      "threshold": 0.5,
+      "selected": 72,
+      "correct": 0,
+      "precision_lower_bound": 0.0
+    },
+    {
+      "threshold": 0.6,
+      "selected": 20,
+      "correct": 0,
+      "precision_lower_bound": 0.0
+    },
+    {
+      "threshold": 0.7,
+      "selected": 1,
+      "correct": 0,
+      "precision_lower_bound": 0.0
+    },
+    {
+      "threshold": 0.8,
+      "selected": 0,
+      "correct": 0,
+      "precision_lower_bound": 0.0
+    },
+    {
+      "threshold": 0.9,
+      "selected": 0,
+      "correct": 0,
+      "precision_lower_bound": 0.0
+    },
+    {
+      "threshold": 0.95,
+      "selected": 0,
+      "correct": 0,
+      "precision_lower_bound": 0.0
+    }
+  ],
+  "reason": "heldout semantic validation required; no hardcoded detector confidence",
+  "validation_sequences": 4,
+  "validation_physical_source_episodes": 1,
+  "validation_visible_pairs": 0
+}

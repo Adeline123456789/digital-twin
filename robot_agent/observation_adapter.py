@@ -103,8 +103,9 @@ def extract_rgb(rgb, target_hint=None):
 
 class VisualTracker:
     """RGB-only identity memory and local optical flow; no simulation inputs."""
-    def __init__(self, calibration=None):
+    def __init__(self, calibration=None, global_lock=None):
         self.calibration = calibration
+        self.global_lock = global_lock
         self.target_id = None
         self.keypoints = ()
         self.last_valid_timestamp = None
@@ -117,6 +118,11 @@ class VisualTracker:
         candidate = extract_rgb(rgb, target_hint=hint)
         gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
         continuous = self.previous_time is None or 0 < timestamp - self.previous_time <= .2
+        if self.target_id is None and self.global_lock is not None:
+            lock = self.global_lock(rgb)
+            if lock:
+                self.target_id, self.keypoints = lock['target_id'], lock['keypoints']
+                self.last_valid_timestamp, self.uncertainty = timestamp, 0.
         if self.target_id is None and candidate.socket_center is not None:
             self.target_id = 3
             self.keypoints = candidate.socket_keypoints

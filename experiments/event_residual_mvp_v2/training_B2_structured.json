@@ -1,0 +1,32 @@
+{
+  "variant": "B2_structured",
+  "config": {
+    "steps": 16384,
+    "history_frames": 1,
+    "visual_features": false,
+    "reward": "structured",
+    "seed": 20261123
+  },
+  "actual_steps": 16384,
+  "episodes": 200,
+  "wall_s": 928.5571497560013,
+  "source_hashes": {
+    "scripts/train_residual_v2.py": "7f22f74375fafd261835c37f5eda45f4f7345e385f4981be26f57411aa64128d",
+    "robot_agent/residual_env.py": "1c2160325c64ec1fa166a33fd572afe4f24e1d0aae1737b155598bcf23102ba0",
+    "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+    "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+    "robot_agent/observation_adapter.py": "44c650df559d7249fa24b72a4f9aab2ad644037495ba87ea5ce20c58fcda5591"
+  },
+  "policy": {
+    "dataset_relative_path": "self_evolution/event_residual_mvp_v2/training/B2_structured/policy.zip",
+    "sha256": "106f1eca67e536bb4983920b225b43e4d28a06c9d504cb9008cdc9b020e8b412"
+  },
+  "observation_scope": "right motor/command history; optional RGB candidates with dropout, no privileged channels",
+  "scope": "Simulation-only; single training seed per ablation; no real transfer inference",
+  "source_reconstruction": {
+    "base_commit": "1921b752741e7889b6d31fe56d1f950912d1c4a0",
+    "patch": "experiments/event_residual_mvp_v2/B2_source_delta.patch",
+    "verification": "all five reconstructed source SHA256 values equal launch-captured values",
+    "reason": "Perception-only branch changed during independent nonvisual B2 training; its exact source version is preserved."
+  }
+}

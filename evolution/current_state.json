@@ -78,7 +78,7 @@
     "additional_experiment_models": 0
   },
   "next_grounded_work": "Complete predeclared PPO runs and RGB synthetic-keypoint track independently, then paired heldout evaluation.",
-  "updated_at": "2026-11-23T12:15:43.906417+00:00",
+  "updated_at": "2026-11-23T12:32:34.082179+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -177,30 +177,43 @@
     "status": "EVENT_RESIDUAL_V2_TRAINING_AND_PERCEPTION",
     "source_manifest": "experiments/event_residual_mvp_v2/source_manifest.json",
     "budget": {
-      "training_steps": 0,
-      "physics_rollouts": 33,
+      "training_steps": 16384,
+      "physics_rollouts": 285,
       "subagents": 1,
       "hardware": 0,
-      "runtime_llm": 0
+      "runtime_llm": 0,
+      "counts_note": "33 initial/pilot + 200 completed B2 training + 52 B0 formal; concurrent B3 and further evaluation not yet included"
     },
     "grasp_dynamics_audit": "experiments/event_residual_mvp_v2/grasp_dynamics_audit.json",
-    "stage": "B2_TRAINING_ACTIVE",
+    "stage": "PERCEPTION_NO_GO_RESIDUAL_CONTINUING",
     "smoothness_requirement": {
       "source": "2026-11-23 user: complete quickly and smoothly without jitter",
       "implementation_plan": "Retain frozen nominal timing; bound residual position, per-step velocity and acceleration; penalize correction variation; record completion time and action variation"
     },
     "pilot": "experiments/event_residual_mvp_v2/pilot_results.json",
     "runtime_witness": "experiments/event_residual_mvp_v2/runtime_witness.json",
-    "training_process": {
-      "pid": 2687887,
-      "variant": "B2_structured",
-      "steps_budget": 16384,
-      "local_log": ".local/event_residual_mvp_v2/training_B2_structured.log"
-    },
     "last_validation": {
       "new_focused_tests": 9,
       "exact_local_state_error": 0,
       "fresh_environment_witness": "PASS"
+    },
+    "perception_report": "experiments/event_residual_mvp_v2/PERCEPTION_REPORT.md",
+    "training_processes": [
+      {
+        "variant": "B3_structured",
+        "pid": 2688206
+      },
+      {
+        "variant": "B3_sparse",
+        "pid": 2689786
+      }
+    ],
+    "formal_baseline": {
+      "heldout_success": 4,
+      "heldout_n": 32,
+      "heldout_collisions": 1,
+      "nominal_success": 20,
+      "nominal_n": 20
     }
   }
 }

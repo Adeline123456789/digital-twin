@@ -1,0 +1,224 @@
+{
+  "sequences": [
+    {
+      "seed": 301,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        25
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_301.npz",
+      "sha256": "0038f9ba9154e8cc8964b50b89d42afda5b9751cea7adb8a7f1d508f26240a48"
+    },
+    {
+      "seed": 302,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        23
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_302.npz",
+      "sha256": "c93d0f93ce7b0e9249e8f2cde9f57326a1a235a8c3b18b8120912101ab670817"
+    },
+    {
+      "seed": 303,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        24
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_303.npz",
+      "sha256": "320765f3b8331fd791fcde70986182811ed85d35099bb38dbf8f610dfc32f1a4"
+    },
+    {
+      "seed": 304,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        23
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_304.npz",
+      "sha256": "9009632ba1657a1d7dd0bfe3bbf3ca7f9f55fb8ac778e44a1078e78be3f64dbd"
+    },
+    {
+      "seed": 305,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        24
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_305.npz",
+      "sha256": "1c7095f2a67e924eb47ed78267a665ed7ba9b7ef8ecd57c69dac8b2051a92eee"
+    },
+    {
+      "seed": 306,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        24
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_306.npz",
+      "sha256": "78e5bc070cfea083fc9fa9503e16004958c5fb654235572175bbcd1a1664c64d"
+    },
+    {
+      "seed": 307,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        24
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_307.npz",
+      "sha256": "db4079da7768f977f7539238e20c9c03bf3597c6fb1e52f2fc89bcd0a245e7de"
+    },
+    {
+      "seed": 308,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        23
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_308.npz",
+      "sha256": "8f2698efb08c2978eb713d9c1ac65e4eb869bbecf172f4fc7acf389cf1d890eb"
+    },
+    {
+      "seed": 309,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "validation",
+      "visible_counts": [
+        0,
+        23
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_309.npz",
+      "sha256": "a7cccb5d5d4f7d4d34866fd16e0f2426707342c1e59dda6f8e3f302248a5219a"
+    },
+    {
+      "seed": 310,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "validation",
+      "visible_counts": [
+        0,
+        23
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_310.npz",
+      "sha256": "ec24247a3e826ddf2cf4cd0407b9815d84b53c8dccc32312fc91a9f449214fcf"
+    },
+    {
+      "seed": 311,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "validation",
+      "visible_counts": [
+        0,
+        25
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_311.npz",
+      "sha256": "cee2b79a7b1522c831c0f573031e2d1e9b8b9b02d5201fc6f0351da99b7e75e6"
+    },
+    {
+      "seed": 312,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "validation",
+      "visible_counts": [
+        0,
+        23
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_312.npz",
+      "sha256": "e2485d8025fafcd4e5f2f1caff839ec76c7822d4afa2f71fb5c5de6980687392"
+    },
+    {
+      "seed": 401,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        1,
+        28
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_401.npz",
+      "sha256": "18438ec9e7771271db295eae51158ccb0ce65698e04a99e615631f7066aecc83"
+    },
+    {
+      "seed": 402,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        1,
+        28
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_402.npz",
+      "sha256": "b13b530d7c0ad0240db196c8a1303dc59d77ca2a32a781c3eeccd98c91b583cc"
+    },
+    {
+      "seed": 403,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        1,
+        28
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_403.npz",
+      "sha256": "1192c892630b45f7fe7836964ac107dae6b1a2441bb64e850a30417e6be1d387"
+    },
+    {
+      "seed": 404,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        0,
+        27
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_404.npz",
+      "sha256": "b0bd355cbdf842bddf9b7ed71c55e5479d00ac9d2771ea238864a0480c7b14e3"
+    },
+    {
+      "seed": 405,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        0,
+        27
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_405.npz",
+      "sha256": "992cbe0b4747637f6679b5ceb2f1bb1055e438a0405948db2ea25f3380180e6d"
+    },
+    {
+      "seed": 406,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        1,
+        29
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/sequence_406.npz",
+      "sha256": "c58d88e13b88d3a712251374764778c32b6961167fd39f37c909df72bc8f7e32"
+    }
+  ],
+  "scope": "Synthetic rendered sequences from two archived physical simulation episodes; frames are not independent trials",
+  "labels": "Evaluator/training only: native earth pin end and matching outlet-3 hole, depth visibility",
+  "left_wrist": "excluded from Student and training",
+  "physics_steps": 0
+}

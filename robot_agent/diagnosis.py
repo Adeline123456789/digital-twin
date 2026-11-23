@@ -23,6 +23,27 @@ class EventBuilder:
         self.data = data
         self.repository = repository
 
+    def stopped_local(self, path, nominal_manifest, policy_hash):
+        """Terminal local experiments are diagnostic evidence, not formal Episodes."""
+        path = Path(path).resolve()
+        if not path.is_relative_to(self.data / 'self_evolution/event_residual_mvp_v2/evaluation'):
+            raise ValueError('Expected a stopped V2 local evaluation trace')
+        result = json_file(path)
+        if not result['trace'] or not isinstance(result['is_success'], bool):
+            raise ValueError('Missing terminal outcome or trace')
+        refs = (reference(path, self.data),)
+        last = result['trace'][-1]
+        ident = result['case_id'] + '_' + result['variant']
+        fact = Observation(ident, 'original', nominal_manifest['source_hash'], nominal_manifest['task_config_hash'],
+            policy_hash, 'plug_insertion', 3, last['phase'], str(last['frame']), (last['frame'] + 1) / 30,
+            'sim_time', 'verified', 'simulator', 'status', 'sim.native_report', 'observed',
+            dict(success=result['is_success'], collision=result['collision']), refs)
+        if fact.issue():
+            raise ValueError(fact.issue())
+        events = [] if result['is_success'] else [event(fact, 'NATIVE_TASK_FAILED',
+            status='TERMINAL_AFTER_LAST_SAMPLE', severity='danger' if result['collision'] else 'warning')]
+        return report(ident, events, result['is_success'], refs)
+
     def build(self, path, observer=None):
         path = Path(path).resolve()
         r = json_file(path)

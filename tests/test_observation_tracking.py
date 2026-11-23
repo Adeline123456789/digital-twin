@@ -28,3 +28,14 @@ def test_feature_score_alone_cannot_resolve_semantic_unknown():
                 nominal_action=[0.] * 14, phase='align', timestamp=1.)
     obs = replace(obs, visual=replace(obs.visual, feature_score=1., relative_image_residual=(0., 0.)))
     assert alignment_event(obs, None).status is Truth.UNKNOWN
+
+
+def test_separate_semantic_calibration_can_resolve_event_without_confidence_deadlock():
+    image = np.zeros((80, 100, 3), np.uint8)
+    obs = adapt(rgb=image, joint_position=[0.] * 14, joint_velocity=[0.] * 14,
+                nominal_action=[0.] * 14, phase='align', timestamp=1.)
+    obs = replace(obs, visual=replace(obs.visual, feature_score=.95, relative_image_residual=(1., 0.),
+                  semantic_validation_status='VALIDATED', tracking_uncertainty=.2))
+    calibration = dict(accepted=True, feature_score_threshold=.8, precision_lower_bound=.92)
+    event = alignment_event(obs, None, calibration=calibration)
+    assert event.status is Truth.TRUE and event.confidence == .92

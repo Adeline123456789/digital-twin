@@ -8,10 +8,10 @@ CATEGORIES = {'POLICY_ERROR','WORLD_MODEL_ERROR','PERCEPTION_OR_TIME_ERROR','CON
 
 
 class Supervisor:
-    def __init__(self, slow=None, max_calls=0, token_limit=4096, seconds=15):
+    def __init__(self, slow=None, max_calls=0, token_limit=4096, seconds=15, fast=None):
         if not 0 <= max_calls <= 2 or seconds<=0 or token_limit<0:
             raise ValueError('Invalid diagnostic budget')
-        self.fast=FastLoop()
+        self.fast=fast if fast is not None else FastLoop()
         self.slow=slow
         self.max_calls,self.tokens,self.deadline=max_calls,token_limit,time.monotonic()+seconds
         self.calls=self.input_tokens=self.output_tokens=0

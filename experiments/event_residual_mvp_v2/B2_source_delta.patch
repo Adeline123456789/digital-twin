@@ -1,0 +1,85 @@
+--- a/robot_agent/residual_env.py
++++ b/robot_agent/residual_env.py
+@@ -97,12 +97,12 @@
+         if not self.visual_features:
+             return observation
+         # Optional RGB branch; local inference sees only rendered RGB, never poses.
++        from .observation_adapter import extract_rgb
+         if self.step_count % 3 == 0:
+             if self.rgb_renderer is None:
+                 self.rgb_renderer = mujoco.Renderer(self.sim.model, height=480, width=640)
+-            self.rgb_renderer.update_scene(self.sim.data, camera='overhead')
+-            features = self.visual_tracker.update(self.rgb_renderer.render(), self.sim.sim_time,
+-                                                 self.player.frames[self.index].phase)
++            self.rgb_renderer.update_scene(self.sim.data, camera='right_wrist')
++            features = extract_rgb(self.rgb_renderer.render())
+             self.visual = np.zeros(4, np.float32)
+             if features.relative_image_residual is not None:
+                 self.visual[:] = [*(np.asarray(features.relative_image_residual) / 640), features.feature_score, 1.]
+@@ -115,16 +115,6 @@
+         super().reset(seed=seed)
+         self.sim.model.body_pos[self.strip_id] = self.strip_position
+         self.sim.reset()
+-        if self.visual_features:
+-            from .observation_adapter import VisualTracker
+-            self.visual_tracker = VisualTracker()
+-            if self.rgb_renderer is None:
+-                self.rgb_renderer = mujoco.Renderer(self.sim.model, height=480, width=640)
+-            self.rgb_renderer.update_scene(self.sim.data, camera='overhead')
+-            self.visual_tracker.update(self.rgb_renderer.render(), 0., 'approach')
+-            # The local task jumps to the archived preinsert state; retain identity,
+-            # but do not optical-flow across the skipped transport interval.
+-            self.visual_tracker.previous_gray = self.visual_tracker.previous_time = None
+         mujoco.mj_setState(self.sim.model, self.sim.data, np.asarray(self.initial['values']), self.initial['spec'])
+         mujoco.mj_forward(self.sim.model, self.sim.data)
+         self.perturbation = options.get('perturbation') if options else None
+--- a/robot_agent/observation_adapter.py
++++ b/robot_agent/observation_adapter.py
+@@ -42,7 +42,7 @@
+     return [(labels == i, stats[i], centers[i]) for i in range(1, n) if stats[i, cv2.CC_STAT_AREA] >= min_area]
+ 
+ 
+-def extract_rgb(rgb, target_hint=None):
++def extract_rgb(rgb):
+     if rgb.dtype != np.uint8 or rgb.ndim != 3 or rgb.shape[2] != 3:
+         raise ValueError('Expected RGB uint8 image')
+     hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
+@@ -52,7 +52,7 @@
+     blue = cv2.inRange(hsv, (95, 40, 25), (130, 255, 255))
+     # Fill each blue panel's holes, then count its enclosed dark slot components.
+     contours, _ = cv2.findContours(blue, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+-    ac, usb, local_panels = [], [], []
++    ac, usb = [], []
+     for contour in contours:
+         x, y, w, h = cv2.boundingRect(contour)
+         if w < 12 or h < 12 or not .5 <= w / h <= 2:
+@@ -62,8 +62,6 @@
+         interior = cv2.erode(panel, np.ones((3, 3), dtype=np.uint8))
+         holes = components((hsv[:, :, 2] < 70) & (interior != 0), 4)
+         points = tuple(tuple(map(float, center)) for _, _, center in holes)
+-        if points:
+-            local_panels.append((tuple(np.mean(points, axis=0)), points))
+         if len(points) == 5:
+             ac.append((tuple(np.mean(points, axis=0)), points))
+         elif len(points) == 2:
+@@ -72,10 +70,6 @@
+     # Full-board evidence is used once for identity, then retained by VisualTracker.
+     if len(ac) == 3 and len(usb) == 1:
+         socket, keypoints = max(ac, key=lambda p: np.linalg.norm(np.array(p[0]) - usb[0][0]))
+-    if target_hint is not None and local_panels:
+-        local = min(local_panels, key=lambda p: np.linalg.norm(np.asarray(p[0]) - target_hint))
+-        if np.linalg.norm(np.asarray(local[0]) - target_hint) < 25:
+-            socket, keypoints = local
+     pins = []
+     if housing is not None:
+         mask, stats, center = housing
+@@ -113,8 +107,7 @@
+         self.uncertainty = float('inf')
+ 
+     def update(self, rgb, timestamp, phase, prediction=None):
+-        hint = np.mean(self.keypoints, axis=0) if self.target_id is not None and self.keypoints else None
+-        candidate = extract_rgb(rgb, target_hint=hint)
++        candidate = extract_rgb(rgb)
+         gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
+         continuous = self.previous_time is None or 0 < timestamp - self.previous_time <= .2
+         if self.target_id is None and candidate.socket_center is not None:

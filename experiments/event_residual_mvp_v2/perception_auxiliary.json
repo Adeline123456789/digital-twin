@@ -1,0 +1,14 @@
+{
+  "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/auxiliary_training_views.npz",
+  "sha256": "bf1a01060e6cb5bc4ab44b3a3a455680c05e0caee00593d154f0143e50ef3aea",
+  "samples": 512,
+  "visible_counts": [
+    12,
+    231
+  ],
+  "seed": 777,
+  "scope": "TRAINING ONLY. Static object-pose render augmentation, not collision-validated physics or held-out task performance.",
+  "reason": "Task views have no directly visible earth-pin end; add exposed orientations to train appearance, then independently evaluate actual task occlusion.",
+  "physics_steps": 0,
+  "source": "unchanged frozen nominal local model; ephemeral data.qpos poses only"
+}

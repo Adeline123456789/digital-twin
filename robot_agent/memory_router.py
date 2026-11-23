@@ -85,5 +85,12 @@ class MemoryRouter:
                     plan=plan if any(i=='VS002' for _,i,_,_ in ranked) else None,veto=veto)
 
 
+class IsolatedExperimentMemory:
+    """V2 simulation experiments may emit capsules, but cannot invoke legacy skills."""
+    def retrieve_applicable(self, e, context=None, top_k=5):
+        return dict(status='ISOLATED_EXPERIMENT', matches=[], rejected={'legacy': 'execution denied'},
+                    plan=None, veto=[])
+
+
 def retrieve_applicable(evidence,context=None,top_k=5):
     return MemoryRouter().retrieve_applicable(evidence,context,top_k)

@@ -1,0 +1,225 @@
+{
+  "sequences": [
+    {
+      "seed": 301,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        8
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_301.npz",
+      "sha256": "e8159dbdb41c86c3e9b69e32cd918255af171f70d874fa14f5d9de3a5f26f8da"
+    },
+    {
+      "seed": 302,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        3
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_302.npz",
+      "sha256": "60269755039ca81f4c1a81f1e2ce919369bd14634bc0fb619869a92551a0d36a"
+    },
+    {
+      "seed": 303,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        7
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_303.npz",
+      "sha256": "262eb244ec9f6eaa1c90b185d0d859b3712a806c2558c5626f3bc045e27c55b0"
+    },
+    {
+      "seed": 304,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        4
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_304.npz",
+      "sha256": "abf858269841c41c0f75d4004546d997b14582935d7da0f1e81e996fcf33648e"
+    },
+    {
+      "seed": 305,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        21
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_305.npz",
+      "sha256": "f5e430868c7bdc5b38a853698c1bc8386389fb298d9b7903d578eeccbbe42873"
+    },
+    {
+      "seed": 306,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        21
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_306.npz",
+      "sha256": "83f802f0e46e846ed646ffcdda5a9c1cdee63345bd8719a51bd01439a9246352"
+    },
+    {
+      "seed": 307,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        21
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_307.npz",
+      "sha256": "05752ca114473c44beab91a073a247d9e2a7fad3b49f777acf3d89e09780c63d"
+    },
+    {
+      "seed": 308,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "train",
+      "visible_counts": [
+        0,
+        20
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_308.npz",
+      "sha256": "a7127b40d598e8ef16987c0307f705548b9315701388a1e1bed411ab6057b66d"
+    },
+    {
+      "seed": 309,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "validation",
+      "visible_counts": [
+        0,
+        5
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_309.npz",
+      "sha256": "3c509fd977b01795154f145217d016c95abe3315c249ec99d25bf92eeecde067"
+    },
+    {
+      "seed": 310,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "validation",
+      "visible_counts": [
+        0,
+        5
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_310.npz",
+      "sha256": "6ec324a518d2f0520e4fabc127733949aaf4e63c0a516dd8623173db40b0f1f1"
+    },
+    {
+      "seed": 311,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "validation",
+      "visible_counts": [
+        0,
+        9
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_311.npz",
+      "sha256": "d0172e7bf499616b6a2a8175e44e68a344a649ee45b39981e846014285f64b3b"
+    },
+    {
+      "seed": 312,
+      "source_episode": "20261123T090549Z_a35ab76b",
+      "samples": 56,
+      "split": "validation",
+      "visible_counts": [
+        0,
+        5
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_312.npz",
+      "sha256": "585697dbab2eaeb42ff8d0961dcd2cd0f41327faa1fa00c42f4415b26c278692"
+    },
+    {
+      "seed": 401,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        1,
+        14
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_401.npz",
+      "sha256": "28d62ced20647f15b776784963dc21130b8cfe612740b73167a54d364a0e2346"
+    },
+    {
+      "seed": 402,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        1,
+        13
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_402.npz",
+      "sha256": "fdcff41532513f5414e91428f38ec61e5d8901fe6f2f6d1ec00dc214506236de"
+    },
+    {
+      "seed": 403,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        1,
+        13
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_403.npz",
+      "sha256": "bb74a35707b65282272a7c31a1c30e636e607808a73eefc3d5a1d392eeffb47e"
+    },
+    {
+      "seed": 404,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        0,
+        11
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_404.npz",
+      "sha256": "e13a537172a57ef4a6f28a022e83f5f8a2e0aa80a9696a522fd2ae8fb882a0e9"
+    },
+    {
+      "seed": 405,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        0,
+        11
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_405.npz",
+      "sha256": "0dcc1f568e9c507bbcbcc12e4d11c691fd99b2fc188dd205dc9f882314bfe49f"
+    },
+    {
+      "seed": 406,
+      "source_episode": "20261123T092135Z_48f4ff46",
+      "samples": 58,
+      "split": "heldout",
+      "visible_counts": [
+        1,
+        13
+      ],
+      "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception_rejected_hole_depth_labels_v0/sequence_406.npz",
+      "sha256": "87aefc4a5b878b009de2c5cb0006da0fa376695f3771af7ee14ebc34fd983840"
+    }
+  ],
+  "scope": "Synthetic rendered sequences from two archived physical simulation episodes; frames are not independent trials",
+  "labels": "Evaluator/training only: native earth pin end and matching outlet-3 hole, depth visibility",
+  "left_wrist": "excluded from Student and training",
+  "physics_steps": 0,
+  "rejection_reason": "Hole visibility incorrectly required a nearby surface at an empty opening. Audit caught false negatives; corrected to allow depth behind the opening. Rejected labels were never used for training or calibration."
+}

@@ -1,0 +1,146 @@
+{
+  "config": {
+    "epochs": 30,
+    "seed": 77,
+    "batch_size": 32,
+    "architecture": "compact RGB convolutional two-keypoint heatmap and visibility head"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 9.215903186798096
+    },
+    {
+      "epoch": 2,
+      "loss": 7.916010475158691
+    },
+    {
+      "epoch": 3,
+      "loss": 6.628642352422078
+    },
+    {
+      "epoch": 4,
+      "loss": 5.560523207982381
+    },
+    {
+      "epoch": 5,
+      "loss": 5.4107890129089355
+    },
+    {
+      "epoch": 6,
+      "loss": 5.285424645741781
+    },
+    {
+      "epoch": 7,
+      "loss": 5.037000338236491
+    },
+    {
+      "epoch": 8,
+      "loss": 4.887601979573568
+    },
+    {
+      "epoch": 9,
+      "loss": 4.750609223047892
+    },
+    {
+      "epoch": 10,
+      "loss": 4.701131518681844
+    },
+    {
+      "epoch": 11,
+      "loss": 4.6878193060557045
+    },
+    {
+      "epoch": 12,
+      "loss": 4.568169148763021
+    },
+    {
+      "epoch": 13,
+      "loss": 4.538097890218099
+    },
+    {
+      "epoch": 14,
+      "loss": 4.51759475072225
+    },
+    {
+      "epoch": 15,
+      "loss": 4.413674918810527
+    },
+    {
+      "epoch": 16,
+      "loss": 4.428129649162292
+    },
+    {
+      "epoch": 17,
+      "loss": 4.371559317906698
+    },
+    {
+      "epoch": 18,
+      "loss": 4.359785501162211
+    },
+    {
+      "epoch": 19,
+      "loss": 4.355822722117106
+    },
+    {
+      "epoch": 20,
+      "loss": 4.360283279418946
+    },
+    {
+      "epoch": 21,
+      "loss": 4.33023886680603
+    },
+    {
+      "epoch": 22,
+      "loss": 4.289821585019429
+    },
+    {
+      "epoch": 23,
+      "loss": 4.25703030427297
+    },
+    {
+      "epoch": 24,
+      "loss": 4.279829374949137
+    },
+    {
+      "epoch": 25,
+      "loss": 4.250736538569132
+    },
+    {
+      "epoch": 26,
+      "loss": 4.253724829355876
+    },
+    {
+      "epoch": 27,
+      "loss": 4.2317682584126795
+    },
+    {
+      "epoch": 28,
+      "loss": 4.194854553540548
+    },
+    {
+      "epoch": 29,
+      "loss": 4.20820168654124
+    },
+    {
+      "epoch": 30,
+      "loss": 4.161307660738627
+    }
+  ],
+  "samples": 960,
+  "visible_counts": [
+    12,
+    421
+  ],
+  "wall_s": 15.536011513788253,
+  "weights": {
+    "dataset_relative_path": "self_evolution/event_residual_mvp_v2/perception/keypoint_model.pt",
+    "sha256": "ed8d2ac834158395cf6f05a07983f6e33007520a2f4b4c5e534537425ded7399"
+  },
+  "heldout_used_for_training": false,
+  "validation_used_for_training": false,
+  "source_hashes": {
+    "scripts/train_keypoint_v2.py": "c062acea618d46d642365bb758e4b47730cc8aac97378da4c82a34ec601d8330",
+    "robot_agent/keypoint_detector.py": "07aaaaa76f573a78b6fcd69446a8a2bfe758bfea5c4d2e854033f7d086cbc426"
+  }
+}

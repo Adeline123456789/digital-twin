@@ -75,8 +75,11 @@ def build():
                         for key, ((u, v), distance) in enumerate(zip(uv, z)):
                             x, y = int(round(u)), int(round(v))
                             valid = distance > 0 and 1 <= x < 639 and 1 <= y < 479
-                            # Raster tolerance: pin surface 1 mm, recessed hole 6 mm.
-                            seen.append(bool(valid and abs(distance - depth[y-1:y+2, x-1:x+2].max()) < (.001 if key == 0 else .006)))
+                            # A hole has no surface at its opening: seeing geometry
+                            # behind it is valid; an object in front is occlusion.
+                            sample_depth = depth[y-1:y+2, x-1:x+2].max() if valid else 0.
+                            visible = (abs(distance - sample_depth) < .001 if key == 0 else sample_depth >= distance - .002)
+                            seen.append(bool(valid and visible))
                         # Brightness, contrast, image texture, blur and explicit occlusion.
                         image = (rgb.astype(float) - 127) * rng.uniform(.8, 1.2) + 127
                         image = image * rng.uniform(.8, 1.2) + rng.normal(0, 2, image.shape)
