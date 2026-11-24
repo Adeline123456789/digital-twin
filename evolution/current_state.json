@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Full-episode post-grasp residual research continuing to independent Stages B/C/D under Research Gate Amendment V1; dual model/right-arm task",
-  "status": "FULL_TASK_RESIDUAL_STAGE_B_VALID",
+  "status": "FULL_TASK_RESIDUAL_STAGE_C_VALID_STAGE_D_RUNNING",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 5
   },
-  "next_grounded_work": "Commit and push the valid Stage B Frozen Nominal audit, then run the Stage C P0/P1 post-grasp observability experiment.",
-  "updated_at": "2026-11-24T06:09:18+00:00",
+  "next_grounded_work": "Finish the frozen Stage D boundary full-task replay, then apply the Stage E prerequisite gate without changing the perturbation range.",
+  "updated_at": "2026-11-24T06:31:38+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -252,9 +252,9 @@
     "design": "experiments/residual_fulltask_mvp/design.json",
     "gate_amendment": "docs/RESEARCH_GATE_AMENDMENT_V1.md",
     "gate_amendment_record": "experiments/residual_fulltask_mvp/stage_a_interpretation_amendment.json",
-    "stage": "B_COMPLETE",
-    "status": "STAGE_B_VALID",
-    "program_decision": "CONTINUE_TO_C_D",
+    "stage": "C_COMPLETE_D_RUNNING",
+    "status": "STAGE_C_VALID_P0_SELECTED",
+    "program_decision": "CONTINUE_D_BOUNDARY_AUDIT",
     "candidate_mapping": "Stage A B2 is a new pure-proprioception version of the historical B3_structured 15-frame architecture; historical artifacts remain unchanged.",
     "frozen_counts": {
       "training_seeds": 5,
@@ -271,7 +271,9 @@
       "real_data_reads": 0,
       "real_training": 0,
       "runtime_llm": 0,
-      "twin_mutations": 0
+      "twin_mutations": 0,
+      "stage_c_prefix_rollouts": 33,
+      "stage_d_pilot_conditions": 60
     },
     "background": {
       "evaluation_processes": "completed; saved PIDs exited",
@@ -368,6 +370,38 @@
       "planner_calls": 0,
       "privileged_policy_reads": 0,
       "new_simulation_rollouts": 0,
+      "hardware": 0,
+      "real_data_reads": 0
+    },
+    "stage_c": {
+      "validity": "VALID",
+      "hypothesis": "SUPPORTED",
+      "claims_allowed": [
+        "P0 distinguishes the frozen formal perturbations in held-out simulation Episodes."
+      ],
+      "claims_not_allowed": [
+        "The audit establishes robustness to real sensor noise or real robot transfer.",
+        "P1 is deployable before simulator-to-real right-wrist viewpoint correspondence is verified."
+      ],
+      "program_decision": "CONTINUE",
+      "selected_mode": "P0",
+      "artifact": "experiments/residual_fulltask_mvp/observability.json",
+      "train_episodes": 12,
+      "heldout_episodes": 20,
+      "P0": {
+        "detection_auroc": 1.0,
+        "direction_accuracy": 0.95,
+        "xy_rmse_mm": 0.02145976132988755,
+        "first_passing_delay_frames": 1,
+        "deployable": true
+      },
+      "P1": {
+        "detection_auroc": 1.0,
+        "direction_accuracy": 0.95,
+        "deployable": false,
+        "reason": "Current hardware extrinsics are unverified; real-data read is denied."
+      },
+      "student_privileged_inputs": 0,
       "hardware": 0,
       "real_data_reads": 0
     },
