@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
+  "stage": "TRAINING_COMPLETE",
+  "validity": "VALID",
+  "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+  "fixed_budget_checkpoint_selection": "final checkpoint only; no held-out tuning",
+  "seeds": [
+    {
+      "schema_version": 1,
+      "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
+      "variant": "B2_HISTORY_PPO_STRUCTURED",
+      "seed": 62001,
+      "config": {
+        "variant": "B2_HISTORY_PPO_STRUCTURED",
+        "seeds": [
+          62001,
+          62002,
+          62003
+        ],
+        "steps_per_seed": 32768,
+        "parallel_envs_per_seed": 4,
+        "history_frames": 15,
+        "reward": "structured",
+        "n_steps": 128,
+        "batch_size": 256,
+        "n_epochs": 5,
+        "learning_rate": 0.0003,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "ent_coef": 0.001,
+        "network": {
+          "policy": [
+            64,
+            64
+          ],
+          "value": [
+            64,
+            64
+          ]
+        },
+        "residual_bounds": {
+          "position_m_per_axis": 0.002,
+          "speed_m_s_per_axis": 0.003,
+          "acceleration_m_s2_per_axis": 0.03,
+          "joint_correction_rad_per_joint": 0.03
+        },
+        "checkpoint_selection": "final fixed-budget checkpoint only",
+        "heldout_tuning": 0
+      },
+      "actual_steps": 32768,
+      "episodes": 160,
+      "wall_s": 6642.490786031121,
+      "source_hashes": {
+        "scripts/train_full_task_residual.py": "c1ca6e8e4b474ab7c766a20f500f9604a125170acd2fcda50267105b261ddc18",
+        "robot_agent/full_task_residual_env.py": "ee273341a0f619b0b6da530f2eb1bfb05904ebe39bd30817c4d6b9e3df9adc7e",
+        "robot_agent/full_task_observation.py": "5355baeb869a720db1a4fe8145942f894a7416beb746b2ab7668d0ea7f080701",
+        "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+        "robot_agent/nominal_reference.py": "1d39d8988933022c8cde6c7b641f6adfced102a5c686c5da4db7ab704ff012f9"
+      },
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "policy": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/training/seed_62001/policy.zip",
+        "sha256": "41c5f4c075985b8a11246d665cd593b93f4602496132e0480961e26a3cc74a51"
+      },
+      "observation_scope": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "privileged_student_inputs": 0,
+      "hardware_executions": 0,
+      "real_data_reads": 0,
+      "scope": "Simulation-only fixed-budget final checkpoint; no held-out checkpoint selection",
+      "completed_utc": "2026-11-24T10:34:35.992165+00:00",
+      "record_sha256": "8d5265dd25fcea942a4ace53010e2fd04d56596fe14e012a7290a0845952df28",
+      "training_successes": 79,
+      "training_terminal_episodes": 160,
+      "training_success_rate": 0.49375,
+      "episodes_sha256": "30fd904219ba8ee9e9f96ff6bf69ca166b4c524cd734d830a0a4713bd4f7c285"
+    },
+    {
+      "schema_version": 1,
+      "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
+      "variant": "B2_HISTORY_PPO_STRUCTURED",
+      "seed": 62002,
+      "config": {
+        "variant": "B2_HISTORY_PPO_STRUCTURED",
+        "seeds": [
+          62001,
+          62002,
+          62003
+        ],
+        "steps_per_seed": 32768,
+        "parallel_envs_per_seed": 4,
+        "history_frames": 15,
+        "reward": "structured",
+        "n_steps": 128,
+        "batch_size": 256,
+        "n_epochs": 5,
+        "learning_rate": 0.0003,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "ent_coef": 0.001,
+        "network": {
+          "policy": [
+            64,
+            64
+          ],
+          "value": [
+            64,
+            64
+          ]
+        },
+        "residual_bounds": {
+          "position_m_per_axis": 0.002,
+          "speed_m_s_per_axis": 0.003,
+          "acceleration_m_s2_per_axis": 0.03,
+          "joint_correction_rad_per_joint": 0.03
+        },
+        "checkpoint_selection": "final fixed-budget checkpoint only",
+        "heldout_tuning": 0
+      },
+      "actual_steps": 32768,
+      "episodes": 159,
+      "wall_s": 7042.868509795051,
+      "source_hashes": {
+        "scripts/train_full_task_residual.py": "c1ca6e8e4b474ab7c766a20f500f9604a125170acd2fcda50267105b261ddc18",
+        "robot_agent/full_task_residual_env.py": "ee273341a0f619b0b6da530f2eb1bfb05904ebe39bd30817c4d6b9e3df9adc7e",
+        "robot_agent/full_task_observation.py": "5355baeb869a720db1a4fe8145942f894a7416beb746b2ab7668d0ea7f080701",
+        "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+        "robot_agent/nominal_reference.py": "1d39d8988933022c8cde6c7b641f6adfced102a5c686c5da4db7ab704ff012f9"
+      },
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "policy": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/training/seed_62002/policy.zip",
+        "sha256": "5686afa60b53868bf5fc809193aed2545a795e3c3094c7812236b4a2d41022cc"
+      },
+      "observation_scope": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "privileged_student_inputs": 0,
+      "hardware_executions": 0,
+      "real_data_reads": 0,
+      "scope": "Simulation-only fixed-budget final checkpoint; no held-out checkpoint selection",
+      "completed_utc": "2026-11-24T10:41:16.057943+00:00",
+      "record_sha256": "7cb8e3d86e4a0f29b6f98b162c06453ffc57faea82a9140896d7dbb2e4d20bbe",
+      "training_successes": 75,
+      "training_terminal_episodes": 159,
+      "training_success_rate": 0.4716981132075472,
+      "episodes_sha256": "f7433687d32402403f92e549fe41fb9362d21bb1413e06ccc35c2a9c03c2560f"
+    },
+    {
+      "schema_version": 1,
+      "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
+      "variant": "B2_HISTORY_PPO_STRUCTURED",
+      "seed": 62003,
+      "config": {
+        "variant": "B2_HISTORY_PPO_STRUCTURED",
+        "seeds": [
+          62001,
+          62002,
+          62003
+        ],
+        "steps_per_seed": 32768,
+        "parallel_envs_per_seed": 4,
+        "history_frames": 15,
+        "reward": "structured",
+        "n_steps": 128,
+        "batch_size": 256,
+        "n_epochs": 5,
+        "learning_rate": 0.0003,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "ent_coef": 0.001,
+        "network": {
+          "policy": [
+            64,
+            64
+          ],
+          "value": [
+            64,
+            64
+          ]
+        },
+        "residual_bounds": {
+          "position_m_per_axis": 0.002,
+          "speed_m_s_per_axis": 0.003,
+          "acceleration_m_s2_per_axis": 0.03,
+          "joint_correction_rad_per_joint": 0.03
+        },
+        "checkpoint_selection": "final fixed-budget checkpoint only",
+        "heldout_tuning": 0
+      },
+      "actual_steps": 32768,
+      "episodes": 154,
+      "wall_s": 6639.136655365117,
+      "source_hashes": {
+        "scripts/train_full_task_residual.py": "c1ca6e8e4b474ab7c766a20f500f9604a125170acd2fcda50267105b261ddc18",
+        "robot_agent/full_task_residual_env.py": "ee273341a0f619b0b6da530f2eb1bfb05904ebe39bd30817c4d6b9e3df9adc7e",
+        "robot_agent/full_task_observation.py": "5355baeb869a720db1a4fe8145942f894a7416beb746b2ab7668d0ea7f080701",
+        "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+        "robot_agent/nominal_reference.py": "1d39d8988933022c8cde6c7b641f6adfced102a5c686c5da4db7ab704ff012f9"
+      },
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "policy": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/training/seed_62003/policy.zip",
+        "sha256": "9d7758d0691bfa5e2d6b9bbc4f783077d47e74bc56cf990c1fdc365989e48d42"
+      },
+      "observation_scope": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "privileged_student_inputs": 0,
+      "hardware_executions": 0,
+      "real_data_reads": 0,
+      "scope": "Simulation-only fixed-budget final checkpoint; no held-out checkpoint selection",
+      "completed_utc": "2026-11-24T10:34:32.580900+00:00",
+      "record_sha256": "19ff18aba659acff875fb49460dde648ceaf30abab6df7647c766945fcbd85a3",
+      "training_successes": 59,
+      "training_terminal_episodes": 154,
+      "training_success_rate": 0.38311688311688313,
+      "episodes_sha256": "41653feb658502ac7a224c03cc9e0314aee04448c4ed07681097ea75fc18ab72"
+    }
+  ],
+  "summary": {
+    "seeds": 3,
+    "actual_steps": 98304,
+    "wall_s_max_parallel": 7042.868509795051,
+    "policies": 3,
+    "privileged_student_inputs": 0
+  },
+  "permissions": {
+    "hardware_executions": 0,
+    "real_data_reads": 0,
+    "real_training": 0,
+    "runtime_llm_calls": 0,
+    "automatic_twin_mutations": 0,
+    "nominal_updates": 0
+  }
+}

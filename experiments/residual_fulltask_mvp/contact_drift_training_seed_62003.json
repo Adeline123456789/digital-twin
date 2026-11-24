@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
+  "variant": "B2_HISTORY_PPO_STRUCTURED",
+  "seed": 62003,
+  "config": {
+    "variant": "B2_HISTORY_PPO_STRUCTURED",
+    "seeds": [
+      62001,
+      62002,
+      62003
+    ],
+    "steps_per_seed": 32768,
+    "parallel_envs_per_seed": 4,
+    "history_frames": 15,
+    "reward": "structured",
+    "n_steps": 128,
+    "batch_size": 256,
+    "n_epochs": 5,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "ent_coef": 0.001,
+    "network": {
+      "policy": [
+        64,
+        64
+      ],
+      "value": [
+        64,
+        64
+      ]
+    },
+    "residual_bounds": {
+      "position_m_per_axis": 0.002,
+      "speed_m_s_per_axis": 0.003,
+      "acceleration_m_s2_per_axis": 0.03,
+      "joint_correction_rad_per_joint": 0.03
+    },
+    "checkpoint_selection": "final fixed-budget checkpoint only",
+    "heldout_tuning": 0
+  },
+  "actual_steps": 32768,
+  "episodes": 154,
+  "wall_s": 6639.136655365117,
+  "source_hashes": {
+    "scripts/train_full_task_residual.py": "c1ca6e8e4b474ab7c766a20f500f9604a125170acd2fcda50267105b261ddc18",
+    "robot_agent/full_task_residual_env.py": "ee273341a0f619b0b6da530f2eb1bfb05904ebe39bd30817c4d6b9e3df9adc7e",
+    "robot_agent/full_task_observation.py": "5355baeb869a720db1a4fe8145942f894a7416beb746b2ab7668d0ea7f080701",
+    "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+    "robot_agent/nominal_reference.py": "1d39d8988933022c8cde6c7b641f6adfced102a5c686c5da4db7ab704ff012f9"
+  },
+  "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+  "policy": {
+    "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/training/seed_62003/policy.zip",
+    "sha256": "9d7758d0691bfa5e2d6b9bbc4f783077d47e74bc56cf990c1fdc365989e48d42"
+  },
+  "observation_scope": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+  "privileged_student_inputs": 0,
+  "hardware_executions": 0,
+  "real_data_reads": 0,
+  "scope": "Simulation-only fixed-budget final checkpoint; no held-out checkpoint selection",
+  "completed_utc": "2026-11-24T10:34:32.580900+00:00"
+}

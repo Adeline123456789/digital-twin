@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Core full-episode post-grasp Residual experiment under Core Experiment Execution Amendment V2; CONTACT_MEDIATED_DRIFT_V1; dual model/right-arm task",
-  "status": "CORE_RESIDUAL_EXPERIMENT_RUNNING",
+  "status": "CORE_RESIDUAL_EXPERIMENT_COMPLETE_NOT_SUPPORTED",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -75,10 +75,10 @@
     "this_batch_subagent_limit": 1,
     "this_batch_subagents_used": 1,
     "monetary_cost": null,
-    "additional_experiment_models": 5
+    "additional_experiment_models": 8
   },
-  "next_grounded_work": "At the scheduled post-ETA check, verify all three fixed-budget checkpoints, then run the new paired held-out B0/B1/B2 evaluation without tuning.",
-  "updated_at": "2026-11-24T08:44:45+00:00",
+  "next_grounded_work": "Stop after the completed core experiment. Preserve the valid NOT_SUPPORTED result; do not tune on held-out outcomes or start an extension without a new user-approved experiment design.",
+  "updated_at": "2026-11-24T11:45:32+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -254,9 +254,9 @@
     "gate_amendment_record": "experiments/residual_fulltask_mvp/stage_a_interpretation_amendment.json",
     "core_experiment_amendment": "docs/CORE_EXPERIMENT_EXECUTION_AMENDMENT_V2.md",
     "core_experiment_amendment_record": "experiments/residual_fulltask_mvp/core_experiment_amendment_v2.json",
-    "stage": "CONTACT_DRIFT_PILOT",
-    "status": "CORE_RESIDUAL_EXPERIMENT_RUNNING",
-    "program_decision": "CONTINUE_CORE_RESIDUAL_EXPERIMENT",
+    "stage": "CONTACT_DRIFT_COMPLETE",
+    "status": "CORE_RESIDUAL_EXPERIMENT_COMPLETE_NOT_SUPPORTED",
+    "program_decision": "HOLD_AFTER_CORE_EXPERIMENT",
     "candidate_mapping": "Stage A B2 is a new pure-proprioception version of the historical B3_structured 15-frame architecture; historical artifacts remain unchanged.",
     "frozen_counts": {
       "training_seeds": 5,
@@ -265,9 +265,9 @@
       "nominal_conditions": 20
     },
     "budget": {
-      "training_policy_steps": 81920,
-      "training_rollouts": 1000,
-      "evaluation_rollouts": 588,
+      "training_policy_steps": 180224,
+      "training_rollouts": 1473,
+      "evaluation_rollouts": 908,
       "subagents": 1,
       "hardware": 0,
       "real_data_reads": 0,
@@ -277,7 +277,13 @@
       "stage_c_prefix_rollouts": 225,
       "stage_d_pilot_conditions": 60,
       "stage_d_full_task_rollouts": 5,
-      "stage_e_training_steps": 0
+      "stage_a_training_policy_steps": 81920,
+      "stage_a_training_rollouts": 1000,
+      "stage_a_evaluation_rollouts": 588,
+      "stage_e_pilot_conditions": 136,
+      "stage_e_training_steps": 98304,
+      "stage_e_training_rollouts": 473,
+      "stage_e_heldout_rollouts": 320
     },
     "background": {
       "evaluation_processes": "completed; saved PIDs exited",
@@ -450,11 +456,18 @@
       "real_data_reads": 0
     },
     "stage_e": {
-      "status": "CONTACT_DRIFT_BACKGROUND_TRAINING_RUNNING",
-      "training_steps": 0,
+      "status": "CONTACT_DRIFT_HELDOUT_COMPLETE",
+      "validity": "VALID",
+      "hypothesis": "NOT_SUPPORTED",
+      "program_decision": "HOLD",
+      "failure_category": "HELDOUT_GENERALIZATION_FAILURE",
+      "training_steps": 98304,
       "student_mode": "P0_AUTHORIZED_BY_AMENDMENT_V2",
       "pilot": "experiments/residual_fulltask_mvp/contact_drift_pilot.json",
       "design": "experiments/residual_fulltask_mvp/contact_drift_design.json",
+      "training": "experiments/residual_fulltask_mvp/contact_drift_training.json",
+      "heldout": "experiments/residual_fulltask_mvp/contact_drift_heldout.json",
+      "report": "experiments/residual_fulltask_mvp/CONTACT_DRIFT_RESIDUAL_REPORT.md",
       "pilot_summary": {
         "valid_conditions": 23,
         "frozen_nominal_successes": 13,
@@ -480,18 +493,64 @@
       },
       "background_training": {
         "started_utc": "2026-11-24T08:43:48+00:00",
+        "completed_utc": "2026-11-24T10:41:16.057943+00:00",
         "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
         "seeds": [62001, 62002, 62003],
         "parallel_envs_per_seed": 4,
-        "expected_completion_local": "2026-11-24T17:30:00+08:00",
         "logs": ".local/residual_fulltask_mvp/contact_drift_training_logs/seed_<seed>.log",
         "progress": "DATA_ROOT/self_evolution/residual_fulltask_mvp/contact_drift/training/seed_<seed>/progress.json",
-        "checkpoint_status": "NOT_YET_COMPLETE"
+        "checkpoint_status": "THREE_FINAL_FIXED_BUDGET_CHECKPOINTS_VERIFIED",
+        "policy_sha256": {
+          "62001": "41c5f4c075985b8a11246d665cd593b93f4602496132e0480961e26a3cc74a51",
+          "62002": "5686afa60b53868bf5fc809193aed2545a795e3c3094c7812236b4a2d41022cc",
+          "62003": "9d7758d0691bfa5e2d6b9bbc4f783077d47e74bc56cf990c1fdc365989e48d42"
+        },
+        "privileged_student_inputs": 0,
+        "heldout_tuning": 0
       },
-      "reason": "Four-direction classification remains diagnostic. A valid mixed-outcome contact-mediated distribution is frozen before training and held-out generation."
+      "heldout_summary": {
+        "B0_frozen_nominal": "35/64",
+        "B1_deterministic_search": "35/64",
+        "B2_by_training_seed": {
+          "62001": "35/64 (0.00 pp vs B0; 9 collisions)",
+          "62002": "28/64 (-10.9375 pp vs B0; 14 collisions)",
+          "62003": "0/64 (-54.6875 pp vs B0; 23 collisions)"
+        },
+        "B2_mean_success_rate": 0.328125,
+        "B2_mean_improvement_over_B0_pp": -21.875,
+        "B2_hierarchical_paired_ci95_pp": [-51.5625, 0.0],
+        "positive_training_seeds": 0,
+        "recovered_B0_failures_mean": 0.0,
+        "spoiled_B0_successes_mean": 14.0,
+        "B2_collision_failures_total": 46,
+        "training_seed_success_rate_variance": 0.083740234375
+      },
+      "verified_bounds": {
+        "action_bounds_valid": true,
+        "max_residual_m": 0.0016478795670862969,
+        "limit_residual_m": 0.002,
+        "max_residual_speed_m_s": 0.0010625626125813832,
+        "limit_residual_speed_m_s": 0.003,
+        "max_residual_acceleration_m_s2": 0.0052242140904440685,
+        "limit_residual_acceleration_m_s2": 0.03,
+        "max_joint_correction_rad": 0.01104982672308119,
+        "limit_joint_correction_rad": 0.03
+      },
+      "claims_allowed": [
+        "The frozen contact-mediated challenge and paired held-out evaluation are valid under Amendment V2.",
+        "None of the three fixed-budget P0 PPO seeds recovered a B0 failure; the mean effect versus B0 was -21.875 percentage points."
+      ],
+      "claims_not_allowed": [
+        "P0 History PPO improves recovery over Frozen Nominal or deterministic search on CONTACT_MEDIATED_DRIFT_V1.",
+        "The result establishes real-robot transfer or a real-world slip distribution."
+      ],
+      "reason": "The experiment is valid, but B2 showed no recovered B0 failures, zero positive seeds, substantial seed variance and 46 collision failures; the preregistered support taxonomy therefore yields NOT_SUPPORTED."
     },
     "core_experiment_v2": {
-      "status": "CONTACT_DRIFT_BACKGROUND_TRAINING_RUNNING",
+      "status": "CONTACT_DRIFT_COMPLETE_NOT_SUPPORTED",
+      "validity": "VALID",
+      "hypothesis": "NOT_SUPPORTED",
+      "program_decision": "HOLD",
       "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
       "pilot_force_n": [5, 25],
       "pilot_duration_ms": [50, 200],
@@ -506,21 +565,39 @@
       "formal_pilot_failures": 10,
       "pilot_artifact": "experiments/residual_fulltask_mvp/contact_drift_pilot.json",
       "design_artifact": "experiments/residual_fulltask_mvp/contact_drift_design.json",
+      "training_artifact": "experiments/residual_fulltask_mvp/contact_drift_training.json",
+      "heldout_artifact": "experiments/residual_fulltask_mvp/contact_drift_heldout.json",
+      "report": "experiments/residual_fulltask_mvp/CONTACT_DRIFT_RESIDUAL_REPORT.md",
+      "training_policy_steps": 98304,
+      "training_terminal_episodes": 473,
+      "heldout_evaluation_rollouts": 320,
+      "trained_policies": 3,
+      "finding": "NOT_SUPPORTED",
       "hardware": 0,
       "real_data_reads": 0,
+      "real_training": 0,
+      "runtime_llm_calls": 0,
+      "automatic_twin_mutations": 0,
+      "nominal_updates": 0,
       "friction_changes": 0,
       "mass_changes": 0,
-      "solver_changes": 0
+      "solver_changes": 0,
+      "success_detector_changes": 0,
+      "heldout_tuning": 0,
+      "privileged_student_inputs": 0
     },
     "validation": {
       "focused_tests": "7 passed",
-      "repository_tests": "181 passed and 27 subtests passed across existing compatible environments; 1 private-control import test remained excluded by the standing prohibition.",
+      "repository_tests": "191 passed and 27 subtests passed in the compatible environment; 1 private-control import test was deselected and the two legacy pyrealsense2-dependent test files were excluded as required.",
       "condition_count": "Each of B0, B1 and five B2 policies has 64 held-out + 20 nominal conditions.",
       "summary_reproduction": "PASS: rerun produced identical SHA-256 423984b0b48da62c1a591e1f839f8c30c0f1f1c5476672cacbe148db8426bf49",
       "taskbook_copy": "Matches the supplied taskbook content; repository copy adds only the conventional final newline.",
       "stage_b_c_d_focused_tests": "11 passed",
       "contact_drift_focused_tests": "10 passed",
-      "contact_drift_runtime_smoke": "PASS: paired pilot and B0 environment agree on freeze_000; frame 1132, 192 force substeps, no collision"
+      "contact_drift_runtime_smoke": "PASS: paired pilot and B0 environment agree on freeze_000; frame 1132, 192 force substeps, no collision",
+      "contact_drift_training_integrity": "PASS: three distinct policy hashes, design hash 792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794, 32768 steps per seed, final checkpoints only, privileged Student inputs 0.",
+      "contact_drift_heldout_integrity": "PASS: B0, B1 and all three B2 policies used the same 64 conditions; action bounds valid; held-out tuning 0.",
+      "contact_drift_summary_reproduction": "PASS: rerun reproduced training 7fd8d3f43e65d78b3399adf9d6e660ef0c9a18c562371a5041f1aa2c4889ca5a, heldout c991539633c497e32439b313ff5113170f87ce03db63276fecdc56aa5629f632 and report e0e1a19a9922e2dffca82c30d57b3c40eceb501de384fb12d66ac9c1cfaccfd0."
     }
   }
 }

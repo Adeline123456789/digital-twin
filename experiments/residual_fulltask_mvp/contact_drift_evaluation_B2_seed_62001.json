@@ -1,0 +1,3155 @@
+{
+  "schema_version": 1,
+  "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
+  "variant": "B2",
+  "training_seed": 62001,
+  "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+  "heldout_generator_seed": 83601,
+  "conditions": [
+    {
+      "condition_id": "heldout_000",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.26816627050127306,
+      "seed": 84001
+    },
+    {
+      "condition_id": "heldout_001",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.26801038726251614,
+      "seed": 84002
+    },
+    {
+      "condition_id": "heldout_002",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27629681183242155,
+      "seed": 84003
+    },
+    {
+      "condition_id": "heldout_003",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0696218557086483,
+      "seed": 84004
+    },
+    {
+      "condition_id": "heldout_004",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.059580121739397,
+      "seed": 84005
+    },
+    {
+      "condition_id": "heldout_005",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.268863620407525,
+      "seed": 84006
+    },
+    {
+      "condition_id": "heldout_006",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0578677290451595,
+      "seed": 84007
+    },
+    {
+      "condition_id": "heldout_007",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.063468387624816,
+      "seed": 84008
+    },
+    {
+      "condition_id": "heldout_008",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27786191465133925,
+      "seed": 84009
+    },
+    {
+      "condition_id": "heldout_009",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2797492039865661,
+      "seed": 84010
+    },
+    {
+      "condition_id": "heldout_010",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2726927433936393,
+      "seed": 84011
+    },
+    {
+      "condition_id": "heldout_011",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27273561041081107,
+      "seed": 84012
+    },
+    {
+      "condition_id": "heldout_012",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.26916898347801654,
+      "seed": 84013
+    },
+    {
+      "condition_id": "heldout_013",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27969284025396735,
+      "seed": 84014
+    },
+    {
+      "condition_id": "heldout_014",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0560460791506732,
+      "seed": 84015
+    },
+    {
+      "condition_id": "heldout_015",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0645728895333078,
+      "seed": 84016
+    },
+    {
+      "condition_id": "heldout_016",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0613961019060014,
+      "seed": 84017
+    },
+    {
+      "condition_id": "heldout_017",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.065303464405253,
+      "seed": 84018
+    },
+    {
+      "condition_id": "heldout_018",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0746150495777445,
+      "seed": 84019
+    },
+    {
+      "condition_id": "heldout_019",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.26833517085378067,
+      "seed": 84020
+    },
+    {
+      "condition_id": "heldout_020",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.075305726019255,
+      "seed": 84021
+    },
+    {
+      "condition_id": "heldout_021",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0665403883368778,
+      "seed": 84022
+    },
+    {
+      "condition_id": "heldout_022",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0761734281460211,
+      "seed": 84023
+    },
+    {
+      "condition_id": "heldout_023",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0540374283578577,
+      "seed": 84024
+    },
+    {
+      "condition_id": "heldout_024",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0754041828176992,
+      "seed": 84025
+    },
+    {
+      "condition_id": "heldout_025",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27033037854881087,
+      "seed": 84026
+    },
+    {
+      "condition_id": "heldout_026",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0757433912782695,
+      "seed": 84027
+    },
+    {
+      "condition_id": "heldout_027",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.056750358163235,
+      "seed": 84028
+    },
+    {
+      "condition_id": "heldout_028",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.275483027655932,
+      "seed": 84029
+    },
+    {
+      "condition_id": "heldout_029",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0788373622086023,
+      "seed": 84030
+    },
+    {
+      "condition_id": "heldout_030",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27773162318932254,
+      "seed": 84031
+    },
+    {
+      "condition_id": "heldout_031",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0720974434234494,
+      "seed": 84032
+    },
+    {
+      "condition_id": "heldout_032",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.061321177296946,
+      "seed": 84033
+    },
+    {
+      "condition_id": "heldout_033",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27596635782980206,
+      "seed": 84034
+    },
+    {
+      "condition_id": "heldout_034",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.058822652607879,
+      "seed": 84035
+    },
+    {
+      "condition_id": "heldout_035",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2765640193951003,
+      "seed": 84036
+    },
+    {
+      "condition_id": "heldout_036",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0508633834236174,
+      "seed": 84037
+    },
+    {
+      "condition_id": "heldout_037",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0613137668991501,
+      "seed": 84038
+    },
+    {
+      "condition_id": "heldout_038",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27945001270045,
+      "seed": 84039
+    },
+    {
+      "condition_id": "heldout_039",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27024506080750116,
+      "seed": 84040
+    },
+    {
+      "condition_id": "heldout_040",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0612717802392861,
+      "seed": 84041
+    },
+    {
+      "condition_id": "heldout_041",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27317933658357135,
+      "seed": 84042
+    },
+    {
+      "condition_id": "heldout_042",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.058480460240451,
+      "seed": 84043
+    },
+    {
+      "condition_id": "heldout_043",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2720992074766529,
+      "seed": 84044
+    },
+    {
+      "condition_id": "heldout_044",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27648207598550073,
+      "seed": 84045
+    },
+    {
+      "condition_id": "heldout_045",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27286759320449827,
+      "seed": 84046
+    },
+    {
+      "condition_id": "heldout_046",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2736998667540079,
+      "seed": 84047
+    },
+    {
+      "condition_id": "heldout_047",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0505251030078153,
+      "seed": 84048
+    },
+    {
+      "condition_id": "heldout_048",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0597450168791103,
+      "seed": 84049
+    },
+    {
+      "condition_id": "heldout_049",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2774441315490013,
+      "seed": 84050
+    },
+    {
+      "condition_id": "heldout_050",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0782113818596122,
+      "seed": 84051
+    },
+    {
+      "condition_id": "heldout_051",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2682294582014094,
+      "seed": 84052
+    },
+    {
+      "condition_id": "heldout_052",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27632913341364373,
+      "seed": 84053
+    },
+    {
+      "condition_id": "heldout_053",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0654748694882867,
+      "seed": 84054
+    },
+    {
+      "condition_id": "heldout_054",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0503129922518668,
+      "seed": 84055
+    },
+    {
+      "condition_id": "heldout_055",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2682189648514357,
+      "seed": 84056
+    },
+    {
+      "condition_id": "heldout_056",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.27498305402650114,
+      "seed": 84057
+    },
+    {
+      "condition_id": "heldout_057",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0715659475958168,
+      "seed": 84058
+    },
+    {
+      "condition_id": "heldout_058",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0759425911730889,
+      "seed": 84059
+    },
+    {
+      "condition_id": "heldout_059",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.051493059709639,
+      "seed": 84060
+    },
+    {
+      "condition_id": "heldout_060",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": -0.2753880753692121,
+      "seed": 84061
+    },
+    {
+      "condition_id": "heldout_061",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0753735277926317,
+      "seed": 84062
+    },
+    {
+      "condition_id": "heldout_062",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0683819203740188,
+      "seed": 84063
+    },
+    {
+      "condition_id": "heldout_063",
+      "phase": "lift_middle",
+      "force_n": 8.0,
+      "duration_ms": 50.0,
+      "angle_rad": 1.0733500799470628,
+      "seed": 84064
+    }
+  ],
+  "cases": [
+    {
+      "condition_id": "heldout_000",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 112.00259881303646,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_000",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.26816627050127306,
+        "seed": 84001
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.893245836963448e-05,
+      "correction_integral_m_s": 0.010037576922824126,
+      "correction_variation_m": 0.0023416342789818433,
+      "max_residual_m": 0.0008407474028253497,
+      "max_residual_speed_m_s": 0.000599084611669484,
+      "max_residual_acceleration_m_s2": 0.003099583277542588,
+      "max_joint_correction_rad": 0.004747024670650468,
+      "final_metrics": {
+        "lateral_error_m": 0.0031302120531045362,
+        "face_gap_m": 0.006938278249638573,
+        "yaw_rad": 0.008382315898976637,
+        "tilt_rad": 0.3207124841569155,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_000.json",
+        "sha256": "7f8bc60347202bed52adb2a2fe339782ecd37d3b844805e6538d2aebe4955fd7"
+      }
+    },
+    {
+      "condition_id": "heldout_001",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 152.35453264019452,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_001",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.26801038726251614,
+        "seed": 84002
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.9294249535837745e-05,
+      "correction_integral_m_s": 0.010038237126443895,
+      "correction_variation_m": 0.00234228158015287,
+      "max_residual_m": 0.0008410791521210853,
+      "max_residual_speed_m_s": 0.0005993228557810762,
+      "max_residual_acceleration_m_s2": 0.003101391831159815,
+      "max_joint_correction_rad": 0.004749406564897418,
+      "final_metrics": {
+        "lateral_error_m": 0.005357779621320086,
+        "face_gap_m": 0.010856167703497066,
+        "yaw_rad": -0.039363157464770024,
+        "tilt_rad": 0.4040133171915231,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_001.json",
+        "sha256": "b83afe198f6acfd62812cbc8744a26097601a06ac542e2f70cf5cfe90e4c914b"
+      }
+    },
+    {
+      "condition_id": "heldout_002",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 95.29292887309566,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_002",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27629681183242155,
+        "seed": 84003
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.0001841654239594557,
+      "correction_integral_m_s": 0.00762202532934281,
+      "correction_variation_m": 0.002641724401224192,
+      "max_residual_m": 0.0008265861098483549,
+      "max_residual_speed_m_s": 0.0005890553612884251,
+      "max_residual_acceleration_m_s2": 0.0030668308193477867,
+      "max_joint_correction_rad": 0.004640355037069721,
+      "final_metrics": {
+        "lateral_error_m": 0.02465346510238466,
+        "face_gap_m": 0.001050668251374072,
+        "yaw_rad": 0.06411178410724287,
+        "tilt_rad": 1.8511056741925889,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_002.json",
+        "sha256": "71f9aa7bbb3bc7e928510eada35f888f7d10657c3f5b32e28152d2f82c38f587"
+      }
+    },
+    {
+      "condition_id": "heldout_003",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 146.63262621802278,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_003",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0696218557086483,
+        "seed": 84004
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3711989207441427e-05,
+      "correction_integral_m_s": 0.011355551192622533,
+      "correction_variation_m": 0.0020849094942491458,
+      "max_residual_m": 0.000755933221225001,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690868385651026,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923127146113496,
+        "face_gap_m": 0.00019999955253544033,
+        "yaw_rad": 0.0002944758948378573,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_003.json",
+        "sha256": "74573434001c0a343a960b3243f9be2077f806dda6b6bd59124c7b34add7f88a"
+      }
+    },
+    {
+      "condition_id": "heldout_004",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 137.69349536299706,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_004",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.059580121739397,
+        "seed": 84005
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.351337451209065e-05,
+      "correction_integral_m_s": 0.011349893377653884,
+      "correction_variation_m": 0.0020850638358313393,
+      "max_residual_m": 0.0007557846758516852,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690038775758909,
+      "final_metrics": {
+        "lateral_error_m": 0.0007906344443067485,
+        "face_gap_m": 0.00019999946116755485,
+        "yaw_rad": 0.00032998832633814653,
+        "tilt_rad": 2.1073424255447017e-08,
+        "seated": true,
+        "hold_seconds": 20.500000000000178,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_004.json",
+        "sha256": "edbfeae4a62d8e5d015eedac48ecc425b1d93c9d1bb6b16777a15aeb5c58a4a2"
+      }
+    },
+    {
+      "condition_id": "heldout_005",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 107.852489677025,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_005",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.268863620407525,
+        "seed": 84006
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.730965094905071e-05,
+      "correction_integral_m_s": 0.010041256211343535,
+      "correction_variation_m": 0.00234381072709999,
+      "max_residual_m": 0.0008417269510078055,
+      "max_residual_speed_m_s": 0.0005997774342702952,
+      "max_residual_acceleration_m_s2": 0.00310156150317727,
+      "max_joint_correction_rad": 0.004757280655016016,
+      "final_metrics": {
+        "lateral_error_m": 0.005362653640178988,
+        "face_gap_m": 0.010952256460261336,
+        "yaw_rad": -0.030536867802251056,
+        "tilt_rad": 0.4038488214062542,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_005.json",
+        "sha256": "76e563fbed27b21e70df211c98d8d9569880ffcccb50f738f4602cb9324d28ff"
+      }
+    },
+    {
+      "condition_id": "heldout_006",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 232.22234136704355,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_006",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0578677290451595,
+        "seed": 84007
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.389551690305727e-05,
+      "correction_integral_m_s": 0.011342031858104338,
+      "correction_variation_m": 0.002085117223254276,
+      "max_residual_m": 0.0007555627342175389,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004688778893208845,
+      "final_metrics": {
+        "lateral_error_m": 0.0007868968695270694,
+        "face_gap_m": 0.00019999957422220382,
+        "yaw_rad": 0.00039750152576451296,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.533333333333513,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_006.json",
+        "sha256": "47363fa4a340a6e21da5623de431647ae6f20072a50f50eb92443d3b093174be"
+      }
+    },
+    {
+      "condition_id": "heldout_007",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 232.0885455980897,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_007",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.063468387624816,
+        "seed": 84008
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.359028389099347e-05,
+      "correction_integral_m_s": 0.01135532067383312,
+      "correction_variation_m": 0.0020849135605695754,
+      "max_residual_m": 0.0007559275303374262,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690838582895207,
+      "final_metrics": {
+        "lateral_error_m": 0.0007922015450335802,
+        "face_gap_m": 0.00019999947830491582,
+        "yaw_rad": 0.00029500064615029984,
+        "tilt_rad": 1.4901161193847656e-08,
+        "seated": true,
+        "hold_seconds": 20.466666666666843,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_007.json",
+        "sha256": "5124beaee2174b95ff951ad50bf592b26bc24745ce67c57917deeb11a0fffaf5"
+      }
+    },
+    {
+      "condition_id": "heldout_008",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 6.635439601959661,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_008",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27786191465133925,
+        "seed": 84009
+      },
+      "force_substeps_applied": 84,
+      "max_penetration_m": 0.00025276772129056985,
+      "correction_integral_m_s": 0.0002596473382151775,
+      "correction_variation_m": 0.0005308085213969558,
+      "max_residual_m": 0.0004842588506309879,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.0017191016404407566,
+      "final_metrics": {
+        "lateral_error_m": 0.32019937495053113,
+        "face_gap_m": 0.004738822889134395,
+        "yaw_rad": 0.12293812740012218,
+        "tilt_rad": 0.004586492820164464,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_008.json",
+        "sha256": "177df7dddf59220e27b15a0bf5a0589acf8c57aacced52b4b04c86495d3367f8"
+      }
+    },
+    {
+      "condition_id": "heldout_009",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 116.76075587188825,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_009",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2797492039865661,
+        "seed": 84010
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.0001910076666146684,
+      "correction_integral_m_s": 0.010013123856478585,
+      "correction_variation_m": 0.0023408004688560496,
+      "max_residual_m": 0.0008391351068564744,
+      "max_residual_speed_m_s": 0.0005979370689644911,
+      "max_residual_acceleration_m_s2": 0.003094055877739627,
+      "max_joint_correction_rad": 0.0047322624859820195,
+      "final_metrics": {
+        "lateral_error_m": 0.006399392703391581,
+        "face_gap_m": 0.011286771564298456,
+        "yaw_rad": -0.047847148747928635,
+        "tilt_rad": 0.4834446197395193,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_009.json",
+        "sha256": "cfb7cbd1a6ea23283fd6eb7c1c1f778132eb786245c3de30906ee1decbf3b63d"
+      }
+    },
+    {
+      "condition_id": "heldout_010",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 108.28124941908754,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_010",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2726927433936393,
+        "seed": 84011
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.00014038489177068642,
+      "correction_integral_m_s": 0.010006585148729768,
+      "correction_variation_m": 0.0023468437547852087,
+      "max_residual_m": 0.0008404491191897162,
+      "max_residual_speed_m_s": 0.0005988695330580336,
+      "max_residual_acceleration_m_s2": 0.003097682876661429,
+      "max_joint_correction_rad": 0.004746909603416283,
+      "final_metrics": {
+        "lateral_error_m": 0.004984267889981171,
+        "face_gap_m": 0.011583390789982093,
+        "yaw_rad": -0.016330319876682875,
+        "tilt_rad": 0.37889129915876324,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_010.json",
+        "sha256": "99434e6d0eeffe66407bac07ad55548443606215de86c296695a63537da6884e"
+      }
+    },
+    {
+      "condition_id": "heldout_011",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 180.39907355094329,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_011",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27273561041081107,
+        "seed": 84012
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.00014031337693874347,
+      "correction_integral_m_s": 0.010006495685608536,
+      "correction_variation_m": 0.0023467983360971932,
+      "max_residual_m": 0.0008404477542581865,
+      "max_residual_speed_m_s": 0.0005988685315080455,
+      "max_residual_acceleration_m_s2": 0.0030976686926552665,
+      "max_joint_correction_rad": 0.004746363059403791,
+      "final_metrics": {
+        "lateral_error_m": 0.004460005716338118,
+        "face_gap_m": 0.011123566112406127,
+        "yaw_rad": -0.014344081871061502,
+        "tilt_rad": 0.34565015943949673,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_011.json",
+        "sha256": "9c615a37fcd661ccab49e6be2be696a9ce0a7f6e5e56e4e9c595f8489bbc13d4"
+      }
+    },
+    {
+      "condition_id": "heldout_012",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 178.88527007610537,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_012",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.26916898347801654,
+        "seed": 84013
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.659681693128225e-05,
+      "correction_integral_m_s": 0.01004062434112137,
+      "correction_variation_m": 0.0023441524756338556,
+      "max_residual_m": 0.0008416862081848788,
+      "max_residual_speed_m_s": 0.0005997475050523981,
+      "max_residual_acceleration_m_s2": 0.0031011276096335272,
+      "max_joint_correction_rad": 0.004760299255197165,
+      "final_metrics": {
+        "lateral_error_m": 0.004527892528459506,
+        "face_gap_m": 0.010444636827398449,
+        "yaw_rad": -0.029141170324862336,
+        "tilt_rad": 0.34371124246698126,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_012.json",
+        "sha256": "7644ced05c629ea27f2ce5b4b3fbe0ebd324e1ac4304e4aee09923b80a3f0db1"
+      }
+    },
+    {
+      "condition_id": "heldout_013",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 179.8627355019562,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_013",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27969284025396735,
+        "seed": 84014
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.00019111361755669418,
+      "correction_integral_m_s": 0.010012166346846665,
+      "correction_variation_m": 0.002340161390845779,
+      "max_residual_m": 0.0008388950696254694,
+      "max_residual_speed_m_s": 0.000597765183572479,
+      "max_residual_acceleration_m_s2": 0.0030929041379982054,
+      "max_joint_correction_rad": 0.004728259329545237,
+      "final_metrics": {
+        "lateral_error_m": 0.013125899959222132,
+        "face_gap_m": 0.011556516092688929,
+        "yaw_rad": 0.1522112067003011,
+        "tilt_rad": 0.8966927160073256,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_013.json",
+        "sha256": "c86fa49af1e720386f9cf0500695e497877fdd29438e1b68e0c22f1007921cf7"
+      }
+    },
+    {
+      "condition_id": "heldout_014",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 149.15912177809514,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_014",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0560460791506732,
+        "seed": 84015
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.344346880063465e-05,
+      "correction_integral_m_s": 0.011344231459431451,
+      "correction_variation_m": 0.002085133904842897,
+      "max_residual_m": 0.0007556367790093763,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004689199845318459,
+      "final_metrics": {
+        "lateral_error_m": 0.0007892241942119211,
+        "face_gap_m": 0.00019999957739286894,
+        "yaw_rad": 0.0003106240400956343,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.533333333333513,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_014.json",
+        "sha256": "400b9ef9c7d937f702bc5d46b138c149491d4250fa6b1ae5fff2c0ef65ce70d7"
+      }
+    },
+    {
+      "condition_id": "heldout_015",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 227.05301344092004,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_015",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0645728895333078,
+        "seed": 84016
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3612130040086205e-05,
+      "correction_integral_m_s": 0.011355380079640187,
+      "correction_variation_m": 0.002084912233007047,
+      "max_residual_m": 0.0007559290371302651,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690846430211115,
+      "final_metrics": {
+        "lateral_error_m": 0.0007921847477286925,
+        "face_gap_m": 0.00019999946095084625,
+        "yaw_rad": 0.0002946155485674718,
+        "tilt_rad": 2.1073424255447017e-08,
+        "seated": true,
+        "hold_seconds": 20.466666666666843,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_015.json",
+        "sha256": "71806618bc092140deb716f9494e9ead6301a3f6d073b45d170b8a6ffc0781c1"
+      }
+    },
+    {
+      "condition_id": "heldout_016",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 133.98537127603777,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_016",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0613961019060014,
+        "seed": 84017
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.378194281524403e-05,
+      "correction_integral_m_s": 0.011351367434159309,
+      "correction_variation_m": 0.00208504090024663,
+      "max_residual_m": 0.000755804804304295,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690295043865866,
+      "final_metrics": {
+        "lateral_error_m": 0.0007905600002705689,
+        "face_gap_m": 0.00019999946715217737,
+        "yaw_rad": 0.0003759769648796986,
+        "tilt_rad": 2.1073424255447017e-08,
+        "seated": true,
+        "hold_seconds": 20.500000000000178,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_016.json",
+        "sha256": "7660b80ccf384e59dfc1c4bc268684edf261a61c8f5bafa621f8bcdbeaf8d433"
+      }
+    },
+    {
+      "condition_id": "heldout_017",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 134.78581371414475,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_017",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.065303464405253,
+        "seed": 84018
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.362658000834212e-05,
+      "correction_integral_m_s": 0.0113554136782071,
+      "correction_variation_m": 0.0020849114658219974,
+      "max_residual_m": 0.0007559298291094456,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690850673343183,
+      "final_metrics": {
+        "lateral_error_m": 0.0007921944998203508,
+        "face_gap_m": 0.00019999956921770007,
+        "yaw_rad": 0.0002947716963744624,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.466666666666843,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_017.json",
+        "sha256": "a2250d60b49842f9c6dff82f85861c1b0ea9bea7f9b5e5551bf258ac4a87386b"
+      }
+    },
+    {
+      "condition_id": "heldout_018",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 167.1255288659595,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_018",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0746150495777445,
+        "seed": 84019
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.38107349133641e-05,
+      "correction_integral_m_s": 0.011355651593863836,
+      "correction_variation_m": 0.0020849095522554565,
+      "max_residual_m": 0.0007559359099608704,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.0046908821085021035,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923248432892895,
+        "face_gap_m": 0.00019999953700479411,
+        "yaw_rad": 0.00029406443788120354,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_018.json",
+        "sha256": "5fd4a2575d02b71feb2e507b6bbd613f4e19622b6b9093c40562039294f9dcb2"
+      }
+    },
+    {
+      "condition_id": "heldout_019",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 112.7119131560903,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_019",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.26833517085378067,
+        "seed": 84020
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.854005722314117e-05,
+      "correction_integral_m_s": 0.010037454346661912,
+      "correction_variation_m": 0.002341756986441824,
+      "max_residual_m": 0.0008408928938263943,
+      "max_residual_speed_m_s": 0.0005991894569923932,
+      "max_residual_acceleration_m_s2": 0.0031004907626750473,
+      "max_joint_correction_rad": 0.004746038955307119,
+      "final_metrics": {
+        "lateral_error_m": 0.006405036613367871,
+        "face_gap_m": 0.011090605673920728,
+        "yaw_rad": -0.0492168239077983,
+        "tilt_rad": 0.48337448034018493,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_019.json",
+        "sha256": "0565bc22ac35e3ed487502fc6c9689807ca08947591c3ca366f9d650bc01ab3f"
+      }
+    },
+    {
+      "condition_id": "heldout_020",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 240.11655612592585,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_020",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.075305726019255,
+        "seed": 84021
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.382439281841758e-05,
+      "correction_integral_m_s": 0.01135566249112305,
+      "correction_variation_m": 0.002084909645366954,
+      "max_residual_m": 0.0007559361570045667,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690883488158493,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923306277223064,
+        "face_gap_m": 0.00019999957517265188,
+        "yaw_rad": 0.00029435026833475706,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_020.json",
+        "sha256": "8a99457fe3698a3070e57b520461a42d0780e56d4c46c21ec437d298548e97f9"
+      }
+    },
+    {
+      "condition_id": "heldout_021",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 140.79856963199563,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_021",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0665403883368778,
+        "seed": 84022
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.365104460176421e-05,
+      "correction_integral_m_s": 0.011355462486949124,
+      "correction_variation_m": 0.0020849106271330392,
+      "max_residual_m": 0.000755931092600591,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690857146611327,
+      "final_metrics": {
+        "lateral_error_m": 0.0007922914045617213,
+        "face_gap_m": 0.00019999956537958274,
+        "yaw_rad": 0.00029522850841164354,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_021.json",
+        "sha256": "be1a530d67bb861f1f6fa13bd0a21494c2964e480dca8a6c42f17ea0969c5790"
+      }
+    },
+    {
+      "condition_id": "heldout_022",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 171.29581270506606,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_022",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0761734281460211,
+        "seed": 84023
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.384155098972192e-05,
+      "correction_integral_m_s": 0.01135567770444998,
+      "correction_variation_m": 0.002084909862434871,
+      "max_residual_m": 0.0007559366915030523,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690886188069454,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923085014951452,
+        "face_gap_m": 0.00019999956449393702,
+        "yaw_rad": 0.0002941847620541039,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_022.json",
+        "sha256": "13fbc4a75879e291b74824a88eaf233d33477aabd5b5bf42cde4c0cb09f4d882"
+      }
+    },
+    {
+      "condition_id": "heldout_023",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 140.0760952499695,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_023",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0540374283578577,
+        "seed": 84024
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3403735506007646e-05,
+      "correction_integral_m_s": 0.011342657513423915,
+      "correction_variation_m": 0.002085159800642225,
+      "max_residual_m": 0.0007555958159824073,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004689067666636237,
+      "final_metrics": {
+        "lateral_error_m": 0.0007877014567646598,
+        "face_gap_m": 0.00019999955910061235,
+        "yaw_rad": 0.0003948280566547223,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.533333333333513,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_023.json",
+        "sha256": "efec3414eb1f11d23d45f18b2ad3fa49917da836c1922a7bbc1d05e01c807e01"
+      }
+    },
+    {
+      "condition_id": "heldout_024",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 133.94845086103305,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_024",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0754041828176992,
+        "seed": 84025
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.38263397497157e-05,
+      "correction_integral_m_s": 0.011355662598780604,
+      "correction_variation_m": 0.002084909571001666,
+      "max_residual_m": 0.0007559360331535294,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.00469088284100061,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923318204249455,
+        "face_gap_m": 0.00019999956567366,
+        "yaw_rad": 0.0002945279022769101,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_024.json",
+        "sha256": "100a937165e43bd4e26294dbbed9251e7249d21999368e2e34b21d7d0877834b"
+      }
+    },
+    {
+      "condition_id": "heldout_025",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 107.9417743741069,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_025",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27033037854881087,
+        "seed": 84026
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.3873333172494683e-05,
+      "correction_integral_m_s": 0.01004261254571356,
+      "correction_variation_m": 0.002342172328490814,
+      "max_residual_m": 0.0008412198258571745,
+      "max_residual_speed_m_s": 0.0005994222957294036,
+      "max_residual_acceleration_m_s2": 0.003101657943438414,
+      "max_joint_correction_rad": 0.004751668092201733,
+      "final_metrics": {
+        "lateral_error_m": 0.0028259819645178384,
+        "face_gap_m": 0.00651258158500731,
+        "yaw_rad": 0.004010603791098991,
+        "tilt_rad": 0.30531275559899,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_025.json",
+        "sha256": "5b8f4750628ef4b09a18b95892862e6dc1e882fbadd51099bd428135b379a4d1"
+      }
+    },
+    {
+      "condition_id": "heldout_026",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 158.92169726104476,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_026",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0757433912782695,
+        "seed": 84027
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3833047377638636e-05,
+      "correction_integral_m_s": 0.011355667961996854,
+      "correction_variation_m": 0.0020849096428756236,
+      "max_residual_m": 0.0007559362066741547,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.00469088368901005,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923257971417765,
+        "face_gap_m": 0.00019999954871751519,
+        "yaw_rad": 0.0002940084105559359,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_026.json",
+        "sha256": "cd901f003c62abadc03c747e17c3b737dc8a324904c1e385672569c4fbd97309"
+      }
+    },
+    {
+      "condition_id": "heldout_027",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 233.7148412540555,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_027",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.056750358163235,
+        "seed": 84028
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.372123021884863e-05,
+      "correction_integral_m_s": 0.011344381136500735,
+      "correction_variation_m": 0.0020851331846181297,
+      "max_residual_m": 0.0007556362222932751,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.0046892215762806,
+      "final_metrics": {
+        "lateral_error_m": 0.0007891310893840494,
+        "face_gap_m": 0.00019999957495172443,
+        "yaw_rad": 0.00037062061621201083,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.533333333333513,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_027.json",
+        "sha256": "ed895c086fa273ac6bbb63afb7e47606830a6da5be218d65df4877f6faa79394"
+      }
+    },
+    {
+      "condition_id": "heldout_028",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 7.490703898947686,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_028",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.275483027655932,
+        "seed": 84029
+      },
+      "force_substeps_applied": 79,
+      "max_penetration_m": 0.00026836226962420606,
+      "correction_integral_m_s": 0.0002596473382151775,
+      "correction_variation_m": 0.0005308085213969558,
+      "max_residual_m": 0.0004842588506309879,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.0017191016404407566,
+      "final_metrics": {
+        "lateral_error_m": 0.32019435488580167,
+        "face_gap_m": 0.004978118857094767,
+        "yaw_rad": 0.09958353859662965,
+        "tilt_rad": 0.017327131222380984,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_028.json",
+        "sha256": "3c2068afaede4c366267dd1a59526f23f0f0da780efc574ea1b8cf156ee18188"
+      }
+    },
+    {
+      "condition_id": "heldout_029",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 236.17993457289413,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_029",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0788373622086023,
+        "seed": 84030
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3894225698056135e-05,
+      "correction_integral_m_s": 0.011355714647715913,
+      "correction_variation_m": 0.0020849101942865492,
+      "max_residual_m": 0.0007559374181169417,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690889938952836,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923378071905044,
+        "face_gap_m": 0.00019999955242752665,
+        "yaw_rad": 0.00029383673895859983,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_029.json",
+        "sha256": "047b1af84c47e61fd8828325268f3e67cd1065edbab734af02798ed326ef90ac"
+      }
+    },
+    {
+      "condition_id": "heldout_030",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 111.99370151897892,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_030",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27773162318932254,
+        "seed": 84031
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.0002459679236558425,
+      "correction_integral_m_s": 0.007624383245656371,
+      "correction_variation_m": 0.002642843004229904,
+      "max_residual_m": 0.0008271499495174334,
+      "max_residual_speed_m_s": 0.000589461587206772,
+      "max_residual_acceleration_m_s2": 0.0030703178654346696,
+      "max_joint_correction_rad": 0.0046456644745542786,
+      "final_metrics": {
+        "lateral_error_m": 0.02733932706165801,
+        "face_gap_m": 0.0008411377768865816,
+        "yaw_rad": 0.15731283932374462,
+        "tilt_rad": 1.8512732534896863,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_030.json",
+        "sha256": "c94b471b0bcff099ece0f0f86518021302bab0de6435105e0dd37e7a9adeff76"
+      }
+    },
+    {
+      "condition_id": "heldout_031",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 140.09249128494412,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_031",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0720974434234494,
+        "seed": 84032
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.376094803004795e-05,
+      "correction_integral_m_s": 0.011355605445276739,
+      "correction_variation_m": 0.0020849093570152067,
+      "max_residual_m": 0.0007559346515416322,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690875659483895,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923087083097215,
+        "face_gap_m": 0.00019999950436905972,
+        "yaw_rad": 0.0002948141579273869,
+        "tilt_rad": 1.4901161193847656e-08,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_031.json",
+        "sha256": "9fda9c9be0ca60f1121841b1b9ea8e1ea34add6227f013f1728cda2fa65f9e1a"
+      }
+    },
+    {
+      "condition_id": "heldout_032",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 233.114022559952,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_032",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.061321177296946,
+        "seed": 84033
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.378015181389971e-05,
+      "correction_integral_m_s": 0.011351360242530733,
+      "correction_variation_m": 0.0020850410298060775,
+      "max_residual_m": 0.0007558046384717536,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690294238990367,
+      "final_metrics": {
+        "lateral_error_m": 0.0007905916490482635,
+        "face_gap_m": 0.00019999945066206948,
+        "yaw_rad": 0.00037455590807758307,
+        "tilt_rad": 2.580956827951785e-08,
+        "seated": true,
+        "hold_seconds": 20.500000000000178,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_032.json",
+        "sha256": "b488d9bfa5dda9424ce8a7bdf83c287c5a8a24eee29aa23cadc572b2a9005335"
+      }
+    },
+    {
+      "condition_id": "heldout_033",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 4.657205808907747,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_033",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27596635782980206,
+        "seed": 84034
+      },
+      "force_substeps_applied": 79,
+      "max_penetration_m": 0.00025908319485516695,
+      "correction_integral_m_s": 0.0002596473382151775,
+      "correction_variation_m": 0.0005308085213969558,
+      "max_residual_m": 0.0004842588506309879,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.0017191016404407566,
+      "final_metrics": {
+        "lateral_error_m": 0.3201944062560634,
+        "face_gap_m": 0.004986423144278197,
+        "yaw_rad": 0.09963930812179618,
+        "tilt_rad": 0.01727890972150911,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_033.json",
+        "sha256": "9e5c91249e89cf5db708c1ca98c317efec09f0e0c216d243c0fce7927eef9877"
+      }
+    },
+    {
+      "condition_id": "heldout_034",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 236.28502880502492,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_034",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.058822652607879,
+        "seed": 84035
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3498391462879084e-05,
+      "correction_integral_m_s": 0.011349786241063304,
+      "correction_variation_m": 0.002085065186619723,
+      "max_residual_m": 0.0007557819072922671,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690024280704863,
+      "final_metrics": {
+        "lateral_error_m": 0.0007905797225291191,
+        "face_gap_m": 0.00019999955922254953,
+        "yaw_rad": 0.00032902036153380427,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.500000000000178,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_034.json",
+        "sha256": "26ed26b3713512588570ff565368819cd1de73eda18094f779f618a3ff45bad4"
+      }
+    },
+    {
+      "condition_id": "heldout_035",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 113.86762448190711,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_035",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2765640193951003,
+        "seed": 84036
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.0002816471729032849,
+      "correction_integral_m_s": 0.007616055301114957,
+      "correction_variation_m": 0.002638959480131089,
+      "max_residual_m": 0.0008252098747478774,
+      "max_residual_speed_m_s": 0.0005880809884884027,
+      "max_residual_acceleration_m_s2": 0.0030637422128821936,
+      "max_joint_correction_rad": 0.0046310700125600235,
+      "final_metrics": {
+        "lateral_error_m": 0.028553941206417435,
+        "face_gap_m": 0.0006949093087624883,
+        "yaw_rad": 0.1516030826845174,
+        "tilt_rad": 1.8487484291505263,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_035.json",
+        "sha256": "2aea26f4147dba4dd466bd5db80f4a4e1fded5054ba5d2f3cfe184939037b1a3"
+      }
+    },
+    {
+      "condition_id": "heldout_036",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 140.5229830320459,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_036",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0508633834236174,
+        "seed": 84037
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.334094867754437e-05,
+      "correction_integral_m_s": 0.011341424112088211,
+      "correction_variation_m": 0.0020851413513991585,
+      "max_residual_m": 0.000755566639788992,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.0046888480263052035,
+      "final_metrics": {
+        "lateral_error_m": 0.0007885726119772832,
+        "face_gap_m": 0.00019999948888594493,
+        "yaw_rad": 0.00023103328221659578,
+        "tilt_rad": 1.4901161193847656e-08,
+        "seated": true,
+        "hold_seconds": 20.533333333333513,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_036.json",
+        "sha256": "3178ec2fac615f8339f1043a504c07b7781658e35a5b8bb8adf6490cd1915322"
+      }
+    },
+    {
+      "condition_id": "heldout_037",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 146.30477594397962,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_037",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0613137668991501,
+        "seed": 84038
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3779974670720235e-05,
+      "correction_integral_m_s": 0.011351358347980211,
+      "correction_variation_m": 0.0020850410205298553,
+      "max_residual_m": 0.0007558045120183342,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690293582062077,
+      "final_metrics": {
+        "lateral_error_m": 0.0007905739824187313,
+        "face_gap_m": 0.0001999995525030357,
+        "yaw_rad": 0.000376336402940228,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.500000000000178,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_037.json",
+        "sha256": "846560b76793153d0ee09bf14c9e061bff160e012d201c10fdcc1e43e0e33157"
+      }
+    },
+    {
+      "condition_id": "heldout_038",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 120.60917919198982,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_038",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27945001270045,
+        "seed": 84039
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.0001915698859194192,
+      "correction_integral_m_s": 0.010028133572689828,
+      "correction_variation_m": 0.002344797715759813,
+      "max_residual_m": 0.0008413603921929867,
+      "max_residual_speed_m_s": 0.0005995166657741338,
+      "max_residual_acceleration_m_s2": 0.0031003452062952114,
+      "max_joint_correction_rad": 0.004755209735585186,
+      "final_metrics": {
+        "lateral_error_m": 0.005317813063785213,
+        "face_gap_m": 0.010983436318717427,
+        "yaw_rad": -0.010855329152210446,
+        "tilt_rad": 0.3961458084064211,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_038.json",
+        "sha256": "68fbde15e997092108626d68753fb7bb03d3be3d576f3e7120ffc3c9b4b62fa9"
+      }
+    },
+    {
+      "condition_id": "heldout_039",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 116.46431934298016,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_039",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27024506080750116,
+        "seed": 84040
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.407406888440314e-05,
+      "correction_integral_m_s": 0.01004608949509,
+      "correction_variation_m": 0.0023440149400781275,
+      "max_residual_m": 0.0008419359387279319,
+      "max_residual_speed_m_s": 0.0005999263360581777,
+      "max_residual_acceleration_m_s2": 0.0031023272649029097,
+      "max_joint_correction_rad": 0.00476218605154255,
+      "final_metrics": {
+        "lateral_error_m": 0.0025663893745176878,
+        "face_gap_m": 0.005615327805623495,
+        "yaw_rad": 0.023573406471181033,
+        "tilt_rad": 0.3124824970669019,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_039.json",
+        "sha256": "7536e3e0714155c7adf4ab8981b6c4711f1644ccee1d733e3af7d09415833c7b"
+      }
+    },
+    {
+      "condition_id": "heldout_040",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 157.90793233015575,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_040",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0612717802392861,
+        "seed": 84041
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3778970976603605e-05,
+      "correction_integral_m_s": 0.011351354396674175,
+      "correction_variation_m": 0.0020850411326326346,
+      "max_residual_m": 0.0007558044499543387,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690293219958175,
+      "final_metrics": {
+        "lateral_error_m": 0.000790583152061179,
+        "face_gap_m": 0.00019999944833608285,
+        "yaw_rad": 0.00037479483877709223,
+        "tilt_rad": 2.580956827951785e-08,
+        "seated": true,
+        "hold_seconds": 20.500000000000178,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_040.json",
+        "sha256": "8002eba17a6a79856db0c16cd4a6e665875595e48f23f02c25c1743c2e52ba96"
+      }
+    },
+    {
+      "condition_id": "heldout_041",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 109.15462303184904,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_041",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27317933658357135,
+        "seed": 84042
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.0001395739370036102,
+      "correction_integral_m_s": 0.010000339511512158,
+      "correction_variation_m": 0.0023432899340348995,
+      "max_residual_m": 0.0008389154361840782,
+      "max_residual_speed_m_s": 0.0005977805891271234,
+      "max_residual_acceleration_m_s2": 0.0030932615471349102,
+      "max_joint_correction_rad": 0.004728170406586685,
+      "final_metrics": {
+        "lateral_error_m": 0.00513979957441473,
+        "face_gap_m": 0.012442796276549137,
+        "yaw_rad": 0.021098176609254317,
+        "tilt_rad": 0.39754381197052935,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_041.json",
+        "sha256": "706a659be0e8619b1ce50822ae7b7dc930ea42439f7042cc79652396b8218bcc"
+      }
+    },
+    {
+      "condition_id": "heldout_042",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 228.51341602392495,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_042",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.058480460240451,
+        "seed": 84043
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.379475750833795e-05,
+      "correction_integral_m_s": 0.011342268769623525,
+      "correction_variation_m": 0.0020851170256375832,
+      "max_residual_m": 0.000755567539210594,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004688810317595271,
+      "final_metrics": {
+        "lateral_error_m": 0.0007866055706789437,
+        "face_gap_m": 0.00019999954008026455,
+        "yaw_rad": 0.0003831360529352464,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.533333333333513,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_042.json",
+        "sha256": "9aacfeb130487117af22c6abd3441a9b3a1fa001c36b10f82d505b9184af19d2"
+      }
+    },
+    {
+      "condition_id": "heldout_043",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 112.50087361992337,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_043",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2720992074766529,
+        "seed": 84044
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.00014137652694641884,
+      "correction_integral_m_s": 0.0100110566589375,
+      "correction_variation_m": 0.0023464864101197906,
+      "max_residual_m": 0.000840554924361807,
+      "max_residual_speed_m_s": 0.000598944978923657,
+      "max_residual_acceleration_m_s2": 0.00309808974205361,
+      "max_joint_correction_rad": 0.004747379754684644,
+      "final_metrics": {
+        "lateral_error_m": 0.005149146475253717,
+        "face_gap_m": 0.012445109257619685,
+        "yaw_rad": 0.018509994506365396,
+        "tilt_rad": 0.3969407763807948,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_043.json",
+        "sha256": "241324db62736ddab7b8d0e9ecf8a0d90478b1289feace178fa5ad6bece33205"
+      }
+    },
+    {
+      "condition_id": "heldout_044",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 71.17925914097577,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_044",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27648207598550073,
+        "seed": 84045
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.00023586747157592483,
+      "correction_integral_m_s": 0.007619932513050615,
+      "correction_variation_m": 0.0026404831915698133,
+      "max_residual_m": 0.0008260552913213479,
+      "max_residual_speed_m_s": 0.0005886783754286576,
+      "max_residual_acceleration_m_s2": 0.003065270639997602,
+      "max_joint_correction_rad": 0.0046361600612061515,
+      "final_metrics": {
+        "lateral_error_m": 0.02390206526508546,
+        "face_gap_m": 0.0016423985543204678,
+        "yaw_rad": 0.0819171573950895,
+        "tilt_rad": 1.8674394286813356,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_044.json",
+        "sha256": "7cd5ac37e79a444912de7f3333ad50496f13779ee0b3b962a3f1690d9c34719d"
+      }
+    },
+    {
+      "condition_id": "heldout_045",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 185.42301735491492,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_045",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27286759320449827,
+        "seed": 84046
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.00014009327895270635,
+      "correction_integral_m_s": 0.010000268632687291,
+      "correction_variation_m": 0.0023424964817159825,
+      "max_residual_m": 0.0008383634037560302,
+      "max_residual_speed_m_s": 0.0005973861068033336,
+      "max_residual_acceleration_m_s2": 0.0030908707401554937,
+      "max_joint_correction_rad": 0.004728651149771279,
+      "final_metrics": {
+        "lateral_error_m": 0.0023332407129234667,
+        "face_gap_m": 0.004947661427506647,
+        "yaw_rad": 0.013294236733204567,
+        "tilt_rad": 0.3049134558308299,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_045.json",
+        "sha256": "483cc8b55c707b9dd738f827c3f6a8775f9ec502519d6f1cead7d3f1337e4748"
+      }
+    },
+    {
+      "condition_id": "heldout_046",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 181.71932083298452,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_046",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2736998667540079,
+        "seed": 84047
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.00013870843266204267,
+      "correction_integral_m_s": 0.010002666994751582,
+      "correction_variation_m": 0.0023451648266310855,
+      "max_residual_m": 0.0008397017441572136,
+      "max_residual_speed_m_s": 0.0005983424788287797,
+      "max_residual_acceleration_m_s2": 0.0030966651153455627,
+      "max_joint_correction_rad": 0.00473783027220942,
+      "final_metrics": {
+        "lateral_error_m": 0.005156948807371116,
+        "face_gap_m": 0.012446613670953788,
+        "yaw_rad": 0.01648691068171611,
+        "tilt_rad": 0.39650746869496384,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_046.json",
+        "sha256": "919b4f5de51679f64ed6c28b4800b3adfc084f620b5cd3ca1d46f55736dea2d3"
+      }
+    },
+    {
+      "condition_id": "heldout_047",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 136.44467902299948,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_047",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0505251030078153,
+        "seed": 84048
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3334257007439774e-05,
+      "correction_integral_m_s": 0.01133911960652624,
+      "correction_variation_m": 0.0020852297845618856,
+      "max_residual_m": 0.0007555468661219598,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004688863038435409,
+      "final_metrics": {
+        "lateral_error_m": 0.0007875742927939764,
+        "face_gap_m": 0.00019999955192886998,
+        "yaw_rad": 0.000350661190842329,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.500000000000178,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_047.json",
+        "sha256": "8bc2d847f4e67ec5b97bb1fee9bb91427e04bad778f1086a312bffa8b71b2530"
+      }
+    },
+    {
+      "condition_id": "heldout_048",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 140.93782829400152,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_048",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0597450168791103,
+        "seed": 84049
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.351663618931267e-05,
+      "correction_integral_m_s": 0.011349918427052052,
+      "correction_variation_m": 0.002085063451954179,
+      "max_residual_m": 0.0007557852912175398,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690041876210582,
+      "final_metrics": {
+        "lateral_error_m": 0.0007905829114109395,
+        "face_gap_m": 0.0001999995550522743,
+        "yaw_rad": 0.0003357268802093035,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.500000000000178,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_048.json",
+        "sha256": "c835258ea4a569a52f26b0ae7d1b631e002c02921c5ef751e31a65e53958ca40"
+      }
+    },
+    {
+      "condition_id": "heldout_049",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 84.99824898410589,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_049",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2774441315490013,
+        "seed": 84050
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.00026788308901032684,
+      "correction_integral_m_s": 0.007615510913984037,
+      "correction_variation_m": 0.002636389826651527,
+      "max_residual_m": 0.0008242695967282771,
+      "max_residual_speed_m_s": 0.0005874148863564289,
+      "max_residual_acceleration_m_s2": 0.0030615098484384844,
+      "max_joint_correction_rad": 0.004621077132541007,
+      "final_metrics": {
+        "lateral_error_m": 0.028227042046790725,
+        "face_gap_m": 0.0010593045041802848,
+        "yaw_rad": 0.17088967420120377,
+        "tilt_rad": 1.8569249872390814,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_049.json",
+        "sha256": "bda292d364bf9e3703749642a040a81a1709065ff415743320ae86bc3d72b5c5"
+      }
+    },
+    {
+      "condition_id": "heldout_050",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 140.63229076913558,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_050",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0782113818596122,
+        "seed": 84051
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3881848383782276e-05,
+      "correction_integral_m_s": 0.01135570542521838,
+      "correction_variation_m": 0.0020849100920579916,
+      "max_residual_m": 0.0007559371790111168,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690888705852547,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923251084437506,
+        "face_gap_m": 0.00019999956986964385,
+        "yaw_rad": 0.00029459886978764124,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_050.json",
+        "sha256": "b209f3692f95cb185859ba642c11cf7d33ee7a45f1efd9ba218b285b8eb0c6a2"
+      }
+    },
+    {
+      "condition_id": "heldout_051",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 110.81620789598674,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_051",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2682294582014094,
+        "seed": 84052
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.878570478472448e-05,
+      "correction_integral_m_s": 0.010037155196341036,
+      "correction_variation_m": 0.002341390785984949,
+      "max_residual_m": 0.0008406649664187868,
+      "max_residual_speed_m_s": 0.000599026172418127,
+      "max_residual_acceleration_m_s2": 0.003099374759721085,
+      "max_joint_correction_rad": 0.0047453708057558774,
+      "final_metrics": {
+        "lateral_error_m": 0.005197569320183651,
+        "face_gap_m": 0.01080305382866989,
+        "yaw_rad": -0.037504898125437135,
+        "tilt_rad": 0.3919220451945595,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_051.json",
+        "sha256": "5709557d33f5e6502a2555ddb362b2c0ce3182dd434917edf8aa3deb312b655a"
+      }
+    },
+    {
+      "condition_id": "heldout_052",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 125.5192912670318,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_052",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27632913341364373,
+        "seed": 84053
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 0.0001842414045844003,
+      "correction_integral_m_s": 0.007619970107033206,
+      "correction_variation_m": 0.002642505962874969,
+      "max_residual_m": 0.0008269372486930291,
+      "max_residual_speed_m_s": 0.0005893106025904567,
+      "max_residual_acceleration_m_s2": 0.0030697163806400634,
+      "max_joint_correction_rad": 0.004643816967081937,
+      "final_metrics": {
+        "lateral_error_m": 0.023680851067296813,
+        "face_gap_m": 0.0016819848032433096,
+        "yaw_rad": 0.07348985372241808,
+        "tilt_rad": 1.8631390939663315,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_052.json",
+        "sha256": "3837251540a281a1230f3a49c9f3032ce9adc75cf15bda740cc2adf59835acf7"
+      }
+    },
+    {
+      "condition_id": "heldout_053",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 137.57231135619804,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_053",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0654748694882867,
+        "seed": 84054
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.362997018761197e-05,
+      "correction_integral_m_s": 0.011355420619892581,
+      "correction_variation_m": 0.002084911241596331,
+      "max_residual_m": 0.000755929958900668,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.00469085124392965,
+      "final_metrics": {
+        "lateral_error_m": 0.0007921940353346656,
+        "face_gap_m": 0.00019999957613200947,
+        "yaw_rad": 0.00029472891086455166,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.466666666666843,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_053.json",
+        "sha256": "1594b3dd9c38d36336782fe31eec38b07b5f5527bf0567ccf707ce4d505ea15c"
+      }
+    },
+    {
+      "condition_id": "heldout_054",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 166.43889032304287,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_054",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0503129922518668,
+        "seed": 84055
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.333006115145766e-05,
+      "correction_integral_m_s": 0.011337437023764508,
+      "correction_variation_m": 0.0020852170041363595,
+      "max_residual_m": 0.0007554947639827035,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004688598896209983,
+      "final_metrics": {
+        "lateral_error_m": 0.0007863892864941911,
+        "face_gap_m": 0.00019999956678658226,
+        "yaw_rad": 0.0004002018170326942,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.533333333333513,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_054.json",
+        "sha256": "093af8b6041208edec3d2f3c6102c491a48e46ef685c36b26930d374a08c16ad"
+      }
+    },
+    {
+      "condition_id": "heldout_055",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 150.688161107013,
+      "is_success": false,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_055",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2682189648514357,
+        "seed": 84056
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 5.881007962947393e-05,
+      "correction_integral_m_s": 0.010037505986403883,
+      "correction_variation_m": 0.002341504781664036,
+      "max_residual_m": 0.0008406345656647476,
+      "max_residual_speed_m_s": 0.0005990034361764572,
+      "max_residual_acceleration_m_s2": 0.0030989232361590614,
+      "max_joint_correction_rad": 0.00474729104143945,
+      "final_metrics": {
+        "lateral_error_m": 0.004707876497707181,
+        "face_gap_m": 0.010732392007936353,
+        "yaw_rad": -0.029075625078377222,
+        "tilt_rad": 0.3525009526626824,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_055.json",
+        "sha256": "55ece96b1a0689ced5cbd90fb08e95d820e14a03ea225e4e5dc692fed5fb0453"
+      }
+    },
+    {
+      "condition_id": "heldout_056",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 4.616960895014927,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_056",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.27498305402650114,
+        "seed": 84057
+      },
+      "force_substeps_applied": 79,
+      "max_penetration_m": 0.0002779558026591508,
+      "correction_integral_m_s": 0.0002596473382151775,
+      "correction_variation_m": 0.0005308085213969558,
+      "max_residual_m": 0.0004842588506309879,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.0017191016404407566,
+      "final_metrics": {
+        "lateral_error_m": 0.3201943021003883,
+        "face_gap_m": 0.004969538570635305,
+        "yaw_rad": 0.09952570840635211,
+        "tilt_rad": 0.017377413859831294,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_056.json",
+        "sha256": "75ee96d26ca6cee55d026537a0be96ceb177a235f782d535574a0a9806323d28"
+      }
+    },
+    {
+      "condition_id": "heldout_057",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 130.12634898605756,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_057",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0715659475958168,
+        "seed": 84058
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.375043705482695e-05,
+      "correction_integral_m_s": 0.011355595847191603,
+      "correction_variation_m": 0.002084909463501063,
+      "max_residual_m": 0.0007559345240108628,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690875016147844,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923084988274213,
+        "face_gap_m": 0.00019999957858417988,
+        "yaw_rad": 0.00029491675945065963,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_057.json",
+        "sha256": "dd55a0c94501faca6104d3d35ef802d229de4d2d78c8a62c9c683a6139b5879b"
+      }
+    },
+    {
+      "condition_id": "heldout_058",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 129.69266110099852,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_058",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0759425911730889,
+        "seed": 84059
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.383698639853509e-05,
+      "correction_integral_m_s": 0.011355670341986092,
+      "correction_variation_m": 0.0020849095863541014,
+      "max_residual_m": 0.0007559361607277654,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690883404421253,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923244309315337,
+        "face_gap_m": 0.0001999994585752049,
+        "yaw_rad": 0.0002944653636790034,
+        "tilt_rad": 2.1073424255447017e-08,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_058.json",
+        "sha256": "95adda31943d8e65c5950869283759b58e13236e3c35bc62cfd90ff784a7bfc3"
+      }
+    },
+    {
+      "condition_id": "heldout_059",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 135.45136876381002,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_059",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.051493059709639,
+        "seed": 84060
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3353404561853396e-05,
+      "correction_integral_m_s": 0.011341997967565817,
+      "correction_variation_m": 0.0020852432438599154,
+      "max_residual_m": 0.0007556266862275145,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004689280847843591,
+      "final_metrics": {
+        "lateral_error_m": 0.0007877550596048154,
+        "face_gap_m": 0.00019999954016437782,
+        "yaw_rad": 0.000361088730968113,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 20.533333333333513,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_059.json",
+        "sha256": "42cdf4442256dc5bb7d6b38637650cf00764460e70d7238d3fc9b8a47767f765"
+      }
+    },
+    {
+      "condition_id": "heldout_060",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 4.422417771071196,
+      "is_success": false,
+      "collision": true,
+      "condition": {
+        "condition_id": "heldout_060",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": -0.2753880753692121,
+        "seed": 84061
+      },
+      "force_substeps_applied": 79,
+      "max_penetration_m": 0.00027018458740980106,
+      "correction_integral_m_s": 0.0002596473382151775,
+      "correction_variation_m": 0.0005308085213969558,
+      "max_residual_m": 0.0004842588506309879,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.0017191016404407566,
+      "final_metrics": {
+        "lateral_error_m": 0.32019434478990644,
+        "face_gap_m": 0.004976488556844252,
+        "yaw_rad": 0.09957255597769711,
+        "tilt_rad": 0.01733664764434936,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_060.json",
+        "sha256": "ab9799f0db8e05459fad98e35ca918284481712f894141e045bf8aab7b5b4872"
+      }
+    },
+    {
+      "condition_id": "heldout_061",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 132.66548584820703,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_061",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0753735277926317,
+        "seed": 84062
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.382573356288732e-05,
+      "correction_integral_m_s": 0.011355662135406012,
+      "correction_variation_m": 0.0020849095572477694,
+      "max_residual_m": 0.0007559360321712235,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690882834869958,
+      "final_metrics": {
+        "lateral_error_m": 0.0007923166549011376,
+        "face_gap_m": 0.00019999949089546942,
+        "yaw_rad": 0.00029433947977866896,
+        "tilt_rad": 1.4901161193847656e-08,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_061.json",
+        "sha256": "56f3512b77bdd6197ac2e8d011e457f70f26c16a16900efe60de1e48c11dc9f0"
+      }
+    },
+    {
+      "condition_id": "heldout_062",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 119.0558121399954,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_062",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0683819203740188,
+        "seed": 84063
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.368746647071215e-05,
+      "correction_integral_m_s": 0.011355519828555571,
+      "correction_variation_m": 0.0020849098594770406,
+      "max_residual_m": 0.00075593253878429,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690864613001056,
+      "final_metrics": {
+        "lateral_error_m": 0.0007922988724030317,
+        "face_gap_m": 0.0001999994474258665,
+        "yaw_rad": 0.0002947966413410852,
+        "tilt_rad": 2.580956827951785e-08,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_062.json",
+        "sha256": "fb5f4e635afd0d57034d447544ad2b77b442134870665fef9f6cace4b2eff384"
+      }
+    },
+    {
+      "condition_id": "heldout_063",
+      "variant": "B2",
+      "training_seed": 62001,
+      "wall_s": 111.25118806189857,
+      "is_success": true,
+      "collision": false,
+      "condition": {
+        "condition_id": "heldout_063",
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_rad": 1.0733500799470628,
+        "seed": 84064
+      },
+      "force_substeps_applied": 192,
+      "max_penetration_m": 3.3785719913973916e-05,
+      "correction_integral_m_s": 0.011355628349971591,
+      "correction_variation_m": 0.0020849093768553844,
+      "max_residual_m": 0.0007559351947556262,
+      "max_residual_speed_m_s": 0.0005853609473980975,
+      "max_residual_acceleration_m_s2": 0.0028941054749491374,
+      "max_joint_correction_rad": 0.004690878524039377,
+      "final_metrics": {
+        "lateral_error_m": 0.000792321269280681,
+        "face_gap_m": 0.00019999948950698287,
+        "yaw_rad": 0.0002941430889049289,
+        "tilt_rad": 1.4901161193847656e-08,
+        "seated": true,
+        "hold_seconds": 20.433333333333508,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "student_observation": "P0 15-frame right proprioception/nominal/feedback/gripper/phase history",
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/contact_drift/heldout/B2_seed_62001/heldout_063.json",
+        "sha256": "847e6a99182377769ccb558e42cbe118c34842cc0e651304738ac3a9febc3d50"
+      }
+    }
+  ],
+  "source_hashes": {
+    "scripts/evaluate_full_task_residual.py": "1265774ccb3fc39d88e0c2d5f7d9f85c61e46b46cfc87354a7074154987db7c9",
+    "robot_agent/full_task_residual_env.py": "ee273341a0f619b0b6da530f2eb1bfb05904ebe39bd30817c4d6b9e3df9adc7e",
+    "robot_agent/full_task_observation.py": "5355baeb869a720db1a4fe8145942f894a7416beb746b2ab7668d0ea7f080701",
+    "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+    "scripts/pilot_residual_v2.py": "4c5965e6deebb0a73a4aeaa4a3bcb40f9c529be756495908ee44b739a5c6ba9f"
+  }
+}
