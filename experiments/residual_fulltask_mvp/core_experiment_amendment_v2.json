@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "amendment": "CORE_EXPERIMENT_EXECUTION_AMENDMENT_V2",
+  "effective_at": "2026-11-24T07:12:12Z",
+  "source_request_sha256": "d201340a35cd95e56cfd727f3c560d45176afb6228435c48a8000cef94c24015",
+  "preserve_prior_artifacts": true,
+  "stage_c_interpretation": {
+    "diagnostic_validity": "VALID",
+    "presence_detection_auroc": 1.0,
+    "four_direction_score": 0.5,
+    "four_direction_score_is_hard_gate": false,
+    "authorized_student_mode": "P0"
+  },
+  "replacement_benchmark": "CONTACT_MEDIATED_DRIFT_V1",
+  "hard_stop_conditions": [
+    "FROZEN_NOMINAL_INVALID",
+    "PRIVILEGED_STUDENT_INPUT",
+    "SAFETY_OR_ACTION_BOUND_VIOLATION",
+    "TRAIN_TEST_LEAKAGE_OR_PROVENANCE_CORRUPTION",
+    "PERTURBATION_DESTROYS_TASK_SEMANTICS"
+  ],
+  "program_decision": "CONTINUE_CORE_RESIDUAL_EXPERIMENT",
+  "permissions": {
+    "hardware_executions": 0,
+    "real_data_reads": 0,
+    "real_training": 0,
+    "runtime_llm_calls": 0,
+    "automatic_twin_mutations": 0,
+    "friction_changes": 0,
+    "mass_changes": 0,
+    "contact_solver_changes": 0,
+    "success_detector_changes": 0,
+    "nominal_updates": 0
+  }
+}

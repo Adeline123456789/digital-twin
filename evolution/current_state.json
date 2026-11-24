@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Full-episode post-grasp residual research continuing to independent Stages B/C/D under Research Gate Amendment V1; dual model/right-arm task",
-  "status": "FULL_TASK_RESIDUAL_C_D_COMPLETE_STAGE_E_HELD",
+  "scope": "Core full-episode post-grasp Residual experiment under Core Experiment Execution Amendment V2; CONTACT_MEDIATED_DRIFT_V1; dual model/right-arm task",
+  "status": "CORE_RESIDUAL_EXPERIMENT_RUNNING",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
     "real training and real transfer"
   ],
-  "stop_condition": "Stop only the dependent branch on a hard validity failure. Stage E requires Stage B VALID, a deployable Stage C observation mode and a valid Stage D perturbation family; hardware remains denied.",
+  "stop_condition": "Stop only for invalid Frozen Nominal, privileged Student input, safety/action-bound violation, train/test leakage or provenance corruption, or a perturbation that immediately destroys task semantics; hardware remains denied.",
   "software": {
     "branch": "research/full-task-residual-20261124",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 5
   },
-  "next_grounded_work": "Publish the corrected Stage C and valid Stage D audits, then stop before Stage E because no observation mode passed four-direction qualification.",
-  "updated_at": "2026-11-24T06:45:41+00:00",
+  "next_grounded_work": "Pilot CONTACT_MEDIATED_DRIFT_V1 during LIFT/TRANSPORT, freeze a valid mixed-outcome distribution, then launch three P0 History PPO seeds in the background.",
+  "updated_at": "2026-11-24T07:12:12+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -252,9 +252,11 @@
     "design": "experiments/residual_fulltask_mvp/design.json",
     "gate_amendment": "docs/RESEARCH_GATE_AMENDMENT_V1.md",
     "gate_amendment_record": "experiments/residual_fulltask_mvp/stage_a_interpretation_amendment.json",
-    "stage": "C_D_COMPLETE",
-    "status": "STAGE_C_NOT_SUPPORTED_STAGE_D_VALID",
-    "program_decision": "HOLD_BEFORE_STAGE_E",
+    "core_experiment_amendment": "docs/CORE_EXPERIMENT_EXECUTION_AMENDMENT_V2.md",
+    "core_experiment_amendment_record": "experiments/residual_fulltask_mvp/core_experiment_amendment_v2.json",
+    "stage": "CONTACT_DRIFT_PILOT",
+    "status": "CORE_RESIDUAL_EXPERIMENT_RUNNING",
+    "program_decision": "CONTINUE_CORE_RESIDUAL_EXPERIMENT",
     "candidate_mapping": "Stage A B2 is a new pure-proprioception version of the historical B3_structured 15-frame architecture; historical artifacts remain unchanged.",
     "frozen_counts": {
       "training_seeds": 5,
@@ -448,9 +450,25 @@
       "real_data_reads": 0
     },
     "stage_e": {
-      "status": "NOT_STARTED",
+      "status": "CONTACT_DRIFT_PILOT_PENDING",
       "training_steps": 0,
-      "reason": "Stage C produced no qualified deployable observation mode; the hard Stage E prerequisite is not met."
+      "student_mode": "P0_AUTHORIZED_BY_AMENDMENT_V2",
+      "reason": "Four-direction classification is diagnostic, not a hard gate. Training waits only for a frozen valid CONTACT_MEDIATED_DRIFT_V1 distribution."
+    },
+    "core_experiment_v2": {
+      "status": "CONTACT_DRIFT_PILOT_PENDING",
+      "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
+      "pilot_force_n": [5, 25],
+      "pilot_duration_ms": [50, 200],
+      "pilot_phases": ["lift_middle", "transport_early", "transport_late"],
+      "target_nominal_success_rate": [0.2, 0.8],
+      "student_mode": "P0",
+      "training_seeds": 3,
+      "hardware": 0,
+      "real_data_reads": 0,
+      "friction_changes": 0,
+      "mass_changes": 0,
+      "solver_changes": 0
     },
     "validation": {
       "focused_tests": "7 passed",
