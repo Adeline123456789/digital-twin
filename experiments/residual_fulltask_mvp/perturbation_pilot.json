@@ -1,0 +1,1097 @@
+{
+  "schema_version": 1,
+  "stage": "D_PILOT",
+  "validity": "VALID",
+  "hypothesis": "INCONCLUSIVE",
+  "claims_allowed": [
+    "The direct state edit changes plug pose in the gripper frame without changing friction."
+  ],
+  "claims_not_allowed": [
+    "The direct edit is physical slip or a measured real-world slip distribution."
+  ],
+  "program_decision": "FREEZE_FORMAL_RANGE",
+  "source": {
+    "episode": "20261123T090549Z_a35ab76b",
+    "grasp_established_frame": 97,
+    "first_lift_frame": 98,
+    "frozen_reference_sha256": "4121fa279c0a4b6f6031c726f20103c9c1fa8ae19b2e03735032daaf2aeb6eb2",
+    "physics_state_mujoco_version": "3.3.7",
+    "physics_state_spec": 8191,
+    "model_sha256": "b66d55dc9ad2493181a1fdacdbc0029abbdfc9d1c970785011a108869baff9a0"
+  },
+  "direct_state_pilot": [
+    {
+      "requested_xy_mm": [
+        0.05,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.0500000000000049,
+        2.0502008971816713e-14
+      ],
+      "retained_xy_mm": [
+        0.12242579527465061,
+        -0.0005648903179844664
+      ],
+      "max_penetration_mm": 0.05001660890956161,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_x",
+      "amplitude_mm": 0.05
+    },
+    {
+      "requested_xy_mm": [
+        -0.05,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.0500000000000049,
+        -2.0502008971816713e-14
+      ],
+      "retained_xy_mm": [
+        0.05548133371771624,
+        -0.0012747319258165155
+      ],
+      "max_penetration_mm": 0.019221092751554994,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_x",
+      "amplitude_mm": 0.05
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.05
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        0.049999999999982364
+      ],
+      "retained_xy_mm": [
+        0.10587000454443524,
+        -0.00013912363258993668
+      ],
+      "max_penetration_mm": 0.047065777577839245,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_y",
+      "amplitude_mm": 0.05
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.05
+      ],
+      "measured_initial_xy_mm": [
+        -3.469446951953614e-15,
+        -0.04999999999998236
+      ],
+      "retained_xy_mm": [
+        0.0985060931938675,
+        0.0018939990206218427
+      ],
+      "max_penetration_mm": 0.04704468490871726,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_y",
+      "amplitude_mm": 0.05
+    },
+    {
+      "requested_xy_mm": [
+        0.1,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.0999999999999994,
+        -1.4177213954668852e-14
+      ],
+      "retained_xy_mm": [
+        0.13293776284537678,
+        -0.0006990143041490708
+      ],
+      "max_penetration_mm": 0.10001660831741171,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_x",
+      "amplitude_mm": 0.1
+    },
+    {
+      "requested_xy_mm": [
+        -0.1,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.09999999999999593,
+        1.4177637471142479e-14
+      ],
+      "retained_xy_mm": [
+        0.013011497798556121,
+        -0.0011161277965860729
+      ],
+      "max_penetration_mm": 0.037797493991045206,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_x",
+      "amplitude_mm": 0.1
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.1
+      ],
+      "measured_initial_xy_mm": [
+        -3.469446951953614e-15,
+        0.1000000000000199
+      ],
+      "retained_xy_mm": [
+        0.10531737114204479,
+        6.0398675804256774e-05
+      ],
+      "max_penetration_mm": 0.09348686364361457,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_y",
+      "amplitude_mm": 0.1
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.1
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        -0.1000000000000199
+      ],
+      "retained_xy_mm": [
+        0.10107108127878697,
+        0.0019214393347469472
+      ],
+      "max_penetration_mm": 0.09347126551634974,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_y",
+      "amplitude_mm": 0.1
+    },
+    {
+      "requested_xy_mm": [
+        0.15,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.15000000000000083,
+        6.324795017147861e-15
+      ],
+      "retained_xy_mm": [
+        0.13623303826646588,
+        -0.0006928637217431535
+      ],
+      "max_penetration_mm": 0.15001660772526879,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_x",
+      "amplitude_mm": 0.15
+    },
+    {
+      "requested_xy_mm": [
+        -0.15,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.15000000000000083,
+        -6.325218533621488e-15
+      ],
+      "retained_xy_mm": [
+        -0.02962288975114427,
+        -0.0009939813085961778
+      ],
+      "max_penetration_mm": 0.05637389523048467,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_x",
+      "amplitude_mm": 0.15
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.15
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        0.15000000000000832
+      ],
+      "retained_xy_mm": [
+        0.09864654153456803,
+        -0.002619699345567561
+      ],
+      "max_penetration_mm": 0.1399079497093438,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_y",
+      "amplitude_mm": 0.15
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.15
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        -0.1500000000000083
+      ],
+      "retained_xy_mm": [
+        0.10022867339969793,
+        0.0033306462096705817
+      ],
+      "max_penetration_mm": 0.13989784612393977,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_y",
+      "amplitude_mm": 0.15
+    },
+    {
+      "requested_xy_mm": [
+        0.18,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.1799999999999996,
+        -1.4482569332154027e-14
+      ],
+      "retained_xy_mm": [
+        0.14170344932737042,
+        -0.0006422675266230054
+      ],
+      "max_penetration_mm": 0.18001660736997885,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_x",
+      "amplitude_mm": 0.18
+    },
+    {
+      "requested_xy_mm": [
+        -0.18,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.17999999999999614,
+        1.4482992848627654e-14
+      ],
+      "retained_xy_mm": [
+        -0.0553621675473924,
+        -0.000961001457385374
+      ],
+      "max_penetration_mm": 0.06751973597417489,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_x",
+      "amplitude_mm": 0.18
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.18
+      ],
+      "measured_initial_xy_mm": [
+        -3.469446951953614e-15,
+        0.17999999999997446
+      ],
+      "retained_xy_mm": [
+        0.08978684566985154,
+        -0.005865102182528649
+      ],
+      "max_penetration_mm": 0.1677606013487616,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_y",
+      "amplitude_mm": 0.18
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.18
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        -0.17999999999997443
+      ],
+      "retained_xy_mm": [
+        0.10581933655386816,
+        0.002602934721276092
+      ],
+      "max_penetration_mm": 0.16775379448847189,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_y",
+      "amplitude_mm": 0.18
+    },
+    {
+      "requested_xy_mm": [
+        0.2,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.1999999999999988,
+        2.682595695601732e-14
+      ],
+      "retained_xy_mm": [
+        0.1999999999999988,
+        2.682595695601732e-14
+      ],
+      "max_penetration_mm": 0.20001660713311886,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_x",
+      "amplitude_mm": 0.2
+    },
+    {
+      "requested_xy_mm": [
+        -0.2,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.19999999999999532,
+        -2.6825533439543692e-14
+      ],
+      "retained_xy_mm": [
+        -0.07262451700941128,
+        -0.0009643053750123192
+      ],
+      "max_penetration_mm": 0.07495029646991873,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_x",
+      "amplitude_mm": 0.2
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.2
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        0.19999999999999066
+      ],
+      "retained_xy_mm": [
+        0.08657022840083059,
+        -0.007102924375916519
+      ],
+      "max_penetration_mm": 0.18632903577507268,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "positive_y",
+      "amplitude_mm": 0.2
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.2
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        -0.19999999999999063
+      ],
+      "retained_xy_mm": [
+        0.10064027816389723,
+        0.00390416104818011
+      ],
+      "max_penetration_mm": 0.1863244267315263,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_y",
+      "amplitude_mm": 0.2
+    },
+    {
+      "requested_xy_mm": [
+        0.25,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.2500000000000002,
+        -7.852842453994618e-15
+      ],
+      "retained_xy_mm": [
+        0.2500000000000002,
+        -7.852842453994618e-15
+      ],
+      "max_penetration_mm": 0.2500166065409759,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_x",
+      "amplitude_mm": 0.25
+    },
+    {
+      "requested_xy_mm": [
+        -0.25,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.2500000000000002,
+        7.852418937520991e-15
+      ],
+      "retained_xy_mm": [
+        -0.11577378431847085,
+        -0.0009725534199066821
+      ],
+      "max_penetration_mm": 0.09352669770940907,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_x",
+      "amplitude_mm": 0.25
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.25
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        0.24999999999997302
+      ],
+      "retained_xy_mm": [
+        3.469446951953614e-15,
+        0.24999999999997302
+      ],
+      "max_penetration_mm": 0.23275012184079674,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_y",
+      "amplitude_mm": 0.25
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.25
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        -0.24999999999997305
+      ],
+      "retained_xy_mm": [
+        0.0,
+        -0.24999999999997305
+      ],
+      "max_penetration_mm": 0.23275100733911264,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_y",
+      "amplitude_mm": 0.25
+    },
+    {
+      "requested_xy_mm": [
+        0.5,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.5000000000000004,
+        -1.5704837875041983e-14
+      ],
+      "retained_xy_mm": [
+        0.5000000000000004,
+        -1.5704837875041983e-14
+      ],
+      "max_penetration_mm": 0.5000166035802472,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_x",
+      "amplitude_mm": 0.5
+    },
+    {
+      "requested_xy_mm": [
+        -0.5,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.499999999999997,
+        1.570526139151561e-14
+      ],
+      "retained_xy_mm": [
+        -0.331414373458315,
+        -0.0010134217785872617
+      ],
+      "max_penetration_mm": 0.18640870390670247,
+      "valid": true,
+      "frames_advanced": 15,
+      "direction": "negative_x",
+      "amplitude_mm": 0.5
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.5
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        0.5000000000000012
+      ],
+      "retained_xy_mm": [
+        3.469446951953614e-15,
+        0.5000000000000012
+      ],
+      "max_penetration_mm": 0.4648555521695287,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_y",
+      "amplitude_mm": 0.5
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.5
+      ],
+      "measured_initial_xy_mm": [
+        -3.469446951953614e-15,
+        -0.5000000000000012
+      ],
+      "retained_xy_mm": [
+        -3.469446951953614e-15,
+        -0.5000000000000012
+      ],
+      "max_penetration_mm": 0.4648839103771493,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_y",
+      "amplitude_mm": 0.5
+    },
+    {
+      "requested_xy_mm": [
+        0.75,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.7500000000000007,
+        -2.3557256812562974e-14
+      ],
+      "retained_xy_mm": [
+        0.7500000000000007,
+        -2.3557256812562974e-14
+      ],
+      "max_penetration_mm": 0.7500166006195186,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_x",
+      "amplitude_mm": 0.75
+    },
+    {
+      "requested_xy_mm": [
+        -0.75,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.7499999999999972,
+        2.35576803290366e-14
+      ],
+      "retained_xy_mm": [
+        -0.7499999999999972,
+        2.35576803290366e-14
+      ],
+      "max_penetration_mm": 0.279290710103996,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_x",
+      "amplitude_mm": 0.75
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.75
+      ],
+      "measured_initial_xy_mm": [
+        -3.469446951953614e-15,
+        0.7499999999999801
+      ],
+      "retained_xy_mm": [
+        -3.469446951953614e-15,
+        0.7499999999999801
+      ],
+      "max_penetration_mm": 0.6969609824982206,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_y",
+      "amplitude_mm": 0.75
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.75
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        -0.7499999999999803
+      ],
+      "retained_xy_mm": [
+        3.469446951953614e-15,
+        -0.7499999999999803
+      ],
+      "max_penetration_mm": 0.6970168134151384,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_y",
+      "amplitude_mm": 0.75
+    },
+    {
+      "requested_xy_mm": [
+        1.0,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        1.0000000000000009,
+        2.3770709115271058e-14
+      ],
+      "retained_xy_mm": [
+        1.0000000000000009,
+        2.3770709115271058e-14
+      ],
+      "max_penetration_mm": 1.00001659765879,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_x",
+      "amplitude_mm": 1.0
+    },
+    {
+      "requested_xy_mm": [
+        -1.0,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -1.0000000000000009,
+        -2.377028559879743e-14
+      ],
+      "retained_xy_mm": [
+        -1.0000000000000009,
+        -2.377028559879743e-14
+      ],
+      "max_penetration_mm": 0.37217271630123844,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_x",
+      "amplitude_mm": 1.0
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        1.0
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        1.0000000000000084
+      ],
+      "retained_xy_mm": [
+        0.0,
+        1.0000000000000084
+      ],
+      "max_penetration_mm": 0.9290664128269478,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_y",
+      "amplitude_mm": 1.0
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -1.0
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        -1.0000000000000084
+      ],
+      "retained_xy_mm": [
+        0.0,
+        -1.0000000000000084
+      ],
+      "max_penetration_mm": 0.9291497164531667,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_y",
+      "amplitude_mm": 1.0
+    },
+    {
+      "requested_xy_mm": [
+        1.25,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        1.250000000000001,
+        2.1969493552934788e-14
+      ],
+      "retained_xy_mm": [
+        1.250000000000001,
+        2.1969493552934788e-14
+      ],
+      "max_penetration_mm": 1.2500165946980613,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_x",
+      "amplitude_mm": 1.25
+    },
+    {
+      "requested_xy_mm": [
+        -1.25,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -1.250000000000001,
+        -2.196907003646116e-14
+      ],
+      "retained_xy_mm": [
+        -1.250000000000001,
+        -2.196907003646116e-14
+      ],
+      "max_penetration_mm": 0.46505472249852636,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_x",
+      "amplitude_mm": 1.25
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        1.25
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        1.2499999999999813
+      ],
+      "retained_xy_mm": [
+        0.0,
+        1.2499999999999813
+      ],
+      "max_penetration_mm": 1.1611718431556337,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_y",
+      "amplitude_mm": 1.25
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -1.25
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        -1.2499999999999816
+      ],
+      "retained_xy_mm": [
+        0.0,
+        -1.2499999999999816
+      ],
+      "max_penetration_mm": 1.1612826194911567,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_y",
+      "amplitude_mm": 1.25
+    },
+    {
+      "requested_xy_mm": [
+        1.5,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        1.4999999999999978,
+        1.4117498131887424e-14
+      ],
+      "retained_xy_mm": [
+        1.4999999999999978,
+        1.4117498131887424e-14
+      ],
+      "max_penetration_mm": 1.5000165917373325,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_x",
+      "amplitude_mm": 1.5
+    },
+    {
+      "requested_xy_mm": [
+        -1.5,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -1.4999999999999978,
+        -1.4117074615413797e-14
+      ],
+      "retained_xy_mm": [
+        -1.4999999999999978,
+        -1.4117074615413797e-14
+      ],
+      "max_penetration_mm": 0.5579367286958197,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_x",
+      "amplitude_mm": 1.5
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        1.5
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        1.5000000000000095
+      ],
+      "retained_xy_mm": [
+        3.469446951953614e-15,
+        1.5000000000000095
+      ],
+      "max_penetration_mm": 1.393277273484361,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "positive_y",
+      "amplitude_mm": 1.5
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -1.5
+      ],
+      "measured_initial_xy_mm": [
+        0.0,
+        -1.50000000000001
+      ],
+      "retained_xy_mm": [
+        0.0,
+        -1.50000000000001
+      ],
+      "max_penetration_mm": 1.393415522529185,
+      "valid": false,
+      "frames_advanced": 0,
+      "direction": "negative_y",
+      "amplitude_mm": 1.5
+    }
+  ],
+  "contact_mediated_pilot": [
+    {
+      "direction": "positive_x",
+      "force_n": 5.0,
+      "after_force_xy_mm": [
+        0.00591590655045493,
+        6.132164188987481e-05
+      ],
+      "settled_xy_mm": [
+        0.011806180111831321,
+        0.00012536535671211436
+      ],
+      "max_penetration_mm": 0.0006481933099481965,
+      "valid": true
+    },
+    {
+      "direction": "negative_x",
+      "force_n": 5.0,
+      "after_force_xy_mm": [
+        0.00259966220613958,
+        -9.031044747718036e-05
+      ],
+      "settled_xy_mm": [
+        0.009452212850234037,
+        -5.592346519335693e-05
+      ],
+      "max_penetration_mm": 0.0006923247364739331,
+      "valid": true
+    },
+    {
+      "direction": "positive_y",
+      "force_n": 5.0,
+      "after_force_xy_mm": [
+        0.006813084032976369,
+        -0.002074074790239728
+      ],
+      "settled_xy_mm": [
+        0.012349655561735146,
+        -0.0024603143907086446
+      ],
+      "max_penetration_mm": 0.014652634283224088,
+      "valid": true
+    },
+    {
+      "direction": "negative_y",
+      "force_n": 5.0,
+      "after_force_xy_mm": [
+        0.0066368641302994025,
+        -0.00079988177043902
+      ],
+      "settled_xy_mm": [
+        0.013395256642092374,
+        0.0005301880576255642
+      ],
+      "max_penetration_mm": 0.0008918035878403144,
+      "valid": true
+    },
+    {
+      "direction": "positive_x",
+      "force_n": 10.0,
+      "after_force_xy_mm": [
+        0.005916866774768187,
+        6.070754212038937e-05
+      ],
+      "settled_xy_mm": [
+        0.011806424924643705,
+        0.0001253033638777467
+      ],
+      "max_penetration_mm": 0.0006512263299865058,
+      "valid": true
+    },
+    {
+      "direction": "negative_x",
+      "force_n": 10.0,
+      "after_force_xy_mm": [
+        -0.001511987873743792,
+        -0.00010643125015921088
+      ],
+      "settled_xy_mm": [
+        0.005503769369953615,
+        -2.3732101817291674e-05
+      ],
+      "max_penetration_mm": 0.0007659773684699077,
+      "valid": true
+    },
+    {
+      "direction": "positive_y",
+      "force_n": 10.0,
+      "after_force_xy_mm": [
+        0.02060435540251343,
+        -0.0059611211811362586
+      ],
+      "settled_xy_mm": [
+        0.026713571437742,
+        -0.006867741216022851
+      ],
+      "max_penetration_mm": 0.041016827602364664,
+      "valid": true
+    },
+    {
+      "direction": "negative_y",
+      "force_n": 10.0,
+      "after_force_xy_mm": [
+        0.06055487925571423,
+        0.019337893510865324
+      ],
+      "settled_xy_mm": [
+        0.07798196059438656,
+        0.016603177931441948
+      ],
+      "max_penetration_mm": 0.03085621252085013,
+      "valid": true
+    },
+    {
+      "direction": "positive_x",
+      "force_n": 20.0,
+      "after_force_xy_mm": [
+        0.005919492719892727,
+        5.432450082938459e-05
+      ],
+      "settled_xy_mm": [
+        0.011806924113330619,
+        0.00012520776262986479
+      ],
+      "max_penetration_mm": 0.0006571438491176147,
+      "valid": true
+    },
+    {
+      "direction": "negative_x",
+      "force_n": 20.0,
+      "after_force_xy_mm": [
+        0.06318460998351594,
+        0.02048240897713463
+      ],
+      "settled_xy_mm": [
+        0.08915634722714283,
+        0.02621115159581433
+      ],
+      "max_penetration_mm": 0.042941791604339676,
+      "valid": true
+    },
+    {
+      "direction": "positive_y",
+      "force_n": 20.0,
+      "after_force_xy_mm": [
+        -0.3824714955027141,
+        -0.09847288048972606
+      ],
+      "settled_xy_mm": [
+        -0.3757538364969858,
+        -0.09253272487777245
+      ],
+      "max_penetration_mm": 0.04865927910650667,
+      "valid": true
+    },
+    {
+      "direction": "negative_y",
+      "force_n": 20.0,
+      "after_force_xy_mm": [
+        -2.876370190059315,
+        0.5455406618488707
+      ],
+      "settled_xy_mm": [
+        -2.870622585862358,
+        0.5365686416113588
+      ],
+      "max_penetration_mm": 0.10796684503087096,
+      "valid": true
+    },
+    {
+      "direction": "positive_x",
+      "force_n": 50.0,
+      "after_force_xy_mm": [
+        0.00595889600283131,
+        4.463475138860593e-05
+      ],
+      "settled_xy_mm": [
+        0.011844720819460114,
+        0.00012464025789312114
+      ],
+      "max_penetration_mm": 0.0006837905963744118,
+      "valid": true
+    },
+    {
+      "direction": "negative_x",
+      "force_n": 50.0,
+      "after_force_xy_mm": [
+        -20.076881179494848,
+        -1.1554408117254518
+      ],
+      "settled_xy_mm": [
+        -32.458240671860906,
+        -1.9921835392954483
+      ],
+      "max_penetration_mm": 0.3228608270145089,
+      "valid": false
+    },
+    {
+      "direction": "positive_y",
+      "force_n": 50.0,
+      "after_force_xy_mm": [
+        -3.370520436505046,
+        0.6466754301004908
+      ],
+      "settled_xy_mm": [
+        -3.4924230338647146,
+        0.6130592258138331
+      ],
+      "max_penetration_mm": 0.30329693817059894,
+      "valid": false
+    },
+    {
+      "direction": "negative_y",
+      "force_n": 50.0,
+      "after_force_xy_mm": [
+        -5.543782864556357,
+        0.017437012753741876
+      ],
+      "settled_xy_mm": [
+        -1.9951380344246372,
+        0.47270178089394665
+      ],
+      "max_penetration_mm": 0.1334761270198639,
+      "valid": true
+    }
+  ],
+  "contact_mediated_status": "PHYSICAL_SLIP_NOT_REPRODUCED",
+  "candidate_cardinal_max_mm": {
+    "positive_x": 0.18,
+    "negative_x": 0.5,
+    "positive_y": 0.18,
+    "negative_y": 0.18
+  },
+  "collision_limit_mm": 0.2,
+  "friction_changes": 0,
+  "hardware_executions": 0,
+  "real_data_reads": 0
+}

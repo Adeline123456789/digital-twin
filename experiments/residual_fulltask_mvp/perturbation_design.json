@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "stage": "D_FORMAL_RANGE_FROZEN",
+  "frozen_at": "2026-11-24T06:26:56Z",
+  "source_episode": "20261123T090549Z_a35ab76b",
+  "boundary": {
+    "grasp_established_frame": 97,
+    "first_lift_frame": 98
+  },
+  "perturbation_type": "CONTROLLED_POST_GRASP_STATE_PERTURBATION",
+  "coordinate_frame": "right/gripper_center",
+  "dimensions": [
+    "x",
+    "y"
+  ],
+  "cardinal_max_amplitude_mm": {
+    "positive_x": 0.18,
+    "negative_x": 0.5,
+    "positive_y": 0.18,
+    "negative_y": 0.18
+  },
+  "train_fractions": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "heldout_fractions": [
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "split_rule": "Disjoint amplitude fractions and complete simulated audit Episodes; no frame-level split.",
+  "observation_frames": 15,
+  "observability_thresholds": {
+    "detection_auroc_min": 0.75,
+    "direction_accuracy_min": 0.6
+  },
+  "collision_limit_mm": 0.2,
+  "range_rationale": "The preregistered 0.25-1.5 mm pilot exceeded the collision limit in at least three cardinal directions. These are the largest pilot-qualified cardinal bounds with a 0.02 mm margin on the limiting positive-x direction; negative x has asymmetric free contact travel.",
+  "pilot": {
+    "artifact": "experiments/residual_fulltask_mvp/perturbation_pilot.json",
+    "sha256": "6fec37945bdf6ca3dee5f98f2bd3d5c52b83089c173dcffe93b7da34ff612d27"
+  },
+  "contact_mediated_drift": {
+    "status": "PHYSICAL_SLIP_NOT_REPRODUCED",
+    "included_in_formal_family": false,
+    "reason": "Unchanged-friction force probes did not yield a valid direction-controllable four-way displacement family."
+  },
+  "camera_correspondence": {
+    "simulated_channel": "right_wrist",
+    "real_channel_name": "cam_right_wrist_rgb.mp4",
+    "status": "UNVERIFIED",
+    "reason": "Archived metadata says current hardware extrinsics are unverified and this experiment denies real-data reads."
+  },
+  "prohibited_changes": {
+    "friction": 0,
+    "contact_solver": 0,
+    "success_threshold": 0,
+    "nominal_reference": 0
+  },
+  "permissions": {
+    "hardware_executions": 0,
+    "real_data_reads": 0,
+    "real_training": 0,
+    "runtime_llm_calls": 0,
+    "automatic_twin_mutations": 0
+  }
+}
