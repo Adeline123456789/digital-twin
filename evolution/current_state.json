@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Full-episode post-grasp residual research continuing to independent Stages B/C/D under Research Gate Amendment V1; dual model/right-arm task",
-  "status": "FULL_TASK_RESIDUAL_STAGE_C_VALID_STAGE_D_RUNNING",
+  "status": "FULL_TASK_RESIDUAL_C_D_COMPLETE_STAGE_E_HELD",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 5
   },
-  "next_grounded_work": "Finish the frozen Stage D boundary full-task replay, then apply the Stage E prerequisite gate without changing the perturbation range.",
-  "updated_at": "2026-11-24T06:31:38+00:00",
+  "next_grounded_work": "Publish the corrected Stage C and valid Stage D audits, then stop before Stage E because no observation mode passed four-direction qualification.",
+  "updated_at": "2026-11-24T06:45:41+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -252,9 +252,9 @@
     "design": "experiments/residual_fulltask_mvp/design.json",
     "gate_amendment": "docs/RESEARCH_GATE_AMENDMENT_V1.md",
     "gate_amendment_record": "experiments/residual_fulltask_mvp/stage_a_interpretation_amendment.json",
-    "stage": "C_COMPLETE_D_RUNNING",
-    "status": "STAGE_C_VALID_P0_SELECTED",
-    "program_decision": "CONTINUE_D_BOUNDARY_AUDIT",
+    "stage": "C_D_COMPLETE",
+    "status": "STAGE_C_NOT_SUPPORTED_STAGE_D_VALID",
+    "program_decision": "HOLD_BEFORE_STAGE_E",
     "candidate_mapping": "Stage A B2 is a new pure-proprioception version of the historical B3_structured 15-frame architecture; historical artifacts remain unchanged.",
     "frozen_counts": {
       "training_seeds": 5,
@@ -272,8 +272,10 @@
       "real_training": 0,
       "runtime_llm": 0,
       "twin_mutations": 0,
-      "stage_c_prefix_rollouts": 33,
-      "stage_d_pilot_conditions": 60
+      "stage_c_prefix_rollouts": 225,
+      "stage_d_pilot_conditions": 60,
+      "stage_d_full_task_rollouts": 5,
+      "stage_e_training_steps": 0
     },
     "background": {
       "evaluation_processes": "completed; saved PIDs exited",
@@ -375,29 +377,43 @@
     },
     "stage_c": {
       "validity": "VALID",
-      "hypothesis": "SUPPORTED",
+      "hypothesis": "NOT_SUPPORTED",
       "claims_allowed": [
-        "P0 distinguishes the frozen formal perturbations in held-out simulation Episodes."
+        "P0 distinguishes perturbation presence in deterministic held-out simulation pairs."
       ],
       "claims_not_allowed": [
         "The audit establishes robustness to real sensor noise or real robot transfer.",
-        "P1 is deployable before simulator-to-real right-wrist viewpoint correspondence is verified."
+        "P1 is deployable before simulator-to-real right-wrist viewpoint correspondence is verified.",
+        "P0 or P1 identifies all four controlled perturbation directions at the required accuracy."
       ],
-      "program_decision": "CONTINUE",
-      "selected_mode": "P0",
+      "program_decision": "HOLD",
+      "failure_category": "OBSERVATION_UNIDENTIFIABLE",
+      "selected_mode": null,
       "artifact": "experiments/residual_fulltask_mvp/observability.json",
-      "train_episodes": 12,
-      "heldout_episodes": 20,
+      "audit_revision": 2,
+      "supersedes_commit": "9cdb107093511871760738e18e10d2dc9f5371de",
+      "direction_score_definition": "Minimum of balanced treatment accuracy and macro recall for paired current-error direction.",
+      "train_pairs": 12,
+      "heldout_pairs": 20,
+      "train_episodes": 24,
+      "heldout_episodes": 40,
       "P0": {
         "detection_auroc": 1.0,
-        "direction_accuracy": 0.95,
-        "xy_rmse_mm": 0.02145976132988755,
-        "first_passing_delay_frames": 1,
-        "deployable": true
+        "direction_accuracy": 0.5,
+        "current_direction_accuracy": 0.85,
+        "current_direction_macro_recall": 0.5,
+        "treatment_direction_accuracy": 0.5,
+        "xy_rmse_mm": 0.0008608262996783041,
+        "first_passing_delay_frames": null,
+        "deployable": false,
+        "sensor_interface_deployable": true
       },
       "P1": {
         "detection_auroc": 1.0,
-        "direction_accuracy": 0.95,
+        "direction_accuracy": 0.4772727272727273,
+        "current_direction_accuracy": 0.8,
+        "current_direction_macro_recall": 0.4772727272727273,
+        "treatment_direction_accuracy": 0.5,
         "deployable": false,
         "reason": "Current hardware extrinsics are unverified; real-data read is denied."
       },
@@ -405,12 +421,44 @@
       "hardware": 0,
       "real_data_reads": 0
     },
+    "stage_d": {
+      "validity": "VALID",
+      "hypothesis": "SUPPORTED",
+      "claims_allowed": [
+        "The frozen controlled cardinal family changes post-grasp plug state without friction changes and stays within the collision bound.",
+        "Zero of four boundary perturbations caused the frozen nominal task to fail."
+      ],
+      "claims_not_allowed": [
+        "The controlled qpos edit is contact-mediated physical slip.",
+        "The perturbation amplitudes estimate a real-world slip distribution.",
+        "The frozen family causes nominal task failures."
+      ],
+      "program_decision": "CONTINUE",
+      "artifact": "experiments/residual_fulltask_mvp/perturbation_audit.json",
+      "formal_cardinal_max_mm": {
+        "positive_x": 0.18,
+        "negative_x": 0.5,
+        "positive_y": 0.18,
+        "negative_y": 0.18
+      },
+      "boundary_failures": 0,
+      "boundary_episodes": 4,
+      "contact_mediated_status": "PHYSICAL_SLIP_NOT_REPRODUCED",
+      "hardware": 0,
+      "real_data_reads": 0
+    },
+    "stage_e": {
+      "status": "NOT_STARTED",
+      "training_steps": 0,
+      "reason": "Stage C produced no qualified deployable observation mode; the hard Stage E prerequisite is not met."
+    },
     "validation": {
       "focused_tests": "7 passed",
       "repository_tests": "181 passed and 27 subtests passed across existing compatible environments; 1 private-control import test remained excluded by the standing prohibition.",
       "condition_count": "Each of B0, B1 and five B2 policies has 64 held-out + 20 nominal conditions.",
       "summary_reproduction": "PASS: rerun produced identical SHA-256 423984b0b48da62c1a591e1f839f8c30c0f1f1c5476672cacbe148db8426bf49",
-      "taskbook_copy": "Matches the supplied taskbook content; repository copy adds only the conventional final newline."
+      "taskbook_copy": "Matches the supplied taskbook content; repository copy adds only the conventional final newline.",
+      "stage_b_c_d_focused_tests": "11 passed"
     }
   }
 }

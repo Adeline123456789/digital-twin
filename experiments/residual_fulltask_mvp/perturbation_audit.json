@@ -1,0 +1,767 @@
+{
+  "schema_version": 1,
+  "stage": "D",
+  "validity": "VALID",
+  "hypothesis": "SUPPORTED",
+  "claims_allowed": [
+    "The frozen controlled cardinal family changes post-grasp plug state without friction changes and stays within the collision bound.",
+    "0 of 4 boundary perturbations caused the frozen nominal task to fail."
+  ],
+  "claims_not_allowed": [
+    "The controlled qpos edit is contact-mediated physical slip.",
+    "The perturbation amplitudes estimate a real-world slip distribution.",
+    "A recovery benefit is established before residual training and held-out evaluation.",
+    "The frozen family causes nominal task failures."
+  ],
+  "program_decision": "CONTINUE",
+  "program_decision_reason": "The controlled perturbation family is valid, satisfying the Stage D hard prerequisite. Zero boundary failures limit the later recovery claim but do not invalidate the family.",
+  "nominal_failure_hypothesis": "NOT_SUPPORTED",
+  "perturbation_type": "CONTROLLED_POST_GRASP_STATE_PERTURBATION",
+  "coordinate_frame": "right/gripper_center",
+  "design": "experiments/residual_fulltask_mvp/perturbation_design.json",
+  "design_sha256": "22df07f9d92199fa255cf6f5ad87c2305bcb403d83eb192af1b9f0ec629103dd",
+  "pilot": "experiments/residual_fulltask_mvp/perturbation_pilot.json",
+  "pilot_sha256": "6fec37945bdf6ca3dee5f98f2bd3d5c52b83089c173dcffe93b7da34ff612d27",
+  "contact_mediated_status": "PHYSICAL_SLIP_NOT_REPRODUCED",
+  "friction_changes": 0,
+  "nominal": {
+    "requested_xy_mm": [
+      0.0,
+      0.0
+    ],
+    "measured_initial_xy_mm": [
+      0.0,
+      0.0
+    ],
+    "valid": true,
+    "max_penetration_mm": 0.0314633920053186,
+    "last_frame": 600,
+    "last_phase": "retreat",
+    "task_success": true,
+    "final_metrics": {
+      "lateral_error_m": 0.00012175167744957523,
+      "face_gap_m": 0.00019999952390323955,
+      "yaw_rad": 8.469905839942479e-05,
+      "tilt_rad": 0.0,
+      "seated": true,
+      "hold_seconds": 3.133333333333332,
+      "success": true
+    },
+    "phase_end": {
+      "lift": {
+        "plug_in_gripper_frame_m": [
+          0.020730595216769832,
+          3.2501516232249574e-05,
+          2.2127433790305215e-06
+        ],
+        "task_metrics": {
+          "lateral_error_m": 0.3196530063816759,
+          "face_gap_m": 0.05775766244171889,
+          "yaw_rad": 0.10133507401187788,
+          "tilt_rad": 0.0059982390336348135,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      "transport": {
+        "plug_in_gripper_frame_m": [
+          0.02215498759910053,
+          2.2411247944888104e-05,
+          -2.8538036514834105e-06
+        ],
+        "task_metrics": {
+          "lateral_error_m": 0.00012167809003703193,
+          "face_gap_m": 0.0435561527618512,
+          "yaw_rad": 0.00010972266101586549,
+          "tilt_rad": 0.09007792465555502,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      "align": {
+        "plug_in_gripper_frame_m": [
+          0.02227717657186224,
+          2.1839878318797147e-05,
+          -3.7755157234461027e-06
+        ],
+        "task_metrics": {
+          "lateral_error_m": 0.00018820275231787659,
+          "face_gap_m": 0.025893714050792202,
+          "yaw_rad": -7.50574287679848e-05,
+          "tilt_rad": 0.005463064240574161,
+          "seated": false,
+          "hold_seconds": 0.0,
+          "success": false
+        }
+      },
+      "insert": {
+        "plug_in_gripper_frame_m": [
+          0.022450486543449773,
+          2.155244194049856e-05,
+          -2.148630252898425e-06
+        ],
+        "task_metrics": {
+          "lateral_error_m": 0.00012333736671721335,
+          "face_gap_m": 0.00020254245778873747,
+          "yaw_rad": 8.041751645330018e-05,
+          "tilt_rad": 0.00012909304935131852,
+          "seated": true,
+          "hold_seconds": 0.3,
+          "success": true
+        }
+      },
+      "release": {
+        "plug_in_gripper_frame_m": [
+          0.022276987252210983,
+          0.00011045813713265562,
+          -8.715820391117219e-05
+        ],
+        "task_metrics": {
+          "lateral_error_m": 0.00012175167731346391,
+          "face_gap_m": 0.00019999952619701583,
+          "yaw_rad": 8.469916357273467e-05,
+          "tilt_rad": 0.0,
+          "seated": true,
+          "hold_seconds": 1.633333333333335,
+          "success": true
+        }
+      },
+      "retreat": {
+        "plug_in_gripper_frame_m": [
+          0.06515187530517377,
+          0.004246031540116284,
+          -0.0001355462556367832
+        ],
+        "task_metrics": {
+          "lateral_error_m": 0.00012175167744957523,
+          "face_gap_m": 0.00019999952390323955,
+          "yaw_rad": 8.469905839942479e-05,
+          "tilt_rad": 0.0,
+          "seated": true,
+          "hold_seconds": 3.133333333333332,
+          "success": true
+        }
+      }
+    }
+  },
+  "boundary_episodes": [
+    {
+      "requested_xy_mm": [
+        0.18,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        0.1799999999999996,
+        -1.4482569332154027e-14
+      ],
+      "valid": true,
+      "max_penetration_mm": 0.18001660736997885,
+      "last_frame": 600,
+      "last_phase": "retreat",
+      "task_success": true,
+      "final_metrics": {
+        "lateral_error_m": 0.00011978163923275238,
+        "face_gap_m": 0.00019999952415823002,
+        "yaw_rad": 7.833046964720362e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "phase_end": {
+        "lift": {
+          "plug_in_gripper_frame_m": [
+            0.020786750064372455,
+            3.4086503810215266e-05,
+            3.8095079074617415e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.31965159983483693,
+            "face_gap_m": 0.05770150749564212,
+            "yaw_rad": 0.10131843360814871,
+            "tilt_rad": 0.006194736444367782,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            0.05615484760262274,
+            0.0015849875779656915,
+            0.00159676452843122
+          ]
+        },
+        "transport": {
+          "plug_in_gripper_frame_m": [
+            0.022182114670294583,
+            2.3359794858144288e-05,
+            -1.30947029552507e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012141953812591579,
+            "face_gap_m": 0.043529050964969555,
+            "yaw_rad": 0.00011219429299675024,
+            "tilt_rad": 0.0899936682365145,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            0.027127071194052443,
+            0.000948546913256184,
+            0.0015443333559583404
+          ]
+        },
+        "align": {
+          "plug_in_gripper_frame_m": [
+            0.02230443121115443,
+            2.2772896739987582e-05,
+            -2.198955324270342e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00018694717202477767,
+            "face_gap_m": 0.025866450238259453,
+            "yaw_rad": -6.923701947132915e-05,
+            "tilt_rad": 0.0053832281030651965,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            0.027254639292189492,
+            0.000933018421190435,
+            0.0015765603991757604
+          ]
+        },
+        "insert": {
+          "plug_in_gripper_frame_m": [
+            0.022477467770385718,
+            2.235808394935967e-05,
+            -1.3552286031054927e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012159840928106262,
+            "face_gap_m": 0.0002033119125883151,
+            "yaw_rad": 8.34745994308247e-05,
+            "tilt_rad": 0.00016775012131904244,
+            "seated": true,
+            "hold_seconds": 0.3,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            0.02698122693594457,
+            0.0008056420088611092,
+            0.0007934016497929324
+          ]
+        },
+        "release": {
+          "plug_in_gripper_frame_m": [
+            0.022276992311876367,
+            0.00011029521747174837,
+            -8.443147729181925e-05
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00011978163923636487,
+            "face_gap_m": 0.00019999952360046785,
+            "yaw_rad": 7.833056913176699e-05,
+            "tilt_rad": 0.0,
+            "seated": true,
+            "hold_seconds": 1.633333333333335,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            5.059665384582468e-06,
+            -0.00016291966090724547,
+            0.002726726619352944
+          ]
+        },
+        "retreat": {
+          "plug_in_gripper_frame_m": [
+            0.06515189046292484,
+            0.004245870492451619,
+            -0.00013282101306221118
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00011978163923275238,
+            "face_gap_m": 0.00019999952415823002,
+            "yaw_rad": 7.833046964720362e-05,
+            "tilt_rad": 0.0,
+            "seated": true,
+            "hold_seconds": 3.133333333333332,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            1.5157751068195502e-05,
+            -0.00016104766466500803,
+            0.0027252425745720272
+          ]
+        }
+      },
+      "direction": "positive_x"
+    },
+    {
+      "requested_xy_mm": [
+        -0.5,
+        0.0
+      ],
+      "measured_initial_xy_mm": [
+        -0.499999999999997,
+        1.570526139151561e-14
+      ],
+      "valid": true,
+      "max_penetration_mm": 0.18640870390670247,
+      "last_frame": 600,
+      "last_phase": "retreat",
+      "task_success": true,
+      "final_metrics": {
+        "lateral_error_m": 0.00012379518018904666,
+        "face_gap_m": 0.00019999953053698172,
+        "yaw_rad": -6.671996758985836e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.0999999999999988,
+        "success": true
+      },
+      "phase_end": {
+        "lift": {
+          "plug_in_gripper_frame_m": [
+            0.02026375315155636,
+            2.987816103245516e-05,
+            1.589392077160167e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.3196533472726694,
+            "face_gap_m": 0.058224501427649504,
+            "yaw_rad": 0.10134603307293084,
+            "tilt_rad": 0.006074241408887429,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.46684206521347205,
+            -0.0026233551997944145,
+            -0.0006233513018703544
+          ]
+        },
+        "transport": {
+          "plug_in_gripper_frame_m": [
+            0.021928540405757636,
+            2.1832604209294417e-05,
+            -3.363654181881893e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00011094028764684922,
+            "face_gap_m": 0.04378169727548322,
+            "yaw_rad": -1.609200749378579e-05,
+            "tilt_rad": 0.09007952473165433,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.22644719334289493,
+            -0.0005786437355936869,
+            -0.0005098505303984824
+          ]
+        },
+        "align": {
+          "plug_in_gripper_frame_m": [
+            0.02204966149513817,
+            2.1321247758772057e-05,
+            -4.7482500780404385e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00018928676172767984,
+            "face_gap_m": 0.02612123059578518,
+            "yaw_rad": -0.00021476163754532233,
+            "tilt_rad": 0.005457711632311069,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.22751507672406912,
+            -0.0005186305600250903,
+            -0.0009727343545943358
+          ]
+        },
+        "insert": {
+          "plug_in_gripper_frame_m": [
+            0.022224778760213983,
+            2.16525901362414e-05,
+            -4.226273554097564e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00013016615897958525,
+            "face_gap_m": 0.00021135078064414559,
+            "yaw_rad": -4.024870821402913e-05,
+            "tilt_rad": 0.0005694580114395227,
+            "seated": true,
+            "hold_seconds": 0.26666666666666666,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.2257077832357908,
+            0.00010014819574283998,
+            -0.0020776433011991387
+          ]
+        },
+        "release": {
+          "plug_in_gripper_frame_m": [
+            0.02227694986209398,
+            0.00011140547642433688,
+            -8.916335610722909e-05
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012379517973803083,
+            "face_gap_m": 0.0001999995245840422,
+            "yaw_rad": -6.67198618808632e-05,
+            "tilt_rad": 0.0,
+            "seated": true,
+            "hold_seconds": 1.6000000000000016,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            -3.73901170025448e-05,
+            0.0009473392916812607,
+            -0.0020051521960568965
+          ]
+        },
+        "retreat": {
+          "plug_in_gripper_frame_m": [
+            0.06515178956648186,
+            0.004246957745939446,
+            -0.0001375362421686902
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012379518018904666,
+            "face_gap_m": 0.00019999953053698172,
+            "yaw_rad": -6.671996758985836e-05,
+            "tilt_rad": 0.0,
+            "seated": true,
+            "hold_seconds": 3.0999999999999988,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            -8.573869191008665e-05,
+            0.0009262058231615175,
+            -0.001989986531906985
+          ]
+        }
+      },
+      "direction": "negative_x"
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        0.18
+      ],
+      "measured_initial_xy_mm": [
+        -3.469446951953614e-15,
+        0.17999999999997446
+      ],
+      "valid": true,
+      "max_penetration_mm": 0.1677606013487616,
+      "last_frame": 600,
+      "last_phase": "retreat",
+      "task_success": true,
+      "final_metrics": {
+        "lateral_error_m": 0.00012192821514079415,
+        "face_gap_m": 0.00019999952511321611,
+        "yaw_rad": 9.525615361346252e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "phase_end": {
+        "lift": {
+          "plug_in_gripper_frame_m": [
+            0.02071083709335698,
+            3.191902331637405e-05,
+            2.0655219279063265e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.3196530865338014,
+            "face_gap_m": 0.05777742041979058,
+            "yaw_rad": 0.10135422417043499,
+            "tilt_rad": 0.005925035927824783,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.019758123412851047,
+            -0.0005824929158755243,
+            -0.00014722145112419497
+          ]
+        },
+        "transport": {
+          "plug_in_gripper_frame_m": [
+            0.02214524855590101,
+            2.2031719145147993e-05,
+            -3.000234044047511e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012147713995632146,
+            "face_gap_m": 0.04356588624930768,
+            "yaw_rad": 0.0001292059437051097,
+            "tilt_rad": 0.09011193910099856,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.009739043199522013,
+            -0.00037952879974011144,
+            -0.00014643039256410033
+          ]
+        },
+        "align": {
+          "plug_in_gripper_frame_m": [
+            0.022267393601708346,
+            2.1465957302536204e-05,
+            -3.938142450864942e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.0001882585602998799,
+            "face_gap_m": 0.025903500344945804,
+            "yaw_rad": -6.143332946917969e-05,
+            "tilt_rad": 0.005488000808491228,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.009782970153894566,
+            -0.00037392101626094283,
+            -0.00016262672741883916
+          ]
+        },
+        "insert": {
+          "plug_in_gripper_frame_m": [
+            0.022440761698108175,
+            2.11841406352066e-05,
+            -2.5766058853205318e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.0001234729980851247,
+            "face_gap_m": 0.0002020906129419353,
+            "yaw_rad": 8.447638067657217e-05,
+            "tilt_rad": 0.00010628117088675221,
+            "seated": true,
+            "hold_seconds": 0.3,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            -0.009724845341597954,
+            -0.00036830130529195905,
+            -0.0004279756324221067
+          ]
+        },
+        "release": {
+          "plug_in_gripper_frame_m": [
+            0.022276985999462613,
+            0.00011032083011084902,
+            -8.756254378852721e-05
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012192821541560039,
+            "face_gap_m": 0.00019999952967655193,
+            "yaw_rad": 9.525625899739582e-05,
+            "tilt_rad": 0.0,
+            "seated": true,
+            "hold_seconds": 1.633333333333335,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            -1.2527483703173026e-06,
+            -0.00013730702180659421,
+            -0.00040433987735502476
+          ]
+        },
+        "retreat": {
+          "plug_in_gripper_frame_m": [
+            0.06515188795257755,
+            0.004245894094179002,
+            -0.00013594985085507458
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012192821514079415,
+            "face_gap_m": 0.00019999952511321611,
+            "yaw_rad": 9.525615361346252e-05,
+            "tilt_rad": 0.0,
+            "seated": true,
+            "hold_seconds": 3.133333333333332,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            1.2647403777044097e-05,
+            -0.00013744593728177296,
+            -0.00040359521829137854
+          ]
+        }
+      },
+      "direction": "positive_y"
+    },
+    {
+      "requested_xy_mm": [
+        0.0,
+        -0.18
+      ],
+      "measured_initial_xy_mm": [
+        3.469446951953614e-15,
+        -0.17999999999997443
+      ],
+      "valid": true,
+      "max_penetration_mm": 0.16775379448847189,
+      "last_frame": 600,
+      "last_phase": "retreat",
+      "task_success": true,
+      "final_metrics": {
+        "lateral_error_m": 0.00012041447995143202,
+        "face_gap_m": 0.00019999952098430362,
+        "yaw_rad": 2.09477129683964e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "phase_end": {
+        "lift": {
+          "plug_in_gripper_frame_m": [
+            0.020704350440892187,
+            3.4106688130005236e-05,
+            4.5183005108723185e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.31965090207762675,
+            "face_gap_m": 0.057783906490652924,
+            "yaw_rad": 0.10128899599143003,
+            "tilt_rad": 0.006290668681113149,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.026244775877645038,
+            0.0016051718977556622,
+            0.002305557131841797
+          ]
+        },
+        "transport": {
+          "plug_in_gripper_frame_m": [
+            0.02214204728839837,
+            2.3568902058688883e-05,
+            -5.439367465978656e-07
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00011841565118281741,
+            "face_gap_m": 0.04356892940288939,
+            "yaw_rad": 4.582460381335937e-05,
+            "tilt_rad": 0.08996303854500796,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.012940310702161395,
+            0.0011576541138007788,
+            0.002309866904885545
+          ]
+        },
+        "align": {
+          "plug_in_gripper_frame_m": [
+            0.022264179389252667,
+            2.2991298039762477e-05,
+            -1.714340582273102e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00018661073619964333,
+            "face_gap_m": 0.025906699341064543,
+            "yaw_rad": -0.00013020975052870768,
+            "tilt_rad": 0.005341242368308835,
+            "seated": false,
+            "hold_seconds": 0.0,
+            "success": false
+          },
+          "paired_relative_position_delta_mm": [
+            -0.012997182609573998,
+            0.0011514197209653296,
+            0.0020611751411730005
+          ]
+        },
+        "insert": {
+          "plug_in_gripper_frame_m": [
+            0.02243754182196199,
+            2.2670796716318164e-05,
+            -1.3564277437333006e-06
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012302553553502054,
+            "face_gap_m": 0.00020499999715066497,
+            "yaw_rad": 3.9590621919813803e-05,
+            "tilt_rad": 0.0002524480286431557,
+            "seated": true,
+            "hold_seconds": 0.3,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            -0.012944721487783556,
+            0.0011183547758196045,
+            0.0007922025091651245
+          ]
+        },
+        "release": {
+          "plug_in_gripper_frame_m": [
+            0.022276984280251193,
+            0.00011110091272065737,
+            -8.449150338996227e-05
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012041447994284561,
+            "face_gap_m": 0.00019999952883517635,
+            "yaw_rad": 2.094781217180115e-05,
+            "tilt_rad": 0.0,
+            "seated": true,
+            "hold_seconds": 1.633333333333335,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            -2.9719597893773653e-06,
+            0.0006427755880017525,
+            0.002666700521209919
+          ]
+        },
+        "retreat": {
+          "plug_in_gripper_frame_m": [
+            0.06515181664635061,
+            0.004246669896761497,
+            -0.00013287804807162
+          ],
+          "task_metrics": {
+            "lateral_error_m": 0.00012041447995143202,
+            "face_gap_m": 0.00019999952098430362,
+            "yaw_rad": 2.09477129683964e-05,
+            "tilt_rad": 0.0,
+            "seated": true,
+            "hold_seconds": 3.133333333333332,
+            "success": true
+          },
+          "paired_relative_position_delta_mm": [
+            -5.865882315991833e-05,
+            0.0006383566452132158,
+            0.0026682075651632137
+          ]
+        }
+      },
+      "direction": "negative_y"
+    }
+  ],
+  "boundary_failure_count": 0,
+  "hardware_executions": 0,
+  "real_data_reads": 0,
+  "student_privileged_inputs": 0
+}
