@@ -13,7 +13,7 @@
   "software": {
     "branch": "research/full-task-residual-20261124",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
-    "live_candidate": "experiments/residual_fulltask_mvp/design.json",
+    "live_candidate": "experiments/residual_fulltask_mvp/contact_drift_design.json",
     "last_executed_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
     "last_executed_versions": "experiments/grasp_six_rounds/round_03/vertical_pick_socket_reorient/actual_versions.json"
   },
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 5
   },
-  "next_grounded_work": "Pilot CONTACT_MEDIATED_DRIFT_V1 during LIFT/TRANSPORT, freeze a valid mixed-outcome distribution, then launch three P0 History PPO seeds in the background.",
-  "updated_at": "2026-11-24T07:12:12+00:00",
+  "next_grounded_work": "Launch the three frozen P0 History PPO seeds in the background, then run the new paired held-out B0/B1/B2 evaluation without tuning.",
+  "updated_at": "2026-11-24T08:34:30+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -450,13 +450,31 @@
       "real_data_reads": 0
     },
     "stage_e": {
-      "status": "CONTACT_DRIFT_PILOT_PENDING",
+      "status": "CONTACT_DRIFT_DESIGN_FROZEN_TRAINING_PENDING",
       "training_steps": 0,
       "student_mode": "P0_AUTHORIZED_BY_AMENDMENT_V2",
-      "reason": "Four-direction classification is diagnostic, not a hard gate. Training waits only for a frozen valid CONTACT_MEDIATED_DRIFT_V1 distribution."
+      "pilot": "experiments/residual_fulltask_mvp/contact_drift_pilot.json",
+      "design": "experiments/residual_fulltask_mvp/contact_drift_design.json",
+      "pilot_summary": {
+        "valid_conditions": 23,
+        "frozen_nominal_successes": 13,
+        "frozen_nominal_failures": 10,
+        "frozen_nominal_success_rate": 0.5652173913043478,
+        "safety_rejections": 1
+      },
+      "distribution": {
+        "phase": "lift_middle",
+        "force_n": 8.0,
+        "duration_ms": 50.0,
+        "angle_intervals_rad": [[-0.28, -0.268], [1.05, 1.08]],
+        "interval_weights": [0.5, 0.5]
+      },
+      "training_seeds": [62001, 62002, 62003],
+      "steps_per_seed": 32768,
+      "reason": "Four-direction classification remains diagnostic. A valid mixed-outcome contact-mediated distribution is frozen before training and held-out generation."
     },
     "core_experiment_v2": {
-      "status": "CONTACT_DRIFT_PILOT_PENDING",
+      "status": "CONTACT_DRIFT_DESIGN_FROZEN_TRAINING_PENDING",
       "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
       "pilot_force_n": [5, 25],
       "pilot_duration_ms": [50, 200],
@@ -464,6 +482,12 @@
       "target_nominal_success_rate": [0.2, 0.8],
       "student_mode": "P0",
       "training_seeds": 3,
+      "completed_pilot_conditions": 136,
+      "formal_pilot_valid_conditions": 23,
+      "formal_pilot_successes": 13,
+      "formal_pilot_failures": 10,
+      "pilot_artifact": "experiments/residual_fulltask_mvp/contact_drift_pilot.json",
+      "design_artifact": "experiments/residual_fulltask_mvp/contact_drift_design.json",
       "hardware": 0,
       "real_data_reads": 0,
       "friction_changes": 0,
@@ -476,7 +500,9 @@
       "condition_count": "Each of B0, B1 and five B2 policies has 64 held-out + 20 nominal conditions.",
       "summary_reproduction": "PASS: rerun produced identical SHA-256 423984b0b48da62c1a591e1f839f8c30c0f1f1c5476672cacbe148db8426bf49",
       "taskbook_copy": "Matches the supplied taskbook content; repository copy adds only the conventional final newline.",
-      "stage_b_c_d_focused_tests": "11 passed"
+      "stage_b_c_d_focused_tests": "11 passed",
+      "contact_drift_focused_tests": "10 passed",
+      "contact_drift_runtime_smoke": "PASS: paired pilot and B0 environment agree on freeze_000; frame 1132, 192 force substeps, no collision"
     }
   }
 }
