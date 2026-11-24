@@ -1,19 +1,19 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Two independent simulation MVPs: deployable RGB perception and proprioceptive residual RL; dual model/right-arm task",
-  "status": "EVENT_RESIDUAL_V2_COMPLETE_OVERALL_NO_GO",
+  "scope": "Full-episode post-grasp residual research, currently Stage A V2 multi-seed reproduction; dual model/right-arm task",
+  "status": "FULL_TASK_RESIDUAL_STAGE_A_IMPLEMENTED_VALIDATED_NOT_RUN",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
     "real training and real transfer"
   ],
-  "stop_condition": "Perception outcome must not block Residual experiment. Residual NO-GO stops real-transfer consideration; hardware remains denied.",
+  "stop_condition": "Only a Stage A GO permits Stage B. Stage A NO-GO or INCONCLUSIVE stops full-task training; hardware remains denied.",
   "software": {
-    "branch": "research/event-residual-dual-v2-20261123",
+    "branch": "research/full-task-residual-20261124",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
-    "live_candidate": null,
+    "live_candidate": "experiments/residual_fulltask_mvp/design.json",
     "last_executed_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
     "last_executed_versions": "experiments/grasp_six_rounds/round_03/vertical_pick_socket_reorient/actual_versions.json"
   },
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 0
   },
-  "next_grounded_work": "No further automatic experiments. V2 evidence complete: geometry-only residual GO, perception NO-GO, actuator curriculum INCONCLUSIVE; real execution remains denied.",
-  "updated_at": "2026-11-23T13:17:04.449245+00:00",
+  "next_grounded_work": "Commit and push the frozen Stage A design and reproduction code, then run B0/B1 and fixed-budget seed 51001 in simulation only.",
+  "updated_at": "2026-11-24T03:38:37+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -245,5 +245,36 @@
       }
     ],
     "completion_audit": "experiments/event_residual_mvp_v2/COMPLETION_AUDIT.md"
+  },
+  "full_task_residual_mvp": {
+    "taskbook": "docs/MINIMAL_RESEARCH_TASKBOOK_V3.md",
+    "charter": "docs/RESIDUAL_RESEARCH_CHARTER.md",
+    "design": "experiments/residual_fulltask_mvp/design.json",
+    "stage": "A",
+    "status": "IMPLEMENTED_VALIDATED_NOT_RUN",
+    "candidate_mapping": "Stage A B2 is a new pure-proprioception version of the historical B3_structured 15-frame architecture; historical artifacts remain unchanged.",
+    "frozen_counts": {
+      "training_seeds": 5,
+      "steps_per_seed": 16384,
+      "heldout_conditions": 64,
+      "nominal_conditions": 20
+    },
+    "budget": {
+      "training_policy_steps": 0,
+      "training_rollouts": 0,
+      "evaluation_rollouts": 0,
+      "subagents": 1,
+      "hardware": 0,
+      "real_data_reads": 0,
+      "real_training": 0,
+      "runtime_llm": 0,
+      "twin_mutations": 0
+    },
+    "validation": {
+      "focused_tests": "7 passed",
+      "repository_tests": "181 passed and 27 subtests passed across existing compatible environments; 1 private-control import test remained excluded by the standing prohibition.",
+      "condition_count": "64 held-out + 20 nominal",
+      "taskbook_copy": "Matches the supplied taskbook content; repository copy adds only the conventional final newline."
+    }
   }
 }

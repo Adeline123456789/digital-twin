@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "stage": "STAGE_A_V2_MULTI_SEED_REPRODUCTION_FROZEN",
+  "source_v2_commit": "26649c5446b972ed366969cbff5a460b3b6ae697",
+  "candidate": "B2: 15-frame proprioceptive History PPO with structured reward; historical V2 name B3_structured",
+  "training": {
+    "steps": 16384,
+    "history_frames": 15,
+    "visual_features": false,
+    "reward": "structured",
+    "seeds": [
+      51001,
+      51002,
+      51003,
+      51004,
+      51005
+    ]
+  },
+  "heldout": {
+    "seeds": [
+      11001,
+      11002,
+      11003,
+      11004,
+      11005,
+      11006,
+      11007,
+      11008,
+      11009,
+      11010,
+      11011,
+      11012,
+      11013,
+      11014,
+      11015,
+      11016,
+      11017,
+      11018,
+      11019,
+      11020,
+      11021,
+      11022,
+      11023,
+      11024,
+      11025,
+      11026,
+      11027,
+      11028,
+      11029,
+      11030,
+      11031,
+      11032,
+      11033,
+      11034,
+      11035,
+      11036,
+      11037,
+      11038,
+      11039,
+      11040,
+      11041,
+      11042,
+      11043,
+      11044,
+      11045,
+      11046,
+      11047,
+      11048,
+      11049,
+      11050,
+      11051,
+      11052,
+      11053,
+      11054,
+      11055,
+      11056,
+      11057,
+      11058,
+      11059,
+      11060,
+      11061,
+      11062,
+      11063,
+      11064
+    ],
+    "socket_amplitude_mm": [
+      1.15,
+      1.3
+    ],
+    "direction_count": 8,
+    "repeats_per_amplitude_direction": 4,
+    "hand_xy_mm": [
+      -0.15,
+      0.15
+    ],
+    "yaw_deg": [
+      -0.75,
+      0.75
+    ],
+    "bootstrap_seed": 15101
+  },
+  "nominal_regression": {
+    "seeds": [
+      12001,
+      12002,
+      12003,
+      12004,
+      12005,
+      12006,
+      12007,
+      12008,
+      12009,
+      12010,
+      12011,
+      12012,
+      12013,
+      12014,
+      12015,
+      12016,
+      12017,
+      12018,
+      12019,
+      12020
+    ],
+    "socket_xy_mm": [
+      0,
+      0
+    ],
+    "hand_xy_mm": [
+      -0.02,
+      0.02
+    ],
+    "yaw_deg": [
+      -0.1,
+      0.1
+    ]
+  },
+  "baselines": {
+    "B0": "Frozen Nominal",
+    "B1": "Deterministic Local Search",
+    "B2": "Proprioceptive History PPO Structured Reward"
+  },
+  "gate": {
+    "mean_improvement_over_B0_pp_min": 15,
+    "paired_hierarchical_ci95_lower_pp_min_exclusive": 0,
+    "positive_training_seeds_min": 4,
+    "training_seed_count": 5,
+    "positive_training_seed_definition": "paired held-out point improvement over B0 is greater than 0 percentage points",
+    "nominal_regression_pp_max": 5,
+    "action_bounds_required": true
+  },
+  "policy_selection": "Final fixed-budget checkpoint only; no held-out checkpoint selection",
+  "permissions": {
+    "hardware_executions": 0,
+    "real_data_reads": 0,
+    "real_training": 0,
+    "runtime_llm_calls": 0,
+    "automatic_twin_mutations": 0,
+    "nominal_updates": 0
+  }
+}

@@ -46,13 +46,28 @@ class Progress(BaseCallback):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--variant', choices=['B2_structured', 'B3_structured', 'B3_sparse', 'B3_actuator'], required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--variant', choices=['B2_structured', 'B3_structured', 'B3_sparse', 'B3_actuator'])
+    mode.add_argument('--stage-a-seed', type=int)
     args = parser.parse_args()
-    design_name = 'phase2_design.json' if args.variant == 'B3_actuator' else 'design.json'
-    design = json.loads((ROOT / 'experiments/event_residual_mvp_v2' / design_name).read_text())
-    config = design['training'][args.variant]
+    if args.stage_a_seed is None:
+        design_path = ROOT / 'experiments/event_residual_mvp_v2' / ('phase2_design.json' if args.variant == 'B3_actuator' else 'design.json')
+        design = json.loads(design_path.read_text())
+        config = design['training'][args.variant]
+        variant = args.variant
+        output = DATA / 'self_evolution/event_residual_mvp_v2/training' / variant
+        result_path = ROOT / f'experiments/event_residual_mvp_v2/training_{variant}.json'
+    else:
+        design_path = ROOT / 'experiments/residual_fulltask_mvp/design.json'
+        design = json.loads(design_path.read_text())
+        if args.stage_a_seed not in design['training']['seeds']:
+            parser.error('--stage-a-seed must be frozen in residual_fulltask_mvp/design.json')
+        config = {k: v for k, v in design['training'].items() if k != 'seeds'}
+        config['seed'] = args.stage_a_seed
+        variant = f'B2_seed_{args.stage_a_seed}'
+        output = DATA / 'self_evolution/residual_fulltask_mvp/stage_a/training' / f'seed_{args.stage_a_seed}'
+        result_path = ROOT / f'experiments/residual_fulltask_mvp/training_seed_{args.stage_a_seed}.json'
     torch.set_num_threads(1)
-    output = DATA / 'self_evolution/event_residual_mvp_v2/training' / args.variant
     output.mkdir(parents=True, exist_ok=False)
     source_hashes = {str(p.relative_to(ROOT)): digest(p) for p in
         [Path(__file__), ROOT / 'robot_agent/residual_env.py', ROOT / 'robot_agent/residual_controller.py',
@@ -62,12 +77,12 @@ def main():
         copy = snapshots / relative
         copy.parent.mkdir(parents=True, exist_ok=True)
         copy.write_bytes((ROOT / relative).read_bytes())
-    (output / 'launch.json').write_text(json.dumps(dict(config=config, source_hashes=source_hashes), indent=2) + '\n')
+    (output / 'launch.json').write_text(json.dumps(dict(config=config, design_sha256=digest(design_path), source_hashes=source_hashes), indent=2) + '\n')
     factory = partial(make_env, config['history_frames'], config['visual_features'], config['reward'],
                       config.get('stage', 'geometry'))
     env = SubprocVecEnv([factory] * 8, start_method='spawn')
     env.seed(config['seed'])
-    if args.variant == 'B3_actuator':
+    if variant == 'B3_actuator':
         parent = json.loads((ROOT / 'experiments/event_residual_mvp_v2/training_B3_structured.json').read_text())
         if digest(DATA / parent['policy']['dataset_relative_path']) != parent['policy']['sha256']:
             raise ValueError('Parent residual checkpoint changed')
@@ -82,12 +97,15 @@ def main():
     policy.save(str(output / 'policy'))
     env.close()
     (output / 'episodes.json').write_text(json.dumps(callback.episodes, indent=2) + '\n')
-    result = dict(variant=args.variant, config=config, actual_steps=policy.num_timesteps,
+    result = dict(variant=variant, config=config, actual_steps=policy.num_timesteps,
         episodes=len(callback.episodes), wall_s=time.monotonic()-start, source_hashes=source_hashes,
+        design_sha256=digest(design_path),
         policy=dict(dataset_relative_path=str((output / 'policy.zip').relative_to(DATA)), sha256=digest(output / 'policy.zip')),
-        observation_scope='right motor/command history; optional RGB candidates with dropout, no privileged channels',
-        scope='Simulation-only; single training seed per ablation; no real transfer inference')
-    (ROOT / f'experiments/event_residual_mvp_v2/training_{args.variant}.json').write_text(json.dumps(result, indent=2) + '\n')
+        observation_scope=('15-frame right motor/command history; no RGB or privileged channels'
+                           if args.stage_a_seed is not None else
+                           'right motor/command history; optional RGB candidates with dropout, no privileged channels'),
+        scope='Simulation-only; fixed-budget final checkpoint; no real transfer inference')
+    result_path.write_text(json.dumps(result, indent=2) + '\n')
     print('TRAINING_COMPLETE', json.dumps(result), flush=True)
 
 

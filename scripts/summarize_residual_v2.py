@@ -1,4 +1,5 @@
 """Paired statistics, stopped-only capsules and action audits from frozen evaluation."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -26,6 +27,20 @@ def paired_bootstrap(base, candidate, seed=7721, resamples=10000):
                 recovery_rate=float(np.sum((base == 0) & (candidate == 1)) / max(1, np.sum(base == 0))))
 
 
+def hierarchical_paired_bootstrap(base, candidates, seed=15101, resamples=10000):
+    base, candidates = np.asarray(base, float), np.asarray(candidates, float)
+    if base.ndim != 1 or candidates.ndim != 2 or candidates.shape[1] != len(base) or not candidates.size:
+        raise ValueError('Expected conditions and training-seed by condition matrix')
+    delta = candidates - base
+    rng = np.random.default_rng(seed)
+    seed_draws = rng.integers(0, len(delta), (resamples, len(delta), 1))
+    condition_draws = rng.integers(0, len(base), (resamples, 1, len(base)))
+    means = delta[seed_draws, condition_draws].mean(axis=(1, 2))
+    return dict(improvement_pp=float(delta.mean() * 100),
+                ci95_pp=(np.quantile(means, [.025, .975]) * 100).tolist(),
+                per_training_seed_improvement_pp=(delta.mean(axis=1) * 100).tolist())
+
+
 def audit_actions(row, frozen_frames):
     path = DATA / row['trace']['dataset_relative_path']
     if digest(path) != row['trace']['sha256']: raise ValueError('Evaluation trace changed')
@@ -42,6 +57,100 @@ def audit_actions(row, frozen_frames):
     return dict(variant=row['variant'], case_id=row['case_id'], valid=bool(valid),
         max_residual_axis_m=float(np.max(abs(xy))), max_residual_axis_speed_m_s=float(np.max(abs(velocity))),
         max_joint_correction_rad=float(np.max(abs(command[:, 7:13]-reference[:, 7:13]))))
+
+
+def summarize_stage_a():
+    folder = ROOT / 'experiments/residual_fulltask_mvp'
+    design_path = folder / 'design.json'
+    design = json.loads(design_path.read_text())
+    design_hash = digest(design_path)
+    evaluations = {
+        'B0': json.loads((folder / 'evaluation_B0.json').read_text()),
+        'B1': json.loads((folder / 'evaluation_B1.json').read_text()),
+        **{seed: json.loads((folder / f'evaluation_B2_seed_{seed}.json').read_text())
+           for seed in design['training']['seeds']},
+    }
+    if any(value['design_sha256'] != design_hash for value in evaluations.values()):
+        raise ValueError('Stage A evaluation design differs from frozen design')
+
+    def rows(value, group):
+        return sorted((row for row in value['cases'] if row['group'] == group), key=lambda row: row['seed'])
+
+    base = {group: rows(evaluations['B0'], group) for group in ('heldout', 'nominal')}
+    search = {group: rows(evaluations['B1'], group) for group in ('heldout', 'nominal')}
+    policies = {group: [rows(evaluations[seed], group) for seed in design['training']['seeds']]
+                for group in ('heldout', 'nominal')}
+    for group in ('heldout', 'nominal'):
+        expected = [(row['case_id'], row['perturbation']) for row in base[group]]
+        if [(row['case_id'], row['perturbation']) for row in search[group]] != expected:
+            raise ValueError(f'Unpaired B1 {group} conditions')
+        if any([(row['case_id'], row['perturbation']) for row in policy] != expected
+               for policy in policies[group]):
+            raise ValueError(f'Unpaired B2 {group} conditions')
+
+    heldout_base = np.array([row['is_success'] for row in base['heldout']], float)
+    heldout_search = np.array([row['is_success'] for row in search['heldout']], float)
+    heldout_policies = np.array([[row['is_success'] for row in policy] for policy in policies['heldout']], float)
+    nominal_base = np.array([row['is_success'] for row in base['nominal']], float)
+    nominal_policies = np.array([[row['is_success'] for row in policy] for policy in policies['nominal']], float)
+    bootstrap_seed = design['heldout']['bootstrap_seed']
+    b2_vs_b0 = hierarchical_paired_bootstrap(heldout_base, heldout_policies, bootstrap_seed)
+    b2_vs_b1 = hierarchical_paired_bootstrap(heldout_search, heldout_policies, bootstrap_seed)
+    nominal = hierarchical_paired_bootstrap(nominal_base, nominal_policies, bootstrap_seed)
+    b1_vs_b0 = paired_bootstrap(heldout_base, heldout_search, bootstrap_seed)
+
+    nominal_manifest = json.loads((ROOT / 'experiments/event_residual_mvp/nominal_manifest.json').read_text())
+    frozen_path = DATA / nominal_manifest['dataset_relative_path']
+    if digest(frozen_path) != nominal_manifest['sha256']:
+        raise ValueError('Nominal bytes changed')
+    frozen_frames = json.loads(frozen_path.read_text())['frames']
+    audits = [audit_actions(row, frozen_frames) for value in evaluations.values() for row in value['cases']]
+    action_audit = dict(samples=len(audits), all_bounds_and_left_arm_invariance=all(row['valid'] for row in audits),
+        max_residual_axis_m=max(row['max_residual_axis_m'] for row in audits),
+        max_residual_axis_speed_m_s=max(row['max_residual_axis_speed_m_s'] for row in audits),
+        max_joint_correction_rad=max(row['max_joint_correction_rad'] for row in audits))
+    privileged_student_inputs = max(row['privileged_student_inputs']
+                                    for value in evaluations.values() for row in value['cases'])
+
+    positive_seeds = sum(value > 0 for value in b2_vs_b0['per_training_seed_improvement_pp'])
+    regression_pp = -nominal['improvement_pp']
+    gate = design['gate']
+    criteria = dict(
+        effect_size=b2_vs_b0['improvement_pp'] >= gate['mean_improvement_over_B0_pp_min'],
+        ci_supported=b2_vs_b0['ci95_pp'][0] > gate['paired_hierarchical_ci95_lower_pp_min_exclusive'],
+        seed_stability=positive_seeds >= gate['positive_training_seeds_min'],
+        nominal_regression=regression_pp <= gate['nominal_regression_pp_max'],
+        action_bounds=action_audit['all_bounds_and_left_arm_invariance'],
+        privileged_student_inputs=privileged_student_inputs == 0)
+    if all(criteria.values()):
+        decision = 'GO'
+    elif (criteria['effect_size'] and criteria['nominal_regression'] and criteria['action_bounds']
+          and criteria['privileged_student_inputs']):
+        decision = 'INCONCLUSIVE'
+    else:
+        decision = 'NO-GO'
+
+    training = [json.loads((folder / f'training_seed_{seed}.json').read_text()) for seed in design['training']['seeds']]
+    result = dict(stage='A', decision=decision, proceed_to_stage_b=decision == 'GO', criteria=criteria,
+        statistics=dict(
+            B0=dict(heldout_successes=int(heldout_base.sum()), heldout_n=len(heldout_base),
+                    nominal_successes=int(nominal_base.sum()), nominal_n=len(nominal_base)),
+            B1=dict(heldout_successes=int(heldout_search.sum()), heldout_n=len(heldout_search),
+                    vs_B0=b1_vs_b0),
+            B2=dict(training_seeds=design['training']['seeds'],
+                    heldout_successes_per_seed=heldout_policies.sum(axis=1).astype(int).tolist(),
+                    nominal_successes_per_seed=nominal_policies.sum(axis=1).astype(int).tolist(),
+                    positive_training_seeds=positive_seeds, vs_B0=b2_vs_b0, vs_B1=b2_vs_b1,
+                    nominal_regression_pp=regression_pp)),
+        action_audit=action_audit, privileged_student_inputs=privileged_student_inputs,
+        budget=dict(training_policy_steps=sum(record['actual_steps'] for record in training),
+                    training_rollouts=sum(record['episodes'] for record in training),
+                    evaluation_rollouts=sum(len(value['cases']) for value in evaluations.values()),
+                    hardware=0, real_data_reads=0, real_training=0, runtime_llm=0, twin_mutations=0),
+        inference_scope='Five fixed-budget training seeds; 64 paired held-out and 20 paired nominal conditions; hierarchical bootstrap over training seeds and conditions',
+        candidate_mapping='Stage A B2 is the historical V2 B3_structured 15-frame architecture without RGB channels')
+    (folder / 'reproduction.json').write_text(json.dumps(result, indent=2) + '\n')
+    print(json.dumps(result, indent=2))
 
 
 def main():
@@ -153,4 +262,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--stage-a', action='store_true')
+    args = parser.parse_args()
+    summarize_stage_a() if args.stage_a else main()
