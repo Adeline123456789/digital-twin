@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Full-episode post-grasp residual research stopped at Stage A V2 multi-seed reproduction; dual model/right-arm task",
-  "status": "FULL_TASK_RESIDUAL_STAGE_A_NO_GO_STOPPED",
+  "scope": "Full-episode post-grasp residual research continuing to independent Stages B/C/D under Research Gate Amendment V1; dual model/right-arm task",
+  "status": "RESEARCH_GATE_AMENDMENT_PENDING_COMMIT",
   "paused": [
     "real robot attempts",
     "physical parameter search",
     "original robot goal",
     "real training and real transfer"
   ],
-  "stop_condition": "Only a Stage A GO permits Stage B. Stage A NO-GO or INCONCLUSIVE stops full-task training; hardware remains denied.",
+  "stop_condition": "Stop only the dependent branch on a hard validity failure. Stage E requires Stage B VALID, a deployable Stage C observation mode and a valid Stage D perturbation family; hardware remains denied.",
   "software": {
     "branch": "research/full-task-residual-20261124",
     "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 5
   },
-  "next_grounded_work": "None under the current taskbook. Stage A NO-GO forbids Stage B; await a separately authorized research task.",
-  "updated_at": "2026-11-24T04:47:32+00:00",
+  "next_grounded_work": "Commit and push Research Gate Amendment V1, then start the Stage B complete Frozen Nominal audit without retraining Stage A.",
+  "updated_at": "2026-11-24T06:04:05+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -250,8 +250,11 @@
     "taskbook": "docs/MINIMAL_RESEARCH_TASKBOOK_V3.md",
     "charter": "docs/RESIDUAL_RESEARCH_CHARTER.md",
     "design": "experiments/residual_fulltask_mvp/design.json",
+    "gate_amendment": "docs/RESEARCH_GATE_AMENDMENT_V1.md",
+    "gate_amendment_record": "experiments/residual_fulltask_mvp/stage_a_interpretation_amendment.json",
     "stage": "A",
     "status": "STAGE_A_NO_GO_STOPPED_BEFORE_STAGE_B",
+    "program_decision": "CONTINUE_TO_B_C_D",
     "candidate_mapping": "Stage A B2 is a new pure-proprioception version of the historical B3_structured 15-frame architecture; historical artifacts remain unchanged.",
     "frozen_counts": {
       "training_seeds": 5,

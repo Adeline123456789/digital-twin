@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "amendment": "RESEARCH_GATE_AMENDMENT_V1",
+  "effective_date": "2026-11-24",
+  "source": "docs/RESEARCH_GATE_AMENDMENT_V1.md",
+  "source_request_sha256": "321fd8439158a84fd575ed42a0174ef8b7d60d654e29aea687f9202415bc0e6f",
+  "preserved_preregistration": {
+    "taskbook": "docs/MINIMAL_RESEARCH_TASKBOOK_V3.md",
+    "taskbook_sha256": "28cd526f751f42673c2a9310407ba8ab14a22c500a71e06f4b71d60335da57b9",
+    "stage_a_result": "NO-GO",
+    "stage_a_result_reason": "B2 mean improvement over B0 was 11.875 percentage points, below the preregistered 15 percentage-point target.",
+    "reproduction": "experiments/residual_fulltask_mvp/reproduction.json",
+    "reproduction_sha256": "423984b0b48da62c1a591e1f839f8c30c0f1f1c5476672cacbe148db8426bf49",
+    "final_report": "experiments/residual_fulltask_mvp/FINAL_MVP_REPORT.md",
+    "rewritten": false
+  },
+  "future_interpretation": {
+    "validity": "VALID",
+    "hypothesis": "SUPPORTED",
+    "claims_allowed": [
+      "Residual outperformed Frozen Nominal in Stage A under the paired hierarchical analysis."
+    ],
+    "claims_not_allowed": [
+      "Residual improvement was at least 15 percentage points.",
+      "PPO outperformed Deterministic Search.",
+      "Stage A establishes full-task recovery or real transfer."
+    ],
+    "effect_size_15pp_classification": "TARGET_STRETCH_GOAL",
+    "program_decision": "CONTINUE"
+  },
+  "next_work": [
+    "STAGE_B_COMPLETE_FROZEN_NOMINAL_AUDIT",
+    "STAGE_C_POST_GRASP_OBSERVABILITY_AUDIT",
+    "STAGE_D_POST_GRASP_PERTURBATION_VALIDATION"
+  ],
+  "stage_a_retraining_allowed": false,
+  "stage_e_auto_start_allowed": false,
+  "stage_e_hard_prerequisites": [
+    "STAGE_B_VALID",
+    "STAGE_C_DEPLOYABLE_OBSERVATION_MODE",
+    "STAGE_D_VALID_PERTURBATION_FAMILY"
+  ]
+}
