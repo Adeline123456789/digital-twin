@@ -70,6 +70,8 @@ def main():
     training = design['training']
     if args.seed not in training['seeds']:
         parser.error('--seed must be frozen in contact_drift_design.json')
+    if args.workers != training['parallel_envs_per_seed']:
+        parser.error('--workers must match the frozen parallel_envs_per_seed')
 
     output = DATA / 'self_evolution/residual_fulltask_mvp/contact_drift/training' / f'seed_{args.seed}'
     output.mkdir(parents=True, exist_ok=False)

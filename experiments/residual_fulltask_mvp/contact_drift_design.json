@@ -1,9 +1,17 @@
 {
   "schema_version": 1,
   "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
-  "stage": "DESIGN_FROZEN_BEFORE_TRAINING",
+  "stage": "DESIGN_REFROZEN_BEFORE_FORMAL_TRAINING",
   "validity": "VALID",
-  "frozen_at": "2026-11-24T08:30:39+00:00",
+  "frozen_at": "2026-11-24T08:39:21+00:00",
+  "revision": {
+    "number": 2,
+    "supersedes_commit": "04f8c791eedb6f870f5538c487ddf121cbedd2d3",
+    "reason": "A non-scientific resource probe showed that 24 simultaneous MuJoCo workers exceed available RAM. Parallel environments per seed were reduced from 8 to 4 before any formal checkpoint was produced; disturbance, observations, reward, steps, PPO hyperparameters and seeds are unchanged.",
+    "aborted_probe_steps": 1536,
+    "aborted_probe_checkpoints": 0,
+    "failed_launch_directories_preserved": true
+  },
   "pilot": {
     "path": "experiments/residual_fulltask_mvp/contact_drift_pilot.json",
     "sha256": "47e6c828c0ea0faa81120224d79887e33cfe5b1e91140f32cfa350e3921cbba7",
@@ -67,7 +75,7 @@
     "variant": "B2_HISTORY_PPO_STRUCTURED",
     "seeds": [62001, 62002, 62003],
     "steps_per_seed": 32768,
-    "parallel_envs_per_seed": 8,
+    "parallel_envs_per_seed": 4,
     "history_frames": 15,
     "reward": "structured",
     "n_steps": 128,
@@ -107,7 +115,7 @@
     "robot_agent/full_task_residual_env.py": "ee273341a0f619b0b6da530f2eb1bfb05904ebe39bd30817c4d6b9e3df9adc7e",
     "robot_agent/full_task_observation.py": "5355baeb869a720db1a4fe8145942f894a7416beb746b2ab7668d0ea7f080701",
     "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
-    "scripts/train_full_task_residual.py": "d847c6d3d7a75394137fb04d068762370d32034323d87e40ba7e114e8513a4a7",
+    "scripts/train_full_task_residual.py": "c1ca6e8e4b474ab7c766a20f500f9604a125170acd2fcda50267105b261ddc18",
     "scripts/evaluate_full_task_residual.py": "1265774ccb3fc39d88e0c2d5f7d9f85c61e46b46cfc87354a7074154987db7c9",
     "scripts/summarize_contact_drift.py": "672092893f247418b3075ca58c69af6bc07cc267ac4238b449d33cec1077279e"
   },

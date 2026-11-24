@@ -450,7 +450,7 @@
       "real_data_reads": 0
     },
     "stage_e": {
-      "status": "CONTACT_DRIFT_DESIGN_FROZEN_TRAINING_PENDING",
+      "status": "CONTACT_DRIFT_DESIGN_REFROZEN_TRAINING_PENDING",
       "training_steps": 0,
       "student_mode": "P0_AUTHORIZED_BY_AMENDMENT_V2",
       "pilot": "experiments/residual_fulltask_mvp/contact_drift_pilot.json",
@@ -471,10 +471,17 @@
       },
       "training_seeds": [62001, 62002, 62003],
       "steps_per_seed": 32768,
+      "parallel_envs_per_seed": 4,
+      "resource_probe": {
+        "status": "ABORTED_BEFORE_CHECKPOINT",
+        "steps": 1536,
+        "reason": "Three seeds with eight environments each exceeded available RAM; formal layout reduced to four environments per seed.",
+        "preserved_under_data_root": true
+      },
       "reason": "Four-direction classification remains diagnostic. A valid mixed-outcome contact-mediated distribution is frozen before training and held-out generation."
     },
     "core_experiment_v2": {
-      "status": "CONTACT_DRIFT_DESIGN_FROZEN_TRAINING_PENDING",
+      "status": "CONTACT_DRIFT_DESIGN_REFROZEN_TRAINING_PENDING",
       "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
       "pilot_force_n": [5, 25],
       "pilot_duration_ms": [50, 200],
@@ -482,6 +489,7 @@
       "target_nominal_success_rate": [0.2, 0.8],
       "student_mode": "P0",
       "training_seeds": 3,
+      "parallel_envs_per_seed": 4,
       "completed_pilot_conditions": 136,
       "formal_pilot_valid_conditions": 23,
       "formal_pilot_successes": 13,
