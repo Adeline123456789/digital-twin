@@ -336,9 +336,12 @@
       "validity": "VALID",
       "hypothesis": "SUPPORTED",
       "claims_allowed": [
-        "The complete frozen nominal is executable without replanning and passes the full Episode validator."
+        "The existing frozen source reference was executed without replanning and passed the full Episode validator.",
+        "The exported full-task JSONL is an exact schema projection of that frozen source reference."
       ],
       "claims_not_allowed": [
+        "The exported JSONL has itself been consumed by a separate replay runtime.",
+        "The source contains a native phase named APPROACH; APPROACH is the task-level label for native descend.",
         "The reference establishes robustness to post-grasp perturbations or real-world transfer."
       ],
       "program_decision": "CONTINUE",
@@ -357,6 +360,9 @@
         "RELEASE",
         "RETREAT"
       ],
+      "approach_semantics": "Task-level APPROACH maps native descend; the simulator starts at an IK approach pose and has no separate native approach segment.",
+      "formal_episode_reconstruction_action_hash": "fcb65459d179aa67c8e5cc92453f2d32fae545811e17a487af31914b992be124",
+      "export_runtime_status": "Schema-audited exact projection; historical replay consumed the source frozen reference, not the exported JSONL.",
       "frozen_replay": "PASS",
       "full_episode_validator": "PASS",
       "planner_calls": 0,

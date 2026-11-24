@@ -111,8 +111,15 @@ def main():
         'stage': 'B',
         'validity': 'VALID',
         'hypothesis': 'SUPPORTED',
-        'claims_allowed': ['The complete frozen nominal is executable without replanning and passes the full Episode validator.'],
-        'claims_not_allowed': ['The reference establishes robustness to post-grasp perturbations or real-world transfer.'],
+        'claims_allowed': [
+            'The existing frozen source reference was executed without replanning and passed the full Episode validator.',
+            'The exported full-task JSONL is an exact schema projection of that frozen source reference.',
+        ],
+        'claims_not_allowed': [
+            'The exported JSONL has itself been consumed by a separate replay runtime.',
+            'The source contains a native phase named APPROACH; APPROACH is the task-level label for native descend.',
+            'The reference establishes robustness to post-grasp perturbations or real-world transfer.',
+        ],
         'program_decision': 'CONTINUE',
         'source_episode': {
             'id': SOURCE_ID,
@@ -146,12 +153,20 @@ def main():
                 'right_gripper_target_m': 13,
             },
             'generation': 'Exact JSONL projection of the already frozen reference; no IK, planner, retiming, smoothing or trajectory regeneration.',
+            'repository_role': 'Derived command protocol required by the taskbook; not simulator source, model, XML, asset or raw recording.',
+            'runtime_status': 'Schema-audited projection; historical replay consumed the source frozen reference, not this exported JSONL.',
+            'formal_episode_reconstruction': {
+                'byte_exact': False,
+                'action_hash': 'fcb65459d179aa67c8e5cc92453f2d32fae545811e17a487af31914b992be124',
+                'reason': 'The formal Episode stores joint targets in degrees and gripper width as width_mm / 95; inverse conversion is physically equivalent within float tolerance but not byte-exact.',
+            },
         },
         'phase_audit': {
             'native_sequence': native_sequence,
             'native_counts': dict(Counter(row['native_phase'] for row in rows)),
             'task_sequence': semantic_sequence,
             'required_sequence': list(REQUIRED_TASK_SEQUENCE),
+            'approach_semantics': 'Task-level APPROACH maps native descend. The simulator starts from an IK approach pose, so the source has no separate native approach segment.',
         },
         'success_provenance': {
             'definition': metadata['success_definition'],
