@@ -2,7 +2,7 @@
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
   "scope": "Full-episode post-grasp residual research continuing to independent Stages B/C/D under Research Gate Amendment V1; dual model/right-arm task",
-  "status": "RESEARCH_GATE_AMENDMENT_PENDING_COMMIT",
+  "status": "FULL_TASK_RESIDUAL_STAGE_B_VALID",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 5
   },
-  "next_grounded_work": "Commit and push Research Gate Amendment V1, then start the Stage B complete Frozen Nominal audit without retraining Stage A.",
-  "updated_at": "2026-11-24T06:04:05+00:00",
+  "next_grounded_work": "Commit and push the valid Stage B Frozen Nominal audit, then run the Stage C P0/P1 post-grasp observability experiment.",
+  "updated_at": "2026-11-24T06:09:18+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -252,9 +252,9 @@
     "design": "experiments/residual_fulltask_mvp/design.json",
     "gate_amendment": "docs/RESEARCH_GATE_AMENDMENT_V1.md",
     "gate_amendment_record": "experiments/residual_fulltask_mvp/stage_a_interpretation_amendment.json",
-    "stage": "A",
-    "status": "STAGE_A_NO_GO_STOPPED_BEFORE_STAGE_B",
-    "program_decision": "CONTINUE_TO_B_C_D",
+    "stage": "B_COMPLETE",
+    "status": "STAGE_B_VALID",
+    "program_decision": "CONTINUE_TO_C_D",
     "candidate_mapping": "Stage A B2 is a new pure-proprioception version of the historical B3_structured 15-frame architecture; historical artifacts remain unchanged.",
     "frozen_counts": {
       "training_seeds": 5,
@@ -331,6 +331,39 @@
       "review_completed": false,
       "reason": "Remote connection closed before a complete chunked response; no automatic retry.",
       "deterministic_gate_unchanged": true
+    },
+    "stage_b": {
+      "validity": "VALID",
+      "hypothesis": "SUPPORTED",
+      "claims_allowed": [
+        "The complete frozen nominal is executable without replanning and passes the full Episode validator."
+      ],
+      "claims_not_allowed": [
+        "The reference establishes robustness to post-grasp perturbations or real-world transfer."
+      ],
+      "program_decision": "CONTINUE",
+      "source_episode": "complete_sim/succeed/20261123T090549Z_a35ab76b",
+      "reference": "experiments/residual_fulltask_mvp/full_task_reference.jsonl",
+      "manifest": "experiments/residual_fulltask_mvp/full_task_reference_manifest.json",
+      "frames": 1133,
+      "action_dim": 14,
+      "task_sequence": [
+        "APPROACH",
+        "GRASP",
+        "LIFT",
+        "TRANSPORT",
+        "ALIGN",
+        "INSERT",
+        "RELEASE",
+        "RETREAT"
+      ],
+      "frozen_replay": "PASS",
+      "full_episode_validator": "PASS",
+      "planner_calls": 0,
+      "privileged_policy_reads": 0,
+      "new_simulation_rollouts": 0,
+      "hardware": 0,
+      "real_data_reads": 0
     },
     "validation": {
       "focused_tests": "7 passed",
