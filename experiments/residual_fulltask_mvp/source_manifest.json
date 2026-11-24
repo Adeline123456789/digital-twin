@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "branch": "research/full-task-residual-20261124",
+  "base_commit": "26649c5446b972ed366969cbff5a460b3b6ae697",
+  "source_freeze_commit": "a58f3c494b88bf76de315dc781025808b6bb0cc6",
+  "dataset_root": "/mnt/a2c7e415-58c1-4de8-be3d-8374e8e93d3e/sim_real_plug/",
+  "stage": "A",
+  "decision": "NO-GO",
+  "failure_category": "HELDOUT_GENERALIZATION_FAILURE",
+  "proceed_to_stage_b": false,
+  "frozen_inputs": {
+    "docs/MINIMAL_RESEARCH_TASKBOOK_V3.md": "28cd526f751f42673c2a9310407ba8ab14a22c500a71e06f4b71d60335da57b9",
+    "docs/FINAL_EXPANSION_PLAN_V1.md": "7e4f1d14a3ef9441a7ba05fd8804724f63550ec65566f1ae1e66d824dd52950b",
+    "docs/RESIDUAL_RESEARCH_CHARTER.md": "602f8dfcbb02d58e17d02ba6d9e5268b2e7a60e756a8a6e2a2b4ab9fadcc6f4c",
+    "experiments/residual_fulltask_mvp/design.json": "270dcfc0d5b46be734461d99c0f1c43bad6032f0e25546353e67b724b145f57b"
+  },
+  "source_hashes": {
+    "scripts/train_residual_v2.py": "37f59df711aa9581c373d6b3abb4346f6408530bb200f901ab0ce23eaa4f6c35",
+    "scripts/evaluate_residual_v2.py": "bc0a98ef773ce0072a9bc88006f5611b52c60987e30564fff87399add4d93abc",
+    "scripts/summarize_residual_v2.py": "b76875939cd87574c653d96aa3049d75286f28ea8b398926c8d18987f88ead6c",
+    "scripts/pilot_residual_v2.py": "4c5965e6deebb0a73a4aeaa4a3bcb40f9c529be756495908ee44b739a5c6ba9f",
+    "robot_agent/residual_env.py": "daac324d9de8a92b70bd58d1305d38a608d838e9a80b2474efeb6f6f999191b9",
+    "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+    "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+    "robot_agent/observation_adapter.py": "d8bfdf90537126dafd6b5a7f51d2e5c5f9c5d46805168fe48b8fa18a8dd7201e",
+    "robot_agent/nominal_reference.py": "1d39d8988933022c8cde6c7b641f6adfced102a5c686c5da4db7ab704ff012f9"
+  },
+  "checkpoints": [
+    {
+      "seed": 51001,
+      "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/training/seed_51001/policy.zip",
+      "sha256": "016fbbfdac55719f1038ead4554e2e516a547e8e94fdf3422ed3464eddc89687"
+    },
+    {
+      "seed": 51002,
+      "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/training/seed_51002/policy.zip",
+      "sha256": "a4f57de440564ab18a9407746ca40da38fa19ae682fa902d515a6f817dfe5c66"
+    },
+    {
+      "seed": 51003,
+      "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/training/seed_51003/policy.zip",
+      "sha256": "bc8123a35168e6801eb2a1f80ec6f63a0d48cfb337da051a6c71b9267536b3e4"
+    },
+    {
+      "seed": 51004,
+      "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/training/seed_51004/policy.zip",
+      "sha256": "ce5ef126594ca013223f2395f843baab931b9bea3f5a0ee4c6852cf113b64616"
+    },
+    {
+      "seed": 51005,
+      "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/training/seed_51005/policy.zip",
+      "sha256": "f18946e778917ba0d871d5f6bcd3b23dbb9ded4008803645351f48f1ca98156e"
+    }
+  ],
+  "training_records": {
+    "training_seed_51001.json": "c48be5be415ae8edb617d986e397fae3c0c1bf414bd5b8eaeb7de6f477b80783",
+    "training_seed_51002.json": "d589960f4d4e88ff4ea715beffac7b8bba433d51b07b94587ec8fd98e4cb80c9",
+    "training_seed_51003.json": "a8acd44040d00697df6bc539e6e550e817503f306bd82784fe8ce951f87c7dd4",
+    "training_seed_51004.json": "04d821ad865b7fb4c7fc3cf69a95a920baa6e788eaee1c5b650a76bc6d80e5a5",
+    "training_seed_51005.json": "d5a430488d31468654f3755f5420e0f476dc68364374a00725875d2a1a527b7a"
+  },
+  "evaluation_records": {
+    "evaluation_B0.json": "44125ecc12d5bfa2239cafa90f59a502ffcf41fb3ab59d4fbd38471a9efa7973",
+    "evaluation_B1.json": "7ebea7a5ccf511f7af3cb695df50db43349f0d620119e1a275328f0785df6d61",
+    "evaluation_B2_seed_51001.json": "fa884de7bb81cb05c5d38a5232b31b41940e8f560d3d9212c2399747712753dd",
+    "evaluation_B2_seed_51002.json": "c2370ef92e0500266a55b3e48a0f47e741f84fed8ad20c982aad42dabbaef17e",
+    "evaluation_B2_seed_51003.json": "8656bd93a6ee597b115d85316e905efa8f7be0fab622a391aa5510f3efce988a",
+    "evaluation_B2_seed_51004.json": "824fdf3189fe7c2298025b8838e48fc5635d27fdc47029cf7c90905faf593a46",
+    "evaluation_B2_seed_51005.json": "ccc1d8732b0676759bcd6b2c70be21777e3f14c91b9952362f56aa563df8716f"
+  },
+  "result_artifacts": {
+    "experiments/residual_fulltask_mvp/reproduction.json": "423984b0b48da62c1a591e1f839f8c30c0f1f1c5476672cacbe148db8426bf49",
+    "experiments/residual_fulltask_mvp/FINAL_MVP_REPORT.md": "86985f45d65edd844a3534f020e1ed8a59e6cd052ae4ce5976c5bf7024607ea8",
+    "CLAIMS_FROM_RESULTS.md": "305a2454296d5985e0ededd8fe49a8f3547b02b8b2a57cf7015bdf16e7de9d97",
+    "findings.md": "b9adb254dffed552b08c896eb82daef5c128ab8fa34a3421e6c367828451f81d"
+  },
+  "result": {
+    "b0_heldout": "9/64",
+    "b1_heldout": "20/64",
+    "b2_heldout_successes_per_seed": [8, 19, 17, 19, 20],
+    "b2_mean_improvement_over_b0_pp": 11.875,
+    "b2_vs_b0_ci95_pp": [0.625, 23.4375],
+    "positive_training_seeds": 4,
+    "b2_vs_b1_pp": -5.3125,
+    "b2_vs_b1_ci95_pp": [-16.25, 4.375],
+    "nominal_successes_per_b2_seed": [20, 20, 20, 20, 20],
+    "action_bounds_and_left_arm_invariance": true,
+    "privileged_student_inputs": 0
+  },
+  "budget": {
+    "training_policy_steps": 81920,
+    "training_rollouts": 1000,
+    "evaluation_rollouts": 588,
+    "subagents": 1,
+    "hardware_executions": 0,
+    "real_data_reads": 0,
+    "real_training": 0,
+    "runtime_llm_calls": 0,
+    "automatic_twin_mutations": 0
+  },
+  "validation": {
+    "focused_tests_passed": 7,
+    "compatible_repository_tests_passed": 181,
+    "compatible_repository_subtests_passed": 27,
+    "excluded_tests": 1,
+    "excluded_reason": "would import the prohibited private-control root",
+    "evaluation_condition_counts_verified": true
+  },
+  "result_to_claim_review": {
+    "backend": "llm-chat",
+    "requested_model": "deepseek-v4-pro",
+    "reported_model": null,
+    "effort": "high",
+    "status": "error",
+    "verdict": "REVIEW_UNAVAILABLE",
+    "review_completed": false,
+    "review_positive": false,
+    "automatic_retry": false,
+    "evidence_precheck_verified": 7,
+    "evidence_precheck_sha256": "d111415c999853ec9fe587fd51ca73c68aa91d507b341c06bb1538b15b76df26",
+    "error": "DeepSeek RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read); not automatically retried"
+  },
+  "scope": "Simulation-only Stage A. No full-task, hardware, real-data, or real-transfer claim."
+}

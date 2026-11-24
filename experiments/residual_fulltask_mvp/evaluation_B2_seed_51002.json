@@ -1,0 +1,3630 @@
+{
+  "variant": "B2",
+  "training_seed": 51002,
+  "visual_dropout": 0.0,
+  "design_sha256": "270dcfc0d5b46be734461d99c0f1c43bad6032f0e25546353e67b724b145f57b",
+  "source_hashes": {
+    "scripts/evaluate_residual_v2.py": "bc0a98ef773ce0072a9bc88006f5611b52c60987e30564fff87399add4d93abc",
+    "robot_agent/residual_env.py": "daac324d9de8a92b70bd58d1305d38a608d838e9a80b2474efeb6f6f999191b9",
+    "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+    "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+    "robot_agent/observation_adapter.py": "d8bfdf90537126dafd6b5a7f51d2e5c5f9c5d46805168fe48b8fa18a8dd7201e",
+    "robot_agent/nominal_reference.py": "1d39d8988933022c8cde6c7b641f6adfced102a5c686c5da4db7ab704ff012f9",
+    "scripts/pilot_residual_v2.py": "4c5965e6deebb0a73a4aeaa4a3bcb40f9c529be756495908ee44b739a5c6ba9f"
+  },
+  "source_capture": "before rollout workers; exact new-source snapshots retained in DATA_ROOT",
+  "cases": [
+    {
+      "case_id": "heldout_11001",
+      "seed": 11001,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.221435707993805,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 5.084152203097889e-05,
+      "correction_integral_m_s": 0.0012888648942923759,
+      "correction_variation_m": 0.0007597381258696009,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.15,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.12605905918252283,
+          -0.015099561004467216
+        ],
+        "yaw_deg": 0.448020017992552
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00032223062110170794,
+        "face_gap_m": 0.00019999949555543628,
+        "yaw_rad": 0.04376577776981657,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.5000000000000013,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11001.json",
+        "sha256": "888c564616406d48d178337e883b72a71d3e420f2517074c2f82579a195aa63a"
+      }
+    },
+    {
+      "case_id": "heldout_11002",
+      "seed": 11002,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 36.547527389833704,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00010889900443018185,
+      "correction_integral_m_s": 0.001609834319793705,
+      "correction_variation_m": 0.0008536141623323869,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645296,
+          0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          0.016614734527122726,
+          -0.10881494975605341
+        ],
+        "yaw_deg": 0.18635057458922688
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007490108647633305,
+        "face_gap_m": 0.00019999947573693527,
+        "yaw_rad": -0.006130279951041591,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11002.json",
+        "sha256": "ebda2a82a8472324dc8b7a723bcdc15d69ec01b73011cc1bcf924ef2573e1b48"
+      }
+    },
+    {
+      "case_id": "heldout_11003",
+      "seed": 11003,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.643594635184854,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.0001446363205589156,
+      "correction_integral_m_s": 0.0016632664327378077,
+      "correction_variation_m": 0.0008725085101944555,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.04171909509728e-17,
+          1.15
+        ],
+        "hand_xy_mm": [
+          0.08052175276963258,
+          -0.09523046842404459
+        ],
+        "yaw_deg": 0.5849919922675575
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005952963949095323,
+        "face_gap_m": 0.00019999951723441434,
+        "yaw_rad": -0.006145910078005922,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1333333333333355,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11003.json",
+        "sha256": "5b12bcc1fd62382b1487cc9ee9b431acef3dfe10176aea9e795131635ae3f587"
+      }
+    },
+    {
+      "case_id": "heldout_11004",
+      "seed": 11004,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.115861827041954,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00016071917250048054,
+      "correction_integral_m_s": 0.0018102845732665676,
+      "correction_variation_m": 0.0009362245641907723,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645295,
+          0.8131727983645296
+        ],
+        "hand_xy_mm": [
+          0.12804240259993674,
+          -0.11155225509225716
+        ],
+        "yaw_deg": 0.6670391015462451
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.000738208200393949,
+        "face_gap_m": 0.00019999949370524267,
+        "yaw_rad": -0.00044019822903374156,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11004.json",
+        "sha256": "145ea303497f28ccc88d283c7e76f89d6be881401bba95c6f93c659a60dc673f"
+      }
+    },
+    {
+      "case_id": "heldout_11005",
+      "seed": 11005,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.26476695598103,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.704271488915792e-05,
+      "correction_integral_m_s": 0.0013340497453449588,
+      "correction_variation_m": 0.0007589261867785974,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.15,
+          1.408343819019456e-16
+        ],
+        "hand_xy_mm": [
+          0.09743542637845973,
+          -0.10176403847293006
+        ],
+        "yaw_deg": -0.26650278200534255
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003289189997373095,
+        "face_gap_m": 0.01666750243788348,
+        "yaw_rad": -0.005552516137465252,
+        "tilt_rad": 0.265648673248779,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11005.json",
+        "sha256": "eb111091c87a4d01ad96b139345e49fb7452ed7b33ffd17973b2e7c16286e2c9"
+      }
+    },
+    {
+      "case_id": "heldout_11006",
+      "seed": 11006,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.035704302135855,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00015226022436145916,
+      "correction_integral_m_s": 0.0012905340437069002,
+      "correction_variation_m": 0.0007632979870114912,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645298,
+          -0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.14942037386524568,
+          0.056927000912903286
+        ],
+        "yaw_deg": -0.5361524989979956
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003201635416863095,
+        "face_gap_m": 0.016716096682835718,
+        "yaw_rad": -0.00040630978644525087,
+        "tilt_rad": 0.27924004253296497,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11006.json",
+        "sha256": "e8e0dc63a324b6b0335d0b835723cb57acd5200f87c821b90cbdbb68d1044317"
+      }
+    },
+    {
+      "case_id": "heldout_11007",
+      "seed": 11007,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 33.750697954092175,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.7556493036790434e-05,
+      "correction_integral_m_s": 0.0012577488760136823,
+      "correction_variation_m": 0.0007697954400913312,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.112515728529184e-16,
+          -1.15
+        ],
+        "hand_xy_mm": [
+          -0.14631904745761218,
+          -0.01584692260065068
+        ],
+        "yaw_deg": -0.1990989234369307
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004206849257198309,
+        "face_gap_m": 0.016633074326826813,
+        "yaw_rad": -0.005986976686380523,
+        "tilt_rad": 0.276504808992617,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11007.json",
+        "sha256": "1314238783bdf49b12db03d15151ce0de411bf44fb942a68b494e538c428bfa5"
+      }
+    },
+    {
+      "case_id": "heldout_11008",
+      "seed": 11008,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 33.73086213506758,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 8.40317509998403e-05,
+      "correction_integral_m_s": 0.001245840229956569,
+      "correction_variation_m": 0.0007682263241200519,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645294,
+          -0.8131727983645298
+        ],
+        "hand_xy_mm": [
+          0.1365015725760186,
+          -0.07925222895479134
+        ],
+        "yaw_deg": 0.2419180876363034
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00404605191560383,
+        "face_gap_m": 0.01650623236137111,
+        "yaw_rad": -0.005539834960281144,
+        "tilt_rad": 0.2873279424281639,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11008.json",
+        "sha256": "f07630d3e5c530d2b10ee22f8e6851e36db8c48cba45b019be951d895ae1dd0e"
+      }
+    },
+    {
+      "case_id": "heldout_11009",
+      "seed": 11009,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.434042874956504,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00015496225255807336,
+      "correction_integral_m_s": 0.0012703119106332373,
+      "correction_variation_m": 0.0007632049037155226,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.3,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.09176216351235292,
+          -0.13582423287622503
+        ],
+        "yaw_deg": 0.20250311263435106
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0004819163872115349,
+        "face_gap_m": 0.00019999951322265813,
+        "yaw_rad": -0.005117887082966026,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.8000000000000023,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11009.json",
+        "sha256": "d30415fd41a3e9db398d5ca5fa4714f98efa93813fd6a030b2af60ce0d01d0f7"
+      }
+    },
+    {
+      "case_id": "heldout_11010",
+      "seed": 11010,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.256433045025915,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.623510915318278e-05,
+      "correction_integral_m_s": 0.0015155303618811543,
+      "correction_variation_m": 0.0007730661140301016,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425119,
+          0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.04834775268873956,
+          -0.10147170115110093
+        ],
+        "yaw_deg": -0.019368088491107494
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007663942814897407,
+        "face_gap_m": 0.0001999995531097934,
+        "yaw_rad": -0.005005678383955603,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11010.json",
+        "sha256": "4b89690d6dbacb4664c955cc0832b573d9599252bcb0b8c2a7ad91fc15713b6e"
+      }
+    },
+    {
+      "case_id": "heldout_11011",
+      "seed": 11011,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.950091507053003,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 7.69621393593789e-05,
+      "correction_integral_m_s": 0.00132613077332298,
+      "correction_variation_m": 0.0007547557247201804,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.960204194457797e-17,
+          1.3
+        ],
+        "hand_xy_mm": [
+          -0.14293133522389403,
+          0.06856285810379151
+        ],
+        "yaw_deg": 0.04097912430881745
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004484216847273509,
+        "face_gap_m": 0.011104245681984135,
+        "yaw_rad": -0.01933672118313521,
+        "tilt_rad": 0.34568967418711644,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11011.json",
+        "sha256": "27f9aa0fecb45a395410a440f2f2338f0b3226d63bb610413995fb5d514a3081"
+      }
+    },
+    {
+      "case_id": "heldout_11012",
+      "seed": 11012,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.557218508096412,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.352676664321803e-05,
+      "correction_integral_m_s": 0.0012668684632695022,
+      "correction_variation_m": 0.0007715344269932865,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.9192388155425117,
+          0.9192388155425119
+        ],
+        "hand_xy_mm": [
+          0.11606768889804989,
+          -0.06623437456598026
+        ],
+        "yaw_deg": -0.46152952812642445
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0024834946770905244,
+        "face_gap_m": 0.017053393061442476,
+        "yaw_rad": -0.012764593153093683,
+        "tilt_rad": 0.2645353440776814,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11012.json",
+        "sha256": "818ca9f578c69c64876fdc2b89b5a6601a04f2d982c9b9df42f0b97f4cc5241c"
+      }
+    },
+    {
+      "case_id": "heldout_11013",
+      "seed": 11013,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 35.12265489017591,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.292248445409418e-05,
+      "correction_integral_m_s": 0.001308057120588178,
+      "correction_variation_m": 0.0007612954805002388,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.3,
+          1.5920408388915593e-16
+        ],
+        "hand_xy_mm": [
+          0.04136105161843462,
+          -0.09210708095706777
+        ],
+        "yaw_deg": -0.20645665859849993
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0032833488986854964,
+        "face_gap_m": 0.016674389210742824,
+        "yaw_rad": -0.006943432817979271,
+        "tilt_rad": 0.26272509629462804,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11013.json",
+        "sha256": "30fd4d9aa29b6980ad9d9474f71084115ad9469c06fd3144a0165a23319fd99e"
+      }
+    },
+    {
+      "case_id": "heldout_11014",
+      "seed": 11014,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 35.613727105082944,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.090153914244636e-05,
+      "correction_integral_m_s": 0.0013156985578071474,
+      "correction_variation_m": 0.0007561343545624363,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.919238815542512,
+          -0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          -0.09052694622362592,
+          0.016271311319485282
+        ],
+        "yaw_deg": 0.14990349621353305
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003188057577556752,
+        "face_gap_m": 0.016717022912131035,
+        "yaw_rad": -0.0032969926917511003,
+        "tilt_rad": 0.27723888720929757,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11014.json",
+        "sha256": "b5c4d67bef1ec64a2f6d248ea79d0956d0d10a8df95e8d6d35a112f5cc5629db"
+      }
+    },
+    {
+      "case_id": "heldout_11015",
+      "seed": 11015,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.63429643702693,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 5.018572243633435e-05,
+      "correction_integral_m_s": 0.0012508129188733624,
+      "correction_variation_m": 0.000771481139657246,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.3880612583373386e-16,
+          -1.3
+        ],
+        "hand_xy_mm": [
+          -0.043784823936126385,
+          0.013334125796459262
+        ],
+        "yaw_deg": 0.3671228727598215
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0042118557706393505,
+        "face_gap_m": 0.016672847682171435,
+        "yaw_rad": 0.003552001611569574,
+        "tilt_rad": 0.28022843638241735,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11015.json",
+        "sha256": "d42177a895d6f1625151c076732058abe94d06487d988911ae402ddba924ba9b"
+      }
+    },
+    {
+      "case_id": "heldout_11016",
+      "seed": 11016,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.92499622097239,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 9.340687326296607e-05,
+      "correction_integral_m_s": 0.0012740078587772778,
+      "correction_variation_m": 0.0007622917666505524,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425116,
+          -0.919238815542512
+        ],
+        "hand_xy_mm": [
+          0.0834900083665342,
+          -0.14457133519732482
+        ],
+        "yaw_deg": -0.0190936724127293
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.005571671305881429,
+        "face_gap_m": 0.013610345177041488,
+        "yaw_rad": 0.003789946161484834,
+        "tilt_rad": 0.3953999386434488,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11016.json",
+        "sha256": "d90560ed108dfc7fbf66dba4b005330fd7622834e30002c2e1b3ac229a2c6827"
+      }
+    },
+    {
+      "case_id": "heldout_11017",
+      "seed": 11017,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.003526075044647,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 8.585571353114808e-05,
+      "correction_integral_m_s": 0.0012378740462945209,
+      "correction_variation_m": 0.0007700304902589287,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.15,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.06021528487788691,
+          0.016020191973672493
+        ],
+        "yaw_deg": 0.6009651854330049
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0002345634731608776,
+        "face_gap_m": 0.00019999952369707807,
+        "yaw_rad": -0.01477330779011135,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.8000000000000023,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11017.json",
+        "sha256": "6831ed64e1e5da7ad69d816f4c92cb5da1071fcf09daf3f9bf79ef7f364e3366"
+      }
+    },
+    {
+      "case_id": "heldout_11018",
+      "seed": 11018,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.67564996308647,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 7.355507808431151e-05,
+      "correction_integral_m_s": 0.0015113594821580117,
+      "correction_variation_m": 0.0007801939134365492,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645296,
+          0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          0.04927317440945117,
+          -0.01732857517367581
+        ],
+        "yaw_deg": 0.4854354131274228
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006841954393232875,
+        "face_gap_m": 0.00019999937507017562,
+        "yaw_rad": -0.010693396881272004,
+        "tilt_rad": 2.580956827951785e-08,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11018.json",
+        "sha256": "1877c303b0a5b22312bcc8d4cc6fb96445d88d3ac37c45c31592d03b26def502"
+      }
+    },
+    {
+      "case_id": "heldout_11019",
+      "seed": 11019,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.636358299059793,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00012301928711514176,
+      "correction_integral_m_s": 0.0016160122178292783,
+      "correction_variation_m": 0.0008260172244078373,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.04171909509728e-17,
+          1.15
+        ],
+        "hand_xy_mm": [
+          0.10665281540277058,
+          -0.08089284950532631
+        ],
+        "yaw_deg": 0.5522023083739995
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005600521265293224,
+        "face_gap_m": 0.0001999995195144169,
+        "yaw_rad": -0.004803402961139981,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1666666666666687,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11019.json",
+        "sha256": "484f482c49bcaa2c9bf6ce1ac670a7ffceac0bb76c999c53822ff39db622a0ea"
+      }
+    },
+    {
+      "case_id": "heldout_11020",
+      "seed": 11020,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.892949629109353,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 8.174539876494877e-05,
+      "correction_integral_m_s": 0.0016780685132156568,
+      "correction_variation_m": 0.0008713364362533038,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645295,
+          0.8131727983645296
+        ],
+        "hand_xy_mm": [
+          -0.013472511509705687,
+          0.04429361234456447
+        ],
+        "yaw_deg": -0.31285940071948154
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007486837384552771,
+        "face_gap_m": 0.00019999949818222396,
+        "yaw_rad": -0.007666954539074509,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11020.json",
+        "sha256": "159528c83f64bdeaff30bc8988e78d68ff2b70cecb31638e0a9cd4925be4a3af"
+      }
+    },
+    {
+      "case_id": "heldout_11021",
+      "seed": 11021,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.457093995064497,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00015228033339495853,
+      "correction_integral_m_s": 0.0013425289938420388,
+      "correction_variation_m": 0.0007567034139163439,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.15,
+          1.408343819019456e-16
+        ],
+        "hand_xy_mm": [
+          -0.0456811606162419,
+          0.05362565303428793
+        ],
+        "yaw_deg": -0.6966530231614416
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003297797411878823,
+        "face_gap_m": 0.016664314241567404,
+        "yaw_rad": -0.004538824554849489,
+        "tilt_rad": 0.26521376415768466,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11021.json",
+        "sha256": "0a5ffd6f27a468157c3259c138e4a3082efe9f09e2e016e9e7375005b4949fec"
+      }
+    },
+    {
+      "case_id": "heldout_11022",
+      "seed": 11022,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.307418819051236,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.501068408273622e-05,
+      "correction_integral_m_s": 0.0013039678591958907,
+      "correction_variation_m": 0.0007571751035564725,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645298,
+          -0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.06498276874328378,
+          0.046648956402681435
+        ],
+        "yaw_deg": 0.09754564938397015
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0032734926745681815,
+        "face_gap_m": 0.016685440103298158,
+        "yaw_rad": -0.0024352707208298704,
+        "tilt_rad": 0.2752856125077708,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11022.json",
+        "sha256": "e387ae92989fda9d52fbea6f37b3d2f776d9c019b7d25c696f790bd3b796284a"
+      }
+    },
+    {
+      "case_id": "heldout_11023",
+      "seed": 11023,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.046802731929347,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.5059167741156906e-05,
+      "correction_integral_m_s": 0.001279982660644881,
+      "correction_variation_m": 0.0007592110818184343,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.112515728529184e-16,
+          -1.15
+        ],
+        "hand_xy_mm": [
+          -0.032703258207892355,
+          0.047631696420463554
+        ],
+        "yaw_deg": 0.0015029531730621493
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0042373049260687485,
+        "face_gap_m": 0.016668309039103643,
+        "yaw_rad": -0.0004050613872730144,
+        "tilt_rad": 0.27973348282747823,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11023.json",
+        "sha256": "9e9246178ccc3885ca02aa530af0852a92bab070332bc8e0ecb42186f549ae02"
+      }
+    },
+    {
+      "case_id": "heldout_11024",
+      "seed": 11024,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.078358105849475,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00011863732053446767,
+      "correction_integral_m_s": 0.0012599001663200356,
+      "correction_variation_m": 0.0007673001401841907,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645294,
+          -0.8131727983645298
+        ],
+        "hand_xy_mm": [
+          0.006719107455943896,
+          0.06193916176719194
+        ],
+        "yaw_deg": -0.4958896204304868
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004589344961314732,
+        "face_gap_m": 0.016541057597781267,
+        "yaw_rad": -0.008876911731290215,
+        "tilt_rad": 0.2821981518514414,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11024.json",
+        "sha256": "5c184e58afe585e4e31d4c60ebcfc65cfb4cbd944b0c79369e55f1eb612492b0"
+      }
+    },
+    {
+      "case_id": "heldout_11025",
+      "seed": 11025,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 37.706411480903625,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 4.363171682079525e-05,
+      "correction_integral_m_s": 0.0014339246848990514,
+      "correction_variation_m": 0.0007412131562051162,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.3,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.11657836245576955,
+          0.020558466716689622
+        ],
+        "yaw_deg": -0.3431787576140706
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007396679011537007,
+        "face_gap_m": 0.00019999953010742255,
+        "yaw_rad": 0.001533430852244468,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.233333333333335,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11025.json",
+        "sha256": "b563121ac1fba79b08845d9f7c587c1424beb7a770976a8e676a8a16160ad1f5"
+      }
+    },
+    {
+      "case_id": "heldout_11026",
+      "seed": 11026,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 37.197597411926836,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00011362846814059234,
+      "correction_integral_m_s": 0.0014804139430793567,
+      "correction_variation_m": 0.0007536870876469799,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425119,
+          0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          -0.1499985097596018,
+          0.11455587307360696
+        ],
+        "yaw_deg": 0.05153644481177677
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00024667984486770637,
+        "face_gap_m": 0.00019999948922760913,
+        "yaw_rad": -0.01589596702623762,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.3000000000000016,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11026.json",
+        "sha256": "d0c3f9461a552f7722b756d7fc56c4199ce89d65033a1c4524ee33be1955c942"
+      }
+    },
+    {
+      "case_id": "heldout_11027",
+      "seed": 11027,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.76491619483568,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 7.20371508460062e-05,
+      "correction_integral_m_s": 0.0012456499881816903,
+      "correction_variation_m": 0.0007782853147802144,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.960204194457797e-17,
+          1.3
+        ],
+        "hand_xy_mm": [
+          0.03610086954567154,
+          0.019059208292772495
+        ],
+        "yaw_deg": -0.45302198397254145
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003952834718342651,
+        "face_gap_m": 0.0165581477379481,
+        "yaw_rad": 0.010156077891238029,
+        "tilt_rad": 0.27377140190933763,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11027.json",
+        "sha256": "1cde54a7f27e6eeb5f7f6ab6719cb30a298aafbfb6a587cf8f58c0ada9dc01aa"
+      }
+    },
+    {
+      "case_id": "heldout_11028",
+      "seed": 11028,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 36.73689960013144,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 4.4401574486538734e-05,
+      "correction_integral_m_s": 0.0013985959847280312,
+      "correction_variation_m": 0.0007561449674043912,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.9192388155425117,
+          0.9192388155425119
+        ],
+        "hand_xy_mm": [
+          -0.056076103663864646,
+          0.14226949726560043
+        ],
+        "yaw_deg": 0.5531563477291459
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0003437474475782153,
+        "face_gap_m": 0.00019999950223152652,
+        "yaw_rad": -0.005505969819726961,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1333333333333355,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11028.json",
+        "sha256": "020dfb4859720b2673d61d03509e6ecbcc4cb193442cf83bc79b035ec1869c66"
+      }
+    },
+    {
+      "case_id": "heldout_11029",
+      "seed": 11029,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.824477131012827,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 8.554698964369227e-05,
+      "correction_integral_m_s": 0.00180925171062377,
+      "correction_variation_m": 0.0009365785310722655,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.3,
+          1.5920408388915593e-16
+        ],
+        "hand_xy_mm": [
+          -0.02991628266005887,
+          0.022063545900163295
+        ],
+        "yaw_deg": 0.6716647908167894
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007354135334560049,
+        "face_gap_m": 0.00019999946684361863,
+        "yaw_rad": -0.0003755159175988834,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11029.json",
+        "sha256": "9f86aee6eb35d0995fecb71e73c3d50f7038e9c94cc875ebc9b9c6f42a91ee51"
+      }
+    },
+    {
+      "case_id": "heldout_11030",
+      "seed": 11030,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.41526686004363,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.910830284119725e-05,
+      "correction_integral_m_s": 0.0013500235461249962,
+      "correction_variation_m": 0.0007505033383894252,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.919238815542512,
+          -0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          -0.09925700629074952,
+          0.14337632431681882
+        ],
+        "yaw_deg": 0.6829625528818266
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003392361516410649,
+        "face_gap_m": 0.01674137775397036,
+        "yaw_rad": -0.0039481770703340595,
+        "tilt_rad": 0.27751971725483443,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11030.json",
+        "sha256": "07839f24277b6f15fc0f3f535c82a3c3e8c7ac9cceefbade973cdf50c8761514"
+      }
+    },
+    {
+      "case_id": "heldout_11031",
+      "seed": 11031,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.50871030986309,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.180723135361407e-05,
+      "correction_integral_m_s": 0.001273668528906711,
+      "correction_variation_m": 0.000767006653305985,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.3880612583373386e-16,
+          -1.3
+        ],
+        "hand_xy_mm": [
+          0.008888583345330076,
+          0.005851531723169795
+        ],
+        "yaw_deg": 0.4767826418957979
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0037931723129258884,
+        "face_gap_m": 0.016606677864428196,
+        "yaw_rad": -0.017776006052590766,
+        "tilt_rad": 0.2793819124495305,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11031.json",
+        "sha256": "d724ecd7e35e5dd65a52cb4c84ab1f386fab30815b8ec8f530799229104716f4"
+      }
+    },
+    {
+      "case_id": "heldout_11032",
+      "seed": 11032,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.867979065980762,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.23475191830749e-05,
+      "correction_integral_m_s": 0.0013065858393580478,
+      "correction_variation_m": 0.0007560041840164652,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425116,
+          -0.919238815542512
+        ],
+        "hand_xy_mm": [
+          0.138969069912968,
+          -0.01920853190128058
+        ],
+        "yaw_deg": -0.24849833939804533
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004682052654645404,
+        "face_gap_m": 0.016543671866099813,
+        "yaw_rad": 2.9538789646677338e-05,
+        "tilt_rad": 0.28357434331810566,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11032.json",
+        "sha256": "505b39dd99f402977f79260f707712982b5c00aa3238c1e62c23d34d37b8e882"
+      }
+    },
+    {
+      "case_id": "heldout_11033",
+      "seed": 11033,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.145028087077662,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 3.785774306168523e-05,
+      "correction_integral_m_s": 0.0013761869354448055,
+      "correction_variation_m": 0.0007460595715546872,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.15,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.02150537229067806,
+          0.05494947637553668
+        ],
+        "yaw_deg": -0.0003783016135958661
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00021487920067104495,
+        "face_gap_m": 0.00019999950018907003,
+        "yaw_rad": -0.011587919243282823,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 1.9666666666666694,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11033.json",
+        "sha256": "c567ea5eec0e4d38de8dcbf907dce4ec6a5c2182c62ca8b6fb95d88f2de4a52b"
+      }
+    },
+    {
+      "case_id": "heldout_11034",
+      "seed": 11034,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 23.076795660192147,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00011688260946350391,
+      "correction_integral_m_s": 0.0017576566439635468,
+      "correction_variation_m": 0.0009132467275957453,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645296,
+          0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          0.0954851222181742,
+          0.042173490461728996
+        ],
+        "yaw_deg": -0.7105874322668999
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0008502944266883916,
+        "face_gap_m": 0.00019999953635119888,
+        "yaw_rad": -0.007885574283179824,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11034.json",
+        "sha256": "9a8ba29e211cb3e0530a3635871873f1dec9be5df588a9cd179322665acdbacf"
+      }
+    },
+    {
+      "case_id": "heldout_11035",
+      "seed": 11035,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 22.021093428134918,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 8.733819120425059e-05,
+      "correction_integral_m_s": 0.0016321871060290683,
+      "correction_variation_m": 0.0008447166613673265,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.04171909509728e-17,
+          1.15
+        ],
+        "hand_xy_mm": [
+          -0.13810060388864925,
+          0.023658681972349827
+        ],
+        "yaw_deg": -0.2879939608635695
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007423458836348212,
+        "face_gap_m": 0.00019999953752999206,
+        "yaw_rad": 0.006097531360058802,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1333333333333355,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11035.json",
+        "sha256": "411e678edefd1b68cb37b0cefe1551119b766d711381577852131f1eb0dae28f"
+      }
+    },
+    {
+      "case_id": "heldout_11036",
+      "seed": 11036,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.7368276710622,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 9.212574563493233e-05,
+      "correction_integral_m_s": 0.0018118304867842706,
+      "correction_variation_m": 0.0009381421381205836,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645295,
+          0.8131727983645296
+        ],
+        "hand_xy_mm": [
+          0.09021555854363034,
+          -0.09742492942088588
+        ],
+        "yaw_deg": 0.23575104762174393
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007689088274457277,
+        "face_gap_m": 0.00019999950327811294,
+        "yaw_rad": -0.00029005229564882964,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11036.json",
+        "sha256": "dcf46b9c684625e9f4a9b715a1a592aa2c1f113e754b0ddf41b026871b7ffb65"
+      }
+    },
+    {
+      "case_id": "heldout_11037",
+      "seed": 11037,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 37.20258206385188,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00012450007443235252,
+      "correction_integral_m_s": 0.0018106109634665735,
+      "correction_variation_m": 0.0009371197125234665,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.15,
+          1.408343819019456e-16
+        ],
+        "hand_xy_mm": [
+          0.060172755791571914,
+          -0.08441511194298328
+        ],
+        "yaw_deg": 0.4816367058150155
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006155526271250511,
+        "face_gap_m": 0.00019999947355757441,
+        "yaw_rad": -0.0003887739866175156,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11037.json",
+        "sha256": "a9c8c8dc78fbe7b68290f43fd4293bf58956899fb2085f182e3b1629c4ef45a3"
+      }
+    },
+    {
+      "case_id": "heldout_11038",
+      "seed": 11038,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 35.71280263597146,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 5.776733276294304e-05,
+      "correction_integral_m_s": 0.001304289422477692,
+      "correction_variation_m": 0.0007586150768227923,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645298,
+          -0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          0.1262363636903093,
+          -0.000263335926482422
+        ],
+        "yaw_deg": 0.3034000870804143
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0032288475126927003,
+        "face_gap_m": 0.016695825175771187,
+        "yaw_rad": -0.0006509867148297041,
+        "tilt_rad": 0.27688642367813776,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11038.json",
+        "sha256": "f05ab267d6effd9be58be9fcd8270d38355c51c2322b49c21536b53fb0d4861d"
+      }
+    },
+    {
+      "case_id": "heldout_11039",
+      "seed": 11039,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 0.0042911849450320005,
+      "is_success": false,
+      "collision": true,
+      "max_penetration_m": 0.0002129235762115589,
+      "correction_integral_m_s": 3.40186030310593e-08,
+      "correction_variation_m": 1.9974356055592514e-06,
+      "duration_s": 0.0002604166666664298,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.112515728529184e-16,
+          -1.15
+        ],
+        "hand_xy_mm": [
+          -0.10974532442117416,
+          0.12528920822760634
+        ],
+        "yaw_deg": -0.6317346430724868
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0010533432806971242,
+        "face_gap_m": 0.04365199905013941,
+        "yaw_rad": 0.0001228707205156304,
+        "tilt_rad": 0.1014052172080432,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11039.json",
+        "sha256": "5b06f40b20ecde34d51aed7c402a770640638f2a8770afbcf5639197714a39b8"
+      }
+    },
+    {
+      "case_id": "heldout_11040",
+      "seed": 11040,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 35.08318120497279,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.4329684258351074e-05,
+      "correction_integral_m_s": 0.0012808892668284264,
+      "correction_variation_m": 0.0007621180137637638,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645294,
+          -0.8131727983645298
+        ],
+        "hand_xy_mm": [
+          0.1383302120210109,
+          0.11256826753854896
+        ],
+        "yaw_deg": 0.5269504934244054
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.005655129941157629,
+        "face_gap_m": 0.013611527677204346,
+        "yaw_rad": 0.009216537525938885,
+        "tilt_rad": 0.402319873364529,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11040.json",
+        "sha256": "70a189fc4e8ffb8c014f24a55b0e9894fdac7666439943845e7e696ee173ed35"
+      }
+    },
+    {
+      "case_id": "heldout_11041",
+      "seed": 11041,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 38.411675686948,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.5402081804762654e-05,
+      "correction_integral_m_s": 0.001607940959332111,
+      "correction_variation_m": 0.0008279710728856134,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.3,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.014648486898514473,
+          -0.1270382700428181
+        ],
+        "yaw_deg": -0.528516669037578
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007889653378859686,
+        "face_gap_m": 0.0001999995175117411,
+        "yaw_rad": -0.008241644638166132,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11041.json",
+        "sha256": "2424b2e69ae0ef28a9247f3717e7cad3ece0340d6581d7bb1e2198148453ca23"
+      }
+    },
+    {
+      "case_id": "heldout_11042",
+      "seed": 11042,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.67465187702328,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.00013894730920553238,
+      "correction_integral_m_s": 0.0013987102257436406,
+      "correction_variation_m": 0.0007463497743802323,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425119,
+          0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          -0.148017237342582,
+          -0.08113843932182908
+        ],
+        "yaw_deg": 0.3139685958171117
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00029631845820988974,
+        "face_gap_m": 0.00019999949979850745,
+        "yaw_rad": -0.0032453774919469196,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.200000000000002,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11042.json",
+        "sha256": "03cb4ef8a3fee68d9649089646dd8103fa45e642d744b12830fc7193bd22b556"
+      }
+    },
+    {
+      "case_id": "heldout_11043",
+      "seed": 11043,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.893649158999324,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 0.0001368563414274581,
+      "correction_integral_m_s": 0.0016525435584919925,
+      "correction_variation_m": 0.0008585042515672357,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.960204194457797e-17,
+          1.3
+        ],
+        "hand_xy_mm": [
+          -0.10905098149603236,
+          -0.08151550183758413
+        ],
+        "yaw_deg": 0.3514063492138908
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006933378795761111,
+        "face_gap_m": 0.00019999950849885345,
+        "yaw_rad": 0.00018877906645605602,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.233333333333335,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11043.json",
+        "sha256": "979823ba92aeffa2ee4b7a81e43d395a63c69bdfd1ecf42fa17187f66b328862"
+      }
+    },
+    {
+      "case_id": "heldout_11044",
+      "seed": 11044,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.392633046023548,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.0001510578013624901,
+      "correction_integral_m_s": 0.0013025260051295912,
+      "correction_variation_m": 0.0007653084232471394,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.9192388155425117,
+          0.9192388155425119
+        ],
+        "hand_xy_mm": [
+          -0.09736523632285929,
+          0.11994807371460756
+        ],
+        "yaw_deg": -0.25499172054290414
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.002457343347194384,
+        "face_gap_m": 0.0170533401339229,
+        "yaw_rad": -0.0002843195425710123,
+        "tilt_rad": 0.2665003668574885,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11044.json",
+        "sha256": "98032d0b382489205f6ab78e39dcb78e0e0ff7ae69fb8dfbf0f2c1b524ef30e5"
+      }
+    },
+    {
+      "case_id": "heldout_11045",
+      "seed": 11045,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 23.03999958699569,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00010940338917102202,
+      "correction_integral_m_s": 0.0013165873469871408,
+      "correction_variation_m": 0.0007600781696693788,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.3,
+          1.5920408388915593e-16
+        ],
+        "hand_xy_mm": [
+          0.0621140017853313,
+          0.024595346901604337
+        ],
+        "yaw_deg": -0.7099260178234623
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0032519897777614983,
+        "face_gap_m": 0.016673161088076774,
+        "yaw_rad": -0.002385519029426358,
+        "tilt_rad": 0.26298386994499506,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11045.json",
+        "sha256": "9337059a2c0dd265fb4e88035662c9619d501b202a2816134fe2cdd01aaaf065"
+      }
+    },
+    {
+      "case_id": "heldout_11046",
+      "seed": 11046,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 26.049597260076553,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00014111322499245598,
+      "correction_integral_m_s": 0.0013642015490574818,
+      "correction_variation_m": 0.0007485337538819927,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.919238815542512,
+          -0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.03820284681588679,
+          0.10391087268593582
+        ],
+        "yaw_deg": -0.46432717895968784
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0031727878982748927,
+        "face_gap_m": 0.016722987977784168,
+        "yaw_rad": -0.0021778740186123545,
+        "tilt_rad": 0.2782029009240797,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11046.json",
+        "sha256": "08677b2c0a1c324603cf04af61388f112b699ca6edeba0f504ec2c72d2b016b1"
+      }
+    },
+    {
+      "case_id": "heldout_11047",
+      "seed": 11047,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.40455040312372,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 2.9233437526823368e-05,
+      "correction_integral_m_s": 0.0013022867943926451,
+      "correction_variation_m": 0.0007566422356980556,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.3880612583373386e-16,
+          -1.3
+        ],
+        "hand_xy_mm": [
+          0.0831783143056499,
+          -0.06853116267110404
+        ],
+        "yaw_deg": -0.6346947117601017
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004231126971860423,
+        "face_gap_m": 0.016675073596958592,
+        "yaw_rad": -0.0025278711367977377,
+        "tilt_rad": 0.2806790890393127,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11047.json",
+        "sha256": "8102704ca3fcce0af3082361d5d3e4bed7a639a1f84199ff147dd2a78f0e7166"
+      }
+    },
+    {
+      "case_id": "heldout_11048",
+      "seed": 11048,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.57499876618385,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 8.520770856902595e-05,
+      "correction_integral_m_s": 0.0012387332879944882,
+      "correction_variation_m": 0.0007735966827504848,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425116,
+          -0.919238815542512
+        ],
+        "hand_xy_mm": [
+          0.07027322078823481,
+          0.03162374416727354
+        ],
+        "yaw_deg": -0.5210581850406337
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004630122841840664,
+        "face_gap_m": 0.01655566147315675,
+        "yaw_rad": -0.0005177080037325053,
+        "tilt_rad": 0.2851511897276427,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11048.json",
+        "sha256": "334671ba356ca070cf35b3858b6ae133b9b8bf7862a52e1dd0bf850f4bff9aa2"
+      }
+    },
+    {
+      "case_id": "heldout_11049",
+      "seed": 11049,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 38.070259945932776,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 2.94817928702299e-05,
+      "correction_integral_m_s": 0.0017254577912814463,
+      "correction_variation_m": 0.0009035082038469662,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.15,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.057778502521182384,
+          -0.13036027874547781
+        ],
+        "yaw_deg": -0.7225233495344514
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007662406634446842,
+        "face_gap_m": 0.00019999950623383889,
+        "yaw_rad": 0.005500113512560069,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11049.json",
+        "sha256": "6c4a1bdcb6d403aefa2907a0b44d1b26e48804329be578009e28471b91bca356"
+      }
+    },
+    {
+      "case_id": "heldout_11050",
+      "seed": 11050,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.196322201984003,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.879884246001093e-05,
+      "correction_integral_m_s": 0.0016428660740087082,
+      "correction_variation_m": 0.0008561431104971669,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645296,
+          0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          0.046762264636753426,
+          -0.055963924132982026
+        ],
+        "yaw_deg": 0.0882033066158705
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007767263682055585,
+        "face_gap_m": 0.00019999948813181206,
+        "yaw_rad": -0.003787853186292809,
+        "tilt_rad": 1.4901161193847656e-08,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11050.json",
+        "sha256": "8a8a08b2a00c2a6e5877777f0c3ee4e3b012a46440749c9d70c8d06f0593bcf3"
+      }
+    },
+    {
+      "case_id": "heldout_11051",
+      "seed": 11051,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.92302962602116,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 5.6177000866762914e-05,
+      "correction_integral_m_s": 0.0016911718621051462,
+      "correction_variation_m": 0.0008966537783965976,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.04171909509728e-17,
+          1.15
+        ],
+        "hand_xy_mm": [
+          -0.14277691264264059,
+          0.02702878287499158
+        ],
+        "yaw_deg": 0.3280618696981057
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0006170461489739894,
+        "face_gap_m": 0.00019999951635151642,
+        "yaw_rad": -0.0018960951774791692,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.233333333333335,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11051.json",
+        "sha256": "21978d294a5681471c0f68c0e1a26719f45dd6856942dc5b90305f9212e4cd08"
+      }
+    },
+    {
+      "case_id": "heldout_11052",
+      "seed": 11052,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 36.87863311893307,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.3023001040856236e-05,
+      "correction_integral_m_s": 0.0017136848799340853,
+      "correction_variation_m": 0.0009080299689598969,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645295,
+          0.8131727983645296
+        ],
+        "hand_xy_mm": [
+          0.02508777983804919,
+          0.046528901479302
+        ],
+        "yaw_deg": 0.010560971473274727
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0007853508927657596,
+        "face_gap_m": 0.00019999949900743885,
+        "yaw_rad": -0.0020500181972789226,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11052.json",
+        "sha256": "df4a0b2b70ccc80366957739a1b3bf6939f8e0007016b4237e26b368c96664f4"
+      }
+    },
+    {
+      "case_id": "heldout_11053",
+      "seed": 11053,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 22.597963280044496,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 7.467683103322543e-05,
+      "correction_integral_m_s": 0.0012906787041159417,
+      "correction_variation_m": 0.0007736655008789097,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.15,
+          1.408343819019456e-16
+        ],
+        "hand_xy_mm": [
+          -0.0221871742308683,
+          -0.072725815465007
+        ],
+        "yaw_deg": 0.09571627428584939
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003273101385913298,
+        "face_gap_m": 0.016681483356228502,
+        "yaw_rad": -0.01224527028156815,
+        "tilt_rad": 0.26670585512240697,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11053.json",
+        "sha256": "23e50f080a60638ecc23c1e1febd38ec942eccab8d34894ae8ae4cafacd33874"
+      }
+    },
+    {
+      "case_id": "heldout_11054",
+      "seed": 11054,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.52916631894186,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00015823522477189045,
+      "correction_integral_m_s": 0.00136394361655052,
+      "correction_variation_m": 0.0007499017367053892,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.8131727983645298,
+          -0.8131727983645295
+        ],
+        "hand_xy_mm": [
+          -0.13449442041479479,
+          -0.10516153143149273
+        ],
+        "yaw_deg": 0.3331794605420244
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0032834167658157025,
+        "face_gap_m": 0.016694238220282126,
+        "yaw_rad": -0.004096057246461349,
+        "tilt_rad": 0.27632091605118625,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11054.json",
+        "sha256": "83ebbb8141b66075bc970aa260ca7974d08dd44c7875bda55a2c954a9d4b12be"
+      }
+    },
+    {
+      "case_id": "heldout_11055",
+      "seed": 11055,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.402800732990727,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00015825632173179456,
+      "correction_integral_m_s": 0.0012441425369170062,
+      "correction_variation_m": 0.0007740881434269712,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.112515728529184e-16,
+          -1.15
+        ],
+        "hand_xy_mm": [
+          0.06326671520645152,
+          -0.13742462287161875
+        ],
+        "yaw_deg": 0.42791070314161805
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0043311050286646445,
+        "face_gap_m": 0.016634612739375443,
+        "yaw_rad": -0.0009274523688206842,
+        "tilt_rad": 0.2746616400425352,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11055.json",
+        "sha256": "295b3dbaa990f86bdb283f53ff25492d0f38ba9444eda1a6a0fc89c31f5caf6d"
+      }
+    },
+    {
+      "case_id": "heldout_11056",
+      "seed": 11056,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 30.13147624884732,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 4.740332530917314e-05,
+      "correction_integral_m_s": 0.0012424271133929922,
+      "correction_variation_m": 0.0007651755124431992,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.8131727983645294,
+          -0.8131727983645298
+        ],
+        "hand_xy_mm": [
+          -0.09289116980571971,
+          0.14192411602502217
+        ],
+        "yaw_deg": 0.5868744447972567
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004542837015943519,
+        "face_gap_m": 0.017159732027124425,
+        "yaw_rad": -0.0058873648256152844,
+        "tilt_rad": 0.26253066560284466,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11056.json",
+        "sha256": "86b21034f2d5fa54aaac17719a5abace984d91f9ec625bc44053f328ea2604fe"
+      }
+    },
+    {
+      "case_id": "heldout_11057",
+      "seed": 11057,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.709270437946543,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 9.987815159626207e-05,
+      "correction_integral_m_s": 0.0014556776772221961,
+      "correction_variation_m": 0.0007530467061778034,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          1.3,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.031257061526820146,
+          0.10340919483784936
+        ],
+        "yaw_deg": -0.1774690337628163
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00016384436682871368,
+        "face_gap_m": 0.00019999952747865035,
+        "yaw_rad": -0.02100479504989143,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.233333333333335,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11057.json",
+        "sha256": "cf95d957d1ba067dd5fed52314ea3f63930131eb9569d399de49e608c58df138"
+      }
+    },
+    {
+      "case_id": "heldout_11058",
+      "seed": 11058,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 37.18399132206105,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 5.904251318216644e-05,
+      "correction_integral_m_s": 0.0016396887860439938,
+      "correction_variation_m": 0.0008259255690729926,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425119,
+          0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.14122264152148958,
+          -0.11549437325389808
+        ],
+        "yaw_deg": -0.39872007294016176
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0008263160095903978,
+        "face_gap_m": 0.00019999953307249518,
+        "yaw_rad": -0.00579230152189001,
+        "tilt_rad": 0.0,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11058.json",
+        "sha256": "24a1aa1acecd77374a0f16c87f7dae7c84a3b2f3e1bcd70a3bf996e7807a8e23"
+      }
+    },
+    {
+      "case_id": "heldout_11059",
+      "seed": 11059,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 36.623530549928546,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 3.621728668905375e-05,
+      "correction_integral_m_s": 0.0016423292912200599,
+      "correction_variation_m": 0.0008429502143564756,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          7.960204194457797e-17,
+          1.3
+        ],
+        "hand_xy_mm": [
+          -0.0912485653763076,
+          0.11062080666222887
+        ],
+        "yaw_deg": 0.5115115745856924
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005906593413680513,
+        "face_gap_m": 0.00019999951596225835,
+        "yaw_rad": -0.006659666967281798,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 2.1333333333333355,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11059.json",
+        "sha256": "89058e433fad709d89438f98045f99f0aad4d407c1f6ccb90f486cff268b0e38"
+      }
+    },
+    {
+      "case_id": "heldout_11060",
+      "seed": 11060,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.17169311991893,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.0001443759208071225,
+      "correction_integral_m_s": 0.0013223259911301164,
+      "correction_variation_m": 0.0007589349772733283,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.9192388155425117,
+          0.9192388155425119
+        ],
+        "hand_xy_mm": [
+          -0.10924935031494518,
+          0.10805212382524912
+        ],
+        "yaw_deg": -0.2574891444507836
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0024813397130859583,
+        "face_gap_m": 0.017053029910899783,
+        "yaw_rad": -0.013182086056151452,
+        "tilt_rad": 0.2646203253688271,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11060.json",
+        "sha256": "87feb9ddc91ec57cec5c58c9b41105d46783832a1adfd4a6790a1dc976391dff"
+      }
+    },
+    {
+      "case_id": "heldout_11061",
+      "seed": 11061,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.70158516499214,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 8.146460516290096e-05,
+      "correction_integral_m_s": 0.0013091886733648415,
+      "correction_variation_m": 0.0007641237008926508,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -1.3,
+          1.5920408388915593e-16
+        ],
+        "hand_xy_mm": [
+          -0.048206356055815455,
+          -0.10608968115292189
+        ],
+        "yaw_deg": -0.07728813611771468
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003210340769549039,
+        "face_gap_m": 0.016691044819550832,
+        "yaw_rad": -0.003997135249084452,
+        "tilt_rad": 0.2653571534321302,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11061.json",
+        "sha256": "eee3a5ff4906bf6e48a52491410a2a8f710bedf06d0eb2bfa3863a5fd0cfb004"
+      }
+    },
+    {
+      "case_id": "heldout_11062",
+      "seed": 11062,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 29.938682959182188,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 3.9613532489177245e-05,
+      "correction_integral_m_s": 0.0013036647673729236,
+      "correction_variation_m": 0.0007578346114846884,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -0.919238815542512,
+          -0.9192388155425117
+        ],
+        "hand_xy_mm": [
+          0.11925163174972805,
+          -0.06514712069591912
+        ],
+        "yaw_deg": -0.16251561298973483
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.003189703991032734,
+        "face_gap_m": 0.016709824689834993,
+        "yaw_rad": 0.0018792893207758106,
+        "tilt_rad": 0.27626286628575475,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11062.json",
+        "sha256": "476635670c7f9a82c544d52a552851f47506b3b93a5e03647ad4733b001f65e5"
+      }
+    },
+    {
+      "case_id": "heldout_11063",
+      "seed": 11063,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.29033750295639,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 0.00010536975092179815,
+      "correction_integral_m_s": 0.001260117992667999,
+      "correction_variation_m": 0.000764593719176221,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          -2.3880612583373386e-16,
+          -1.3
+        ],
+        "hand_xy_mm": [
+          0.03545607145192298,
+          -0.022871892170782365
+        ],
+        "yaw_deg": 0.6498550970673347
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004013693702501575,
+        "face_gap_m": 0.017220226246265263,
+        "yaw_rad": -0.0041592582982635205,
+        "tilt_rad": 0.26433235808845074,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11063.json",
+        "sha256": "0fb52e22ad6d2c455d9f83a7df2cf5a17588def6583a876e5a8d8a8eeafa8fba"
+      }
+    },
+    {
+      "case_id": "heldout_11064",
+      "seed": 11064,
+      "group": "heldout",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.76955231791362,
+      "is_success": false,
+      "collision": false,
+      "max_penetration_m": 6.834560465711146e-05,
+      "correction_integral_m_s": 0.001302659635591073,
+      "correction_variation_m": 0.0007584180245031024,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.9192388155425116,
+          -0.919238815542512
+        ],
+        "hand_xy_mm": [
+          -0.12676110962308823,
+          -0.0389314701522258
+        ],
+        "yaw_deg": -0.5178561253810998
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.004714932385924524,
+        "face_gap_m": 0.0165394787863406,
+        "yaw_rad": -0.0031793294663070315,
+        "tilt_rad": 0.2828315106962908,
+        "seated": false,
+        "hold_seconds": 0.0,
+        "success": false
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/heldout_11064.json",
+        "sha256": "02301bcd1039247d39665226887424af5341ad4457ddcffe9c33e6e6d709e6b6"
+      }
+    },
+    {
+      "case_id": "nominal_12001",
+      "seed": 12001,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.662731246091425,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9326345906737525e-05,
+      "correction_integral_m_s": 0.0018106635499556334,
+      "correction_variation_m": 0.0009379682306652614,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.005659257966017784,
+          0.003346008247030824
+        ],
+        "yaw_deg": -0.005348261451602526
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005123847624535323,
+        "face_gap_m": 0.0001999994907256053,
+        "yaw_rad": 6.228948443754566e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12001.json",
+        "sha256": "4eecbc912638917ce0fddf91105a399cef05c0a280382b22c598fa19239cb3b9"
+      }
+    },
+    {
+      "case_id": "nominal_12002",
+      "seed": 12002,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.88433904084377,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9346209652654388e-05,
+      "correction_integral_m_s": 0.0018104215889169193,
+      "correction_variation_m": 0.0009378319504700025,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.019727732344466654,
+          -0.004541489096497627
+        ],
+        "yaw_deg": 0.030971802938904003
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005139600498053065,
+        "face_gap_m": 0.00019999950093646524,
+        "yaw_rad": -5.0711132272147157e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12002.json",
+        "sha256": "22e4b5aa45936cc35f15ad1a47e593ee34bfea12722a2624df356d61ccb02b85"
+      }
+    },
+    {
+      "case_id": "nominal_12003",
+      "seed": 12003,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.85444054286927,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9333494394235852e-05,
+      "correction_integral_m_s": 0.0018104219820302908,
+      "correction_variation_m": 0.00093776209374086,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.011626941821139956,
+          -0.0014191365146255797
+        ],
+        "yaw_deg": 0.032752208468278005
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005139686030050681,
+        "face_gap_m": 0.00019999949059397448,
+        "yaw_rad": -4.5745487153883595e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12003.json",
+        "sha256": "9c9194398c62526c25292e133dff632ea27a73f2e81f5aaf4d348105003bda1b"
+      }
+    },
+    {
+      "case_id": "nominal_12004",
+      "seed": 12004,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 37.95962962601334,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9318672907742883e-05,
+      "correction_integral_m_s": 0.0018101872979243768,
+      "correction_variation_m": 0.0009374523452834584,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.003975017933688391,
+          0.01516306382722801
+        ],
+        "yaw_deg": 0.0528641348466444
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005156483740680023,
+        "face_gap_m": 0.0001999995014662012,
+        "yaw_rad": 3.6787123320143706e-06,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12004.json",
+        "sha256": "efc71d4e2081e00435fe705cc1889cc3dfb92e3d4abb63af59db6049148a4f3e"
+      }
+    },
+    {
+      "case_id": "nominal_12005",
+      "seed": 12005,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 37.4623106289655,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9321334617704834e-05,
+      "correction_integral_m_s": 0.0018107757460752133,
+      "correction_variation_m": 0.0009380869633315171,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.005535759682543757,
+          -0.00010767597751899435
+        ],
+        "yaw_deg": 0.059261667442265104
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005125101684104313,
+        "face_gap_m": 0.00019999949865995986,
+        "yaw_rad": -0.00011125988277927707,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12005.json",
+        "sha256": "d730f868bf9a66bf79c8578903ab79f60a6215ce4540e36ac6af1df836144d08"
+      }
+    },
+    {
+      "case_id": "nominal_12006",
+      "seed": 12006,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 37.228767613880336,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 4.728752008976017e-05,
+      "correction_integral_m_s": 0.001811128699745816,
+      "correction_variation_m": 0.0009382070005941181,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.017258280642437212,
+          -0.01708389854416716
+        ],
+        "yaw_deg": 0.050901888815949786
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005129574885157278,
+        "face_gap_m": 0.00019999949654144616,
+        "yaw_rad": -7.486002308522832e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12006.json",
+        "sha256": "4eceb476d11fd7027a6fe2ac839cd27224327a5c618ac2a326915e1d87fa61a8"
+      }
+    },
+    {
+      "case_id": "nominal_12007",
+      "seed": 12007,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 34.989237082889304,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9297783186081483e-05,
+      "correction_integral_m_s": 0.0018111166079434115,
+      "correction_variation_m": 0.0009382727018428286,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.011277022133214121,
+          -0.0038076032718025385
+        ],
+        "yaw_deg": -0.04185472110475792
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00048500893701780714,
+        "face_gap_m": 0.00019999949078435691,
+        "yaw_rad": 0.0004454487303739022,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12007.json",
+        "sha256": "4d84028636256ce4270fae52c914706bb7ba8e141261c3a8f65885a6f4b6478b"
+      }
+    },
+    {
+      "case_id": "nominal_12008",
+      "seed": 12008,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 37.83058144710958,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.934269391233894e-05,
+      "correction_integral_m_s": 0.0018104967233257472,
+      "correction_variation_m": 0.0009378764299290673,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.011651986469047238,
+          -4.041437009761478e-06
+        ],
+        "yaw_deg": -0.004123345161682446
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005109792395470347,
+        "face_gap_m": 0.00019999949915731896,
+        "yaw_rad": 0.00011017160489938147,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12008.json",
+        "sha256": "075516042d98680d063c93cc0dec80988100ef253808610be6a23835274fd2d4"
+      }
+    },
+    {
+      "case_id": "nominal_12009",
+      "seed": 12009,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.87739221798256,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.932436123234093e-05,
+      "correction_integral_m_s": 0.0018109221465188027,
+      "correction_variation_m": 0.0009381926969853978,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          4.170532858085302e-05,
+          -0.002459166154041223
+        ],
+        "yaw_deg": -0.08068631378314531
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0004788185789711183,
+        "face_gap_m": 0.0001999994896354773,
+        "yaw_rad": 0.0005986797566720121,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12009.json",
+        "sha256": "6d5201ae032070ccda035ef0e053c52910f44281357adbd3abaa8518812b80ad"
+      }
+    },
+    {
+      "case_id": "nominal_12010",
+      "seed": 12010,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.601104894885793,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9339865873874274e-05,
+      "correction_integral_m_s": 0.0018107371997226442,
+      "correction_variation_m": 0.0009380762169749883,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.0094142704371339,
+          -0.009768320164686334
+        ],
+        "yaw_deg": -0.09065139239200196
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00047961116632865307,
+        "face_gap_m": 0.00019999949066708267,
+        "yaw_rad": 0.0005897580197470416,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12010.json",
+        "sha256": "9beca4ed1b4ebcc9fa6c1ea448b6d8e08995c9d574aa4ab900b47501b9b19d19"
+      }
+    },
+    {
+      "case_id": "nominal_12011",
+      "seed": 12011,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.683775650104508,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9341501563695022e-05,
+      "correction_integral_m_s": 0.00181059631305814,
+      "correction_variation_m": 0.0009380153119113717,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.015393690077880006,
+          0.010967688389353247
+        ],
+        "yaw_deg": 0.07448369744869199
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005126626794339813,
+        "face_gap_m": 0.00019999949136187412,
+        "yaw_rad": -0.00014282883619433736,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12011.json",
+        "sha256": "44999800d6ff1d2b81565bc33e2806c8fc46b26f967abc53cd1de4aa3ae4f1d1"
+      }
+    },
+    {
+      "case_id": "nominal_12012",
+      "seed": 12012,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.023457620991394,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9293452873682412e-05,
+      "correction_integral_m_s": 0.001811014736571408,
+      "correction_variation_m": 0.0009381803834291193,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.013326620382134478,
+          0.015589481067071542
+        ],
+        "yaw_deg": 0.032020400057012816
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.000513229203151903,
+        "face_gap_m": 0.00019999949751880325,
+        "yaw_rad": -7.58008975270887e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12012.json",
+        "sha256": "4f2da77f0e987dd098c5fc2d17e506bb6708c179e2aa569c0ecd74445755166b"
+      }
+    },
+    {
+      "case_id": "nominal_12013",
+      "seed": 12013,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 20.12505819904618,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9358779519391106e-05,
+      "correction_integral_m_s": 0.001810379326042099,
+      "correction_variation_m": 0.0009378003810372868,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.017405165311096385,
+          -0.01920631735854504
+        ],
+        "yaw_deg": -0.08635044984306382
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0004801029719017429,
+        "face_gap_m": 0.0001999994902652999,
+        "yaw_rad": 0.0005840806517815544,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12013.json",
+        "sha256": "63596e4e403c93b794d96ce73653f2ecf2b87ffc3b1b4172958ca4a6f71cfa70"
+      }
+    },
+    {
+      "case_id": "nominal_12014",
+      "seed": 12014,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.846673930995166,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.930571414427363e-05,
+      "correction_integral_m_s": 0.0018110783746207496,
+      "correction_variation_m": 0.0009382829079102169,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.008945950734587899,
+          0.0120870565714291
+        ],
+        "yaw_deg": -0.025775380196098915
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0004925338466890353,
+        "face_gap_m": 0.00019999949851239734,
+        "yaw_rad": 0.00036672592248635313,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12014.json",
+        "sha256": "fd4cf12e00370f7abbe78d4d6183a7ebf550813f41f00f028a7ec70399ff948a"
+      }
+    },
+    {
+      "case_id": "nominal_12015",
+      "seed": 12015,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 25.357799682067707,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.933489654184651e-05,
+      "correction_integral_m_s": 0.0018105820940716006,
+      "correction_variation_m": 0.000937915171836416,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.009566084517212841,
+          0.009389829782629876
+        ],
+        "yaw_deg": -0.027617144337510766
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0004933908479605291,
+        "face_gap_m": 0.00019999949212450713,
+        "yaw_rad": 0.00035646570753727794,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12015.json",
+        "sha256": "afa8692b3d1aab9892a7f6b0ece524926452a69ea8ed22f091a3021204a8ec06"
+      }
+    },
+    {
+      "case_id": "nominal_12016",
+      "seed": 12016,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 26.12338079395704,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9347348933965095e-05,
+      "correction_integral_m_s": 0.0018103730995473167,
+      "correction_variation_m": 0.0009378011869815827,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.018006076310015204,
+          0.008695407037934377
+        ],
+        "yaw_deg": 0.05542757174548957
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.000512863633079905,
+        "face_gap_m": 0.000199999491678704,
+        "yaw_rad": -0.00011818781830690275,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12016.json",
+        "sha256": "6129496a094b7770ed71188a858dbb8c8c9d413a9de0b226197560e47b69f626"
+      }
+    },
+    {
+      "case_id": "nominal_12017",
+      "seed": 12017,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.59965353901498,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9325817844691595e-05,
+      "correction_integral_m_s": 0.0018109099965790112,
+      "correction_variation_m": 0.0009381952175699813,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.0019303727568956916,
+          -0.019646074274009055
+        ],
+        "yaw_deg": -0.055048823846580636
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00048387401712925854,
+        "face_gap_m": 0.0001999994913481143,
+        "yaw_rad": 0.0005270697179694735,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12017.json",
+        "sha256": "33021782a7c16ae68667a5f51c1652720e1d3fb78d131cb1e06b761156ee9db8"
+      }
+    },
+    {
+      "case_id": "nominal_12018",
+      "seed": 12018,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 21.81115824310109,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9313241358753562e-05,
+      "correction_integral_m_s": 0.0018110398505827663,
+      "correction_variation_m": 0.0009382699571066083,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          0.005672001386796969,
+          4.7306242108510754e-05
+        ],
+        "yaw_deg": -0.056050076342031234
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.00048295379981696146,
+        "face_gap_m": 0.00019999948974600695,
+        "yaw_rad": 0.00046733004796171366,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12018.json",
+        "sha256": "46abf35d22ddf987b431c582a64da6aecdcfdf0d824ca30a7102e26855ebddfc"
+      }
+    },
+    {
+      "case_id": "nominal_12019",
+      "seed": 12019,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 19.465506049105898,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.9328443797386093e-05,
+      "correction_integral_m_s": 0.0018107508861847429,
+      "correction_variation_m": 0.0009380974523699572,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.009783183613174514,
+          0.01777686178747313
+        ],
+        "yaw_deg": 0.04734151223802993
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005125369186823597,
+        "face_gap_m": 0.00019999949154780872,
+        "yaw_rad": -0.00010375193644755103,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12019.json",
+        "sha256": "71641e091b53cf1568a0e4d017ce3b647bc4b5dba99a22252f26253c10caf402"
+      }
+    },
+    {
+      "case_id": "nominal_12020",
+      "seed": 12020,
+      "group": "nominal",
+      "variant": "B2",
+      "training_seed": 51002,
+      "visual_dropout": 0.0,
+      "wall_s": 18.252852173987776,
+      "is_success": true,
+      "collision": false,
+      "max_penetration_m": 2.932907863169582e-05,
+      "correction_integral_m_s": 0.0018094287242846363,
+      "correction_variation_m": 0.0009367107866119132,
+      "duration_s": 5.2999999999951815,
+      "perturbation": {
+        "socket_xy_mm": [
+          0.0,
+          0.0
+        ],
+        "hand_xy_mm": [
+          -0.011191899974512745,
+          0.017333301222525976
+        ],
+        "yaw_deg": 0.06396112150484123
+      },
+      "final_metrics": {
+        "lateral_error_m": 0.0005142418789483747,
+        "face_gap_m": 0.0001999994901932048,
+        "yaw_rad": -2.9040068854018596e-05,
+        "tilt_rad": 0.0,
+        "seated": true,
+        "hold_seconds": 3.133333333333332,
+        "success": true
+      },
+      "privileged_student_inputs": 0,
+      "nominal_reference_hash": "a433cb513b9513e77badc8edd4b7de648e07f62286e8520c8a40d12d1dac7b18",
+      "visual_available_samples": 0,
+      "visual_samples": 0,
+      "trace": {
+        "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/evaluation/B2_seed_51002/nominal_12020.json",
+        "sha256": "e05d3c318b27a1effabcfd71cd9fda2a3352f690b0d0d225df1f3c953495cc0f"
+      }
+    }
+  ]
+}

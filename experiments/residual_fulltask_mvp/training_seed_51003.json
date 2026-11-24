@@ -1,0 +1,27 @@
+{
+  "variant": "B2_seed_51003",
+  "config": {
+    "steps": 16384,
+    "history_frames": 15,
+    "visual_features": false,
+    "reward": "structured",
+    "seed": 51003
+  },
+  "actual_steps": 16384,
+  "episodes": 200,
+  "wall_s": 1226.6447695649695,
+  "source_hashes": {
+    "scripts/train_residual_v2.py": "37f59df711aa9581c373d6b3abb4346f6408530bb200f901ab0ce23eaa4f6c35",
+    "robot_agent/residual_env.py": "daac324d9de8a92b70bd58d1305d38a608d838e9a80b2474efeb6f6f999191b9",
+    "robot_agent/residual_controller.py": "c673bab41431516340870381cabd90073efbe83df18fbb0f111a18aba0fa4a36",
+    "robot_agent/proprio_history.py": "942fb0ce9a568dd06e5e3282bf4cf283419be99e4690152baa8abd82f10c9b3c",
+    "robot_agent/observation_adapter.py": "d8bfdf90537126dafd6b5a7f51d2e5c5f9c5d46805168fe48b8fa18a8dd7201e"
+  },
+  "design_sha256": "270dcfc0d5b46be734461d99c0f1c43bad6032f0e25546353e67b724b145f57b",
+  "policy": {
+    "dataset_relative_path": "self_evolution/residual_fulltask_mvp/stage_a/training/seed_51003/policy.zip",
+    "sha256": "bc8123a35168e6801eb2a1f80ec6f63a0d48cfb337da051a6c71b9267536b3e4"
+  },
+  "observation_scope": "15-frame right motor/command history; no RGB or privileged channels",
+  "scope": "Simulation-only; fixed-budget final checkpoint; no real transfer inference"
+}

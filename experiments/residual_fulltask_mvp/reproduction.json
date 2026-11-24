@@ -1,0 +1,108 @@
+{
+  "stage": "A",
+  "decision": "NO-GO",
+  "proceed_to_stage_b": false,
+  "criteria": {
+    "effect_size": false,
+    "ci_supported": true,
+    "seed_stability": true,
+    "nominal_regression": true,
+    "action_bounds": true,
+    "privileged_student_inputs": true
+  },
+  "statistics": {
+    "B0": {
+      "heldout_successes": 9,
+      "heldout_n": 64,
+      "nominal_successes": 20,
+      "nominal_n": 20
+    },
+    "B1": {
+      "heldout_successes": 20,
+      "heldout_n": 64,
+      "vs_B0": {
+        "improvement_pp": 17.1875,
+        "ci95_pp": [
+          6.25,
+          28.125
+        ],
+        "recovered": 13,
+        "spoiled": 2,
+        "recovery_rate": 0.23636363636363636
+      }
+    },
+    "B2": {
+      "training_seeds": [
+        51001,
+        51002,
+        51003,
+        51004,
+        51005
+      ],
+      "heldout_successes_per_seed": [
+        8,
+        19,
+        17,
+        19,
+        20
+      ],
+      "nominal_successes_per_seed": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "positive_training_seeds": 4,
+      "vs_B0": {
+        "improvement_pp": 11.875,
+        "ci95_pp": [
+          0.625,
+          23.4375
+        ],
+        "per_training_seed_improvement_pp": [
+          -1.5625,
+          15.625,
+          12.5,
+          15.625,
+          17.1875
+        ]
+      },
+      "vs_B1": {
+        "improvement_pp": -5.3125,
+        "ci95_pp": [
+          -16.25,
+          4.375
+        ],
+        "per_training_seed_improvement_pp": [
+          -18.75,
+          -1.5625,
+          -4.6875,
+          -1.5625,
+          0.0
+        ]
+      },
+      "nominal_regression_pp": -0.0
+    }
+  },
+  "action_audit": {
+    "samples": 588,
+    "all_bounds_and_left_arm_invariance": true,
+    "max_residual_axis_m": 0.0011038286878464695,
+    "max_residual_axis_speed_m_s": 0.0012788480110695107,
+    "max_joint_correction_rad": 0.006637664702536128
+  },
+  "privileged_student_inputs": 0,
+  "budget": {
+    "training_policy_steps": 81920,
+    "training_rollouts": 1000,
+    "evaluation_rollouts": 588,
+    "hardware": 0,
+    "real_data_reads": 0,
+    "real_training": 0,
+    "runtime_llm": 0,
+    "twin_mutations": 0
+  },
+  "inference_scope": "Five fixed-budget training seeds; 64 paired held-out and 20 paired nominal conditions; hierarchical bootstrap over training seeds and conditions",
+  "candidate_mapping": "Stage A B2 is the historical V2 B3_structured 15-frame architecture without RGB channels"
+}

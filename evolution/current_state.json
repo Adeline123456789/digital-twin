@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Full-episode post-grasp residual research, currently Stage A V2 multi-seed reproduction; dual model/right-arm task",
-  "status": "FULL_TASK_RESIDUAL_STAGE_A_IMPLEMENTED_VALIDATED_NOT_RUN",
+  "scope": "Full-episode post-grasp residual research stopped at Stage A V2 multi-seed reproduction; dual model/right-arm task",
+  "status": "FULL_TASK_RESIDUAL_STAGE_A_NO_GO_STOPPED",
   "paused": [
     "real robot attempts",
     "physical parameter search",
@@ -75,10 +75,10 @@
     "this_batch_subagent_limit": 1,
     "this_batch_subagents_used": 1,
     "monetary_cost": null,
-    "additional_experiment_models": 0
+    "additional_experiment_models": 5
   },
-  "next_grounded_work": "Commit and push the frozen Stage A design and reproduction code, then run B0/B1 and fixed-budget seed 51001 in simulation only.",
-  "updated_at": "2026-11-24T03:38:37+00:00",
+  "next_grounded_work": "None under the current taskbook. Stage A NO-GO forbids Stage B; await a separately authorized research task.",
+  "updated_at": "2026-11-24T04:47:32+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -251,7 +251,7 @@
     "charter": "docs/RESIDUAL_RESEARCH_CHARTER.md",
     "design": "experiments/residual_fulltask_mvp/design.json",
     "stage": "A",
-    "status": "IMPLEMENTED_VALIDATED_NOT_RUN",
+    "status": "STAGE_A_NO_GO_STOPPED_BEFORE_STAGE_B",
     "candidate_mapping": "Stage A B2 is a new pure-proprioception version of the historical B3_structured 15-frame architecture; historical artifacts remain unchanged.",
     "frozen_counts": {
       "training_seeds": 5,
@@ -260,9 +260,9 @@
       "nominal_conditions": 20
     },
     "budget": {
-      "training_policy_steps": 0,
-      "training_rollouts": 0,
-      "evaluation_rollouts": 0,
+      "training_policy_steps": 81920,
+      "training_rollouts": 1000,
+      "evaluation_rollouts": 588,
       "subagents": 1,
       "hardware": 0,
       "real_data_reads": 0,
@@ -270,10 +270,70 @@
       "runtime_llm": 0,
       "twin_mutations": 0
     },
+    "background": {
+      "evaluation_processes": "completed; saved PIDs exited",
+      "logs": [
+        ".local/residual_fulltask_mvp/eval_51004.log",
+        ".local/residual_fulltask_mvp/eval_51005.log"
+      ],
+      "automation_id": "stage-a-residual",
+      "automation_status": "PAUSED_AFTER_COMPLETION"
+    },
+    "stage_a_final": {
+      "decision": "NO-GO",
+      "failure_category": "HELDOUT_GENERALIZATION_FAILURE",
+      "proceed_to_stage_b": false,
+      "B0_heldout": "9/64",
+      "B1_heldout": "20/64",
+      "B0_nominal": "20/20",
+      "B1_nominal": "20/20",
+      "B2_heldout_by_seed": {
+        "51001": "8/64 (-1.5625 pp vs B0)",
+        "51002": "19/64 (+15.625 pp vs B0)",
+        "51003": "17/64 (+12.5 pp vs B0)",
+        "51004": "19/64 (+15.625 pp vs B0)",
+        "51005": "20/64 (+17.1875 pp vs B0)"
+      },
+      "B2_nominal_by_seed": {
+        "51001": "20/20",
+        "51002": "20/20",
+        "51003": "20/20",
+        "51004": "20/20",
+        "51005": "20/20"
+      },
+      "B2_vs_B0_mean_improvement_pp": 11.875,
+      "B2_vs_B0_ci95_pp": [
+        0.625,
+        23.4375
+      ],
+      "B2_vs_B1_pp": -5.3125,
+      "B2_vs_B1_ci95_pp": [
+        -16.25,
+        4.375
+      ],
+      "positive_training_seeds": 4,
+      "mandatory_effect_size_threshold_pp": 15,
+      "failed_criterion": "B2 mean improvement over B0 was below 15 percentage points",
+      "action_bounds_and_left_arm_invariance": true,
+      "privileged_student_inputs": 0,
+      "report": "experiments/residual_fulltask_mvp/FINAL_MVP_REPORT.md",
+      "source_manifest": "experiments/residual_fulltask_mvp/source_manifest.json",
+      "reproduction": "experiments/residual_fulltask_mvp/reproduction.json"
+    },
+    "result_to_claim_review": {
+      "status": "REVIEW_UNAVAILABLE",
+      "backend": "llm-chat",
+      "requested_model": "deepseek-v4-pro",
+      "reported_model": null,
+      "review_completed": false,
+      "reason": "Remote connection closed before a complete chunked response; no automatic retry.",
+      "deterministic_gate_unchanged": true
+    },
     "validation": {
       "focused_tests": "7 passed",
       "repository_tests": "181 passed and 27 subtests passed across existing compatible environments; 1 private-control import test remained excluded by the standing prohibition.",
-      "condition_count": "64 held-out + 20 nominal",
+      "condition_count": "Each of B0, B1 and five B2 policies has 64 held-out + 20 nominal conditions.",
+      "summary_reproduction": "PASS: rerun produced identical SHA-256 423984b0b48da62c1a591e1f839f8c30c0f1f1c5476672cacbe148db8426bf49",
       "taskbook_copy": "Matches the supplied taskbook content; repository copy adds only the conventional final newline."
     }
   }
