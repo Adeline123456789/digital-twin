@@ -1,6 +1,7 @@
 """Audit controlled post-grasp XY perturbations and deployable observability."""
 import argparse
 from collections import deque
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -36,25 +37,49 @@ def ridge_xy(train_x, train_y, test_x, penalty=1e-4):
     return test @ weights
 
 
-def evaluate_xy(train_features, train_targets, heldout_features, heldout_targets, directions):
-    zeros_train = np.zeros_like(train_features)
-    zeros_test = np.zeros_like(heldout_features)
+def cardinal_direction(xy):
+    names = tuple(DIRECTIONS)
+    matrix = np.stack([DIRECTIONS[name] for name in names])
+    return names[int(np.argmax(np.asarray(xy) @ matrix.T))]
+
+
+def array_hash(value):
+    value = np.ascontiguousarray(value, dtype=np.float32)
+    return hashlib.sha256(value.tobytes()).hexdigest()
+
+
+def evaluate_xy(train_features, train_nominal, train_targets,
+                heldout_features, heldout_nominal, heldout_targets,
+                current_directions, treatment_directions):
     prediction = ridge_xy(
-        np.r_[train_features, zeros_train],
+        np.r_[train_features, train_nominal],
         np.r_[train_targets, np.zeros_like(train_targets)],
-        np.r_[heldout_features, zeros_test],
+        np.r_[heldout_features, heldout_nominal],
     )
     perturbed, nominal = np.split(prediction, 2)
     direction_names = tuple(DIRECTIONS)
     direction_matrix = np.stack([DIRECTIONS[name] for name in direction_names])
     predicted_names = [direction_names[index] for index in np.argmax(perturbed @ direction_matrix.T, axis=1)]
-    direction_accuracy = float(np.mean(np.asarray(predicted_names) == np.asarray(directions)))
+    current_recall = []
+    for name in direction_names:
+        mask = np.asarray(current_directions) == name
+        current_recall.append(float(np.mean(np.asarray(predicted_names)[mask] == name)) if mask.any() else 0.)
+    current_macro_recall = float(np.mean(current_recall))
+    treatment_accuracy = float(
+        np.mean(np.asarray(predicted_names) == np.asarray(treatment_directions)))
     return {
         'detection_auroc': area_under_roc(np.linalg.norm(perturbed, axis=1),
                                           np.linalg.norm(nominal, axis=1)),
-        'direction_accuracy': direction_accuracy,
+        'direction_accuracy': min(current_macro_recall, treatment_accuracy),
+        'current_direction_accuracy': float(
+            np.mean(np.asarray(predicted_names) == np.asarray(current_directions))),
+        'current_direction_macro_recall': current_macro_recall,
+        'current_direction_recall_by_class': dict(zip(direction_names, current_recall)),
+        'treatment_direction_accuracy': treatment_accuracy,
         'xy_rmse_mm': float(np.sqrt(np.mean((perturbed - heldout_targets) ** 2))),
         'predicted_xy_mm': perturbed.tolist(),
+        'nominal_predicted_xy_mm': nominal.tolist(),
+        'predicted_directions': predicted_names,
     }
 
 
@@ -179,7 +204,7 @@ class SimulatorAudit:
         valid = worst <= .0002
         history = FullTaskProprioHistory(15)
         vision = deque(maxlen=15)
-        p0, p1 = [], []
+        p0, p1, relative = [], [], []
         for index in range(self.grasp_end + 1, self.grasp_end + 16):
             action, check = self.step(index)
             worst = max(worst, check['max_penetration_m'])
@@ -197,6 +222,7 @@ class SimulatorAudit:
                 vision.appendleft(vision[0].copy())
             p0.append(proprio.copy())
             p1.append(np.r_[proprio, np.concatenate(vision)])
+            relative.append(self.relation().copy())
         return {
             'summary': {
                 'requested_xy_mm': list(map(float, xy_mm)),
@@ -207,6 +233,7 @@ class SimulatorAudit:
             },
             'p0': np.stack(p0),
             'p1': np.stack(p1),
+            'relative_position_m': np.stack(relative),
         }
 
 
@@ -260,34 +287,66 @@ def formal():
     design = json.loads(design_path.read_text())
     audit = SimulatorAudit()
     try:
-        nominal = audit.observation_episode([0., 0.])
         records = {'train': [], 'heldout': []}
-        features = {'train': {'p0': [], 'p1': [], 'target': [], 'direction': []},
-                    'heldout': {'p0': [], 'p1': [], 'target': [], 'direction': []}}
+        features = {
+            'train': {'p0': [], 'p1': [], 'nominal_p0': [], 'nominal_p1': [],
+                      'target': [], 'direction': []},
+            'heldout': {'p0': [], 'p1': [], 'nominal_p0': [], 'nominal_p1': [],
+                        'target': [], 'direction': []},
+        }
         for split in records:
             for name, direction in DIRECTIONS.items():
                 maximum = design['cardinal_max_amplitude_mm'][name]
                 for fraction in design[split + '_fractions']:
                     target = direction * maximum * fraction
                     episode = audit.observation_episode(target)
+                    nominal = audit.observation_episode([0., 0.])
                     episode_id = f'{split}-{name}-{fraction:.2f}'
                     records[split].append({'episode_id': episode_id, 'direction': name,
-                                           'fraction': fraction, **episode['summary']})
+                                           'fraction': fraction, **episode['summary'],
+                                           'paired_nominal_episode_id': episode_id + '-nominal',
+                                           'paired_nominal': nominal['summary']})
                     for mode in ('p0', 'p1'):
-                        features[split][mode].append(episode[mode] - nominal[mode])
-                    features[split]['target'].append(target)
+                        features[split][mode].append(episode[mode])
+                        features[split]['nominal_' + mode].append(nominal[mode])
+                    features[split]['target'].append(
+                        (episode['relative_position_m'] - nominal['relative_position_m'])[:, :2] * 1000)
                     features[split]['direction'].append(name)
         delay_metrics = {'p0': [], 'p1': []}
-        train_target = np.asarray(features['train']['target'])
-        test_target = np.asarray(features['heldout']['target'])
+        train_target = np.stack(features['train']['target'])
+        test_target = np.stack(features['heldout']['target'])
+        final_predictions = {}
+        matrix_hashes = {}
         for mode in ('p0', 'p1'):
             train = np.stack(features['train'][mode])
             test = np.stack(features['heldout'][mode])
+            train_nominal = np.stack(features['train']['nominal_' + mode])
+            test_nominal = np.stack(features['heldout']['nominal_' + mode])
+            matrix_hashes[mode] = {
+                'train_perturbed': array_hash(train), 'train_nominal': array_hash(train_nominal),
+                'heldout_perturbed': array_hash(test), 'heldout_nominal': array_hash(test_nominal),
+            }
             for delay in range(15):
-                metric = evaluate_xy(train[:, delay], train_target, test[:, delay], test_target,
-                                     features['heldout']['direction'])
+                current_directions = [cardinal_direction(xy) for xy in test_target[:, delay]]
+                metric = evaluate_xy(
+                    train[:, delay], train_nominal[:, delay], train_target[:, delay],
+                    test[:, delay], test_nominal[:, delay], test_target[:, delay],
+                    current_directions, features['heldout']['direction'])
                 metric['delay_frames'] = delay + 1
+                if delay == 14:
+                    final_predictions[mode] = [
+                        {'episode_id': record['episode_id'],
+                         'true_current_xy_mm': test_target[row, delay].tolist(),
+                         'true_current_direction': current_directions[row],
+                         'treatment_direction': features['heldout']['direction'][row],
+                         'predicted_xy_mm': metric['predicted_xy_mm'][row],
+                         'paired_nominal_predicted_xy_mm': metric['nominal_predicted_xy_mm'][row],
+                         'predicted_direction': metric['predicted_directions'][row]}
+                        for row, record in enumerate(records['heldout'])
+                    ]
                 metric.pop('predicted_xy_mm')
+                metric.pop('nominal_predicted_xy_mm')
+                metric.pop('predicted_directions')
                 delay_metrics[mode].append(metric)
         threshold = design['observability_thresholds']
         summaries = {}
@@ -300,38 +359,61 @@ def formal():
                           and row['direction_accuracy'] >= threshold['direction_accuracy_min']), None)
             summaries[mode] = {**final, 'passed': passed, 'first_passing_delay_frames': first}
         p0_pass = summaries['p0']['passed']
-        all_valid = nominal['summary']['valid'] and all(row['valid'] for split in records.values() for row in split)
+        all_valid = all(row['valid'] and row['paired_nominal']['valid']
+                        for split in records.values() for row in split)
         payload = {
             'schema_version': 1,
+            'audit_revision': 2,
+            'supersedes': {
+                'commit': '9cdb107093511871760738e18e10d2dc9f5371de',
+                'artifact_sha256': '1d8ac65c3c9e962f6dd28261568a6ba9d3d533faf2205a98408e9ff66f65b39b',
+                'reason': 'The first audit subtracted one shared nominal branch from classifier inputs and labeled only the initial treatment direction.',
+            },
             'stage': 'C',
             'validity': 'VALID' if all_valid else 'INVALID',
             'hypothesis': 'SUPPORTED' if p0_pass else 'NOT_SUPPORTED',
             'claims_allowed': ([
-                'P0 distinguishes the frozen formal perturbations in held-out simulation Episodes.'
-            ] if p0_pass else []),
+                'P0 distinguishes the frozen formal perturbations and their direction in held-out simulation Episodes.'
+            ] if p0_pass else [
+                'P0 distinguishes perturbation presence in the deterministic held-out simulation pairs.',
+            ]),
             'claims_not_allowed': [
                 'The audit establishes robustness to real sensor noise or real robot transfer.',
                 'P1 is deployable before simulator-to-real right-wrist viewpoint correspondence is verified.',
-            ],
+            ] + ([] if p0_pass else [
+                'P0 or P1 identifies all four controlled perturbation directions at the required accuracy.',
+            ]),
             'program_decision': 'CONTINUE' if all_valid and p0_pass else 'HOLD',
             'selected_mode': 'P0' if all_valid and p0_pass else None,
             'source': audit.source,
             'perturbation_design': str(design_path.relative_to(ROOT)),
             'perturbation_design_sha256': digest(design_path),
-            'split_unit': 'complete simulated audit Episode; one sample per Episode at each delay',
-            'train_episode_count': len(records['train']),
-            'heldout_episode_count': len(records['heldout']),
+            'split_unit': 'paired simulated audit Episodes; disjoint amplitude fractions; one raw branch sample per Episode at each delay',
+            'train_pair_count': len(records['train']),
+            'heldout_pair_count': len(records['heldout']),
+            'train_episode_count': 2 * len(records['train']),
+            'heldout_episode_count': 2 * len(records['heldout']),
             'thresholds': threshold,
-            'P0': {**summaries['p0'], 'deployable': True,
+            'direction_score_definition': 'Minimum of balanced initial-treatment direction accuracy and macro recall for paired current-error direction; both must support a four-way claim.',
+            'P0': {**summaries['p0'], 'deployable': p0_pass, 'sensor_interface_deployable': True,
                    'inputs': 'q, dq, frozen nominal action, command-feedback residual, gripper width, phase/history'},
             'P1': {**summaries['p1'], 'deployable': False,
                    'inputs': 'P0 plus RGB-only yellow-housing-to-finger relative XY, visibility and confidence',
                    'deployment_blocker': 'Archived metadata says current hardware extrinsics are unverified; real-data read is denied.'},
             'delay_metrics': delay_metrics,
+            'final_delay_predictions': final_predictions,
+            'feature_matrix_sha256': matrix_hashes,
             'episodes': records,
-            'nominal_episode': nominal['summary'],
+            'representation': 'Raw deployable P0/P1 history; no paired nominal subtraction is applied to classifier inputs.',
             'student_privileged_inputs': 0,
-            'label_only_privileged_fields': ['requested controlled XY state edit', 'simulation penetration'],
+            'label_only_privileged_fields': [
+                'requested controlled XY state edit', 'paired current plug/gripper relative XY',
+                'simulation penetration',
+            ],
+            'limitations': [
+                'All pairs originate from the one frozen frame-97 snapshot; nominal branches are separately executed but deterministic.',
+                'Metrics establish treatment sensitivity only in the frozen simulator and do not include real sensor noise.',
+            ],
             'hardware_executions': 0,
             'real_data_reads': 0,
         }
