@@ -77,8 +77,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 5
   },
-  "next_grounded_work": "Launch the three frozen P0 History PPO seeds in the background, then run the new paired held-out B0/B1/B2 evaluation without tuning.",
-  "updated_at": "2026-11-24T08:34:30+00:00",
+  "next_grounded_work": "At the scheduled post-ETA check, verify all three fixed-budget checkpoints, then run the new paired held-out B0/B1/B2 evaluation without tuning.",
+  "updated_at": "2026-11-24T08:44:45+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -450,7 +450,7 @@
       "real_data_reads": 0
     },
     "stage_e": {
-      "status": "CONTACT_DRIFT_DESIGN_REFROZEN_TRAINING_PENDING",
+      "status": "CONTACT_DRIFT_BACKGROUND_TRAINING_RUNNING",
       "training_steps": 0,
       "student_mode": "P0_AUTHORIZED_BY_AMENDMENT_V2",
       "pilot": "experiments/residual_fulltask_mvp/contact_drift_pilot.json",
@@ -478,10 +478,20 @@
         "reason": "Three seeds with eight environments each exceeded available RAM; formal layout reduced to four environments per seed.",
         "preserved_under_data_root": true
       },
+      "background_training": {
+        "started_utc": "2026-11-24T08:43:48+00:00",
+        "design_sha256": "792dd227fee0f9a823ea82e1dc6f276aa9aa95962b0e46153fdf3f72189d0794",
+        "seeds": [62001, 62002, 62003],
+        "parallel_envs_per_seed": 4,
+        "expected_completion_local": "2026-11-24T17:30:00+08:00",
+        "logs": ".local/residual_fulltask_mvp/contact_drift_training_logs/seed_<seed>.log",
+        "progress": "DATA_ROOT/self_evolution/residual_fulltask_mvp/contact_drift/training/seed_<seed>/progress.json",
+        "checkpoint_status": "NOT_YET_COMPLETE"
+      },
       "reason": "Four-direction classification remains diagnostic. A valid mixed-outcome contact-mediated distribution is frozen before training and held-out generation."
     },
     "core_experiment_v2": {
-      "status": "CONTACT_DRIFT_DESIGN_REFROZEN_TRAINING_PENDING",
+      "status": "CONTACT_DRIFT_BACKGROUND_TRAINING_RUNNING",
       "benchmark": "CONTACT_MEDIATED_DRIFT_V1",
       "pilot_force_n": [5, 25],
       "pilot_duration_ms": [50, 200],
