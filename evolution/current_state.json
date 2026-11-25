@@ -18,10 +18,10 @@
     "execution_allowed": false,
     "live_telemetry": false,
     "last_observed_utc": "2026-11-25T06:49:23+00:00",
-    "last_observation": "Verified post-run read-only CAN check after 20261125_064727_closed_loop: all six right-arm motors and gripper disabled (any_enabled=False, joints_deg=[0.0, -2.01, 0.93, 0.45, 22.74, 2.09]). Yellow plug is currently on tabletop in front of power strip and needs manual placement back into grey holder before next run.",
+    "last_observation": "Verified post-run read-only CAN check after 20261125_064727_closed_loop: all six right-arm motors and gripper disabled (any_enabled=False, joints_deg=[0.0, -2.01, 0.93, 0.45, 22.74, 2.09]). Operator placed yellow plug back into grey holder and requested pushing code/results to GitHub + refining horizontal-grasp nominal posture (docs/HORIZONTAL_GRASP_NOMINAL_SPEC.md) before next live run.",
     "last_observation_source": "self_evolution/closed_loop_v1/real_runs/20261125_064727_closed_loop/closed_loop_summary.json",
     "historical_authorization": "2026-11-25 user live session authorization (1-10.4->can_arm1, 1-10.3->can_arm2, auto-disable)",
-    "resume_requires": "Operator places yellow plug back into grey holder and confirms next execute_real_closed_loop.py --execute run"
+    "resume_requires": "Qualified horizontal-grasp nominal posture/trajectory per docs/HORIZONTAL_GRASP_NOMINAL_SPEC.md and fresh operator confirmation"
   },
   "confirmed": [
     "Three full-task real trials in this batch failed. Two historical successes are comparison references.",
@@ -74,8 +74,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 8
   },
-  "next_grounded_work": "Place the yellow plug back into the grey holder and run scripts/execute_real_closed_loop.py --execute --disable-after 3.0 with the calibrated 2.80 mm real-CAN rim contact threshold and no-midair-release guard.",
-  "updated_at": "2026-11-25T06:59:30+00:00",
+  "next_grounded_work": "Refine dual-arm 40mm horizontal-grasp nominal posture (grasp depth, plug-center X offset, holder_yaw_deg=-89.5 deg) and generate folded-entry nominal trajectory per docs/HORIZONTAL_GRASP_NOMINAL_SPEC.md before resuming live can_arm2 execution.",
+  "updated_at": "2026-11-25T07:58:00+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
