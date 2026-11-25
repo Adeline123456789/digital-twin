@@ -1,0 +1,149 @@
+{
+  "episode_id": "20261125T062625Z_62edfb16",
+  "installed_path": "complete_sim/succeed/20261125T062625Z_62edfb16",
+  "success": true,
+  "perturbation": {
+    "strip_xy_mm": [
+      6.0,
+      -4.5
+    ],
+    "strip_yaw_deg": 1.2,
+    "holder_xy_mm": [
+      -4.0,
+      3.5
+    ],
+    "inhand_shift_xy_mm": [
+      1.5,
+      -1.2
+    ],
+    "extrinsic_bias_xy_mm": [
+      1.5,
+      -0.8
+    ]
+  },
+  "verification": {
+    "active_arms": [
+      "left",
+      "right"
+    ],
+    "schema": "connector_mixed.v1",
+    "video_frames": {
+      "cam_external_rgb.mp4": 2180,
+      "cam_left_wrist_rgb.mp4": 2180,
+      "cam_right_wrist_rgb.mp4": 2180
+    },
+    "quality": {
+      "complete_pick_insert": true,
+      "all_substeps_valid": true,
+      "max_penetration_m": 2.257322489782283e-05,
+      "same_run_max_state_error": 0.0,
+      "phase_names": [
+        "settle",
+        "descend",
+        "grasp",
+        "lift",
+        "transport",
+        "insert",
+        "release",
+        "approach",
+        "retreat",
+        "align",
+        "fold",
+        "prepare_gripper",
+        "abort_retreat",
+        "final_hold"
+      ]
+    },
+    "duration_s": 72.66666666666667,
+    "object_replay_max_error_m": 0.0,
+    "success": true,
+    "collection_mode": "closed_loop_inline_physics",
+    "status": "Format and recorded trajectory verified; native physical task outcome preserved"
+  },
+  "episode_summary": {
+    "success": true,
+    "open_loop_mode": false,
+    "frames": 2180,
+    "sim_duration_s": 72.66666666692403,
+    "wall_seconds": 373.3600886161439,
+    "max_penetration_m": 2.257322489782283e-05,
+    "collision_aborted": false,
+    "stage0_alignment": {
+      "valid": true,
+      "method": "hybrid_ecc_semantic_rgb",
+      "confidence": 0.9,
+      "strip_delta_xy_m": [
+        0.0071103502479121115,
+        -0.004727568271264573
+      ],
+      "strip_delta_yaw_deg": 1.1817007958889008,
+      "holder_delta_xy_m": [
+        -0.0038365200583922454,
+        0.0033838681681280652
+      ],
+      "holder_delta_yaw_deg": -0.019708359707146877,
+      "outlet3_px": [
+        340.27450980392155,
+        261.4280112044818
+      ],
+      "plug_px": [
+        507.1226492232216,
+        265.22812755519215
+      ],
+      "details": {
+        "semantic_strip_delta_mm": [
+          7.190836054380867,
+          -4.421880016925235
+        ],
+        "semantic_holder_delta_mm": [
+          -3.9887035252656466,
+          3.400203350633957
+        ],
+        "ecc_strip_cc": 0.9975,
+        "ecc_holder_cc": 0.9935
+      }
+    },
+    "stage1_wrist_check": {
+      "status": "RETENTION_OK",
+      "retained": true,
+      "gripper_width_mm": 37.339,
+      "yellow_area_px": 35370.5,
+      "world_xy_correction_mm": [
+        0.066,
+        0.162
+      ],
+      "yaw_correction_deg": -0.0,
+      "reason": "Plug retained; wrist RGB relative offset measured"
+    },
+    "jam_events": 9,
+    "probes_used": 9,
+    "winning_residual_mm": [
+      1.318,
+      -1.106
+    ],
+    "final_metrics": {
+      "lateral_error_m": 0.00047335971650946994,
+      "face_gap_m": 0.00019999949369958053,
+      "yaw_rad": 0.007218281415831058,
+      "tilt_rad": 0.0,
+      "seated": 1.0,
+      "hold_seconds": 21.166666666666877,
+      "success": 1.0
+    },
+    "supervisor_update": {
+      "episode_index": 3,
+      "seated_success": true,
+      "winning_residual_mm": [
+        1.3175964421646418,
+        -1.105594688660848
+      ],
+      "jam_events": 9,
+      "updated_bias_mm": [
+        0.8564376874070172,
+        -0.7186365476295512
+      ],
+      "bias_updated": true
+    }
+  },
+  "outcome_sha256": "d8fd72638f1cb6c3c9d288a0c371df8de92b72251bea225cd5c6c6a6579d48f1"
+}

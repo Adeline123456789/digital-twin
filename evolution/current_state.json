@@ -1,30 +1,27 @@
 {
   "schema_version": 3,
   "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Core full-episode post-grasp Residual experiment under Core Experiment Execution Amendment V2; CONTACT_MEDIATED_DRIFT_V1; dual model/right-arm task",
-  "status": "CORE_RESIDUAL_EXPERIMENT_COMPLETE_NOT_SUPPORTED",
+  "scope": "Unified 4-stage 40mm horizontal-grasp closed-loop pick-and-insert (RGB scene retarget + wrist retention gate + self-calibrating compliant residual + OnlineSupervisor bias memory) on dual-arm scene / right arm can_arm2",
+  "status": "SIM_CLOSED_LOOP_VERIFIED_AND_REAL_GRASP_ALIGN_EXECUTED_AWAITING_PLUG_RESET",
   "paused": [
-    "real robot attempts",
-    "physical parameter search",
-    "original robot goal",
-    "real training and real transfer"
+    "physical parameter search"
   ],
-  "stop_condition": "Stop only for invalid Frozen Nominal, privileged Student input, safety/action-bound violation, train/test leakage or provenance corruption, or a perturbation that immediately destroys task semantics; hardware remains denied.",
+  "stop_condition": "Stop only for invalid trajectory bounds, privileged Student input, safety/action-bound violation, or unreset physical object state before next live run.",
   "software": {
-    "branch": "research/full-task-residual-20261124",
-    "robot_research_base": "68ed4ba840759f1ac10418ac49c6b93f47e14392",
-    "live_candidate": "experiments/residual_fulltask_mvp/contact_drift_design.json",
-    "last_executed_reference": "9b172dc9b46e36c2a1da0a768a03ed4a6022232c88ca664ac25c48b9bc0de3cb",
-    "last_executed_versions": "experiments/grasp_six_rounds/round_03/vertical_pick_socket_reorient/actual_versions.json"
+    "branch": "feat/closed-loop-plug-insert",
+    "robot_research_base": "b076e60",
+    "live_candidate": "scripts/execute_real_closed_loop.py",
+    "last_executed_reference": "self_evolution/closed_loop_v1/real_runs/20261125_064727_closed_loop/closed_loop_summary.json",
+    "last_executed_versions": "experiments/closed_loop_v1/benchmark_results.json"
   },
   "hardware": {
     "execution_allowed": false,
     "live_telemetry": false,
-    "last_observed_utc": "2026-11-18T02:12:35.703071+00:00",
-    "last_observation": "Recorded shutdown check found the six right arm motors and gripper disabled. User later reported reset.",
-    "last_observation_source": "experiments/grasp_six_rounds/round_03/cost_shutdown.json",
-    "historical_authorization": "evolution/checkpoints/20261118_session_handoff_history.md",
-    "resume_requires": "A new explicit user authorization, fresh onsite confirmation and the existing safety and reference checks"
+    "last_observed_utc": "2026-11-25T06:49:23+00:00",
+    "last_observation": "Verified post-run read-only CAN check after 20261125_064727_closed_loop: all six right-arm motors and gripper disabled (any_enabled=False, joints_deg=[0.0, -2.01, 0.93, 0.45, 22.74, 2.09]). Yellow plug is currently on tabletop in front of power strip and needs manual placement back into grey holder before next run.",
+    "last_observation_source": "self_evolution/closed_loop_v1/real_runs/20261125_064727_closed_loop/closed_loop_summary.json",
+    "historical_authorization": "2026-11-25 user live session authorization (1-10.4->can_arm1, 1-10.3->can_arm2, auto-disable)",
+    "resume_requires": "Operator places yellow plug back into grey holder and confirms next execute_real_closed_loop.py --execute run"
   },
   "confirmed": [
     "Three full-task real trials in this batch failed. Two historical successes are comparison references.",
@@ -77,8 +74,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 8
   },
-  "next_grounded_work": "Stop after the completed core experiment. Preserve the valid NOT_SUPPORTED result; do not tune on held-out outcomes or start an extension without a new user-approved experiment design.",
-  "updated_at": "2026-11-24T11:45:32+00:00",
+  "next_grounded_work": "Place the yellow plug back into the grey holder and run scripts/execute_real_closed_loop.py --execute --disable-after 3.0 with the calibrated 2.80 mm real-CAN rim contact threshold and no-midair-release guard.",
+  "updated_at": "2026-11-25T06:59:30+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -599,5 +596,53 @@
       "contact_drift_heldout_integrity": "PASS: B0, B1 and all three B2 policies used the same 64 conditions; action bounds valid; held-out tuning 0.",
       "contact_drift_summary_reproduction": "PASS: rerun reproduced training 7fd8d3f43e65d78b3399adf9d6e660ef0c9a18c562371a5041f1aa2c4889ca5a, heldout c991539633c497e32439b313ff5113170f87ce03db63276fecdc56aa5629f632 and report e0e1a19a9922e2dffca82c30d57b3c40eceb501de384fb12d66ac9c1cfaccfd0."
     }
+  },
+  "last_environment_location_query": {
+    "checked_at": "2026-11-25T05:58:32.117202+00:00",
+    "simulation_root": "/media/midea/F496AC8096AC4548/piper_simulation",
+    "root_exists": true,
+    "root_selection": "scripts/learn.py:15; PIPER_SIM_ROOT override, otherwise the verified default",
+    "evidence": [
+      "README.md:59",
+      "robot_agent/bimanual_closed_loop.py:33",
+      "robot_agent/bimanual_closed_loop.py:329",
+      "/media/midea/F496AC8096AC4548/piper_simulation/src/piper_sim/backends/mujoco.py:27",
+      "/media/midea/F496AC8096AC4548/piper_simulation/assets/mujoco/workcell.xml:176",
+      "/media/midea/F496AC8096AC4548/piper_simulation/assets/mujoco/workcell.xml:247"
+    ],
+    "verification": "Source and filesystem only; graph tools unavailable, no local graph index; no simulator run or hardware actions",
+    "retained_workspace_exists": true
+  },
+  "closed_loop_plug_insert_v1": {
+    "branch": "feat/closed-loop-plug-insert",
+    "report": "experiments/closed_loop_v1/CLOSED_LOOP_REPORT.md",
+    "residual_training": "experiments/closed_loop_v1/residual_training.json",
+    "benchmark": "experiments/closed_loop_v1/benchmark_results.json",
+    "formal_sim_episode": "complete_sim/succeed/20261125T062625Z_62edfb16",
+    "sim_summary": {
+      "open_loop_successes": "1/6",
+      "closed_loop_ep1_successes": "5/6",
+      "closed_loop_ep2_evolved_successes": "5/6",
+      "privileged_controller_inputs": 0,
+      "residual_npz_sha256": "1209300f83e2db514e337c6db2ec65b416b9a7eed3e5b2ff7a93bf0e18b8af86"
+    },
+    "real_runs": [
+      {
+        "run_id": "20261125_064258_closed_loop",
+        "capture_relative_to_dataset": "self_evolution/closed_loop_v1/real_runs/20261125_064258_closed_loop",
+        "stage0_strip_dxy_mm": [0.15, 4.84],
+        "stage1_grasp": "40mm horizontal opening cleared black charger and lifted yellow plug cleanly (yellow_area_px=30447, width_mm=27.70)",
+        "outcome": "aborted_at_lift due to sim-cylinder min_retained_width_m=29.5mm > 27.7mm real molded side recesses; folded and auto-disabled (any_enabled=False)"
+      },
+      {
+        "run_id": "20261125_064727_closed_loop",
+        "capture_relative_to_dataset": "self_evolution/closed_loop_v1/real_runs/20261125_064727_closed_loop",
+        "stage0_strip_dxy_mm": [0.17, 4.85],
+        "stage1_grasp": "RETENTION_OK (16mm @ 1.0 N.m locked molded recesses at 26.20mm, yellow_area_px=30240)",
+        "stage2_insert": "Aligned dead-center over outlet 3 in wrist RGB; 0.48mm sim contact threshold false-triggered in free air against +1.90mm real CAN servo lag at z=96.5mm so plug never descended below 19mm; released before folding",
+        "motors_auto_disabled": true,
+        "post_run_fix_applied": "Set real-CAN contact_deflection_threshold_m=0.0028 at cmd_h<=16.5mm and added no-midair-release safety guard"
+      }
+    ]
   }
 }

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "episodes_collected": 32,
+  "samples": 1888,
+  "obs_dim": 499,
+  "train_mse": 0.161184,
+  "val_mse": 0.170631,
+  "val_mae_mm": 0.6214,
+  "wall_seconds": 365.63,
+  "privileged_student_inputs": 0,
+  "weights": {
+    "pt_dataset_relative_path": "self_evolution/closed_loop_v1/residual_policy/residual_mlp.pt",
+    "pt_sha256": "46ce9567f51ed3b9cf82908cac44c16bd9bf9c9bca8326b8e225b191701e1b32",
+    "npz_dataset_relative_path": "self_evolution/closed_loop_v1/residual_policy/residual_mlp.npz",
+    "npz_sha256": "1209300f83e2db514e337c6db2ec65b416b9a7eed3e5b2ff7a93bf0e18b8af86"
+  }
+}
