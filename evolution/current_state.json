@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "active_goal": "evolution/ACTIVE_GOAL.md",
-  "scope": "Unified 4-stage 40mm horizontal-grasp closed-loop pick-and-insert (RGB scene retarget + wrist retention gate + self-calibrating compliant residual + OnlineSupervisor bias memory) on dual-arm scene / right arm can_arm2",
-  "status": "SIM_CLOSED_LOOP_VERIFIED_AND_REAL_GRASP_ALIGN_EXECUTED_AWAITING_PLUG_RESET",
+  "active_goal": "docs/HORIZONTAL_GRASP_NOMINAL_SPEC.md",
+  "scope": "Two requested simulation deliverables: RGB-registered dual-arm 40 mm shoulder grasp and folded-zero native-success nominal reference.",
+  "status": "RGB_REGISTERED_HORIZONTAL_NOMINAL_V2_SIM_VERIFIED",
   "paused": [
     "physical parameter search"
   ],
@@ -74,8 +74,8 @@
     "monetary_cost": null,
     "additional_experiment_models": 8
   },
-  "next_grounded_work": "Refine dual-arm 40mm horizontal-grasp nominal posture (grasp depth, plug-center X offset, holder_yaw_deg=-89.5 deg) and generate folded-entry nominal trajectory per docs/HORIZONTAL_GRASP_NOMINAL_SPEC.md before resuming live can_arm2 execution.",
-  "updated_at": "2026-11-25T07:58:00+00:00",
+  "next_grounded_work": "Current simulation deliverables are complete. Use the nominal_horizontal_v2 manifest for the reference and replay evidence. A real trial would require fresh onsite checks and explicit permission.",
+  "updated_at": "2026-11-25T08:50:59.352516+00:00",
   "offline_checks": {
     "fresh_session": "PASS: recovered scope and failure evidence without inherited turns",
     "same_question": "PASS: existing persistent cache returned identical values without rereading raw input",
@@ -644,5 +644,65 @@
         "post_run_fix_applied": "Set real-CAN contact_deflection_threshold_m=0.0028 at cmd_h<=16.5mm and added no-midair-release safety guard"
       }
     ]
+  },
+  "horizontal_nominal_v2": {
+    "status": "VERIFIED",
+    "scene": "experiments/closed_loop_v1/horizontal_scene_v2.json",
+    "fresh_external_rgb": "self_evolution/closed_loop_v1/scene_rgb_20261125T081900Z/external.png",
+    "new_external_rgb_captures": 1,
+    "real_motion_commands": 0,
+    "physical_parameter_searches": 0,
+    "simulation_build_trials": [
+      "self_evolution/closed_loop_v1/horizontal_build_20261125T082152",
+      "self_evolution/closed_loop_v1/horizontal_build_20261125T083351",
+      "self_evolution/closed_loop_v1/horizontal_build_20261125T083440"
+    ],
+    "notes": "External RGB registration and sim-only folded nominal verified. No new real grasp or insertion outcome.",
+    "engineering_results": [
+      "Upright descent achieved native seating but touched the neighbouring charger at the modeled pickup location.",
+      "Side-tilted pickup clears both fixtures. Earlier carry profiles reached the outlet but caught the prongs before seating.",
+      "Folded pickup at 16 mm height, 4 mm shoulder offset and 8 mm standoff retained the plug at lift. Finishing the insertion path in simulation."
+    ],
+    "development_successes": {
+      "upright_before_pin_entry": "self_evolution/closed_loop_v1/horizontal_build_20261125T083646",
+      "compiled_waypoints": "self_evolution/horizontal_ref_20261125T083637"
+    },
+    "development_final_lateral_error_m": [
+      0.00020144661950692697,
+      0.000233920329705416
+    ],
+    "formal_trial": "self_evolution/20261125T083827Z_a71d18d9",
+    "grasp_evidence": "Frame 623: right/link7 and right/link8 contact the yellow shoulder at plug-local Z 12.88 and 7.66 mm, respectively. See the native contact records and nominal replay.",
+    "budget": {
+      "full_development_rollouts": 5,
+      "grasp_prefix_rollouts": 9,
+      "additional_ik_calibration_runs": 2,
+      "formal_recordings_started": 1,
+      "real_robot_motion_commands": 0,
+      "live_rgb_captures": 1,
+      "formal_replays": 1,
+      "independent_command_recompilations": 1
+    },
+    "formal_recording": {
+      "frames_per_rgb_stream": 2201,
+      "substeps": 281728,
+      "max_penetration_m": 3.738538994055292e-05,
+      "max_actual_joint_speed_deg_s": 11.482969965932735,
+      "max_actual_insert_j5_deg": 63.78658771890237,
+      "min_charger_clearance_lower_bound_m": 0.008310358969084856,
+      "min_arm_holder_clearance_lower_bound_m": 0.006317573277892225,
+      "final_lateral_error_m": 0.00023392078994938106
+    },
+    "manifest": "experiments/closed_loop_v1/nominal_horizontal_v2.json",
+    "report": "experiments/closed_loop_v1/CLOSED_LOOP_REPORT.md",
+    "episode": "complete_sim/succeed/20261125T083827Z_a71d18d9",
+    "trajectory": "self_evolution/20261125T083827Z_a71d18d9/nominal_reference.jsonl",
+    "native_success": true,
+    "verification": {
+      "reference_recompiled_max_difference_si": 0.0,
+      "episode_format_validated": true,
+      "files_sha256_verified": true,
+      "closed_loop_publication_layout_tests_passed": 10
+    }
   }
 }

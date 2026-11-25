@@ -1,0 +1,212 @@
+{
+  "base_task": "self_evolution/20261116T105302Z_d700416b/task.yaml",
+  "scene": {
+    "alignment_status": "External RGB ray-plane registration with the November 25 holder yaw anchor",
+    "holder_xy_m": [
+      0.29620355747686095,
+      -0.3589504444394924
+    ],
+    "holder_yaw_deg": -89.51219983119518,
+    "strip_xy_m": [
+      0.3166587878407502,
+      0.020934585498122216
+    ],
+    "strip_yaw_deg": -89.90170752326657,
+    "active_arms": [
+      "left",
+      "right"
+    ],
+    "robot_start_si": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.06,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.04
+    ]
+  },
+  "grasp": {
+    "grasp_height_m": 0.016,
+    "shoulder_offset_m": 0.004,
+    "charger_standoff_m": 0.008,
+    "carry_tilt_deg": 11,
+    "tilt_start_gap_m": 0.025,
+    "closed_width_m": 0.018,
+    "grasp_holder_rpy_deg": [
+      4,
+      -10,
+      16
+    ]
+  },
+  "registration": {
+    "base_task_sha256": "7614caf730f5335817d2b119aac0e7c857f6536ba7c57d9f32682d9621ed266f",
+    "current_external_rgb": "self_evolution/closed_loop_v1/scene_rgb_20261125T081900Z/external.png",
+    "current_sha256": "e83d078a9aaf111530a3232d935fa1cbeb4fa4a538f2e7e80763c2756ad2d3fd",
+    "previous_external_rgb": "self_evolution/closed_loop_v1/real_runs/20261125_064727_closed_loop/stage0_external.png",
+    "previous_sha256": "63ee69d9ebebdd832fe2135cdd0e72e4fb8fbf1b5191502cebfdd27fcc62f63b",
+    "reference_rgb": "self_evolution/current_scene_cycle11/episodes/20261116_real_current_socket_repair_000002/raw/task/external/0000.jpg",
+    "reference_sha256": "8e0384f7b7bd25a1699d6ffec11d7e21a38557f723793100d743f922a06617b3",
+    "calibration_sha256": "3a172f4c22751db09e7f7accb37fe0f8b52485eae617e69f935734397c354583",
+    "nov16_to_current": {
+      "valid": true,
+      "method": "ecc_subpixel_rgb",
+      "confidence": 0.9,
+      "strip_delta_xy_m": [
+        2.58373030139758e-05,
+        0.004812766541824318
+      ],
+      "strip_delta_yaw_deg": 0.3136472702026367,
+      "holder_delta_xy_m": [
+        -0.002098357986838273,
+        0.0024281139203536917
+      ],
+      "holder_delta_yaw_deg": -0.19324050843715668,
+      "outlet3_px": [
+        336.6044025157232,
+        266.8880503144654
+      ],
+      "plug_px": [
+        510.6608187134502,
+        263.8424707602339
+      ],
+      "details": {
+        "semantic_strip_delta_mm": [
+          -0.2231260045806316,
+          5.6783123036272185
+        ],
+        "semantic_holder_delta_mm": [
+          -1.9130572685359115,
+          0.7018012336235113
+        ],
+        "ecc_strip_cc": 0.9917,
+        "ecc_holder_cc": 0.9961
+      }
+    },
+    "previous_capture_to_current": {
+      "valid": true,
+      "method": "ecc_subpixel_rgb",
+      "confidence": 0.9,
+      "strip_delta_xy_m": [
+        -3.391623073206729e-05,
+        6.874305396496055e-05
+      ],
+      "strip_delta_yaw_deg": -0.029206374660134315,
+      "holder_delta_xy_m": [
+        8.922491736218507e-05,
+        -0.0001769423133352599
+      ],
+      "holder_delta_yaw_deg": -0.012199831195175648,
+      "outlet3_px": [
+        336.6044025157232,
+        266.8880503144654
+      ],
+      "plug_px": [
+        510.6608187134502,
+        263.8424707602339
+      ],
+      "details": {
+        "semantic_strip_delta_mm": [
+          -0.3360509812718182,
+          0.9704954832132767
+        ],
+        "semantic_holder_delta_mm": [
+          0.2411708053511319,
+          -1.203312917739674
+        ],
+        "ecc_strip_cc": 0.9981,
+        "ecc_holder_cc": 0.9988
+      }
+    },
+    "panels_px": [
+      [
+        272.45098039215685,
+        267.2372549019608
+      ],
+      [
+        294.04219409282695,
+        267.1024713682941
+      ],
+      [
+        315.2209944751381,
+        267.098219766728
+      ],
+      [
+        336.6044025157232,
+        266.8880503144654
+      ]
+    ],
+    "panels_world_xy_m": [
+      [
+        0.2955235081315444,
+        0.09696274694029268
+      ],
+      [
+        0.29567554500632826,
+        0.0546902316153179
+      ],
+      [
+        0.29553688468115363,
+        0.013321428583553237
+      ],
+      [
+        0.29580841424648047,
+        -0.02838024736368596
+      ]
+    ],
+    "panel_fit_max_residual_m": 0.0012227409647408364,
+    "visible_holder_slot_px": [
+      477.42857142857144,
+      265.95238095238096
+    ],
+    "slot_seed_px": [
+      477,
+      266
+    ],
+    "holder_slot_local_xy_m": [
+      -0.0568759994506836,
+      -0.0013511800765991216
+    ],
+    "holder_top_world_z_m": 0.058,
+    "holder_yaw_anchor_deg": -89.5
+  },
+  "posture_rgb_evidence": [
+    {
+      "root": "DATA",
+      "path": "self_evolution/closed_loop_v1/real_runs/20261125_064727_closed_loop/stage1_wrist_lift.png",
+      "sha256": "6ee6d4b82a7ee1dec771a67d52e7f47015fddb2d3faa5b981c337e5fb7fd8fef"
+    },
+    {
+      "root": "DATA",
+      "path": "self_evolution/closed_loop_v1/real_runs/20261125_064727_closed_loop/stage2_seated_wrist.png",
+      "sha256": "68f4a326f27daa4f00434cf765627becc54e81e7cc1ee6db1e031e29fc08746f"
+    },
+    {
+      "root": "DATA",
+      "path": "complete_sim/succeed/20261123T092135Z_48f4ff46/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "97ddef58f9192b1a759e0b57a760fe3d387e39fbc273e1b457af59aac0a6c5fd",
+      "reviewed_frames": [
+        0,
+        125,
+        700
+      ]
+    },
+    {
+      "root": "REFERENCE_DATA",
+      "path": "observations/20260908/000210/videos/cam_right_wrist_rgb.mp4",
+      "sha256": "5cf97f2b9c3897bd5f9c299d82395a5bdbf6ffda13b5370d65e75f0f9caec733",
+      "reviewed_frames": [
+        0,
+        84,
+        127
+      ]
+    }
+  ]
+}

@@ -57,18 +57,7 @@ def pixel_to_world_at_z(
     return cam_world + scale * ray_world
 
 
-def detect_strip_features_rgb(rgb: np.ndarray) -> dict | None:
-    """Detect the white power strip and its 4 blue panels [USB, AC1, AC2, AC3] in RGB."""
-    if rgb.ndim != 3 or rgb.shape[2] != 3 or rgb.dtype != np.uint8:
-        raise ValueError("Expected HxWx3 uint8 RGB image")
-    h, w = rgb.shape[:2]
-    hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
-
-    # ROI covering tabletop center where the power strip sits (excluding grey plug holder on the right >= 0.63*w)
-    roi = np.zeros((h, w), dtype=np.uint8)
-    roi[int(0.32 * h):int(0.74 * h), int(0.24 * w):int(0.63 * w)] = 255
-
-    blue = cv2.inRange(hsv, (92, 42, 28), (132, 255, 255)) & roi
+def _four_panel_features(blue: np.ndarray) -> dict | None:
     cnts, _ = cv2.findContours(blue, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     panels = []
     for c in cnts:
@@ -108,6 +97,27 @@ def detect_strip_features_rgb(rgb: np.ndarray) -> dict | None:
                 "image_yaw_deg": yaw_img_deg,
                 "confidence": 0.95,
             }
+    return None
+
+
+def detect_strip_features_rgb(rgb: np.ndarray) -> dict | None:
+    """Detect the white power strip and its 4 blue panels [USB, AC1, AC2, AC3] in RGB."""
+    if rgb.ndim != 3 or rgb.shape[2] != 3 or rgb.dtype != np.uint8:
+        raise ValueError("Expected HxWx3 uint8 RGB image")
+    h, w = rgb.shape[:2]
+    hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
+
+    # ROI covering tabletop center where the power strip sits (excluding grey plug holder on the right >= 0.63*w)
+    roi = np.zeros((h, w), dtype=np.uint8)
+    roi[int(0.32 * h):int(0.74 * h), int(0.24 * w):int(0.63 * w)] = 255
+
+    # Try saturated panel interiors first under a blue white-balance cast.
+    # The original mask still resolves desaturated panels in other lighting.
+    for saturation in (78, 42):
+        blue = cv2.inRange(hsv, (92, saturation, 28), (132, 255, 255)) & roi
+        features = _four_panel_features(blue)
+        if features is not None:
+            return features
 
     # Fallback: merged blue band + white strip body rectangle when glare merges blue panels
     merged = cv2.morphologyEx(blue, cv2.MORPH_CLOSE, np.ones((5, 15), dtype=np.uint8))

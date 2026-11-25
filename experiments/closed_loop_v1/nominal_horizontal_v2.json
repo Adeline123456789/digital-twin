@@ -1,0 +1,372 @@
+{
+  "episode_id": "20261125T083827Z_a71d18d9",
+  "installed_path": "complete_sim/succeed/20261125T083827Z_a71d18d9",
+  "success": true,
+  "perturbation": {},
+  "verification": {
+    "active_arms": [
+      "left",
+      "right"
+    ],
+    "schema": "connector_mixed.v1",
+    "video_frames": {
+      "cam_external_rgb.mp4": 2201,
+      "cam_left_wrist_rgb.mp4": 2201,
+      "cam_right_wrist_rgb.mp4": 2201
+    },
+    "quality": {
+      "complete_pick_insert": true,
+      "all_substeps_valid": true,
+      "max_penetration_m": 3.738538994055292e-05,
+      "same_run_max_state_error": 0.0,
+      "phase_names": [
+        "settle",
+        "descend",
+        "grasp",
+        "lift",
+        "transport",
+        "insert",
+        "release",
+        "approach",
+        "retreat",
+        "align",
+        "fold",
+        "prepare_gripper",
+        "abort_retreat",
+        "final_hold"
+      ]
+    },
+    "duration_s": 73.36666666666666,
+    "object_replay_max_error_m": 0.0,
+    "success": true,
+    "collection_mode": "closed_loop_inline_physics",
+    "status": "Format and recorded trajectory verified; native physical task outcome preserved",
+    "nominal_replay": {
+      "frames": 2201,
+      "substeps": 281728,
+      "phases": [
+        "prepare_gripper",
+        "approach",
+        "descend",
+        "grasp",
+        "lift",
+        "transport",
+        "align",
+        "insert",
+        "release",
+        "retreat",
+        "fold"
+      ],
+      "peaks": {
+        "command_speed_deg_s": 9.998329426991296,
+        "actual_speed_deg_s": 11.482969965932735,
+        "insert_j5_command_deg": 63.785926506208384,
+        "insert_j5_actual_deg": 63.78658771890237,
+        "penetration_m": 3.738538994055292e-05,
+        "left_joint_error_rad": 2.2204478216915e-18,
+        "left_width_error_m": 0.0,
+        "state_replay_error_si": 0.0,
+        "plug_replay_error_m": 0.0
+      },
+      "clearance": {
+        "task/black_charger": {
+          "lower_bound_m": 0.008310358969084856,
+          "nearest_body": "right/link7",
+          "phase": "grasp",
+          "time_s": 19.899739583320372
+        },
+        "task/board": {
+          "lower_bound_m": 0.006317573277892225,
+          "nearest_body": "right/link8",
+          "phase": "grasp",
+          "time_s": 19.867187499987068
+        }
+      },
+      "native_success": true,
+      "lift_displacement_m": 0.05303811609931444,
+      "final_grasp_contacts_plug_local": {
+        "right/link7": [
+          {
+            "plug_geom": "plug/grip_contact/1/2/0",
+            "point_m": [
+              0.018626370407414317,
+              0.006435533843341039,
+              0.01287732504900822
+            ]
+          },
+          {
+            "plug_geom": "plug/grip_contact/1/2/1",
+            "point_m": [
+              0.018626370434306982,
+              0.006435533902116982,
+              0.012877325079525671
+            ]
+          },
+          {
+            "plug_geom": "plug/entry_contact/19",
+            "point_m": [
+              0.01362051631323822,
+              0.008916757912662878,
+              0.053999996860079606
+            ]
+          },
+          {
+            "plug_geom": "plug/entry_contact/33",
+            "point_m": [
+              0.013620516227535948,
+              0.008916757843324965,
+              0.05399999686924884
+            ]
+          },
+          {
+            "plug_geom": "plug/entry_contact/42",
+            "point_m": [
+              0.01362051631467219,
+              0.008916757912595939,
+              0.05399999685995765
+            ]
+          }
+        ],
+        "right/link8": [
+          {
+            "plug_geom": "plug/grip_contact/0/25/0",
+            "point_m": [
+              -0.021108856024950825,
+              -0.005656087628559691,
+              0.007664874328124606
+            ]
+          },
+          {
+            "plug_geom": "plug/grip_contact/0/26/1",
+            "point_m": [
+              -0.02110885613238915,
+              -0.005656087663703638,
+              0.007664874352973741
+            ]
+          }
+        ]
+      },
+      "fingertip_min_plug_local_z_m": {
+        "right/link7": 0.012606574621139222,
+        "right/link8": 0.006684399138790684
+      },
+      "phase_end_right_deg": {
+        "prepare_gripper": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "approach": [
+          -1.5892233359348138,
+          88.33338385057364,
+          -58.01246304416766,
+          -9.700842315420381,
+          58.0793143984621,
+          -13.76413336071876
+        ],
+        "descend": [
+          -1.588110373230808,
+          93.94748431924,
+          -49.858498541866325,
+          -11.764146118027556,
+          44.547842268086,
+          -10.485729012534309
+        ],
+        "grasp": [
+          -1.588110373230808,
+          93.94748431924,
+          -49.858498541866325,
+          -11.764146118027556,
+          44.547842268086,
+          -10.485729012534309
+        ],
+        "lift": [
+          -1.5892233359348138,
+          88.33338385057364,
+          -58.01246304416766,
+          -9.700842315420381,
+          58.0793143984621,
+          -13.76413336071876
+        ],
+        "transport": [
+          50.115032688401236,
+          108.6042700294056,
+          -81.10379978567012,
+          -14.30132138612533,
+          57.60283636603641,
+          40.133850880091586
+        ],
+        "align": [
+          42.04585867962423,
+          113.09762007323599,
+          -84.97576051854051,
+          1.5791311219497608,
+          60.013229523633456,
+          29.14876058654172
+        ],
+        "insert": [
+          41.28347466441207,
+          113.15430666989378,
+          -80.1505655854859,
+          3.0482116391378375,
+          53.432254153667394,
+          30.767068759115705
+        ],
+        "release": [
+          41.28347466441207,
+          113.15430666989378,
+          -80.1505655854859,
+          3.0482116391378375,
+          53.432254153667394,
+          30.767068759115705
+        ],
+        "retreat": [
+          50.115032688401236,
+          108.6042700294056,
+          -81.10379978567012,
+          -14.30132138612533,
+          57.60283636603641,
+          40.133850880091586
+        ],
+        "fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "preinsert_hold_zero_based": {
+        "first_frame": 1004,
+        "last_frame": 1014
+      },
+      "initial_state_si": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.04
+      ],
+      "first_action_si": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.04
+      ],
+      "last_action_si": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06
+      ],
+      "final_state_si": [
+        -6.795286459420756e-22,
+        2.2204466114716952e-18,
+        -2.2204458082149798e-18,
+        4.335970831314687e-21,
+        -2.5557460117993804e-25,
+        1.3566065967634348e-21,
+        0.06,
+        6.59551928332236e-09,
+        1.4422332047141718e-08,
+        -1.2007200440262757e-08,
+        -2.572822209905714e-09,
+        1.0702407490752473e-08,
+        7.2214791791499295e-09,
+        0.06000000000001067
+      ],
+      "plug_minus_outlet_world_xy_m": {
+        "transport": [
+          0.0004509739380031408,
+          -0.0002584209512055055
+        ],
+        "align": [
+          -2.0948567959588882e-05,
+          -5.001118396502288e-05
+        ],
+        "insert": [
+          -0.0002570374761154959,
+          2.7870122097466837e-05
+        ]
+      }
+    }
+  },
+  "episode_summary": {
+    "success": true,
+    "open_loop_mode": true,
+    "frames": 2201,
+    "sim_duration_s": 73.36666666691384,
+    "wall_seconds": 341.8989031550009,
+    "max_penetration_m": 3.738538994055292e-05,
+    "collision_aborted": false,
+    "stage0_alignment": null,
+    "stage1_wrist_check": null,
+    "jam_events": 0,
+    "probes_used": 0,
+    "winning_residual_mm": [
+      0.0,
+      0.0
+    ],
+    "final_metrics": {
+      "lateral_error_m": 0.00023392078994938106,
+      "face_gap_m": 0.00019999951826556867,
+      "yaw_rad": 0.01934801467756378,
+      "tilt_rad": 0.0,
+      "seated": true,
+      "hold_seconds": 27.0000000000005,
+      "success": true
+    },
+    "supervisor_update": null
+  },
+  "outcome_sha256": "f686326b3b385e8ca27b201f7678806d09def5a43cb10a2d1a3a5486ca80deae",
+  "reference_trajectory": "self_evolution/20261125T083827Z_a71d18d9/nominal_reference.jsonl",
+  "trajectory_sha256": "aaf42986e3d7543f3efd57b0a03c16fb9b36c03882697b9b4a9ba5b19b9976b3",
+  "reference_layout": "30 Hz interval-start targets. Left J1-J6 rad, width m, right J1-J6 rad, width m.",
+  "scene_profile_sha256": "78d6063016260c915bde13a2ed93aaa591ab82529f184c6e08a3986d05f750e3",
+  "artifacts_sha256": {
+    "outcome.json": "f686326b3b385e8ca27b201f7678806d09def5a43cb10a2d1a3a5486ca80deae",
+    "proprio_stats/initial_state.npz": "11ef650a0c669dc23b153b67bf7f4fe94992c2c10af39d63205f04581a690157",
+    "proprio_stats/metadata.json": "451ba202c848b8d71912c9f552f23397328ea77589e1fe4dfacf4948b9410edd",
+    "proprio_stats/model.xml": "4469c0a1e54cb5a7ea704701850acb9c280e434cd736539e346fe35443329a4d",
+    "proprio_stats/privileged.jsonl": "e585ca5c9865dd9a97b8ad29a81125d6f0e2bef6373e79aaae4a0eb703953818",
+    "proprio_stats/proprio_stats.h5": "3eb8ca173b6a2b2cb713c218dc010b8f240371ddf9833e59a05dc98a9f81e007",
+    "proprio_stats/recorded_commands.csv": "10bdc799cff00287bddd11c35ebcdc35430db750d74d5b1f9e0b213774b6985c",
+    "verification.json": "d96d16fb7db27add4d944d08b1c3d70f575ad38eda9835a73a14ab07c4f8d413",
+    "videos/cam_external_rgb.mp4": "e66bf2475c9f011c9c38bfd159f926a7f601be4bfe511d726eec95cfa612d58b",
+    "videos/cam_left_wrist_rgb.mp4": "ffb642058232d233d2899358ce5225dddecb37283914e2dccadbb2832e596068",
+    "videos/cam_right_wrist_rgb.mp4": "c5328529d986e1b1db399d3240c0264a8bf127c123072b25415dd86ec0548f2a"
+  }
+}

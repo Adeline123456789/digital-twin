@@ -11,6 +11,7 @@ the verified 40 mm horizontal grasp so the neighboring black charger is never to
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -57,13 +58,24 @@ def quintic_interpolate(q_start: np.ndarray, q_goal: np.ndarray, speed_deg_s: fl
 class HorizontalGraspNominalPlanner:
     """Kinematic waypoint solver using only robot model + estimated/nominal fixture poses (zero privileged sim data)."""
 
-    def __init__(self, sim_model: mujoco.MjModel, indices: dict, *, grasp_height_m: float = 0.020, preinsert_gap_m: float = 0.045, align_gap_m: float = 0.025, initial_right_opening_m: float = 0.040, closed_width_m: float = 0.027):
+    def __init__(
+        self, sim_model: mujoco.MjModel, indices: dict, *, grasp_height_m: float = 0.020,
+        shoulder_offset_m: float = 0.0, charger_standoff_m: float = 0.0,
+        grasp_holder_rpy_deg: tuple[float, float, float] = (0.0, 0.0, 0.0), carry_tilt_deg: float = 5.0,
+        tilt_start_gap_m: float = 0.016, preinsert_gap_m: float = 0.045, align_gap_m: float = 0.025,
+        initial_right_opening_m: float = 0.040, closed_width_m: float = 0.027,
+    ):
         self.model = sim_model
         self.kin_data = mujoco.MjData(sim_model)
         self.right_qpos_ids = indices["right"]["qpos"][:6]
         self.right_dof_ids = indices["right"]["dof"][:6]
         self.grip_body_id = sim_model.body("right/gripper_center").id
         self.grasp_height_m = float(grasp_height_m)
+        self.shoulder_offset_m = float(shoulder_offset_m)
+        self.charger_standoff_m = float(charger_standoff_m)
+        self.grasp_holder_rpy_deg = grasp_holder_rpy_deg
+        self.carry_tilt_deg = carry_tilt_deg
+        self.tilt_start_gap_m = tilt_start_gap_m
         self.preinsert_gap_m = float(preinsert_gap_m)
         self.align_gap_m = float(align_gap_m)
         self.initial_right_opening_m = float(initial_right_opening_m)
@@ -95,7 +107,7 @@ class HorizontalGraspNominalPlanner:
 
         def err_fn(q: np.ndarray) -> np.ndarray:
             self.ik.data.qpos[self.ik.ids] = q
-            mujoco.mj_forward(self.ik.model, self.ik.data)
+            mujoco.mj_kinematics(self.ik.model, self.ik.data)
             return np.r_[
                 10.0 * (self.ik.data.xpos[self.ik.bid] - xyz),
                 Rotation.from_matrix(rotation.T @ self.ik.data.xmat[self.ik.bid].reshape(3, 3)).as_rotvec(),
@@ -156,10 +168,13 @@ class HorizontalGraspNominalPlanner:
         contact_speed_deg_s: float = 12.0,
     ) -> dict:
         """Plan Stage 1 nominal trajectory: (optional approach from folded) -> descend -> grasp -> lift."""
-        # Horizontal grasp: jaws along the holder row (NO Rz(90)), 40 mm opening avoids black charger!
-        grasp_rot = board_rotation @ self.base_ik_rotation
-        q_approach_6 = self._solve_ik_robust(plug_xyz_m + np.array([0.0, 0.0, 0.074]), grasp_rot, self.horizontal_seed)
-        q_descend_6 = self._solve_ik_robust(plug_xyz_m + np.array([0.0, 0.0, self.grasp_height_m]), grasp_rot, q_approach_6)
+        # Use the holder axes so this posture follows a registered holder yaw.
+        # -local X points away from the neighbouring charger and +local Y toward the shoulder.
+        tilt = Rotation.from_euler("xyz", self.grasp_holder_rpy_deg, degrees=True).as_matrix()
+        grasp_rot = board_rotation @ tilt @ self.base_ik_rotation
+        pinch_xyz = plug_xyz_m + board_rotation @ np.array([-self.charger_standoff_m, self.shoulder_offset_m, 0.0])
+        q_approach_6 = self._solve_ik_robust(pinch_xyz + np.array([0.0, 0.0, 0.074]), grasp_rot, self.horizontal_seed)
+        q_descend_6 = self._solve_ik_robust(pinch_xyz + np.array([0.0, 0.0, self.grasp_height_m]), grasp_rot, q_approach_6)
 
         base_14 = np.array([0.0] * 6 + [0.060] + [0.0] * 6 + [self.initial_right_opening_m], dtype=np.float64)
         q_approach = base_14.copy()
@@ -176,6 +191,7 @@ class HorizontalGraspNominalPlanner:
 
         segments: list[tuple[str, list[np.ndarray]]] = []
         if folded_entry:
+            segments.append(("prepare_gripper", [base_14.copy()]))
             segments.append(("approach", quintic_interpolate(base_14, q_approach, free_speed_deg_s)))
             start_state = base_14
         else:
@@ -209,6 +225,7 @@ class HorizontalGraspNominalPlanner:
         strip_yaw_deg: float,
         outlet_local_xy_m: tuple[float, float],
         socket_face_z_m: float,
+        alignment_only: bool = False,
         wrist_world_xy_corr_m: tuple[float, float] = (0.0, 0.0),
         wrist_yaw_corr_deg: float = 0.0,
         learned_bias_xy_m: tuple[float, float] = (0.0, 0.0),
@@ -233,8 +250,9 @@ class HorizontalGraspNominalPlanner:
             desired_local[2, 3] = float(socket_face_z_m) + 0.0002 + float(gap_m)
             # Smooth carry-tilt taper keeps raised approach/align poses well inside the 70 deg J5 limit
             # while reaching 0.0 deg pure vertical before prongs engage the socket!
-            if gap_m > 0.016:
-                tilt_x_deg = min(5.0, 5.0 * (float(gap_m) - 0.016) / (0.040 - 0.016))
+            if gap_m > self.tilt_start_gap_m:
+                fraction = min(1.0, (gap_m - self.tilt_start_gap_m) / (0.040 - self.tilt_start_gap_m))
+                tilt_x_deg = self.carry_tilt_deg * fraction
                 desired_local[:3, :3] = Rotation.from_euler("x", tilt_x_deg, degrees=True).as_matrix()
             T_wp_desired = T_strip @ desired_local
             T_wg_desired = T_wp_desired @ np.linalg.inv(T_gp_nominal)
@@ -242,7 +260,6 @@ class HorizontalGraspNominalPlanner:
 
         q_preinsert_6 = solve_over_socket(self.preinsert_gap_m, self.insert_seed)
         q_align_6 = solve_over_socket(self.align_gap_m, q_preinsert_6)
-        q_insert_6 = solve_over_socket(0.0, q_align_6)
 
         q_preinsert = q_current_14.copy()
         q_preinsert[7:13] = q_preinsert_6
@@ -250,8 +267,16 @@ class HorizontalGraspNominalPlanner:
         q_align = q_preinsert.copy()
         q_align[7:13] = q_align_6
 
+        carry = {
+            "q_preinsert_14": q_preinsert,
+            "q_align_14": q_align,
+            "transport_frames": quintic_interpolate(q_current_14, q_preinsert, free_speed_deg_s),
+            "align_frames": quintic_interpolate(q_preinsert, q_align, contact_speed_deg_s),
+        }
+        if alignment_only:
+            return carry
         q_insert = q_align.copy()
-        q_insert[7:13] = q_insert_6
+        q_insert[7:13] = solve_over_socket(0.0, q_align_6)
 
         q_release = q_insert.copy()
         q_release[13] = 0.060
@@ -263,11 +288,8 @@ class HorizontalGraspNominalPlanner:
         q_fold[7:13] = 0.0
 
         return {
-            "q_preinsert_14": q_preinsert,
-            "q_align_14": q_align,
+            **carry,
             "q_insert_14": q_insert,
-            "transport_frames": quintic_interpolate(q_current_14, q_preinsert, free_speed_deg_s),
-            "align_frames": quintic_interpolate(q_preinsert, q_align, contact_speed_deg_s),
             "insert_frames": quintic_interpolate(q_align, q_insert, min(contact_speed_deg_s, 6.0), min_duration_s=3.0),
             "release_frames": quintic_interpolate(q_insert, q_release, contact_speed_deg_s, min_duration_s=0.8),
             "retreat_frames": quintic_interpolate(q_release, q_retreat, free_speed_deg_s, min_duration_s=1.2),
@@ -352,13 +374,25 @@ class DualArmSimClosedLoopRunner:
         task_yaml_path: Path | None = None,
         *,
         learned_policy=None,
+        build_nominal_reference: bool = False,
         supervisor: OnlineSupervisor | None = None,
         folded_entry: bool = True,
         free_speed_deg_s: float = 12.0,
         contact_speed_deg_s: float = 12.0,
     ):
-        self.task_yaml_path = task_yaml_path or (SIM / "configs/tasks/real_connector_calibrated.yaml")
+        self.nominal_profile_sha256 = None
+        geometry = {}
+        scene = {}
+        if task_yaml_path is None:
+            profile_bytes = (ROOT / "experiments/closed_loop_v1/horizontal_scene_v2.json").read_bytes()
+            nominal = json.loads(profile_bytes)
+            self.nominal_profile_sha256 = hashlib.sha256(profile_bytes).hexdigest()
+            task_yaml_path = DATA / nominal["base_task"]
+            geometry = nominal["grasp"]
+            scene = nominal["scene"]
+        self.task_yaml_path = task_yaml_path
         self.base_task_cfg = yaml.safe_load(self.task_yaml_path.read_text())
+        self.base_task_cfg.update(scene)
         self.base_task_cfg["robot_gravity_compensation"] = True
         self.enable_full_cameras = False
         self.sim = MujocoBackend(dict(load_sim_config(), task_scene=self.base_task_cfg), cameras=False)
@@ -366,7 +400,7 @@ class DualArmSimClosedLoopRunner:
         self.profile["robot_gravity_compensation"] = True
         self._rgb_renderer = mujoco.Renderer(self.sim.model, height=480, width=640)
 
-        self.planner = HorizontalGraspNominalPlanner(self.sim.model, self.sim.indices)
+        self.planner = HorizontalGraspNominalPlanner(self.sim.model, self.sim.indices, **geometry)
         self.wrist_checker = WristInHandCompensator()
         self.insert_ctrl = HybridCompliantInsertController(learned_policy=learned_policy)
         self.supervisor = supervisor
@@ -412,19 +446,27 @@ class DualArmSimClosedLoopRunner:
         self.base_strip_quat = self.sim.model.body_quat[self.strip_id].copy()
 
         # Calibrate post-lift wrist reference & nominal in-hand transform ONCE on nominal scene
-        self._calibrate_nominal_wrist()
+        self.frozen_socket_plan = None
+        self._calibrate_nominal_wrist(build_nominal_reference)
 
     def _render_cam(self, camera_name: str) -> np.ndarray:
         self._rgb_renderer.update_scene(self.sim.data, camera=camera_name)
         return self._rgb_renderer.render().copy()
 
-    def _calibrate_nominal_wrist(self) -> None:
+    def _body_pose(self, name):
+        body = self.sim.data.body(name)
+        transform = np.eye(4)
+        transform[:3, :3] = body.xmat.reshape(3, 3)
+        transform[:3, 3] = body.xpos
+        return transform
+
+    def _calibrate_nominal_wrist(self, build_reference: bool) -> None:
         self.sim.reset()
         plug_pos, R_b, R_p = self.planner.plug_pose_from_holder(
             self.nom_holder_xy, self.nom_holder_yaw, self.plug_local_in_holder, self.plug_nom_z, self.R_board_to_plug
         )
         plan1 = self.planner.plan_grasp_and_lift(
-            plug_xyz_m=plug_pos, board_rotation=R_b, plug_rotation=R_p, folded_entry=False,
+            plug_xyz_m=plug_pos, board_rotation=R_b, plug_rotation=R_p, folded_entry=self.folded_entry,
             free_speed_deg_s=self.free_speed_deg_s, contact_speed_deg_s=self.contact_speed_deg_s
         )
         self.sim.set_observation_state(plan1["start_state_14"])
@@ -432,6 +474,10 @@ class DualArmSimClosedLoopRunner:
             for cmd in frames:
                 self.sim.apply(self.sim.layout.command(cmd, self.sim.sim_time, 0))
                 self.sim.step()
+        if build_reference:
+            self.wrist_checker.calibrate_reference(self._render_cam("right_wrist"))
+            self.frozen_socket_plan = self._compile_socket_reference(plan1["q_lift_14"])
+            return
         for _ in range(15):
             self.sim.apply(self.sim.layout.command(plan1["q_lift_14"], self.sim.sim_time, 0))
             self.sim.step()
@@ -440,17 +486,12 @@ class DualArmSimClosedLoopRunner:
 
         # Continue nominal calibration through transport & align so nominal_T_gp captures exact
         # deterministic finger-pad equilibrium at the socket alignment pose (zero runtime privilege!)
-        T_wg_lift = np.eye(4, dtype=np.float64)
-        T_wg_lift[:3, :3] = self.sim.data.body("right/gripper_center").xmat.reshape(3, 3)
-        T_wg_lift[:3, 3] = self.sim.data.body("right/gripper_center").xpos
-        T_wp_lift = np.eye(4, dtype=np.float64)
-        T_wp_lift[:3, :3] = self.sim.data.body("task/yellow_plug").xmat.reshape(3, 3)
-        T_wp_lift[:3, 3] = self.sim.data.body("task/yellow_plug").xpos
-        T_gp_lift = np.linalg.inv(T_wg_lift) @ T_wp_lift
+        T_gp_lift = np.linalg.inv(self._body_pose("right/gripper_center")) @ self._body_pose("task/yellow_plug")
 
         cal_plan2 = self.planner.plan_transport_and_insert(
             q_current_14=plan1["q_lift_14"],
             T_gp_nominal=T_gp_lift,
+            alignment_only=True,
             strip_xy_m=self.nom_strip_xy,
             strip_yaw_deg=self.nom_strip_yaw,
             outlet_local_xy_m=self.outlet_local_xy,
@@ -461,13 +502,49 @@ class DualArmSimClosedLoopRunner:
         for cmd in [*cal_plan2["transport_frames"], *cal_plan2["align_frames"], *([cal_plan2["q_align_14"]] * 10)]:
             self.sim.apply(self.sim.layout.command(cmd, self.sim.sim_time, 0))
             self.sim.step()
-        T_wg_align = np.eye(4, dtype=np.float64)
-        T_wg_align[:3, :3] = self.sim.data.body("right/gripper_center").xmat.reshape(3, 3)
-        T_wg_align[:3, 3] = self.sim.data.body("right/gripper_center").xpos
-        T_wp_align = np.eye(4, dtype=np.float64)
-        T_wp_align[:3, :3] = self.sim.data.body("task/yellow_plug").xmat.reshape(3, 3)
-        T_wp_align[:3, 3] = self.sim.data.body("task/yellow_plug").xpos
-        self.nominal_T_gp = np.linalg.inv(T_wg_align) @ T_wp_align
+        self.nominal_T_gp = np.linalg.inv(self._body_pose("right/gripper_center")) @ self._body_pose("task/yellow_plug")
+
+    def _compile_socket_reference(self, q_lift):
+        """Compile commands offline. Replaying them requires no plug pose or contact input."""
+        strip = self._body_pose("task/strip")
+        last = q_lift.copy()
+        frames = {"transport_frames": [], "align_frames": [], "insert_frames": []}
+        # Straighten above the longest pin. Refit the effective tool-to-plug transform
+        # at settled waypoints as gravity and contact change the in-hand pose.
+        waypoints = [
+            ("transport", .045, self.planner.carry_tilt_deg),
+            ("align", .028, 0.), ("align", .024, 0.), ("align", .021, 0.),
+            ("insert", .017, 0.), ("insert", .010, 0.), ("insert", .004, 0.), ("insert", 0., 0.),
+        ]
+        for phase, gap, tilt in waypoints:
+            tool_to_plug = np.linalg.solve(self.planner.gripper_pose(last[7:13]), self._body_pose("task/yellow_plug"))
+            if phase == "transport":
+                self.nominal_T_gp = tool_to_plug.copy()
+            desired = np.eye(4)
+            desired[:3, :3] = Rotation.from_euler("x", tilt, degrees=True).as_matrix()
+            desired[:3, 3] = [*self.outlet_local_xy, self.socket_face_z + .0002 + gap]
+            target = strip @ desired @ np.linalg.inv(tool_to_plug)
+            goal = last.copy()
+            goal[7:13] = self.planner._solve_ik_robust(target[:3, 3], target[:3, :3], last[7:13])
+            speed = self.free_speed_deg_s if phase == "transport" else min(6., self.contact_speed_deg_s)
+            segment = quintic_interpolate(last, goal, speed, min_duration_s=1.4 if phase == "insert" else .5)
+            segment.extend([goal] * 10)
+            for command in segment:
+                self.sim.apply(self.sim.layout.command(command, self.sim.sim_time, 0))
+                self.sim.step()
+            frames[phase + "_frames"].extend(segment)
+            last = goal
+
+        release = last.copy()
+        release[13] = .060
+        retreat = frames["transport_frames"][-1].copy()
+        retreat[13] = .060
+        fold = retreat.copy()
+        fold[7:13] = 0.
+        frames.update(q_insert_14=last, release_frames=quintic_interpolate(last, release, 6., min_duration_s=1.8),
+                      retreat_frames=quintic_interpolate(release, retreat, self.free_speed_deg_s),
+                      fold_frames=quintic_interpolate(retreat, fold, self.free_speed_deg_s))
+        return frames
 
     def _apply_hidden_scene_perturbation(self, perturbation: dict | None) -> None:
         """Apply ground-truth test perturbations to scene bodies/friction BEFORE episode starts (hidden from controller!)."""
@@ -547,7 +624,11 @@ class DualArmSimClosedLoopRunner:
             record_trial_dir.mkdir(parents=True, exist_ok=True)
             task_dump = dict(self.base_task_cfg)
             (record_trial_dir / "task.yaml").write_text(yaml.safe_dump(task_dump, sort_keys=False))
-            np.savez(record_trial_dir / "initial_state.npz", qpos=self.sim.data.qpos, qvel=self.sim.data.qvel, ctrl=self.sim.data.ctrl)
+            spec = mujoco.mjtState.mjSTATE_INTEGRATION
+            state = np.empty(mujoco.mj_stateSize(self.sim.model, spec))
+            mujoco.mj_getState(self.sim.model, self.sim.data, state, spec)
+            np.savez(record_trial_dir / "initial_state.npz", qpos=self.sim.data.qpos,
+                     qvel=self.sim.data.qvel, ctrl=self.sim.data.ctrl, integration=state, spec=int(spec))
 
         # ================= STAGE 0: INITIAL EXTERNAL RGB VISUAL ALIGNMENT =================
         stage0_info = None
@@ -605,15 +686,13 @@ class DualArmSimClosedLoopRunner:
             nonlocal worst_penetration, collision_aborted, writer
             self.sim.apply(self.sim.layout.command(command_14, self.sim.sim_time, len(history_rows)))
             tol = 0.00035 if closed_loop and phase_name in ("align", "insert") else 0.00025
+            if self.frozen_socket_plan is not None:
+                tol = 0.0002
             if record_stage_root is not None and record_session is not None:
                 check = checked_physics_step(self.sim, tol)
             else:
                 # Fast native C++ multi-substep integration + exact contact penetration + native seating timer
                 self.sim.step()
-                self.sim.task.metrics(
-                    self.sim.task_adapter.task_poses(self.sim.data, self.sim.task),
-                    self.sim.dt * self.sim.decimation,
-                )
                 if self.sim.data.ncon > 0:
                     min_dist = float(np.min(self.sim.data.contact[:self.sim.data.ncon].dist))
                     max_pen = max(0.0, -min_dist)
@@ -755,7 +834,9 @@ class DualArmSimClosedLoopRunner:
 
         # Plan Stage 2 nominal segments (incorporating Stage 0 + Stage 1 + Supervisor learned bias!)
         learned_bias = self.supervisor.current_bias() if (closed_loop and self.supervisor is not None) else (0.0, 0.0)
-        if not collision_aborted:
+        if self.frozen_socket_plan is not None and not closed_loop and not perturbation and not collision_aborted:
+            plan2 = self.frozen_socket_plan
+        elif not collision_aborted:
             try:
                 plan2 = self.planner.plan_transport_and_insert(
                     q_current_14=plan1["q_lift_14"],
@@ -901,7 +982,7 @@ class DualArmSimClosedLoopRunner:
                     cursor += 1
                     if cursor >= n_ins:
                         break
-            if not collision_aborted:
+            if not collision_aborted and self.frozen_socket_plan is None:
                 for _ in range(12):
                     if not execute_step(last_cmd_14, "insert"):
                         break
@@ -934,7 +1015,7 @@ class DualArmSimClosedLoopRunner:
                     break
 
         if not collision_aborted:
-            for _ in range(5):
+            for _ in range(20 if self.frozen_socket_plan is not None else 5):
                 if not execute_step(last_cmd_14, "fold"):
                     break
 
@@ -994,19 +1075,22 @@ class DualArmSimClosedLoopRunner:
             report = {
                 "profile": self.profile,
                 "diagnostic_only": False,
-                "grasp_lift_success": True if stage1_info is None else bool(stage1_info.get("retained", True)),
+                "grasp_lift_success": (any(row["phase"] == "lift" and row["plug"][2] > history_rows[0]["plug"][2] + .040
+                                           for row in history_rows) if stage1_info is None else stage1_info["retained"]),
                 "complete_pick_insert": physical_success,
                 "error": "collision_limit" if collision_aborted else None,
                 "last_phase": history_rows[-1]["phase"] if history_rows else "initialization",
                 "max_penetration_m": worst_penetration,
                 "frames": len(history_rows),
                 "hardware_commands": 0,
-                "initial_robot_pose": "explicit folded zero entry; 40mm horizontal grasp",
+                "initial_robot_pose": "explicit folded zero entry" if self.folded_entry else "IK approach pose",
                 "speed_deg_s": self.free_speed_deg_s,
                 "contact_joint_speed_deg_s": self.contact_speed_deg_s,
-                "grasp_height_m": 0.020,
+                "grasp_height_m": self.planner.grasp_height_m,
+                "shoulder_offset_m": self.planner.shoulder_offset_m,
                 "initial_right_opening_m": 0.040,
-                "grasp_board_relative_yaw_deg": 0.0,
+                "grasp_board_relative_yaw_deg": self.planner.grasp_holder_rpy_deg[2],
+                "calibrated_gripper_to_plug": self.nominal_T_gp.tolist(),
                 "closed_loop": not open_loop_mode,
                 "jam_events": jam_events,
                 "probes_used": probes_used,
@@ -1048,7 +1132,7 @@ class DualArmSimClosedLoopRunner:
             jam_events=jam_events,
             probes_used=probes_used,
             winning_residual_mm=(round(winning_xy_m[0] * 1000.0, 3), round(winning_xy_m[1] * 1000.0, 3)),
-            final_metrics={k: (float(v) if isinstance(v, (int, float, np.floating)) else v) for k, v in metrics.items()},
+            final_metrics={k: (v.item() if isinstance(v, np.generic) else v) for k, v in metrics.items()},
             supervisor_update=sup_update,
         )
 

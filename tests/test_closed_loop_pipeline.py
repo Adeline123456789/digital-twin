@@ -7,6 +7,7 @@ import sys
 import tempfile
 import unittest
 
+import cv2
 import numpy as np
 
 os.environ.setdefault("MUJOCO_GL", "egl")
@@ -21,7 +22,7 @@ from robot_agent.compliant_residual import (  # noqa: E402
     SmoothResidual4D,
     inject_right_arm_residual,
 )
-from robot_agent.scene_retarget import align_scene_from_external_rgb, pixel_to_world_at_z  # noqa: E402
+from robot_agent.scene_retarget import detect_strip_features_rgb, pixel_to_world_at_z  # noqa: E402
 from robot_agent.wrist_inhand import WristInHandCompensator  # noqa: E402
 from execute_real_closed_loop import dry_run_preview  # noqa: E402
 
@@ -83,6 +84,16 @@ class ClosedLoopPipelineTests(unittest.TestCase):
             reloaded = OnlineSupervisor(bias_path=path)
             self.assertAlmostEqual(reloaded.current_bias()[0], 0.0012, places=6)
             self.assertAlmostEqual(reloaded.current_bias()[1], -0.0008, places=6)
+
+    def test_socket_panels_survive_a_blue_cast_on_the_white_strip(self):
+        hsv = np.zeros((480, 640, 3), dtype=np.uint8)
+        hsv[238:285, 255:370] = (104, 54, 175)
+        for x in (273, 294, 315, 336):
+            hsv[259:276, x-9:x+10] = (104, 145, 161)
+            hsv[248:255, x-4:x+5] = (104, 132, 160)
+        features = detect_strip_features_rgb(cv2.cvtColor(hsv, cv2.COLOR_HSV2RGB))
+        self.assertEqual(len(features["panels_px"]), 4)
+        np.testing.assert_allclose(features["outlet3_px"], [336., 267.], atol=.1)
 
     def test_scene_retarget_ray_plane_and_dry_run_preview(self):
         K = np.array([[387.0, 0.0, 324.0], [0.0, 386.5, 238.0], [0.0, 0.0, 1.0]])

@@ -4,6 +4,7 @@ Modes:
   --mode single          Run a single simulated closed-loop episode with requested scene/grasp shifts.
   --mode benchmark       Run paired comparison (Open-Loop vs Closed-Loop Ep1 vs Self-Evolved Ep2)
                          across realistic combined scene shifts, in-hand drift, and extrinsic bias.
+  --mode record-nominal  Freeze the RGB-registered nominal and verify a separate substep replay.
   --mode record-episode  Run a full closed-loop episode under scene/grasp shift and publish a
                          validated 3-camera formal Episode to complete_sim/succeed/<id>/.
 """
@@ -170,20 +171,22 @@ def run_benchmark(use_learned_policy: bool = True) -> dict:
     return summary
 
 
-def record_formal_episode(perturbation: dict) -> dict:
-    """Run one full closed-loop perturbed episode and install verified 3-camera Episode to complete_sim/."""
-    policy = load_deployed_residual_policy(RESIDUAL_NPZ)
+def record_formal_episode(perturbation: dict, *, nominal: bool = False) -> dict:
+    """Record a perturbed closed-loop episode or a frozen RGB-registered nominal reference."""
+    policy = None if nominal else load_deployed_residual_policy(RESIDUAL_NPZ)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "_" + uuid.uuid4().hex[:8]
     trial_dir = DATA / "self_evolution" / stamp
     stage_root = DATA / "self_evolution" / f"closed_loop_recording_{stamp}"
     session = f"closed_loop_{stamp}"
 
-    sup = OnlineSupervisor(bias_path=DATA / "self_evolution/closed_loop_v1/sim_calibration_bias.json")
-    runner = DualArmSimClosedLoopRunner(learned_policy=policy, supervisor=sup, folded_entry=True)
+    sup = None if nominal else OnlineSupervisor(bias_path=DATA / "self_evolution/closed_loop_v1/sim_calibration_bias.json")
+    runner = DualArmSimClosedLoopRunner(learned_policy=policy, supervisor=sup, folded_entry=True, build_nominal_reference=nominal,
+                                        free_speed_deg_s=10.0 if nominal else 12.0,
+                                        contact_speed_deg_s=8.0 if nominal else 12.0)
     try:
         res = runner.run_episode(
             perturbation=perturbation,
-            closed_loop=True,
+            closed_loop=not nominal,
             record_trial_dir=trial_dir,
             record_stage_root=stage_root,
             record_session=session,
@@ -196,10 +199,15 @@ def record_formal_episode(perturbation: dict) -> dict:
     supplement(staged_ep, trial_dir)
     verified = validate_episode(staged_ep, trial_dir, expected_success=res.success)
 
+    if nominal:
+        from horizontal_nominal_audit import audit, verify_reference
+        replay = audit(trial_dir)
+        save(trial_dir / "nominal_replay.json", replay)
+        verify_reference(replay, res.success)
+        verified["nominal_replay"] = replay
+
     dest = DATA / "complete_sim" / bucket / stamp
-    shutil.copytree(staged_ep, dest)
-    save(dest / "verification.json", verified)
-    shutil.rmtree(stage_root)
+    save(staged_ep / "verification.json", verified)
 
     payload = {
         "episode_id": stamp,
@@ -208,16 +216,34 @@ def record_formal_episode(perturbation: dict) -> dict:
         "perturbation": perturbation,
         "verification": verified,
         "episode_summary": asdict(res),
-        "outcome_sha256": digest(dest / "outcome.json"),
+        "outcome_sha256": digest(staged_ep / "outcome.json"),
     }
-    save(ROOT / f"experiments/closed_loop_v1/recorded_{stamp}.json", payload)
+    if nominal:
+        trajectory = trial_dir / "nominal_reference.jsonl"
+        with (trial_dir / "trajectory.jsonl").open() as source, trajectory.open("w") as commands:
+            for i, line in enumerate(source):
+                row = json.loads(line)
+                command = dict(t_s=i / 30, phase=row["phase"], target_14_si=row["action"])
+                commands.write(json.dumps(command) + "\n")
+        payload["reference_trajectory"] = str(trajectory.relative_to(DATA))
+        payload["trajectory_sha256"] = digest(trajectory)
+        payload["reference_layout"] = "30 Hz interval-start targets. Left J1-J6 rad, width m, right J1-J6 rad, width m."
+        payload["scene_profile_sha256"] = runner.nominal_profile_sha256
+        payload["artifacts_sha256"] = {str(path.relative_to(staged_ep)): digest(path)
+                                       for path in sorted(staged_ep.rglob("*")) if path.is_file()}
+    manifest = ROOT / "experiments/closed_loop_v1" / ("nominal_horizontal_v2.json" if nominal else f"recorded_{stamp}.json")
+    pending = manifest.with_suffix(f".{stamp}.tmp")
+    save(pending, payload)
+    staged_ep.rename(dest)
+    pending.replace(manifest)
+    shutil.rmtree(stage_root)
     print(json.dumps({"episode_id": stamp, "installed": str(dest), "success": res.success, "frames": res.frames}, indent=2))
     return payload
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=("single", "benchmark", "record-episode"), default="benchmark")
+    parser.add_argument("--mode", choices=("single", "benchmark", "record-episode", "record-nominal"), default="benchmark")
     parser.add_argument("--strip-xy-mm", type=float, nargs=2, default=[6.0, -4.5])
     parser.add_argument("--strip-yaw-deg", type=float, default=1.2)
     parser.add_argument("--holder-xy-mm", type=float, nargs=2, default=[-4.0, 3.5])
@@ -243,6 +269,8 @@ def main() -> None:
             f"Self-Evolved Ep2 {summary['closed_loop_ep2_successes']}/{summary['conditions_tested']} "
             f"(avg probes {summary['mean_probes_ep2']})"
         )
+    elif args.mode == "record-nominal":
+        record_formal_episode({}, nominal=True)
     elif args.mode == "record-episode":
         record_formal_episode(pert)
     else:
